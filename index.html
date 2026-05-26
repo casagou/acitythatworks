@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A Citizens' Framework for Victoria 2026. 82 measures, every one costed. Zero ideology, just results.">
+  <meta name="author" content="A City That Works">
+  <title>A City That Works — A Citizens' Framework for Victoria 2026</title>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="A City That Works">
+  <meta property="og:description" content="A Citizens' Framework for Victoria 2026. 82 measures. Every one costed. Zero ideology, just results.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_CA">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="A City That Works">
+  <meta name="twitter:description" content="A Citizens' Framework for Victoria 2026. 82 measures, every one costed.">
+
+  <!-- Favicon (simple inline SVG with the gold diamond on navy) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231A3668'/%3E%3Cpolygon points='50,25 70,50 50,75 30,50' fill='%23D4A843'/%3E%3C/svg%3E">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,900&family=Public+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Tailwind via Play CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    :root {
+      --navy: #1A3668;
+      --gold: #D4A843;
+      --paper: #FAF7F0;
+      --rust: #B5341F;
+      --moss: #227247;
+      --olive: #7A6B3D;
+    }
+
+    html { scroll-behavior: smooth; scroll-padding-top: 4rem; }
+
+    body {
+      font-family: 'Public Sans', system-ui, sans-serif;
+      background-color: var(--paper);
+      background-image:
+        radial-gradient(at 10% 5%,  rgba(26,54,104,0.05) 0px, transparent 50%),
+        radial-gradient(at 90% 95%, rgba(212,168,67,0.06) 0px, transparent 50%);
+      color: #1c1917;
+      min-height: 100vh;
+    }
+
+    .font-display { font-family: 'Fraunces', Georgia, serif; font-optical-sizing: auto; letter-spacing: -0.02em; }
+    .font-mono    { font-family: 'JetBrains Mono', monospace; }
+
+    .hairline    { border-top: 1px solid rgba(26,54,104,0.18); }
+    .hairline-b  { border-bottom: 1px solid rgba(26,54,104,0.18); }
+    .double-rule { border-top: 3px double rgba(26,54,104,0.35); }
+    .rule-gold   { border-top: 1px solid rgba(212,168,67,0.5); }
+
+    .text-navy   { color: var(--navy); }
+    .text-gold   { color: var(--gold); }
+    .text-rust   { color: var(--rust); }
+    .text-moss   { color: var(--moss); }
+    .bg-navy     { background-color: var(--navy); }
+    .bg-paper    { background-color: var(--paper); }
+    .border-navy { border-color: var(--navy); }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(8px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .reveal { animation: fadeUp 0.6s ease-out backwards; }
+
+    details > summary { list-style: none; cursor: pointer; }
+    details > summary::-webkit-details-marker { display: none; }
+    details[open] .faq-plus { transform: rotate(45deg); }
+    .faq-plus { transition: transform 0.2s ease; }
+
+    /* Sticky nav backdrop blur */
+    .nav-blur { backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
+
+    /* Measure row hover */
+    .measure-row { transition: background-color 0.15s ease; }
+    .measure-row:hover { background-color: rgba(212,168,67,0.04); }
+
+    /* Print styles */
+    @media print {
+      .no-print { display: none !important; }
+      body { background: white; }
+      .measure-row { page-break-inside: avoid; }
+    }
+
+    /* Mobile menu */
+    .mobile-menu { display: none; }
+    .mobile-menu.open { display: block; }
+  </style>
+</head>
+<body class="text-stone-900">
+
+  <!-- ============== STICKY HEADER ============== -->
+  <header class="nav-blur sticky top-0 z-30 hairline-b no-print" style="background-color: rgba(26,54,104,0.97);">
+    <div class="max-w-6xl mx-auto px-5 py-3 flex items-center justify-between gap-4">
+      <a href="#top" class="flex items-baseline gap-3">
+        <span class="font-mono text-[10px] tracking-[0.2em] uppercase text-gold">№ 01</span>
+        <span class="font-display italic text-lg sm:text-xl text-white" style="font-weight: 500;">
+          A City That Works
+        </span>
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-6 font-mono text-[11px] uppercase tracking-widest text-white/80">
+        <a href="#pillars" class="hover:text-white transition-opacity">Five Pillars</a>
+        <a href="#method" class="hover:text-white transition-opacity">Method</a>
+        <a href="#measures" class="hover:text-white transition-opacity">82 Measures</a>
+        <a href="#commitments" class="hover:text-white transition-opacity">Scorecard</a>
+        <a href="#balance" class="hover:text-white transition-opacity">Balance Sheet</a>
+        <a href="#faq" class="hover:text-white transition-opacity">Q&amp;A</a>
+        <a href="#adopt" class="hover:text-white transition-opacity">Adopt</a>
+      </nav>
+
+      <button id="menuToggle" class="lg:hidden text-white" aria-label="Open menu">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+
+    <div id="mobileMenu" class="mobile-menu lg:hidden hairline-b" style="background-color: rgba(26,54,104,0.98);">
+      <div class="max-w-6xl mx-auto px-5 py-4 flex flex-col gap-3 font-mono text-sm uppercase tracking-widest text-white/90">
+        <a href="#pillars">Five Pillars</a>
+        <a href="#method">Method</a>
+        <a href="#measures">82 Measures</a>
+        <a href="#commitments">Scorecard</a>
+        <a href="#balance">Balance Sheet</a>
+        <a href="#faq">Q&amp;A</a>
+        <a href="#adopt">Adopt</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top" class="max-w-6xl mx-auto px-5">
+
+    <!-- ============== HERO ============== -->
+    <section class="pt-16 sm:pt-24 pb-16 reveal">
+      <div class="flex items-baseline gap-3 font-mono text-[11px] uppercase tracking-[0.2em] text-navy">
+        <span>A Citizens' Framework</span>
+        <span class="text-gold">◆</span>
+        <span>Victoria, BC · 2026</span>
+      </div>
+
+      <h1 class="font-display text-5xl sm:text-7xl md:text-8xl mt-5 leading-[0.95] text-navy" style="font-weight: 500;">
+        A city that <em class="font-display text-gold" style="font-weight: 400;">works</em>.
+      </h1>
+
+      <div class="mt-4 font-display text-2xl sm:text-3xl italic text-navy/85" style="font-weight: 400;">
+        Security. Cleanliness. Results.
+      </div>
+
+      <div class="mt-12 grid md:grid-cols-12 gap-8">
+        <div class="md:col-span-7">
+          <p class="font-display text-2xl leading-relaxed text-navy">
+            What do you expect for Victoria?
+          </p>
+          <p class="mt-4 text-base leading-relaxed text-stone-700">
+            What should we hope for our city? What do we have the right to demand — for ourselves
+            and for our children?
+          </p>
+          <p class="mt-4 text-base leading-relaxed text-stone-700">
+            The time for complaining is over. The moment has come to imagine a city that works —
+            right now: to want it with all our strength, and to build it together, with realism
+            and with method.
+          </p>
+          <p class="mt-4 text-lg leading-relaxed text-navy" style="font-weight: 500;">
+            This is the complete framework for a city that works.
+          </p>
+
+          <div class="mt-10 flex flex-wrap gap-3 no-print">
+            <a href="#pillars"
+              class="px-6 py-3 font-mono text-xs uppercase tracking-widest flex items-center gap-2 bg-navy text-white hover:-translate-y-px transition-transform">
+              Read the framework
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+            <a href="#adopt"
+              class="px-6 py-3 font-mono text-xs uppercase tracking-widest flex items-center gap-2 border-2 border-navy text-navy">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              Get the digest
+            </a>
+          </div>
+        </div>
+
+        <div class="md:col-span-5 md:pl-6 md:border-l" style="border-color: rgba(26,54,104,0.18);">
+          <div class="font-mono text-[10px] uppercase tracking-[0.2em] mb-4 text-gold">
+            ◆ The Diagnostic
+          </div>
+          <div class="space-y-3">
+            <div class="flex items-baseline gap-3 hairline-b pb-2.5">
+              <span class="font-mono text-2xl whitespace-nowrap text-rust" style="font-weight: 600;">29%</span>
+              <span class="text-sm leading-snug text-stone-700">Operating budget growth in 3 years</span>
+            </div>
+            <div class="flex items-baseline gap-3 hairline-b pb-2.5">
+              <span class="font-mono text-2xl whitespace-nowrap text-rust" style="font-weight: 600;">10.44%</span>
+              <span class="text-sm leading-snug text-stone-700">Property tax increase proposed for 2026</span>
+            </div>
+            <div class="flex items-baseline gap-3 hairline-b pb-2.5">
+              <span class="font-mono text-2xl whitespace-nowrap text-rust" style="font-weight: 600;">48%</span>
+              <span class="text-sm leading-snug text-stone-700">Downtown businesses considering leaving</span>
+            </div>
+            <div class="flex items-baseline gap-3 hairline-b pb-2.5">
+              <span class="font-mono text-2xl whitespace-nowrap text-rust" style="font-weight: 600;">59%</span>
+              <span class="text-sm leading-snug text-stone-700">Feel safe downtown by day (was 83%)</span>
+            </div>
+            <div class="flex items-baseline gap-3 hairline-b pb-2.5">
+              <span class="font-mono text-2xl whitespace-nowrap text-rust" style="font-weight: 600;">61</span>
+              <span class="text-sm leading-snug text-stone-700">Missing-middle permits in 2024 vs. 150 target</span>
+            </div>
+            <div class="flex items-baseline gap-3 hairline-b pb-2.5">
+              <span class="font-mono text-2xl whitespace-nowrap text-rust" style="font-weight: 600;">$0</span>
+              <span class="text-sm leading-snug text-stone-700">AI, digital twin, or smart infrastructure deployed</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== FIVE PILLARS ============== -->
+    <section id="pillars" class="mt-24 mb-10 reveal pt-12 double-rule">
+      <div class="font-mono text-[11px] uppercase tracking-[0.2em] mb-3 text-gold">◆ Structure</div>
+      <h2 class="font-display text-4xl sm:text-5xl leading-[1.05] max-w-4xl text-navy" style="font-weight: 500;">
+        Five Pillars · One Foundation
+      </h2>
+      <p class="mt-5 text-lg leading-relaxed max-w-3xl text-stone-700">
+        Every measure in this framework belongs to one of five pillars, anchored by a foundational
+        commitment to right relations with the host Nations.
+      </p>
+    </section>
+
+    <div class="grid md:grid-cols-3 gap-5">
+      <a href="#measures-foundation" class="text-left p-6 hover:-translate-y-px transition-transform group" style="background-color: rgba(122,107,61,0.06); border: 1px solid rgba(26,54,104,0.18);">
+        <div class="flex items-center gap-3 mb-4">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--olive);"><path d="M7 20h10"/><path d="M10 20c5.5-2.5.8-6.4 3-10"/><path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z"/><path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z"/></svg>
+          <span class="font-mono text-[10px] uppercase tracking-[0.2em] opacity-60" style="color: var(--olive);">00</span>
+        </div>
+        <div class="font-display text-xl leading-snug" style="color: var(--olive); font-weight: 500;">
+          Foundation: Host Nations
+        </div>
+        <div class="mt-3 font-mono text-[11px] uppercase tracking-wider opacity-60 flex items-center gap-2" style="color: var(--olive);">
+          5 measures
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </div>
+      </a>
+
+      <a href="#measures-liveable" class="text-left p-6 hover:-translate-y-px transition-transform group bg-white" style="border: 1px solid rgba(26,54,104,0.18);">
+        <div class="flex items-center gap-3 mb-4">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-navy"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          <span class="font-mono text-[10px] uppercase tracking-[0.2em] opacity-60 text-navy">01</span>
+        </div>
+        <div class="font-display text-xl leading-snug text-navy" style="font-weight: 500;">A Liveable City</div>
+        <div class="mt-3 font-mono text-[11px] uppercase tracking-wider opacity-60 flex items-center gap-2 text-navy">
+          20 measures
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </div>
+      </a>
+
+      <a href="#measures-safe" class="text-left p-6 hover:-translate-y-px transition-transform group bg-white" style="border: 1px solid rgba(26,54,104,0.18);">
+        <div class="flex items-center gap-3 mb-4">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-navy"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <span class="font-mono text-[10px] uppercase tracking-[0.2em] opacity-60 text-navy">02</span>
+        </div>
+        <div class="font-display text-xl leading-snug text-navy" style="font-weight: 500;">A Safe City</div>
+        <div class="mt-3 font-mono text-[11px] uppercase tracking-wider opacity-60 flex items-center gap-2 text-navy">
+          17 measures
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </div>
+      </a>
+
+      <a href="#measures-beautiful" class="text-left p-6 hover:-translate-y-px transition-transform group bg-white" style="border: 1px solid rgba(26,54,104,0.18);">
+        <div class="flex items-center gap-3 mb-4">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-navy"><path d="M12 13v8"/><path d="M12 3v3"/><path d="M18 6a6 6 0 0 0-6-3 6 6 0 0 0-6 3"/><path d="M20 16a4 4 0 0 0-4-3 4 4 0 0 0-4 3 4 4 0 0 0-4-3 4 4 0 0 0-4 3"/></svg>
+          <span class="font-mono text-[10px] uppercase tracking-[0.2em] opacity-60 text-navy">03</span>
+        </div>
+        <div class="font-display text-xl leading-snug text-navy" style="font-weight: 500;">A Beautiful City</div>
+        <div class="mt-3 font-mono text-[11px] uppercase tracking-wider opacity-60 flex items-center gap-2 text-navy">
+          22 measures
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </div>
+      </a>
+
+      <a href="#measures-managed" class="text-left p-6 hover:-translate-y-px transition-transform group bg-white" style="border: 1px solid rgba(26,54,104,0.18);">
+        <div class="flex items-center gap-3 mb-4">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-navy"><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></svg>
+          <span class="font-mono text-[10px] uppercase tracking-[0.2em] opacity-60 text-navy">04</span>
+        </div>
+        <div class="font-display text-xl leading-snug text-navy" style="font-weight: 500;">A Well-Managed City</div>
+        <div class="mt-3 font-mono text-[11px] uppercase tracking-wider opacity-60 flex items-center gap-2 text-navy">
+          12 measures
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </div>
+      </a>
+
+      <a href="#measures-democratic" class="text-left p-6 hover:-translate-y-px transition-transform group bg-white" style="border: 1px solid rgba(26,54,104,0.18);">
+        <div class="flex items-center gap-3 mb-4">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-navy"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          <span class="font-mono text-[10px] uppercase tracking-[0.2em] opacity-60 text-navy">05</span>
+        </div>
+        <div class="font-display text-xl leading-snug text-navy" style="font-weight: 500;">A Democratic City</div>
+        <div class="mt-3 font-mono text-[11px] uppercase tracking-wider opacity-60 flex items-center gap-2 text-navy">
+          6 measures
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </div>
+      </a>
+    </div>
+
+    <!-- ============== BY AUDIENCE ============== -->
+    <div class="mt-20 reveal">
+      <div class="font-mono text-[11px] uppercase tracking-[0.2em] mb-3 text-gold">◆ By Audience</div>
+      <h3 class="font-display text-3xl sm:text-4xl mb-8 text-navy" style="font-weight: 500;">
+        Whoever you are, Victoria should work for you.
+      </h3>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="p-5 hairline-b" style="border-left: 2px solid var(--gold);">
+          <div class="font-display text-lg mb-2 text-navy" style="font-weight: 500;">For Families</div>
+          <p class="text-sm text-stone-700 leading-relaxed">Childcare, school safety, parks, housing, food in schools.</p>
+        </div>
+        <div class="p-5 hairline-b" style="border-left: 2px solid var(--gold);">
+          <div class="font-display text-lg mb-2 text-navy" style="font-weight: 500;">For Renters</div>
+          <p class="text-sm text-stone-700 leading-relaxed">Tenant protections, vacancy targets, affordability, transparent waitlists.</p>
+        </div>
+        <div class="p-5 hairline-b" style="border-left: 2px solid var(--gold);">
+          <div class="font-display text-lg mb-2 text-navy" style="font-weight: 500;">For Business Owners</div>
+          <p class="text-sm text-stone-700 leading-relaxed">Permits, tax base, downtown revival, first-hour free parking.</p>
+        </div>
+        <div class="p-5 hairline-b" style="border-left: 2px solid var(--gold);">
+          <div class="font-display text-lg mb-2 text-navy" style="font-weight: 500;">For Cyclists &amp; Transit</div>
+          <p class="text-sm text-stone-700 leading-relaxed">Bike network, RapidBus, contactless fares, adaptive signals.</p>
+        </div>
+        <div class="p-5 hairline-b" style="border-left: 2px solid var(--gold);">
+          <div class="font-display text-lg mb-2 text-navy" style="font-weight: 500;">For Seniors</div>
+          <p class="text-sm text-stone-700 leading-relaxed">Safety, accessibility, neighbourhood services, modern lighting.</p>
+        </div>
+        <div class="p-5 hairline-b" style="border-left: 2px solid var(--gold);">
+          <div class="font-display text-lg mb-2 text-navy" style="font-weight: 500;">For Homeowners</div>
+          <p class="text-sm text-stone-700 leading-relaxed">Property tax restraint, heritage protection, infrastructure.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============== METHOD ============== -->
+    <section id="method" class="mt-24 mb-10 reveal pt-12 double-rule">
+      <div class="font-mono text-[11px] uppercase tracking-[0.2em] mb-3 text-gold">◆ How this framework was built</div>
+      <h2 class="font-display text-4xl sm:text-5xl leading-[1.05] max-w-4xl text-navy" style="font-weight: 500;">
+        0% ideology. 100% pragmatic.
+      </h2>
+      <p class="mt-5 text-lg leading-relaxed max-w-3xl text-stone-700">
+        We started where the truth is most visible: the budget. Politicians make promises; numbers don't lie.
+        Then for every problem a Victorian faces daily, we applied the same six-step method.
+      </p>
+    </section>
+
+    <div class="grid md:grid-cols-2 gap-x-12 gap-y-8">
+      <div class="flex gap-5">
+        <div class="font-display text-5xl leading-none flex-shrink-0 text-gold" style="font-weight: 500;">01</div>
+        <div>
+          <div class="font-display text-xl leading-snug text-navy" style="font-weight: 500;">Identify the root cause</div>
+          <p class="mt-1 text-sm text-stone-700 leading-relaxed">Not the symptom — the structural reason the problem exists.</p>
+        </div>
+      </div>
+      <div class="flex gap-5">
+        <div class="font-display text-5xl leading-none flex-shrink-0 text-gold" style="font-weight: 500;">02</div>
+        <div>
+          <div class="font-display text-xl leading-snug text-navy" style="font-weight: 500;">Assess what the City can do</div>
+          <p class="mt-1 text-sm text-stone-700 leading-relaxed">Municipalities have specific powers. Don't promise what requires provincial or federal action.</p>
+        </div>
+      </div>
+      <div class="flex gap-5">
+        <div class="font-display text-5xl leading-none flex-shrink-0 text-gold" style="font-weight: 500;">03</div>
+        <div>
+          <div class="font-display text-xl leading-snug text-navy" style="font-weight: 500;">Study what works elsewhere</div>
+          <p class="mt-1 text-sm text-stone-700 leading-relaxed">Pittsburgh's Surtrac: −25% travel time. Helsinki's digital twin: millions saved. Canadian waste competition: −24% on average.</p>
+        </div>
+      </div>
+      <div class="flex gap-5">
+        <div class="font-display text-5xl leading-none flex-shrink-0 text-gold" style="font-weight: 500;">04</div>
+        <div>
+          <div class="font-display text-xl leading-snug text-navy" style="font-weight: 500;">Measure with technology</div>
+          <p class="mt-1 text-sm text-stone-700 leading-relaxed">Use data, sensors, and digital tools to understand before deciding.</p>
+        </div>
+      </div>
+      <div class="flex gap-5">
+        <div class="font-display text-5xl leading-none flex-shrink-0 text-gold" style="font-weight: 500;">05</div>
+        <div>
+          <div class="font-display text-xl leading-snug text-navy" style="font-weight: 500;">Build solutions with experts</div>
+          <p class="mt-1 text-sm text-stone-700 leading-relaxed">Engineers, police, builders, social workers, business owners, residents.</p>
+        </div>
+      </div>
+      <div class="flex gap-5">
+        <div class="font-display text-5xl leading-none flex-shrink-0 text-gold" style="font-weight: 500;">06</div>
+        <div>
+          <div class="font-display text-xl leading-snug text-navy" style="font-weight: 500;">Cost every measure</div>
+          <p class="mt-1 text-sm text-stone-700 leading-relaxed">Direct and indirect impacts. Every proposal in this framework has a budget impact estimate.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============== JURISDICTION ============== -->
+    <div class="mt-16 reveal">
+      <div class="font-mono text-[11px] uppercase tracking-[0.2em] mb-3 text-gold">◆ Separation of Powers</div>
+      <h3 class="font-display text-2xl sm:text-3xl mb-3 text-navy" style="font-weight: 500;">
+        What the City actually controls.
+      </h3>
+      <p class="text-stone-700 mb-8 max-w-3xl leading-relaxed">
+        Before making promises, we must be honest about what the City of Victoria actually controls.
+        We will advocate aggressively to senior governments for action in their domains —
+        but we will never promise what isn't ours to deliver.
+      </p>
+      <div class="grid md:grid-cols-3 gap-4">
+        <div class="p-5" style="background-color: rgba(212,168,67,0.08); border: 1px solid rgba(26,54,104,0.18);">
+          <div class="font-display text-lg mb-2 text-navy" style="font-weight: 500;">City of Victoria controls</div>
+          <p class="text-xs text-stone-700 leading-relaxed">Land use &amp; zoning · building permits · property taxes · bylaws &amp; enforcement · municipal policing (via VicPD Board) · parks &amp; recreation · local roads &amp; sidewalks · water &amp; sewer · garbage collection · local planning · business licences · heritage designation</p>
+        </div>
+        <div class="p-5" style="background-color: rgba(26,54,104,0.04); border: 1px solid rgba(26,54,104,0.18);">
+          <div class="font-display text-lg mb-2 text-navy" style="font-weight: 500;">Province of BC controls</div>
+          <p class="text-xs text-stone-700 leading-relaxed">Healthcare · K-12 education · social housing funding (BC Housing) · welfare &amp; income assistance · courts &amp; sentencing · major transit (BC Transit) · highways · building code · vacancy &amp; speculation taxes</p>
+        </div>
+        <div class="p-5" style="background-color: rgba(26,54,104,0.04); border: 1px solid rgba(26,54,104,0.18);">
+          <div class="font-display text-lg mb-2 text-navy" style="font-weight: 500;">Federal government controls</div>
+          <p class="text-xs text-stone-700 leading-relaxed">Immigration · criminal law · employment insurance · OAS · major infrastructure grants · Indigenous affairs (Crown-Nation relationship) · ports &amp; harbours</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============== 82 MEASURES ============== -->
+    <section id="measures" class="mt-24 mb-10 reveal pt-12 double-rule">
+      <div class="font-mono text-[11px] uppercase tracking-[0.2em] mb-3 text-gold">◆ The Substance</div>
+      <h2 class="font-display text-4xl sm:text-5xl leading-[1.05] max-w-4xl text-navy" style="font-weight: 500;">
+        82 measures. Every one costed.
+      </h2>
+      <p class="mt-5 text-lg leading-relaxed max-w-3xl text-stone-700">
+        Organized by pillar. Each measure includes its rationale, mechanism, and budget impact where applicable.
+        The full text and source citations live in the open framework document.
+      </p>
+    </section>
+
+    <!-- Container for measures, rendered by JS -->
+    <div id="measuresContainer"></div>
+
+    <!-- ============== 12 COMMITMENTS ============== -->
+    <section id="commitments" class="mt-24 mb-10 reveal pt-12 double-rule">
+      <div class="font-mono text-[11px] uppercase tracking-[0.2em] mb-3 text-gold">◆ Accountability</div>
+      <h2 class="font-display text-4xl sm:text-5xl leading-[1.05] max-w-4xl text-navy" style="font-weight: 500;">
+        12 commitments. Measured every quarter.
+      </h2>
+      <p class="mt-5 text-lg leading-relaxed max-w-3xl text-stone-700">
+        From 82 measures, twelve numerical targets. Each is tracked publicly. Each has a baseline.
+        There are no excuses, no spin — just published results.
+      </p>
+    </section>
+
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="hairline-b font-mono text-[10px] uppercase tracking-widest text-left text-navy">
+            <th class="py-3 pr-4 w-8">#</th>
+            <th class="py-3 pr-4">Commitment</th>
+            <th class="py-3 pr-4">Target</th>
+            <th class="py-3 pr-4">Baseline</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="hairline-b align-top">
+            <td class="py-4 pr-4 font-display text-xl text-gold">1</td>
+            <td class="py-4 pr-4 font-display text-base text-navy" style="font-weight: 500;">New homes (composition)</td>
+            <td class="py-4 pr-4 text-stone-800">12,000+ by 2030; 25% missing middle, 20% 3BR+, 15% non-market</td>
+            <td class="py-4 pr-4 text-stone-600 text-xs">Provincial 5yr target: 4,902</td>
+          </tr>
+          <tr class="hairline-b align-top">
+            <td class="py-4 pr-4 font-display text-xl text-gold">2</td>
+            <td class="py-4 pr-4 font-display text-base text-navy" style="font-weight: 500;">Rental vacancy rate</td>
+            <td class="py-4 pr-4 text-stone-800">5%</td>
+            <td class="py-4 pr-4 text-stone-600 text-xs">3.3% (highest since 1999)</td>
+          </tr>
+          <tr class="hairline-b align-top">
+            <td class="py-4 pr-4 font-display text-xl text-gold">3</td>
+            <td class="py-4 pr-4 font-display text-base text-navy" style="font-weight: 500;">Unsheltered homelessness</td>
+            <td class="py-4 pr-4 text-stone-800">−50%</td>
+            <td class="py-4 pr-4 text-stone-600 text-xs">~320 people</td>
+          </tr>
+          <tr class="hairline-b align-top">
+            <td class="py-4 pr-4 font-display text-xl text-gold">4</td>
+            <td class="py-4 pr-4 font-display text-base text-navy" style="font-weight: 500;">Crime severity</td>
+            <td class="py-4 pr-4 text-stone-800">−15%</td>
+            <td class="py-4 pr-4 text-stone-600 text-xs">CSI 152.65 (down 11%)</td>
+          </tr>
+          <tr class="hairline-b align-top">
+            <td class="py-4 pr-4 font-display text-xl text-gold">5</td>
+            <td class="py-4 pr-4 font-display text-base text-navy" style="font-weight: 500;">Graffiti removal</td>
+            <td class="py-4 pr-4 text-stone-800">90% within 48h</td>
+            <td class="py-4 pr-4 text-stone-600 text-xs">No current standard</td>
+          </tr>
+          <tr class="hairline-b align-top">
+            <td class="py-4 pr-4 font-display text-xl text-gold">6</td>
+            <td class="py-4 pr-4 font-display text-base text-navy" style="font-weight: 500;">Permit speed (by category)</td>
+            <td class="py-4 pr-4 text-stone-800">−50% across simple, complex, rezoning</td>
+            <td class="py-4 pr-4 text-stone-600 text-xs">3–18+ months by type</td>
+          </tr>
+          <tr class="hairline-b align-top">
+            <td class="py-4 pr-4 font-display text-xl text-gold">7</td>
+            <td class="py-4 pr-4 font-display text-base text-navy" style="font-weight: 500;">Green mobility</td>
+            <td class="py-4 pr-4 text-stone-800">60% non-auto trips</td>
+            <td class="py-4 pr-4 text-stone-600 text-xs">~49% (2022)</td>
+          </tr>
+          <tr class="hairline-b align-top">
+            <td class="py-4 pr-4 font-display text-xl text-gold">8</td>
+            <td class="py-4 pr-4 font-display text-base text-navy" style="font-weight: 500;">Serious-injury traffic collisions</td>
+            <td class="py-4 pr-4 text-stone-800">−50% by 2030, trending toward zero</td>
+            <td class="py-4 pr-4 text-stone-600 text-xs">1–3 fatalities/yr</td>
+          </tr>
+          <tr class="hairline-b align-top">
+            <td class="py-4 pr-4 font-display text-xl text-gold">9</td>
+            <td class="py-4 pr-4 font-display text-base text-navy" style="font-weight: 500;">Downtown vacancy</td>
+            <td class="py-4 pr-4 text-stone-800">5% storefronts</td>
+            <td class="py-4 pr-4 text-stone-600 text-xs">~11% (current)</td>
+          </tr>
+          <tr class="hairline-b align-top">
+            <td class="py-4 pr-4 font-display text-xl text-gold">10</td>
+            <td class="py-4 pr-4 font-display text-base text-navy" style="font-weight: 500;">Trees planted</td>
+            <td class="py-4 pr-4 text-stone-800">5,000 by 2030</td>
+            <td class="py-4 pr-4 text-stone-600 text-xs">~500/year</td>
+          </tr>
+          <tr class="hairline-b align-top">
+            <td class="py-4 pr-4 font-display text-xl text-gold">11</td>
+            <td class="py-4 pr-4 font-display text-base text-navy" style="font-weight: 500;">GHG emissions</td>
+            <td class="py-4 pr-4 text-stone-800">−50% by 2030 (vs 2007)</td>
+            <td class="py-4 pr-4 text-stone-600 text-xs">−31% achieved</td>
+          </tr>
+          <tr class="hairline-b align-top">
+            <td class="py-4 pr-4 font-display text-xl text-gold">12</td>
+            <td class="py-4 pr-4 font-display text-base text-navy" style="font-weight: 500;">Stormwater upgrades</td>
+            <td class="py-4 pr-4 text-stone-800">Replace oldest 20% of system</td>
+            <td class="py-4 pr-4 text-stone-600 text-xs">100+ year-old pipes in service</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ============== BALANCE SHEET ============== -->
+    <section id="balance" class="mt-24 mb-10 reveal pt-12 double-rule">
+      <div class="font-mono text-[11px] uppercase tracking-[0.2em] mb-3 text-gold">◆ How we pay for it</div>
+      <h2 class="font-display text-4xl sm:text-5xl leading-[1.05] max-w-4xl text-navy" style="font-weight: 500;">
+        The Balance Sheet.
+      </h2>
+      <p class="mt-5 text-lg leading-relaxed max-w-3xl text-stone-700">
+        A safer, cleaner, greener, better-managed city — without raising taxes above CPI + growth.
+        The arithmetic is straightforward: spend smarter, not more.
+      </p>
+    </section>
+
+    <div class="grid lg:grid-cols-5 gap-8">
+      <div class="lg:col-span-3">
+        <div class="font-mono text-[11px] uppercase tracking-[0.2em] mb-3 text-gold">
+          ◆ Savings &amp; New Revenue (Steady-State)
+        </div>
+        <div class="space-y-2">
+          <div class="flex justify-between gap-4 hairline-b py-3">
+            <span class="text-stone-800">Competitive bidding for services</span>
+            <span class="font-mono whitespace-nowrap text-navy" style="font-weight: 600;">$2.4M/yr</span>
+          </div>
+          <div class="flex justify-between gap-4 hairline-b py-3">
+            <span class="text-stone-800">Zero-based budget review</span>
+            <span class="font-mono whitespace-nowrap text-navy" style="font-weight: 600;">$3–6M/yr</span>
+          </div>
+          <div class="flex justify-between gap-4 hairline-b py-3">
+            <span class="text-stone-800">Administrative efficiency (attrition + tech)</span>
+            <span class="font-mono whitespace-nowrap text-navy" style="font-weight: 600;">$1.5–2.5M/yr</span>
+          </div>
+          <div class="flex justify-between gap-4 hairline-b py-3">
+            <span class="text-stone-800">New property tax from 12,000 homes (by 2030)</span>
+            <span class="font-mono whitespace-nowrap text-navy" style="font-weight: 600;">$8–15M/yr</span>
+          </div>
+          <div class="flex justify-between gap-4 hairline-b py-3">
+            <span class="text-stone-800">Downtown vacancy reduction</span>
+            <span class="font-mono whitespace-nowrap text-navy" style="font-weight: 600;">$0.5–1M/yr</span>
+          </div>
+          <div class="flex justify-between gap-4 hairline-b py-3">
+            <span class="text-stone-800">Smart streetlighting (energy savings)</span>
+            <span class="font-mono whitespace-nowrap text-navy" style="font-weight: 600;">$0.5–1M/yr</span>
+          </div>
+          <div class="flex justify-between gap-4 hairline-b py-3">
+            <span class="text-stone-800">Climate investments (avoided emergency costs)</span>
+            <span class="font-mono whitespace-nowrap text-navy" style="font-weight: 600;">$1–2M/yr</span>
+          </div>
+          <div class="flex justify-between gap-4 pt-4 double-rule font-mono">
+            <span class="font-display text-lg text-navy" style="font-weight: 500;">Total at steady-state</span>
+            <span class="text-lg text-navy" style="font-weight: 600;">$17–31M / yr</span>
+          </div>
+        </div>
+
+        <p class="mt-6 text-sm text-stone-600 italic leading-relaxed">
+          <strong class="not-italic text-navy">Honest about timing:</strong>
+          these are steady-state numbers at the end of a four-year implementation. Year-one savings are a fraction.
+          The tax-cap glide path (Measure 66) reflects this — we do not promise day-one delivery of full savings.
+        </p>
+      </div>
+
+      <div class="lg:col-span-2 p-6" style="background-color: rgba(26,54,104,0.05); border: 1px solid rgba(26,54,104,0.18);">
+        <div class="font-mono text-[11px] uppercase tracking-[0.2em] mb-3 text-gold">◆ The Tax Glide Path</div>
+        <div class="space-y-4">
+          <div>
+            <div class="font-mono text-xs uppercase tracking-wider opacity-60 text-navy">Council's draft for 2026</div>
+            <div class="font-display text-3xl text-rust" style="font-weight: 600;">10.44%</div>
+          </div>
+          <div class="hairline pt-4">
+            <div class="font-mono text-xs uppercase tracking-wider opacity-60 text-navy">Year 1 (cap)</div>
+            <div class="font-display text-2xl text-navy" style="font-weight: 600;">6.5%</div>
+          </div>
+          <div>
+            <div class="font-mono text-xs uppercase tracking-wider opacity-60 text-navy">Year 2 (cap)</div>
+            <div class="font-display text-2xl text-navy" style="font-weight: 600;">5.0%</div>
+          </div>
+          <div>
+            <div class="font-mono text-xs uppercase tracking-wider opacity-60 text-navy">Year 3+ (target)</div>
+            <div class="font-display text-2xl text-gold" style="font-weight: 600;">~3.5%</div>
+            <div class="text-xs text-stone-600 mt-1">CPI + population growth</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============== WHAT WE ARE ============== -->
+    <div class="mt-24 reveal">
+      <div class="font-mono text-[11px] uppercase tracking-[0.2em] mb-3 text-gold">◆ Principles</div>
+      <h3 class="font-display text-3xl sm:text-4xl mb-8 text-navy" style="font-weight: 500;">
+        What we are — and what we're not.
+      </h3>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="p-6" style="background-color: rgba(34,114,71,0.06); border: 1px solid rgba(34,114,71,0.3);">
+          <div class="font-mono text-[11px] uppercase tracking-widest mb-4 flex items-center gap-2 text-moss">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            We are
+          </div>
+          <ul class="space-y-3">
+            <li class="flex gap-3 text-sm leading-relaxed text-stone-800"><span class="text-moss flex-shrink-0">→</span>Govern like managers — measure, adjust, deliver</li>
+            <li class="flex gap-3 text-sm leading-relaxed text-stone-800"><span class="text-moss flex-shrink-0">→</span>Consult before building — and listen to the answer</li>
+            <li class="flex gap-3 text-sm leading-relaxed text-stone-800"><span class="text-moss flex-shrink-0">→</span>Simulate before constructing — Digital Twin, not demolition</li>
+            <li class="flex gap-3 text-sm leading-relaxed text-stone-800"><span class="text-moss flex-shrink-0">→</span>Protect the environment with results, not slogans</li>
+            <li class="flex gap-3 text-sm leading-relaxed text-stone-800"><span class="text-moss flex-shrink-0">→</span>Enforce the rules that exist — before inventing new ones</li>
+            <li class="flex gap-3 text-sm leading-relaxed text-stone-800"><span class="text-moss flex-shrink-0">→</span>Respect taxpayers — every dollar audited, every quarter reported</li>
+            <li class="flex gap-3 text-sm leading-relaxed text-stone-800"><span class="text-moss flex-shrink-0">→</span>Cost every promise — no measure without a budget line</li>
+          </ul>
+        </div>
+        <div class="p-6" style="background-color: rgba(181,52,31,0.06); border: 1px solid rgba(181,52,31,0.3);">
+          <div class="font-mono text-[11px] uppercase tracking-widest mb-4 flex items-center gap-2 text-rust">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            We aren't
+          </div>
+          <ul class="space-y-3">
+            <li class="flex gap-3 text-sm leading-relaxed text-stone-800"><span class="text-rust flex-shrink-0">→</span>We don't do ideology — we do results</li>
+            <li class="flex gap-3 text-sm leading-relaxed text-stone-800"><span class="text-rust flex-shrink-0">→</span>We don't make promises we can't measure</li>
+            <li class="flex gap-3 text-sm leading-relaxed text-stone-800"><span class="text-rust flex-shrink-0">→</span>We don't pick fights — we fix problems</li>
+            <li class="flex gap-3 text-sm leading-relaxed text-stone-800"><span class="text-rust flex-shrink-0">→</span>We don't spend first and justify later</li>
+            <li class="flex gap-3 text-sm leading-relaxed text-stone-800"><span class="text-rust flex-shrink-0">→</span>We don't try things in real life when we can simulate them first</li>
+            <li class="flex gap-3 text-sm leading-relaxed text-stone-800"><span class="text-rust flex-shrink-0">→</span>We don't deploy public surveillance — better lighting, not behavioural AI</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============== FAQ ============== -->
+    <section id="faq" class="mt-24 mb-10 reveal pt-12 double-rule">
+      <div class="font-mono text-[11px] uppercase tracking-[0.2em] mb-3 text-gold">◆ Responses to common criticisms</div>
+      <h2 class="font-display text-4xl sm:text-5xl leading-[1.05] max-w-4xl text-navy" style="font-weight: 500;">
+        The honest answers.
+      </h2>
+      <p class="mt-5 text-lg leading-relaxed max-w-3xl text-stone-700">
+        Every framework attracts critique. Here are the questions we hear most — and the answers we stand by.
+      </p>
+    </section>
+
+    <div class="space-y-2">
+      <details class="hairline-b">
+        <summary class="flex items-center justify-between gap-4 py-4">
+          <span class="font-display text-lg sm:text-xl text-navy" style="font-weight: 500;">"You're too pro-business / anti-environment"</span>
+          <span class="faq-plus flex-shrink-0 text-gold"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+        </summary>
+        <p class="pb-5 text-stone-700 leading-relaxed pr-8 max-w-3xl">This framework includes 50% GHG reduction by 2030, 5,000 new trees, 60% green mobility, and Climate Friendly Homes expansion — with published uptake numbers, which the current council has not provided. That is not anti-environment. It is results-oriented environmentalism.</p>
+      </details>
+
+      <details class="hairline-b">
+        <summary class="flex items-center justify-between gap-4 py-4">
+          <span class="font-display text-lg sm:text-xl text-navy" style="font-weight: 500;">"You're cutting services / austerity"</span>
+          <span class="faq-plus flex-shrink-0 text-gold"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+        </summary>
+        <p class="pb-5 text-stone-700 leading-relaxed pr-8 max-w-3xl">We are not cutting services — we are ensuring every dollar delivers value. Good management isn't austerity, it's responsibility. Every dollar saved through ZBB and competitive bidding gets redirected to frontline services: more bylaw officers, faster permits, cleaner streets.</p>
+      </details>
+
+      <details class="hairline-b">
+        <summary class="flex items-center justify-between gap-4 py-4">
+          <span class="font-display text-lg sm:text-xl text-navy" style="font-weight: 500;">"You don't care about homelessness"</span>
+          <span class="faq-plus flex-shrink-0 text-gold"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+        </summary>
+        <p class="pb-5 text-stone-700 leading-relaxed pr-8 max-w-3xl">Compassion without accountability helps no one. The framework commits to a 50% reduction in unsheltered homelessness through Housing-First, supportive housing, and relentless advocacy to the Province. But we also enforce — because residents, businesses, and vulnerable people themselves deserve safe public spaces. The phased plan proves we understand: you cannot enforce without capacity.</p>
+      </details>
+
+      <details class="hairline-b">
+        <summary class="flex items-center justify-between gap-4 py-4">
+          <span class="font-display text-lg sm:text-xl text-navy" style="font-weight: 500;">"You just want to privatize everything"</span>
+          <span class="faq-plus flex-shrink-0 text-gold"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+        </summary>
+        <p class="pb-5 text-stone-700 leading-relaxed pr-8 max-w-3xl">We want competitive bidding where the private sector demonstrably delivers better at lower cost — waste collection, street cleaning. Workers are protected with mandatory re-employment clauses. The City retains oversight. The Phoenix "managed competition" model even lets City workers bid against private firms.</p>
+      </details>
+
+      <details class="hairline-b">
+        <summary class="flex items-center justify-between gap-4 py-4">
+          <span class="font-display text-lg sm:text-xl text-navy" style="font-weight: 500;">"Referendums slow everything down"</span>
+          <span class="faq-plus flex-shrink-0 text-gold"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+        </summary>
+        <p class="pb-5 text-stone-700 leading-relaxed pr-8 max-w-3xl">Only new (non-lifecycle) capital projects over $25M go to referendum. Lifecycle maintenance is excluded so essential infrastructure proceeds. That means a handful of major decisions per term, not every speed bump. Crystal Pool (58.7% Yes, Feb 2025) proved Victorians can make informed decisions on major spending.</p>
+      </details>
+
+      <details class="hairline-b">
+        <summary class="flex items-center justify-between gap-4 py-4">
+          <span class="font-display text-lg sm:text-xl text-navy" style="font-weight: 500;">"You're going to put surveillance in our streetlights"</span>
+          <span class="faq-plus flex-shrink-0 text-gold"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+        </summary>
+        <p class="pb-5 text-stone-700 leading-relaxed pr-8 max-w-3xl">No. The framework explicitly REJECTS audio surveillance, behavioural AI, gunshot/scream detection, and "directed brightness at suspect" functionality. Measure 30 is the Kelowna/Halifax model: LED + IoT for outage detection and brightness modulation, optional environmental sensors. The ~21% nighttime crime reduction from better lighting alone is real and does not require any surveillance.</p>
+      </details>
+
+      <details class="hairline-b">
+        <summary class="flex items-center justify-between gap-4 py-4">
+          <span class="font-display text-lg sm:text-xl text-navy" style="font-weight: 500;">"How does this differ from a candidate platform?"</span>
+          <span class="faq-plus flex-shrink-0 text-gold"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+        </summary>
+        <p class="pb-5 text-stone-700 leading-relaxed pr-8 max-w-3xl">This is a framework, not a campaign. It is open for adoption by any candidate, in whole or in part. Multiple candidates can run on these ideas, and they should. The goal is to raise the standard of debate — to make costed, sourced, measurable platforms with quarterly accountability the new normal in Victoria.</p>
+      </details>
+    </div>
+
+    <!-- ============== ADOPT ============== -->
+    <section id="adopt" class="mt-32 pb-20">
+      <div class="double-rule pt-12 reveal">
+        <div class="font-mono text-[11px] uppercase tracking-[0.2em] text-gold">◆ The Choice on October 17, 2026</div>
+        <h2 class="font-display text-5xl sm:text-7xl mt-4 leading-[0.95] text-navy" style="font-weight: 500;">
+          This framework is <em class="font-display text-gold" style="font-weight: 400;">open.</em>
+        </h2>
+        <p class="mt-6 max-w-3xl text-lg leading-relaxed text-stone-700">
+          This is a framework, not a campaign. It is open for adoption, adaptation, and improvement
+          by any candidate or civic organization in the Victoria 2026 election cycle. Multiple
+          candidates can run on these ideas — and they should. The goal is to raise the standard of debate.
+        </p>
+      </div>
+
+      <div class="mt-12 grid md:grid-cols-2 gap-8">
+        <div>
+          <div class="font-mono text-[11px] uppercase tracking-widest mb-3 text-navy">For residents</div>
+          <p class="text-stone-700 mb-6 leading-relaxed">
+            Get a quarterly digest of which measures are advancing, which are stuck,
+            and what the next council needs to hear from you.
+          </p>
+
+          <!-- Netlify Form -->
+          <form name="newsletter" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/?subscribed=true" class="space-y-2">
+            <input type="hidden" name="form-name" value="newsletter" />
+            <p hidden><label>Don't fill this out: <input name="bot-field" /></label></p>
+
+            <div class="flex flex-col sm:flex-row gap-2">
+              <input type="email" name="email" required placeholder="you@example.com"
+                class="flex-1 px-4 py-3 bg-transparent border outline-none font-mono text-sm text-navy"
+                style="border-color: rgba(26,54,104,0.3);">
+              <button type="submit"
+                class="px-6 py-3 font-mono text-xs uppercase tracking-widest flex items-center justify-center gap-2 bg-navy text-white whitespace-nowrap hover:-translate-y-px transition-transform">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                Subscribe
+              </button>
+            </div>
+          </form>
+
+          <div id="subscribed-message" class="mt-3 font-mono text-xs flex items-center gap-2 text-moss" style="display: none;">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            You're in. Welcome.
+          </div>
+        </div>
+
+        <div class="md:pl-6 md:border-l" style="border-color: rgba(26,54,104,0.18);">
+          <div class="font-mono text-[11px] uppercase tracking-widest mb-3 text-navy">For candidates and civic organizations</div>
+          <p class="text-stone-700 mb-4 leading-relaxed">
+            There is no copyright restriction on the use of this framework. Attribution
+            is appreciated but not required. Adapt freely.
+          </p>
+          <div class="space-y-2">
+            <a href="mailto:capitalprojectyyj@gmail.com" class="flex items-center gap-2 font-mono text-sm text-navy hover:opacity-100 opacity-90">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              capitalprojectyyj@gmail.com
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
+            </a>
+            <a href="https://www.notion.so/casagou/The-Program-A-City-That-Works-36ce245ae5f3813eaafdf1a7eae2a81a" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 font-mono text-sm text-navy hover:opacity-100 opacity-90">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+              Read the full framework
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============== FOOTER ============== -->
+  <footer class="hairline bg-navy">
+    <div class="max-w-6xl mx-auto px-5 py-12">
+      <div class="grid md:grid-cols-3 gap-8 mb-10">
+        <div>
+          <div class="flex items-baseline gap-3">
+            <span class="font-mono text-[10px] tracking-[0.2em] uppercase text-gold">№ 01</span>
+            <span class="font-display italic text-xl text-white" style="font-weight: 500;">A City That Works</span>
+          </div>
+          <p class="mt-4 text-sm leading-relaxed text-white/70">
+            A Citizens' Framework for Victoria 2026. 82 measures. Every one costed.
+            Zero ideology. Just results.
+          </p>
+        </div>
+        <div>
+          <div class="font-mono text-[10px] uppercase tracking-[0.2em] mb-3 text-gold">Sections</div>
+          <div class="space-y-2 text-sm">
+            <a href="#pillars" class="block text-white/70 hover:text-white">Five Pillars</a>
+            <a href="#method" class="block text-white/70 hover:text-white">The Method</a>
+            <a href="#measures" class="block text-white/70 hover:text-white">82 Measures</a>
+            <a href="#commitments" class="block text-white/70 hover:text-white">Scorecard</a>
+            <a href="#balance" class="block text-white/70 hover:text-white">Balance Sheet</a>
+            <a href="#faq" class="block text-white/70 hover:text-white">Q&amp;A</a>
+            <a href="#adopt" class="block text-white/70 hover:text-white">Adopt</a>
+          </div>
+        </div>
+        <div>
+          <div class="font-mono text-[10px] uppercase tracking-[0.2em] mb-3 text-gold">Contact</div>
+          <div class="space-y-2">
+            <a href="mailto:capitalprojectyyj@gmail.com" class="block text-sm text-white/70 hover:text-white">
+              capitalprojectyyj@gmail.com
+            </a>
+            <div class="text-sm text-white/70">Victoria, BC · Canada</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="rule-gold pt-6 flex flex-wrap items-center justify-between gap-3 font-mono text-[10px] uppercase tracking-widest text-white/60">
+        <div>© 2026 — Open framework. No copyright restriction.</div>
+        <div>Built on the unceded territories of the Songhees and Esquimalt Nations.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============== SCRIPT: render 82 measures + mobile menu + form ============== -->
+  <script>
+    // ----- Mobile menu -----
+    document.getElementById('menuToggle').addEventListener('click', () => {
+      document.getElementById('mobileMenu').classList.toggle('open');
+    });
+    document.querySelectorAll('#mobileMenu a').forEach(a => {
+      a.addEventListener('click', () => {
+        document.getElementById('mobileMenu').classList.remove('open');
+      });
+    });
+
+    // ----- Show subscribed message if returning from form submission -----
+    if (new URLSearchParams(window.location.search).get('subscribed') === 'true') {
+      const msg = document.getElementById('subscribed-message');
+      if (msg) msg.style.display = 'flex';
+    }
+
+    // ----- 82 measures data -----
+    const PILLARS = {
+      foundation: { label: 'Foundation: Host Nations',   colorVar: '#7A6B3D', count: 5 },
+      liveable:   { label: 'A Liveable City',            colorVar: '#1A3668', count: 20 },
+      safe:       { label: 'A Safe City',                colorVar: '#1A3668', count: 17 },
+      beautiful:  { label: 'A Beautiful City',           colorVar: '#1A3668', count: 22 },
+      managed:    { label: 'A Well-Managed City',        colorVar: '#1A3668', count: 12 },
+      democratic: { label: 'A Democratic City',          colorVar: '#1A3668', count: 6 },
+    };
+
+    const MEASURES = [
+      // FOUNDATION (1-5)
+      { id: 1, pillar: 'foundation', section: 'Honouring the Host Nations', title: 'Standing government-to-government working tables', body: 'Quarterly working tables between the City and the elected leadership of the Songhees and Esquimalt Nations. Standing agendas: shared infrastructure, land use, cultural protocols, economic opportunities, public safety. Published meeting summaries (with Nation approval).', budget: '$150K/year. The largest cost of broken relationships is litigation and stalled projects.' },
+      { id: 2, pillar: 'foundation', section: 'Honouring the Host Nations', title: 'Indigenous procurement standard', body: 'Adopt a 5% Indigenous procurement target. Prioritize Songhees and Esquimalt Nation-owned and -affiliated businesses where qualified. Simplify RFP processes for small Indigenous suppliers.', budget: 'Revenue-neutral. Changes who gets work, not total spending.' },
+      { id: 3, pillar: 'foundation', section: 'Honouring the Host Nations', title: 'lək̓ʷəŋən place names and signage', body: 'Continue and accelerate dual-naming of streets, parks, and public buildings using lək̓ʷəŋən place names, with Nation consent. Restore Indigenous names that predate colonial ones where there is clear historical record.', budget: '$50K/year, integrated into normal signage lifecycle.' },
+      { id: 4, pillar: 'foundation', section: 'Honouring the Host Nations', title: 'Cultural protocols for City operations', body: 'Adopt protocols for Council meetings, civic events, and major project consultations — including territorial acknowledgments developed with the Nations (not generic boilerplate), and Nation participation in major land use decisions.' },
+      { id: 5, pillar: 'foundation', section: 'Honouring the Host Nations', title: 'Permanent urban Indigenous services liaison', body: 'Establish a municipal liaison working with the Victoria Native Friendship Centre, Surrounded by Cedar, and others to ensure City infrastructure is accessible for urban Indigenous residents.', budget: '$120K/year. Offset by reduced friction on consultations.' },
+
+      // LIVEABLE — Housing (6-11)
+      { id: 6, pillar: 'liveable', section: 'Housing', title: 'Beat provincial housing targets — with the right composition', body: '12,000+ new homes by 2030 (vs. provincial target 4,902). 25% missing middle, 20% three-bedroom+, 15% non-market, 30% purpose-built rental. CMHC data shows Victoria builds 56 apartments per townhouse — the issue is composition, not volume.', budget: '$8–15M/year in new ongoing property tax revenue at end of term.' },
+      { id: 7, pillar: 'liveable', section: 'Housing', title: 'Cut permit times by category — publish the numbers', body: 'Simple permits under 6 weeks. Complex under 6 months. Rezoning under 9 months. One-stop development centre, online e-permitting, AI-assisted pre-screening (Kelowna KAI model). Kingston targets 10 business days on simple permits — we will match it.', budget: '~$700K/year for platform + AI tools. Offset by 4–6 FTE manual review reduction ($400–600K/yr). Net roughly neutral.' },
+      { id: 8, pillar: 'liveable', section: 'Housing', title: 'Push vacancy rate to 5%', body: 'Already at 3.3% (highest since 1999). Lock in progress by pre-zoning for missing middle, targeted DCC reductions for purpose-built rental, expedited permits for below-market units.' },
+      { id: 9, pillar: 'liveable', section: 'Housing', title: 'Protect tenants from demoviction', body: 'Stronger controls when buildings are redeveloped, mandatory replacement rentals, Renters\' Hub for tenant rights info, assistance programs during transitions. More housing, not fewer tenants.' },
+      { id: 10, pillar: 'liveable', section: 'Housing', title: 'Transparent housing allocation — digital, rules-based', body: 'Single digital portal for City-affiliated waitlists. Public point-based scoring (essential worker +20, disability +50, time on list +1/month). Real-time queue visibility. No outside intervention. After 3 declines, move to back of queue.', budget: '$250K platform + maintenance. Savings of 3–5 FTE manual admin ($300–500K/yr).' },
+      { id: 11, pillar: 'liveable', section: 'Housing', title: 'Reduce unsheltered homelessness by 50%', body: 'From ~320 to under 160 through Housing-First: supportive housing with wraparound services, in partnership with BC Housing. Build capacity first, then enforce. Victoria carries 89% of regional shelter beds — we will demand the other 12 municipalities take their share.', budget: 'City share: $2–3M/year above current. Offset by reduced encampment damage ($11M cumulative) and bylaw load.' },
+
+      // LIVEABLE — Families (12-13)
+      { id: 12, pillar: 'liveable', section: 'Families', title: 'Advocate for 500 new childcare spaces', body: 'Fast-track childcare permits in 60 days. Pre-zone community buildings, churches, commercial spaces for childcare use. Offer city-owned space below-market to licensed operators. Advocate to Province for priority housing for ECEs.', budget: '$300K/year in foregone lease revenue. Offset by parent labour-force participation.' },
+      { id: 13, pillar: 'liveable', section: 'Families', title: 'Improve school food quality', body: 'Farm-to-School standard with School District 61 prioritizing Vancouver Island producers. Partner with local chefs. Daily meal photos on school apps so parents see exactly what their children are served.', budget: '$150K/year City co-funding. Leverages SD61 and provincial nutrition programs.' },
+
+      // LIVEABLE — Cleanliness (14-18)
+      { id: 14, pillar: 'liveable', section: 'A Clean City', title: '90% of graffiti removed within 48 hours', body: 'Rapid-response cleaning crews. Expanded DVBA Clean Team. Real-time dispatch through ConnectVictoria. Published service standard, tracked and reported quarterly.' },
+      { id: 15, pillar: 'liveable', section: 'A Clean City', title: 'Competitive bidding for waste collection and street cleaning', body: 'Zone-based competitive tenders. Performance standards: response times, cleanliness scores, citizen surveys. Employee protection: 80% of City workers must be offered equivalent positions. Phoenix-style "managed competition" allows City workers to bid against private firms — kept services public while saving $38M in Phoenix. Canadian average: 24% savings.', budget: 'Current cost: ~$12M/yr. At 20% savings (conservative): $2.4M/year freed up.' },
+      { id: 16, pillar: 'liveable', section: 'A Clean City', title: 'Anti-rat and pest management plan', body: 'Locking lids on commercial bins. QR codes on public bins for real-time full-bin reports. Modern pest methods (dry ice, smart traps, grate covers). Coordination with restaurants on waste storage.', budget: '$200K/yr pest management + $50K setup / $20K/yr QR system. Offset by reduced damage.' },
+      { id: 17, pillar: 'liveable', section: 'A Clean City', title: 'Extended sanitation hours', body: 'Daily street sweeping and bin emptying in downtown core, including evenings and weekends. Clean when it matters, not just office hours.' },
+      { id: 18, pillar: 'liveable', section: 'A Clean City', title: 'Community pride — replace graffiti with public art', body: 'Expand "My Great Neighbourhood" grants for gardens, murals, block clean-ups. Commission neighbourhood-specific murals: lək̓ʷəŋən history, maritime heritage, natural beauty.' },
+
+      // LIVEABLE — Mobility (19-25)
+      { id: 19, pillar: 'liveable', section: 'Getting Around', title: 'Adaptive traffic signal control on major corridors', body: 'Phased: Year 1 — 10-intersection pilot on Douglas Street ($1.5–2M). Year 2–3 — 30–40 more intersections on Hillside, Blanshard ($3–4M). Year 4 — optional extension based on measured results. Pittsburgh\'s Surtrac achieved −25% travel time, −21% emissions.', budget: 'Total over 4 years: $6–9M capital + $300K/yr maintenance at full deployment. Do not proceed past Phase 1 without measured outcomes.' },
+      { id: 20, pillar: 'liveable', section: 'Getting Around', title: 'Complete the All Ages & Abilities bike network', body: 'Close gaps in the 36 km built since 2017. Extend protected lanes into neighbourhoods. Improve bike parking and end-of-trip facilities. Physical separation from traffic — not painted lines.' },
+      { id: 21, pillar: 'liveable', section: 'Getting Around', title: 'Modernize transit fare payment', body: 'Work with BC Transit to deliver contactless payment (credit, debit, mobile). Free Wi-Fi on buses and hubs. Table stakes for a modern system — Victoria is behind every comparable Canadian city.' },
+      { id: 22, pillar: 'liveable', section: 'Getting Around', title: 'Champion Westshore rapid transit and E&N corridor', body: 'Formally endorse LRT/BRT on E&N as highest-priority regional transit investment. Protect E&N right-of-way within Victoria. Co-fund station-area planning with CRD. Dedicated bus lanes on Douglas in the meantime.', budget: '$300K/year for transportation planning + CRD/provincial co-funding. Major capital is provincial/federal.' },
+      { id: 23, pillar: 'liveable', section: 'Getting Around', title: 'Expand RapidBus and dedicated bus lanes', body: 'Make transit time-competitive with driving on Douglas, Hillside, and other major corridors. If the bus is faster than the car, people will take the bus.' },
+      { id: 24, pillar: 'liveable', section: 'Getting Around', title: 'Parking that supports business — rational pricing, real-time data', body: 'First-hour free parking in commercial areas. Real-time parking availability via existing camera infrastructure + open data. ~30% of downtown traffic is people circling for parking.', budget: 'First-hour free: $1.5–2.5M/yr foregone meter revenue, partially offset by commercial activity. Real-time system: $300K setup, $80K/yr.' },
+      { id: 25, pillar: 'liveable', section: 'Getting Around', title: 'Fix roads first', body: 'Prioritize the infrastructure maintenance backlog. Pothole repair: report-to-fix within 7 days. Road condition tracked quarterly. Stop building new things while the old things crumble.' },
+
+      // SAFE — Public Safety (26-32)
+      { id: 26, pillar: 'safe', section: 'Strengthen Public Safety', title: 'Create a Downtown Public Order Team (DPOT)', body: 'One unified operation: VicPD + Bylaw + Public Works sanitation + Outreach. Single daily 8 AM briefing, single field supervisor per shift, single weekly metrics. Phased: Days 0–90 visible order; Months 3–12 capacity-building; Months 12–36 root causes.' },
+      { id: 27, pillar: 'safe', section: 'Strengthen Public Safety', title: 'Extend bylaw enforcement to 6 AM – 10 PM, 7 days a week', body: 'Current hours (7 AM – 4 PM) miss the disorder peaks. Problems don\'t stop at 4 PM — neither should enforcement. The current council added 12 bylaw staff but 80% of their time is consumed by encampment management.', budget: '$1–1.5M/yr for additional shifts. Funded primarily by waste competition savings ($2.4M/yr).' },
+      { id: 28, pillar: 'safe', section: 'Strengthen Public Safety', title: 'Target chronic disorder drivers with data', body: 'Focus policing on trafficking, weapons, and violent repeat offenders. Coordinate with Crown and courts. The principle: relentless with the dangerous, compassionate with the vulnerable. These are not the same people.' },
+      { id: 29, pillar: 'safe', section: 'Strengthen Public Safety', title: 'Resolve the VicPD funding dispute with Esquimalt', body: 'Renegotiated formula based on transparent service-consumption metrics, reviewed every 4 years. Binding mediation through BC Police Services Branch if parties cannot agree. Publish quarterly service consumption vs. funding split.', budget: '$0 to $1.5M/yr depending on negotiated outcome.' },
+      { id: 30, pillar: 'safe', section: 'Strengthen Public Safety', title: 'Modern smart streetlighting — Kelowna/Halifax model', body: 'Full LED conversion of ~7,000–10,000 streetlights. IoT platform for outage detection, brightness modulation, energy management. Optional environmental sensors. EXPLICITLY: no audio surveillance, no facial recognition, no behavioural AI. Welsh & Farrington show ~21% nighttime crime reduction from better lighting alone.', budget: '$3–5M over 3 years. Self-financing in 3–4 years via $500K–1M/yr electricity savings.' },
+      { id: 31, pillar: 'safe', section: 'Strengthen Public Safety', title: 'Weekly public safety dashboard', body: 'Encampments cleared, response times, sidewalk obstructions, drug-use enforcement, referrals to shelter/treatment, needles collected. Published weekly. No more governing in the dark.' },
+      { id: 32, pillar: 'safe', section: 'Strengthen Public Safety', title: '15% crime reduction by 2030', body: 'Building on current momentum (CSI down 11% in 2024). Hot-spot policing, visible foot and bike patrols downtown, quarterly community safety surveys. Cities combining unified command + better lighting + data-driven policing consistently achieve 15–25% reductions.' },
+
+      // SAFE — Public Spaces (33-36)
+      { id: 33, pillar: 'safe', section: 'Restore Order to Public Spaces', title: 'Enforce existing bylaws consistently', body: 'Victoria already has rules for designated parks (shelters down by 7 AM), sidewalk obstruction, and public drug use (since May 2024). The problem is enforcement capacity, not missing rules. We don\'t need new laws — we need to enforce the ones we have.' },
+      { id: 34, pillar: 'safe', section: 'Restore Order to Public Spaces', title: 'Rapid removal protocol for downtown', body: 'Same-day clearing of structures obstructing sidewalks and doorways. Documented process: 30–60 min compliance window + outreach engagement → if non-compliant, remove, clean, restore. Property stored for retrieval. Humane, consistent, predictable.' },
+      { id: 35, pillar: 'safe', section: 'Restore Order to Public Spaces', title: 'Capacity-first enforcement', body: 'Publish daily 5 PM dashboard of available shelter spaces with suitability flags (women-only, couples, pets, mobility). Enforce when capacity exists and transport is offered. Track refusals vs. acceptances — this data becomes advocacy ammunition for the Province.' },
+      { id: 36, pillar: 'safe', section: 'Restore Order to Public Spaces', title: 'Reclaim priority public spaces', body: 'Inner Harbour and waterfront (7 AM – midnight, foot and bike patrols). Centennial Square and Pandora (DPOT focus). Beacon Hill Park (regular patrols). Massive visible presence → interpellation → referrals → sustained presence until order is restored.' },
+
+      // SAFE — Lighting (37)
+      { id: 37, pillar: 'safe', section: 'Better Lighting', title: 'Light Victoria properly — all night', body: 'Dim intensity progressively while maintaining minimum lighting everywhere, all night (LED makes this practical). Restore warm, inviting lighting that complements heritage architecture. Encourage storefront lighting at night — lit storefronts contribute to street safety.', budget: 'LED conversion captured in Measure 30. Incremental for extended hours: $150K/yr.' },
+
+      // SAFE — Vision Zero (38-42)
+      { id: 38, pillar: 'safe', section: 'Vision Zero', title: 'Redesign the most dangerous intersections', body: 'Protected left turns, better crosswalk lighting, traffic calming at Blanshard & Hillside, Douglas Street, and other crash hotspots. Study each intersection, model the fix in the Digital Twin, implement the best solution. Target: −50% serious-injury collisions by 2030.' },
+      { id: 39, pillar: 'safe', section: 'Vision Zero', title: '30 km/h on residential and downtown streets', body: 'With speed humps, curb bulges, and physical design that makes speeding impractical. Not just signs — physical infrastructure.' },
+      { id: 40, pillar: 'safe', section: 'Vision Zero', title: 'Automated speed cameras near every school and playground', body: 'Within the BC framework that authorizes municipal speed and red-light cameras. Zero tolerance for speeding where children are present.' },
+      { id: 41, pillar: 'safe', section: 'Vision Zero', title: 'Protected bike lanes on all major routes', body: 'Not just downtown — connecting neighbourhoods. Physical separation, not painted lines.' },
+      { id: 42, pillar: 'safe', section: 'Vision Zero', title: 'Safety audit for every new road project', body: 'Vision Zero review built into the approval process. No new infrastructure that creates new danger.' },
+
+      // BEAUTIFUL — Politics of Beauty (43-49)
+      { id: 43, pillar: 'beautiful', section: 'Politics of Beauty', title: 'Strict design standards in heritage areas', body: 'Complete the Downtown Core Area Plan and Old Town design guidelines. Height and design controls to protect sightlines and human-scale streetscapes. Like the great European cities, Victoria\'s beauty comes from coherent design.' },
+      { id: 44, pillar: 'beautiful', section: 'Politics of Beauty', title: 'Restore Victoria\'s distinctive street furniture', body: 'Establish a Victoria Heritage Street Furniture Standard for lamp posts, benches, planters, bus shelters. Heritage-consistent designs as items are replaced. Public-private advertising partnerships for bus shelters and kiosks.', budget: '$300K/year incremental. Bus shelters largely offset by advertising revenue.' },
+      { id: 45, pillar: 'beautiful', section: 'Politics of Beauty', title: 'Enhance key public spaces', body: 'Centennial Square, Bastion Square, and the waterfront deserve investment. Better lighting, seating, landscaping, and programming (markets, events, performances). These are Victoria\'s living rooms.' },
+      { id: 46, pillar: 'beautiful', section: 'Politics of Beauty', title: 'Protect and restore heritage buildings', body: 'Incentives for adaptive reuse. Tax breaks or grants for facade restoration. Zero tolerance for demolition by neglect in Heritage Conservation Areas.', budget: '$500K/year heritage restoration fund. Leverages private investment at 5–10x.' },
+      { id: 47, pillar: 'beautiful', section: 'Politics of Beauty', title: 'Expand waterfront walkways', body: 'Connect more of Victoria\'s coastline for public access. A world-class waterfront promenade, maintained year-round.' },
+      { id: 48, pillar: 'beautiful', section: 'Politics of Beauty', title: 'Extend heritage and ornamental lighting hours', body: 'Victoria\'s ornamental lighting on heritage buildings and the harbour should not switch off at 10 PM. Maintain heritage lighting until midnight. A city known for beauty should be beautiful after dark.', budget: '$75K/year electricity. LED conversion minimizes this.' },
+      { id: 49, pillar: 'beautiful', section: 'Politics of Beauty', title: 'Elevate parks and gardens', body: 'Put the art of gardening at the heart of the Parks department\'s mission. Not "naturalization" by default — intentional beauty. Beacon Hill Park, Inner Harbour gardens, and neighbourhood parks should be showcases.' },
+
+      // BEAUTIFUL — Cultural Life (50-52)
+      { id: 50, pillar: 'beautiful', section: 'Cultural & Festive Life', title: 'Extended hours for civic cultural spaces', body: 'Crystal Garden, McPherson Theatre programming, public libraries — extended evening and weekend hours. Two evenings/week open until 9 PM. Sunday hours for libraries.', budget: '$200K/year for extended staff hours.' },
+      { id: 51, pillar: 'beautiful', section: 'Cultural & Festive Life', title: 'Activate outdoor spaces for year-round use', body: 'Heated outdoor patios (electric, non-polluting). Night markets, pop-ups, seasonal programming in public squares. Encourage busking and street performance.' },
+      { id: 52, pillar: 'beautiful', section: 'Cultural & Festive Life', title: 'Sport facilities — use them fully', body: 'Recreational facilities open 6 AM to 10 PM, expanded weekends. Partner with employers for off-peak corporate access — revenue and employee health.' },
+
+      // BEAUTIFUL — Technology Leader (53-57)
+      { id: 53, pillar: 'beautiful', section: 'Technology Leader', title: 'Build a Digital Twin of Victoria — downtown core first', body: 'Years 1–2: downtown core. Years 3–4: expansion to citywide street and utility network. Simulate any project before spending a dollar. Citizens visualize proposed changes before voting in referendums. Helsinki, Singapore, Boston have done this — Victoria can do it pragmatically.', budget: '$2.5–4M setup over 4 years + $400–600K/yr ongoing. Payback through avoided planning errors typically 3–5 years.' },
+      { id: 54, pillar: 'beautiful', section: 'Technology Leader', title: 'Adaptive traffic signal control', body: 'Covered in detail under Mobility (Measure 19). The Digital Twin and adaptive signals are complementary: the Twin models scenarios offline, the adaptive system operates the network in real time.' },
+      { id: 55, pillar: 'beautiful', section: 'Technology Leader', title: 'Favour local technology companies in procurement', body: 'Prioritize local Victoria tech companies in City procurement of digital tools. Best way to support local business is contracts, not subsidies. Data stored on Canadian servers under Canadian privacy law.' },
+      { id: 56, pillar: 'beautiful', section: 'Technology Leader', title: 'Open data portal and environmental sensors', body: 'Expand open data: real-time transit, traffic counts, air quality, parking. Deploy air quality sensors in key locations for wildfire smoke season. Free public Wi-Fi at Centennial Square, Inner Harbour, all City facilities.', budget: '$225K setup + $45K/yr ongoing.' },
+      { id: 57, pillar: 'beautiful', section: 'Technology Leader', title: 'Support EV charging infrastructure', body: 'Work with BC Hydro and private operators to expand public EV charging at City parkades, community centres, new developments. Require EV-ready wiring in new construction.', budget: '$0 direct cost for private installs. City parkade chargers: $200K over term, recoverable through usage fees.' },
+
+      // BEAUTIFUL — Climate (58-64)
+      { id: 58, pillar: 'beautiful', section: 'Climate Resilience', title: 'Reaffirm and pursue Victoria\'s climate targets', body: '50% community GHG reduction by 2030 vs. 2007 (need 19 more percentage points from 31% already achieved). 100% renewable by 2050. Track and PUBLISH progress annually, including Climate Friendly Homes uptake numbers.' },
+      { id: 59, pillar: 'beautiful', section: 'Climate Resilience', title: 'Upgrade aging stormwater infrastructure', body: 'Replace oldest systems first. Incorporate green infrastructure: permeable surfaces, rain gardens, urban wetlands. Prepare coastal areas for sea-level rise. Pipes over 100 years old are ticking time bombs.', budget: '$5–8M/year capital (partially budgeted). Seek federal/provincial infrastructure grants.' },
+      { id: 60, pillar: 'beautiful', section: 'Climate Resilience', title: 'Expand Climate Friendly Homes program', body: 'More rebates for insulation, heat pumps, solar. A homeowner who saves $200/month on energy bills doesn\'t need ideology to support climate action — they need a good program.' },
+      { id: 61, pillar: 'beautiful', section: 'Climate Resilience', title: 'Plant 5,000 new trees by 2030', body: 'Climate-resilient species. Increase urban canopy from 28% toward 30%+. Free seedlings for homeowners — 75% of Victoria\'s urban forest is on private land.' },
+      { id: 62, pillar: 'beautiful', section: 'Climate Resilience', title: '60% of trips by transit, walking, or cycling by 2030', body: 'Accelerating the Official Community Plan\'s 2041 target by 11 years. Less congestion, lower emissions, better health, livelier streets.' },
+      { id: 63, pillar: 'beautiful', section: 'Climate Resilience', title: 'Protect ecosystems and biodiversity', body: 'Maintain 2.7+ ha parkland per 1,000 residents as population grows. Protect Garry Oak ecosystems. Restore shoreline habitats. Maintain 36% of parkland in natural state.' },
+      { id: 64, pillar: 'beautiful', section: 'Climate Resilience', title: 'Emergency preparedness for extreme weather', body: 'Heatwave cooling centres in every neighbourhood. Air quality protocols for wildfire smoke. Flood response plans for coastal areas. Protect vulnerable residents first.', budget: '$300K/yr preparedness + $100K/yr cooling centres. Small costs that save lives.' },
+
+      // WELL-MANAGED — Spend Less (65-70)
+      { id: 65, pillar: 'managed', section: 'Spend Less, Deliver More', title: 'Zero-based review of all 200+ city programs', body: 'Every program justifies its existence from scratch. Review grants over $50K/yr on utilization, cost per beneficiary, alignment with priorities. Calgary identified $70M from just 11 services.', budget: 'Target: $3–6M/year in savings by end of term.' },
+      { id: 66, pillar: 'managed', section: 'Spend Less, Deliver More', title: 'Moderate, predictable tax increases — a glide path', body: 'Year 1: capped at 6.5% (vs. council\'s 10.44% draft). Year 2: capped at 5%. Year 3+: capped at CPI + population growth (~3.5%) once savings are realized. Increases above the cap require Council supermajority and public explanation.' },
+      { id: 67, pillar: 'managed', section: 'Spend Less, Deliver More', title: 'Quarterly performance dashboard', body: 'Permit timelines, pothole repair, 311 response, crime stats, housing approvals, budget variance. Published online, explained in plain language. Hold officials accountable continuously.' },
+      { id: 68, pillar: 'managed', section: 'Spend Less, Deliver More', title: 'Reduce administrative overhead through tech and attrition', body: 'Digitize every form, every workflow. Non-replacement of departing administrative staff — assess each vacancy. Target: 10% administrative FTE reduction over the term. No layoffs.', budget: '$2–3M/yr by end of term via attrition. Tech: $500K/yr. Net savings: $1.5–2.5M/yr.' },
+      { id: 69, pillar: 'managed', section: 'Spend Less, Deliver More', title: 'Rationalize City real estate holdings', body: 'Full inventory and utilization audit. Sell or lease properties that don\'t serve essential public functions. Use proceeds to reduce debt and fund priority capital.', budget: 'Conservative estimate: $5–10M one-time proceeds over the term.' },
+      { id: 70, pillar: 'managed', section: 'Spend Less, Deliver More', title: 'Seek provincial and federal partnerships for capital', body: 'The City shouldn\'t build alone what senior governments should co-fund. Active advocacy for infrastructure dollars. Every federal/provincial dollar attracted is a dollar not taken from property taxes.' },
+
+      // WELL-MANAGED — Grow Tax Base (71-74)
+      { id: 71, pillar: 'managed', section: 'Grow the Tax Base', title: 'Cut downtown storefront vacancy from 11% to 5%', body: 'Economic development initiatives, tax incentives for occupying vacancies, streamlined tenant improvement permits. Advocate to Province for vacant-commercial-property surcharge enabling legislation.', budget: 'Business attraction: $300K/yr. New business tax revenue: $500K–1M/yr.' },
+      { id: 72, pillar: 'managed', section: 'Grow the Tax Base', title: 'Support small business — reduce red tape', body: 'Business licence processing: 5 business days maximum. Designated downtown economic coordinator. Proactive entrepreneur recruitment for vacant spaces.' },
+      { id: 73, pillar: 'managed', section: 'Grow the Tax Base', title: 'Promote tourism recovery', body: 'Ferry traffic up 2%, cruise ships increasing. Better wayfinding, extended business hours, waterfront activation. Market Victoria as Canada\'s most liveable small city.' },
+      { id: 74, pillar: 'managed', section: 'Grow the Tax Base', title: 'Major new capital projects require voter approval', body: 'Any new (non-lifecycle) capital project exceeding $25M goes to public via Assent Voting or Alternative Approval Process. Includes new community centres, arenas, pools, civic buildings. EXCLUDES lifecycle replacement (stormwater pipes, road resurfacing, bridge rehab).' },
+
+      // WELL-MANAGED — Cost of Living (75-76)
+      { id: 75, pillar: 'managed', section: 'Lower Cost of Living', title: 'First-hour free parking', body: 'See Measure 24. Direct savings for every resident who drives downtown.' },
+      { id: 76, pillar: 'managed', section: 'Lower Cost of Living', title: 'Reduce permit fees for small homeowner renovations', body: 'Garden suites, accessibility modifications, energy retrofits — easy and cheap to permit. Reduced or waived fees for projects under $50K that add housing or improve energy efficiency.' },
+
+      // DEMOCRATIC (77-82)
+      { id: 77, pillar: 'democratic', section: 'Direct Democracy & Transparency', title: 'Referendums for new capital projects over $25M', body: 'Binding votes within the BC Local Government Act and Community Charter framework. The Dowler Place controversy proved why this matters: Mayor Alto admitted council skipped engagement because "we knew what the comments would be." This cannot happen again.' },
+      { id: 78, pillar: 'democratic', section: 'Direct Democracy & Transparency', title: 'The 5-step process for every major public project', body: '(1) Local consultation. (2) Expert design. (3) Digital Twin simulation. (4) Referendum if new capital over $25M. (5) Quarterly public progress reports during construction — on time, on budget, or explain why not.' },
+      { id: 79, pillar: 'democratic', section: 'Direct Democracy & Transparency', title: 'Close the feedback loop — 60 days', body: 'Every public consultation gets a response within 60 days: here\'s what you said, here\'s what we decided, here\'s why. Transparency isn\'t a value statement — it\'s a service standard.' },
+      { id: 80, pillar: 'democratic', section: 'Direct Democracy & Transparency', title: 'Neighbourhood empowerment', body: 'Strengthen support for neighbourhood associations (Fernwood, James Bay, Fairfield, Vic West, Hillside-Quadra, every community). Small grants for community-led meetings. Expand "My Great Neighbourhood" program. Expand Local Champions Program.' },
+      { id: 81, pillar: 'democratic', section: 'Direct Democracy & Transparency', title: 'An honest answer on Saanich amalgamation — binding Citizens\' Assembly', body: '60 randomly selected residents (30 from each municipality). 12–18 months of paid expert input. A binding referendum question drafted by the Assembly. Both councils pre-commit to honour the result. This is how BC handled electoral reform in 2004 — mature, deliberative.' },
+      { id: 82, pillar: 'democratic', section: 'Direct Democracy & Transparency', title: 'Annual community surveys', body: 'Track satisfaction, priorities, and safety perceptions across every neighbourhood. Publish results. Adjust course. No governing in the dark.' },
+    ];
+
+    // ----- Render the 82 measures -----
+    function renderMeasures() {
+      const container = document.getElementById('measuresContainer');
+      let html = '';
+
+      Object.entries(PILLARS).forEach(([pillarKey, pillar]) => {
+        const pillarMeasures = MEASURES.filter(m => m.pillar === pillarKey);
+        const sections = [...new Set(pillarMeasures.map(m => m.section))];
+        const firstId = pillarMeasures[0].id;
+        const lastId = pillarMeasures[pillarMeasures.length - 1].id;
+
+        html += `<div id="measures-${pillarKey}" class="mt-20 reveal">
+          <div class="double-rule pt-6 mb-8">
+            <div class="flex items-center justify-between gap-4 flex-wrap">
+              <h3 class="font-display text-3xl sm:text-4xl" style="color: ${pillar.colorVar}; font-weight: 500;">
+                ${pillar.label}
+              </h3>
+              <span class="font-mono text-xs uppercase tracking-widest opacity-60" style="color: ${pillar.colorVar};">
+                ${pillarMeasures.length} measures · M${firstId}–${lastId}
+              </span>
+            </div>
+          </div>`;
+
+        sections.forEach(section => {
+          const sectionMeasures = pillarMeasures.filter(m => m.section === section);
+          html += `<div class="mb-10">
+            <h4 class="font-mono text-[11px] uppercase tracking-[0.2em] mb-4 hairline-b pb-2 text-gold">◆ ${section}</h4>
+            <div class="space-y-5">`;
+          sectionMeasures.forEach(m => {
+            const budgetHtml = m.budget ? `<div class="p-3 text-xs leading-relaxed" style="background-color: rgba(212,168,67,0.1); border-left: 2px solid #D4A843; color: #1A3668;">
+              <div class="font-mono text-[9px] uppercase tracking-widest opacity-70 mb-1">Budget Impact</div>
+              <div>${escapeHtml(m.budget)}</div>
+            </div>` : '';
+
+            html += `<article class="measure-row grid md:grid-cols-12 gap-4 md:gap-6 py-4 hairline-b">
+              <div class="md:col-span-1 flex md:block items-baseline gap-3">
+                <div class="font-display text-3xl leading-none text-gold" style="font-weight: 500;">${String(m.id).padStart(2, '0')}</div>
+              </div>
+              <div class="md:col-span-7">
+                <h5 class="font-display text-lg sm:text-xl leading-snug" style="color: ${pillar.colorVar}; font-weight: 500;">
+                  ${escapeHtml(m.title)}
+                </h5>
+                <p class="mt-2 text-sm text-stone-700 leading-relaxed">${escapeHtml(m.body)}</p>
+              </div>
+              <div class="md:col-span-4">${budgetHtml}</div>
+            </article>`;
+          });
+          html += `</div></div>`;
+        });
+
+        html += `</div>`;
+      });
+
+      container.innerHTML = html;
+    }
+
+    function escapeHtml(s) {
+      return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    }
+
+    renderMeasures();
+  </script>
+</body>
+</html>
