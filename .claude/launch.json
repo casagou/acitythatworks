@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "Static site (Ruby WEBrick)",
+      "runtimeExecutable": "ruby",
+      "runtimeArgs": ["-run", "-e", "httpd", "/Users/joachimagou/Documents/GitHub/acitythatworks", "-p", "8000"],
+      "port": 8000
+    }
+  ]
+}
