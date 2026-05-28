@@ -13,9 +13,11 @@ a{color:var(--navy)}
 /* Header */
 header{position:sticky;top:0;z-index:40;background:rgba(26,54,104,.97);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);height:var(--h);border-bottom:1px solid rgba(212,168,67,.2)}
 .hr{display:flex;align-items:center;justify-content:space-between;height:100%;gap:16px}
-.brand{display:flex;align-items:baseline;gap:12px;text-decoration:none}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand .bicn{width:32px;height:32px;flex-shrink:0;display:block}
+@media(min-width:640px){.brand{gap:12px}.brand .bicn{width:36px;height:36px}}
 .brand .num{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
-.brand .nm{font-family:'Fraunces',serif;font-style:italic;font-size:18px;font-weight:500;color:var(--paper)}
+.brand .nm{font-family:'Fraunces',serif;font-style:italic;font-size:18px;font-weight:500;color:var(--paper);line-height:1}
 @media(min-width:640px){.brand .nm{font-size:20px}}
 .nv{display:none;align-items:center;gap:16px;font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:rgba(250,247,240,.75)}
 .nv a{color:inherit;text-decoration:none;transition:color .15s;white-space:nowrap}
@@ -114,9 +116,10 @@ table.dt .amt{font-family:'JetBrains Mono',monospace;white-space:nowrap;font-wei
 footer{background:var(--navy);padding:48px 0;margin-top:80px}
 .fg2{display:grid;grid-template-columns:1fr;gap:32px;margin-bottom:32px}
 @media(min-width:768px){.fg2{grid-template-columns:1.4fr 1fr 1fr}}
-.fbr{display:flex;align-items:baseline;gap:12px}
+.fbr{display:flex;align-items:center;gap:12px}
+.fbr .bicn{width:40px;height:40px;flex-shrink:0;display:block}
 .fbr .num{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
-.fbr .nm{font-family:'Fraunces',serif;font-style:italic;font-size:20px;font-weight:500;color:var(--paper)}
+.fbr .nm{font-family:'Fraunces',serif;font-style:italic;font-size:20px;font-weight:500;color:var(--paper);line-height:1}
 .fdc{font-size:14px;line-height:1.6;color:rgba(250,247,240,.7);margin-top:16px;max-width:340px}
 .fvr{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:rgba(250,247,240,.5);margin-top:16px}
 .fhd{font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.2em;color:var(--gold);margin-bottom:12px}
