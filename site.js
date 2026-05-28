@@ -27,6 +27,7 @@
 '<div>' +
 '<div class="fhd">Detailed Documents</div>' +
 '<div class="fls">' +
+'<a href="summary.html">One-Page Summary</a>' +
 '<a href="savings.html">Savings &amp; Revenue Analysis</a>' +
 '<a href="city-hall.html">How City Hall Works</a>' +
 '<a href="endorse.html">Candidate Endorsement Pack</a>' +
