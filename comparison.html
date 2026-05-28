@@ -51,18 +51,20 @@ details.cand .body li{margin:5px 0}
 <a href="index.html" class="brand"><span class="num">№ 01</span><span class="nm">A City That Works</span></a>
 <nav class="nv">
 <a href="index.html">Framework</a>
+<a href="summary.html">Summary</a>
 <a href="index.html#measures">Measures</a>
-<a href="index.html#scorecard">Scorecard</a>
 <a href="savings.html">Savings</a>
 <a href="city-hall.html">City Hall</a>
 <a href="comparison.html" class="cur">Compare</a>
-<a href="index.html#adopt" class="btn-end">Endorse</a>
+<a href="faq.html">FAQ</a>
+<a href="endorse.html" class="btn-end">Endorse</a>
 </nav>
 <button id="mt" class="mb" aria-label="Open menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
 </div>
 <div id="mn" class="mm">
 <div class="c mmi">
 <a href="index.html">Framework</a>
+<a href="summary.html">One-Page Summary</a>
 <a href="index.html#measures">All Measures</a>
 <a href="index.html#scorecard">Scorecard</a>
 <a href="index.html#balance">Balance Sheet</a>
@@ -73,13 +75,16 @@ details.cand .body li{margin:5px 0}
 <a href="comparison.html" class="gd">Candidate Comparison Matrix</a>
 <a href="faq.html">Frequently Asked Questions</a>
 <div class="grp"></div>
-<a href="index.html#adopt" class="gd">Endorse the framework →</a>
+<a href="endorse.html" class="gd">Endorse the framework →</a>
 </div>
 </div>
 </header>
 
 <main>
 <div class="cn">
+<nav class="crumbs" aria-label="Breadcrumb">
+<a href="index.html">Framework</a><span class="sep">/</span><span class="here">Candidate Comparison Matrix</span>
+</nav>
 <div class="hero">
 <div class="eyb"><span>📊 Spec Sheet</span><span class="dot">◆</span><span>As of May 27, 2026</span></div>
 <h1 class="ph1">Candidate Comparison Matrix</h1>
@@ -94,7 +99,25 @@ details.cand .body li{margin:5px 0}
 A side-by-side comparison of the Victoria 2026 mayoral and council field, scored against the ~100 commitments of the framework. Each row is a policy area; the scoring tells you at a glance who supports what — and where the framework is alone in proposing a specific mechanism. <strong>Not a slate. Not an attack piece.</strong> Single-line ideas inevitably flatten nuance; use this as a starting point, not the final word.
 </div>
 
-<h2>How to Read This</h2>
+<nav class="toc" aria-label="On this page">
+<div class="toc-h">◆ On this page</div>
+<ol>
+<li><a href="#how-to-read">How to Read This</a></li>
+<li><a href="#field">The Field at a Glance</a></li>
+<li><a href="#pillar-1">Pillar 1 — Liveable</a></li>
+<li><a href="#pillar-2">Pillar 2 — Safe</a></li>
+<li><a href="#pillar-3">Pillar 3 — Beautiful</a></li>
+<li><a href="#pillar-4">Pillar 4 — Well-Managed</a></li>
+<li><a href="#pillar-5">Pillar 5 — Democratic</a></li>
+<li><a href="#foundation">Foundation — Host Nations</a></li>
+<li><a href="#stands-alone">Where the Framework Stands Alone</a></li>
+<li><a href="#track-record">Current Administration Record</a></li>
+<li><a href="#profiles">Candidate Profiles</a></li>
+<li><a href="#methodology">Methodology &amp; Caveats</a></li>
+</ol>
+</nav>
+
+<h2 id="how-to-read">How to Read This</h2>
 <div class="legend">
 <div class="lg g"><b>✅ Aligned</b> — has publicly supported a position substantively similar to the framework's, in voting record or stated platform</div>
 <div class="lg y"><b>🟡 Partial</b> — some alignment but with reservations, a different mechanism, or weaker formulation</div>
@@ -103,7 +126,7 @@ A side-by-side comparison of the Victoria 2026 mayoral and council field, scored
 </div>
 <p>Every score is backed by a public source: voting record (council minutes, major-outlet reporting), declared platform, or direct public statement. Where no public position exists, the cell is marked silent rather than guessed. <strong>Silence is not opposition.</strong></p>
 
-<h2>The Field at a Glance</h2>
+<h2 id="field">The Field at a Glance</h2>
 <div class="tbl-wrap">
 <table class="cmp">
 <thead><tr><th>Candidate</th><th>Office (2026)</th><th>Overall alignment</th></tr></thead>
@@ -128,7 +151,7 @@ A side-by-side comparison of the Victoria 2026 mayoral and council field, scored
 </div>
 <p style="font-size:13px;color:#57534e"><em>As of May 26, 2026: six incumbents declared for re-election (Alto, Caradonna, Dell, Thompson, Gardiner, Hammond); three undecided (Coleman, Kim, Loughton); four new challengers declared or pre-launch (Cseszko, Rothe, Bowkett, McInnis). The four new challengers are mid-launch — where public material is limited, cells are marked silent rather than guessed.</em></p>
 
-<div class="pillar-band">🏠 Pillar 1 — A Liveable City</div>
+<div class="pillar-band" id="pillar-1">🏠 Pillar 1 — A Liveable City</div>
 
 <div class="topic">Housing supply + composition (M6)</div>
 <div class="tbl-wrap">
@@ -217,7 +240,7 @@ A side-by-side comparison of the Victoria 2026 mayoral and council field, scored
 </div>
 <div class="diff"><b>Where the framework stands alone</b>Adaptive traffic signals (SURTRAC) + GIS-based traffic analysis (M53) + AI consultation imagery (M53b) — zero direct analogue. Thompson's Hoboken cite is the closest specific benchmark.</div>
 
-<div class="pillar-band">🛡️ Pillar 2 — A Safe City</div>
+<div class="pillar-band" id="pillar-2">🛡️ Pillar 2 — A Safe City</div>
 
 <div class="topic">Bylaw enforcement hours (M27)</div>
 <div class="tbl-wrap">
@@ -278,7 +301,7 @@ A side-by-side comparison of the Victoria 2026 mayoral and council field, scored
 </div>
 <div class="diff"><b>Where the framework stands alone</b>Combines Esquimalt funding formula + region-wide service review + binding mediation — Alto names the principle, the framework names the mechanism.</div>
 
-<div class="pillar-band">🌳 Pillar 3 — A Beautiful City</div>
+<div class="pillar-band" id="pillar-3">🌳 Pillar 3 — A Beautiful City</div>
 
 <div class="topic">Heritage + cultural-venue preservation (M43–46, M46b)</div>
 <div class="tbl-wrap">
@@ -324,7 +347,7 @@ A side-by-side comparison of the Victoria 2026 mayoral and council field, scored
 </div>
 <div class="diff"><b>Where the framework stands alone</b>GIS modernization + AI consultation imagery (Dell's precedent extended citywide) + LIDAR — zero direct analogue. v1.3 honest reframe: the full Digital Twin was demoted because no Canadian city of Victoria's scale (~92K) has successfully deployed one; the M53/M53b/M53c stack captures ~80% of the citizen-facing value at ~25% of the cost.</div>
 
-<div class="pillar-band">💰 Pillar 4 — A Well-Managed City</div>
+<div class="pillar-band" id="pillar-4">💰 Pillar 4 — A Well-Managed City</div>
 
 <div class="topic">Property tax glide path + ZBB (M65, M66)</div>
 <div class="tbl-wrap">
@@ -373,7 +396,7 @@ A side-by-side comparison of the Victoria 2026 mayoral and council field, scored
 </div>
 <div class="diff"><b>Where the framework stands alone</b>Specific quarterly dashboard with named KPIs and plain-language requirement — Gardiner's monthly newsletter is closest; the framework formalizes it as a service standard.</div>
 
-<div class="pillar-band">🗳️ Pillar 5 — A Democratic City</div>
+<div class="pillar-band" id="pillar-5">🗳️ Pillar 5 — A Democratic City</div>
 
 <div class="topic">$25M referendum threshold + 5-step process (M77, M78)</div>
 <div class="tbl-wrap">
@@ -419,7 +442,7 @@ A side-by-side comparison of the Victoria 2026 mayoral and council field, scored
 </div>
 <div class="diff"><b>Where the framework stands alone</b>Binding (not advisory) Citizens' Assembly with pre-committed referendum — Coleman's existing committee work is the closest precedent and natural champion.</div>
 
-<div class="pillar-band">🌿 Foundation — Host Nations Partnership</div>
+<div class="pillar-band" id="foundation">🌿 Foundation — Host Nations Partnership</div>
 <div class="topic">Government-to-government working tables (M1)</div>
 <div class="tbl-wrap">
 <table class="cmp">
@@ -434,7 +457,7 @@ A side-by-side comparison of the Victoria 2026 mayoral and council field, scored
 </div>
 <div class="diff"><b>Where the framework stands alone</b>Standing quarterly cadence + published meeting summaries + 5% procurement standard — Alto has the strongest record on naming/cultural measures; the framework adds operational discipline.</div>
 
-<h2>Where the Framework Stands Alone</h2>
+<h2 id="stands-alone">Where the Framework Stands Alone</h2>
 <p>Measures with zero direct analogue on the current field — the cleanest differentiators.</p>
 <div class="tbl-wrap">
 <table class="cmp">
@@ -457,7 +480,7 @@ A side-by-side comparison of the Victoria 2026 mayoral and council field, scored
 </table>
 </div>
 
-<h2>The Current Administration — Track Record vs Promises</h2>
+<h2 id="track-record">The Current Administration — Track Record vs Promises</h2>
 <p>A focused comparison of the Alto council's 2022–2026 record against the framework's specific commitments.</p>
 
 <h3>Fiscal record</h3>
@@ -521,7 +544,7 @@ A side-by-side comparison of the Victoria 2026 mayoral and council field, scored
 The Alto council has spent aggressively ($25M on homelessness, $209M committed to Crystal Pool, 29% budget growth) without deploying a single modern efficiency tool. Every gap above is something the framework names a specific mechanism for — that is the differentiator.
 </div>
 
-<h2>Candidate Profiles</h2>
+<h2 id="profiles">Candidate Profiles</h2>
 <p>Full alignment detail per candidate. Sources cited inline in the master record.</p>
 
 <details class="cand"><summary>Marianne Alto — Mayor, declared May 20, 2026</summary><div class="body">
@@ -622,7 +645,7 @@ The Alto council has spent aggressively ($25M on homelessness, $209M committed t
 <p>Listed for context. Former councillor 2020–2022; 2022 mayoral candidate; 2024 BC Conservative candidate. No public 2026 municipal signal. <strong>2022 ideas absorbed into v1.1:</strong> family-doctor incentives + permissive tax exemptions for not-for-profit clinics (M13b).</p>
 </div></details>
 
-<h2>Methodology &amp; Caveats</h2>
+<h2 id="methodology">Methodology &amp; Caveats</h2>
 <p><strong>Scope and time-stamp.</strong> Current as of May 26, 2026 — 144 days before the October 17, 2026 election. Nomination doesn't open until September 1. Several candidates are undecided. Positions will shift.</p>
 <p><strong>Scoring approach.</strong> Each cell reflects the most recent public position found in voting record, declared platform, or direct public statement. Where reporting is contradictory, the most recent on-the-record source wins.</p>
 <p><strong>Why silent is not opposed.</strong> A candidate not having taken a public position is not the same as opposing it. Treating silence as opposition would be a false negative.</p>

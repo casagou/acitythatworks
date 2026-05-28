@@ -17,12 +17,15 @@ header{position:sticky;top:0;z-index:40;background:rgba(26,54,104,.97);backdrop-
 .brand .num{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
 .brand .nm{font-family:'Fraunces',serif;font-style:italic;font-size:18px;font-weight:500;color:var(--paper)}
 @media(min-width:640px){.brand .nm{font-size:20px}}
-.nv{display:none;align-items:center;gap:20px;font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:rgba(250,247,240,.75)}
-.nv a{color:inherit;text-decoration:none;transition:color .15s}
+.nv{display:none;align-items:center;gap:16px;font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:rgba(250,247,240,.75)}
+.nv a{color:inherit;text-decoration:none;transition:color .15s;white-space:nowrap}
 .nv a:hover,.nv a.cur{color:var(--gold)}
+.nv a.cur{border-bottom:1px solid var(--gold)}
 .nv a.btn-end{padding:5px 11px;border:1px solid rgba(250,247,240,.5);color:var(--paper)}
 .nv a.btn-end:hover{color:var(--paper);border-color:var(--gold)}
-@media(min-width:1024px){.nv{display:flex}.mb{display:none}}
+.nv a.btn-end.cur{border-color:var(--gold);background:rgba(212,168,67,.15)}
+@media(min-width:1100px){.nv{display:flex;gap:20px;letter-spacing:.12em}.mb{display:none}}
+@media(min-width:1024px) and (max-width:1099px){.nv{display:flex}.mb{display:none}}
 .mb{background:none;border:none;color:var(--paper);padding:8px;margin-right:-8px;cursor:pointer;display:flex}
 .mm{display:none;background:rgba(26,54,104,.98);border-bottom:1px solid rgba(26,54,104,.18)}
 .mm.o{display:block}
@@ -132,4 +135,54 @@ footer{background:var(--navy);padding:48px 0;margin-top:80px}
 
 button:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
 button,a,input{outline:none}
-@media print{header,.jb,.jdr,.jbd,.fb,.mb{display:none!important}body{background:#fff}}
+
+/* On-this-page table of contents */
+.toc{background:#fff;border:1px solid rgba(26,54,104,.18);border-left:3px solid var(--gold);padding:18px 22px;margin:28px 0 36px;max-width:760px}
+.toc-h{font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.2em;color:var(--gold);margin-bottom:10px}
+.toc ol{list-style:none;counter-reset:tocitem;padding:0;margin:0;display:grid;grid-template-columns:1fr;gap:4px}
+@media(min-width:640px){.toc ol{grid-template-columns:1fr 1fr;column-gap:24px}}
+.toc li{counter-increment:tocitem;font-size:14px;line-height:1.4}
+.toc li::before{content:counter(tocitem,decimal-leading-zero);display:inline-block;width:24px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--gold);font-weight:600}
+.toc a{color:var(--navy);text-decoration:none;border-bottom:1px solid transparent;transition:border-color .15s}
+.toc a:hover{border-bottom-color:var(--gold)}
+
+/* Breadcrumb back-strip */
+.crumbs{display:flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.15em;color:#6b6664;padding:16px 0 0;margin-bottom:-8px}
+.crumbs a{color:#6b6664;text-decoration:none;border-bottom:1px solid transparent;transition:color .15s,border-color .15s}
+.crumbs a:hover{color:var(--navy);border-bottom-color:var(--gold)}
+.crumbs .sep{color:rgba(26,54,104,.3)}
+.crumbs .here{color:var(--navy)}
+
+/* Print stylesheet */
+@media print {
+  /* Hide chrome: nav, mobile-menu trigger, jump drawers, TOC, breadcrumbs, footer subscribe */
+  header, .jb, .jdr, .jbd, .fb, .mb, .toc, .crumbs, .pgback, .fsoc, .fbo, .fhandle, footer .fls .fhd + .fls, .nv {display:none !important}
+  /* Light page; black ink; remove background gradients */
+  body {background:#fff !important; background-image:none !important; color:#111 !important; font-size:11pt; line-height:1.45}
+  main {padding-top:0}
+  /* Open every <details> so content prints */
+  details, details[open], details > .qa, details > .body {display:block !important}
+  details summary {list-style:none}
+  details summary::-webkit-details-marker, details summary::after {display:none !important}
+  details.q .qp, details.cand summary:after {display:none !important}
+  /* Don't split sections awkwardly */
+  h1, h2, h3, h4, .pillar-band, .callout, .tier {page-break-inside:avoid; break-inside:avoid}
+  h2, h3, .pillar-band {page-break-after:avoid; break-after:avoid}
+  table, tr, .ms, .pill-card {page-break-inside:avoid; break-inside:avoid}
+  /* Links: show URL for external/document links so they're useful on paper */
+  .prose a[href^="http"]::after, .prose a[href$=".html"]::after {content:" (" attr(href) ")"; font-size:0.85em; color:#555; word-break:break-all}
+  /* Color callouts get printer-safe borders */
+  .callout {border:1px solid #999 !important; background:transparent !important}
+  .callout.blue, .callout.gold, .callout.green, .callout.red {background:transparent !important}
+  /* Tighten footer */
+  footer {background:transparent !important; color:#111 !important; padding:0 !important; margin-top:16pt !important; border-top:1px solid #999 !important}
+  footer * {color:#111 !important}
+  /* Avoid colossal headlines on print */
+  h1.ht {font-size:24pt !important}
+  h1.ph1 {font-size:22pt !important}
+  h2.st {font-size:18pt !important}
+  .prose h2 {font-size:14pt !important; border-top:1px solid #999 !important; padding-top:8pt !important}
+  .prose h3 {font-size:12pt !important}
+  /* No sticky positioning on print */
+  * {position:static !important}
+}
