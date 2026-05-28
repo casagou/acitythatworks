@@ -4,7 +4,7 @@
     {
       "name": "Static site (Ruby WEBrick)",
       "runtimeExecutable": "ruby",
-      "runtimeArgs": ["-run", "-e", "httpd", "/Users/joachimagou/Documents/GitHub/acitythatworks", "-p", "8000"],
+      "runtimeArgs": ["-run", "-e", "httpd", "/tmp/actw-preview", "-p", "8000"],
       "port": 8000
     }
   ]
