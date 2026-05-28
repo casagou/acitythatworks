@@ -234,6 +234,37 @@ h2.adt em{font-style:italic;color:var(--gold);font-weight:400}
 .hbf{display:none!important}
 .rv{animation:fu .5s ease-out backwards}
 @keyframes fu{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+/* Foundation callout */
+.fnd{margin-top:48px;padding:24px 28px;background:rgba(34,114,71,.06);border:1px solid rgba(34,114,71,.25);border-left:3px solid var(--moss)}
+.fnd .lbl{font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.2em;color:var(--moss);margin-bottom:10px}
+.fnd p{font-size:15px;line-height:1.65;color:#33312e;margin:0 0 8px;max-width:780px}
+@media(min-width:640px){.fnd p{font-size:16px}}
+.fnd strong{color:var(--navy);font-weight:600}
+.fnd a{color:var(--moss);text-decoration:underline;text-decoration-color:rgba(34,114,71,.4)}
+/* How To Use cards */
+.hug{display:grid;grid-template-columns:1fr;gap:16px;margin-top:32px}
+@media(min-width:768px){.hug{grid-template-columns:repeat(3,1fr);gap:20px}}
+.huc{padding:24px;background:#fff;border:1px solid rgba(26,54,104,.18);border-top:3px solid var(--gold);display:flex;flex-direction:column}
+.huc .hut{font-family:'Fraunces',serif;font-size:22px;font-weight:600;color:var(--navy);margin-bottom:12px}
+.huc .hux{font-size:14px;color:#57534e;font-style:italic;margin-bottom:14px;line-height:1.5}
+.huc ul{list-style:none;padding:0;margin:0 0 20px;flex-grow:1}
+.huc li{font-size:14px;line-height:1.55;color:#33312e;padding-left:18px;position:relative;margin:8px 0}
+.huc li::before{content:"→";position:absolute;left:0;color:var(--gold);font-weight:600}
+.huc li strong{color:var(--navy)}
+.huc .bn{align-self:flex-start;font-size:11px;padding:8px 14px}
+/* Identity claims (above Principles) */
+.idg{display:grid;grid-template-columns:1fr;gap:14px;margin-top:24px}
+@media(min-width:768px){.idg{grid-template-columns:1fr 1fr;gap:18px}}
+.idc{padding:20px 22px;border:1px solid rgba(26,54,104,.2)}
+.idc.is{background:rgba(34,114,71,.05);border-left:3px solid var(--moss)}
+.idc.no{background:rgba(181,52,31,.05);border-left:3px solid var(--rust)}
+.idc .idh{font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.15em;margin-bottom:10px;font-weight:600}
+.idc.is .idh{color:var(--moss)}
+.idc.no .idh{color:var(--rust)}
+.idc ul{list-style:none;padding:0;margin:0}
+.idc li{font-size:14px;line-height:1.55;color:#33312e;padding-left:14px;position:relative;margin:6px 0}
+.idc.is li::before{content:"—";position:absolute;left:0;color:var(--moss)}
+.idc.no li::before{content:"—";position:absolute;left:0;color:var(--rust)}
 @media print{.jb,.jdr,.jbd,.fb{display:none!important}}
 </style>
 </head>
@@ -257,6 +288,7 @@ h2.adt em{font-style:italic;color:var(--gold);font-weight:400}
 <div class="c mmi">
 <a href="summary.html">One-Page Summary</a>
 <a href="#pillars">Five Pillars</a>
+<a href="#how-to-use">How to Use</a>
 <a href="#method">The Method</a>
 <a href="#measures">All Measures</a>
 <a href="#scorecard">12 Commitments</a>
@@ -310,6 +342,51 @@ h2.adt em{font-style:italic;color:var(--gold);font-weight:400}
 <h2 class="st">Five Pillars · One Foundation</h2>
 <p class="si">Every measure belongs to one of five pillars, anchored by a foundational commitment to right relations with the host Nations. 100 active commitments in total — every one costed.</p>
 <div id="pgd" class="pg"></div>
+<div class="fnd rv">
+<div class="lbl">◆ A Foundation, Not a Pillar — Honouring the Host Nations</div>
+<p>Victoria is built on the unceded traditional territories of the lək̓ʷəŋən-speaking peoples — today represented by the <strong>Songhees Nation</strong> and the <strong>Esquimalt Nation</strong>. Any serious program for the City must recognize this and build it into how the City operates, not just how it speaks.</p>
+<p>The full program includes specific measures on government-to-government working tables, Indigenous procurement, lək̓ʷəŋən place names, cultural protocols, and urban Indigenous services. <a href="#measures">See Foundation measures M1–M5 →</a></p>
+</div>
+</section>
+
+<section id="how-to-use" class="sc rv">
+<div class="se">◆ How to Engage</div>
+<h2 class="st">How to use this framework.</h2>
+<p class="si">There is <strong>no exclusivity</strong> and no campaign attached to this document. The goal is to raise the standard of debate — to make it normal for Victoria candidates to publish costed, measurable, sourced platforms with quarterly accountability.</p>
+<div class="hug">
+<div class="huc">
+<div class="hut">For Candidates</div>
+<div class="hux">If you are running for Victoria City Council or Mayor in October 2026:</div>
+<ul>
+<li><strong>Endorse</strong> the framework in whole or in part</li>
+<li><strong>Adapt</strong> individual measures to your platform</li>
+<li><strong>Challenge</strong> the cost estimates and source links — publish your own</li>
+<li>Multiple candidates can run on these ideas, and they should</li>
+</ul>
+<a href="endorse.html" class="bn bnp">Endorsement Pack →</a>
+</div>
+<div class="huc">
+<div class="hut">For Residents</div>
+<div class="hux">Hold candidates to a higher standard:</div>
+<ul>
+<li><strong>Read</strong> the Program below</li>
+<li><strong>Suggest</strong> improvements — every measure is open to criticism and correction</li>
+<li><strong>Ask</strong> your candidates which specific measures they support</li>
+<li><strong>Share</strong> with neighbours and community associations</li>
+</ul>
+<a href="#measures" class="bn bnp">Read the measures →</a>
+</div>
+<div class="huc">
+<div class="hut">For Practitioners</div>
+<div class="hux">Planners, police, builders, social workers, fiscal analysts, public health workers, infrastructure engineers:</div>
+<ul>
+<li>This framework was drafted from <strong>publicly available research</strong> and reporting</li>
+<li>If you have technical expertise and want to contribute corrections or new measures, please contact us</li>
+<li>Credit attaches to the underlying idea, not the framework</li>
+</ul>
+<a href="mailto:info@acitythatworks.ca" class="bn bnp">Get in touch →</a>
+</div>
+</div>
 </section>
 
 <div class="rv" style="margin-top:64px">
@@ -428,6 +505,28 @@ h2.adt em{font-style:italic;color:var(--gold);font-weight:400}
 <div class="rv" style="margin-top:64px">
 <div class="se">◆ Principles</div>
 <h2 class="st" style="font-size:28px">What we are — and what we're not.</h2>
+<div class="idg">
+<div class="idc is">
+<div class="idh">✓ This framework IS</div>
+<ul>
+<li>Non-partisan and open</li>
+<li>Costed and sourced</li>
+<li>Measurable and quarterly-reported</li>
+<li>Adoptable by any candidate, in whole or in part</li>
+<li>Open to correction by anyone with expertise</li>
+</ul>
+</div>
+<div class="idc no">
+<div class="idh">✗ This framework is NOT</div>
+<ul>
+<li>A political party</li>
+<li>A candidate slate</li>
+<li>Exclusively held by any one candidate</li>
+<li>Final — every measure is open to refinement</li>
+<li>A substitute for the work of the host Nations or senior governments</li>
+</ul>
+</div>
+</div>
 <div class="prg">
 <div class="pb ys">
 <div class="ph"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> We are</div>
