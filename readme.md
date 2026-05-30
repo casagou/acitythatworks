@@ -1,86 +1,70 @@
-# A City That Works — v1.3 Website
+# A City That Works — Website (v1.3)
 
-Single-file deployable website for the citizens' framework. Drag the folder onto Netlify and you're live.
+A complete, multi-page static website for the citizens' framework. No build step, no dependencies. Lives at **[acitythatworks.ca](https://acitythatworks.ca)**, auto-deployed from this repo via Netlify on every push to `main`.
 
-## Deploy in 3 steps
+## What's in this folder
 
-1. **[app.netlify.com/drop](https://app.netlify.com/drop)** — drag this folder onto the drop zone (sign in first if needed).
-2. Site is live immediately at a random `*.netlify.app` subdomain.
-3. Rename to `acitythatworks.netlify.app` in **Site settings → Domain management → Edit site name**.
-4. Once you register `acitythatworks.ca`, add it in **Domain management → Add custom domain**. Netlify auto-provisions Let's Encrypt SSL.
+| File | What it is |
+|------|------------|
+| `index.html` | Home — hero, five pillars, method, **all ~101 measures** (filterable + searchable, full text inline), 12-commitment scorecard, balance sheet, principles, criticisms Q&A, subscribe/endorse |
+| `summary.html` | One-Page Summary — the 60-second version (problem → pillars → flagship measures → math → method) |
+| `savings.html` | Savings & Revenue Analysis — the full math, every table, with sources and honest caveats |
+| `city-hall.html` | How City Hall Actually Works — plain-language guide to municipal power |
+| `endorse.html` | Candidate Endorsement Pack — three tiers, campaign language, full measure checklist, endorsement form |
+| `comparison.html` | Candidate Comparison Matrix — every 2026 candidate scored against the framework |
+| `faq.html` | Frequently Asked Questions — the full skeptic's Q&A |
+| `styles.css` | Shared stylesheet for every page (includes print rules) |
+| `site.js` | Shared footer (contact + social) and mobile-menu logic, injected on every page |
+| `measures.js` | The 100 measures + scorecard + pillar data and all rendering for the home page |
+| `sitemap.xml` | Search engine sitemap |
+| `robots.txt` | Search engine directives |
 
-## What's included
+Mirrors the Notion master copy (the working document); the internal/archival pages in Notion (Version History, v1.1/v1.2 archive snapshots, Brand Assets) are not public-facing and are intentionally not mirrored here.
 
-- **`index.html`** — complete website. Single file, no build step. All HTML, CSS, JS, and 100 measure entries inline.
-- **`README.md`** — this file.
+## How it deploys
 
-That's it. Two files. No package.json, no node_modules, no build pipeline.
+The Netlify site is connected to this GitHub repo. Push to `main` → Netlify auto-builds (static; no build command) → live in ~30 seconds.
 
-## Features
+**For local edits:** open any file, save, `git add` + commit + push. Netlify takes over.
 
-**Desktop:**
-- Sticky top nav with 7 section links + Endorse button
-- Filter chips and full-text search on the Measures section
-- Sticky filter bar that stays accessible while scrolling through measures
+### Custom domain
+`acitythatworks.ca` is the public hostname, configured in **Netlify → Domain management → Add custom domain**. HTTPS auto-provisioned via Let's Encrypt.
 
-**Mobile:**
-- Hamburger menu in the header
-- Floating "Jump to…" button appears after scrolling past the hero
-- Bottom-sheet drawer with 8 quick-jump links
-- Horizontal-scrolling filter chips (touch-friendly)
-- Scorecard renders as cards (not tables) for narrow viewports
+## Email capture (Netlify Forms)
 
-**Both:**
-- All 100 measures with title, summary, and budget impact
-- Filter by pillar (Foundation, Liveable, Safe, Beautiful, Well-Managed, Democratic)
-- Search across measure titles, bodies, budgets, and IDs (e.g. "M53" or "STR" or "Pittsburgh")
-- 6 Documents cards linking to Notion
-- 12-commitments scorecard
-- Balance Sheet with tax glide path
-- FAQ accordion with 8 honest answers
-- Netlify Forms email capture
-- Open Graph + Twitter Card meta
-- iOS safe-area insets respected
-- Print stylesheet
+The subscribe box on the home page is wired to **Netlify Forms** (form name: `newsletter`).
+1. **Forms → Settings & usage → Form notifications** → the address that should receive sign-ups (e.g. `info@acitythatworks.ca`).
+2. Free tier: 100 submissions/month.
 
-## Email capture
+## Contact details baked into the site
 
-The form is wired to **Netlify Forms**:
-1. After deploy, go to your Netlify site → **Forms** tab
-2. Confirm the `newsletter` form was detected
-3. **Forms → Settings & usage → Form notifications** → add your email (e.g. `info@acitythatworks.ca`)
-4. Free tier: 100 submissions/month. Plenty for early traction.
+- **Email:** info@acitythatworks.ca
+- **Instagram / X / Facebook:** @CityThatWorksYYJ
 
-## Updating content
+All four live in `site.js` (footer) and on the home page's Endorse section. To change any of them, **edit `site.js` once** — the footer is shared across all seven pages.
 
-All measure data lives in the JavaScript arrays at the bottom of `index.html`:
+> ⚠️ `info@acitythatworks.ca` requires the domain mailbox/forwarder to be set up. Until then, mail to it will bounce.
 
-- **`MEASURES`** — array of 100 measures with `{id, pillar, section, tier, title, body, budget}`
-- **`COMMITMENTS`** — array of 12 scorecard targets
-- **`FAQ`** — array of 8 Q&A entries
-- **`PILLARS`** — the 6 pillar definitions (color, emoji, label, description)
+## Editing content later
 
-Edit directly in the file. No build, no transpile. Save and re-drag the folder into Netlify when you're ready.
+- **Measures, scorecard, pillars** → `measures.js` (plain data arrays at the top; rendering below).
+- **Home page criticisms Q&A** → the `FAQ` array in `measures.js`.
+- **Anything else** → edit the relevant `.html` file directly. No build, no transpile — commit and push.
 
-## Note on measure descriptions
+## Navigation
 
-Each measure on the website is a concise summary (1–3 sentences). The full text — context, sources, sub-bullets, peer-city citations — lives in the Notion master, linked prominently from the Documents section. The website is the gateway; Notion is the record.
+Every page uses the same canonical header nav:
 
-## Customization
+> **Framework · Summary · Measures · Savings · City Hall · Compare · FAQ · [ENDORSE]**
 
-CSS variables at the top of `<style>`:
+Active page highlighted with a gold underline. Mobile menu groups all pages under "Detailed documents" plus the home-page anchors (Pillars, Method, etc.).
 
-```css
---navy:  #1A3668;  /* primary */
---gold:  #D4A843;  /* accent */
---paper: #FAF7F0;  /* background */
---rust:  #B5341F;  /* diagnostic stats */
---moss:  #227247;  /* positive principles */
-```
+All long pages (Savings, City Hall, Endorse, FAQ, Comparison) have an in-page **On this page** TOC right after the hero, plus a breadcrumb back to the framework.
 
-## Performance
+## Notes
 
-- ~95KB HTML total, including all CSS, JS, and 100 measure entries
-- First paint < 1s on any modern connection
-- No external CSS framework (no Tailwind CDN bloat)
-- Only external resource is Google Fonts (3 families)
+- Pure static HTML/CSS/JS. The only external resource is Google Fonts.
+- Works fully on desktop and mobile: sticky top nav (8 items at 1100px+, hamburger below), a floating "Jump to…" drawer on the home page, touch-friendly filter chips, and a scorecard that switches from a table to cards on small screens.
+- Print stylesheet hides chrome, expands every `<details>`, and uses printer-safe borders. Try **⌘P** on any page.
+- iOS safe-area insets respected.
+- `sitemap.xml` + `robots.txt` included for SEO.

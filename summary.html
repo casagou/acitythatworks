@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="description" content="A City That Works — the 60-second version. Five pillars, flagship measures, fiscal math, and a glide path. Version 1.3, May 27, 2026.">
+<meta name="theme-color" content="#1A3668">
+<title>One-Page Summary — A City That Works</title>
+<meta property="og:title" content="A City That Works — One-Page Summary">
+<meta property="og:description" content="The 60-second version of the citizens' framework for Victoria 2026.">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Public+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+.pill-grid{display:grid;grid-template-columns:1fr;gap:12px;margin:24px 0 8px}
+@media(min-width:640px){.pill-grid{grid-template-columns:repeat(2,1fr);gap:14px}}
+.pill-card{padding:18px 20px;background:rgba(26,54,104,.05);border:1px solid rgba(26,54,104,.18);border-left:3px solid var(--gold)}
+.pill-card .ic{font-size:22px;line-height:1;margin-bottom:8px}
+.pill-card .nm{font-family:'Fraunces',serif;font-size:19px;font-weight:600;color:var(--navy);margin-bottom:4px}
+.pill-card .ds{font-size:14px;line-height:1.5;color:#44403c}
+.pill-foot{padding:14px 20px;background:rgba(212,168,67,.1);border-left:3px solid var(--gold);margin-top:8px;font-size:14px;line-height:1.55;color:var(--navy)}
+.pill-foot strong{color:var(--navy)}
+.pf-found{margin-top:14px;font-size:14px;font-style:italic;color:#57534e;line-height:1.55}
+.flag-block{margin:24px 0 28px}
+.flag-block h3{display:flex;align-items:center;gap:10px;font-family:'Fraunces',serif;font-size:22px;font-weight:600;color:var(--navy);margin:24px 0 10px}
+.flag-block h3 .em{font-size:24px}
+.flag-block ul{margin:8px 0 0;padding-left:20px}
+.flag-block li{font-size:16px;line-height:1.65;color:#33312e;margin:8px 0}
+@media(min-width:640px){.flag-block li{font-size:17px}}
+.flag-block li strong{color:var(--navy)}
+.flag-block li em{color:var(--olive);font-style:italic;font-size:0.92em}
+.two-col{display:grid;grid-template-columns:1fr;gap:14px;margin:20px 0}
+@media(min-width:640px){.two-col{grid-template-columns:1fr 1fr;gap:18px}}
+.two-col .callout{margin:0}
+.method-list{counter-reset:item;list-style:none;padding-left:0;margin:24px 0}
+.method-list li{counter-increment:item;padding-left:46px;position:relative;margin:14px 0;font-size:16px;line-height:1.6;color:#33312e}
+@media(min-width:640px){.method-list li{font-size:17px}}
+.method-list li::before{content:counter(item);position:absolute;left:0;top:-2px;width:32px;height:32px;background:var(--navy);color:var(--paper);font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:600;display:flex;align-items:center;justify-content:center;border-radius:50%}
+.method-list li strong{color:var(--navy)}
+.tbl-wrap .total td{font-weight:700;color:var(--navy)}
+</style>
+</head>
+<body>
+
+<header>
+<div class="c hr">
+<a href="index.html" class="brand"><svg class="bicn" viewBox="0 0 240 240" aria-hidden="true"><circle cx="120" cy="120" r="112" fill="#FAF7F0"/><g fill="none" stroke="#16335c" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"><path d="M52 92  q22.5 -14 45 0 t45 0 t45 0"/><path d="M52 120 q22.5 -14 45 0 t45 0 t45 0" opacity="0.88"/><path d="M52 148 q22.5 -14 45 0 t45 0 t45 0" opacity="0.76"/></g></svg><span class="nm">A City That Works</span></a>
+<nav class="nv">
+<a href="index.html">Framework</a>
+<a href="summary.html" class="cur">Summary</a>
+<a href="index.html#measures">Measures</a>
+<a href="savings.html">Savings</a>
+<a href="city-hall.html">City Hall</a>
+<a href="comparison.html">Compare</a>
+<a href="faq.html">FAQ</a>
+<a href="endorse.html" class="btn-end">Endorse</a>
+</nav>
+<button id="mt" class="mb" aria-label="Open menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+</div>
+<div id="mn" class="mm">
+<div class="c mmi">
+<a href="index.html">Framework</a>
+<a href="summary.html" class="gd">One-Page Summary</a>
+<a href="index.html#measures">All Measures</a>
+<a href="index.html#scorecard">Scorecard</a>
+<a href="index.html#balance">Balance Sheet</a>
+<div class="grp">Detailed documents</div>
+<a href="savings.html">Savings &amp; Revenue Analysis</a>
+<a href="city-hall.html">How City Hall Works</a>
+<a href="endorse.html">Candidate Endorsement Pack</a>
+<a href="comparison.html">Candidate Comparison Matrix</a>
+<a href="faq.html">Frequently Asked Questions</a>
+<div class="grp"></div>
+<a href="index.html#adopt" class="gd">Endorse the framework →</a>
+</div>
+</div>
+</header>
+
+<main>
+<div class="cn">
+<nav class="crumbs" aria-label="Breadcrumb">
+<a href="index.html">Framework</a><span class="sep">/</span><span class="here">One-Page Summary</span>
+</nav>
+<div class="hero">
+<div class="eyb"><span>📋 Summary</span><span class="dot">◆</span><span>The 60-second version</span><span class="dot">◆</span><span>v1.3 · May 27, 2026</span></div>
+<h1 class="ph1">A City That <em>Works.</em></h1>
+<p class="lead" style="margin-top:18px">A citizens' framework for Victoria 2026. Security. Cleanliness. Results. The one-page version of the full program.</p>
+<a href="index.html" class="pgback">← Back to the framework</a>
+</div>
+
+<div class="prose">
+
+<h2>The Problem in 30 Seconds</h2>
+<div class="callout blue">
+<div class="lbl">◆ Where Victoria is today</div>
+<p style="margin:0 0 10px">Victoria's operating budget is up <strong>29% in three years</strong> ($297.9M → $384.1M). Property tax: <strong>6.15% → 7.93% → 6.99%</strong>, with <strong>10.44% proposed for 2026</strong>. VicPD now costs <strong>$750 per resident — the highest in BC</strong>. Missing Middle delivered <strong>61 permits in 2024</strong> against a target of 150. <strong>48% of downtown businesses</strong> would leave if their lease expired. <strong>$25M spent on homelessness since 2023</strong> — with no published outcome metrics.</p>
+<p style="margin:0 0 10px">No competitive benchmarking. No AI. No digital twin. No smart infrastructure. No zero-based reviews.</p>
+<p style="margin:0"><strong>Victoria does not need to spend more. It needs to spend smarter.</strong></p>
+</div>
+
+<h2>The Five Pillars</h2>
+<div class="pill-grid">
+<div class="pill-card"><div class="ic">🏠</div><div class="nm">A Liveable City</div><div class="ds">Housing, families, mobility</div></div>
+<div class="pill-card"><div class="ic">🛡️</div><div class="nm">A Safe City</div><div class="ds">Order, accountability, modern infrastructure</div></div>
+<div class="pill-card"><div class="ic">🌳</div><div class="nm">A Beautiful City</div><div class="ds">Heritage, parks, climate</div></div>
+<div class="pill-card"><div class="ic">💰</div><div class="nm">A Well-Managed City</div><div class="ds">Taxes, permits, performance</div></div>
+</div>
+<div class="pill-foot"><strong>🗳️ A Democratic City</strong> — Referendums, transparency, public-visualization tools</div>
+<p class="pf-found">Built on a foundation of working partnership with the host Nations — Songhees and Esquimalt.</p>
+
+<h2>The Flagship Measures</h2>
+
+<div class="flag-block">
+<h3><span class="em">🏠</span> Liveable</h3>
+<ul>
+<li><strong>12,000+ new homes by 2030</strong> with composition targets: 25% missing middle, 20% 3BR+, 15% non-market, 30% rental</li>
+<li><strong>City land bank</strong> — strategic acquisition and competitive disposition of City-owned land <em>(v1.2, continuing Alto 2022)</em></li>
+<li><strong>Published permit times by category:</strong> simple &lt;6 weeks, complex &lt;6 months, rezoning &lt;9 months</li>
+<li><strong>Adaptive traffic signals</strong> on major corridors (Pittsburgh evidence: −25% travel time, −21% emissions)</li>
+<li><strong>Champion Westshore rapid transit and the E&amp;N corridor</strong> — endorse LRT/BRT, protect right-of-way</li>
+<li><strong>First-hour free parking</strong> in commercial areas + real-time parking availability</li>
+<li><strong>STEP-style supportive-housing throughput</strong> with BC Housing + Island Health + Pacifica — free up the supportive units, not just add to them <em>(v1.1)</em></li>
+<li><strong>Short-term rental licensing tightening</strong> to protect the long-term rental pool <em>(v1.1)</em></li>
+<li><strong>Reach Victoria's young adults (18–25)</strong> — youth-priority space, late-evening hours, post-secondary partnerships <em>(v1.2)</em></li>
+<li><strong>Universal accessibility audit and remediation</strong> — every sidewalk, public building, washroom, transit-adjacent site <em>(v1.2)</em></li>
+</ul>
+</div>
+
+<div class="flag-block">
+<h3><span class="em">🛡️</span> Safe</h3>
+<ul>
+<li><strong>Downtown Public Order Team (DPOT)</strong> — unified VicPD + Bylaw + Sanitation + Outreach, single daily briefing</li>
+<li><strong>Bylaw enforcement 6 AM – 10 PM, 7 days a week</strong> (vs. current 7 AM – 4 PM)</li>
+<li><strong>Smart LED streetlights</strong> — Kelowna/Halifax model. <strong>No audio surveillance. No behavioural AI.</strong> Self-financing in 3–4 years</li>
+<li><strong>Resolve the VicPD funding dispute with Esquimalt</strong> — transparent service-consumption formula, binding mediation if needed</li>
+<li><strong>Greater Victoria Regional Policing Services Review</strong> — 18-month co-sponsored review with binding mediation outcome <em>(v1.1)</em></li>
+<li><strong>Phased capacity-first enforcement:</strong> enforce when there is somewhere to send people, not when there isn't</li>
+<li><strong>Drug-use buffer zones</strong> around schools, playgrounds, libraries, and community centres <em>(v1.1)</em></li>
+</ul>
+</div>
+
+<div class="flag-block">
+<h3><span class="em">🌳</span> Beautiful</h3>
+<ul>
+<li><strong>Modernize underground utility GIS (M53)</strong> — coordinate excavation, reduce re-trenched streets, federal modernization-grant eligible <em>(v1.3 reframe of the Digital Twin)</em></li>
+<li><strong>One-time LIDAR scan of downtown core (M53c)</strong> — heritage protection, emergency-management baseline, planning-support data layer <em>(v1.3)</em></li>
+<li><strong>AI-generated public consultation imagery (M53b)</strong> — continuing Coun. Dell's Beacon Hill precedent, on every meaningful public project</li>
+<li><strong>Heritage protection + restored street furniture</strong> — Victoria's character is its competitive advantage</li>
+<li><strong>Cultural-venue preservation tool</strong> — right-of-first-refusal + lease-bridge fund for designated live-music and arts spaces <em>(v1.1)</em></li>
+<li><strong>Pedestrianization pilots</strong> — Bastion Square full, Government Street seasonal <em>(v1.2)</em></li>
+<li><strong>Royal Athletic Park restoration</strong> — reverse the 2025 reserve raid and complete deferred upgrades <em>(v1.2, continuing Alto 2022)</em></li>
+<li><strong>5,000 new trees by 2030</strong> — climate-resilient species, free seedlings for homeowners</li>
+<li><strong>−50% community GHG by 2030</strong> (19 points still needed from current −31%)</li>
+<li><strong>Maximum-temperature rental bylaw (26°C)</strong> in at least one room during declared heat-warning periods <em>(v1.1)</em></li>
+</ul>
+</div>
+
+<div class="flag-block">
+<h3><span class="em">💰</span> Well-Managed</h3>
+<ul>
+<li><strong>Managed competition for waste and street cleaning</strong> — ~$2.4M/year savings, <strong>workers protected</strong> by mandatory re-employment clauses (Phoenix precedent: $25M+ saved 1978–1988)</li>
+<li><strong>Zero-based budget review</strong> of all 200+ programs on a rotating cycle (Calgary SAVE: $74M targeted by 2022; $60M actually found per March 2026)</li>
+<li><strong>Tax glide path:</strong> Year 1 ≤6.5%, Year 2 ≤5%, Year 3+ ≈CPI + population growth (3.5%) — versus the council's 10.44% draft</li>
+<li><strong>Vacant storefront strategy:</strong> advocate to Province for enabling legislation + use existing levers (licensing, façade conditions, pop-up facilitation) + quarterly transparency report</li>
+<li><strong>Confront provincial downloading</strong> — quarterly public ledger of unfunded mandates + formal refusal threshold <em>(v1.1)</em></li>
+<li><strong>Rationalize City real estate</strong> — sell or lease underused properties; proceeds to debt reduction and capital</li>
+</ul>
+</div>
+
+<div class="flag-block">
+<h3><span class="em">🗳️</span> Democratic</h3>
+<ul>
+<li><strong>Referendum on every new (non-lifecycle) capital project over $25M</strong> — within BC LGA/Community Charter framework (Assent Voting or AAP)</li>
+<li><strong>Settle Saanich amalgamation</strong> through a <strong>binding Citizens' Assembly</strong> (60 randomly selected residents, 12–18 months, both councils pre-commit to honour the result)</li>
+<li><strong>Integrity Commissioner office</strong> + MNP governance report implementation tracker <em>(v1.1)</em></li>
+<li><strong>Quarterly performance dashboard</strong> — permits, potholes, crime, housing, budget variance — published, no spin</li>
+<li><strong>Government-to-government working tables</strong> with the Songhees Nation and the Esquimalt Nation, on standing quarterly cadence</li>
+</ul>
+</div>
+
+<h2>The Math</h2>
+<div class="tbl-wrap">
+<table class="dt">
+<thead><tr><th>Item</th><th style="text-align:right">Number</th></tr></thead>
+<tbody>
+<tr><td>Council's 2026 draft tax increase</td><td class="amt" style="text-align:right"><strong>10.44%</strong></td></tr>
+<tr><td>Glide path Year 1 (cap)</td><td class="amt" style="text-align:right">≤6.5%</td></tr>
+<tr><td>Glide path Year 2 (cap)</td><td class="amt" style="text-align:right">≤5%</td></tr>
+<tr><td>Glide path Year 3+ (target)</td><td class="amt" style="text-align:right">~3.5% (CPI + growth)</td></tr>
+<tr><td>Managed competition (waste/cleaning)</td><td class="amt" style="text-align:right">+$2.4M/yr</td></tr>
+<tr><td>Zero-based budget review</td><td class="amt" style="text-align:right">+$3–6M/yr</td></tr>
+<tr><td>Admin efficiency (attrition + tech)</td><td class="amt" style="text-align:right">+$1.5–2.5M/yr</td></tr>
+<tr><td>New property tax (12,000 homes, peak by 2030)</td><td class="amt" style="text-align:right">+$8–15M/yr</td></tr>
+<tr><td>Smart streetlighting ROI</td><td class="amt" style="text-align:right">+$500K–1M/yr</td></tr>
+<tr class="total"><td><strong>Total at steady-state (gross savings + revenue, before framework operating costs)</strong></td><td class="amt" style="text-align:right"><strong>$12.5–27.8M/yr</strong></td></tr>
+</tbody>
+</table>
+</div>
+<p style="font-size:14px;color:#57534e;font-style:italic;margin-top:14px">Year-one is a fraction of steady-state. The glide path is honest about that. Net fiscal headroom after all framework operating costs is <strong>$5.4–14.9M/year</strong> at steady-state under v1.3 — see <a href="savings.html">Savings &amp; Revenue Analysis</a>.</p>
+
+<h2>How Every Major New Project Gets Decided</h2>
+<ol class="method-list">
+<li><strong>Consult locally</strong> — what residents say needs to improve</li>
+<li><strong>Design with experts</strong> — engineers, planners, affected residents</li>
+<li><strong>Visualize and analyze impact</strong> — AI imagery (M53b) and GIS analysis (M53) show the future before construction</li>
+<li><strong>Referendum if &gt;$25M</strong> (new, non-lifecycle capital), under BC statutory process</li>
+<li><strong>Report quarterly</strong> during construction — on time, on budget, or explain why not</li>
+</ol>
+
+<h2>What This Is — And Isn't</h2>
+<div class="two-col">
+<div class="callout green">
+<div class="lbl">✓ Is</div>
+<p style="margin:0">Non-partisan and open<br>Costed and sourced<br>Measurable, quarterly-reported<br>Adoptable by any candidate</p>
+</div>
+<div class="callout red">
+<div class="lbl">✗ Isn't</div>
+<p style="margin:0">A political party<br>A candidate slate<br>Public surveillance<br>Ideology dressed as policy</p>
+</div>
+</div>
+
+<h2>Get Involved</h2>
+<ul>
+<li><strong>Read the full program</strong> — ~101 active commitments (82 original + 18 sub-measures across v1.1, v1.2, and v1.3), costed and sourced, on the <a href="index.html#measures">Measures page</a></li>
+<li><strong>Endorse or adopt</strong> — any candidate is free to use these measures in whole, in part, or as a starting point. See the <a href="endorse.html">Endorsement Pack</a></li>
+<li><strong>Suggest improvements</strong> — every measure is open to correction by anyone with expertise</li>
+<li><strong>Contact:</strong> <a href="mailto:info@acitythatworks.ca">info@acitythatworks.ca</a></li>
+</ul>
+
+<div class="callout gold" style="margin-top:32px">
+<div class="lbl">◆ Election day</div>
+The Victoria municipal election is on <strong>October 17, 2026</strong>. Between now and then, every candidate should be able to answer one question clearly: <em>"What works elsewhere that you would bring to Victoria?"</em>
+</div>
+
+<p style="margin-top:32px;font-size:13px;color:#57534e;font-style:italic;line-height:1.6">Version 1.3 — updated May 27, 2026. v1.3 demotes the full city-scale Digital Twin from a Year 1–2 commitment to a Year 3+ aspirational measure contingent on specific gates; replaces it with three smaller, Canadian-peer-precedented measures (M53 GIS modernization, M53b AI consultation imagery, M53c one-time LIDAR scan) that capture roughly 80% of the citizen-facing value at roughly 25% of the cost. Net fiscal headroom widens to $5.4–14.9M/yr at steady-state.</p>
+
+<p style="margin-top:14px;font-size:13px;color:#57534e;font-style:italic">No copyright. Attribution to <em>A City That Works — A Citizens' Framework for Victoria 2026</em> appreciated but not required.</p>
+
+<p style="margin-top:32px"><a href="index.html" class="pgback">← Back to the framework</a></p>
+
+</div>
+</div>
+</main>
+
+<div id="footer-mount"></div>
+<script src="site.js"></script>
+
+</body>
+</html>

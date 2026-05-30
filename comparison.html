@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="description" content="Where each Victoria 2026 candidate stands relative to A City That Works. A spec-sheet view: scan the rows, see the gaps.">
+<meta name="theme-color" content="#1A3668">
+<title>Candidate Comparison Matrix — A City That Works</title>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Public+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+.legend{display:grid;grid-template-columns:1fr;gap:10px;margin:20px 0}
+@media(min-width:640px){.legend{grid-template-columns:repeat(2,1fr)}}
+.lg{padding:12px 16px;border-radius:3px;font-size:14px;line-height:1.45}
+.lg b{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.05em}
+.lg.g{background:rgba(34,114,71,.08);border:1px solid rgba(34,114,71,.3)}
+.lg.y{background:rgba(212,168,67,.12);border:1px solid rgba(212,168,67,.5)}
+.lg.r{background:rgba(181,52,31,.08);border:1px solid rgba(181,52,31,.3)}
+.lg.w{background:rgba(26,54,104,.05);border:1px solid rgba(26,54,104,.2)}
+table.cmp{width:100%;border-collapse:collapse;font-size:13px;min-width:560px}
+table.cmp thead tr{border-bottom:2px solid rgba(26,54,104,.3)}
+table.cmp th{text-align:left;padding:9px 12px 9px 0;font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:var(--navy);font-weight:600;vertical-align:bottom}
+table.cmp tbody tr{border-bottom:1px solid rgba(26,54,104,.13)}
+table.cmp td{padding:9px 12px 9px 0;vertical-align:top;color:#33312e;line-height:1.45}
+table.cmp tr.actw{background:rgba(26,54,104,.05)}
+table.cmp tr.actw td{font-weight:500;color:var(--navy)}
+table.cmp .who{white-space:nowrap;font-weight:500}
+.sym{font-weight:700;white-space:nowrap}
+.diff{padding:12px 16px;background:rgba(212,168,67,.1);border-left:3px solid var(--gold);font-size:13px;line-height:1.55;margin:8px 0 28px;color:var(--navy)}
+.diff b{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;display:block;margin-bottom:3px;color:var(--olive)}
+details.cand{border:1px solid rgba(26,54,104,.18);border-radius:3px;margin:10px 0;background:#fff}
+details.cand summary{padding:14px 18px;cursor:pointer;font-family:'Fraunces',serif;font-size:17px;font-weight:500;color:var(--navy);list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px}
+details.cand summary::-webkit-details-marker{display:none}
+details.cand summary:after{content:"+";font-family:'JetBrains Mono',monospace;color:var(--gold);font-size:20px}
+details.cand[open] summary:after{content:"–"}
+details.cand .body{padding:0 18px 18px;font-size:14px;line-height:1.6;color:#33312e}
+details.cand .body p{margin:10px 0}
+details.cand .body ul{margin:8px 0;padding-left:20px}
+details.cand .body li{margin:5px 0}
+.pillar-band{font-family:'Fraunces',serif;font-size:26px;font-weight:500;color:var(--navy);margin:48px 0 4px;padding-top:24px;border-top:3px double rgba(26,54,104,.3)}
+.topic{font-family:'Fraunces',serif;font-size:19px;font-weight:600;color:var(--navy);margin:28px 0 4px}
+</style>
+</head>
+<body>
+
+<header>
+<div class="c hr">
+<a href="index.html" class="brand"><svg class="bicn" viewBox="0 0 240 240" aria-hidden="true"><circle cx="120" cy="120" r="112" fill="#FAF7F0"/><g fill="none" stroke="#16335c" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"><path d="M52 92  q22.5 -14 45 0 t45 0 t45 0"/><path d="M52 120 q22.5 -14 45 0 t45 0 t45 0" opacity="0.88"/><path d="M52 148 q22.5 -14 45 0 t45 0 t45 0" opacity="0.76"/></g></svg><span class="nm">A City That Works</span></a>
+<nav class="nv">
+<a href="index.html">Framework</a>
+<a href="summary.html">Summary</a>
+<a href="index.html#measures">Measures</a>
+<a href="savings.html">Savings</a>
+<a href="city-hall.html">City Hall</a>
+<a href="comparison.html" class="cur">Compare</a>
+<a href="faq.html">FAQ</a>
+<a href="endorse.html" class="btn-end">Endorse</a>
+</nav>
+<button id="mt" class="mb" aria-label="Open menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+</div>
+<div id="mn" class="mm">
+<div class="c mmi">
+<a href="index.html">Framework</a>
+<a href="summary.html">One-Page Summary</a>
+<a href="index.html#measures">All Measures</a>
+<a href="index.html#scorecard">Scorecard</a>
+<a href="index.html#balance">Balance Sheet</a>
+<div class="grp">Detailed documents</div>
+<a href="savings.html">Savings &amp; Revenue Analysis</a>
+<a href="city-hall.html">How City Hall Works</a>
+<a href="endorse.html">Candidate Endorsement Pack</a>
+<a href="comparison.html" class="gd">Candidate Comparison Matrix</a>
+<a href="faq.html">Frequently Asked Questions</a>
+<div class="grp"></div>
+<a href="endorse.html" class="gd">Endorse the framework →</a>
+</div>
+</div>
+</header>
+
+<main>
+<div class="cn">
+<nav class="crumbs" aria-label="Breadcrumb">
+<a href="index.html">Framework</a><span class="sep">/</span><span class="here">Candidate Comparison Matrix</span>
+</nav>
+<div class="hero">
+<div class="eyb"><span>📊 Spec Sheet</span><span class="dot">◆</span><span>As of May 27, 2026</span></div>
+<h1 class="ph1">Candidate Comparison Matrix</h1>
+<p class="lead" style="margin-top:18px">Where each Victoria 2026 candidate stands relative to the framework. Scan the rows, see the gaps. A snapshot — the race evolves.</p>
+<a href="index.html" class="pgback">← Back to the framework</a>
+</div>
+
+<div class="prose">
+
+<div class="callout blue">
+<div class="lbl">◆ What this is</div>
+A side-by-side comparison of the Victoria 2026 mayoral and council field, scored against the ~100 commitments of the framework. Each row is a policy area; the scoring tells you at a glance who supports what — and where the framework is alone in proposing a specific mechanism. <strong>Not a slate. Not an attack piece.</strong> Single-line ideas inevitably flatten nuance; use this as a starting point, not the final word.
+</div>
+
+<nav class="toc" aria-label="On this page">
+<div class="toc-h">◆ On this page</div>
+<ol>
+<li><a href="#how-to-read">How to Read This</a></li>
+<li><a href="#field">The Field at a Glance</a></li>
+<li><a href="#pillar-1">Pillar 1 — Liveable</a></li>
+<li><a href="#pillar-2">Pillar 2 — Safe</a></li>
+<li><a href="#pillar-3">Pillar 3 — Beautiful</a></li>
+<li><a href="#pillar-4">Pillar 4 — Well-Managed</a></li>
+<li><a href="#pillar-5">Pillar 5 — Democratic</a></li>
+<li><a href="#foundation">Foundation — Host Nations</a></li>
+<li><a href="#stands-alone">Where the Framework Stands Alone</a></li>
+<li><a href="#track-record">Current Administration Record</a></li>
+<li><a href="#profiles">Candidate Profiles</a></li>
+<li><a href="#methodology">Methodology &amp; Caveats</a></li>
+</ol>
+</nav>
+
+<h2 id="how-to-read">How to Read This</h2>
+<div class="legend">
+<div class="lg g"><b>✅ Aligned</b> — has publicly supported a position substantively similar to the framework's, in voting record or stated platform</div>
+<div class="lg y"><b>🟡 Partial</b> — some alignment but with reservations, a different mechanism, or weaker formulation</div>
+<div class="lg r"><b>❌ Opposed</b> — has publicly opposed or voted against a similar position</div>
+<div class="lg w"><b>⚪ Silent</b> — no public position found; treat as unknown rather than opposed</div>
+</div>
+<p>Every score is backed by a public source: voting record (council minutes, major-outlet reporting), declared platform, or direct public statement. Where no public position exists, the cell is marked silent rather than guessed. <strong>Silence is not opposition.</strong></p>
+
+<h2 id="field">The Field at a Glance</h2>
+<div class="tbl-wrap">
+<table class="cmp">
+<thead><tr><th>Candidate</th><th>Office (2026)</th><th>Overall alignment</th></tr></thead>
+<tbody>
+<tr><td class="who">Marianne Alto</td><td>Mayor (re-election, declared May 20)</td><td>Method opposed (no ZBB, benchmarking, or dashboard); some measures adopted (regional policing, land bank)</td></tr>
+<tr><td class="who">Jeremy Caradonna</td><td>Councillor (re-election)</td><td>Tactical alignment on housing supply, cooling bylaw, VicPD restraint; opposed on method</td></tr>
+<tr><td class="who">Matt Dell</td><td>Councillor (re-election)</td><td>AI consultation imagery (M53b absorbs his Beacon Hill precedent); supports line-by-line budget review and housing supply</td></tr>
+<tr><td class="who">Dave Thompson</td><td>Councillor (re-election)</td><td>Vision Zero advocate (Hoboken benchmark); aligned on cooling bylaw + housing</td></tr>
+<tr><td class="who">Susan Kim</td><td>Councillor (undecided)</td><td>System critique aligns; vacancy control + STR + accessibility ideas absorbed into v1.1</td></tr>
+<tr><td class="who">Krista Loughton</td><td>Councillor (undecided)</td><td>STEP motion now Measure 11; high overlap on Housing-First throughput</td></tr>
+<tr><td class="who">Chris Coleman</td><td>Councillor (June/July decision)</td><td>Framing alignment ("governance over politics"); chairs Citizens' Assembly Committee</td></tr>
+<tr><td class="who">Stephen Hammond</td><td>Councillor (re-election)</td><td>Public record on enforcement, FOI-driven data, and the Integrity Commissioner is consistent with the framework</td></tr>
+<tr><td class="who">Marg Gardiner</td><td>Councillor (re-election)</td><td>Public record on ZBB, fiscal rigour, and the Integrity Commissioner is consistent with the framework's method</td></tr>
+<tr><td class="who">Melissa Cseszko</td><td>Council (declared May 12)</td><td>Public framing — "results over ideology," small-business + accountability — is consistent with the framework</td></tr>
+<tr><td class="who">Karen Rothe</td><td>Council, declared</td><td>Stated lane: transportation and urban planning</td></tr>
+<tr><td class="who">Wendy Bowkett</td><td>Council, declared</td><td>Stated lane: trust and governance</td></tr>
+<tr><td class="who">Arthur McInnis</td><td>Council, declared</td><td>Stated lane: transparency and governance quality</td></tr>
+<tr><td class="who"><em>Del Manak</em></td><td><em>Not running (declined April 15)</em></td><td>Listed for context; not a 2026 candidate</td></tr>
+<tr><td class="who"><em>Stephen Andrew</em></td><td><em>No 2026 signal</em></td><td>Family-doctor incentive plank absorbed into M13b</td></tr>
+</tbody>
+</table>
+</div>
+<p style="font-size:13px;color:#57534e"><em>As of May 26, 2026: six incumbents declared for re-election (Alto, Caradonna, Dell, Thompson, Gardiner, Hammond); three sitting councillors undecided (Coleman, Kim, Loughton); four new candidates declared (Cseszko, Rothe, Bowkett, McInnis). Where a candidate has not made a public statement on a specific measure, the cell is marked silent rather than guessed.</em></p>
+
+<div class="pillar-band" id="pillar-1">🏠 Pillar 1 — A Liveable City</div>
+
+<div class="topic">Housing supply + composition (M6)</div>
+<div class="tbl-wrap">
+<table class="cmp">
+<thead><tr><th>Position</th><th>Detail</th></tr></thead>
+<tbody>
+<tr class="actw"><td class="who">Framework</td><td>12,000+ homes by 2030 with composition targets: 25% missing middle, 20% 3BR+, 15% non-market, 30% rental. Quarterly reporting on each.</td></tr>
+<tr><td class="who">Alto</td><td><span class="sym">🟡</span> "Unlock more homes"; committed to volume; no published composition targets or quarterly reporting</td></tr>
+<tr><td class="who">Caradonna</td><td><span class="sym">🟡</span> Drafted Sept 2023 Missing Middle overhaul; volume-focused, no composition targets</td></tr>
+<tr><td class="who">Dell</td><td><span class="sym">🟡</span> Strong volume advocate ("7000+ units approved this term"); no composition discipline</td></tr>
+<tr><td class="who">Thompson</td><td><span class="sym">🟡</span> Pro-supply; eliminate parking minimums; no composition discipline</td></tr>
+<tr><td class="who">Kim</td><td><span class="sym">🟡</span> Non-market/co-op emphasis; aligns on the 15% non-market target</td></tr>
+<tr><td class="who">Loughton</td><td><span class="sym">🟡</span> Pro-supply; STEP addresses throughput, not construction composition</td></tr>
+<tr><td class="who">Coleman</td><td><span class="sym">❌</span> Voted NO on Missing Middle (process objections)</td></tr>
+<tr><td class="who">Hammond</td><td><span class="sym">❌</span> Voted NO on Missing Middle</td></tr>
+<tr><td class="who">Gardiner</td><td><span class="sym">❌</span> Voted NO on Missing Middle; demanded MNP governance review first</td></tr>
+<tr><td class="who">Cseszko</td><td><span class="sym">⚪</span> No public position on volume; "results over ideology" frame consistent with composition discipline</td></tr>
+<tr><td class="who">Rothe / Bowkett / McInnis</td><td><span class="sym">⚪</span> No public position on file</td></tr>
+</tbody>
+</table>
+</div>
+<div class="diff"><b>Where the framework stands alone</b>Composition discipline + quarterly reporting — no other candidate has named both, even where volume is supported.</div>
+
+<div class="topic">Permits + AI pre-screening (M7)</div>
+<div class="tbl-wrap">
+<table class="cmp">
+<thead><tr><th>Position</th><th>Detail</th></tr></thead>
+<tbody>
+<tr class="actw"><td class="who">Framework</td><td>Published targets by category (simple &lt;6 weeks, complex &lt;6 months, rezoning &lt;9 months); AI pre-screening on Kelowna KAI model; one-stop centre; quarterly variance reports</td></tr>
+<tr><td class="who">Alto</td><td><span class="sym">⚪</span> No published permit-time benchmarks in three years in office</td></tr>
+<tr><td class="who">Dell</td><td><span class="sym">🟡</span> "Bad governance is the failure to make a decision" — process critic, no specific mechanism</td></tr>
+<tr><td class="who">Hammond / Gardiner</td><td><span class="sym">🟡</span> General "reduce red tape" posture; no specific benchmark mechanism</td></tr>
+<tr><td class="who">Cseszko</td><td><span class="sym">🟡</span> "Predictability, order, and trust" frame consistent with benchmarks; no mechanism declared</td></tr>
+<tr><td class="who">Others</td><td><span class="sym">⚪</span> No public position on file</td></tr>
+</tbody>
+</table>
+</div>
+<div class="diff"><b>Where the framework stands alone</b>Published benchmarks + AI pre-screening + statutory deadline review — zero direct analogue. Victoria publishes no permit-processing benchmarks today.</div>
+
+<div class="topic">Tenant protections + STR + heat bylaw (M9, M9b, M9c, M64)</div>
+<div class="tbl-wrap">
+<table class="cmp">
+<thead><tr><th>Position</th><th>Detail</th></tr></thead>
+<tbody>
+<tr class="actw"><td class="who">Framework</td><td>STR licensing tightening (M9b), vacancy-control-between-tenancies advocacy (M9c), 26°C maximum-temperature rental bylaw (M64)</td></tr>
+<tr><td class="who">Caradonna / Dell / Thompson</td><td><span class="sym">✅</span> Co-authors of the May 2026 cooling bylaw motion (26°C, New Westminster precedent)</td></tr>
+<tr><td class="who">Kim</td><td><span class="sym">✅</span> Vacancy control between tenancies + AirBnB licensing (2022 planks); conceptually ahead of the 2026 motion</td></tr>
+<tr><td class="who">Alto</td><td><span class="sym">🟡</span> Rent banks; rental support motion 2026; no STR tightening or heat bylaw position</td></tr>
+<tr><td class="who">Loughton</td><td><span class="sym">🟡</span> Renters' Hub support; no STR or heat bylaw position</td></tr>
+<tr><td class="who">Others</td><td><span class="sym">⚪</span> No public position on file</td></tr>
+</tbody>
+</table>
+</div>
+<div class="diff"><b>Where the framework stands alone</b>Cooling bylaw fully absorbed in v1.1; STR licensing tightening + vacancy-control advocacy are uniquely sequenced here.</div>
+
+<div class="topic">Homelessness — Housing First + STEP throughput (M11)</div>
+<div class="tbl-wrap">
+<table class="cmp">
+<thead><tr><th>Position</th><th>Detail</th></tr></thead>
+<tbody>
+<tr class="actw"><td class="who">Framework</td><td>50% reduction via Housing-First plus STEP-style throughput (Loughton motion absorbed); capacity-first enforcement (M35); 89% regional burden flagged for fair-share advocacy</td></tr>
+<tr><td class="who">Loughton</td><td><span class="sym">✅</span> STEP motion originator (Jan 2026); Measure 11 absorbs her work directly</td></tr>
+<tr><td class="who">Thompson</td><td><span class="sym">✅</span> Co-author Coordinated Access &amp; Assessment downtown prioritization (June 2025)</td></tr>
+<tr><td class="who">Hammond</td><td><span class="sym">✅</span> Daytime sheltering ban author (July 2024, 8-1); capacity-first sequencing aligns</td></tr>
+<tr><td class="who">Gardiner</td><td><span class="sym">✅</span> Five Pillars approach — conceptually aligned with phased CSWB</td></tr>
+<tr><td class="who">Alto / Caradonna / Dell</td><td><span class="sym">🟡</span> CSWB supporters; Alto admits "took nearly a year" before safety focus, raided reserves for Phase 1</td></tr>
+<tr><td class="who">Kim</td><td><span class="sym">🟡</span> Pro-supportive-housing; lone NO on July 2024 daytime sheltering ban</td></tr>
+</tbody>
+</table>
+</div>
+<div class="diff"><b>Where the framework stands alone</b>Combines STEP throughput (Loughton's idea) with capacity-first enforcement sequencing (Hammond's idea) — neither bloc has both.</div>
+
+<div class="topic">Mobility + Vision Zero (M19, M22, M38–42)</div>
+<div class="tbl-wrap">
+<table class="cmp">
+<thead><tr><th>Position</th><th>Detail</th></tr></thead>
+<tbody>
+<tr class="actw"><td class="who">Framework</td><td>Adaptive traffic signals (Pittsburgh SURTRAC, phased pilot); Vision Zero −50% by 2030 (Hoboken benchmark); first-hour free parking; Westshore E&amp;N advocacy; federal SUV hood-height advocacy</td></tr>
+<tr><td class="who">Thompson</td><td><span class="sym">✅</span> Hoboken Vision Zero benchmark cited publicly; eliminate parking minimums; e-bike rebates</td></tr>
+<tr><td class="who">Dell</td><td><span class="sym">🟡</span> Pro-bike; AI consultation imagery for park redesigns (model for M53b)</td></tr>
+<tr><td class="who">Rothe</td><td><span class="sym">🟡</span> Transportation/urban-planning lane — most aligned of the four new challengers; specifics pending</td></tr>
+<tr><td class="who">Alto / Caradonna / Kim</td><td><span class="sym">🟡</span> Pro-transit/bike generally; no adaptive-signal commitment</td></tr>
+<tr><td class="who">Others</td><td><span class="sym">⚪</span> No specific public position on file</td></tr>
+</tbody>
+</table>
+</div>
+<div class="diff"><b>Where the framework stands alone</b>Adaptive traffic signals (SURTRAC) + GIS-based traffic analysis (M53) + AI consultation imagery (M53b) — zero direct analogue. Thompson's Hoboken cite is the closest specific benchmark.</div>
+
+<div class="pillar-band" id="pillar-2">🛡️ Pillar 2 — A Safe City</div>
+
+<div class="topic">Bylaw enforcement hours (M27)</div>
+<div class="tbl-wrap">
+<table class="cmp">
+<thead><tr><th>Position</th><th>Detail</th></tr></thead>
+<tbody>
+<tr class="actw"><td class="who">Framework</td><td>Extend to 6 AM – 10 PM, 7 days/week (current: 7 AM – 4 PM). Funded from M15 managed-competition savings, not new tax</td></tr>
+<tr><td class="who">Hammond</td><td><span class="sym">✅</span> "Enforce existing bylaws consistently"; daytime sheltering ban author; FOI-driven data</td></tr>
+<tr><td class="who">Gardiner</td><td><span class="sym">✅</span> Pro-enforcement; opposed Dowler Place process</td></tr>
+<tr><td class="who">Cseszko</td><td><span class="sym">✅</span> Safety as "predictability, order, and trust"; downtown business-owner perspective</td></tr>
+<tr><td class="who">Alto + progressive bloc</td><td><span class="sym">🟡</span> CSWB added 12 bylaw staff; same hours; 80% of time consumed by encampments</td></tr>
+<tr><td class="who">Bowkett / McInnis</td><td><span class="sym">🟡</span> Trust and governance lane consistent with enforcement focus</td></tr>
+</tbody>
+</table>
+</div>
+<div class="diff"><b>Where the framework stands alone</b>Specific hour commitment (6 AM – 10 PM, 7 days) + named funding source (M15 savings, not new tax) — only the framework names both.</div>
+
+<div class="topic">Downtown Public Order Team (M26)</div>
+<div class="tbl-wrap">
+<table class="cmp">
+<thead><tr><th>Position</th><th>Detail</th></tr></thead>
+<tbody>
+<tr class="actw"><td class="who">Framework</td><td>Unified VicPD + Bylaw + Public Works sanitation + Outreach. Single daily briefing, weekly metrics, single field supervisor per shift</td></tr>
+<tr><td class="who">Loughton</td><td><span class="sym">✅</span> Coordinated Access &amp; Assessment downtown prioritization — operationally similar</td></tr>
+<tr><td class="who">Hammond</td><td><span class="sym">✅</span> FOI-driven enforcement model methodologically close to DPOT data architecture</td></tr>
+<tr><td class="who">Gardiner</td><td><span class="sym">✅</span> Five Pillars framework</td></tr>
+<tr><td class="who">Alto + bloc</td><td><span class="sym">🟡</span> CSWB has elements but no unified-command operational structure</td></tr>
+</tbody>
+</table>
+</div>
+<div class="diff"><b>Where the framework stands alone</b>Unified-command DPOT with single daily briefing + weekly KPI dashboard — no candidate has proposed this specific operational structure.</div>
+
+<div class="topic">Smart LED + IoT streetlights — no surveillance (M30)</div>
+<div class="tbl-wrap">
+<table class="cmp">
+<thead><tr><th>Position</th><th>Detail</th></tr></thead>
+<tbody>
+<tr class="actw"><td class="who">Framework</td><td>Full LED + IoT (Kelowna $1M/yr, Halifax $5M/yr precedents). No audio surveillance, no behavioural AI, no facial recognition. Self-financing in 3–4 years</td></tr>
+<tr><td class="who">Alto</td><td><span class="sym">⚪</span> Current LED conversion budgeted $150K, delayed by supplier issues. No IoT, no surveillance position</td></tr>
+<tr><td class="who">Entire field</td><td><span class="sym">⚪</span> No public position on streetlight modernization or surveillance posture</td></tr>
+</tbody>
+</table>
+</div>
+<div class="diff"><b>Where the framework stands alone</b>LED + IoT + explicit no-surveillance posture — zero direct analogue. The framework is alone in both proposing the operational upgrade and pre-emptively ruling out the surveillance-overreach version.</div>
+
+<div class="topic">VicPD funding + regional policing review (M29, M29b)</div>
+<div class="tbl-wrap">
+<table class="cmp">
+<thead><tr><th>Position</th><th>Detail</th></tr></thead>
+<tbody>
+<tr class="actw"><td class="who">Framework</td><td>4-year service-consumption funding formula with Esquimalt; binding mediation if no agreement; Greater Victoria Regional Policing Services Review</td></tr>
+<tr><td class="who">Alto</td><td><span class="sym">✅</span> Regional policing consolidation named in May 2026 platform (significant new plank)</td></tr>
+<tr><td class="who">Caradonna</td><td><span class="sym">🟡</span> Sponsored the VicPD 2026 ask cut (4→2 patrol officers); not regional consolidation</td></tr>
+<tr><td class="who">Thompson / Kim / Loughton</td><td><span class="sym">🟡</span> Voted YES on Caradonna's VicPD ask cut</td></tr>
+<tr><td class="who">Coleman / Hammond / Gardiner</td><td><span class="sym">🟡</span> Voted NO on the ask cut (full police ask supporters)</td></tr>
+</tbody>
+</table>
+</div>
+<div class="diff"><b>Where the framework stands alone</b>Combines Esquimalt funding formula + region-wide service review + binding mediation — Alto names the principle, the framework names the mechanism.</div>
+
+<div class="pillar-band" id="pillar-3">🌳 Pillar 3 — A Beautiful City</div>
+
+<div class="topic">Heritage + cultural-venue preservation (M43–46, M46b)</div>
+<div class="tbl-wrap">
+<table class="cmp">
+<thead><tr><th>Position</th><th>Detail</th></tr></thead>
+<tbody>
+<tr class="actw"><td class="who">Framework</td><td>Strict heritage design standards; restore distinctive street furniture; restoration incentives; cultural-venue preservation tool — right-of-first-refusal + lease-bridge fund (absorbing Hermann's response)</td></tr>
+<tr><td class="who">Dell</td><td><span class="sym">✅</span> Hermann's Jazz Club preservation advocate (motion absorbed into M46b)</td></tr>
+<tr><td class="who">Cseszko</td><td><span class="sym">✅</span> "Protecting what makes the city unique: heritage, charm, historic buildings, and local businesses"</td></tr>
+<tr><td class="who">Caradonna</td><td><span class="sym">🟡</span> "More like a miniature London or Paris than a miniature Vancouver or Manhattan"</td></tr>
+<tr><td class="who">Gardiner</td><td><span class="sym">🟡</span> Pro-character / pro-heritage tone</td></tr>
+<tr><td class="who">Others</td><td><span class="sym">⚪</span> No specific public position on file</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="topic">Climate + heat-protection rental bylaw (M58, M64)</div>
+<div class="tbl-wrap">
+<table class="cmp">
+<thead><tr><th>Position</th><th>Detail</th></tr></thead>
+<tbody>
+<tr class="actw"><td class="who">Framework</td><td>50% community GHG by 2030 (19 pts to go from −31%); 26°C maximum-temperature rental bylaw (New Westminster precedent); Climate Friendly Homes uptake publication</td></tr>
+<tr><td class="who">Caradonna / Dell / Thompson</td><td><span class="sym">✅</span> Co-authors of the 2026 cooling bylaw motion; climate advocates</td></tr>
+<tr><td class="who">Kim</td><td><span class="sym">✅</span> Conceptually ahead of the 2026 motion; climate advocate</td></tr>
+<tr><td class="who">Alto</td><td><span class="sym">🟡</span> Climate Leadership Plan supporter; Climate Friendly Homes uptake not published</td></tr>
+<tr><td class="who">Others</td><td><span class="sym">⚪</span> No specific public position on file</td></tr>
+</tbody>
+</table>
+</div>
+<div class="diff"><b>Where the framework stands alone</b>Cooling bylaw absorbed in v1.1; differentiation here is published Climate Friendly Homes uptake (which Alto has not delivered in three years) and tying the 26°C bylaw to the BC Building Code.</div>
+
+<div class="topic">GIS modernization + AI imagery + LIDAR (M53, M53b, M53c)</div>
+<div class="tbl-wrap">
+<table class="cmp">
+<thead><tr><th>Position</th><th>Detail</th></tr></thead>
+<tbody>
+<tr class="actw"><td class="who">Framework</td><td>v1.3 restructure: GIS + utility data modernization ($400–800K capital); AI consultation imagery as a permanent measure (continuing Dell's Beacon Hill precedent); one-time LIDAR scan ($150–250K). Full Digital Twin demoted to Year 3+ aspiration</td></tr>
+<tr><td class="who">Dell</td><td><span class="sym">✅</span> AI public consultation imagery pioneer — Beacon Hill All-Weather Field proposal (CHEK, 2025)</td></tr>
+<tr><td class="who">Rothe</td><td><span class="sym">🟡</span> Urban-planning background — most likely of new challengers to engage on visualization tools</td></tr>
+<tr><td class="who">Entire field</td><td><span class="sym">⚪</span> No public position on GIS modernization, LIDAR, or digital twin</td></tr>
+</tbody>
+</table>
+</div>
+<div class="diff"><b>Where the framework stands alone</b>GIS modernization + AI consultation imagery (Dell's precedent extended citywide) + LIDAR — zero direct analogue. v1.3 honest reframe: the full Digital Twin was demoted because no Canadian city of Victoria's scale (~92K) has successfully deployed one; the M53/M53b/M53c stack captures ~80% of the citizen-facing value at ~25% of the cost.</div>
+
+<div class="pillar-band" id="pillar-4">💰 Pillar 4 — A Well-Managed City</div>
+
+<div class="topic">Property tax glide path + ZBB (M65, M66)</div>
+<div class="tbl-wrap">
+<table class="cmp">
+<thead><tr><th>Position</th><th>Detail</th></tr></thead>
+<tbody>
+<tr class="actw"><td class="who">Framework</td><td>Glide path: Y1 ≤6.5%, Y2 ≤5%, Y3+ ~3.5% (CPI + growth). Funded by rotating zero-based budget reviews (Calgary SAVE model). Supermajority + public explanation to exceed cap</td></tr>
+<tr><td class="who">Gardiner</td><td><span class="sym">✅</span> "Introducing rigour into budgeting" — single most framework-aligned line from any sitting councillor; voted NO on every increase</td></tr>
+<tr><td class="who">Hammond</td><td><span class="sym">✅</span> Voted NO on every annual tax increase; opposed 2026 budget</td></tr>
+<tr><td class="who">Kim</td><td><span class="sym">✅</span> Voted NO on 2026 budget ("the system itself is just flawed") — critique from the left</td></tr>
+<tr><td class="who">Cseszko</td><td><span class="sym">✅</span> "If a program is not delivering results, push for it to be reviewed and adjusted" — program-review posture compatible</td></tr>
+<tr><td class="who">Alto</td><td><span class="sym">❌</span> Three consecutive years above-inflation (6.15 / 7.93 / 6.99%); 10.44% draft. No ZBB, no efficiency program</td></tr>
+<tr><td class="who">Caradonna / Dell / Thompson / Coleman / Loughton</td><td><span class="sym">🟡</span> Voted YES on the 2026 budget; varying degrees of stated reservation</td></tr>
+</tbody>
+</table>
+</div>
+<div class="diff"><b>Where the framework stands alone</b>Specific glide path + rotating ZBB mechanism + supermajority override — only the framework names all three. Gardiner names the principle; the framework names the method.</div>
+
+<div class="topic">Managed competition for services (M15)</div>
+<div class="tbl-wrap">
+<table class="cmp">
+<thead><tr><th>Position</th><th>Detail</th></tr></thead>
+<tbody>
+<tr class="actw"><td class="who">Framework</td><td>Competitive bidding for waste collection and street cleaning. Phoenix managed-competition model with employee protection (80% re-hire floor). ~$2.4M/yr savings, funds extended bylaw hours without raising tax</td></tr>
+<tr><td class="who">Alto + progressive bloc</td><td><span class="sym">❌</span> No public consideration; progressive bloc generally opposes outsourcing; Labour Council–endorsed candidates committed against P3s</td></tr>
+<tr><td class="who">Coleman / Hammond / Gardiner</td><td><span class="sym">⚪</span> No public position; consistent with fiscal-restraint posture</td></tr>
+<tr><td class="who">Cseszko / Rothe / Bowkett / McInnis</td><td><span class="sym">⚪</span> No public position on file</td></tr>
+</tbody>
+</table>
+</div>
+<div class="diff"><b>Where the framework stands alone</b>Managed competition with employee-protection clauses — zero direct analogue. The CRD already contracts blue-box recycling to GFL; the principle is proven regionally.</div>
+
+<div class="topic">Performance dashboard + quarterly reporting (M67)</div>
+<div class="tbl-wrap">
+<table class="cmp">
+<thead><tr><th>Position</th><th>Detail</th></tr></thead>
+<tbody>
+<tr class="actw"><td class="who">Framework</td><td>Quarterly public dashboard: permits, potholes, 311, crime, housing, budget variance. Plain language. Weekly safety dashboard separately (M31)</td></tr>
+<tr><td class="who">Gardiner</td><td><span class="sym">✅</span> Monthly fiscal newsletter — closest analogue to M67</td></tr>
+<tr><td class="who">Cseszko</td><td><span class="sym">✅</span> "Oversight, transparency, and performance" — frame-aligned</td></tr>
+<tr><td class="who">Bowkett / McInnis</td><td><span class="sym">✅</span> Trust and governance-quality lane is consistent</td></tr>
+<tr><td class="who">Hammond</td><td><span class="sym">🟡</span> FOI-driven enforcement data publication concept aligns</td></tr>
+<tr><td class="who">Alto</td><td><span class="sym">❌</span> No quarterly dashboard; salary/benefits share not publicly reported in accessible form</td></tr>
+</tbody>
+</table>
+</div>
+<div class="diff"><b>Where the framework stands alone</b>Specific quarterly dashboard with named KPIs and plain-language requirement — Gardiner's monthly newsletter is closest; the framework formalizes it as a service standard.</div>
+
+<div class="pillar-band" id="pillar-5">🗳️ Pillar 5 — A Democratic City</div>
+
+<div class="topic">$25M referendum threshold + 5-step process (M77, M78)</div>
+<div class="tbl-wrap">
+<table class="cmp">
+<thead><tr><th>Position</th><th>Detail</th></tr></thead>
+<tbody>
+<tr class="actw"><td class="who">Framework</td><td>Binding referendum on every new (non-lifecycle) capital project over $25M. 5-step process: consult → expert design → public visualization &amp; analysis (AI imagery + GIS) → referendum → quarterly progress reports</td></tr>
+<tr><td class="who">McInnis</td><td><span class="sym">✅</span> Law background, transparency lane, and active engagement on the E&amp;N Roundhouse rezoning</td></tr>
+<tr><td class="who">Cseszko / Bowkett</td><td><span class="sym">✅</span> Accountability + trust/governance frame aligns</td></tr>
+<tr><td class="who">Full council</td><td><span class="sym">🟡</span> Crystal Pool YES (Feb 2025); no general $25M threshold position. Coleman/Gardiner strongest process critics of Dowler Place</td></tr>
+</tbody>
+</table>
+</div>
+<div class="diff"><b>Where the framework stands alone</b>General $25M threshold + 5-step process codified for every major project — Crystal Pool was a one-off; the framework makes it the rule.</div>
+
+<div class="topic">Integrity Commissioner + MNP governance (M79b)</div>
+<div class="tbl-wrap">
+<table class="cmp">
+<thead><tr><th>Position</th><th>Detail</th></tr></thead>
+<tbody>
+<tr class="actw"><td class="who">Framework</td><td>Arm's-length Integrity Commissioner office (shared-service viable); MNP governance report implementation tracker; annual public caseload report</td></tr>
+<tr><td class="who">Gardiner</td><td><span class="sym">✅</span> "MNP recommendations should be addressed before further major decisions" — most explicit advocate on council</td></tr>
+<tr><td class="who">Coleman</td><td><span class="sym">✅</span> "Council has been drifting away from the principles of good governance"</td></tr>
+<tr><td class="who">Hammond</td><td><span class="sym">✅</span> Council-conduct accountability advocate</td></tr>
+<tr><td class="who">McInnis / Bowkett</td><td><span class="sym">✅</span> Law and trust-governance lanes are consistent with this measure</td></tr>
+<tr><td class="who">Alto</td><td><span class="sym">⚪</span> MNP report not implemented during three years in office</td></tr>
+</tbody>
+</table>
+</div>
+<div class="diff"><b>Where the framework stands alone</b>Cross-bloc concept absorbed in v1.1; the framework operationalizes Gardiner/Coleman/Hammond's principle into a specific office + tracker.</div>
+
+<div class="topic">Saanich amalgamation — binding Citizens' Assembly (M81)</div>
+<div class="tbl-wrap">
+<table class="cmp">
+<thead><tr><th>Position</th><th>Detail</th></tr></thead>
+<tbody>
+<tr class="actw"><td class="who">Framework</td><td>60 randomly selected residents (30 per municipality), 12–18 months, binding referendum question drafted by the Assembly itself, both councils pre-commit to honour the result</td></tr>
+<tr><td class="who">Coleman</td><td><span class="sym">✅</span> Chairs Victoria's Citizens' Assembly Council Committee — the existing council body M81 builds on</td></tr>
+<tr><td class="who">Alto</td><td><span class="sym">🟡</span> Committee exists but not framed as binding</td></tr>
+<tr><td class="who">Others</td><td><span class="sym">⚪</span> No specific public position on file</td></tr>
+</tbody>
+</table>
+</div>
+<div class="diff"><b>Where the framework stands alone</b>Binding (not advisory) Citizens' Assembly with pre-committed referendum — Coleman's existing council committee is the closest local precedent the framework builds on.</div>
+
+<div class="topic">Provincial-downloading ledger (M70b)</div>
+<div class="tbl-wrap">
+<table class="cmp">
+<thead><tr><th>Position</th><th>Detail</th></tr></thead>
+<tbody>
+<tr class="actw"><td class="who">Framework</td><td><strong>Quarterly downloading ledger</strong> + formal advocacy resolutions + <strong>published refusal threshold</strong> (services the City will not assume without indexed funding)</td></tr>
+<tr><td class="who">Alto</td><td><span class="sym">✅</span> Names downloading as 2026 tax hike driver ("more serious discussion about sources of income for local governments")</td></tr>
+<tr><td class="who">Caradonna</td><td><span class="sym">✅</span> Caledonia Place regional motion ("city for too long has done it all")</td></tr>
+<tr><td class="who">Dell / Thompson / Loughton</td><td><span class="sym">🟡</span> Province-blaming present in framing</td></tr>
+<tr><td class="who">Kim</td><td><span class="sym">✅</span> "System itself is just flawed" — structural critique of municipal taxation</td></tr>
+<tr><td class="who">Coleman</td><td><span class="sym">⚪</span> No specific downloading frame</td></tr>
+<tr><td class="who">Hammond</td><td><span class="sym">✅</span> "People are expecting us to do things in which the province and the feds have the ability to spend and go into debt for" (CBC)</td></tr>
+<tr><td class="who">Gardiner</td><td><span class="sym">✅</span> Strongest critic of city absorbing Island Health / BC Housing roles</td></tr>
+<tr><td class="who">Cseszko</td><td><span class="sym">🟡</span> Frame-aligned</td></tr>
+<tr><td class="who">Rothe</td><td><span class="sym">🟡</span> Provincial civil-servant background brings direct experience with the downloading question</td></tr>
+<tr><td class="who">Bowkett</td><td><span class="sym">⚪</span> </td></tr>
+<tr><td class="who">McInnis</td><td><span class="sym">🟡</span> Law background and governance lane are consistent with a structural critique</td></tr>
+</tbody>
+</table>
+</div>
+<div class="diff"><b>Where the framework stands alone</b>Operationalizes a cross-bloc grievance into a quarterly ledger + published refusal threshold — naming the principle is universal; only ACTW names the mechanism.</div>
+
+<div class="pillar-band" id="foundation">🌿 Foundation — Host Nations Partnership</div>
+<div class="topic">Government-to-government working tables (M1)</div>
+<div class="tbl-wrap">
+<table class="cmp">
+<thead><tr><th>Position</th><th>Detail</th></tr></thead>
+<tbody>
+<tr class="actw"><td class="who">Framework</td><td>Standing quarterly working tables with Songhees and Esquimalt leadership. Published meeting summaries with Nation approval. Five foundation measures (G2G, procurement standard, place names, cultural protocols, urban Indigenous liaison)</td></tr>
+<tr><td class="who">Alto</td><td><span class="sym">✅</span> lək̓ʷəŋən place-naming, longhouse funding, language app — strongest sitting-councillor record on host-Nations relationship</td></tr>
+<tr><td class="who">Progressive bloc</td><td><span class="sym">🟡</span> Pro-reconciliation; no specific G2G cadence mechanism</td></tr>
+<tr><td class="who">Others</td><td><span class="sym">⚪</span> No specific public position on file</td></tr>
+</tbody>
+</table>
+</div>
+<div class="diff"><b>Where the framework stands alone</b>Standing quarterly cadence + published meeting summaries + 5% procurement standard — Alto has the strongest record on naming/cultural measures; the framework adds operational discipline.</div>
+
+<h2 id="stands-alone">Where the Framework Stands Alone</h2>
+<p>Measures with zero direct analogue on the current field — the cleanest differentiators.</p>
+<div class="tbl-wrap">
+<table class="cmp">
+<thead><tr><th>Measure</th><th>Closest field position</th><th>Gap</th></tr></thead>
+<tbody>
+<tr><td>M7 — Permit benchmarks + AI pre-screening</td><td>None publish benchmarks; Dell process-curious</td><td><strong>MAX</strong></td></tr>
+<tr><td>M15 — Managed competition for waste/cleaning</td><td>None propose it; CRD contracts blue-box recycling</td><td><strong>MAX</strong></td></tr>
+<tr><td>M19 — Adaptive traffic signals (SURTRAC)</td><td>Thompson cites Hoboken Vision Zero generally</td><td><strong>MAX</strong></td></tr>
+<tr><td>M30 — Smart LED + IoT streetlights</td><td>Current LED conversion delayed, not smart-connected</td><td><strong>MAX</strong></td></tr>
+<tr><td>M30 — Explicit no-surveillance posture</td><td>No candidate has taken a public position</td><td><strong>MAX</strong></td></tr>
+<tr><td>M53c — One-time LIDAR scan of downtown</td><td>None propose</td><td><strong>MAX</strong></td></tr>
+<tr><td>M78 — Codified 5-step process</td><td>No candidate has codified all five</td><td><strong>MAX</strong></td></tr>
+<tr><td>M10 — Transparent algorithmic housing-waitlist</td><td>None propose</td><td><strong>MAX</strong></td></tr>
+<tr><td>M53 — GIS / utility modernization</td><td>Dell uses AI imagery for park ideation</td><td><strong>HIGH</strong></td></tr>
+<tr><td>M65 — Rotating zero-based budget reviews</td><td>Dell line-by-line; Gardiner names the principle</td><td><strong>HIGH</strong></td></tr>
+<tr><td>M66 — Tax glide path (Y1 ≤6.5% → Y3+ ~3.5%)</td><td>Gardiner/Hammond/Kim oppose increases generally</td><td><strong>HIGH</strong></td></tr>
+<tr><td>M67 — Quarterly performance dashboard</td><td>Gardiner's monthly fiscal newsletter is closest</td><td><strong>HIGH</strong></td></tr>
+<tr><td>M74/M77 — $25M referendum threshold</td><td>Crystal Pool was a one-off precedent</td><td><strong>HIGH</strong></td></tr>
+</tbody>
+</table>
+</div>
+
+<h2 id="track-record">The Current Administration — Track Record vs Promises</h2>
+<p>A focused comparison of the Alto council's 2022–2026 record against the framework's specific commitments.</p>
+
+<h3>Fiscal record</h3>
+<div class="tbl-wrap">
+<table class="cmp">
+<thead><tr><th>Measure</th><th>Alto council record</th><th>Framework commitment</th></tr></thead>
+<tbody>
+<tr><td>Property tax</td><td>Four consecutive years above inflation: 6.15 / 7.93 / 6.99% / 7.28% final (10.44% draft)</td><td>Glide path: Y1 ≤6.5%, Y2 ≤5%, Y3+ ~3.5%</td></tr>
+<tr><td>Operating budget</td><td>+29% in 3 years ($297.9M → $384.1M draft)</td><td>Match CPI + population growth at steady-state</td></tr>
+<tr><td>Efficiency program</td><td>Zero modern efficiency tools deployed</td><td>5 distinct programs delivering $7.8–12.5M/yr</td></tr>
+<tr><td>Performance reporting</td><td>No quarterly KPI dashboard</td><td>Quarterly dashboard with named KPIs (M67)</td></tr>
+<tr><td>CSWB Phase 1 funding</td><td>Funded by raiding reserves ($2.5M + $4M + $1.5M)</td><td>Operating-savings funded; reserves untouched</td></tr>
+<tr><td>VicPD per-capita cost</td><td>Highest of any municipal force in BC at $750/resident</td><td>Service-consumption formula + regional review</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>Housing record</h3>
+<div class="tbl-wrap">
+<table class="cmp">
+<thead><tr><th>Measure</th><th>Alto council record</th><th>Framework commitment</th></tr></thead>
+<tbody>
+<tr><td>Missing Middle delivery</td><td>61 permits in 2024 against target of 150; 3 applications in first 6 months</td><td>Composition discipline: 25/20/15/30 split</td></tr>
+<tr><td>Family-sized housing</td><td>56 apartments built for every 1 townhouse (CMHC)</td><td>20% of new units as 3BR+ (M6)</td></tr>
+<tr><td>Development cost charges</td><td>+258% increase; new ACCs Oct 2025 further chilling builder economics</td><td>Targeted DCC reductions for purpose-built rental (M8)</td></tr>
+<tr><td>Permit benchmarks</td><td>None. Black box</td><td>Published targets by category + variance reports (M7)</td></tr>
+<tr><td>Homelessness spending</td><td>$25M spent 2023–2025, no published outcomes; $11M encampment damage repair</td><td>STEP throughput + capacity-first + outcome metrics (M11)</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>Process and trust record</h3>
+<div class="tbl-wrap">
+<table class="cmp">
+<thead><tr><th>Measure</th><th>Alto council record</th><th>Framework commitment</th></tr></thead>
+<tbody>
+<tr><td>Dowler Place</td><td>Confidential draft motion disclosed via FOI; "we knew what the comments would be." Apologized</td><td>5-step process (M78) — the exact antidote</td></tr>
+<tr><td>Community safety timeline</td><td>"Took nearly a year before council's focus turned to community safety"; CSWB not endorsed until June 2025</td><td>Day-0 DPOT launch (M26); week-1 KPI dashboard (M31)</td></tr>
+<tr><td>MNP governance report</td><td>Not implemented during three-year term</td><td>Integrity Commissioner + MNP tracker (M79b)</td></tr>
+<tr><td>Consultation feedback</td><td>No standard for response; many consultations end without published response</td><td>60-day published response standard (M79)</td></tr>
+<tr><td>Climate Friendly Homes uptake</td><td>Not published despite being a flagship program</td><td>Annual publication of uptake numbers (M58)</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>Public safety record</h3>
+<div class="tbl-wrap">
+<table class="cmp">
+<thead><tr><th>Measure</th><th>Alto council record</th><th>Framework commitment</th></tr></thead>
+<tbody>
+<tr><td>Downtown business confidence</td><td>48% would consider leaving if their lease expired (DVBA 2025)</td><td>DPOT + extended hours + capacity-first (M26, M27, M35)</td></tr>
+<tr><td>Commercial vacancy</td><td>10.7% historical high Feb 2025; Arq Salon (28 yrs) closed due to disorder</td><td>Cut to 5% via M71</td></tr>
+<tr><td>Bylaw enforcement hours</td><td>7 AM – 4 PM; 80% of officer time consumed by encampments</td><td>6 AM – 10 PM, 7 days/week (M27)</td></tr>
+<tr><td>VicPD vacancy</td><td>50–55 officers short (13% vacancy)</td><td>Regional policing review (M29b); funding formula (M29)</td></tr>
+<tr><td>Safety perception</td><td>59% feel safe downtown daytime (was 83%); 22% at night (was 35%)</td><td>Weekly safety dashboard (M31); −15% crime by 2030 (M32)</td></tr>
+</tbody>
+</table>
+</div>
+<div class="callout red" style="margin-top:20px">
+<div class="lbl">◆ The pattern</div>
+The Alto council has spent aggressively ($25M on homelessness, $209M committed to Crystal Pool, 29% budget growth) without deploying a single modern efficiency tool. Every gap above is something the framework names a specific mechanism for — that is the differentiator.
+</div>
+
+<h2 id="profiles">Candidate Profiles</h2>
+<p>Full alignment detail per candidate. Sources cited inline in the master record.</p>
+
+<details class="cand"><summary>Marianne Alto — Mayor, declared May 20, 2026</summary><div class="body">
+<p><strong>Background:</strong> Incumbent, 55.5% of vote in 2022. Tagline: "Experience that delivers."</p>
+<p><strong>Agrees with the framework on:</strong> regional policing consolidation (M29b absorbed her plank); permissive tax exemptions for not-for-profit clinics (2022, still undelivered, absorbed into M13b); city land bank (2022); rent banks; façade improvement grants; provincial downloading frame (M70b); lək̓ʷəŋən place names + cultural protocols.</p>
+<p><strong>Diverges on:</strong> No ZBB in three years (budget grew 29%); no published permit benchmarks; no managed-competition consideration; no quarterly dashboard; no Integrity Commissioner / MNP implementation; Dowler Place process ("we knew what the comments would be"); CSWB Phase 1 funded by raiding reserves.</p>
+<p><strong>Distinctive Alto ideas worth considering:</strong> permissive tax exemption for purpose-built rentals; family-doctor incentives at scale; tax relief for community-serving groups; co-located firehall + housing + health-services civic infrastructure.</p>
+</div></details>
+
+<details class="cand"><summary>Jeremy Caradonna — Councillor, declared Dec 21, 2025</summary><div class="body">
+<p><strong>Background:</strong> First to declare. Topped polls 2022 with 14,238 votes. CRD vice-chair.</p>
+<p><strong>Agrees on:</strong> Missing Middle overhaul mechanics (his Sept 2023 drafting); sponsored the VicPD 2026 patrol-officer cut (4→2) as progressive fiscal restraint; co-author cooling bylaw (M64); Caledonia Place regional fair-share motion with Hammond (M70b).</p>
+<p><strong>Diverges on:</strong> managed competition; no published permit benchmarks; no quarterly dashboard; YES on overall 2026 budget.</p>
+<p><strong>Notable quote:</strong> "Victoria will likely look more like a miniature London or Paris than a miniature Vancouver or Manhattan."</p>
+</div></details>
+
+<details class="cand"><summary>Matt Dell — Councillor, declared Dec 31, 2025</summary><div class="body">
+<p><strong>Background:</strong> 13,899 votes in 2022. 15 years drafting policy for BC government.</p>
+<p><strong>Agrees on:</strong> cooling bylaw co-author (M64); <strong>AI public consultation imagery pioneer</strong> (Beacon Hill All-Weather Field — directly absorbed as M53b); Hermann's Jazz Club preservation (absorbed as M46b); strongly pro-housing volume; annual line-by-line budget review.</p>
+<p><strong>Diverges on:</strong> managed competition; pro-budget-growth framing differs from the glide path; no permit benchmarks; no quarterly dashboard.</p>
+<p><strong>Notable quote:</strong> "The epitome of bad governance is the failure to make a decision."</p>
+</div></details>
+
+<details class="cand"><summary>Dave Thompson — Councillor, declared</summary><div class="body">
+<p><strong>Agrees on:</strong> <strong>Hoboken Vision Zero benchmark cited publicly</strong> — same peer-city evidence the framework uses; co-author cooling bylaw; co-author Coordinated Access &amp; Assessment downtown prioritization (June 2025); eliminate parking minimums; e-bike rebates; YES on Caradonna's VicPD ask cut.</p>
+<p><strong>Diverges on:</strong> managed competition; YES on 2026 budget (different framing than the glide path); no permit benchmarks.</p>
+<p><strong>Distinctive idea now absorbed:</strong> federal SUV/truck hood-height advocacy — now M42b.</p>
+</div></details>
+
+<details class="cand"><summary>Susan Kim — Councillor, undecided</summary><div class="body">
+<p><strong>Status:</strong> No 2026 declaration as of May 26. Director of Operations, Fernwood NRG.</p>
+<p><strong>Agrees on:</strong> Voted NO on 2026 budget from the left ("the system itself is just flawed"); vacancy control between tenancies (2022, absorbed into M9c); AirBnB licensing tightening (2022, absorbed into M9b); non-English grant applications (2022, absorbed into M80b); reduce parking minimums.</p>
+<p><strong>Diverges on:</strong> managed competition (committed against P3s); lone NO on July 2024 daytime sheltering ban (vs. M33).</p>
+</div></details>
+
+<details class="cand"><summary>Krista Loughton — Councillor, undecided</summary><div class="body">
+<p><strong>Status:</strong> No 2026 declaration. Award-winning documentary filmmaker.</p>
+<p><strong>Agrees on:</strong> <strong>STEP (Supporting Tenants, Enabling Pathways) motion (Jan 2026) — absorbed directly into M11.</strong> Single best individual idea on the council table; co-author Coordinated Access &amp; Assessment; Renters' Hub; flagged "the staggering cost of our current direction" honestly.</p>
+<p><strong>Diverges on:</strong> managed competition; YES on 2026 budget; no permit benchmark mechanism.</p>
+</div></details>
+
+<details class="cand"><summary>Chris Coleman — Councillor, undecided (June/July decision)</summary><div class="body">
+<p><strong>Status:</strong> First elected 1986. Seventh term if he runs. Chairs Victoria's Citizens' Assembly Council Committee.</p>
+<p><strong>Agrees on:</strong> <strong>"Governance not politics" framing</strong> — directly compatible with "0% ideological, 100% pragmatic"; chairs the Citizens' Assembly Committee that M81 extends; process-integrity advocate; NO on Dowler Place; "tax lift is too high personally."</p>
+<p><strong>Diverges on:</strong> NO on Missing Middle (process objections); YES on 2026 budget; aligned with Alto on VicPD funding.</p>
+</div></details>
+
+<details class="cand"><summary>Stephen Hammond — Councillor, declared</summary><div class="body">
+<p><strong>Background:</strong> Law degree (Osgoode Hall). Campaign manager: Jack Boomer.</p>
+<p><strong>Agrees on:</strong> <strong>Daytime sheltering ban author</strong> (July 2024, 8-1, aligns with M33); <strong>FOI-driven enforcement data</strong> (surfaced ~24% of 2022 police calls came from 19 addresses — M28b absorbs this); security-cost compensation motion (revived as M28b); 30m drug-use buffer zones (restored as M33b); Integrity Commissioner advocacy; voted NO on every tax increase.</p>
+<p><strong>Diverges on:</strong> NO on Missing Middle; NO on Caradonna's VicPD ask cut (full police ask supporter).</p>
+<p><strong>Guiding philosophy:</strong> "The job of council is not to run the city, but to ensure the city is run well."</p>
+</div></details>
+
+<details class="cand"><summary>Marg Gardiner — Councillor, declared</summary><div class="body">
+<p><strong>Background:</strong> B.Sc. Chemistry, M.B.A. Public Management.</p>
+<p><strong>Agrees on:</strong> <strong>"Introducing rigour into budgeting"</strong> — the single most framework-aligned line from any sitting councillor; Integrity Commissioner / MNP advocate; monthly fiscal newsletter (closest precedent for M67); voted NO on every tax increase; NO on Dowler Place.</p>
+<p><strong>Diverges on:</strong> NO on Caradonna's VicPD ask cut; NO on Missing Middle (process before policy); no explicit managed-competition position.</p>
+<p><strong>Most aligned quote:</strong> "The annual budget ritual that we follow is fundamentally flawed and no one seems to care. There is no serious thought given to introducing rigour into our budgeting process."</p>
+</div></details>
+
+<details class="cand"><summary>Melissa Cseszko — Council candidate, declared May 12, 2026</summary><div class="body">
+<p><strong>Background:</strong> Born and raised in Victoria. Small-business owner on the 600-block Fort Street. Platform site: melissacseszko.ca</p>
+<p><strong>Public positions consistent with the framework:</strong> "results over ideology" framing; "predictability, order, and trust" safety frame (M27, M33, M26); program-review-and-adjust budget posture (M65); "oversight, transparency, and performance" (M67); heritage preservation (M43, M46, M46b).</p>
+<p><strong>In her own words:</strong> "As a small business owner, I'm a pragmatic problem solver. I believe in collaboration, accountability, and focusing on results over ideology."</p>
+</div></details>
+
+<details class="cand"><summary>Karen Rothe — Council candidate, declared</summary><div class="body">
+<p><strong>Background:</strong> Lives in Vic West. Provincial civil servant. Stated lane: transportation and urban planning.</p>
+<p><strong>Lane is consistent with framework measures on:</strong> M19 (adaptive signals), M22 (Westshore RT + E&amp;N corridor), M23 (RapidBus), M53 (GIS modernization), M70b (provincial-downloading ledger). Where no public position is on file for other measures, the matrix is marked silent.</p>
+</div></details>
+
+<details class="cand"><summary>Wendy Bowkett — Council candidate, declared</summary><div class="body">
+<p><strong>Background:</strong> Long-time Victoria resident with a construction-industry small-business background. Stated lane: trust and governance.</p>
+<p><strong>Lane is consistent with framework measures on:</strong> M67 (quarterly dashboard), M79b (Integrity Commissioner), M77 + M78 (referendum threshold and 5-step process), M65/M66 (zero-based budget reviews and tax glide path), M27 (extended bylaw enforcement hours).</p>
+</div></details>
+
+<details class="cand"><summary>Arthur McInnis — Council candidate, declared</summary><div class="body">
+<p><strong>Background:</strong> UVic law professor (former Vancouver lawyer), roughly 15 years in Victoria. Active in the Victoria City Hall Forum; engaged on the E&amp;N Roundhouse rezoning in Vic West. Stated lane: transparency and governance quality.</p>
+<p><strong>Lane is consistent with framework measures on:</strong> M77 + M78 (referendum threshold and 5-step process), M79b (Integrity Commissioner), M67 (quarterly dashboard), M81 (Saanich Citizens' Assembly), M70b (provincial-downloading ledger), heritage protection.</p>
+<p><strong>In his own framing:</strong> "Returning Victoria to world-class status" — an international-comparison frame consistent with peer-city benchmarking.</p>
+</div></details>
+
+<details class="cand"><summary>Del Manak — NOT running (confirmed April 15, 2026)</summary><div class="body">
+<p>Listed for context. 35 years policing (9.5 as Chief). His withdrawal leaves the centre-right mayoral lane unfilled. <strong>January 2026 framing:</strong> "When you don't have endless money and citizens don't have the ability to continue to pay these tax amounts, then it's incumbent on local government to consider what they should cut back on."</p>
+</div></details>
+
+<details class="cand"><summary>Stephen Andrew — No 2026 signal</summary><div class="body">
+<p>Listed for context. Former councillor 2020–2022; 2022 mayoral candidate; 2024 BC Conservative candidate. No public 2026 municipal signal. <strong>2022 ideas absorbed into v1.1:</strong> family-doctor incentives + permissive tax exemptions for not-for-profit clinics (M13b).</p>
+</div></details>
+
+<h2 id="methodology">Methodology &amp; Caveats</h2>
+<p><strong>Scope and time-stamp.</strong> Current as of May 26, 2026 — 144 days before the October 17, 2026 election. Nomination doesn't open until September 1. Several candidates are undecided. Positions will shift.</p>
+<p><strong>Scoring approach.</strong> Each cell reflects the most recent public position found in voting record, declared platform, or direct public statement. Where reporting is contradictory, the most recent on-the-record source wins.</p>
+<p><strong>Why silent is not opposed.</strong> A candidate not having taken a public position is not the same as opposing it. Treating silence as opposition would be a false negative.</p>
+<p><strong>Why this matrix is framework-anchored, not neutral.</strong> Rows are framework measures; scoring is against framework positions. This framework is the only platform in the field with ~100 specific, costed commitments — there is no other framework with that density to anchor against. The explicit purpose is to show where the framework stands alone on a specific mechanism. Readers seeking a different anchor are invited to draft one; this framework is open.</p>
+<p><strong>This document is open to correction.</strong> Spot an error in scoring, a misread of a public position, or a position that has evolved? Write to <a href="mailto:info@acitythatworks.ca">info@acitythatworks.ca</a>. Revisions are dated and published.</p>
+
+<div class="callout gold" style="margin-top:32px">
+<div class="lbl">◆ Use this as a starting point</div>
+Single-line ideas flatten nuance. Verify any voting-record claim against council minutes before quoting it in voter-facing materials. The race evolves; this is a snapshot, re-scored after each candidate launch and each significant council vote.
+</div>
+
+<p style="margin-top:32px"><a href="index.html" class="pgback">← Back to the framework</a></p>
+
+</div>
+</div>
+</main>
+
+<div id="footer-mount"></div>
+<script src="site.js"></script>
+
+
+</body>
+</html>

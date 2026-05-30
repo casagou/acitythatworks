@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="description" content="The math behind the tax glide path. Operating savings, new revenue, costs, and net fiscal headroom — with sources and honest caveats.">
+<meta name="theme-color" content="#1A3668">
+<title>Savings &amp; Revenue Analysis — A City That Works</title>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Public+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+<div class="c hr">
+<a href="index.html" class="brand"><svg class="bicn" viewBox="0 0 240 240" aria-hidden="true"><circle cx="120" cy="120" r="112" fill="#FAF7F0"/><g fill="none" stroke="#16335c" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"><path d="M52 92  q22.5 -14 45 0 t45 0 t45 0"/><path d="M52 120 q22.5 -14 45 0 t45 0 t45 0" opacity="0.88"/><path d="M52 148 q22.5 -14 45 0 t45 0 t45 0" opacity="0.76"/></g></svg><span class="nm">A City That Works</span></a>
+<nav class="nv">
+<a href="index.html">Framework</a>
+<a href="summary.html">Summary</a>
+<a href="index.html#measures">Measures</a>
+<a href="savings.html" class="cur">Savings</a>
+<a href="city-hall.html">City Hall</a>
+<a href="comparison.html">Compare</a>
+<a href="faq.html">FAQ</a>
+<a href="endorse.html" class="btn-end">Endorse</a>
+</nav>
+<button id="mt" class="mb" aria-label="Open menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+</div>
+<div id="mn" class="mm">
+<div class="c mmi">
+<a href="index.html">Framework</a>
+<a href="summary.html">One-Page Summary</a>
+<a href="index.html#measures">All Measures</a>
+<a href="index.html#scorecard">Scorecard</a>
+<a href="index.html#balance">Balance Sheet</a>
+<div class="grp">Detailed documents</div>
+<a href="savings.html" class="gd">Savings &amp; Revenue Analysis</a>
+<a href="city-hall.html">How City Hall Works</a>
+<a href="endorse.html">Candidate Endorsement Pack</a>
+<a href="comparison.html">Candidate Comparison Matrix</a>
+<a href="faq.html">Frequently Asked Questions</a>
+<div class="grp"></div>
+<a href="endorse.html" class="gd">Endorse the framework →</a>
+</div>
+</div>
+</header>
+
+<main>
+<div class="cn">
+<nav class="crumbs" aria-label="Breadcrumb">
+<a href="index.html">Framework</a><span class="sep">/</span><span class="here">Savings &amp; Revenue Analysis</span>
+</nav>
+<div class="hero">
+<div class="eyb"><span>💰 The Math</span><span class="dot">◆</span><span>v1.3 · May 27, 2026</span></div>
+<h1 class="ph1">Savings &amp; Revenue Analysis</h1>
+<p class="lead" style="margin-top:18px">The math behind the tax glide path — operating savings, new revenue, and the honest reckoning of what the framework costs.</p>
+<a href="index.html" class="pgback">← Back to the framework</a>
+</div>
+
+<nav class="toc" aria-label="On this page">
+<div class="toc-h">◆ On this page</div>
+<ol>
+<li><a href="#summary">Executive Summary</a></li>
+<li><a href="#method">Method</a></li>
+<li><a href="#part-a">Part A — Operating Savings</a></li>
+<li><a href="#part-b">Part B — New Operating Revenue</a></li>
+<li><a href="#part-c">Part C — New Operating Costs</a></li>
+<li><a href="#part-d">Part D — Capital Program</a></li>
+<li><a href="#part-e">Part E — Tax Glide Path</a></li>
+<li><a href="#part-f">Part F — Net Picture at Steady-State</a></li>
+<li><a href="#part-g">Part G — What We Excluded</a></li>
+<li><a href="#critical">How to Read This Critically</a></li>
+</ol>
+</nav>
+
+<div class="prose">
+
+<div class="callout blue" id="summary">
+<div class="lbl">◆ Executive Summary</div>
+The current council's draft 2026 budget proposes a <strong>10.44% property tax increase</strong> on top of three consecutive years of 6–8% increases. This framework offers a credible alternative built on operational savings, not service cuts.
+</div>
+
+<p>At <strong>steady-state</strong> (end of a four-year implementation), this framework generates:</p>
+
+<div class="tbl-wrap">
+<table class="dt">
+<thead><tr><th>Category</th><th>Range (annual)</th></tr></thead>
+<tbody>
+<tr><td>Operating savings</td><td class="amt">$7.8–12.5M</td></tr>
+<tr><td>New ongoing operating revenue</td><td class="amt">$9.5–18M</td></tr>
+<tr><td>New operating costs + capital debt service (incl. v1.1–v1.3 adjustments)</td><td class="amt">($11.4–15.7M)</td></tr>
+<tr class="total"><td>Net fiscal headroom (steady-state, v1.3)</td><td class="amt">$5.4–14.9M / yr</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>That headroom funds the <strong>tax glide path</strong> — from the council's 10.44% draft down to roughly CPI + population growth (~3.5%) by Year 3.</p>
+
+<p><strong>This is what makes the glide path real:</strong></p>
+<ul>
+<li><strong>Year 1:</strong> ≤6.5% (requires not adding the council's planned new spending + first $3–5M of efficiency measures)</li>
+<li><strong>Year 2:</strong> ≤5% (managed competition contracts in flight, ZBB cuts implemented)</li>
+<li><strong>Year 3+:</strong> ~3.5% structural (full efficiency program operating)</li>
+</ul>
+
+<p>Year-one savings are a fraction of steady-state. <strong>This document is honest about that.</strong> Anyone who promises immediate, full delivery is misleading you.</p>
+
+<h2 id="method">Method</h2>
+<p>Every line item below follows the same discipline:</p>
+<ol>
+<li><strong>Range, not point estimate</strong> — every number is a band reflecting genuine uncertainty</li>
+<li><strong>Source cited</strong> — either a peer city's verified outcome, a published study, or a transparent assumption</li>
+<li><strong>Operating vs. capital separated</strong> — capital projects are debt-financed and hit the operating budget only via debt service, not full capex</li>
+<li><strong>Steady-state vs. year-one distinguished</strong> — most measures ramp; none deliver full savings on day one</li>
+<li><strong>Conservative side of the range chosen</strong> wherever evidence allowed multiple readings</li>
+</ol>
+<p>Where a measure has both a cost and a saving (e.g., extended bylaw hours costs money but reduces emergency repair spending), both are listed separately rather than netted.</p>
+
+<h2 id="part-a">Part A — Operating Savings</h2>
+<p><em>These reduce the annual operating budget. They are what fund the tax glide path.</em></p>
+
+<h3>A1. Managed competition for waste collection and street cleaning</h3>
+<p><strong>Saving: $2.4M / year</strong> at steady-state (Year 2 onward)</p>
+<p>Victoria's current in-house waste and street-cleaning operations cost approximately $12M / year. <strong>Phoenix's managed competition program saved the city in excess of $25 million between 1978 and 1988 alone</strong> — a decade of documented results that established managed competition as a mature public-sector practice. The framework targets a conservative <strong>20%</strong> saving to leave margin for transition costs and employee-protection clauses.</p>
+<p><em>Sources: Frontier Centre for Public Policy (October 2000), citing City of Phoenix Public Works records; the Phoenix model kept services public while delivering documented savings by letting City workers bid against private firms; the CRD's own GFL Environmental blue-box contract proves the model works regionally.</em></p>
+<p><strong>Year-one realization:</strong> ~$0.5–1M (procurement and transition).</p>
+
+<h3>A2. Rotating zero-based budget reviews</h3>
+<p><strong>Saving: $3–6M / year</strong> by end of term</p>
+<p>Calgary's <strong>SAVE program</strong> (rotating Zero-Based Reviews, 2012–2019) <strong>targeted $74 million in operational savings by 2022</strong> (City of Calgary newsroom, February 2020). At Calgary Council on March 31, 2026, KPMG's Chris Sainsbury reported that SAVE had found <strong>$60 million in operational cash</strong> to that date (LiveWire Calgary). Applied to Victoria's $384M operating budget, a 2–3% efficiency dividend per reviewed service area, with 3–4 areas reviewed per budget cycle, yields the range above — a conservative fraction of Calgary's documented operational recovery.</p>
+<p><em>Sources: City of Calgary newsroom (February 2020); LiveWire Calgary (March 31, 2026, KPMG report to Council); Greater Sudbury Auditor General's 2023 recommendation to incorporate ZBB into value-for-money audits.</em></p>
+<p><strong>Year-one realization:</strong> ~$0.5–1M (review takes ~6 months; first cuts implementable mid-year).</p>
+
+<h3>A3. Administrative efficiency (attrition + technology)</h3>
+<p><strong>Saving: $1.5–2.5M / year</strong> by end of term</p>
+<p>A 10% reduction in administrative FTEs over four years via <strong>attrition only</strong> (no layoffs), combined with process digitization, applied to administrative payroll. Conservative because attrition rates vary; not every departing role can be eliminated.</p>
+<p><strong>Year-one realization:</strong> ~$0.3–0.5M (depends on departure timing).</p>
+
+<h3>A4. Smart streetlighting — energy and maintenance</h3>
+<p><strong>Saving: $500K–1M / year</strong> at full deployment (Year 3+)</p>
+<p>Kelowna's 17,000-light LED conversion saved <strong>$1M / year</strong> in electricity alone with a 400% 15-year ROI. Halifax's 44,000-light smart LED platform saves <strong>$5M / year</strong>. Victoria's scale (~7,000–10,000 lights) and energy mix put the saving at the lower end of this range.</p>
+<p><strong>Year-one realization:</strong> ~$50–100K (conversion capex hits first; savings ramp over 2–3 years).</p>
+
+<h3>A5. Permit system and AI pre-screening</h3>
+<p><strong>Saving: $400–600K / year</strong> at full deployment</p>
+<p>AI-assisted conformity reports plus an integrated e-permitting platform reduce manual file review by 4–6 FTE equivalents. This is partially offset by $700K / year in operating costs for the platform itself; net effect is roughly neutral to slightly positive.</p>
+<p><em>Sources: Kelowna's KAI permit chatbot (Microsoft partnership, BC first); Kingston's DASH portal; Kamloops EPermit Project.</em></p>
+
+<h3>A6. Total operating savings</h3>
+<div class="tbl-wrap">
+<table class="dt">
+<thead><tr><th>Item</th><th>Steady-state / yr</th><th>Year 1</th></tr></thead>
+<tbody>
+<tr><td>Managed competition</td><td class="amt">$2.4M</td><td class="amt">$0.5–1M</td></tr>
+<tr><td>Zero-based reviews</td><td class="amt">$3–6M</td><td class="amt">$0.5–1M</td></tr>
+<tr><td>Admin attrition + tech</td><td class="amt">$1.5–2.5M</td><td class="amt">$0.3–0.5M</td></tr>
+<tr><td>Smart streetlight savings</td><td class="amt">$0.5–1M</td><td class="amt">~$0.1M</td></tr>
+<tr><td>Permit system efficiency</td><td class="amt">$0.4–0.6M</td><td class="amt">$0</td></tr>
+<tr class="total"><td>Total operating savings</td><td class="amt">$7.8–12.5M</td><td class="amt">$1.4–2.7M</td></tr>
+</tbody>
+</table>
+</div>
+
+<h2 id="part-b">Part B — New Operating Revenue</h2>
+<p><em>These grow the City's revenue base without raising rates.</em></p>
+
+<h3>B1. Property tax from new housing supply</h3>
+<p><strong>Revenue: $8–15M / year</strong> at end of term (2030 peak)</p>
+<p>Framework target is <strong>12,000+ new homes by 2030</strong> (vs. provincial target of 4,902). Blended average new-unit property tax assessment of $1,500–3,000 / unit / year, applied to the share assessed and on the roll by end of term (roughly 50–70%, given construction timing).</p>
+<p><strong>Critical dependency:</strong> Composition matters. Single-family homes generate more tax per unit than condos. The framework's composition targets (25% missing middle, 20% 3BR+, 15% non-market, 30% rental) skew the mix toward higher-revenue housing types than the current condo-heavy trajectory.</p>
+<p><strong>Year-one realization:</strong> Near zero. Permits in Year 1 = occupancy 2028–2030.</p>
+
+<h3>B2. Downtown vacancy reduction — new business tax</h3>
+<p><strong>Revenue: $0.5–1M / year</strong> at steady-state</p>
+<p>Downtown commercial vacancy at ~10.7% (DVBA 2025). Framework target: 5%. The recovered 5–6 percentage points represent dozens of additional occupied storefronts generating business tax and supporting commercial property assessments.</p>
+
+<h3>B3. Climate investments — avoided costs</h3>
+<p><strong>Avoided costs: $1–2M / year</strong> at steady-state</p>
+<p>Climate Friendly Homes retrofits reduce City building energy costs and constituent energy bills. More importantly, stormwater green infrastructure and tree canopy expansion reduce <strong>emergency repair costs</strong> from extreme weather. This is an avoided cost, not new revenue, but it has the same fiscal effect.</p>
+
+<h3>B4. Total new operating revenue and avoided costs</h3>
+<div class="tbl-wrap">
+<table class="dt">
+<thead><tr><th>Item</th><th>Steady-state / yr</th><th>Year 1</th></tr></thead>
+<tbody>
+<tr><td>New property tax (12,000 homes)</td><td class="amt">$8–15M</td><td class="amt">~$0</td></tr>
+<tr><td>Downtown vacancy → business tax</td><td class="amt">$0.5–1M</td><td class="amt">~$0</td></tr>
+<tr><td>Climate avoided costs</td><td class="amt">$1–2M</td><td class="amt">~$0</td></tr>
+<tr class="total"><td>Total new revenue / avoided cost</td><td class="amt">$9.5–18M</td><td class="amt">~$0</td></tr>
+</tbody>
+</table>
+</div>
+
+<h2 id="part-c">Part C — New Operating Costs</h2>
+<p><em>The honest reckoning. The framework is not free.</em></p>
+<div class="tbl-wrap">
+<table class="dt">
+<thead><tr><th>Item</th><th>Annual cost</th><th>Measure</th></tr></thead>
+<tbody>
+<tr><td>G2G working tables + Indigenous services liaison</td><td class="amt">$0.27M</td><td>M1, M5</td></tr>
+<tr><td>Extended bylaw hours (6 AM – 10 PM, 7 days)</td><td class="amt">$1–1.5M</td><td>M27</td></tr>
+<tr><td>Increased homelessness response (City share)</td><td class="amt">$2–3M</td><td>M11</td></tr>
+<tr><td>Permit system + AI tooling operating</td><td class="amt">$0.7M</td><td>M7</td></tr>
+<tr><td>GIS + underground utility data maintenance</td><td class="amt">$0.05–0.08M</td><td>M53</td></tr>
+<tr><td>Adaptive traffic signals operating</td><td class="amt">$0.3M</td><td>M19</td></tr>
+<tr><td>First-hour free parking (foregone meter)</td><td class="amt">$1.5–2.5M</td><td>M24</td></tr>
+<tr><td>Heritage incentive fund</td><td class="amt">$0.5M</td><td>M46</td></tr>
+<tr><td>Heritage street furniture incremental</td><td class="amt">$0.3M</td><td>M44</td></tr>
+<tr><td>Childcare facilitation (foregone lease)</td><td class="amt">$0.3M</td><td>M12</td></tr>
+<tr><td>School food City co-funding</td><td class="amt">$0.15M</td><td>M13</td></tr>
+<tr><td>Cultural spaces extended hours</td><td class="amt">$0.2M</td><td>M50</td></tr>
+<tr><td>Heritage lighting extended hours</td><td class="amt">$0.075M</td><td>M48</td></tr>
+<tr><td>Cooling centres + emergency prep</td><td class="amt">$0.4M</td><td>M64</td></tr>
+<tr><td>Open data + air quality sensors + Wi-Fi</td><td class="amt">$0.045M</td><td>M56</td></tr>
+<tr><td>Business attraction + pop-up facilitation</td><td class="amt">$0.3M</td><td>M71</td></tr>
+<tr><td>STR compliance officer + audit tools*</td><td class="amt">$0.2M</td><td>M9b</td></tr>
+<tr><td>Family-doctor recruitment (tax exemption + lease)</td><td class="amt">$0.2–0.4M</td><td>M13b</td></tr>
+<tr><td>Business-security cost-spreading pilot (24-mo sunset)**</td><td class="amt">$0.5–0.8M</td><td>M28b</td></tr>
+<tr><td>Regional policing services review (one-time, 18 mo)</td><td class="amt">$0.3–0.5M</td><td>M29b</td></tr>
+<tr><td>Cultural-venue preservation (lease bridge + foregone tax)</td><td class="amt">$0.4–0.5M</td><td>M46b</td></tr>
+<tr><td>AI consultation imagery</td><td class="amt">$0.03–0.05M</td><td>M53b</td></tr>
+<tr><td>Heat-protection bylaw enforcement (incremental)</td><td class="amt">$0.15M</td><td>M64</td></tr>
+<tr><td>Integrity Commissioner office (shared-service)</td><td class="amt">$0.2–0.3M</td><td>M79b</td></tr>
+<tr><td>Non-English grant/consultation accessibility</td><td class="amt">$0.08–0.12M</td><td>M80b</td></tr>
+<tr><td>Renters' Hub + tenant case management</td><td class="amt">$0.2M</td><td>M9</td></tr>
+<tr><td>Reach young adults (18–25)</td><td class="amt">$0.2–0.3M</td><td>M13c</td></tr>
+<tr><td>Public bathrooms — 24/7 network operating</td><td class="amt">$0.4–0.6M</td><td>M24b</td></tr>
+<tr><td>Disability Advisory Committee operating</td><td class="amt">$0.08M</td><td>M25b</td></tr>
+<tr><td>Pedestrianization pilots</td><td class="amt">$0.2–0.4M</td><td>M45b</td></tr>
+<tr><td>Parks-as-identity operating uplift</td><td class="amt">$0.4–0.6M</td><td>M49</td></tr>
+<tr><td>Outdoor-space activation</td><td class="amt">$0.3–0.5M</td><td>M51</td></tr>
+<tr><td>Royal Athletic Park operating uplift</td><td class="amt">$0.3M</td><td>M52</td></tr>
+<tr><td>"Welcome / thank you" small-business program</td><td class="amt">$0.2M</td><td>M72</td></tr>
+<tr><td>Tourism marketing + wayfinding incremental</td><td class="amt">$0.3M</td><td>M73</td></tr>
+<tr><td>Small-renovation permit-fee waivers (foregone)</td><td class="amt">$0.1–0.15M</td><td>M76</td></tr>
+<tr class="total"><td>Total new operating costs (peak, years 1–2)</td><td class="amt">$12.0–16.3M/yr</td><td></td></tr>
+<tr class="total"><td>Total new operating costs (steady-state, year 3+)</td><td class="amt">$11.0–14.7M/yr</td><td></td></tr>
+</tbody>
+</table>
+</div>
+<p style="font-size:13px;color:#57534e"><em>* M9b STR compliance becomes self-funding via licensing fees and penalty revenue within 24 months. ** M28b is funded from M15 managed-competition savings, not new tax revenue, and sunsets at month 24 unless renewed against measurable disorder reduction.</em></p>
+<p><strong>Partially offset:</strong> The $2–3M increased homelessness response should be offset by reduced emergency repair costs (the council spent $11M repairing encampment damage 2023–2025) and reduced bylaw burden (currently 80% of officer time consumed by encampment management). Net new cost in this category may be closer to $0.5–1.5M.</p>
+
+<h2 id="part-d">Part D — Capital Program</h2>
+<p><em>Debt-financed. Hits operating only via debt service (4% over 15 years, conservative).</em></p>
+<div class="tbl-wrap">
+<table class="dt">
+<thead><tr><th>Project</th><th>Capex over term</th><th>Annual debt service</th></tr></thead>
+<tbody>
+<tr><td>Adaptive traffic signals (10 → 50 intersections)</td><td class="amt">$6–9M</td><td class="amt">$0.54–0.81M</td></tr>
+<tr><td>GIS modernization + utility data audit</td><td class="amt">$0.4–0.8M</td><td class="amt">$0.036–0.072M</td></tr>
+<tr><td>LIDAR scan of downtown core (one-time)</td><td class="amt">$0.15–0.25M</td><td class="amt">$0.014–0.022M</td></tr>
+<tr><td>Smart LED + IoT streetlights</td><td class="amt">$3–5M</td><td class="amt">$0.27–0.45M</td></tr>
+<tr><td>Permit system upgrade</td><td class="amt">$0.7M</td><td class="amt">$0.06M</td></tr>
+<tr><td>Air quality sensors + open data + Wi-Fi</td><td class="amt">$0.225M</td><td class="amt">$0.02M</td></tr>
+<tr><td>EV parkade chargers (recoverable via fees)</td><td class="amt">$0.2M</td><td class="amt">~$0</td></tr>
+<tr><td>Tree planting program (5,000 trees)</td><td class="amt">$1.25M</td><td>(operating)</td></tr>
+<tr class="total"><td>Total framework capital</td><td class="amt">$11.5–17.4M</td><td class="amt">$0.9–1.4M/yr</td></tr>
+</tbody>
+</table>
+</div>
+<p><strong>Capital this framework does NOT add:</strong> no new $209M Crystal Pool equivalent without referendum; no major civic vanity projects. Lifecycle infrastructure (stormwater, road resurfacing, water/sewer renewal) continues at current pace — essential statutory work, not framework-additive.</p>
+
+<h2 id="part-e">Part E — The Tax Glide Path, How It Works</h2>
+<h3>The council's trajectory</h3>
+<div class="tbl-wrap">
+<table class="dt">
+<thead><tr><th>Year</th><th>Property tax increase</th></tr></thead>
+<tbody>
+<tr><td>2023</td><td class="amt">6.15%</td></tr>
+<tr><td>2024</td><td class="amt">7.93%</td></tr>
+<tr><td>2025</td><td class="amt">6.99%</td></tr>
+<tr><td>2026 draft</td><td class="amt">10.44%</td></tr>
+</tbody>
+</table>
+</div>
+<p><em>Three consecutive years of well-above-inflation increases, with no efficiency program deployed, and a fourth-year ask of double-digit growth.</em></p>
+
+<h3>The framework glide path</h3>
+<div class="tbl-wrap">
+<table class="dt">
+<thead><tr><th>Year</th><th>Cap</th><th>What makes it possible</th></tr></thead>
+<tbody>
+<tr><td>Year 1 (2027)</td><td class="amt">≤6.5%</td><td>Don't add the council's planned new spending + first $1.4–2.7M of efficiency</td></tr>
+<tr><td>Year 2 (2028)</td><td class="amt">≤5%</td><td>Managed competition operating; ZBB cuts implemented; first new property tax from completed housing</td></tr>
+<tr><td>Year 3+ (2029+)</td><td class="amt">~3.5%</td><td>Full efficiency program at steady-state; new property tax base growing; capital debt service fully booked</td></tr>
+</tbody>
+</table>
+</div>
+<p><strong>Any year above the cap requires a supermajority of Council (6 of 8) and a published explanation</strong> (Measure 66).</p>
+
+<h3>Year 1 honesty</h3>
+<p>Year 1 (2027 budget) is the hardest. Most savings ramp; most new revenue arrives in later years; capital debt service starts hitting the operating line. The Year 1 cap of ≤6.5% requires two structural decisions:</p>
+<ol>
+<li><strong>Do not implement the new program and FTE additions</strong> built into the council's 10.44% draft. The framework adopts a lean baseline.</li>
+<li><strong>Front-load the easiest efficiency wins:</strong> managed competition tender (savings begin mid-year), first ZBB review focused on grants and subsidies over $50K, administrative attrition policy in effect immediately.</li>
+</ol>
+<p>If both happen, Year 1 at 6.5% is achievable. If neither happens, the glide path slips by 6–12 months. <strong>This is the genuine fiscal risk in the framework and we name it.</strong></p>
+
+<h3>What we are not doing</h3>
+<ul>
+<li><strong>No raiding of reserves</strong> to fund operating gaps. The council funded CSWB Phase 1 by drawing $2.5M from Centennial Square revitalization, $4M from the Financial Stability Reserve, and $1.5M from Royal Athletic Park upgrades. This framework rejects that approach.</li>
+<li><strong>No deferred capital</strong> masquerading as savings. Lifecycle infrastructure continues. Pipes that need replacement get replaced.</li>
+<li><strong>No outsourcing of accountability.</strong> Every saving, revenue line, and cost in this document is in the public record, with quarterly variance reports in plain language.</li>
+</ul>
+
+<h2 id="part-f">Part F — The Net Picture at Steady-State</h2>
+<div class="tbl-wrap">
+<table class="dt">
+<thead><tr><th></th><th>Annual</th></tr></thead>
+<tbody>
+<tr><td><strong>Operating savings</strong></td><td class="amt">+$7.8–12.5M</td></tr>
+<tr><td><strong>New operating revenue / avoided costs</strong></td><td class="amt">+$9.5–18M</td></tr>
+<tr><td>Subtotal inflows</td><td class="amt">+$17.3–30.5M</td></tr>
+<tr><td><strong>New operating costs (incl. v1.1–v1.3)</strong></td><td class="amt">−$11.0–14.7M</td></tr>
+<tr><td><strong>Capital debt service (net of streetlight savings)</strong></td><td class="amt">−$0.4–1.0M</td></tr>
+<tr><td>Subtotal outflows</td><td class="amt">−$11.4–15.7M</td></tr>
+<tr class="total"><td>NET FISCAL HEADROOM AT STEADY-STATE</td><td class="amt">+$5.4–14.9M / yr</td></tr>
+</tbody>
+</table>
+</div>
+<p>This $5.4–14.9M of annual headroom is what funds the tax glide path from the council's 10.44% trajectory down to CPI + population growth. <strong>Plus one-time inflows over the term:</strong> $5–10M from real estate rationalization, recoverable EV charger fees, and any provincial/federal infrastructure grants attracted by improved planning rigour.</p>
+
+<h2 id="part-g">Part G — What We Excluded And Why</h2>
+<h4>Not counted as savings or revenue</h4>
+<ul>
+<li><strong>"Behavioural change" savings</strong> — real but unmeasurable in advance.</li>
+<li><strong>Parking-data licensing revenue</strong> — mapping platforms derive parking signals from device telemetry, not municipal feeds. Not reliable.</li>
+<li><strong>Tourist / hotel tax growth</strong> — outside City control (provincial framework).</li>
+<li><strong>Federal/provincial grants we cannot guarantee</strong> — pursued aggressively, but not budgeted against.</li>
+<li><strong>Speculation tax / vacant-storefront surcharge</strong> — requires provincial enabling legislation; advocated for, not banked.</li>
+<li><strong>Amalgamation "savings"</strong> — the Saanich Citizens' Assembly is a process, not a fiscal commitment in either direction.</li>
+</ul>
+<h4>Acknowledged as uncertain</h4>
+<ul>
+<li><strong>ZBB results.</strong> Calgary found $60M of a $74M target by March 2026. Victoria may find less, or more. Range is conservative.</li>
+<li><strong>Housing completion timing.</strong> A recession, rate shock, or labour shortage could push starts back. The $8–15M range reflects this.</li>
+<li><strong>Managed competition transition costs.</strong> First-year savings may be lower due to procurement and changeover.</li>
+</ul>
+
+<h2 id="critical">How To Read This Critically</h2>
+<p>If you are an opponent, journalist, or skeptical resident, here is how to stress-test the framework's fiscal claims:</p>
+<ol>
+<li><strong>Check the council's actual 2026 budget composition.</strong> How much of the 10.44% draft is structural baseline versus new add-ons? The framework assumes the add-ons are deferrable. Verify.</li>
+<li><strong>Audit the ZBB range against Calgary's published outcomes.</strong> Victoria reviewing 3–4 services per year at half Calgary's per-service yield is the conservative assumption used here.</li>
+<li><strong>Test the housing assumption.</strong> 12,000 units by 2030 requires sustained ~2,400 starts/year. Plausible; not guaranteed.</li>
+<li><strong>Question the per-unit property tax assumption.</strong> $1,500–3,000 blended is conservative but assumes a meaningful shift in unit composition.</li>
+<li><strong>Track the quarterly variance reports.</strong> The framework commits to publishing budgeted vs. actual every quarter. The first three reports will tell you whether the savings are real.</li>
+</ol>
+
+<div class="callout gold" style="margin-top:32px">
+<div class="lbl">◆ The bottom line</div>
+The current council grew the operating budget 29% in three years without deploying a single modern efficiency tool. We don't need to spend more. We need to spend smarter — and the math above shows how.
+</div>
+
+<p style="margin-top:32px"><a href="index.html" class="pgback">← Back to the framework</a></p>
+
+</div>
+</div>
+</main>
+
+<div id="footer-mount"></div>
+<script src="site.js"></script>
+
+
+</body>
+</html>
