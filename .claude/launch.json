@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "acitythatworks",
+      "runtimeExecutable": "py",
+      "runtimeArgs": ["-m", "http.server", "8090", "--directory", "C:\\Users\\casag\\OneDrive\\Documents\\GitHub\\acitythatworks"],
+      "port": 8090
+    }
+  ]
+}
