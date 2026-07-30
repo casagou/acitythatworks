@@ -73,9 +73,19 @@
 .fvx{font-size:12px;color:#57534e;line-height:1.5;margin-top:4px}
 .jg{display:grid;grid-template-columns:1fr;gap:16px;margin-top:24px}
 @media(min-width:768px){.jg{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:768px){.jg4{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1100px){.jg4{grid-template-columns:repeat(4,1fr)}}
 .jc{padding:20px;border:1px solid rgba(26,54,104,.18)}
 .jc.cy{background:rgba(212,168,67,.08)}
 .jc.ot{background:rgba(26,54,104,.04)}
+.jc.crd{background:rgba(34,114,71,.06);border-color:rgba(34,114,71,.3)}
+/* Victoria in 2030 — the Program's one forward-looking section */
+.v30{max-width:760px;margin-top:24px;padding:24px 26px;background:#fff;border:1px solid rgba(26,54,104,.18);border-left:3px solid var(--moss)}
+.v30 p{font-size:16px;line-height:1.7;color:#33312e;margin:0 0 14px}
+@media(min-width:640px){.v30 p{font-size:17px}}
+.v30 p:last-child{margin-bottom:0}
+.v30 strong{color:var(--navy);font-weight:600}
+.v30 .v30end{margin-top:18px;padding-top:16px;border-top:1px solid rgba(26,54,104,.15)}
 .jt{font-family:'Fraunces',serif;font-size:18px;font-weight:500;color:var(--navy);margin-bottom:8px}
 .jx{font-size:13px;color:#44403c;line-height:1.6}
 .dg{display:grid;grid-template-columns:1fr;gap:16px;margin-top:32px}
@@ -365,9 +375,11 @@ h2.adt em{font-style:italic;color:var(--gold-ink);font-weight:400}
 <li><a href="#pillars">Five Pillars</a></li>
 <li><a href="#how-to-use">How to Use</a></li>
 <li><a href="#method">The Method</a></li>
+<li><a href="#v2030">Victoria in 2030</a></li>
 <li><a href="#measures">All 131 Measures</a></li>
 <li><a href="#scorecard">12 Commitments</a></li>
 <li><a href="#balance">Balance Sheet</a></li>
+<li><a href="#neighbourhoods">Neighbourhood Priorities</a></li>
 <li><a href="#faq">Q&amp;A</a></li>
 <li><a href="#adopt">Endorse / Subscribe</a></li>
 </ol>
@@ -446,9 +458,9 @@ h2.adt em{font-style:italic;color:var(--gold-ink);font-weight:400}
 <div class="mg">
 <div class="ms"><div class="msn">01</div><div><div class="mst">Identify the root cause</div><div class="msx">Not the symptom — the structural reason the problem exists.</div></div></div>
 <div class="ms"><div class="msn">02</div><div><div class="mst">Assess what the City can actually do</div><div class="msx">Municipalities have specific powers. Don't promise what requires provincial or federal action.</div></div></div>
-<div class="ms"><div class="msn">03</div><div><div class="mst">Study what works elsewhere</div><div class="msx">Pittsburgh's Surtrac: −25% travel time, −21% emissions. Phoenix managed competition: $25M+ saved 1978–88. Calgary SAVE: $74M targeted, $60M found.</div></div></div>
+<div class="ms"><div class="msn">03</div><div><div class="mst">Study what works elsewhere</div><div class="msx">Pittsburgh's Surtrac: −25% travel time, −21% emissions. Phoenix managed competition: $25M+ saved 1978–88. Calgary SAVE: $74M targeted, $60M found. We also study what <em>doesn't</em> translate — Helsinki, Singapore and Boston built city-scale digital twins, but Victoria is 7–25× smaller, so we start with the data layers they built first.</div></div></div>
 <div class="ms"><div class="msn">04</div><div><div class="mst">Measure with technology</div><div class="msx">Use data, sensors, and digital tools to understand before deciding.</div></div></div>
-<div class="ms"><div class="msn">05</div><div><div class="mst">Build solutions with practitioners</div><div class="msx">Engineers, police, builders, social workers, business owners, neighbourhood associations, residents.</div></div></div>
+<div class="ms"><div class="msn">05</div><div><div class="mst">Build solutions with experts</div><div class="msx">Engineers, police, builders, social workers, business owners, neighbourhood associations, residents.</div></div></div>
 <div class="ms"><div class="msn">06</div><div><div class="mst">Cost every measure</div><div class="msx">Direct and indirect impacts, costs and revenues. Every single proposal has a budget impact estimate.</div></div></div>
 </div>
 </section>
@@ -460,21 +472,39 @@ h2.adt em{font-style:italic;color:var(--gold-ink);font-weight:400}
 <div class="fvg">
 <div class="fvc"><div class="fvn">STEP 01</div><div class="fvt">Local consultation</div><div class="fvx">Problems, pain points, what needs to improve.</div></div>
 <div class="fvc"><div class="fvn">STEP 02</div><div class="fvt">Expert design</div><div class="fvx">Engineers, planners, affected residents.</div></div>
-<div class="fvc"><div class="fvn">STEP 03</div><div class="fvt">Visualize &amp; analyze</div><div class="fvx">AI imagery (M53b) + GIS analysis (M53). See the effects before spending.</div></div>
-<div class="fvc"><div class="fvn">STEP 04</div><div class="fvt">Referendum if &gt; $25M</div><div class="fvx">Binding public vote on new (non-lifecycle) capital.</div></div>
+<div class="fvc"><div class="fvn">STEP 03</div><div class="fvt">Visualize &amp; analyze</div><div class="fvx">AI imagery (M53b) + GIS traffic, utility and infrastructure analysis (M53). See the effects on adjacent streets and businesses before a dollar is spent.</div></div>
+<div class="fvc"><div class="fvn">STEP 04</div><div class="fvt">Referendum if &gt; $25M</div><div class="fvx">Binding public vote on new (non-lifecycle) capital, under the Community Charter — Assent Voting or the Alternative Approval Process.</div></div>
 <div class="fvc"><div class="fvn">STEP 05</div><div class="fvt">Quarterly reports</div><div class="fvx">On time, on budget, or explain why not.</div></div>
 </div>
 </div>
 
+<section id="v2030" class="sc rv">
+<div class="se">◆ What delivery looks like</div>
+<h2 class="st">Victoria in <em>2030.</em></h2>
+<p class="si" style="font-style:italic">Everything below is the result of these measures being delivered. It is written in the present tense because that is the point of a plan.</p>
+<div class="v30">
+<p>It is a Tuesday evening in the spring of 2030 and Pandora Avenue is a street people walk down on purpose. The lights came on at dusk and they will stay on, dimmed but never off, until morning. They are warm and they suit the buildings. <strong>Nobody is watching you walk home</strong>, because we chose better lighting over cameras and wrote that choice into the framework so it could not quietly be reversed.</p>
+<p>A bylaw officer goes past on a bicycle. It is after seven, and that used to be the hour the City stopped. The storefront beside you is occupied. So is the next one, and the one after that. Downtown vacancy is near 5%, and the shop owner has a name and a phone number at City Hall for when something goes wrong.</p>
+<p>Bastion Square is a square again. Government Street closes to cars on summer weekends, and the businesses that were nervous about it in 2027 asked for it to be permanent in 2029, because the foot traffic data was published either way and it settled the argument. On the harbour you can now walk the whole shoreline without leaving the water's edge, from Songhees Point to Dallas Road, because the gaps got closed one at a time.</p>
+<p><strong>Your daughter still lives here.</strong> That is the part that matters most and the part that was least certain. Twelve thousand homes were approved and built, and enough of them were townhouses and three-bedroom units that a family could actually use one. There are streets in Fernwood and Oaklands that had nothing but detached houses in 2026 and now have four- and six-unit buildings that look like they belong.</p>
+<p>You got your tax notice in June and you understood it. There is one number on it that covers everything the City and the region bill you — property tax, water, sewer and stormwater together — with last year beside it and the next five years underneath. The residential rate went up by about inflation plus growth. Two years ago the City collected more than it needed and the difference came back as a credit on the notice rather than disappearing into a reserve, because a rule required it and six of nine councillors would have had to vote in public to keep it.</p>
+<p>Every quarter the numbers are published. Permit times by category. Pothole report-to-fix. Graffiti removed inside 48 hours. Needles collected. Shelter spaces available at 5 PM. Debt outstanding and debt per household. <strong>Nobody filed a freedom-of-information request to learn any of it.</strong></p>
+<p>And in the middle of the city there is one thing that was built rather than fixed, chosen from three options by the people who live here and approved at a referendum before a shovel moved. It is the sort of place you take visitors.</p>
+<p class="v30end"><strong>None of this required more money than Victoria already spends.</strong> It required spending it on purpose, measuring the result, and publishing the result whether or not it flattered anyone. The 12 Commitments below are how you check whether we did it. That is the whole offer.</p>
+</div>
+</section>
+
 <div class="rv" style="margin-top:64px">
 <div class="se">◆ Separation of Powers</div>
 <h2 class="st" style="font-size:26px">What the City actually controls.</h2>
-<p class="si">Before making promises, we must be honest about what the City of Victoria actually controls. Many of the problems residents face fall under provincial or federal jurisdiction. We advocate aggressively to senior governments for action in their domains — but we never promise what isn't ours to deliver. <a href="city-hall.html" style="color:var(--navy)">See the full plain-language guide →</a></p>
-<div class="jg">
+<p class="si">Before making promises, we must be honest about what the City of Victoria actually controls. Many of the problems residents face — healthcare, criminal sentencing, income support — fall under provincial or federal jurisdiction. We advocate aggressively to senior governments for action in their domains, but we never promise what isn't ours to deliver. <a href="city-hall.html" style="color:var(--navy)">See the full plain-language guide →</a></p>
+<div class="jg jg4">
 <div class="jc cy"><div class="jt">City of Victoria controls</div><div class="jx">Land use &amp; zoning · building permits · property taxes · bylaws &amp; enforcement · municipal policing (via VicPD Board) · parks &amp; recreation · local roads &amp; sidewalks · water &amp; sewer · garbage collection · local planning · business licences · public art &amp; heritage designation</div></div>
+<div class="jc crd"><div class="jt">Capital Regional District controls</div><div class="jx">Regional water supply &amp; treatment · regional wastewater · solid-waste disposal · regional parks · regional housing. You pay for these through utility rates and requisitions, not the property tax rate — and Victoria's CRD directors are elected on the same ballot as council. <strong>M66d reports it; M70c governs Victoria's posture toward it.</strong></div></div>
 <div class="jc ot"><div class="jt">Province of BC controls</div><div class="jx">Healthcare · K-12 education · social housing funding (BC Housing) · welfare &amp; income assistance · courts &amp; sentencing · major transit (BC Transit) · highways · building code · vacancy &amp; speculation taxes</div></div>
 <div class="jc ot"><div class="jt">Federal government controls</div><div class="jx">Immigration · criminal law · employment insurance · Old Age Security · major infrastructure grants · Indigenous affairs (Crown-Nation relationship) · ports &amp; harbours</div></div>
 </div>
+<p class="si" style="font-size:15px;margin-top:16px">A framework that discusses only the City and the senior governments leaves out a large and fast-growing share of what a household actually pays. That is why the regional level is on this diagram.</p>
 </div>
 
 <section id="measures" class="sc rv">
@@ -520,14 +550,21 @@ h2.adt em{font-style:italic;color:var(--gold-ink);font-weight:400}
 <div class="se" style="margin-top:0">◆ Savings &amp; New Revenue (Steady-State)</div>
 <div class="br"><span class="bl">Competitive bidding for services</span><span class="ba">$2.4M/yr</span></div>
 <div class="br"><span class="bl">Zero-based budget review</span><span class="ba">$3–6M/yr</span></div>
-<div class="br"><span class="bl">Administrative efficiency (attrition + tech)</span><span class="ba">$1.5–2.5M/yr</span></div>
-<div class="br"><span class="bl">New property tax from 12,000 homes (by 2030)</span><span class="ba">$8–15M/yr</span></div>
-<div class="br"><span class="bl">Downtown vacancy reduction</span><span class="ba">$0.5–1M/yr</span></div>
+<div class="br"><span class="bl">Administrative efficiency (attrition + technology)</span><span class="ba">$1.9–4M/yr</span></div>
+<div class="br"><span class="bl">New property tax from 12,000 homes (peak by 2030)</span><span class="ba">$8–15M/yr</span></div>
+<div class="br"><span class="bl">Downtown vacancy reduction (new business tax)</span><span class="ba">$0.5–1M/yr</span></div>
 <div class="br"><span class="bl">Smart streetlighting (energy savings)</span><span class="ba">$0.5–1M/yr</span></div>
 <div class="br"><span class="bl">Climate investments (avoided emergency costs)</span><span class="ba">$1–2M/yr</span></div>
-<div class="br aj"><span class="bl">Less: v1.1–v1.3 sub-measure net cost</span><span class="ba">−$2.5–3.5M/yr</span></div>
-<div class="bt"><span class="btl">Total net headroom</span><span class="bta">$5.4–14.9M / yr</span></div>
-<p style="margin-top:24px;font-size:13px;color:#57534e;line-height:1.6;font-style:italic"><strong style="color:var(--navy);font-style:normal">Honest about timing:</strong> these are steady-state figures at the end of a four-year implementation. Year-one savings are a fraction. The full net-headroom math is in the <a href="savings.html" style="color:var(--navy)">Savings &amp; Revenue Analysis</a>.</p>
+<div class="br aj"><span class="bl">Less: cumulative sub-measure net cost, v1.1–v1.9</span><span class="ba">−$4.4–6.3M/yr</span></div>
+<div class="bt"><span class="btl">Net fiscal headroom (central)</span><span class="bta">$4.3–14.0M / yr</span></div>
+<div class="br aj" style="margin-top:10px"><span class="bl">Pessimistic case (low savings, high costs)</span><span class="ba">≈ break-even</span></div>
+<p style="margin-top:20px;font-size:13px;color:#57534e;line-height:1.6;font-style:italic"><strong style="color:var(--navy);font-style:normal">Honest about timing:</strong> these are steady-state figures at the end of a four-year implementation. Year-one savings are a fraction, and the Year 1 cap is the binding constraint rather than a comfortable one. The full line-by-line math is in the <a href="savings.html" style="color:var(--navy)">Savings &amp; Revenue Analysis</a>.</p>
+<div class="callout gold" style="margin-top:18px">
+<div class="lbl">◆ Deliberately excluded from every figure above</div>
+<p style="margin:0 0 8px;font-size:14px;line-height:1.6">Two <strong>gated conditional tiers</strong> — roughly <strong>$450–700K/yr</strong> (v1.8: the M20 AAA maintenance standard, end-of-trip facilities, and the M23b frequent-network stop standard) and <strong>$500–850K/yr</strong> (v1.9: M26b civilian crisis response, M28d community paramedicine, M80c Local Area Plan capacity). Each proceeds in Year 2 only if the M15, M65 and M68 savings are verified as tracking at the end of Year 1; the two clinical measures additionally require a confirmed provincial or health-authority cost-share partner, because municipally funding a clinical service outright is the downloading M70b exists to refuse.</p>
+<p style="margin:0;font-size:14px;line-height:1.6">Two <strong>capital items</strong>: the M64b City-owned seismic retrofit, uncosted pending inventory, and the M45c signature public-space project ($40–80M), referendum-gated under M74. Neither is quietly netted into the headroom.</p>
+</div>
+<p style="margin-top:16px;font-size:13px;color:#57534e;line-height:1.6;font-style:italic">These are commitments to spend savings that arrive, not savings that are hoped for. A framework that quietly spends its own projected savings before they arrive is doing exactly what it criticizes the current council for doing.</p>
 </div>
 <div class="gb">
 <div class="gl">◆ The Tax Glide Path</div>
@@ -535,7 +572,7 @@ h2.adt em{font-style:italic;color:var(--gold-ink);font-weight:400}
 <div class="gi gdv"><div class="gil">Year 1 (cap)</div><div class="giv">≤ 6.5%</div></div>
 <div class="gi"><div class="gil">Year 2 (cap)</div><div class="giv">≤ 5.0%</div></div>
 <div class="gi gd"><div class="gil">Year 3+ (target)</div><div class="giv">~3.5%</div><div class="gis">CPI + population growth</div></div>
-<p style="font-size:12px;color:#57534e;font-style:italic;line-height:1.5;margin:16px 0 0">Any increase above the cap requires a supermajority (6 of 8) and a public explanation.</p>
+<p style="font-size:12px;color:#57534e;font-style:italic;line-height:1.5;margin:16px 0 0">The cap is on the <strong>residential rate</strong>, not total revenue — a cap on the total would let a council deliver a 9% homeowner bill and describe it as 6.5%. Any increase above the cap requires a supermajority of Council, <strong>6 of the 9 members</strong> (the mayor plus 8 councillors), with a public explanation on the record. The same 6-of-9 standard governs the M66b refund, the M66c debt rule, the M66d utility discipline and the M50b arts floor.</p>
 </div>
 </div>
 </section>
@@ -576,6 +613,8 @@ h2.adt em{font-style:italic;color:var(--gold-ink);font-weight:400}
 <li><span class="ar">→</span>Enforce the rules that exist — before inventing new ones</li>
 <li><span class="ar">→</span>Respect taxpayers — every dollar audited, every quarter reported</li>
 <li><span class="ar">→</span>Cost every promise — no measure without a budget line</li>
+<li><span class="ar">→</span>Publish one household bill, not just a tax rate</li>
+<li><span class="ar">→</span>Publish the rules for our own AI before we use it</li>
 </ul>
 </div>
 <div class="pb no">
@@ -586,11 +625,24 @@ h2.adt em{font-style:italic;color:var(--gold-ink);font-weight:400}
 <li><span class="ar">→</span>We don't pick fights — we fix problems</li>
 <li><span class="ar">→</span>We don't spend first and justify later — taxpayers decide on big new projects</li>
 <li><span class="ar">→</span>We don't try things in real life when we can simulate them first</li>
-<li><span class="ar">→</span>We don't deploy public surveillance — better lighting, not behavioural AI</li>
+<li><span class="ar">→</span>We don't deploy public surveillance — no City cameras, no behavioural AI, better lighting instead</li>
+<li><span class="ar">→</span>We don't let a machine decide about a person — a named human decides, every time</li>
 </ul>
 </div>
 </div>
 </div>
+
+<section id="neighbourhoods" class="sc rv">
+<div class="se">◆ Implementation</div>
+<h2 class="st">Neighbourhood priorities.</h2>
+<p class="si">Every neighbourhood in Victoria has its own character and its own concerns. This framework is city-wide, but implementation must be neighbourhood-specific.</p>
+<div class="ag">
+<div class="ac"><div class="act">James Bay · Fairfield · Gonzales · Rockland</div><div class="acx">Property values and neighbourhood character, senior safety and services, park maintenance, traffic calming, heritage preservation.</div></div>
+<div class="ac"><div class="act">Vic West · Hillside-Quadra · Oaklands</div><div class="acx">Affordable housing options, family services and parks, school zone safety, community centre programs, missing-middle infill.</div></div>
+<div class="ac"><div class="act">Downtown · Fernwood · North Park</div><div class="acx">Small business support, public safety in commercial areas, housing affordability, transit connections, DPOT deployment priority area.</div></div>
+<div class="ac"><div class="act">Burnside · Rock Bay</div><div class="acx">Street tree planting (identified gap), industrial-to-mixed-use transition, infrastructure upgrades, pest management.</div></div>
+</div>
+</section>
 
 <section id="faq" class="sc rv">
 <div class="se">◆ Responses to common criticisms</div>
