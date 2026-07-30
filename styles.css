@@ -31,6 +31,15 @@ header{position:sticky;top:0;z-index:40;background:rgba(26,54,104,.97);backdrop-
 .nv a.btn-end{padding:5px 11px;min-height:34px;border:1px solid rgba(250,247,240,.5);color:var(--paper)}
 .nv a.btn-end:hover{color:var(--paper);border-color:var(--gold)}
 .nv a.btn-end.cur{border-color:var(--gold);background:rgba(212,168,67,.15)}
+/* Candidate matrix — a secondary button, gold-outlined so it reads as distinct
+   from the paper-outlined Endorse CTA without competing with it. Gold on navy
+   is 5.35:1. */
+.nv a.btn-cmp{padding:5px 11px;min-height:34px;border:1px solid rgba(212,168,67,.55);color:var(--gold)}
+/* A gold tint behind gold text lightens the background and drops the ratio
+   below 4.5:1, so the hover and active states switch the text instead of
+   tinting behind it. Paper on the tinted navy, navy on solid gold (5.35:1). */
+.nv a.btn-cmp:hover{border-color:var(--gold);background:rgba(212,168,67,.10);color:var(--paper)}
+.nv a.btn-cmp.cur{border-color:var(--gold);background:var(--gold);color:var(--navy)}
 /* Base rule must precede the breakpoints below: it carries display:flex at the
    same specificity, so when it came last it beat them and the hamburger stayed
    visible on desktop alongside the full nav. */
