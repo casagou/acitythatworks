@@ -156,6 +156,25 @@ table.dt td{padding:11px 14px 11px 0;vertical-align:top;color:#33312e;line-heigh
 table.dt tr.total{border-top:2px solid rgba(26,54,104,.3);border-bottom:none}
 table.dt tr.total td{font-weight:700;color:var(--navy);padding-top:14px}
 table.dt .amt{font-family:'JetBrains Mono',monospace;white-space:nowrap;font-weight:500}
+/* Auto table layout hands every column a share of the width, so a money column
+   holding "$0.27M" was taking more room than the sentence beside it — and one
+   long nowrap cell was inflating the whole column. width:1% asks the browser to
+   shrink these to their content and give the remainder to the text column. */
+table.dt td.amt,table.dt th.amt,table.dt td.mid,table.dt th.mid{width:1%}
+/* A qualifier belongs under the figure, not stretched along it. */
+table.dt .amt .qual{display:block;margin-top:3px;font-family:'Public Sans',system-ui,sans-serif;font-size:12px;font-weight:400;line-height:1.4;color:#57534e;white-space:normal}
+/* Measure references: narrow, but allowed to wrap rather than widen the table. */
+/* 8.5em is measured, not guessed: it is where the one row carrying a long
+   parenthetical stops wrapping to six lines, without taking meaningful width
+   off the item column for the other forty-nine. */
+table.dt td.mid{font-family:'JetBrains Mono',monospace;font-size:12px;white-space:normal;min-width:8.5em}
+table.dt td.mid em{font-family:'Public Sans',system-ui,sans-serif;font-size:12px;color:#57534e}
+/* A five-column reference table does not have to live inside the 760px reading
+   measure. Prose stays where it belongs; the table borrows the container's
+   remaining width. Only above 1000px, where that slack actually exists. */
+@media(min-width:1000px){
+  .prose .tbl-wrap.wide{margin-left:-36px;margin-right:-36px}
+}
 
 /* Footer */
 footer{background:var(--navy);padding:48px 0;margin-top:80px}
