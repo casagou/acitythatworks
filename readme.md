@@ -7,7 +7,8 @@ A complete, multi-page static website for the citizens' framework. No build step
 | File | What it is |
 |------|------------|
 | `index.html` | Home — hero, five pillars, method, **all ~101 measures** (filterable + searchable, full text inline), 12-commitment scorecard, balance sheet, principles, criticisms Q&A, subscribe/endorse |
-| `summary.html` | One-Page Summary — the 60-second version (problem → pillars → flagship measures → math → method) |
+| `summary.html` | One-Page Summary — the 60-second version (problem → pillars → flagship measures → math → method), plus the printable PDF download |
+| `A-City-That-Works-One-Page.pdf` | The printable one-pager, linked from `summary.html`. Designed separately; drop a new file in at the same path to update the download |
 | `savings.html` | Savings & Revenue Analysis — the full math, every table, with sources and honest caveats |
 | `city-hall.html` | How City Hall Actually Works — plain-language guide to municipal power |
 | `endorse.html` | Candidate Endorsement Pack — three tiers, campaign language, full measure checklist, endorsement form |
