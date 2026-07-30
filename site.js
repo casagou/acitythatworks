@@ -33,6 +33,7 @@
 '<a href="endorse.html">Candidate Endorsement Pack</a>' +
 '<a href="comparison.html">Candidate Comparison Matrix</a>' +
 '<a href="faq.html">Frequently Asked Questions</a>' +
+'<a href="version-history.html">Version History</a>' +
 '</div>' +
 '<div class="fhd" style="margin-top:24px">Contact</div>' +
 '<div class="fls"><a href="mailto:info@acitythatworks.ca">info@acitythatworks.ca</a></div>' +
