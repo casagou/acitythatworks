@@ -1,6 +1,7 @@
 /* A City That Works — Program data, generated from the canonical Notion
-   master (The Program, v1.9.1, July 30, 2026). 131 active commitments:
-   82 original measures plus 49 sub-measures added across v1.1–v1.9.
+   master (The Program, v1.9.1, July 30, 2026). The framework no longer
+   publishes a measure total — three earlier versions shipped a count that
+   did not survive a hand count — so nothing here should render one either.
    Changelogs are deliberately excluded per the Notion build marker. */
 const MEASURES = [
   {"id": "1", "pillar": "foundation", "section": "Honouring the Host Nations", "tier": "core", "title": "Standing government-to-government working tables", "body": "<p>Establish quarterly working tables between the City (Mayor + Chief Administrative Officer) and the elected leadership of the Songhees Nation and the Esquimalt Nation respectively. Standing agendas: shared infrastructure, land use, cultural protocols, economic opportunities, public safety coordination. Published meeting summaries (with Nation approval) so residents can see the partnership is real.</p>", "budget": "$150K/year for dedicated municipal staff time and Nations’ capacity support. The largest cost of broken relationships is litigation and stalled projects, and prevention is cheap."},
@@ -292,7 +293,12 @@ function applyFilters(){
     var has=g.querySelectorAll(".mit:not(.hbf)").length;
     g.style.display=has?"":"none";
   });
-  var mc=$("#mcount"); if(mc) mc.textContent=v+" measure"+(v===1?"":"s");
+  /* A count of what the filter returned is useful; a headline total is not.
+     The framework no longer publishes one, because three earlier versions
+     published a figure that did not survive a hand count. So this reads out a
+     number only while something is actually narrowing the list. */
+  var mc=$("#mcount");
+  if(mc) mc.textContent=(searching||cf!=="all") ? (v+" shown") : "All measures";
   lastCs=cs;
   syncExpandAll();
 }
