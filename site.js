@@ -1,17 +1,35 @@
-/* A City That Works — shared site script: footer + mobile menu */
+/* A City That Works — shared site script: header social, footer, mobile menu */
 (function () {
+
+  /* Single source of truth for the accounts. The X handle differs from the
+     other two, so every label names its own handle rather than implying one
+     shared @CityThatWorksYYJ across all three. */
+  var IG_SVG = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/></svg>';
+  var X_SVG  = '<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.66l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25h6.83l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>';
+  var FB_SVG = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>';
+
+  var SOCIAL = [
+    { name: 'Instagram',   handle: '@CityThatWorksYYJ', url: 'https://www.instagram.com/CityThatWorksYYJ/', svg: IG_SVG },
+    { name: 'X (Twitter)', handle: '@YYJThatWorks',     url: 'https://x.com/YYJThatWorks',                  svg: X_SVG  },
+    { name: 'Facebook',    handle: 'CityThatWorksYYJ',  url: 'https://www.facebook.com/CityThatWorksYYJ',   svg: FB_SVG }
+  ];
+
+  function socialLinks(cls) {
+    return SOCIAL.map(function (s) {
+      var label = s.name + ' — ' + s.handle;
+      return '<a class="' + cls + '" href="' + s.url + '" target="_blank" rel="noopener"' +
+             ' aria-label="' + label + '" title="' + label + '">' + s.svg + '</a>';
+    }).join('');
+  }
+
   var FOOTER = '' +
 '<footer><div class="c">' +
 '<div class="fg2">' +
 '<div>' +
 '<div class="fbr"><svg class="bicn" viewBox="0 0 240 240" aria-hidden="true"><circle cx="120" cy="120" r="112" fill="#FAF7F0"/><g fill="none" stroke="#16335c" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"><path d="M52 92  q22.5 -14 45 0 t45 0 t45 0"/><path d="M52 120 q22.5 -14 45 0 t45 0 t45 0" opacity="0.88"/><path d="M52 148 q22.5 -14 45 0 t45 0 t45 0" opacity="0.76"/></g></svg><span class="nm">A City That Works</span></div>' +
 '<p class="fdc">A Citizens\' Framework for Victoria 2026. Every measure costed. Zero ideology. Just results.</p>' +
-'<div class="fsoc">' +
-'<a href="https://www.instagram.com/CityThatWorksYYJ/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/></svg></a>' +
-'<a href="https://x.com/YYJThatWorks" target="_blank" rel="noopener" aria-label="X (Twitter)"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.66l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25h6.83l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>' +
-'<a href="https://www.facebook.com/CityThatWorksYYJ" target="_blank" rel="noopener" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>' +
-'</div>' +
-'<p class="fhandle">@CityThatWorksYYJ</p>' +
+'<div class="fsoc">' + socialLinks('') + '</div>' +
+'<p class="fhandle">Instagram &amp; Facebook <strong>@CityThatWorksYYJ</strong> · X <strong>@YYJThatWorks</strong></p>' +
 '<p class="fvr">v1.9 · July 30, 2026</p>' +
 '</div>' +
 '<div>' +
@@ -47,6 +65,26 @@
 
   var mount = document.getElementById('footer-mount');
   if (mount) { mount.outerHTML = FOOTER; }
+
+  // Social links in the header, so they aren't buried at the bottom of a long
+  // page. Injected here rather than pasted into eight headers by hand.
+  var hr = document.querySelector('header .hr');
+  if (hr && !hr.querySelector('.hsoc')) {
+    var hs = document.createElement('div');
+    hs.className = 'hsoc';
+    hs.innerHTML = socialLinks('');
+    var burger = hr.querySelector('#mt');
+    if (burger) { hr.insertBefore(hs, burger); } else { hr.appendChild(hs); }
+  }
+
+  // …and in the mobile drawer, where the header row has no space for them.
+  var mmi = document.querySelector('#mn .mmi');
+  if (mmi && !mmi.querySelector('.msoc')) {
+    var wrap = document.createElement('div');
+    wrap.className = 'msoc';
+    wrap.innerHTML = '<span class="msoc-l">Follow</span>' + socialLinks('');
+    mmi.appendChild(wrap);
+  }
 
   // Mobile menu — single source of truth for all pages. Reports open/closed
   // state to assistive tech and closes on Escape.
