@@ -47,13 +47,24 @@
   var mount = document.getElementById('footer-mount');
   if (mount) { mount.outerHTML = FOOTER; }
 
-  // Mobile menu (in case page didn't wire it inline)
+  // Mobile menu — single source of truth for all pages. Reports open/closed
+  // state to assistive tech and closes on Escape.
   var t = document.getElementById('mt'), m = document.getElementById('mn');
   if (t && m && !t.dataset.wired) {
     t.dataset.wired = '1';
-    t.addEventListener('click', function () { m.classList.toggle('o'); });
+    t.setAttribute('aria-controls', 'mn');
+    t.setAttribute('aria-expanded', 'false');
+    var setOpen = function (open) {
+      m.classList.toggle('o', open);
+      t.setAttribute('aria-expanded', open ? 'true' : 'false');
+      t.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    };
+    t.addEventListener('click', function () { setOpen(!m.classList.contains('o')); });
     m.querySelectorAll('a').forEach(function (a) {
-      a.addEventListener('click', function () { m.classList.remove('o'); });
+      a.addEventListener('click', function () { setOpen(false); });
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && m.classList.contains('o')) { setOpen(false); t.focus(); }
     });
   }
 })();

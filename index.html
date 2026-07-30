@@ -27,10 +27,12 @@
 .hp p{font-size:16px;line-height:1.65;color:#44403c;margin:14px 0 0}
 @media(min-width:640px){.hp p{font-size:17px}}
 .hp .ld{font-family:'Fraunces',serif;font-size:22px;line-height:1.4;color:var(--navy)}
+.ctahint{font-size:13px;line-height:1.6;color:#57534e;margin:14px 0 0;max-width:520px}
+.ctahint a{color:var(--navy)}
 .hp strong{color:var(--navy);font-weight:600}
 .diag{padding-left:0}
 @media(min-width:768px){.diag{padding-left:32px;border-left:1px solid rgba(26,54,104,.18)}}
-.dh{font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.2em;color:var(--gold);margin-bottom:16px}
+.dh{font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.2em;color:var(--gold-ink);margin-bottom:16px}
 .dr2{display:flex;align-items:baseline;gap:12px;padding-bottom:10px;border-bottom:1px solid rgba(26,54,104,.18);margin-bottom:10px}
 .dr2:last-child{border-bottom:none;margin-bottom:0}
 .dnu{font-family:'JetBrains Mono',monospace;font-size:24px;font-weight:600;color:var(--rust);white-space:nowrap}
@@ -56,7 +58,7 @@
 .mg{display:grid;grid-template-columns:1fr;gap:24px;margin-top:40px}
 @media(min-width:640px){.mg{grid-template-columns:repeat(2,1fr);column-gap:40px;row-gap:32px}}
 .ms{display:flex;gap:20px}
-.msn{font-family:'Fraunces',serif;font-size:44px;font-weight:500;color:var(--gold);line-height:1;flex-shrink:0}
+.msn{font-family:'Fraunces',serif;font-size:44px;font-weight:500;color:var(--gold-ink);line-height:1;flex-shrink:0}
 @media(min-width:640px){.msn{font-size:52px}}
 .mst{font-family:'Fraunces',serif;font-size:18px;font-weight:500;color:var(--navy);line-height:1.3}
 @media(min-width:640px){.mst{font-size:20px}}
@@ -66,7 +68,7 @@
 @media(min-width:640px){.fvg{grid-template-columns:repeat(2,1fr)}}
 @media(min-width:1024px){.fvg{grid-template-columns:repeat(5,1fr)}}
 .fvc{padding:16px;background:rgba(212,168,67,.08);border-top:3px solid var(--gold)}
-.fvn{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--gold);margin-bottom:4px;letter-spacing:.1em}
+.fvn{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--gold-ink);margin-bottom:4px;letter-spacing:.1em}
 .fvt{font-family:'Fraunces',serif;font-size:16px;font-weight:500;color:var(--navy)}
 .fvx{font-size:12px;color:#57534e;line-height:1.5;margin-top:4px}
 .jg{display:grid;grid-template-columns:1fr;gap:16px;margin-top:24px}
@@ -91,13 +93,17 @@
 .fr{display:flex;align-items:center;gap:12px;margin-bottom:12px}
 .sw{position:relative;flex:1;max-width:420px}
 .swi{position:absolute;left:12px;top:50%;transform:translateY(-50%);opacity:.5;color:var(--navy);pointer-events:none}
-#ms{width:100%;padding:9px 12px 9px 36px;font-family:'JetBrains Mono',monospace;font-size:13px;background:#fff;border:1px solid rgba(26,54,104,.2);color:var(--navy);outline:none}
+/* 16px font-size stops iOS Safari from zooming the viewport on focus. */
+#ms{width:100%;min-height:44px;padding:11px 12px 11px 36px;font-family:'JetBrains Mono',monospace;font-size:16px;background:#fff;border:1px solid rgba(26,54,104,.2);color:var(--navy);outline:none}
 #ms:focus{border-color:var(--navy)}
+.mexp{display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:6px 14px;font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.1em;background:transparent;border:1px solid rgba(26,54,104,.3);color:var(--navy);cursor:pointer;white-space:nowrap;transition:all .15s}
+.mexp:hover:not(:disabled){background:rgba(26,54,104,.05)}
+.mexp:disabled{opacity:.4;cursor:default}
 .mcount{font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.13em;color:var(--navy);opacity:.7;white-space:nowrap}
 @media(min-width:640px){.mcount{font-size:11px}}
 .cr{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;margin:0 -4px;padding:0 4px 4px}
 .cr::-webkit-scrollbar{display:none}
-.cp{flex-shrink:0;padding:6px 14px;font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.1em;background:transparent;border:1px solid rgba(26,54,104,.3);color:var(--navy);cursor:pointer;white-space:nowrap;transition:all .15s}
+.cp{flex-shrink:0;min-height:44px;padding:6px 16px;font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.1em;background:transparent;border:1px solid rgba(26,54,104,.3);color:var(--navy);cursor:pointer;white-space:nowrap;transition:all .15s}
 .cp:hover{background:rgba(26,54,104,.05)}
 .cp.a{background:var(--navy);color:var(--paper);border-color:var(--navy)}
 .pgr{margin-top:48px;padding-top:32px;border-top:3px double rgba(26,54,104,.25)}
@@ -106,17 +112,26 @@
 @media(min-width:640px){.pgt{font-size:32px}}
 .pgg{font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.13em;opacity:.6}
 @media(min-width:640px){.pgg{font-size:11px}}
-.shd{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.2em;color:var(--gold);margin:28px 0 8px;padding-bottom:8px;border-bottom:1px solid rgba(26,54,104,.18)}
-.mi{display:grid;grid-template-columns:56px 1fr;gap:14px;padding:20px 0;border-bottom:1px solid rgba(26,54,104,.18)}
-@media(min-width:640px){.mi{grid-template-columns:72px 1fr;gap:16px}}
-@media(min-width:860px){.mi{grid-template-columns:80px 1fr;gap:20px;padding:24px 0}}
-.mnu{font-family:'Fraunces',serif;font-size:22px;font-weight:500;color:var(--gold);line-height:1;white-space:nowrap;letter-spacing:-.01em}
+.shd{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.2em;color:var(--gold-ink);margin:28px 0 8px;padding-bottom:8px;border-bottom:1px solid rgba(26,54,104,.18)}
+.mi{border-bottom:1px solid rgba(26,54,104,.18)}
+.misum{display:grid;grid-template-columns:56px 1fr 18px;align-items:start;gap:14px;padding:16px 0;cursor:pointer;list-style:none;min-height:44px}
+.misum::-webkit-details-marker{display:none}
+@media(min-width:640px){.misum{grid-template-columns:72px 1fr 18px;gap:16px}}
+@media(min-width:860px){.misum{grid-template-columns:80px 1fr 18px;gap:20px;padding:18px 0}}
+.misum:hover .mti{text-decoration:underline;text-decoration-color:rgba(26,54,104,.3)}
+.mchev{flex-shrink:0;color:var(--gold-ink);margin-top:4px;transition:transform .2s}
+.mi[open] .mchev{transform:rotate(180deg)}
+.mi > .mbody,.mi > .mbu{margin-left:70px;padding-bottom:20px}
+@media(min-width:640px){.mi > .mbody,.mi > .mbu{margin-left:88px}}
+@media(min-width:860px){.mi > .mbody,.mi > .mbu{margin-left:100px}}
+.mi > .mbu{margin-top:0;margin-bottom:20px;padding-bottom:12px}
+.mnu{font-family:'Fraunces',serif;font-size:22px;font-weight:500;color:var(--gold-ink);line-height:1;white-space:nowrap;letter-spacing:-.01em}
 @media(min-width:640px){.mnu{font-size:28px}}
 @media(min-width:860px){.mnu{font-size:32px}}
 .mb2{min-width:0}
 .mti{font-family:'Fraunces',serif;font-size:19px;font-weight:600;line-height:1.3;margin:0 0 4px}
 @media(min-width:640px){.mti{font-size:22px}}
-.mtg{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:.13em;padding:2px 6px;margin-left:8px;background:rgba(212,168,67,.18);color:var(--olive);vertical-align:middle}
+.mtg{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.13em;padding:2px 6px;margin-left:8px;background:rgba(212,168,67,.18);color:var(--gold-ink);vertical-align:middle}
 .mbody{font-size:15px;color:#33312e;line-height:1.62}
 @media(min-width:640px){.mbody{font-size:16px}}
 .mbody p{margin:10px 0}
@@ -135,14 +150,14 @@
 .st2 th{text-align:left;padding:12px 16px 12px 0;font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.13em;color:var(--navy);font-weight:500}
 .st2 tbody tr{border-bottom:1px solid rgba(26,54,104,.18);vertical-align:top}
 .st2 td{padding:16px 16px 16px 0}
-.st2 .cnu{font-family:'Fraunces',serif;font-size:22px;color:var(--gold);width:32px}
+.st2 .cnu{font-family:'Fraunces',serif;font-size:22px;color:var(--gold-ink);width:32px}
 .st2 .ccm{font-family:'Fraunces',serif;font-size:16px;font-weight:500;color:var(--navy)}
 .st2 .cba{font-size:12px;color:#57534e}
 .scm{display:block;margin-top:24px}
 @media(min-width:640px){.scm{display:none}}
 .scc{padding:16px;border-bottom:1px solid rgba(26,54,104,.18)}
 .scr{display:flex;align-items:baseline;gap:12px;margin-bottom:8px}
-.scn{font-family:'Fraunces',serif;font-size:22px;color:var(--gold)}
+.scn{font-family:'Fraunces',serif;font-size:22px;color:var(--gold-ink)}
 .scl{font-family:'Fraunces',serif;font-size:16px;font-weight:500;color:var(--navy)}
 .sme{font-family:'JetBrains Mono',monospace;font-size:11px;color:#57534e;margin-top:4px}
 .sme strong{color:var(--navy);font-weight:600}
@@ -160,13 +175,13 @@
 .bta{font-family:'JetBrains Mono',monospace;font-size:16px;font-weight:600;color:var(--navy)}
 @media(min-width:640px){.bta{font-size:18px}}
 .gb{padding:24px;background:rgba(26,54,104,.05);border:1px solid rgba(26,54,104,.18)}
-.gl{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.2em;color:var(--gold);margin-bottom:16px}
+.gl{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.2em;color:var(--gold-ink);margin-bottom:16px}
 .gi{margin-bottom:16px}
 .gil{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--navy);opacity:.6}
 .giv{font-family:'Fraunces',serif;font-size:26px;font-weight:600;color:var(--navy);line-height:1.2}
 @media(min-width:640px){.giv{font-size:30px}}
 .gi.rs .giv{color:var(--rust)}
-.gi.gd .giv{color:var(--gold)}
+.gi.gd .giv{color:var(--gold-ink)}
 .gis{font-size:12px;color:#57534e;margin-top:4px}
 .gdv{border-top:1px solid rgba(26,54,104,.18);padding-top:16px}
 .prg{display:grid;grid-template-columns:1fr;gap:16px;margin-top:32px}
@@ -189,7 +204,7 @@
 .fqs::-webkit-details-marker{display:none}
 .fqq{font-family:'Fraunces',serif;font-size:17px;font-weight:500;color:var(--navy);line-height:1.35}
 @media(min-width:640px){.fqq{font-size:20px}}
-.fqp{flex-shrink:0;color:var(--gold);transition:transform .2s}
+.fqp{flex-shrink:0;color:var(--gold-ink);transition:transform .2s}
 .fqi[open] .fqp{transform:rotate(45deg)}
 .fqa{padding:0 32px 20px 0;font-size:15px;color:#44403c;line-height:1.6;max-width:800px}
 .fqa a{color:var(--navy)}
@@ -198,40 +213,35 @@
 h2.adt{font-family:'Fraunces',serif;font-size:40px;line-height:.95;font-weight:500;color:var(--navy);margin:16px 0 0;letter-spacing:-.025em}
 @media(min-width:640px){h2.adt{font-size:56px}}
 @media(min-width:1024px){h2.adt{font-size:72px}}
-h2.adt em{font-style:italic;color:var(--gold);font-weight:400}
+h2.adt em{font-style:italic;color:var(--gold-ink);font-weight:400}
 .adg{display:grid;grid-template-columns:1fr;gap:40px;margin-top:48px}
 @media(min-width:768px){.adg{grid-template-columns:repeat(2,1fr)}}
 .adc h4{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.13em;color:var(--navy);margin:0 0 12px}
 .adc p{font-size:15px;color:#44403c;line-height:1.6;margin:0 0 24px}
 .adc.rt{padding-left:0}
 @media(min-width:768px){.adc.rt{padding-left:32px;border-left:1px solid rgba(26,54,104,.18)}}
-.adl{display:flex;flex-direction:column;gap:8px}
-.adl a{display:flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--navy);text-decoration:none;opacity:.9}
+.adl{display:flex;flex-direction:column}
+.adl a{display:flex;align-items:center;min-height:44px;gap:8px;font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--navy);text-decoration:none;opacity:.9}
 .adl a:hover{opacity:1}
 .adsoc{display:flex;gap:12px;margin-top:20px}
-.adsoc a{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border:1px solid rgba(26,54,104,.3);color:var(--navy);text-decoration:none;transition:all .15s}
+.adsoc a{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid rgba(26,54,104,.3);color:var(--navy);text-decoration:none;transition:all .15s}
 .adsoc a:hover{background:var(--navy);color:var(--paper);border-color:var(--navy)}
-.jb{position:fixed;bottom:20px;right:20px;z-index:30;display:flex;align-items:center;gap:8px;padding:12px;font-family:'JetBrains Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:.13em;background:var(--navy);color:var(--paper);border:none;cursor:pointer;box-shadow:0 4px 16px rgba(0,0,0,.2);transition:transform .2s,opacity .2s;padding-bottom:calc(12px + env(safe-area-inset-bottom))}
-@media(min-width:640px){.jb{padding:12px 18px;padding-bottom:calc(12px + env(safe-area-inset-bottom))}}
+.nlf{display:flex;flex-direction:column;gap:8px;max-width:440px}
+@media(min-width:480px){.nlf{flex-direction:row}}
+.nlf input{flex:1;min-height:44px;padding:12px 16px;background:#fff;border:1px solid rgba(26,54,104,.3);border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:16px;color:var(--navy);outline:none}
+.nlf input:focus{border-color:var(--navy)}
+.nlf .bn{white-space:nowrap}
+.nlf.done{display:none}
+.nlm{margin-top:12px;font-family:'JetBrains Mono',monospace;font-size:12px;line-height:1.5;color:var(--moss);min-height:1em;max-width:440px}
+.nlm.err{color:var(--rust)}
+/* Single utility control. In-page navigation lives in the .toc at the top of
+   the page; cross-page navigation lives in the header and mobile drawer. */
+.jb{position:fixed;bottom:20px;right:20px;z-index:30;display:flex;align-items:center;gap:8px;padding:14px;font-family:'JetBrains Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:.13em;background:var(--navy);color:var(--paper);border:none;text-decoration:none;cursor:pointer;box-shadow:0 4px 16px rgba(0,0,0,.2);transition:transform .2s,opacity .2s;padding-bottom:calc(14px + env(safe-area-inset-bottom))}
+@media(min-width:640px){.jb{padding:14px 18px;padding-bottom:calc(14px + env(safe-area-inset-bottom))}}
+.jb:hover{background:#16335c}
 .jb.hd{transform:translateY(20px);opacity:0;pointer-events:none}
 .jbl{display:none}
 @media(min-width:640px){.jbl{display:inline}}
-.jdr{position:fixed;bottom:0;left:0;right:0;z-index:50;background:var(--paper);transform:translateY(100%);transition:transform .3s cubic-bezier(.32,.72,0,1);padding-bottom:env(safe-area-inset-bottom);box-shadow:0 -8px 32px rgba(0,0,0,.2)}
-.jdr.o{transform:translateY(0)}
-.jbd{position:fixed;inset:0;z-index:40;background:rgba(0,0,0,.4);opacity:0;pointer-events:none;transition:opacity .3s}
-.jbd.o{opacity:1;pointer-events:auto}
-.jdi{max-width:640px;margin:0 auto;padding:20px 16px}
-.jdh{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
-.jde{font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.2em;color:var(--gold)}
-.jcl{background:none;border:none;padding:4px;color:var(--navy);cursor:pointer}
-.jg2{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
-.jl{padding:12px;border-bottom:1px solid rgba(26,54,104,.18);text-decoration:none;color:inherit;transition:background .15s}
-.jl:hover{background:#fff}
-.jl.en{background:var(--navy);color:var(--paper)}
-.jl.en .jlt{color:var(--paper)}
-.jl.en .jls{color:rgba(250,247,240,.7)}
-.jlt{font-family:'Fraunces',serif;font-size:15px;font-weight:500;color:var(--navy)}
-.jls{font-size:11px;color:#57534e;margin-top:2px}
 .hbf{display:none!important}
 .rv{animation:fu .5s ease-out backwards}
 @keyframes fu{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
@@ -250,7 +260,7 @@ h2.adt em{font-style:italic;color:var(--gold);font-weight:400}
 .huc .hux{font-size:14px;color:#57534e;font-style:italic;margin-bottom:14px;line-height:1.5}
 .huc ul{list-style:none;padding:0;margin:0 0 20px;flex-grow:1}
 .huc li{font-size:14px;line-height:1.55;color:#33312e;padding-left:18px;position:relative;margin:8px 0}
-.huc li::before{content:"→";position:absolute;left:0;color:var(--gold);font-weight:600}
+.huc li::before{content:"→";position:absolute;left:0;color:var(--gold-ink);font-weight:600}
 .huc li strong{color:var(--navy)}
 .huc .bn{align-self:flex-start;font-size:11px;padding:8px 14px}
 /* Identity claims (above Principles) */
@@ -266,10 +276,11 @@ h2.adt em{font-style:italic;color:var(--gold);font-weight:400}
 .idc li{font-size:14px;line-height:1.55;color:#33312e;padding-left:14px;position:relative;margin:6px 0}
 .idc.is li::before{content:"—";position:absolute;left:0;color:var(--moss)}
 .idc.no li::before{content:"—";position:absolute;left:0;color:var(--rust)}
-@media print{.jb,.jdr,.jbd,.fb{display:none!important}}
+@media print{.jb,.fb{display:none!important}}
 </style>
 </head>
 <body>
+<a class="skip" href="#top">Skip to main content</a>
 
 <header>
 <div class="c hr">
@@ -288,13 +299,7 @@ h2.adt em{font-style:italic;color:var(--gold);font-weight:400}
 <div id="mn" class="mm">
 <div class="c mmi">
 <a href="summary.html">One-Page Summary</a>
-<a href="#pillars">Five Pillars</a>
-<a href="#how-to-use">How to Use</a>
-<a href="#method">The Method</a>
 <a href="#measures">All Measures</a>
-<a href="#scorecard">12 Commitments</a>
-<a href="#balance">Balance Sheet</a>
-<a href="#faq">Q&amp;A</a>
 <div class="grp">Detailed documents</div>
 <a href="savings.html">Savings &amp; Revenue Analysis</a>
 <a href="city-hall.html">How City Hall Works</a>
@@ -321,14 +326,15 @@ h2.adt em{font-style:italic;color:var(--gold);font-weight:400}
 <p><strong>A City That Works</strong> is an independent, non-partisan policy framework for the City of Victoria, drafted by residents who want practical results from their local government. It is <strong>0% ideological, 100% pragmatic</strong> — its only loyalty is to what works elsewhere and can work here.</p>
 <p>This is not a party. There are no whips, no candidate slate, no exclusivity — just a public menu of evidence-based municipal policies, costed and sourced, open for adoption by any candidate.</p>
 <div class="cta">
-<a href="#measures" class="bn bnp">Read the measures <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-<a href="#adopt" class="bn bns"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> Endorse / Subscribe</a>
+<a href="summary.html" class="bn bnp">Start with the one-page summary <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+<a href="#measures" class="bn bns">Read all 100 measures</a>
 </div>
+<p class="ctahint">New here? The summary is the 60-second version. The full program below is 100 measures, every one costed — or <a href="#adopt">endorse and subscribe</a>.</p>
 </div>
 <div class="diag">
 <div class="dh">◆ The Diagnostic</div>
-<div class="dr2"><span class="dnu">29%</span><span class="dtx">Operating budget growth in 3 years ($297.9M → $384.1M)</span></div>
-<div class="dr2"><span class="dnu">10.44%</span><span class="dtx">Property tax increase proposed for 2026</span></div>
+<div class="dr2"><span class="dnu">31.4%</span><span class="dtx">Operating budget growth in 3 years ($300.0M → $394.1M adopted, plus $160.1M capital)</span></div>
+<div class="dr2"><span class="dnu">9.34%</span><span class="dtx">Residential tax increase levied for 2026 — 13.3% opening draft, 7.28% adopted aggregate, split 9.34% residential / 4.78% business</span></div>
 <div class="dr2"><span class="dnu">$750</span><span class="dtx">Per-capita policing cost — highest of any BC municipal force</span></div>
 <div class="dr2"><span class="dnu">61</span><span class="dtx">Missing-middle permits in 2024 vs. 150 target</span></div>
 <div class="dr2"><span class="dnu">59%</span><span class="dtx">Feel safe downtown by day (was 83% in 2020)</span></div>
@@ -337,6 +343,20 @@ h2.adt em{font-style:italic;color:var(--gold);font-weight:400}
 </div>
 </div>
 </section>
+
+<nav class="toc" aria-label="On this page">
+<div class="toc-h">◆ On this page</div>
+<ol>
+<li><a href="#pillars">Five Pillars</a></li>
+<li><a href="#how-to-use">How to Use</a></li>
+<li><a href="#method">The Method</a></li>
+<li><a href="#measures">All 100 Measures</a></li>
+<li><a href="#scorecard">12 Commitments</a></li>
+<li><a href="#balance">Balance Sheet</a></li>
+<li><a href="#faq">Q&amp;A</a></li>
+<li><a href="#adopt">Endorse / Subscribe</a></li>
+</ol>
+</nav>
 
 <section id="pillars" class="sc rv">
 <div class="se">◆ Structure</div>
@@ -370,12 +390,13 @@ h2.adt em{font-style:italic;color:var(--gold);font-weight:400}
 <div class="hut">For Residents</div>
 <div class="hux">Hold candidates to a higher standard:</div>
 <ul>
-<li><strong>Read</strong> the Program below</li>
+<li><strong>Start</strong> with the <a href="summary.html">one-page summary</a> — the 60-second version</li>
+<li><strong>Then read</strong> the measures on the issues you care about</li>
 <li><strong>Suggest</strong> improvements — every measure is open to criticism and correction</li>
 <li><strong>Ask</strong> your candidates which specific measures they support</li>
 <li><strong>Share</strong> with neighbours and community associations</li>
 </ul>
-<a href="#measures" class="bn bnp">Read the measures →</a>
+<a href="summary.html" class="bn bnp">One-page summary →</a>
 </div>
 <div class="huc">
 <div class="hut">For Practitioners</div>
@@ -406,7 +427,7 @@ h2.adt em{font-style:italic;color:var(--gold);font-weight:400}
 <section id="method" class="sc rv">
 <div class="se">◆ How this framework was built</div>
 <h2 class="st">0% ideology. 100% pragmatic.</h2>
-<p class="si">We started where the truth is most visible: the budget. Politicians make promises; numbers don't lie. Victoria's operating budget grew <strong>29% in three years</strong>, from $297.9M to $384.1M proposed — with over 53% going to salaries and benefits, VicPD's budget nearly doubling in a decade, and no competitive benchmarking, AI, or smart infrastructure deployed. For every problem a Victorian faces daily, we applied the same six-step method.</p>
+<p class="si">We started where the truth is most visible: the budget. Politicians make promises; numbers don't lie. Victoria's operating budget grew <strong>31.4% in three years</strong>, from $300.0M in 2023 to the <strong>$394.1M adopted for 2026</strong>, alongside $160.1M in capital — with VicPD's budget nearly doubling in a decade, from $50.6M to $86.8M requested for 2026, and no competitive benchmarking, AI, or smart infrastructure deployed. For every problem a Victorian faces daily, we applied the same six-step method.</p>
 <div class="mg">
 <div class="ms"><div class="msn">01</div><div><div class="mst">Identify the root cause</div><div class="msx">Not the symptom — the structural reason the problem exists.</div></div></div>
 <div class="ms"><div class="msn">02</div><div><div class="mst">Assess what the City can actually do</div><div class="msx">Municipalities have specific powers. Don't promise what requires provincial or federal action.</div></div></div>
@@ -451,16 +472,17 @@ h2.adt em{font-style:italic;color:var(--gold);font-weight:400}
 <svg class="swi" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
 <input id="ms" type="search" placeholder="Search measures…" aria-label="Search measures">
 </div>
-<div id="mcount" class="mcount">100 measures</div>
+<div id="mcount" class="mcount" role="status" aria-live="polite">100 measures</div>
+<button id="mexp" class="mexp" type="button" aria-expanded="false"><span class="mexpl">Expand all</span></button>
 </div>
-<div class="cr">
-<button class="cp a" data-f="all">All</button>
-<button class="cp" data-f="foundation">Foundation</button>
-<button class="cp" data-f="liveable">Liveable</button>
-<button class="cp" data-f="safe">Safe</button>
-<button class="cp" data-f="beautiful">Beautiful</button>
-<button class="cp" data-f="managed">Well-Managed</button>
-<button class="cp" data-f="democratic">Democratic</button>
+<div class="cr" role="group" aria-label="Filter measures by pillar">
+<button class="cp a" data-f="all" aria-pressed="true">All</button>
+<button class="cp" data-f="foundation" aria-pressed="false">Foundation</button>
+<button class="cp" data-f="liveable" aria-pressed="false">Liveable</button>
+<button class="cp" data-f="safe" aria-pressed="false">Safe</button>
+<button class="cp" data-f="beautiful" aria-pressed="false">Beautiful</button>
+<button class="cp" data-f="managed" aria-pressed="false">Well-Managed</button>
+<button class="cp" data-f="democratic" aria-pressed="false">Democratic</button>
 </div>
 </div>
 <div id="mctr"></div>
@@ -494,7 +516,7 @@ h2.adt em{font-style:italic;color:var(--gold);font-weight:400}
 </div>
 <div class="gb">
 <div class="gl">◆ The Tax Glide Path</div>
-<div class="gi rs"><div class="gil">Council's 2026 draft</div><div class="giv">10.44%</div></div>
+<div class="gi rs"><div class="gil">2026 residential, as levied</div><div class="giv">9.34%</div></div>
 <div class="gi gdv"><div class="gil">Year 1 (cap)</div><div class="giv">≤ 6.5%</div></div>
 <div class="gi"><div class="gil">Year 2 (cap)</div><div class="giv">≤ 5.0%</div></div>
 <div class="gi gd"><div class="gil">Year 3+ (target)</div><div class="giv">~3.5%</div><div class="gis">CPI + population growth</div></div>
@@ -572,7 +594,12 @@ h2.adt em{font-style:italic;color:var(--gold);font-weight:400}
 <div class="adc">
 <h4>For residents</h4>
 <p>Get a quarterly digest of which measures are advancing, which are stuck, and what the next council needs to hear from you.</p>
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfIkuGtfhS2menmePHF0iwcWXEJ2QwWiYK2iyX9FWptr0nkZA/viewform?embedded=true" width="100%" height="300" frameborder="0" marginheight="0" marginwidth="0" style="border:none;border-radius:6px;max-width:480px">Loading…</iframe>
+<form id="nlf" class="nlf" action="https://docs.google.com/forms/d/e/1FAIpQLSfIkuGtfhS2menmePHF0iwcWXEJ2QwWiYK2iyX9FWptr0nkZA/formResponse" method="POST" target="nlframe" novalidate>
+<input type="email" id="nle" name="entry.533410964" required placeholder="you@example.com" aria-label="Email address" autocomplete="email">
+<button type="submit" class="bn bnp"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg> Subscribe</button>
+</form>
+<iframe name="nlframe" title="form submission target" style="display:none" aria-hidden="true"></iframe>
+<p id="nlm" class="nlm" role="status" aria-live="polite"></p>
 <div class="adsoc">
 <a href="https://www.instagram.com/CityThatWorksYYJ/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/></svg></a>
 <a href="https://x.com/CityThatWorksYYJ" target="_blank" rel="noopener" aria-label="X (Twitter)"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.66l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25h6.83l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
@@ -595,32 +622,40 @@ h2.adt em{font-style:italic;color:var(--gold);font-weight:400}
 </div>
 </main>
 
-<button id="jb" class="jb hd" aria-label="Jump to section">
-<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-<span class="jbl">Jump to…</span>
-</button>
-<div id="jbd" class="jbd"></div>
-<div id="jdr" class="jdr">
-<div class="jdi">
-<div class="jdh">
-<div class="jde">◆ Jump to section</div>
-<button id="jcl" class="jcl" aria-label="Close menu"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
-</div>
-<div class="jg2">
-<a class="jl" href="#pillars"><div class="jlt">Five Pillars</div><div class="jls">Foundation + 5</div></a>
-<a class="jl" href="#method"><div class="jlt">The Method</div><div class="jls">6-step process</div></a>
-<a class="jl" href="#measures"><div class="jlt">All Measures</div><div class="jls">100 commitments</div></a>
-<a class="jl" href="#scorecard"><div class="jlt">Scorecard</div><div class="jls">12 commitments</div></a>
-<a class="jl" href="#balance"><div class="jlt">Balance Sheet</div><div class="jls">The math</div></a>
-<a class="jl" href="#faq"><div class="jlt">Q&amp;A</div><div class="jls">Honest answers</div></a>
-<a class="jl" href="savings.html"><div class="jlt">Savings →</div><div class="jls">Full analysis</div></a>
-<a class="jl en" href="#adopt"><div class="jlt">Endorse →</div><div class="jls">Subscribe / adopt</div></a>
-</div>
-</div>
-</div>
+<a id="jb" class="jb hd" href="#top">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+<span class="jbl">Back to top</span>
+</a>
 
 <div id="footer-mount"></div>
 <script src="site.js"></script>
 <script src="measures.js"></script>
+<script>
+/* Quarterly Digest signup — posts to Google Form (entry.533410964) via a hidden
+   iframe target. A real form POST is accepted cross-origin; fetch(no-cors) is not. */
+(function(){
+  var f=document.getElementById("nlf"), m=document.getElementById("nlm"), nle=document.getElementById("nle");
+  if(!f) return;
+  var frame=document.querySelector('iframe[name="nlframe"]'), submitted=false;
+  function done(){
+    if(f.classList.contains("done")) return;
+    f.classList.add("done");
+    m.className="nlm"; m.textContent="You're in. Watch your inbox for the next quarterly digest.";
+  }
+  f.addEventListener("submit",function(e){
+    var email=(nle.value||"").trim();
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
+      e.preventDefault();
+      m.className="nlm err"; m.textContent="Please enter a valid email address.";
+      return;
+    }
+    /* valid: let the form POST natively into the hidden iframe */
+    submitted=true;
+    var btn=f.querySelector("button"); if(btn) btn.disabled=true;
+    setTimeout(done,2500); /* fallback in case the iframe load event doesn't fire */
+  });
+  if(frame) frame.addEventListener("load",function(){ if(submitted) done(); });
+})();
+</script>
 </body>
 </html>

@@ -19,12 +19,12 @@
 <style>
 .tier{padding:24px;border:1px solid rgba(26,54,104,.2);margin:16px 0;background:#fff}
 .tier h3{margin-top:0}
-.tier .tn{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--gold)}
+.tier .tn{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--gold-ink)}
 .checklist{columns:1;margin:14px 0}
 @media(min-width:700px){.checklist{columns:2;column-gap:32px}}
 .checklist .ck{break-inside:avoid;font-size:14px;line-height:1.5;color:#33312e;margin:5px 0;padding-left:22px;position:relative}
 .checklist .ck:before{content:"☐";position:absolute;left:0;color:var(--navy);font-size:15px}
-.checklist .grp{break-inside:avoid;font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.15em;color:var(--gold);margin:16px 0 6px}
+.checklist .grp{break-inside:avoid;font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.15em;color:var(--gold-ink);margin:16px 0 6px}
 .codeblock{background:#1c2840;color:#e8e4d8;padding:18px 20px;border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:12px;line-height:1.6;overflow-x:auto;white-space:pre;margin:16px 0;-webkit-overflow-scrolling:touch}
 .pillarmini{display:grid;grid-template-columns:1fr;gap:10px;margin:20px 0}
 @media(min-width:640px){.pillarmini{grid-template-columns:repeat(2,1fr)}}
@@ -33,6 +33,7 @@
 </style>
 </head>
 <body>
+<a class="skip" href="#main">Skip to main content</a>
 
 <header>
 <div class="c hr">
@@ -68,7 +69,7 @@
 </div>
 </header>
 
-<main>
+<main id="main">
 <div class="cn">
 <nav class="crumbs" aria-label="Breadcrumb">
 <a href="index.html">Framework</a><span class="sep">/</span><span class="here">Candidate Endorsement Pack</span>
@@ -99,6 +100,8 @@
 <li><a href="#sec-14">The Endorsement Form</a></li>
 </ol>
 </nav>
+
+<div id="registry-mount"></div>
 
 <div class="prose">
 
@@ -176,7 +179,7 @@
 <h3>Short social post (≤280 characters)</h3>
 <blockquote>"I'm endorsing [the framework / Pillars X, Y / specific measures] of A City That Works — a costed, sourced municipal platform for Victoria 2026. Read the full plan: [URL]. Accountability quarterly, transparently. This is what serious local government looks like."</blockquote>
 <h3>Longer post (LinkedIn / Facebook)</h3>
-<blockquote>"Victoria's operating budget is up 29% in three years. The 2026 council draft proposes a 10.44% property tax increase. None of this is sustainable. I'm endorsing [the framework / Pillars X, Y / specific measures] of A City That Works — a citizens' policy framework drafted by residents who care about results, not slogans. Every measure is costed, sourced, and tied to quarterly accountability reporting. [Pick 3 specific measures you've endorsed.] This is not a campaign organization or political party. It's a public policy framework, open for adoption by any candidate who'll defend the math."</blockquote>
+<blockquote>"Victoria's operating budget is up 31.4% in three years. Council opened 2026 at a 13.3% draft and levied 9.34% on residential property. None of this is sustainable. I'm endorsing [the framework / Pillars X, Y / specific measures] of A City That Works — a citizens' policy framework drafted by residents who care about results, not slogans. Every measure is costed, sourced, and tied to quarterly accountability reporting. [Pick 3 specific measures you've endorsed.] This is not a campaign organization or political party. It's a public policy framework, open for adoption by any candidate who'll defend the math."</blockquote>
 <h3>Press release template</h3>
 <div class="codeblock">FOR IMMEDIATE RELEASE
 [Date]
@@ -191,8 +194,9 @@ A City That Works — A Citizens' Framework for Victoria 2026.
 
 "[Two sentences in your voice about why these specific measures
 matter to Victoria right now. Cite one specific number from the
-framework: e.g., 29% operating budget growth, 10.44% draft tax
-increase, 48% of downtown businesses considering closure.]"
+framework: e.g., 31.4% operating budget growth, the 9.34%
+residential tax increase levied for 2026, 48% of downtown
+businesses considering closure.]"
 
 Key commitments from [Name]'s endorsed measures include:
 • [Measure 1 in your own words]
@@ -216,8 +220,8 @@ Media contact:
 <p><strong>On the framework generally:</strong> <em>"I built my platform on a foundation drafted by Victoria residents. Every commitment I'm making tonight is costed, sourced, and tied to quarterly public reporting. If I'm elected, you'll know within 90 days whether I'm delivering."</em></p>
 <p><strong>On housing:</strong> <em>"The current council's Missing Middle program produced 61 permits in 2024 against a target of 150. I'm promising 12,000 homes by 2030 with the composition the city actually needs: 25% missing middle, 20% three-bedroom or larger, 15% non-market. Composition, not just count."</em></p>
 <p><strong>On safety:</strong> <em>"I support phased, capacity-first enforcement. We extend bylaw hours to 10 PM, seven days. We build a unified Downtown Public Order Team. And before we move anyone along, we make sure there is somewhere for them to go. Compassion without enforcement is performance; enforcement without capacity is cruelty. We do both."</em></p>
-<p><strong>On taxes:</strong> <em>"The council's 2026 draft proposes 10.44%. I'm committing to a glide path: 6.5% Year 1, 5% Year 2, roughly inflation plus population growth thereafter. That requires real efficiency — managed competition, zero-based reviews, attrition. Not service cuts. Better operations."</em></p>
-<p><strong>On the surveillance question:</strong> <em>"This framework explicitly rejects audio surveillance, behavioural AI, and any 'directed brightness at suspect' technology on streetlights. We deploy modern LED with outage detection. That's it. The crime-reduction benefit of good lighting itself is about 21% per peer-reviewed evidence — captured without crossing into surveillance."</em></p>
+<p><strong>On taxes:</strong> <em>"Council opened 2026 at 13.3%, adopted 7.28% aggregate, and levied 9.34% on residential. I'm committing to a glide path on the residential rate: 6.5% Year 1, 5% Year 2, roughly inflation plus population growth thereafter. That requires real efficiency — managed competition, zero-based reviews, attrition. Not service cuts. Better operations."</em></p>
+<p><strong>On the surveillance question:</strong> <em>"This framework explicitly rejects audio surveillance, behavioural AI, and any 'directed brightness at suspect' technology on streetlights. We deploy modern LED with outage detection. That's it. The crime-reduction benefit of good lighting itself is about 14% on the updated 2022 systematic-review evidence — revised down from the 21% in the earlier review, and we cite the lower number deliberately — captured without crossing into surveillance."</em></p>
 <p><strong>On "you're running on someone else's platform":</strong> <em>"This framework is open to every candidate in this race. My opponent could endorse the same measures tomorrow. The fact that they haven't is informative. I'm not embarrassed to use rigorous research. I'm embarrassed that we usually don't."</em></p>
 
 <h2 id="sec-10">10. FAQ — Candidate Questions</h2>
@@ -442,7 +446,6 @@ Write to <a href="mailto:info@acitythatworks.ca">info@acitythatworks.ca</a>. Res
 
 <div id="footer-mount"></div>
 <script src="site.js"></script>
-
-
+<script src="endorsers.js"></script>
 </body>
 </html>

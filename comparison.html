@@ -39,7 +39,7 @@ table.cmp .who{white-space:nowrap;font-weight:500}
 details.cand{border:1px solid rgba(26,54,104,.18);border-radius:3px;margin:10px 0;background:#fff}
 details.cand summary{padding:14px 18px;cursor:pointer;font-family:'Fraunces',serif;font-size:17px;font-weight:500;color:var(--navy);list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px}
 details.cand summary::-webkit-details-marker{display:none}
-details.cand summary:after{content:"+";font-family:'JetBrains Mono',monospace;color:var(--gold);font-size:20px}
+details.cand summary:after{content:"+";font-family:'JetBrains Mono',monospace;color:var(--gold-ink);font-size:20px}
 details.cand[open] summary:after{content:"–"}
 details.cand .body{padding:0 18px 18px;font-size:14px;line-height:1.6;color:#33312e}
 details.cand .body p{margin:10px 0}
@@ -50,6 +50,7 @@ details.cand .body li{margin:5px 0}
 </style>
 </head>
 <body>
+<a class="skip" href="#main">Skip to main content</a>
 
 <header>
 <div class="c hr">
@@ -85,7 +86,7 @@ details.cand .body li{margin:5px 0}
 </div>
 </header>
 
-<main>
+<main id="main">
 <div class="cn">
 <nav class="crumbs" aria-label="Breadcrumb">
 <a href="index.html">Framework</a><span class="sep">/</span><span class="here">Candidate Comparison Matrix</span>
@@ -364,7 +365,7 @@ A side-by-side comparison of the Victoria 2026 mayoral and council field, scored
 <tr><td class="who">Hammond</td><td><span class="sym">✅</span> Voted NO on every annual tax increase; opposed 2026 budget</td></tr>
 <tr><td class="who">Kim</td><td><span class="sym">✅</span> Voted NO on 2026 budget ("the system itself is just flawed") — critique from the left</td></tr>
 <tr><td class="who">Cseszko</td><td><span class="sym">✅</span> "If a program is not delivering results, push for it to be reviewed and adjusted" — program-review posture compatible</td></tr>
-<tr><td class="who">Alto</td><td><span class="sym">❌</span> Three consecutive years above-inflation (6.15 / 7.93 / 6.99%); 10.44% draft. No ZBB, no efficiency program</td></tr>
+<tr><td class="who">Alto</td><td><span class="sym">❌</span> Four consecutive years above inflation (6.15 / 7.93 / 6.99%; 2026 opened at 13.3%, adopted 7.28% aggregate, levied 9.34% residential). No ZBB, no efficiency program</td></tr>
 <tr><td class="who">Caradonna / Dell / Thompson / Coleman / Loughton</td><td><span class="sym">🟡</span> Voted YES on the 2026 budget; varying degrees of stated reservation</td></tr>
 </tbody>
 </table>
@@ -515,8 +516,8 @@ A side-by-side comparison of the Victoria 2026 mayoral and council field, scored
 <table class="cmp">
 <thead><tr><th>Measure</th><th>Alto council record</th><th>Framework commitment</th></tr></thead>
 <tbody>
-<tr><td>Property tax</td><td>Four consecutive years above inflation: 6.15 / 7.93 / 6.99% / 7.28% final (10.44% draft)</td><td>Glide path: Y1 ≤6.5%, Y2 ≤5%, Y3+ ~3.5%</td></tr>
-<tr><td>Operating budget</td><td>+29% in 3 years ($297.9M → $384.1M draft)</td><td>Match CPI + population growth at steady-state</td></tr>
+<tr><td>Property tax</td><td>Four consecutive years above inflation: 6.15 / 7.93 / 6.99%; 2026 opened at 13.3%, adopted 7.28% aggregate, levied 9.34% residential / 4.78% business</td><td>Glide path on the residential rate: Y1 ≤6.5%, Y2 ≤5%, Y3+ ~3.5%</td></tr>
+<tr><td>Operating budget</td><td>+31.4% in 3 years ($300.0M → $394.1M adopted, plus $160.1M capital)</td><td>Match CPI + population growth at steady-state</td></tr>
 <tr><td>Efficiency program</td><td>Zero modern efficiency tools deployed</td><td>5 distinct programs delivering $7.8–12.5M/yr</td></tr>
 <tr><td>Performance reporting</td><td>No quarterly KPI dashboard</td><td>Quarterly dashboard with named KPIs (M67)</td></tr>
 <tr><td>CSWB Phase 1 funding</td><td>Funded by raiding reserves ($2.5M + $4M + $1.5M)</td><td>Operating-savings funded; reserves untouched</td></tr>
@@ -568,7 +569,7 @@ A side-by-side comparison of the Victoria 2026 mayoral and council field, scored
 </div>
 <div class="callout red" style="margin-top:20px">
 <div class="lbl">◆ The pattern</div>
-The Alto council has spent aggressively ($25M on homelessness, $209M committed to Crystal Pool, 29% budget growth) without deploying a single modern efficiency tool. Every gap above is something the framework names a specific mechanism for — that is the differentiator.
+The Alto council has spent aggressively ($25M on homelessness, $209M committed to Crystal Pool, 31.4% budget growth) without deploying a single modern efficiency tool. Every gap above is something the framework names a specific mechanism for — that is the differentiator.
 </div>
 
 <h2 id="profiles">Candidate Profiles</h2>
@@ -577,7 +578,7 @@ The Alto council has spent aggressively ($25M on homelessness, $209M committed t
 <details class="cand"><summary>Marianne Alto — Mayor, declared May 20, 2026</summary><div class="body">
 <p><strong>Background:</strong> Incumbent, 55.5% of vote in 2022. Tagline: "Experience that delivers."</p>
 <p><strong>Agrees with the framework on:</strong> regional policing consolidation (M29b absorbed her plank); permissive tax exemptions for not-for-profit clinics (2022, still undelivered, absorbed into M13b); city land bank (2022); rent banks; façade improvement grants; provincial downloading frame (M70b); lək̓ʷəŋən place names + cultural protocols.</p>
-<p><strong>Diverges on:</strong> No ZBB in three years (budget grew 29%); no published permit benchmarks; no managed-competition consideration; no quarterly dashboard; no Integrity Commissioner / MNP implementation; Dowler Place process ("we knew what the comments would be"); CSWB Phase 1 funded by raiding reserves.</p>
+<p><strong>Diverges on:</strong> No ZBB in three years (budget grew 31.4%); no published permit benchmarks; no managed-competition consideration; no quarterly dashboard; no Integrity Commissioner / MNP implementation; Dowler Place process ("we knew what the comments would be"); CSWB Phase 1 funded by raiding reserves.</p>
 <p><strong>Distinctive Alto ideas worth considering:</strong> permissive tax exemption for purpose-built rentals; family-doctor incentives at scale; tax relief for community-serving groups; co-located firehall + housing + health-services civic infrastructure.</p>
 </div></details>
 
