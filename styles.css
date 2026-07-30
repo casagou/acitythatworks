@@ -197,7 +197,7 @@ button,a,input,summary{outline:none}
 .crumbs{display:flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.15em;color:#6b6664;padding:16px 0 0;margin-bottom:-8px}
 .crumbs a{display:inline-flex;align-items:center;min-height:28px;color:#6b6664;text-decoration:none;border-bottom:1px solid transparent;transition:color .15s,border-color .15s}
 .crumbs a:hover{color:var(--navy);border-bottom-color:var(--gold)}
-.crumbs .sep{color:rgba(26,54,104,.3)}
+.crumbs .sep{color:rgba(26,54,104,.75)}
 .crumbs .here{color:var(--navy)}
 
 /* Public Endorsement Registry */

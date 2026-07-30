@@ -50,6 +50,7 @@
 '<a href="city-hall.html">How City Hall Works</a>' +
 '<a href="endorse.html">Candidate Endorsement Pack</a>' +
 '<a href="comparison.html">Candidate Comparison Matrix</a>' +
+'<a href="scorecard.html">Candidate Scorecard</a>' +
 '<a href="faq.html">Frequently Asked Questions</a>' +
 '<a href="version-history.html">Version History</a>' +
 '</div>' +
