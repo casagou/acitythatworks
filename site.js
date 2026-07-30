@@ -87,6 +87,36 @@
     mmi.appendChild(wrap);
   }
 
+  // Wide comparison tables scroll sideways inside .tbl-wrap, and the edge
+  // shadow alone is easy to miss on a phone — so say it in words. Only for
+  // tables that actually overflow at the current width, and only for the first
+  // couple: on the comparison page all 38 overflow on a phone, and repeating
+  // the instruction 38 times is noise. The shadow carries the rest.
+  var HINT_LIMIT = 2;
+  function tableHints() {
+    var shown = 0;
+    document.querySelectorAll('.tbl-wrap').forEach(function (w) {
+      var over = w.scrollWidth > w.clientWidth + 4 && shown < HINT_LIMIT;
+      if (over) { shown++; }
+      var hint = w.nextElementSibling;
+      var has = hint && hint.classList.contains('tbl-hint');
+      if (over && !has) {
+        var h = document.createElement('div');
+        h.className = 'tbl-hint';
+        h.setAttribute('aria-hidden', 'true');
+        h.textContent = 'Scroll the table sideways →';
+        w.parentNode.insertBefore(h, w.nextSibling);
+      } else if (!over && has) {
+        hint.remove();
+      }
+    });
+  }
+  tableHints();
+  var rt;
+  window.addEventListener('resize', function () {
+    clearTimeout(rt); rt = setTimeout(tableHints, 200);
+  });
+
   // Mobile menu — single source of truth for all pages. Reports open/closed
   // state to assistive tech and closes on Escape.
   var t = document.getElementById('mt'), m = document.getElementById('mn');

@@ -136,6 +136,18 @@ h2.st em{font-style:italic;color:var(--gold-ink);font-weight:400}
 
 /* Tables */
 .tbl-wrap{overflow-x:auto;margin:20px 0;-webkit-overflow-scrolling:touch}
+/* Comparison tables are wider than a phone. Without an edge shadow the cut-off
+   right-hand columns read as "the table ends here" rather than "swipe". The
+   two `local` gradients ride with the content and mask the shadow once that
+   edge is reached, so the cue only shows while there is more to see. */
+.tbl-wrap{background:
+  linear-gradient(to right,var(--paper) 40%,rgba(250,247,240,0)) 0 0/22px 100% no-repeat local,
+  linear-gradient(to left,var(--paper) 40%,rgba(250,247,240,0)) 100% 0/22px 100% no-repeat local,
+  radial-gradient(farthest-side at 0 50%,rgba(26,54,104,.18),rgba(26,54,104,0)) 0 0/12px 100% no-repeat scroll,
+  radial-gradient(farthest-side at 100% 50%,rgba(26,54,104,.18),rgba(26,54,104,0)) 100% 0/12px 100% no-repeat scroll}
+/* Inserted by site.js only where the table actually overflows its container,
+   and removed again when it stops. */
+.tbl-hint{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-ink);margin:-14px 0 18px;text-align:right}
 table.dt{width:100%;border-collapse:collapse;font-size:14px;min-width:480px}
 table.dt thead tr{border-bottom:2px solid rgba(26,54,104,.3)}
 table.dt th{text-align:left;padding:10px 14px 10px 0;font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--navy);font-weight:600;vertical-align:bottom}
@@ -188,9 +200,11 @@ button,a,input,summary{outline:none}
 .toc-h{font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.2em;color:var(--gold-ink);margin-bottom:10px}
 .toc ol{list-style:none;counter-reset:tocitem;padding:0;margin:0;display:grid;grid-template-columns:1fr;gap:4px}
 @media(min-width:640px){.toc ol{grid-template-columns:1fr 1fr;column-gap:24px}}
-.toc li{counter-increment:tocitem;font-size:14px;line-height:1.4}
-.toc li::before{content:counter(tocitem,decimal-leading-zero);display:inline-block;width:24px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--gold-ink);font-weight:600}
-.toc a{display:inline-flex;align-items:center;min-height:28px;color:var(--navy);text-decoration:none;border-bottom:1px solid transparent;transition:border-color .15s}
+/* Flex row rather than an inline counter: a title long enough to wrap used to
+   drop onto the line below its own number and break the alignment. */
+.toc li{counter-increment:tocitem;font-size:14px;line-height:1.4;display:flex;align-items:baseline;gap:0}
+.toc li::before{content:counter(tocitem,decimal-leading-zero);flex:none;width:24px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--gold-ink);font-weight:600}
+.toc a{display:inline-block;min-width:0;min-height:28px;padding-top:2px;color:var(--navy);text-decoration:none;border-bottom:1px solid transparent;transition:border-color .15s}
 .toc a:hover{border-bottom-color:var(--gold)}
 
 /* Breadcrumb back-strip */
@@ -233,7 +247,8 @@ h3.reg-gh{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:u
 /* Print stylesheet */
 @media print {
   /* Hide chrome: nav, mobile-menu trigger, jump drawers, TOC, breadcrumbs, footer subscribe */
-  header, .jb, .fb, .mb, .toc, .crumbs, .pgback, .fsoc, .fbo, .fhandle, footer .fls .fhd + .fls, .nv {display:none !important}
+  header, .jb, .fb, .mb, .toc, .crumbs, .pgback, .fsoc, .fbo, .fhandle, footer .fls .fhd + .fls, .nv,
+  .jumpbar, .cand-bar, .tbl-hint {display:none !important}
   /* Light page; black ink; remove background gradients */
   body {background:#fff !important; background-image:none !important; color:#111 !important; font-size:11pt; line-height:1.45}
   main {padding-top:0}
