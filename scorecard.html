@@ -49,6 +49,9 @@
 .sc-pill:hover{background:rgba(26,54,104,.05)}
 .sc-pill.a{background:var(--navy);color:var(--paper);border-color:var(--navy)}
 .sc-sel{min-height:44px;padding:8px 12px;font-family:'JetBrains Mono',monospace;font-size:13px;background:#fff;border:1px solid rgba(26,54,104,.25);color:var(--navy)}
+/* Same iOS zoom-on-focus fix as .jumpsel in styles.css — this is the Rank By
+   control, the scorecard's headline interaction. */
+@media(pointer:coarse){.sc-sel{font-size:16px}}
 .sc-count{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--navy);opacity:.8;margin:14px 0 6px}
 /* Two-axis scroller, same pattern as the comparison page's .gridwrap. Without
    a max-height, overflow-x:auto alone never makes this wrapper scroll
@@ -198,15 +201,27 @@ table.sc tbody td[data-k].open{background:rgba(212,168,67,.16)}
 }
 .silentline{margin:12px 0 0;font-size:13px;line-height:1.6;color:#57534e}
 .provsrc{margin:10px 0 0;font-size:12.5px;color:#57534e}
-/* The detail row lives inside a table that is wider than a phone. Left to
-   itself the panel inherits that width and the evidence has to be read by
-   swiping sideways. Sticky-left pins it to the scroller's visible edge, and
-   its width is set from the wrapper so it fills exactly one screen. */
+/* On a mouse, the panel is a plain block inserted after the grid — the whole
+   thing is usually in view or one scroll away, and the insertion point is
+   sighted before it's clicked. On a touch screen the grid alone can be
+   ~1000px tall, so the same insertion landed the panel most of a screen away
+   from the row that opened it: tap, and the page teleports past all the
+   context that made the grade meaningful. There, openDetail() renders the
+   identical panel content as a fixed bottom sheet instead — the tapped row
+   never leaves the screen. */
 .sc-panel{margin:0 0 8px;background:#fff;border:1px solid rgba(26,54,104,.2);border-top:3px solid var(--gold)}
 .sc-panel .in{padding:16px 18px}
 .sc-panel h4{font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.15em;color:var(--gold-ink);margin:0 0 10px}
 .sc-panel .close{float:right;border:1px solid rgba(26,54,104,.25);background:#fff;color:var(--navy);font-family:'JetBrains Mono',monospace;font-size:11px;min-height:32px;padding:0 10px;cursor:pointer}
 .sc-panel .close:hover{background:rgba(26,54,104,.06)}
+/* Backdrop + bottom sheet, coarse pointers only (openDetail() decides). */
+.sc-backdrop{position:fixed;inset:0;background:rgba(15,23,42,.5);z-index:49;animation:scbd .15s ease-out}
+@keyframes scbd{from{opacity:0}to{opacity:1}}
+.sc-panel.sheet{position:fixed;left:0;right:0;bottom:0;z-index:50;margin:0;max-height:75vh;overflow-y:auto;-webkit-overflow-scrolling:touch;border-radius:14px 14px 0 0;border-bottom:none;box-shadow:0 -10px 32px rgba(15,23,42,.3);padding-bottom:env(safe-area-inset-bottom);animation:scsheet .2s ease-out}
+.sc-panel.sheet::before{content:"";position:absolute;top:9px;left:50%;transform:translateX(-50%);width:36px;height:4px;border-radius:2px;background:rgba(26,54,104,.25)}
+.sc-panel.sheet .in{padding-top:24px}
+@keyframes scsheet{from{transform:translateY(100%)}to{transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){.sc-backdrop,.sc-panel.sheet{animation:none}}
 </style>
 </head>
 <body>
@@ -320,6 +335,7 @@ The field changes as nominations proceed, and they close September 11, 2026. If 
   var rows = [].slice.call(body.querySelectorAll('tr.sc-r'));
   var wrap = document.querySelector('.sc-wrap');
   var q='', office='all', sortKey='general';
+  var lastTrigger=null; // the td/tr a panel was opened from, for focus-on-close
 
   function cellOf(tr,k){ return tr.querySelector('td[data-k="'+k+'"]'); }
   function val(tr,k){ var c=cellOf(tr,k); return c?parseFloat(c.getAttribute('data-v')):-99; }
@@ -378,10 +394,22 @@ The field changes as nominations proceed, and they close September 11, 2026. If 
       }).join('')+'</div>';
   }
 
-  function closeAll(){
+  function closeAll(returnFocus){
     var p=document.querySelector('.sc-panel'); if(p) p.remove();
+    var bd=document.querySelector('.sc-backdrop'); if(bd) bd.remove();
+    document.body.classList.remove('no-scroll');
     [].forEach.call(document.querySelectorAll('.open'),function(d){ d.classList.remove('open'); });
     [].forEach.call(document.querySelectorAll('tr.active'),function(d){ d.classList.remove('active'); });
+    /* A genuine close — button, backdrop tap, Escape — leaves the reader
+       exactly where they tapped in, on both the sheet and the inline panel:
+       the inline one can sit most of a screen below its row. Reopening a
+       different cell (openDetail() calls this with false first) shouldn't
+       fight that with its own focus jump. */
+    if(returnFocus!==false && lastTrigger){
+      lastTrigger.scrollIntoView({block:'nearest'});
+      if(lastTrigger.focus) lastTrigger.focus({preventScroll:true});
+    }
+    lastTrigger=null;
   }
 
 
@@ -444,20 +472,41 @@ The field changes as nominations proceed, and they close September 11, 2026. If 
   function openDetail(tr, html, td){
     var same = td && td.classList.contains('open');
     var openNow = !!document.querySelector('.sc-panel');
-    closeAll();
+    var trigger = td||tr;
+    closeAll(false);
     if(openNow && (same || (!td && tr.classList.contains('open')))) return;
     if(td) td.classList.add('open'); else tr.classList.add('open');
     tr.classList.add('active');
+    lastTrigger = trigger;
     var p=document.createElement('div');
     p.className='sc-panel';
     p.innerHTML='<div class="in"><button type="button" class="close" aria-label="Close">Close</button>'+html+'</div>';
-    /* site.js may have inserted a .tbl-hint right after .sc-wrap (only when
-       the grid actually overflows at the current width) — land the panel
-       after that too, or it wedges between the grid and its own hint text. */
-    var afterWrap = wrap.nextElementSibling && wrap.nextElementSibling.classList.contains('tbl-hint') ? wrap.nextElementSibling : wrap;
-    afterWrap.parentNode.insertBefore(p, afterWrap.nextSibling);
-    p.querySelector('.close').addEventListener('click',closeAll);
-    p.scrollIntoView({block:'nearest'});
+    p.querySelector('.close').addEventListener('click',function(){ closeAll(); });
+    /* A tap on a touch screen opens this as a fixed bottom sheet instead of
+       inserting it after the grid — on a phone the grid alone can run close
+       to 1000px, so the insert-after-grid placement below was landing the
+       panel a full screen away from the row that opened it. A mouse click
+       keeps the original inline placement, where that distance is rare and
+       the insertion point was already in view before the click. */
+    if(matchMedia('(pointer: coarse)').matches){
+      p.classList.add('sheet');
+      p.setAttribute('role','dialog');
+      p.setAttribute('aria-modal','true');
+      var bd=document.createElement('div');
+      bd.className='sc-backdrop';
+      bd.addEventListener('click',function(){ closeAll(); });
+      document.body.appendChild(bd);
+      document.body.appendChild(p);
+      document.body.classList.add('no-scroll');
+      p.querySelector('.close').focus();
+    } else {
+      /* site.js may have inserted a .tbl-hint right after .sc-wrap (only when
+         the grid actually overflows at the current width) — land the panel
+         after that too, or it wedges between the grid and its own hint text. */
+      var afterWrap = wrap.nextElementSibling && wrap.nextElementSibling.classList.contains('tbl-hint') ? wrap.nextElementSibling : wrap;
+      afterWrap.parentNode.insertBefore(p, afterWrap.nextSibling);
+      p.scrollIntoView({block:'nearest'});
+    }
   }
 
   body.addEventListener('click', function(e){
@@ -474,6 +523,9 @@ The field changes as nominations proceed, and they close September 11, 2026. If 
     e.preventDefault();
     var tr = td.closest('tr.sc-r');
     openDetail(tr, provPanel(nameOf(tr), td.getAttribute('data-k')), td);
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key==='Escape' && document.querySelector('.sc-panel')) closeAll();
   });
 
   [].forEach.call(document.querySelectorAll('table.sc thead th.sortable'),function(th){

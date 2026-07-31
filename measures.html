@@ -52,6 +52,11 @@
 .cp{flex-shrink:0;min-height:44px;padding:6px 16px;font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.1em;background:transparent;border:1px solid rgba(26,54,104,.3);color:var(--navy);cursor:pointer;white-space:nowrap;transition:all .15s}
 .cp:hover{background:rgba(26,54,104,.05)}
 .cp.a{background:var(--navy);color:var(--paper);border-color:var(--navy)}
+/* Seven pills run ~700px — off-screen at 375px with no scrollbar, no edge
+   fade, and no cue that "Well-Managed" and "Democratic" are even there.
+   Wrapping to a second row keeps every pillar visible without needing a
+   matching scroll affordance just for this one row. */
+@media(max-width:639px){.cr{flex-wrap:wrap;overflow-x:visible}}
 
 /* Pillar groups and measure cards — carried over from index.html's Every
    Measure section unchanged. */
@@ -115,8 +120,12 @@
 .mlink:hover{border-bottom-color:var(--gold)}
 .mlink::before{content:"◆";margin-right:6px;font-size:8px}
 /* A measure arrived at by hash has to clear both the header and the sticky
-   filter bar. */
-details.mi[id]{scroll-margin-top:calc(var(--h) + 132px)}
+   filter bar — and the filter bar got taller once the pillar pills wrap to
+   up to three rows below 640px (measured: 234px at 320–390px widths, down to
+   182px past 428px). Sized to the worst case; a little extra clearance on a
+   wider phone costs nothing, landing under the bar costs the whole point of
+   the link. */
+details.mi[id]{scroll-margin-top:calc(var(--h) + 244px)}
 /* Which card a shared link actually landed on. See the hash-open script
    below — this page has its own minimal version, not jumpnav.js's, because
    jumpnav.js's hash handling is gated behind a #jumpsel this page doesn't

@@ -259,6 +259,12 @@ button,a,input,summary{outline:none}
 .jumptop{font-size:11px;text-transform:uppercase;letter-spacing:.1em}
 /* On a phone the arrows and Top are the whole point; the "Jump to" label is not. */
 @media(max-width:519px){.jl2{display:none}.jumpin{gap:6px}.jumpsel{font-size:12px;padding:8px 6px}.jumpbtn{min-width:40px;padding:0 6px}.jumptop{font-size:10px}}
+/* iOS Safari zooms the viewport when a focused form control is under 16px,
+   and doesn't zoom back out — #ms (the measure search input) already carries
+   this fix; the jump select is the primary mobile navigator on 8 of the
+   site's 9 long pages and was missed. Scoped to touch rather than viewport
+   width, and placed after the max-width rule above so it wins there too. */
+@media(pointer:coarse){.jumpsel{font-size:16px}}
 /* How far through the document the reader actually is — a page this long
    gives no other cue about its length or where they are in it.
    position:sticky already makes .jumpbar a containing block, so the bar must
