@@ -6,7 +6,8 @@ A complete, multi-page static website for the citizens' framework. No build step
 
 | File | What it is |
 |------|------------|
-| `index.html` | Home — hero, five pillars, method, **every measure** (filterable, searchable, full text inline, each one individually linkable as `#m48`), 12-commitment scorecard, balance sheet, principles, criticisms Q&A, subscribe/endorse |
+| `index.html` | Home — hero, diagnostic, five pillars (linking into Every Measure pre-filtered), method, 12-commitment scorecard, balance sheet, principles, criticisms Q&A, subscribe/endorse |
+| `measures.html` | Every Measure — all 131 measures, filterable by pillar and searchable by keyword, full text and budget impact inline, each one individually linkable as `#m48`. Reached from every page's nav as "Measures" |
 | `summary.html` | One-Page Summary — the 60-second version (problem → pillars → flagship measures → math → method), plus the printable PDF download |
 | `A-City-That-Works-One-Page.pdf` | The printable one-pager, linked from `summary.html`. Designed separately; drop a new file in at the same path to update the download |
 | `savings.html` | Savings & Revenue Analysis — the full math, every table, with sources and honest caveats |
@@ -68,9 +69,9 @@ Active page highlighted with a gold underline. Mobile menu groups all pages unde
 
 Every long page carries an **On this page** TOC plus a **sticky section navigator** — a jump select, prev/next steppers, a Top link and a reading-progress rule — that follows the reader down the page. The navigator is `jumpnav.js` and its styles live in `styles.css`; a page opts in with markup alone and the option list is derived from its own headings, so it cannot drift from the document.
 
-On the home page the navigator and the measure filter bar share one sticky slot: inside **Every Measure** the pillar filter takes over, because its six pills reach the same six groups the jump select offers, and showing both cost a third of a phone screen.
+`measures.html` carries its own sticky filter bar (search, pillar pills, expand-all) instead of the jump navigator — the pillar pills already reach the same six destinations a jump select would, so the two were never shown at once. A pillar card on the home page links in pre-filtered as `measures.html?pillar=liveable`.
 
-Every measure is individually addressable — `index.html#m48` opens that measure expanded and highlighted.
+Every measure is individually addressable — `measures.html#m48` opens that measure expanded and highlighted. A bookmarked or shared `#m48` on the home page (from before Every Measure moved to its own page) redirects there automatically.
 
 ## Notes
 

@@ -3,6 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<!-- Every Measure moved to measures.html. A bookmarked or shared #m48 from
+     before that split still needs to land on the measure it names rather
+     than nowhere, so send it on before anything else renders. -->
+<script>if(/^#m\d/.test(location.hash)){location.replace("measures.html"+location.hash);}</script>
 <meta name="description" content="A Citizens' Framework for Victoria 2026. Every measure costed and sourced. Proven ideas. Measurable results.">
 <meta name="author" content="A City That Works">
 <meta name="theme-color" content="#1A3668">
@@ -89,112 +93,10 @@
 .v30 .v30end{margin-top:18px;padding-top:16px;border-top:1px solid rgba(26,54,104,.15)}
 .jt{font-family:'Fraunces',serif;font-size:18px;font-weight:500;color:var(--navy);margin-bottom:8px}
 .jx{font-size:13px;color:#44403c;line-height:1.6}
-.dg{display:grid;grid-template-columns:1fr;gap:16px;margin-top:32px}
-@media(min-width:640px){.dg{grid-template-columns:repeat(2,1fr)}}
-@media(min-width:1024px){.dg{grid-template-columns:repeat(3,1fr)}}
-.dc{display:block;padding:24px;background:#fff;border:1px solid rgba(26,54,104,.18);text-decoration:none;color:inherit;transition:transform .15s}
-.dc:hover{transform:translateY(-1px)}
-.dci{font-size:24px;margin-bottom:12px}
-.dct{font-family:'Fraunces',serif;font-size:18px;font-weight:500;color:var(--navy);line-height:1.3;margin-bottom:8px}
-@media(min-width:640px){.dct{font-size:20px}}
-.dcx{font-size:14px;color:#44403c;line-height:1.55}
-.dcc{display:inline-flex;align-items:center;gap:6px;margin-top:16px;font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.13em;color:var(--navy);opacity:.7}
-/* Sits below the sticky section navigator rather than under it: both are
-   sticky and both used to claim top:var(--h), so inside Every Measure they
-   were occupying the same 66px. 66px is the navigator's measured height.
-
-   Stacked, though, the two bars plus the header came to 257px — 32% of a
-   375x812 phone. So they are made mutually exclusive instead (see .fmeas
-   below): inside Every Measure the six pillar pills are the section navigator
-   for that content, and they lead to the same six destinations the jump
-   select offers. Exactly one bar is on screen at a time. */
-.fb{position:sticky;top:calc(var(--h) + 66px);z-index:19;margin:24px -16px 0;padding:12px 16px;background:rgba(250,247,240,.95);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid rgba(26,54,104,.12)}
-@media(min-width:640px){.fb{margin:32px -24px 0;padding:12px 24px}}
-.fr{display:flex;align-items:center;gap:12px;margin-bottom:12px}
-.sw{position:relative;flex:1;max-width:420px}
-.swi{position:absolute;left:12px;top:50%;transform:translateY(-50%);opacity:.5;color:var(--navy);pointer-events:none}
-/* 16px font-size stops iOS Safari from zooming the viewport on focus. */
-#ms{width:100%;min-height:44px;padding:11px 12px 11px 36px;font-family:'JetBrains Mono',monospace;font-size:16px;background:#fff;border:1px solid rgba(26,54,104,.2);color:var(--navy);outline:none}
-#ms:focus{border-color:var(--navy)}
-.mexp{display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:6px 14px;font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.1em;background:transparent;border:1px solid rgba(26,54,104,.3);color:var(--navy);cursor:pointer;white-space:nowrap;transition:all .15s}
-.mexp:hover:not(:disabled){background:rgba(26,54,104,.05)}
-.mexp:disabled{opacity:.4;cursor:default}
-.mcount{font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.13em;color:var(--navy);opacity:.7;white-space:nowrap}
-@media(min-width:640px){.mcount{font-size:11px}}
-.cr{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;margin:0 -4px;padding:0 4px 4px}
-.cr::-webkit-scrollbar{display:none}
-.cp{flex-shrink:0;min-height:44px;padding:6px 16px;font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.1em;background:transparent;border:1px solid rgba(26,54,104,.3);color:var(--navy);cursor:pointer;white-space:nowrap;transition:all .15s}
-.cp:hover{background:rgba(26,54,104,.05)}
-.cp.a{background:var(--navy);color:var(--paper);border-color:var(--navy)}
-.pgr{margin-top:48px;padding-top:32px;border-top:3px double rgba(26,54,104,.25)}
-.pgh{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;margin-bottom:8px}
-.pgt{display:flex;align-items:center;gap:12px;font-family:'Fraunces',serif;font-size:24px;font-weight:500;line-height:1.2}
-@media(min-width:640px){.pgt{font-size:32px}}
-.pgg{font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.13em;opacity:.6}
-@media(min-width:640px){.pgg{font-size:11px}}
-.shd{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.2em;color:var(--gold-ink);margin:28px 0 8px;padding-bottom:8px;border-bottom:1px solid rgba(26,54,104,.18)}
-/* Pillar tagline + "The Problem" diagnostics carried over from the Program */
-.pgtag{font-family:'Fraunces',serif;font-style:italic;font-size:18px;color:var(--navy);opacity:.85;margin:10px 0 0}
-@media(min-width:640px){.pgtag{font-size:20px}}
-.pgintro,.secintro{font-size:15px;line-height:1.65;color:#33312e;max-width:760px}
-@media(min-width:640px){.pgintro,.secintro{font-size:16px}}
-.pgintro{margin-top:12px}
-.secintro{margin:10px 0 4px;padding:14px 18px;background:rgba(26,54,104,.04);border-left:2px solid rgba(26,54,104,.22)}
-.pgintro p,.secintro p{margin:10px 0}
-.pgintro p:first-child,.secintro p:first-child{margin-top:0}
-.pgintro p:last-child,.secintro p:last-child{margin-bottom:0}
-.pgintro strong,.secintro strong{color:var(--navy);font-weight:600}
-.pgintro ul,.pgintro ol,.secintro ul,.secintro ol{margin:10px 0;padding-left:20px}
-.pgintro li,.secintro li{margin:5px 0;line-height:1.55}
-.pgintro a,.secintro a{color:var(--navy)}
-.secintro .tbl-wrap,.pgintro .tbl-wrap{margin:12px 0}
-.mi{border-bottom:1px solid rgba(26,54,104,.18)}
-.misum{display:grid;grid-template-columns:56px 1fr 18px;align-items:start;gap:14px;padding:16px 0;cursor:pointer;list-style:none;min-height:44px}
-.misum::-webkit-details-marker{display:none}
-@media(min-width:640px){.misum{grid-template-columns:72px 1fr 18px;gap:16px}}
-@media(min-width:860px){.misum{grid-template-columns:80px 1fr 18px;gap:20px;padding:18px 0}}
-.misum:hover .mti{text-decoration:underline;text-decoration-color:rgba(26,54,104,.3)}
-.mchev{flex-shrink:0;color:var(--gold-ink);margin-top:4px;transition:transform .2s}
-.mi[open] .mchev{transform:rotate(180deg)}
-.mi > .mbody,.mi > .mbu{margin-left:70px;padding-bottom:20px}
-@media(min-width:640px){.mi > .mbody,.mi > .mbu{margin-left:88px}}
-@media(min-width:860px){.mi > .mbody,.mi > .mbu{margin-left:100px}}
-.mi > .mbu{margin-top:0;margin-bottom:20px;padding-bottom:12px}
-.mnu{font-family:'Fraunces',serif;font-size:22px;font-weight:500;color:var(--gold-ink);line-height:1;white-space:nowrap;letter-spacing:-.01em}
-@media(min-width:640px){.mnu{font-size:28px}}
-@media(min-width:860px){.mnu{font-size:32px}}
-.mb2{min-width:0}
-.mti{font-family:'Fraunces',serif;font-size:19px;font-weight:600;line-height:1.3;margin:0 0 4px}
-@media(min-width:640px){.mti{font-size:22px}}
-.mtg{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.13em;padding:2px 6px;margin-left:8px;background:rgba(212,168,67,.18);color:var(--gold-ink);vertical-align:middle}
-.mbody{font-size:15px;color:#33312e;line-height:1.62}
-@media(min-width:640px){.mbody{font-size:16px}}
-.mbody p{margin:10px 0}
-.mbody ul{margin:10px 0;padding-left:20px}
-.mbody li{margin:5px 0;line-height:1.55}
-.mbody strong{color:var(--navy);font-weight:600}
-.mbody .mq{font-style:italic;color:#57534e}
-.mbody a{color:var(--navy)}
-.mbu{margin-top:12px;padding:12px 14px;background:rgba(212,168,67,.1);border-left:2px solid var(--gold)}
-.mbl{font-family:'JetBrains Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:.2em;opacity:.7;color:var(--navy);margin-bottom:4px}
-.mbx{font-size:13px;color:var(--navy);line-height:1.5}
-.mbx strong{font-weight:600}
-/* Per-measure permalink. Lives in the open card rather than in the summary
-   row, because a link inside a <summary> is a control nested in a control and
-   both keyboard and screen-reader handling get muddy. */
-.mlink{display:inline-flex;align-items:center;min-height:44px;margin-top:6px;font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.14em;color:var(--gold-ink);text-decoration:none;border-bottom:1px solid transparent}
-.mlink:hover{border-bottom-color:var(--gold)}
-.mlink::before{content:"◆";margin-right:6px;font-size:8px}
-/* A measure arrived at by hash has to clear both the header and the sticky
-   filter bar, which the plain scroll-padding-top does not account for. */
-details.mi[id]{scroll-margin-top:calc(var(--h) + 150px)}
-/* Which card a shared link actually landed on. jumpnav.js adds .hl. */
-details.mi.hl{background:rgba(212,168,67,.09);box-shadow:inset 3px 0 0 var(--gold)}
-/* Set on <html> while the filter bar is the bar in charge — see the .fb note.
-   visibility rather than display so the navigator keeps its place in normal
-   flow and the swap costs no reflow. */
-.fmeas .jumpbar{visibility:hidden}
-.fmeas .fb{top:var(--h)}
+/* Every Measure — filter bar, pillar-group and measure-card CSS — moved to
+   measures.html along with the section itself. See that page's <style>
+   block. This page keeps only the pillar CARDS above (.pg/.pc/…), which now
+   link out to measures.html instead of jumping to an in-page section. */
 .st2{width:100%;border-collapse:collapse;margin-top:24px;font-size:14px;display:none}
 @media(min-width:640px){.st2{display:table}}
 .st2 thead tr{border-bottom:1px solid rgba(26,54,104,.18)}
@@ -293,7 +195,6 @@ h2.adt em{font-style:italic;color:var(--gold-ink);font-weight:400}
 .jb.hd{transform:translateY(20px);opacity:0;pointer-events:none}
 .jbl{display:none}
 @media(min-width:640px){.jbl{display:inline}}
-.hbf{display:none!important}
 .rv{animation:fu .5s ease-out backwards}
 @keyframes fu{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
 /* Foundation callout */
@@ -338,7 +239,7 @@ h2.adt em{font-style:italic;color:var(--gold-ink);font-weight:400}
 <a href="#top" class="brand"><svg class="bicn" viewBox="0 0 240 240" aria-hidden="true"><circle cx="120" cy="120" r="112" fill="#FAF7F0"/><g fill="none" stroke="#16335c" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"><path d="M52 92  q22.5 -14 45 0 t45 0 t45 0"/><path d="M52 120 q22.5 -14 45 0 t45 0 t45 0" opacity="0.88"/><path d="M52 148 q22.5 -14 45 0 t45 0 t45 0" opacity="0.76"/></g></svg><span class="nm">A City That Works</span></a>
 <nav class="nv">
 <a href="summary.html">Summary</a>
-<a href="#measures">Measures</a>
+<a href="measures.html">Measures</a>
 <a href="savings.html">Savings</a>
 <a href="city-hall.html">City Hall</a>
 <a href="scorecard.html" class="nv-sc">Scorecard</a>
@@ -351,7 +252,7 @@ h2.adt em{font-style:italic;color:var(--gold-ink);font-weight:400}
 <div id="mn" class="mm">
 <div class="c mmi">
 <a href="summary.html">One-Page Summary</a>
-<a href="#measures">All Measures</a>
+<a href="measures.html">All Measures</a>
 <div class="grp">Detailed documents</div>
 <a href="savings.html">Savings &amp; Revenue Analysis</a>
 <a href="city-hall.html">How City Hall Works</a>
@@ -381,7 +282,7 @@ h2.adt em{font-style:italic;color:var(--gold-ink);font-weight:400}
 <p>This is not a party. There are no whips, no candidate slate, no exclusivity — just a public menu of evidence-based municipal policies, costed and sourced, open for adoption by any candidate.</p>
 <div class="cta">
 <a href="summary.html" class="bn bnp">Start with the one-page summary <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-<a href="#measures" class="bn bns">Read every measure</a>
+<a href="measures.html" class="bn bns">Read every measure</a>
 </div>
 <p class="ctahint">New here? The summary is the 60-second version. The full program below carries every measure in full, each one costed — or <a href="#adopt">endorse and subscribe</a>.</p>
 </div>
@@ -406,7 +307,7 @@ h2.adt em{font-style:italic;color:var(--gold-ink);font-weight:400}
 <figure class="fig rv">
 <div class="fig-e">◆ The comparison</div>
 <h2 class="fig-t" style="border:none;padding:0">The record, and what we commit to instead.</h2>
-<p class="fig-s">The left column is Victoria's published record. The right column is what this framework binds itself to — every one of them costed in <a href="#measures">Every Measure</a> and tracked by the <a href="#scorecard">12 Commitments</a>.</p>
+<p class="fig-s">The left column is Victoria's published record. The right column is what this framework binds itself to — every one of them costed in <a href="measures.html">Every Measure</a> and tracked by the <a href="#scorecard">12 Commitments</a>.</p>
 <div class="fig-l">
 <span><i class="k-now"></i>The record today</span>
 <span><i class="k-com"></i>What we commit to</span>
@@ -515,7 +416,7 @@ h2.adt em{font-style:italic;color:var(--gold-ink);font-weight:400}
 </div>
 
 </div>
-<figcaption class="fig-c">Left column: the Diagnostic above. Right column: the caps in <a href="#balance">The Balance Sheet</a> and the measures in <a href="#measures">Every Measure</a>. <strong>Bars are shown only where both sides share a unit</strong> — where they do not, the commitment is stated in words rather than drawn to a scale it does not belong on.</figcaption>
+<figcaption class="fig-c">Left column: the Diagnostic above. Right column: the caps in <a href="#balance">The Balance Sheet</a> and the measures in <a href="measures.html">Every Measure</a>. <strong>Bars are shown only where both sides share a unit</strong> — where they do not, the commitment is stated in words rather than drawn to a scale it does not belong on.</figcaption>
 </figure>
 
 <nav class="toc" aria-label="On this page">
@@ -525,7 +426,7 @@ h2.adt em{font-style:italic;color:var(--gold-ink);font-weight:400}
 <li><a href="#how-to-use">How to Use</a></li>
 <li><a href="#method">The Method</a></li>
 <li><a href="#v2030">Victoria in 2030</a></li>
-<li><a href="#measures">Every Measure</a></li>
+<li><a href="measures.html">Every Measure ↗</a></li>
 <li><a href="#scorecard">12 Commitments</a></li>
 <li><a href="#balance">Balance Sheet</a></li>
 <li><a href="#neighbourhoods">Neighbourhood Priorities</a></li>
@@ -539,7 +440,7 @@ h2.adt em{font-style:italic;color:var(--gold-ink);font-weight:400}
      stops being reachable almost immediately. Same control as the savings
      analysis and the comparison matrix. The option list is built by jumpnav.js
      from the [data-jump-label] sections, so it cannot drift from the page. -->
-<div class="jumpbar" id="jumpbar" data-jump-targets="section[data-jump-label], .pgr[data-jump-label]">
+<div class="jumpbar" id="jumpbar" data-jump-targets="section[data-jump-label]">
 <div class="jumpin">
 <label class="jl2" for="jumpsel">Jump to</label>
 <select id="jumpsel" class="jumpsel" aria-label="Jump to a section">
@@ -560,7 +461,7 @@ h2.adt em{font-style:italic;color:var(--gold-ink);font-weight:400}
 <div class="fnd rv">
 <div class="lbl">◆ A Foundation, Not a Pillar — Honouring the Host Nations</div>
 <p>Victoria is built on the unceded traditional territories of the lək̓ʷəŋən-speaking peoples — today represented by the <strong>Songhees Nation</strong> and the <strong>Esquimalt Nation</strong>. Any serious program for the City must recognize this and build it into how the City operates, not just how it speaks.</p>
-<p>The full program includes specific measures on government-to-government working tables, Indigenous procurement, lək̓ʷəŋən place names, cultural protocols, and urban Indigenous services. <a href="#measures">See Foundation measures M1–M5 →</a></p>
+<p>The full program includes specific measures on government-to-government working tables, Indigenous procurement, lək̓ʷəŋən place names, cultural protocols, and urban Indigenous services. <a href="measures.html?pillar=foundation">See Foundation measures M1–M5 →</a></p>
 </div>
 </section>
 
@@ -674,31 +575,12 @@ h2.adt em{font-style:italic;color:var(--gold-ink);font-weight:400}
 <p class="si" style="font-size:15px;margin-top:16px">A framework that discusses only the City and the senior governments leaves out a large and fast-growing share of what a household actually pays. That is why the regional level is on this diagram.</p>
 </div>
 
-<section id="measures" data-jump-label="Every Measure" class="sc rv">
+<div class="rv" style="margin-top:64px">
 <div class="se">◆ The Substance</div>
-<h2 class="st">Every measure, in full.</h2>
-<p class="si">Every measure, with its full text and budget impact. <strong>The public number is the 12 Commitments scorecard</strong>, reported quarterly — the framework carries far more than that, and deliberately no longer states a total, because three earlier versions published a count that did not survive a hand count. Filter by pillar, or search by keyword.</p>
-<div class="fb">
-<div class="fr">
-<div class="sw">
-<svg class="swi" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-<input id="ms" type="search" placeholder="Search measures…" aria-label="Search measures">
+<h2 class="st" style="font-size:28px">Every measure, in full.</h2>
+<p class="si">Every measure, with its full text and budget impact, lives on its own page — <strong>the public number is the 12 Commitments scorecard below</strong>, reported quarterly; the framework carries far more than that, and deliberately no longer states a total, because three earlier versions published a count that did not survive a hand count.</p>
+<a href="measures.html" class="bn bnp" style="margin-top:20px">Read every measure <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
 </div>
-<div id="mcount" class="mcount" role="status" aria-live="polite">All measures</div>
-<button id="mexp" class="mexp" type="button" aria-expanded="false"><span class="mexpl">Expand all</span></button>
-</div>
-<div class="cr" role="group" aria-label="Filter measures by pillar">
-<button class="cp a" data-f="all" aria-pressed="true">All</button>
-<button class="cp" data-f="foundation" aria-pressed="false">Foundation</button>
-<button class="cp" data-f="liveable" aria-pressed="false">Liveable</button>
-<button class="cp" data-f="safe" aria-pressed="false">Safe</button>
-<button class="cp" data-f="beautiful" aria-pressed="false">Beautiful</button>
-<button class="cp" data-f="managed" aria-pressed="false">Well-Managed</button>
-<button class="cp" data-f="democratic" aria-pressed="false">Democratic</button>
-</div>
-</div>
-<div id="mctr"></div>
-</section>
 
 <section id="scorecard" data-jump-label="12 Commitments" class="sc rv">
 <div class="se">◆ Accountability</div>
@@ -975,39 +857,13 @@ h2.adt em{font-style:italic;color:var(--gold-ink);font-weight:400}
 
 <div id="footer-mount"></div>
 <script src="site.js"></script>
+<!-- Still loaded here (not just on measures.html): this page renders the
+     pillar cards (#pgd), the 12 Commitments table (#ctbl/#ccrd) and the home
+     Q&A teaser (#fqc) from the same data file. renderMeasures() itself is a
+     no-op here since #mctr no longer exists on this page. -->
 <script src="measures.js"></script>
-<!-- After measures.js: the pillar groups this navigates are rendered from that
-     file's DOMContentLoaded handler, and script order puts it first. -->
 <script src="jumpnav.js"></script>
 <script>
-/* Hands the sticky slot to whichever bar is the useful one here. Every Measure
-   is over half this page, and inside it the filter bar is the navigator: its
-   six pillar pills reach the same six groups the jump select lists, and it
-   also carries the search box. Outside it, the jump select is the only way to
-   move between sections. Showing both cost 257px of a 812px phone screen.
-
-   The handover point is where the filter bar starts sticking, so the bars
-   swap exactly once on the way in and once on the way out. */
-(function(){
-  var meas=document.getElementById('measures'), fb=document.querySelector('.fb');
-  if(!meas||!fb) return;
-  var root=document.documentElement, tick=false;
-  function sync(){
-    var hdr=document.querySelector('header'), h=hdr?hdr.offsetHeight:56;
-    var r=meas.getBoundingClientRect();
-    /* Measures owns the slot once its top has passed under the header and
-       while its bottom is still below — i.e. exactly while the filter bar has
-       something left to filter on screen. */
-    root.classList.toggle('fmeas', r.top<=h && r.bottom>h+fb.offsetHeight);
-  }
-  window.addEventListener('scroll',function(){
-    if(tick) return; tick=true;
-    requestAnimationFrame(function(){ sync(); tick=false; });
-  },{passive:true});
-  window.addEventListener('resize',sync,{passive:true});
-  sync();
-})();
-
 /* Quarterly Digest signup — posts to Google Form (entry.533410964) via a hidden
    iframe target. A real form POST is accepted cross-origin; fetch(no-cors) is not. */
 (function(){

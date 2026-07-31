@@ -205,7 +205,10 @@ function renderPillars(){
   PILLAR_ORDER.forEach(function(k){
     var p=PILLARS[k];
     var n=MEASURES.filter(function(m){return m.pillar===k;}).length;
-    h+='<a class="pc" data-pj="'+k+'" href="#measures" style="border-top:3px solid '+p.color+'">'+
+    /* Every Measure lives on its own page now — this links out to it
+       pre-filtered rather than jumping to an in-page anchor. measures.html
+       reads ?pillar= on load and applies the filter itself; see below. */
+    h+='<a class="pc" href="measures.html?pillar='+k+'" style="border-top:3px solid '+p.color+'">'+
        '<div class="pch"><span class="pce">'+p.emoji+'</span><span class="pct" style="color:'+p.color+'">'+n+' measures</span></div>'+
        '<div class="pti" style="color:'+p.color+'">'+esc(p.label)+'</div>'+
        '<div class="pd">'+esc(p.desc)+'</div>'+
@@ -213,7 +216,6 @@ function renderPillars(){
        '</a>';
   });
   c.innerHTML=h;
-  $$("[data-pj]").forEach(function(a){a.addEventListener("click",function(){setTimeout(function(){setFilter(a.getAttribute("data-pj"));},80);});});
 }
 
 /* Stable, readable ids for the section wrappers. Derived from the section
@@ -404,7 +406,17 @@ function checkSubscribed(){
   }
 }
 
+/* A pillar card on the home page links here as measures.html?pillar=liveable
+   so a reader arrives pre-filtered instead of landing on the unfiltered list
+   and having to find the right pill themselves. No-ops on any page without
+   the filter UI (the key just won't resolve to anything). */
+function applyPillarFromQuery(){
+  var k=new URLSearchParams(window.location.search).get("pillar");
+  if(k && PILLARS[k]) setFilter(k);
+}
+
 document.addEventListener("DOMContentLoaded",function(){
   renderPillars(); renderMeasures(); renderScorecard(); renderFaq();
   setupFilters(); setupBackToTop(); setupPrint(); checkSubscribed();
+  applyPillarFromQuery();
 });

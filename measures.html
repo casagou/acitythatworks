@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="description" content="Every measure of A City That Works, in full — 131 measures across six pillars, each one costed. Filterable by pillar, searchable by keyword.">
+<meta name="theme-color" content="#1A3668">
+<title>Every Measure — A City That Works</title>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Public+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+/* Filter bar. Single sticky bar directly under the header — this page has no
+   competing jump navigator, so it never needs the mutual-exclusion trick that
+   index.html used when Every Measure was a section sharing the page with a
+   general-purpose jump bar. See readme.md for that history. */
+.fb{position:sticky;top:var(--h);z-index:19;margin:24px -16px 0;padding:12px 16px;background:rgba(250,247,240,.95);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid rgba(26,54,104,.12)}
+@media(min-width:640px){.fb{margin:32px -24px 0;padding:12px 24px}}
+.fr{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.sw{position:relative;flex:1;max-width:420px}
+.swi{position:absolute;left:12px;top:50%;transform:translateY(-50%);opacity:.5;color:var(--navy);pointer-events:none}
+/* 16px font-size stops iOS Safari from zooming the viewport on focus. */
+#ms{width:100%;min-height:44px;padding:11px 12px 11px 36px;font-family:'JetBrains Mono',monospace;font-size:16px;background:#fff;border:1px solid rgba(26,54,104,.2);color:var(--navy);outline:none}
+#ms:focus{border-color:var(--navy)}
+.mexp{display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:6px 14px;font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.1em;background:transparent;border:1px solid rgba(26,54,104,.3);color:var(--navy);cursor:pointer;white-space:nowrap;transition:all .15s}
+.mexp:hover:not(:disabled){background:rgba(26,54,104,.05)}
+.mexp:disabled{opacity:.4;cursor:default}
+.mcount{font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.13em;color:var(--navy);opacity:.7;white-space:nowrap}
+@media(min-width:640px){.mcount{font-size:11px}}
+.cr{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;margin:0 -4px;padding:0 4px 4px}
+.cr::-webkit-scrollbar{display:none}
+.cp{flex-shrink:0;min-height:44px;padding:6px 16px;font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.1em;background:transparent;border:1px solid rgba(26,54,104,.3);color:var(--navy);cursor:pointer;white-space:nowrap;transition:all .15s}
+.cp:hover{background:rgba(26,54,104,.05)}
+.cp.a{background:var(--navy);color:var(--paper);border-color:var(--navy)}
+
+/* Pillar groups and measure cards — carried over from index.html's Every
+   Measure section unchanged. */
+.pgr{margin-top:48px;padding-top:32px;border-top:3px double rgba(26,54,104,.25)}
+.pgr:first-child{margin-top:24px}
+.pgh{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;margin-bottom:8px}
+.pgt{display:flex;align-items:center;gap:12px;font-family:'Fraunces',serif;font-size:24px;font-weight:500;line-height:1.2}
+@media(min-width:640px){.pgt{font-size:32px}}
+.pgg{font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.13em;opacity:.6}
+@media(min-width:640px){.pgg{font-size:11px}}
+.shd{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.2em;color:var(--gold-ink);margin:28px 0 8px;padding-bottom:8px;border-bottom:1px solid rgba(26,54,104,.18)}
+.pgtag{font-family:'Fraunces',serif;font-style:italic;font-size:18px;color:var(--navy);opacity:.85;margin:10px 0 0}
+@media(min-width:640px){.pgtag{font-size:20px}}
+.pgintro,.secintro{font-size:15px;line-height:1.65;color:#33312e;max-width:760px}
+@media(min-width:640px){.pgintro,.secintro{font-size:16px}}
+.pgintro{margin-top:12px}
+.secintro{margin:10px 0 4px;padding:14px 18px;background:rgba(26,54,104,.04);border-left:2px solid rgba(26,54,104,.22)}
+.pgintro p,.secintro p{margin:10px 0}
+.pgintro p:first-child,.secintro p:first-child{margin-top:0}
+.pgintro p:last-child,.secintro p:last-child{margin-bottom:0}
+.pgintro strong,.secintro strong{color:var(--navy);font-weight:600}
+.pgintro ul,.pgintro ol,.secintro ul,.secintro ol{margin:10px 0;padding-left:20px}
+.pgintro li,.secintro li{margin:5px 0;line-height:1.55}
+.pgintro a,.secintro a{color:var(--navy)}
+.secintro .tbl-wrap,.pgintro .tbl-wrap{margin:12px 0}
+.mi{border-bottom:1px solid rgba(26,54,104,.18)}
+.misum{display:grid;grid-template-columns:56px 1fr 18px;align-items:start;gap:14px;padding:16px 0;cursor:pointer;list-style:none;min-height:44px}
+.misum::-webkit-details-marker{display:none}
+@media(min-width:640px){.misum{grid-template-columns:72px 1fr 18px;gap:16px}}
+@media(min-width:860px){.misum{grid-template-columns:80px 1fr 18px;gap:20px;padding:18px 0}}
+.misum:hover .mti{text-decoration:underline;text-decoration-color:rgba(26,54,104,.3)}
+.mchev{flex-shrink:0;color:var(--gold-ink);margin-top:4px;transition:transform .2s}
+.mi[open] .mchev{transform:rotate(180deg)}
+.mi > .mbody,.mi > .mbu{margin-left:70px;padding-bottom:20px}
+@media(min-width:640px){.mi > .mbody,.mi > .mbu{margin-left:88px}}
+@media(min-width:860px){.mi > .mbody,.mi > .mbu{margin-left:100px}}
+.mi > .mbu{margin-top:0;margin-bottom:20px;padding-bottom:12px}
+.mnu{font-family:'Fraunces',serif;font-size:22px;font-weight:500;color:var(--gold-ink);line-height:1;white-space:nowrap;letter-spacing:-.01em}
+@media(min-width:640px){.mnu{font-size:28px}}
+@media(min-width:860px){.mnu{font-size:32px}}
+.mb2{min-width:0}
+.mti{font-family:'Fraunces',serif;font-size:19px;font-weight:600;line-height:1.3;margin:0 0 4px}
+@media(min-width:640px){.mti{font-size:22px}}
+.mtg{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.13em;padding:2px 6px;margin-left:8px;background:rgba(212,168,67,.18);color:var(--gold-ink);vertical-align:middle}
+.mbody{font-size:15px;color:#33312e;line-height:1.62}
+@media(min-width:640px){.mbody{font-size:16px}}
+.mbody p{margin:10px 0}
+.mbody ul{margin:10px 0;padding-left:20px}
+.mbody li{margin:5px 0;line-height:1.55}
+.mbody strong{color:var(--navy);font-weight:600}
+.mbody .mq{font-style:italic;color:#57534e}
+.mbody a{color:var(--navy)}
+.mbu{margin-top:12px;padding:12px 14px;background:rgba(212,168,67,.1);border-left:2px solid var(--gold)}
+.mbl{font-family:'JetBrains Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:.2em;opacity:.7;color:var(--navy);margin-bottom:4px}
+.mbx{font-size:13px;color:var(--navy);line-height:1.5}
+.mbx strong{font-weight:600}
+/* Per-measure permalink. Lives in the open card rather than in the summary
+   row, because a link inside a <summary> is a control nested in a control and
+   both keyboard and screen-reader handling get muddy. */
+.mlink{display:inline-flex;align-items:center;min-height:44px;margin-top:6px;font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.14em;color:var(--gold-ink);text-decoration:none;border-bottom:1px solid transparent}
+.mlink:hover{border-bottom-color:var(--gold)}
+.mlink::before{content:"◆";margin-right:6px;font-size:8px}
+/* A measure arrived at by hash has to clear both the header and the sticky
+   filter bar. */
+details.mi[id]{scroll-margin-top:calc(var(--h) + 132px)}
+/* Which card a shared link actually landed on. See the hash-open script
+   below — this page has its own minimal version, not jumpnav.js's, because
+   jumpnav.js's hash handling is gated behind a #jumpsel this page doesn't
+   carry (the filter pills are the section navigator here). */
+details.mi.hl{background:rgba(212,168,67,.09);box-shadow:inset 3px 0 0 var(--gold)}
+
+/* Back-to-top */
+.jb{position:fixed;bottom:20px;right:20px;z-index:30;display:flex;align-items:center;gap:8px;padding:14px;font-family:'JetBrains Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:.13em;background:var(--navy);color:var(--paper);border:none;text-decoration:none;cursor:pointer;box-shadow:0 4px 16px rgba(0,0,0,.2);transition:transform .2s,opacity .2s;padding-bottom:calc(14px + env(safe-area-inset-bottom))}
+@media(min-width:640px){.jb{padding:14px 18px;padding-bottom:calc(14px + env(safe-area-inset-bottom))}}
+.jb:hover{background:#16335c}
+.jb.hd{transform:translateY(20px);opacity:0;pointer-events:none}
+.jbl{display:none}
+@media(min-width:640px){.jbl{display:inline}}
+.rv{animation:fu .5s ease-out backwards}
+@keyframes fu{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.hbf{display:none!important}
+.ctahint{font-size:13px;line-height:1.6;color:#57534e;margin:14px 0 0;max-width:560px}
+.ctahint a{color:var(--navy)}
+@media print{.jb,.fb{display:none!important}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+
+<header>
+<div class="c hr">
+<a href="index.html" class="brand"><svg class="bicn" viewBox="0 0 240 240" aria-hidden="true"><circle cx="120" cy="120" r="112" fill="#FAF7F0"/><g fill="none" stroke="#16335c" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"><path d="M52 92  q22.5 -14 45 0 t45 0 t45 0"/><path d="M52 120 q22.5 -14 45 0 t45 0 t45 0" opacity="0.88"/><path d="M52 148 q22.5 -14 45 0 t45 0 t45 0" opacity="0.76"/></g></svg><span class="nm">A City That Works</span></a>
+<nav class="nv">
+<a href="index.html">Framework</a>
+<a href="summary.html">Summary</a>
+<a href="measures.html" class="cur">Measures</a>
+<a href="savings.html">Savings</a>
+<a href="city-hall.html">City Hall</a>
+<a href="scorecard.html" class="nv-sc">Scorecard</a>
+<a href="comparison.html" class="btn-cmp">Compare</a>
+<a href="faq.html">FAQ</a>
+<a href="endorse.html" class="btn-end">Endorse</a>
+</nav>
+<button id="mt" class="mb" aria-label="Open menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+</div>
+<div id="mn" class="mm">
+<div class="c mmi">
+<a href="index.html">Framework</a>
+<a href="summary.html">One-Page Summary</a>
+<a href="measures.html" class="gd">All Measures</a>
+<a href="index.html#scorecard">12 Commitments</a>
+<a href="index.html#balance">Balance Sheet</a>
+<div class="grp">Detailed documents</div>
+<a href="savings.html">Savings &amp; Revenue Analysis</a>
+<a href="city-hall.html">How City Hall Works</a>
+<a href="endorse.html">Candidate Endorsement Pack</a>
+<a href="comparison.html">Candidate Comparison Matrix</a>
+<a href="scorecard.html">Candidate Scorecard</a>
+<a href="faq.html">Frequently Asked Questions</a>
+<a href="version-history.html">Version History</a>
+<div class="grp"></div>
+<a href="endorse.html" class="gd">Endorse the framework →</a>
+</div>
+</div>
+</header>
+
+<main id="main">
+<div class="c">
+<nav class="crumbs" aria-label="Breadcrumb">
+<a href="index.html">Framework</a><span class="sep">/</span><span class="here">Every Measure</span>
+</nav>
+<div class="hero rv">
+<div class="eyb"><span>◆ The Substance</span><span class="dot">◆</span><span>v1.9.2 · July 31, 2026</span></div>
+<h1 class="ph1">Every measure, in full.</h1>
+<p class="lead" style="margin-top:18px">131 measures across six pillars, with full text and budget impact.</p>
+<p class="scale" style="max-width:640px;margin:14px 0 0;font-size:14px;line-height:1.6;color:#57534e"><strong style="color:var(--navy);font-weight:600">The public number is the <a href="index.html#scorecard" style="color:var(--navy)">12 Commitments</a> scorecard</strong>, reported quarterly — the framework carries far more than that, and deliberately no longer states a total, because three earlier versions published a count that did not survive a hand count. Filter by pillar below, or search by keyword.</p>
+<p class="ctahint">New here? <a href="summary.html">The one-page summary</a> is the 60-second version — this page is the whole program.</p>
+<a href="index.html" class="pgback">← Back to the framework</a>
+</div>
+
+<div class="fb">
+<div class="fr">
+<div class="sw">
+<svg class="swi" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+<input id="ms" type="search" placeholder="Search measures…" aria-label="Search measures">
+</div>
+<div id="mcount" class="mcount" role="status" aria-live="polite">All measures</div>
+<button id="mexp" class="mexp" type="button" aria-expanded="false"><span class="mexpl">Expand all</span></button>
+</div>
+<div class="cr" role="group" aria-label="Filter measures by pillar">
+<button class="cp a" data-f="all" aria-pressed="true">All</button>
+<button class="cp" data-f="foundation" aria-pressed="false">Foundation</button>
+<button class="cp" data-f="liveable" aria-pressed="false">Liveable</button>
+<button class="cp" data-f="safe" aria-pressed="false">Safe</button>
+<button class="cp" data-f="beautiful" aria-pressed="false">Beautiful</button>
+<button class="cp" data-f="managed" aria-pressed="false">Well-Managed</button>
+<button class="cp" data-f="democratic" aria-pressed="false">Democratic</button>
+</div>
+</div>
+<div id="mctr"></div>
+
+</div>
+</main>
+
+<a id="jb" class="jb hd" href="#main">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+<span class="jbl">Back to top</span>
+</a>
+
+<div id="footer-mount"></div>
+<script src="site.js"></script>
+<script src="measures.js"></script>
+<script>
+/* Minimal hash-open handler for #mNN permalinks, scoped to this page.
+   Not jumpnav.js: that file's hash handling is gated behind a #jumpsel this
+   page deliberately doesn't carry (the filter pills are the section
+   navigator here, exactly as they already were inside Every Measure on the
+   old home page). This is the same open/highlight/scroll-correct behaviour,
+   narrowed to what a page with only one kind of target — a measure — needs. */
+(function(){
+  function reveal(id){
+    var el=document.getElementById(id);
+    if(!el) return null;
+    var d=el.closest('details');
+    var here=el.tagName==='DETAILS'?el:d;
+    if(here){
+      [].forEach.call(document.querySelectorAll('details.hl'),function(x){x.classList.remove('hl');});
+      here.open=true;
+      here.classList.add('hl');
+    }
+    return here||el;
+  }
+  function openFromHash(instant){
+    var id=location.hash.slice(1);
+    if(!id) return;
+    var t=reveal(id);
+    if(!t) return;
+    void document.body.offsetHeight;
+    t.scrollIntoView({block:'start',behavior:instant?'instant':'smooth'});
+  }
+  openFromHash(true);
+  window.addEventListener('hashchange',function(){ openFromHash(false); });
+  /* Again once webfonts settle and reflow everything above the target. */
+  if(location.hash){
+    var landed=window.scrollY;
+    window.addEventListener('load',function(){
+      if(Math.abs(window.scrollY-landed)<4) openFromHash(true);
+    });
+  }
+})();
+</script>
+</body>
+</html>

@@ -36,7 +36,7 @@
 '<div class="fhd">The Framework</div>' +
 '<div class="fls">' +
 '<a href="index.html">Home</a>' +
-'<a href="index.html#measures">All Measures</a>' +
+'<a href="measures.html">All Measures</a>' +
 '<a href="index.html#scorecard">12 Commitments</a>' +
 '<a href="index.html#balance">Balance Sheet</a>' +
 '<a href="index.html#adopt">Endorse / Subscribe</a>' +
