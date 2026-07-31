@@ -87,6 +87,47 @@
     mmi.appendChild(wrap);
   }
 
+  // "More" — a full site map in the header. The desktop nav is deliberately
+  // six items (a ninth item plus the social icons was breaking the wordmark
+  // to three lines at 1024px), but that left Savings, the Comparison Matrix
+  // and Version History reachable only from the footer or the mobile
+  // drawer — a long way down on a page that can run 30,000+ px. Same list
+  // the footer already carries, injected once here instead of hand-added to
+  // nine headers.
+  var nv = document.querySelector('header .nv');
+  if (nv && !nv.querySelector('.nvmore')) {
+    var more = document.createElement('details');
+    more.className = 'nvmore';
+    more.innerHTML =
+      '<summary>More ▾</summary>' +
+      '<div class="nvpanel">' +
+        '<div class="grp">The Framework</div>' +
+        '<a href="index.html">Home</a>' +
+        '<a href="measures.html">All Measures</a>' +
+        '<a href="index.html#scorecard">12 Commitments</a>' +
+        '<a href="index.html#balance">Balance Sheet</a>' +
+        '<div class="grp">Detailed Documents</div>' +
+        '<a href="summary.html">One-Page Summary</a>' +
+        '<a href="savings.html">Savings &amp; Revenue Analysis</a>' +
+        '<a href="city-hall.html">How City Hall Works</a>' +
+        '<a href="endorse.html">Candidate Endorsement Pack</a>' +
+        '<a href="comparison.html">Candidate Comparison Matrix</a>' +
+        '<a href="scorecard.html">Candidate Scorecard</a>' +
+        '<a href="faq.html">Frequently Asked Questions</a>' +
+        '<a href="version-history.html">Version History</a>' +
+      '</div>';
+    nv.appendChild(more);
+    more.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () { more.open = false; });
+    });
+    document.addEventListener('click', function (e) {
+      if (more.open && !more.contains(e.target)) more.open = false;
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && more.open) { more.open = false; more.querySelector('summary').focus(); }
+    });
+  }
+
   // Wide comparison tables scroll sideways inside .tbl-wrap, and the edge
   // shadow alone is easy to miss on a phone — so say it in words. Only for
   // tables that actually overflow at the current width, and only for the first

@@ -40,6 +40,20 @@ header{position:sticky;top:0;z-index:40;background:rgba(26,54,104,.97);backdrop-
    tinting behind it. Paper on the tinted navy, navy on solid gold (5.35:1). */
 .nv a.btn-cmp:hover{border-color:var(--gold);background:rgba(212,168,67,.10);color:var(--paper)}
 .nv a.btn-cmp.cur{border-color:var(--gold);background:var(--gold);color:var(--navy)}
+/* "More" — a full site map, injected by site.js, reachable from the header
+   on every page instead of only the footer. Native <details> rather than a
+   hand-built dropdown: free keyboard support, and it's the same disclosure
+   primitive already used for measures, FAQs and candidate profiles
+   everywhere else on the site. */
+.nvmore{position:relative}
+.nvmore>summary{display:inline-flex;align-items:center;gap:5px;min-height:44px;list-style:none;cursor:pointer;color:inherit}
+.nvmore>summary::-webkit-details-marker{display:none}
+.nvmore>summary:hover,.nvmore[open]>summary{color:var(--gold)}
+.nvpanel{position:absolute;top:calc(100% + 14px);right:0;z-index:60;min-width:250px;background:var(--navy);border:1px solid rgba(212,168,67,.3);box-shadow:0 16px 40px rgba(0,0,0,.32);padding:10px;display:flex;flex-direction:column;gap:2px}
+.nvpanel .grp{padding:10px 12px 4px;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:rgba(250,247,240,.5)}
+.nvpanel .grp:first-child{padding-top:4px}
+.nvpanel a{display:flex;align-items:center;min-height:38px;padding:4px 12px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.04em;text-transform:none;color:rgba(250,247,240,.9);text-decoration:none;border-radius:3px;white-space:nowrap}
+.nvpanel a:hover{background:rgba(212,168,67,.14);color:var(--gold)}
 /* Base rule must precede the breakpoints below: it carries display:flex at the
    same specificity, so when it came last it beat them and the hamburger stayed
    visible on desktop alongside the full nav. */

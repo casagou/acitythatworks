@@ -72,6 +72,19 @@
   radial-gradient(farthest-side at 0 50%,rgba(26,54,104,.18),rgba(26,54,104,0)) 0 0/12px 100% no-repeat scroll,
   radial-gradient(farthest-side at 100% 50%,rgba(26,54,104,.18),rgba(26,54,104,0)) 100% 0/12px 100% no-repeat scroll,
   #fff}
+/* This grid was capped to the shared 1200px content column like the prose
+   around it, even though it's the one thing on the page whose job
+   specifically wants width: 15 grade columns plus a pinned name column is
+   the whole reason it scrolled sideways at all on a desktop monitor with
+   room to spare. Break it out of .c and let the browser's own table layout
+   spread the extra width across columns — .c stays centered via margin:auto,
+   so its center is the viewport's center too, which is what left:50% here is
+   measured from. Below 1300px this would only ever shrink the available
+   width (100vw-64px undercuts 1200px by then), so it's gated to where it
+   can only help. */
+@media(min-width:1300px){
+  .sc-wrap{position:relative;left:50%;transform:translateX(-50%);width:min(1760px,calc(100vw - 64px))}
+}
 table.sc{width:100%;border-collapse:collapse;font-size:13px;min-width:820px}
 table.sc thead th{position:sticky;top:0;background:var(--navy);color:var(--paper);font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.1em;font-weight:600;padding:10px 6px;text-align:center;vertical-align:bottom}
 table.sc thead th.who{text-align:left;padding-left:14px;min-width:190px}
