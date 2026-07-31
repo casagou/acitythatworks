@@ -46,10 +46,13 @@ header{position:sticky;top:0;z-index:40;background:rgba(26,54,104,.97);backdrop-
 .mb{background:none;border:none;color:var(--paper);padding:11px;margin-right:-11px;cursor:pointer;display:flex}
 @media(min-width:1100px){.nv{display:flex;gap:20px;letter-spacing:.12em}.mb{display:none}}
 @media(min-width:1024px) and (max-width:1099px){.nv{display:flex}.mb{display:none}}
-/* Social links in the header. Hidden on narrow screens, where the header row
-   has no room and the mobile drawer carries them instead. */
+/* Social links in the header. Hidden below 1250px, where the header row is
+   already carrying six nav items plus the brand and has no room to spare —
+   the mobile drawer carries them below that. (Below 1100/1024px the nav
+   itself hands off to the hamburger, so these three icons would be the only
+   thing left to gate anyway.) */
 .hsoc{display:none;align-items:center;gap:2px;margin-left:4px}
-@media(min-width:1024px){.hsoc{display:flex}}
+@media(min-width:1250px){.hsoc{display:flex}}
 .hsoc a{display:inline-flex;align-items:center;justify-content:center;width:36px;min-height:44px;color:rgba(250,247,240,.75);text-decoration:none;transition:color .15s}
 .hsoc a:hover{color:var(--gold)}
 /* Drawer version */

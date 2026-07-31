@@ -51,6 +51,8 @@
 .dr2:last-child{border-bottom:none;margin-bottom:0}
 .dnu{font-family:'JetBrains Mono',monospace;font-size:24px;font-weight:600;color:var(--rust);white-space:nowrap}
 .dtx{font-size:14px;line-height:1.35;color:#44403c}
+.dnote{margin-top:14px;padding-top:14px;border-top:1px solid rgba(26,54,104,.15);font-size:12.5px;line-height:1.5;color:#57534e;font-style:italic}
+.dnote a{color:var(--navy);font-style:normal}
 .pg{display:grid;grid-template-columns:1fr;gap:16px;margin-top:32px}
 @media(min-width:640px){.pg{grid-template-columns:repeat(2,1fr);gap:20px}}
 @media(min-width:1024px){.pg{grid-template-columns:repeat(3,1fr)}}
@@ -249,10 +251,8 @@ h2.adt em{font-style:italic;color:var(--gold-ink);font-weight:400}
 <nav class="nv">
 <a href="summary.html">Summary</a>
 <a href="measures.html">Measures</a>
-<a href="savings.html">Savings</a>
+<a href="scorecard.html" class="nv-sc">Candidates</a>
 <a href="city-hall.html">City Hall</a>
-<a href="scorecard.html" class="nv-sc">Scorecard</a>
-<a href="comparison.html" class="btn-cmp">Compare</a>
 <a href="faq.html">FAQ</a>
 <a href="endorse.html" class="btn-end">Endorse</a>
 </nav>
@@ -280,7 +280,7 @@ h2.adt em{font-style:italic;color:var(--gold-ink);font-weight:400}
 <div class="c">
 
 <section class="hero rv">
-<div class="eyb"><span>A Citizens' Framework</span><span class="dot">◆</span><span>Victoria, BC · 2026</span><span class="dot">◆</span><span style="opacity:.7">v1.9.2 · July 31, 2026</span></div>
+<div class="eyb"><span>A Citizens' Framework</span><span class="dot">◆</span><span>Victoria, BC · 2026</span><span class="dot">◆</span><span style="opacity:.7"><a href="version-history.html" style="color:inherit;text-decoration:underline;text-decoration-color:currentColor">v1.9.2 · July 31, 2026</a></span></div>
 <h1 class="ht">A city that <em>works</em>.</h1>
 <div class="hsub">Proven ideas. Measurable results.</div>
 <div class="hg">
@@ -304,6 +304,7 @@ h2.adt em{font-style:italic;color:var(--gold-ink);font-weight:400}
 <div class="dr2"><span class="dnu">59%</span><span class="dtx">Feel safe downtown by day (was 83% in 2020)</span></div>
 <div class="dr2"><span class="dnu">$25M+</span><span class="dtx">Spent on homelessness since 2023 — no published outcomes</span></div>
 <div class="dr2"><span class="dnu">$0</span><span class="dtx">Modern efficiency tools deployed: no ZBB, no AI, no smart infrastructure</span></div>
+<p class="dnote">Every change since May 2026 is dated and explained — including our corrections. <a href="version-history.html">See the version history →</a></p>
 </div>
 </div>
 </section>
@@ -436,9 +437,11 @@ h2.adt em{font-style:italic;color:var(--gold-ink);font-weight:400}
 <li><a href="#candidates">Where Candidates Stand</a></li>
 <li><a href="#method">The Method</a></li>
 <li><a href="#v2030">Victoria in 2030</a></li>
+<li><a href="#jurisdiction">What the City Controls</a></li>
 <li><a href="measures.html">Every Measure ↗</a></li>
 <li><a href="#scorecard">12 Commitments</a></li>
 <li><a href="#balance">Balance Sheet</a></li>
+<li><a href="#principles">Principles</a></li>
 <li><a href="#neighbourhoods">Neighbourhood Priorities</a></li>
 <li><a href="#faq">Q&amp;A</a></li>
 <li><a href="#adopt">Endorse / Subscribe</a></li>
@@ -450,7 +453,7 @@ h2.adt em{font-style:italic;color:var(--gold-ink);font-weight:400}
      stops being reachable almost immediately. Same control as the savings
      analysis and the comparison matrix. The option list is built by jumpnav.js
      from the [data-jump-label] sections, so it cannot drift from the page. -->
-<div class="jumpbar" id="jumpbar" data-jump-targets="section[data-jump-label]">
+<div class="jumpbar" id="jumpbar" data-jump-targets="[data-jump-label]">
 <div class="jumpin">
 <label class="jl2" for="jumpsel">Jump to</label>
 <select id="jumpsel" class="jumpsel" aria-label="Jump to a section">
@@ -523,7 +526,7 @@ h2.adt em{font-style:italic;color:var(--gold-ink);font-weight:400}
 <a href="scorecard.html" class="bn bnp" style="margin-top:20px">See the Candidate Scorecard <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
 </section>
 
-<div class="rv" style="margin-top:64px">
+<div id="audience" data-jump-label="By Audience" class="rv" style="margin-top:64px">
 <div class="se">◆ By Audience</div>
 <h2 class="st" style="font-size:28px;max-width:640px">Whoever you are, Victoria should work for you.</h2>
 <div class="ag">
@@ -550,7 +553,7 @@ h2.adt em{font-style:italic;color:var(--gold-ink);font-weight:400}
 </div>
 </section>
 
-<div class="rv" style="margin-top:64px">
+<div id="process" data-jump-label="The 5-Step Process" class="rv" style="margin-top:64px">
 <div class="se">◆ The 5-Step Process</div>
 <h2 class="st" style="font-size:26px">No major new public project without these five steps.</h2>
 <p class="si" style="margin-bottom:0">The Dowler Place file proved why this matters. Under this framework, no project skips any step.</p>
@@ -579,7 +582,7 @@ h2.adt em{font-style:italic;color:var(--gold-ink);font-weight:400}
 </div>
 </section>
 
-<div class="rv" style="margin-top:64px">
+<div id="jurisdiction" data-jump-label="What the City Controls" class="rv" style="margin-top:64px">
 <div class="se">◆ Separation of Powers</div>
 <h2 class="st" style="font-size:26px">What the City actually controls.</h2>
 <p class="si">Before making promises, we must be honest about what the City of Victoria actually controls. Many of the problems residents face — healthcare, criminal sentencing, income support — fall under provincial or federal jurisdiction. We advocate aggressively to senior governments for action in their domains, but we never promise what isn't ours to deliver. <a href="city-hall.html" style="color:var(--navy)">See the full plain-language guide →</a></p>
@@ -755,7 +758,7 @@ h2.adt em{font-style:italic;color:var(--gold-ink);font-weight:400}
 </figure>
 </section>
 
-<div class="rv" style="margin-top:64px">
+<div id="principles" data-jump-label="Principles" class="rv" style="margin-top:64px">
 <div class="se">◆ Principles</div>
 <h2 class="st" style="font-size:28px">What we are — and what we're not.</h2>
 <div class="idg">
