@@ -92,10 +92,13 @@
   // tables that actually overflow at the current width, and only for the first
   // couple: on the comparison page all 38 overflow on a phone, and repeating
   // the instruction 38 times is noise. The shadow carries the rest.
+  // .sc-wrap (the scorecard grid) gets the same treatment — it's the widest
+  // table on the site and previously matched neither this selector nor the
+  // .tbl-wrap edge-shadow CSS, so it got no affordance of either kind.
   var HINT_LIMIT = 2;
   function tableHints() {
     var shown = 0;
-    document.querySelectorAll('.tbl-wrap').forEach(function (w) {
+    document.querySelectorAll('.tbl-wrap, .sc-wrap').forEach(function (w) {
       var over = w.scrollWidth > w.clientWidth + 4 && shown < HINT_LIMIT;
       if (over) { shown++; }
       var hint = w.nextElementSibling;
@@ -128,6 +131,11 @@
       m.classList.toggle('o', open);
       t.setAttribute('aria-expanded', open ? 'true' : 'false');
       t.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      /* The drawer now scrolls internally when it's taller than the
+         viewport (styles.css .mm.o) — lock the page underneath it too, or a
+         swipe that runs past the drawer's own scroll end just scrolls the
+         page instead, invisibly, behind it. */
+      document.body.classList.toggle('no-scroll', open);
     };
     t.addEventListener('click', function () { setOpen(!m.classList.contains('o')); });
     m.querySelectorAll('a').forEach(function (a) {

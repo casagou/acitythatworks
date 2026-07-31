@@ -50,10 +50,32 @@
 .sc-pill.a{background:var(--navy);color:var(--paper);border-color:var(--navy)}
 .sc-sel{min-height:44px;padding:8px 12px;font-family:'JetBrains Mono',monospace;font-size:13px;background:#fff;border:1px solid rgba(26,54,104,.25);color:var(--navy)}
 .sc-count{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--navy);opacity:.8;margin:14px 0 6px}
-.sc-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid rgba(26,54,104,.2);background:#fff}
+/* Two-axis scroller, same pattern as the comparison page's .gridwrap. Without
+   a max-height, overflow-x:auto alone never makes this wrapper scroll
+   vertically — which meant it was never the containing scrollport for the
+   sticky thead below, and the header row scrolled away with the page instead
+   of pinning against it. */
+.sc-wrap{max-height:75vh;overflow:auto;-webkit-overflow-scrolling:touch;border:1px solid rgba(26,54,104,.2)}
+/* Same edge-shadow technique as .tbl-wrap in styles.css, re-based on this
+   wrapper's own white surface rather than the page's paper background — the
+   erasing layers have to match whatever they're painted over locally, and
+   this card is white, not paper. (The left shadow ends up hidden behind the
+   pinned .who column regardless, same as it would be on any pinned-column
+   grid; the right shadow — unobstructed — is the one doing the work.) site.js
+   adds the "Scroll the table sideways" text hint on top of this. */
+.sc-wrap{background:
+  linear-gradient(to right,#fff 40%,rgba(255,255,255,0)) 0 0/22px 100% no-repeat local,
+  linear-gradient(to left,#fff 40%,rgba(255,255,255,0)) 100% 0/22px 100% no-repeat local,
+  radial-gradient(farthest-side at 0 50%,rgba(26,54,104,.18),rgba(26,54,104,0)) 0 0/12px 100% no-repeat scroll,
+  radial-gradient(farthest-side at 100% 50%,rgba(26,54,104,.18),rgba(26,54,104,0)) 100% 0/12px 100% no-repeat scroll,
+  #fff}
 table.sc{width:100%;border-collapse:collapse;font-size:13px;min-width:820px}
 table.sc thead th{position:sticky;top:0;background:var(--navy);color:var(--paper);font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.1em;font-weight:600;padding:10px 6px;text-align:center;vertical-align:bottom}
 table.sc thead th.who{text-align:left;padding-left:14px;min-width:190px}
+/* On a 375px phone the pinned name column alone was 51% of the screen,
+   leaving ~150px for every grade. The role already stacks under the name
+   (see .cn-role below), so the column can narrow without wrapping badly. */
+@media(max-width:639px){table.sc thead th.who{min-width:140px;padding-left:10px}table.sc tbody td.who{padding-left:10px}}
 table.sc thead th .ti{display:block;font-size:15px;margin-bottom:3px}
 table.sc tbody tr{border-top:1px solid rgba(26,54,104,.14)}
 table.sc tbody tr:nth-child(4n+3){background:rgba(26,54,104,.03)}
@@ -62,8 +84,8 @@ table.sc td.who{text-align:left;padding-left:14px}
 /* The candidate column stays put while the grades scroll under it. The table
    is 820px at minimum inside a 375px viewport, so a reader who swipes across
    to Fiscal or Reconciliation was left reading a row of letter grades with no
-   way to see whose they were. The header row was already pinned vertically;
-   this is the same fix on the other axis.
+   way to see whose they were. Same fix as the header row above, on the other
+   axis — both need .sc-wrap to be a real two-axis scroller to pin against.
 
    A sticky cell paints over the cells sliding beneath it, so it cannot be
    transparent and cannot inherit the row's tint — each row variant has to
@@ -429,7 +451,11 @@ The field changes as nominations proceed, and they close September 11, 2026. If 
     var p=document.createElement('div');
     p.className='sc-panel';
     p.innerHTML='<div class="in"><button type="button" class="close" aria-label="Close">Close</button>'+html+'</div>';
-    wrap.parentNode.insertBefore(p, wrap.nextSibling);
+    /* site.js may have inserted a .tbl-hint right after .sc-wrap (only when
+       the grid actually overflows at the current width) — land the panel
+       after that too, or it wedges between the grid and its own hint text. */
+    var afterWrap = wrap.nextElementSibling && wrap.nextElementSibling.classList.contains('tbl-hint') ? wrap.nextElementSibling : wrap;
+    afterWrap.parentNode.insertBefore(p, afterWrap.nextSibling);
     p.querySelector('.close').addEventListener('click',closeAll);
     p.scrollIntoView({block:'nearest'});
   }

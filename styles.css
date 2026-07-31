@@ -58,7 +58,16 @@ header{position:sticky;top:0;z-index:40;background:rgba(26,54,104,.97);backdrop-
 .msoc a{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid rgba(212,168,67,.4);color:rgba(250,247,240,.9);text-decoration:none;transition:all .15s}
 .msoc a:hover{color:var(--navy);background:var(--gold);border-color:var(--gold)}
 .mm{display:none;background:rgba(26,54,104,.98);border-bottom:1px solid rgba(26,54,104,.18)}
-.mm.o{display:block}
+/* header{height:var(--h)} is fixed, so an open drawer taller than that would
+   otherwise overflow the sticky header's box uncontained — on a short phone
+   (13 links + social row runs ~850px) that puts the bottom entries, including
+   the Endorse CTA, past the viewport with no way to reach them, since page
+   scroll doesn't move a sticky header. Capping the drawer's own height and
+   giving it its own scrollbar fixes that regardless of how long it gets. */
+.mm.o{display:block;max-height:calc(100dvh - var(--h));overflow-y:auto;-webkit-overflow-scrolling:touch;padding-bottom:env(safe-area-inset-bottom)}
+/* Body scroll is locked (site.js) while the drawer is open, so this is a
+   belt-and-braces backstop rather than the primary mechanism. */
+body.no-scroll{overflow:hidden}
 .mmi{display:flex;flex-direction:column;gap:8px;padding:16px 16px 20px;font-family:'JetBrains Mono',monospace;font-size:14px;text-transform:uppercase;letter-spacing:.12em}
 .mmi a{display:flex;align-items:center;min-height:44px;color:rgba(250,247,240,.9);text-decoration:none;padding:6px 0}
 .mmi a.gd{color:var(--gold)}
