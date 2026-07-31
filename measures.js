@@ -164,18 +164,18 @@ const SECTION_INTRO = {
 const SECTION_ORDER = ["Honouring the Host Nations", "Housing: A City Where You Can Live", "A City That Works for Families", "A Clean City", "A City Where You Can Get Around", "A City That Welcomes Pets", "A City That Works for Every Body", "Strengthen Public Safety", "Restore Order to Public Spaces", "Better Lighting for Better Safety", "Vision Zero: Trending Toward Zero Traffic Deaths", "The Politics of Beauty", "Liberate Cultural, Festive, and Sporting Life", "Victoria as a Technology Leader", "Climate Resilience — Practical, Not Ideological", "Spend Less, Deliver More", "Grow the Tax Base, Don't Just Tax More", "Lower the Cost of Living — Specific Measures", "Direct Democracy and Transparency"];
 
 const COMMITMENTS = [
-  {n:1,c:"New homes (composition)",t:"12,000+ by 2030, 25% missing middle, 20% 3BR+, 15% non-market",b:"Provincial 5yr target: 4,902"},
-  {n:2,c:"Rental vacancy rate",t:"5%",b:"3.3% (2025, highest since 1999)"},
-  {n:3,c:"Unsheltered homelessness",t:"-50%",b:"~320 people"},
-  {n:4,c:"Crime severity",t:"-15%",b:"CSI 152.65 (2024, down 11%)"},
-  {n:5,c:"Graffiti removal",t:"90% within 48h",b:"No current standard"},
-  {n:6,c:"Permit speed (by category)",t:"-50% across simple, complex, and rezoning",b:"3–18+ months by type"},
-  {n:7,c:"Green mobility",t:"60% non-auto trips",b:"~49% (2022)"},
-  {n:8,c:"Serious-injury traffic collisions",t:"-50% by 2030, trending toward zero",b:"1–3 fatalities/yr"},
+  {n:1,c:"Residential tax rate",t:"≤6.5% Year 1, ≤5% Year 2, about CPI + population growth Year 3 onward. Capped on the residential rate, not the total levy",b:"9.34% residential in 2026 (7.28% total levy, 4.78% business). Four straight years above inflation plus growth"},
+  {n:2,c:"Verified annual savings",t:"$8–14M per year in operating savings verified and banked by Year 4, published line by line against the year they were promised",b:"$0 currently reported. No competitive benchmarking, no zero-based review, and no published savings register exist today"},
+  {n:3,c:"New homes (composition)",t:"12,000+ net new units by 2030, 25% missing middle, 20% 3BR+, 15% non-market",b:"2,359 net new units delivered in 2 years, against a 5-year provincial target of 4,902"},
+  {n:4,c:"Rental vacancy rate",t:"5%",b:"3.3% (2025, highest since 1999)"},
+  {n:5,c:"Unsheltered homelessness",t:"-50%",b:"~320 people"},
+  {n:6,c:"Crime severity",t:"-15%",b:"CSI 152.65 (2024, down 11%)"},
+  {n:7,c:"Graffiti removal",t:"90% within 48h",b:"No current standard"},
+  {n:8,c:"Permit speed (by category)",t:"Simple under 6 weeks, complex under 6 months, rezoning under 9 months",b:"3–18+ months by type; no benchmark currently published"},
   {n:9,c:"Downtown vacancy",t:"5% storefronts",b:"~11% (current)"},
-  {n:10,c:"Trees planted",t:"5,000 by 2030",b:"~500/year current"},
-  {n:11,c:"GHG emissions",t:"-50% by 2030 (vs 2007)",b:"-31% achieved; 19 pts to go"},
-  {n:12,c:"Stormwater upgrades",t:"Replace oldest 20% of system",b:"100+ year-old pipes in service"},
+  {n:10,c:"Dangerous intersections redesigned",t:"All 10 of the top 10 by collision history, redesigned or reconstructed within the term",b:"0 redesigned, and no published collision inventory exists, so the top 10 has never been named"},
+  {n:11,c:"Transparency delivered",t:"Lobbyist registry live, FOI application fee abolished, Integrity Commissioner appointed, and all 16 quarterly reports published within 30 days of quarter end",b:"0 of 3 in place, and no quarterly performance report is published at all"},
+  {n:12,c:"Climate and canopy",t:"-50% GHG by 2030 (vs 2007); 35% tree canopy by 2035",b:"-31% achieved, 19 pts to go; canopy roughly 30%"},
 ];
 
 const FAQ = [
