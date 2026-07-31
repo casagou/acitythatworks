@@ -57,6 +57,18 @@ All four live in `site.js` (footer) and on the home page's Endorse section. To c
 - **Home page criticisms Q&A** → the `FAQ` array in `measures.js`.
 - **Anything else** → edit the relevant `.html` file directly. No build, no transpile — commit and push.
 
+### One exception: `measures.js` data changes need a rebuild
+
+Every measure, the pillar cards, the 12-Commitments table, and the home Q&A are pre-rendered into `index.html` and `measures.html` at commit time, not left for the browser to build — the site's deepest content needs to exist as real HTML for search engines, preview bots, and no-JS readers, not just for visitors running JavaScript. `measures.js` still ships and still runs (search, filtering, expand-all), but it only writes into a mount that's still empty, so nothing double-renders.
+
+After editing anything in `measures.js` that feeds those four mounts (`MEASURES`, `PILLARS`, `SECTION_INTRO`/`SECTION_TAKEAWAY`, `COMMITMENTS`, `FAQ`), run:
+
+```
+node build/prerender.js
+```
+
+then commit the regenerated `index.html` and `measures.html` alongside your `measures.js` change. The script has no dependencies (plain Node, `require()`s `measures.js` directly) and is idempotent — running it with no data changes reports both files unchanged. If you forget this step, the site still works (the browser falls back to client-side rendering), but the content silently goes back to being invisible to anything that doesn't run JS until the next rebuild.
+
 ## Navigation
 
 Every page uses the same canonical header nav:

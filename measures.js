@@ -138,12 +138,12 @@ const MEASURES = [
 ];
 
 const PILLARS = {
-  foundation:{label:"Honouring the Host Nations",color:"#7A6B3D",emoji:"🌿",desc:"Government-to-government tables, Indigenous procurement, place names, cultural protocols, urban Indigenous services.",tagline:"A city that works begins with right relations",intro:"<p>Victoria is built on the unceded traditional territories of the lək̓ʷəŋən-speaking peoples, today represented by the <strong>Songhees Nation</strong> and the <strong>Esquimalt Nation.</strong> This is a foundation, not a pillar, because relationship with the host Nations precedes and underlies every other commitment. The federal Crown holds the formal relationship with First Nations. But the City of Victoria sits inside this geography every day, makes decisions that affect this geography every day, and depends on functional working relationships to deliver on land use, infrastructure, policing, and economic development. This framework treats those relationships as ongoing operational work, not symbolic gesture. We will not promise outcomes that require the Nations' agreement to deliver. What we will promise is that the relationship operates at the level of a government-to-government working partnership, not consultative tokenism.</p>"},
-  liveable:{label:"A Liveable City",color:"#1A3668",emoji:"🏠",desc:"Housing, families, childcare, cleanliness, mobility, accessibility.",tagline:"A city that works is a city where we're happy to live",intro:"<p>Victoria must be liveable for families, renters, workers, and seniors. We will make it possible to find housing, access childcare, keep the city clean, and ensure quality of life in every neighbourhood. Victoria's population is growing but liveability is declining. We will make Victoria a city where people want to stay, not a city they're forced to leave.</p>"},
-  safe:{label:"A Safe City",color:"#B5341F",emoji:"🛡️",desc:"Public safety, order, accountability, modern infrastructure, Vision Zero.",tagline:"A city that works is a city where you feel safe",intro:"<p>Victorians deserve the level of safety and calm that makes a city liveable for everyone: seniors walking to the store, families at the playground, tourists visiting our waterfront, businesses keeping their doors open. Safety is the first freedom.</p>"},
-  beautiful:{label:"A Beautiful City",color:"#227247",emoji:"🌳",desc:"Heritage, parks, urban aesthetics, technology leadership, climate resilience.",tagline:"A city that works protects what makes it extraordinary",intro:"<p>Victoria's soul rests on its heritage, its gardens, its waterfront, its trees. We will combine the best of Victoria's heritage with the best of modern technology to make Victoria a city admired by all. Not a museum, but a living, evolving city that honours its past while building its future.</p>"},
-  managed:{label:"A Well-Managed City",color:"#8B6914",emoji:"💰",desc:"Taxes, permits, performance, fiscal discipline, cost of living.",tagline:"Victoria owes results, and we will deliver them",intro:"<p>For years, property taxes have climbed 6–8% annually while basic services lag behind. <strong>The 2026 budget opened at a 13.3% increase in November, was cut to 7.2% at the March draft, and was adopted on May 7 at 7.28%</strong> — a gap bridged with roughly $7M of one-time reductions, not structural savings (<em>CHEK News; Victoria News</em>). <strong>And 7.28% is not what a homeowner paid.</strong> That figure is the increase in total property tax revenue. Council then <strong>distributed it at 9.34% to residential properties and 4.78% to business</strong>, which works out to about <strong>$323 more on an average home assessed at $1,015,000</strong> and $427 on a typical business property assessed at $721,000 (<em>City of Victoria; Victoria News, May 11, 2026</em>). The same split happened the year before: <strong>8.18% residential against 5.6% business in 2025</strong> (<em>Times Colonist</em>). This is deliberate policy: council is moving the business-to-residential ratio from 3.67:1 toward 3:1 by 2030, and it means <strong>the headline number understates what homeowners are billed, every year, by a widening margin.</strong> Measure 66 therefore caps the residential rate rather than the total, and Measure 66d publishes the whole household bill including utilities. The city does not publicly report salary and benefits as a percentage of the operating budget, total municipal debt outstanding, or debt-to-revenue ratios in easily accessible formats. The approved borrowing of <strong>$168.9 million for Crystal Pool</strong> (20-year term) plus a staff-recommended $63 million in additional infrastructure borrowing will substantially increase debt servicing costs, which the City has already cited as a \"main cost driver\" for 2026. The adopted 2026–2030 plan shows debt servicing rising from $9.9M in 2026 to $13.0M in 2027 and roughly $28.2M by 2030.</p><div class=\"tbl-wrap\"><table class=\"dt\"><thead><tr><th>Year</th><th>Operating Budget</th><th>Tax Increase</th><th>VicPD Budget</th></tr></thead><tbody><tr><td>2023</td><td>$297.9M</td><td>6.15%</td><td>$69.5M</td></tr><tr><td>2024</td><td>~$330M</td><td>7.93%</td><td>~$72M</td></tr><tr><td>2025</td><td>~$359M</td><td>6.99%</td><td>$79.0M</td></tr><tr><td>2026 (adopted)</td><td><strong>$394.1M</strong></td><td><strong>13.3% opening draft → 7.28% adopted aggregate → 9.34% residential / 4.78% business</strong></td><td>$86.8M requested</td></tr></tbody></table></div><p>Victoria's operating budget has grown <strong>roughly 32% in three years</strong> — from $297.9M in 2023 to the <strong>$394.1M adopted for 2026</strong>, alongside $160.1M in capital (<em>City of Victoria</em>) — with no competitive benchmarking, no AI, no digital twin, no smart infrastructure, no published processing benchmarks, and no zero-based reviews. <em>(Earlier versions of this framework used the $384.1M draft figure and a 29% growth rate. The adopted number is higher. The 2023 basis should be verified as operating-only before this figure is quoted in campaign materials.)</em> The City funds its priorities with your money but measures success by dollars spent, not results delivered. That changes now.</p>"},
-  democratic:{label:"A Democratic City",color:"#3D5A8C",emoji:"🗳️",desc:"Referendums, transparency, participation, public-visualization tools.",tagline:"Victorians decide, City Hall listens",intro:"<p>A mature democracy doesn't fear the judgment of its people. It relies on it.</p>"},
+  foundation:{label:"Honouring the Host Nations",color:"#7A6B3D",emoji:"🌿",desc:"Government-to-government tables, Indigenous procurement, place names, cultural protocols, urban Indigenous services.",tagline:"A city that works begins with right relations",takeaway:"This framework treats the relationship with the Songhees and Esquimalt Nations as ongoing operational work, not symbolic gesture.",intro:"<p>Victoria is built on the unceded traditional territories of the lək̓ʷəŋən-speaking peoples, today represented by the <strong>Songhees Nation</strong> and the <strong>Esquimalt Nation.</strong> This is a foundation, not a pillar, because relationship with the host Nations precedes and underlies every other commitment. The federal Crown holds the formal relationship with First Nations. But the City of Victoria sits inside this geography every day, makes decisions that affect this geography every day, and depends on functional working relationships to deliver on land use, infrastructure, policing, and economic development. This framework treats those relationships as ongoing operational work, not symbolic gesture. We will not promise outcomes that require the Nations' agreement to deliver. What we will promise is that the relationship operates at the level of a government-to-government working partnership, not consultative tokenism.</p>"},
+  liveable:{label:"A Liveable City",color:"#1A3668",emoji:"🏠",desc:"Housing, families, childcare, cleanliness, mobility, accessibility.",tagline:"A city that works is a city where we're happy to live",takeaway:"Victoria's population is growing, but liveability is declining — this pillar is about making Victoria a city people want to stay in.",intro:"<p>Victoria must be liveable for families, renters, workers, and seniors. We will make it possible to find housing, access childcare, keep the city clean, and ensure quality of life in every neighbourhood. Victoria's population is growing but liveability is declining. We will make Victoria a city where people want to stay, not a city they're forced to leave.</p>"},
+  safe:{label:"A Safe City",color:"#B5341F",emoji:"🛡️",desc:"Public safety, order, accountability, modern infrastructure, Vision Zero.",tagline:"A city that works is a city where you feel safe",takeaway:"Safety is the first freedom — the calm that lets seniors, families, tourists and businesses use the city without fear.",intro:"<p>Victorians deserve the level of safety and calm that makes a city liveable for everyone: seniors walking to the store, families at the playground, tourists visiting our waterfront, businesses keeping their doors open. Safety is the first freedom.</p>"},
+  beautiful:{label:"A Beautiful City",color:"#227247",emoji:"🌳",desc:"Heritage, parks, urban aesthetics, technology leadership, climate resilience.",tagline:"A city that works protects what makes it extraordinary",takeaway:"Victoria's heritage, gardens and waterfront are the city's soul; this pillar combines that heritage with modern technology rather than freezing the city as a museum.",intro:"<p>Victoria's soul rests on its heritage, its gardens, its waterfront, its trees. We will combine the best of Victoria's heritage with the best of modern technology to make Victoria a city admired by all. Not a museum, but a living, evolving city that honours its past while building its future.</p>"},
+  managed:{label:"A Well-Managed City",color:"#8B6914",emoji:"💰",desc:"Taxes, permits, performance, fiscal discipline, cost of living.",tagline:"Victoria owes results, and we will deliver them",takeaway:"Victoria's operating budget has grown roughly 32% in three years to $394.1M, with no competitive benchmarking, AI, or zero-based review.",intro:"<p>For years, property taxes have climbed 6–8% annually while basic services lag behind. <strong>The 2026 budget opened at a 13.3% increase in November, was cut to 7.2% at the March draft, and was adopted on May 7 at 7.28%</strong> — a gap bridged with roughly $7M of one-time reductions, not structural savings (<em>CHEK News; Victoria News</em>). <strong>And 7.28% is not what a homeowner paid.</strong> That figure is the increase in total property tax revenue. Council then <strong>distributed it at 9.34% to residential properties and 4.78% to business</strong>, which works out to about <strong>$323 more on an average home assessed at $1,015,000</strong> and $427 on a typical business property assessed at $721,000 (<em>City of Victoria; Victoria News, May 11, 2026</em>). The same split happened the year before: <strong>8.18% residential against 5.6% business in 2025</strong> (<em>Times Colonist</em>). This is deliberate policy: council is moving the business-to-residential ratio from 3.67:1 toward 3:1 by 2030, and it means <strong>the headline number understates what homeowners are billed, every year, by a widening margin.</strong> Measure 66 therefore caps the residential rate rather than the total, and Measure 66d publishes the whole household bill including utilities. The city does not publicly report salary and benefits as a percentage of the operating budget, total municipal debt outstanding, or debt-to-revenue ratios in easily accessible formats. The approved borrowing of <strong>$168.9 million for Crystal Pool</strong> (20-year term) plus a staff-recommended $63 million in additional infrastructure borrowing will substantially increase debt servicing costs, which the City has already cited as a \"main cost driver\" for 2026. The adopted 2026–2030 plan shows debt servicing rising from $9.9M in 2026 to $13.0M in 2027 and roughly $28.2M by 2030.</p><div class=\"tbl-wrap\"><table class=\"dt\"><thead><tr><th>Year</th><th>Operating Budget</th><th>Tax Increase</th><th>VicPD Budget</th></tr></thead><tbody><tr><td>2023</td><td>$297.9M</td><td>6.15%</td><td>$69.5M</td></tr><tr><td>2024</td><td>~$330M</td><td>7.93%</td><td>~$72M</td></tr><tr><td>2025</td><td>~$359M</td><td>6.99%</td><td>$79.0M</td></tr><tr><td>2026 (adopted)</td><td><strong>$394.1M</strong></td><td><strong>13.3% opening draft → 7.28% adopted aggregate → 9.34% residential / 4.78% business</strong></td><td>$86.8M requested</td></tr></tbody></table></div><p>Victoria's operating budget has grown <strong>roughly 32% in three years</strong> — from $297.9M in 2023 to the <strong>$394.1M adopted for 2026</strong>, alongside $160.1M in capital (<em>City of Victoria</em>) — with no competitive benchmarking, no AI, no digital twin, no smart infrastructure, no published processing benchmarks, and no zero-based reviews. <em>(Earlier versions of this framework used the $384.1M draft figure and a 29% growth rate. The adopted number is higher. The 2023 basis should be verified as operating-only before this figure is quoted in campaign materials.)</em> The City funds its priorities with your money but measures success by dollars spent, not results delivered. That changes now.</p>"},
+  democratic:{label:"A Democratic City",color:"#3D5A8C",emoji:"🗳️",desc:"Referendums, transparency, participation, public-visualization tools.",tagline:"Victorians decide, City Hall listens",takeaway:"A mature democracy doesn't fear the judgment of its people — it relies on it.",intro:"<p>A mature democracy doesn't fear the judgment of its people. It relies on it.</p>"},
 };
 const PILLAR_ORDER = ["foundation", "liveable", "safe", "beautiful", "managed", "democratic"];
 
@@ -162,6 +162,25 @@ const SECTION_INTRO = {
   "Climate Resilience — Practical, Not Ideological": "<p><strong>The Problem</strong></p><p>Climate impacts are here now — cracked stormwater pipes, flooded streets, wildfire smoke days, and extreme heat. Victoria's infrastructure was built for a climate that no longer exists. The question isn't whether to act — it's whether to act practically or symbolically. Victoria declared a climate emergency in 2019. The city has achieved a <strong>31% GHG reduction from 2007 levels</strong> but needs another <strong>19 percentage points by 2030</strong> to meet its 50% target (<em>City of Victoria</em>). The gap is primarily in building emissions — natural gas heating accounts for the largest share. The adoption of BC's highest Zero Carbon Step Code for new construction (effective July 2025) is progressive, but the Climate Friendly Homes retrofit program <strong>lacks published uptake numbers</strong>. The urban forest comprises ~150,000 trees with approximately 30% canopy cover. The CRD's Regional Water Supply Master Plan envisions <strong>$2 billion in capital upgrades over 30 years</strong>, including a $1.1 billion filtration plant at Goldstream (<em>CRD</em>). Victoria's stormwater utility fee is $218.42/year per property. Real foundations worth building on — but the gap between targets and delivery is growing, and the current council has not deployed a single modern efficiency tool to close it.</p>",
 };
 const SECTION_ORDER = ["Honouring the Host Nations", "Housing: A City Where You Can Live", "A City That Works for Families", "A Clean City", "A City Where You Can Get Around", "A City That Welcomes Pets", "A City That Works for Every Body", "Strengthen Public Safety", "Restore Order to Public Spaces", "Better Lighting for Better Safety", "Vision Zero: Trending Toward Zero Traffic Deaths", "The Politics of Beauty", "Liberate Cultural, Festive, and Sporting Life", "Victoria as a Technology Leader", "Climate Resilience — Practical, Not Ideological", "Spend Less, Deliver More", "Grow the Tax Base, Don't Just Tax More", "Lower the Cost of Living — Specific Measures", "Direct Democracy and Transparency"];
+
+/* One sentence per SECTION_INTRO entry, lifted from and faithful to that
+   intro's own text — the always-visible layer above the collapsed "full
+   diagnostic". Not every section carries a diagnostic long enough to need
+   this (many aren't in SECTION_INTRO at all), so this only needs an entry
+   for the ones that are. */
+const SECTION_TAKEAWAY = {
+  "Housing: A City Where You Can Live": "Greater Victoria's rental vacancy rate hit 3.3% in 2025 — the highest since 1999 — yet the City's own Missing Middle housing policy delivered just 61 permits in 2024 against a 150 target.",
+  "A City That Works for Families": "Young families leave Victoria because they cannot find childcare or housing big enough for children — and parents who cannot find childcare cannot work.",
+  "A Clean City": "The DVBA Clean Team removes over 12,000 graffiti tags a year and new ones appear daily; cleanliness is the foundation of civic pride and public safety, not a cosmetic afterthought.",
+  "A City Where You Can Get Around": "Victoria's cycling network is a genuine success story — 95% of residents live within 500 metres of a safe route — but only two highway corridors reach downtown and buses still lack contactless payment.",
+  "A City That Welcomes Pets": "Victoria has one of the highest rates of pet ownership in Canada, and this section covers dog-friendly parks, waste stations, and pet-friendly transportation.",
+  "A City That Works for Every Body": "About one in four Victorians lives with a disability, and large parts of the city remain difficult or impossible to navigate for people with mobility, vision, or cognitive disabilities.",
+  "Strengthen Public Safety": "Crime fell 11% in 2024, but only 59% of residents feel safe downtown by day — down from 83% in 2020 — and VicPD is 50–55 officers short of authorized strength.",
+  "Better Lighting for Better Safety": "The best current evidence shows a 14% reduction in total crime in areas with improved street lighting — and no camera or microphone is required for it to work.",
+  "Vision Zero: Trending Toward Zero Traffic Deaths": "Every traffic death is preventable; this framework commits to a 50% reduction in serious injury and fatality collisions by 2030, trending toward zero.",
+  "The Politics of Beauty": "Victoria is one of Canada's most beautiful cities, but growth pressure, generic street furniture, and uneven maintenance are eroding the character that makes it special.",
+  "Climate Resilience — Practical, Not Ideological": "Victoria has achieved a 31% GHG reduction from 2007 levels but needs another 19 points by 2030 — and the current council has not deployed a single modern efficiency tool to close that gap.",
+};
 
 const COMMITMENTS = [
   {n:1,c:"Residential tax rate",t:"≤6.5% Year 1, ≤5% Year 2, about CPI + population growth Year 3 onward. Capped on the residential rate, not the total levy",b:"9.34% residential in 2026 (7.28% total levy, 4.78% business). Four straight years above inflation plus growth"},
@@ -189,6 +208,34 @@ const FAQ = [
 ];
 
 function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}
+
+/* A short label for the collapsed measure row — "every measure costed" is
+   the brand's own claim, and today the cost was invisible until you opened
+   all 131 of them one at a time. Pattern-matched from the existing budget
+   text rather than a hand-authored figure per measure, so it can never
+   assert a number the source prose doesn't already contain.
+
+   Deliberately conservative: every ambiguous case (a "current cost" framed
+   as the lead sentence, a bare number with no currency or unit attached)
+   returns null — no chip — rather than a guess. A missing chip costs a
+   click to open the card; a wrong one costs the site's credibility on the
+   one figure it's built around. Verified against the full 131-measure
+   corpus: 106 resolve to a chip, 25 fall through clean. */
+function budgetChip(raw){
+  if(!raw) return null;
+  var text=String(raw).replace(/<[^>]+>/g,"").replace(/&amp;/g,"&").trim();
+  var label=text.match(/^[A-Za-z][A-Za-z0-9 ,'"()/-]{0,55}:\s*/);
+  if(label && /current|existing|today|baseline/i.test(label[0])) label=null;
+  var body=label?text.slice(label[0].length):text;
+  body=body.replace(/^(?:estimated|roughly|approximately)\s+/i,"");
+  var neutral=body.match(/^(Revenue-neutral|Revenue-positive|Cost-neutral|Advocacy only)\b/i);
+  if(neutral) return neutral[1];
+  if(/^(no separate|cross-reference only|no net new cost|no direct cost|no incremental cost)\b/i.test(body)) return "No new cost";
+  if(/^(approximately\s+)?(\$0|zero|nil)\b/i.test(body)) return "$0";
+  var m=body.match(/^~?\$?[\d][\d,.]*\s*(?:to|[–—-])?\s*\$?[\d,.]*\s*[KMB]?\s*(?:\/\s*(?:year|yr)\b|per\s*year\b|one[- ]time\b|over\s*\d+\s*years?\b)?/i);
+  if(m && /\d/.test(m[0]) && /[$KMB]|year|yr|one[- ]time/i.test(m[0])) return m[0].replace(/\s+/g," ").trim();
+  return null;
+}
 const $=(s,r)=>(r||document).querySelector(s);
 const $$=(s,r)=>Array.from((r||document).querySelectorAll(s));
 
@@ -200,8 +247,16 @@ MEASURES.forEach(function(m){ if(!SECTION_PILLAR[m.section]) SECTION_PILLAR[m.se
 SECTION_PILLAR["A City That Welcomes Pets"]=SECTION_PILLAR["A City That Welcomes Pets"]||"liveable";
 function sectionPillar(s){ return SECTION_PILLAR[s]; }
 
-function renderPillars(){
-  var c=$("#pgd"); if(!c) return; var h="";
+/* Pure string builders — no DOM read or write, so they run identically in
+   the browser and in the Node prerender script (build/prerender.js), which
+   requires this file for exactly these functions to bake the current data
+   into the committed HTML. renderX() below is the thin DOM half: find the
+   mount, and only build+write into it if it isn't already carrying
+   pre-rendered content — a page loaded with JS re-renders nothing it
+   doesn't have to, and a page loaded without JS keeps what the build script
+   wrote. */
+function buildPillarsHTML(){
+  var h="";
   PILLAR_ORDER.forEach(function(k){
     var p=PILLARS[k];
     var n=MEASURES.filter(function(m){return m.pillar===k;}).length;
@@ -215,7 +270,22 @@ function renderPillars(){
        '<div class="pca" style="color:'+p.color+'">View measures <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>'+
        '</a>';
   });
-  c.innerHTML=h;
+  return h;
+}
+function renderPillars(){
+  var c=$("#pgd"); if(!c) return;
+  if(!c.children.length) c.innerHTML=buildPillarsHTML();
+}
+
+/* One bolded sentence always visible, the source HTML unchanged but
+   collapsed behind it — a reader gets the headline without the wall of
+   text, and expanding it costs nothing extra: the original content is not
+   rewritten, only wrapped. Sections/pillars with no takeaway (nothing here
+   long enough to be a "wall of text") render exactly as before. */
+function diagBlock(takeaway,fullHtml,cls){
+  if(!takeaway||!fullHtml) return fullHtml?'<div class="'+cls+'">'+fullHtml+'</div>':"";
+  return '<p class="pgtakeaway"><strong>'+esc(takeaway)+'</strong></p>'+
+    '<details class="fulldiag"><summary>The full diagnostic</summary><div class="'+cls+'">'+fullHtml+'</div></details>';
 }
 
 /* Stable, readable ids for the section wrappers. Derived from the section
@@ -225,8 +295,8 @@ function slug(s){
     .replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'');
 }
 
-function renderMeasures(){
-  var c=$("#mctr"); if(!c) return; var h="";
+function buildMeasuresHTML(){
+  var h="";
   PILLAR_ORDER.forEach(function(pk){
     var p=PILLARS[pk];
     var items=MEASURES.filter(function(m){return m.pillar===pk;});
@@ -247,14 +317,16 @@ function renderMeasures(){
        '<div class="pgh"><div class="pgt" style="color:'+p.color+'"><span style="font-size:1.1em">'+p.emoji+'</span> '+esc(p.label)+'</div>'+
        '<span class="pgg" style="color:'+p.color+'">'+items.length+' measures · M'+f+'–M'+l+'</span></div>';
     if(p.tagline) h+='<p class="pgtag">'+esc(p.tagline)+'</p>';
-    if(p.intro) h+='<div class="pgintro">'+p.intro+'</div>';
+    h+=diagBlock(p.takeaway,p.intro,"pgintro");
     sections.forEach(function(sec){
       var sm=items.filter(function(m){return m.section===sec;});
       h+='<div id="sec-'+slug(sec)+'" data-sec="'+esc(sec)+'" data-p="'+pk+'"'+(sm.length?'':' data-empty="1"')+'><div class="shd">◆ '+esc(sec)+'</div>';
-      if(SECTION_INTRO[sec]) h+='<div class="secintro">'+SECTION_INTRO[sec]+'</div>';
+      h+=diagBlock(SECTION_TAKEAWAY[sec],SECTION_INTRO[sec],"secintro");
       sm.forEach(function(m){
         var tg=m.tier==="sub"?'<span class="mtg">Sub-measure</span>':"";
         var bu=m.budget?'<div class="mbu"><div class="mbl">Budget Impact</div><div class="mbx">'+m.budget+'</div></div>':"";
+        var chip=budgetChip(m.budget);
+        var chipHtml=chip?'<span class="mchip">'+esc(chip)+'</span>':"";
         var search=(m.title+" "+m.body+" "+(m.budget||"")+" M"+m.id+" "+m.section).toLowerCase().replace(/<[^>]+>/g," ");
         /* Collapsed by default: 100 expanded measures made the homepage 132
            screens tall on mobile. The <h3> stays inside <summary> so the
@@ -262,7 +334,7 @@ function renderMeasures(){
         h+='<details class="mi mit" id="m'+esc(m.id)+'" data-p="'+pk+'" data-s="'+esc(search)+'">'+
            '<summary class="misum">'+
            '<div class="mnu">M'+esc(m.id)+'</div>'+
-           '<div class="mb2"><h3 class="mti" style="color:'+p.color+'">'+esc(m.title)+tg+'</h3></div>'+
+           '<div class="mb2"><h3 class="mti" style="color:'+p.color+'">'+esc(m.title)+tg+'</h3>'+chipHtml+'</div>'+
            '<svg class="mchev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>'+
            '</summary>'+
            '<div class="mbody">'+m.body+'</div>'+bu+
@@ -276,7 +348,11 @@ function renderMeasures(){
     });
     h+='</div>';
   });
-  c.innerHTML=h;
+  return h;
+}
+function renderMeasures(){
+  var c=$("#mctr"); if(!c) return;
+  if(!c.children.length) c.innerHTML=buildMeasuresHTML();
 }
 
 var cf="all", cs="", lastCs="", bulk=false;
@@ -368,24 +444,34 @@ function setupPrint(){
   });
 }
 
-function renderScorecard(){
-  var tb=$("#ctbl"); if(!tb) return; var t="", c="";
+function buildCommitmentsHTML(){
+  var t="", c="";
   COMMITMENTS.forEach(function(x){
     t+='<tr><td class="cnu">'+x.n+'</td><td class="ccm">'+esc(x.c)+'</td><td>'+esc(x.t)+'</td><td class="cba">'+esc(x.b)+'</td></tr>';
     c+='<div class="scc"><div class="scr"><div class="scn">'+x.n+'</div><div class="scl">'+esc(x.c)+'</div></div><div class="sme"><strong>Target:</strong> '+esc(x.t)+'</div><div class="sme"><strong>Baseline:</strong> '+esc(x.b)+'</div></div>';
   });
-  tb.innerHTML=t;
-  var cc=$("#ccrd"); if(cc) cc.innerHTML=c;
+  return {table:t,cards:c};
+}
+function renderScorecard(){
+  var tb=$("#ctbl"); if(!tb) return;
+  if(tb.children.length) return;
+  var out=buildCommitmentsHTML();
+  tb.innerHTML=out.table;
+  var cc=$("#ccrd"); if(cc) cc.innerHTML=out.cards;
 }
 
-function renderFaq(){
-  var c=$("#fqc"); if(!c) return; var h="";
+function buildFaqHTML(){
+  var h="";
   FAQ.forEach(function(i){
     h+='<details class="fqi"><summary class="fqs"><span class="fqq">"'+esc(i.q)+'"</span>'+
        '<span class="fqp"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></summary>'+
        '<div class="fqa">'+esc(i.a)+'</div></details>';
   });
-  c.innerHTML=h;
+  return h;
+}
+function renderFaq(){
+  var c=$("#fqc"); if(!c) return;
+  if(!c.children.length) c.innerHTML=buildFaqHTML();
 }
 
 /* Back-to-top: reveals itself once you are past the first screen. It is a real
@@ -415,8 +501,24 @@ function applyPillarFromQuery(){
   if(k && PILLARS[k]) setFilter(k);
 }
 
-document.addEventListener("DOMContentLoaded",function(){
-  renderPillars(); renderMeasures(); renderScorecard(); renderFaq();
-  setupFilters(); setupBackToTop(); setupPrint(); checkSubscribed();
-  applyPillarFromQuery();
-});
+/* Guarded rather than unconditional: build/prerender.js requires this file
+   under Node to reach the pure buildXHTML() functions above, and Node has
+   no document. Harmless in the browser, where document always exists. */
+if(typeof document!=="undefined"){
+  document.addEventListener("DOMContentLoaded",function(){
+    renderPillars(); renderMeasures(); renderScorecard(); renderFaq();
+    setupFilters(); setupBackToTop(); setupPrint(); checkSubscribed();
+    applyPillarFromQuery();
+  });
+}
+
+/* CommonJS export, reached only under Node (a browser never defines
+   `module`) — lets build/prerender.js pull the pure builders and their
+   backing data without duplicating either in a second file. */
+if(typeof module!=="undefined" && module.exports){
+  module.exports={
+    PILLARS,PILLAR_ORDER,MEASURES,SECTION_INTRO,SECTION_TAKEAWAY,SECTION_ORDER,
+    COMMITMENTS,FAQ,
+    buildPillarsHTML,buildMeasuresHTML,buildCommitmentsHTML,buildFaqHTML
+  };
+}
