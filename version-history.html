@@ -98,6 +98,23 @@
 <li><a href="#upcoming">Upcoming</a></li>
 </ol>
 </nav>
+<!-- Sticky section navigator. The table of contents above stops being
+     reachable a screen or two in — this page runs 12 dated release entries
+     under 5 sections — so this control travels with the reader. The option
+     list is built by jumpnav.js from the page's own headings, so it cannot
+     drift out of sync with the document. -->
+<div class="jumpbar" id="jumpbar">
+<div class="jumpin">
+<label class="jl2" for="jumpsel">Jump to</label>
+<select id="jumpsel" class="jumpsel" aria-label="Jump to a section">
+<option value="">Choose a section…</option>
+</select>
+<button type="button" class="jumpbtn" id="jumpprev" aria-label="Previous section">↑</button>
+<button type="button" class="jumpbtn" id="jumpnext" aria-label="Next section">↓</button>
+<a class="jumpbtn jumptop" href="#main" aria-label="Back to top">Top</a>
+</div>
+<div class="jumpprog" aria-hidden="true"><i id="jumpfill"></i></div>
+</div>
 
 <div class="prose">
 
@@ -228,5 +245,6 @@ The 14 appended changelogs run to roughly 11,400 words. They are the record of <
 
 <div id="footer-mount"></div>
 <script src="site.js"></script>
+<script src="jumpnav.js"></script>
 </body>
 </html>

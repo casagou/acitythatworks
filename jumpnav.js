@@ -99,15 +99,26 @@ function init(){
     lastIdx=indexOfId(sel.value);
     goto(sel.value);
   });
-  /* Step from wherever the reader actually is. lastIdx is authoritative right
-     after a jump; otherwise fall back to the last heading above the fold. */
-  function currentIdx(){
+  /* indexFromScroll() reads where the page is scrolled to RIGHT NOW. That is
+     correct once, on load, before any button has been pressed. It is wrong
+     inside step(): a smooth scroll takes a few hundred ms to arrive, so a
+     second tap on "next" fired before the first scroll finishes read a
+     window.scrollY that hadn't moved yet, recomputed the same (or a stale)
+     index, and stepping from it landed back near the previous section — the
+     "down doesn't advance more than a few times in a row" bug. lastIdx is now
+     the only thing step() consults, updated synchronously the instant a step
+     is taken rather than re-derived from scroll position mid-animation. The
+     passive scroll listener still keeps lastIdx (and the select) truthful
+     during ordinary free scrolling, when no animation is racing it. */
+  function indexFromScroll(){
     var y=window.scrollY+(document.querySelector('header').offsetHeight||56)+90, idx=-1;
     for(var i=0;i<targets.length;i++){ if(targets[i].getBoundingClientRect().top+window.scrollY<=y) idx=i; }
-    return idx>=0?idx:lastIdx;
+    return idx;
   }
+  lastIdx=indexFromScroll();
   function step(dir){
-    var n=Math.min(Math.max(currentIdx()+dir,0),targets.length-1);
+    var base=lastIdx>=0?lastIdx:indexFromScroll();
+    var n=Math.min(Math.max(base+dir,0),targets.length-1);
     lastIdx=n;
     if(targets[n]) goto(targets[n].id);
   }
@@ -117,13 +128,13 @@ function init(){
   var prev=document.getElementById('jumpprev'), next=document.getElementById('jumpnext');
   if(prev) prev.addEventListener('click',function(){step(-1)});
   if(next) next.addEventListener('click',function(){step(1)});
-  /* keep the select showing where the reader actually is */
+  /* keep the select — and lastIdx — showing where the reader actually is */
   var tick=false;
   window.addEventListener('scroll',function(){
     if(tick) return; tick=true;
     requestAnimationFrame(function(){
-      var y=window.scrollY+(document.querySelector('header').offsetHeight||56)+90, cur='';
-      for(var i=0;i<targets.length;i++){ if(targets[i].getBoundingClientRect().top+window.scrollY<=y) cur=targets[i].id; }
+      var idx=indexFromScroll(), cur=idx>=0?targets[idx].id:'';
+      if(idx>=0) lastIdx=idx;
       if(cur && sel.value!==cur){
         var has=false;
         for(var j=0;j<sel.options.length;j++){ if(sel.options[j].value===cur){has=true;break;} }
@@ -170,6 +181,11 @@ function init(){
     var el=document.getElementById(id);
     if(!el) return;
     var t=reveal(el);
+    /* A deep link may land on something that isn't one of the stepper's own
+       targets (a candidate profile, say). indexOfId returns -1 there, which
+       is correct: step() already falls back to reading the live scroll
+       position whenever lastIdx is -1. */
+    lastIdx=indexOfId(id);
     /* Force a layout flush before measuring. On the homepage the 131 measures
        are injected by innerHTML moments earlier, and scrolling against a
        layout the browser has not computed yet lands nowhere. */
