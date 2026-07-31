@@ -30,7 +30,7 @@
 '<p class="fdc">A Citizens\' Framework for Victoria 2026. Every measure costed. Zero ideology. Just results.</p>' +
 '<div class="fsoc">' + socialLinks('') + '</div>' +
 '<p class="fhandle">Instagram &amp; Facebook <strong>@CityThatWorksYYJ</strong> · X <strong>@YYJThatWorks</strong></p>' +
-'<p class="fvr">v1.9 · July 30, 2026</p>' +
+'<p class="fvr">v1.9.1 · July 30, 2026</p>' +
 '</div>' +
 '<div>' +
 '<div class="fhd">The Framework</div>' +

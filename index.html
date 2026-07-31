@@ -21,6 +21,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Public+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="charts.css">
 <style>
 .hg{display:grid;grid-template-columns:1fr;gap:32px;margin-top:40px}
 @media(min-width:768px){.hg{grid-template-columns:7fr 5fr;gap:40px}}
@@ -98,7 +99,16 @@
 @media(min-width:640px){.dct{font-size:20px}}
 .dcx{font-size:14px;color:#44403c;line-height:1.55}
 .dcc{display:inline-flex;align-items:center;gap:6px;margin-top:16px;font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.13em;color:var(--navy);opacity:.7}
-.fb{position:sticky;top:var(--h);z-index:20;margin:24px -16px 0;padding:12px 16px;background:rgba(250,247,240,.95);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid rgba(26,54,104,.12)}
+/* Sits below the sticky section navigator rather than under it: both are
+   sticky and both used to claim top:var(--h), so inside Every Measure they
+   were occupying the same 66px. 66px is the navigator's measured height.
+
+   Stacked, though, the two bars plus the header came to 257px — 32% of a
+   375x812 phone. So they are made mutually exclusive instead (see .fmeas
+   below): inside Every Measure the six pillar pills are the section navigator
+   for that content, and they lead to the same six destinations the jump
+   select offers. Exactly one bar is on screen at a time. */
+.fb{position:sticky;top:calc(var(--h) + 66px);z-index:19;margin:24px -16px 0;padding:12px 16px;background:rgba(250,247,240,.95);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid rgba(26,54,104,.12)}
 @media(min-width:640px){.fb{margin:32px -24px 0;padding:12px 24px}}
 .fr{display:flex;align-items:center;gap:12px;margin-bottom:12px}
 .sw{position:relative;flex:1;max-width:420px}
@@ -169,6 +179,22 @@
 .mbl{font-family:'JetBrains Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:.2em;opacity:.7;color:var(--navy);margin-bottom:4px}
 .mbx{font-size:13px;color:var(--navy);line-height:1.5}
 .mbx strong{font-weight:600}
+/* Per-measure permalink. Lives in the open card rather than in the summary
+   row, because a link inside a <summary> is a control nested in a control and
+   both keyboard and screen-reader handling get muddy. */
+.mlink{display:inline-flex;align-items:center;min-height:44px;margin-top:6px;font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.14em;color:var(--gold-ink);text-decoration:none;border-bottom:1px solid transparent}
+.mlink:hover{border-bottom-color:var(--gold)}
+.mlink::before{content:"◆";margin-right:6px;font-size:8px}
+/* A measure arrived at by hash has to clear both the header and the sticky
+   filter bar, which the plain scroll-padding-top does not account for. */
+details.mi[id]{scroll-margin-top:calc(var(--h) + 150px)}
+/* Which card a shared link actually landed on. jumpnav.js adds .hl. */
+details.mi.hl{background:rgba(212,168,67,.09);box-shadow:inset 3px 0 0 var(--gold)}
+/* Set on <html> while the filter bar is the bar in charge — see the .fb note.
+   visibility rather than display so the navigator keeps its place in normal
+   flow and the swap costs no reflow. */
+.fmeas .jumpbar{visibility:hidden}
+.fmeas .fb{top:var(--h)}
 .st2{width:100%;border-collapse:collapse;margin-top:24px;font-size:14px;display:none}
 @media(min-width:640px){.st2{display:table}}
 .st2 thead tr{border-bottom:1px solid rgba(26,54,104,.18)}
@@ -344,7 +370,7 @@ h2.adt em{font-style:italic;color:var(--gold-ink);font-weight:400}
 <div class="c">
 
 <section class="hero rv">
-<div class="eyb"><span>A Citizens' Framework</span><span class="dot">◆</span><span>Victoria, BC · 2026</span><span class="dot">◆</span><span style="opacity:.7">v1.9 · July 30, 2026</span></div>
+<div class="eyb"><span>A Citizens' Framework</span><span class="dot">◆</span><span>Victoria, BC · 2026</span><span class="dot">◆</span><span style="opacity:.7">v1.9.1 · July 30, 2026</span></div>
 <h1 class="ht">A city that <em>works</em>.</h1>
 <div class="hsub">Proven ideas. Measurable results.</div>
 <div class="hg">
@@ -372,6 +398,128 @@ h2.adt em{font-style:italic;color:var(--gold-ink);font-weight:400}
 </div>
 </section>
 
+<!-- Every figure on the left below is one of the Diagnostic numbers directly
+     above; every figure on the right is a commitment stated elsewhere on this
+     page. Nothing here is derived or projected. Where the two sides are not
+     the same unit, the right-hand side is stated in words rather than given a
+     bar, because a bar implies a comparison that would not be honest. -->
+<figure class="fig rv">
+<div class="fig-e">◆ The comparison</div>
+<h2 class="fig-t" style="border:none;padding:0">The record, and what we commit to instead.</h2>
+<p class="fig-s">The left column is Victoria's published record. The right column is what this framework binds itself to — every one of them costed in <a href="#measures">Every Measure</a> and tracked by the <a href="#scorecard">12 Commitments</a>.</p>
+<div class="fig-l">
+<span><i class="k-now"></i>The record today</span>
+<span><i class="k-com"></i>What we commit to</span>
+</div>
+
+<div class="cmp">
+
+<div class="cmp-r">
+<div class="cmp-q">Residential property tax increase</div>
+<div class="cmp-b">
+<div class="cmp-i now">
+<div class="cmp-k">Levied for 2026</div>
+<div class="cmp-t"><i style="width:93.4%"></i></div>
+<div class="cmp-v">9.34%</div>
+<div class="cmp-x">13.3% opening draft, 7.28% adopted aggregate, split 9.34% residential / 4.78% business.</div>
+</div>
+<div class="cmp-i com">
+<div class="cmp-k">Year 1 cap</div>
+<div class="cmp-t"><i style="width:65%"></i></div>
+<div class="cmp-v">≤ 6.5%</div>
+<div class="cmp-x">Then ≤ 5.0% in Year 2 and ~3.5% after — CPI plus population growth. Exceeding the cap takes 6 of 9 Council votes and a public explanation on the record.</div>
+</div>
+</div>
+</div>
+
+<div class="cmp-r">
+<div class="cmp-q">Missing-middle housing permits, 2024</div>
+<div class="cmp-b">
+<div class="cmp-i now">
+<div class="cmp-k">Delivered</div>
+<div class="cmp-t"><i style="width:40.7%"></i></div>
+<div class="cmp-v">61</div>
+<div class="cmp-x">Against the City's own target of 150 — 41% of it.</div>
+</div>
+<div class="cmp-i com">
+<div class="cmp-k">The City's target</div>
+<div class="cmp-t"><i style="width:100%"></i></div>
+<div class="cmp-v">150</div>
+<div class="cmp-x">A pre-approved pattern book with an automatic fast lane, plus a 24-month life-safety-only amnesty for the suites that already exist. The binding constraint is no longer zoning — it is cost and delay.</div>
+</div>
+</div>
+</div>
+
+<div class="cmp-r">
+<div class="cmp-q">Feeling safe downtown, by day</div>
+<div class="cmp-b">
+<div class="cmp-i now">
+<div class="cmp-k">Today</div>
+<div class="cmp-t"><i style="width:59%"></i></div>
+<div class="cmp-v">59%</div>
+<div class="cmp-x">Down from 83% in 2020 — a fall of 24 points in six years.</div>
+</div>
+<div class="cmp-i com">
+<div class="cmp-k">The measures</div>
+<div class="cmp-v">A staffed downtown</div>
+<div class="cmp-x">A Downtown Public Order Team, bylaw enforcement extended to 6 AM – 10 PM seven days a week, and civilian crisis response so the right responder takes the call.</div>
+</div>
+</div>
+</div>
+
+<div class="cmp-r">
+<div class="cmp-q">Operating budget, three-year change</div>
+<div class="cmp-b">
+<div class="cmp-i now">
+<div class="cmp-k">2023 → 2026 adopted</div>
+<div class="cmp-t"><i style="width:100%"></i></div>
+<div class="cmp-v">+31.4%</div>
+<div class="cmp-x">$300.0M → $394.1M, plus $160.1M capital.</div>
+</div>
+<div class="cmp-i com">
+<div class="cmp-k">The discipline</div>
+<div class="cmp-v">Spend smarter</div>
+<div class="cmp-x">A zero-based budget review, competitive testing of services against the in-house bid, and a published debt rule — all governed by the same 6-of-9 standard.</div>
+</div>
+</div>
+</div>
+
+<div class="cmp-r">
+<div class="cmp-q">Spending on homelessness since 2023</div>
+<div class="cmp-b">
+<div class="cmp-i now">
+<div class="cmp-k">Spent</div>
+<div class="cmp-v">$25M+</div>
+<div class="cmp-x">With no published outcomes attached to it.</div>
+</div>
+<div class="cmp-i com">
+<div class="cmp-k">Reported</div>
+<div class="cmp-v">Every quarter</div>
+<div class="cmp-x">12 commitments with a named number against each, published quarterly whether or not they are being met.</div>
+</div>
+</div>
+</div>
+
+<div class="cmp-r">
+<div class="cmp-q">Modern efficiency tools deployed</div>
+<div class="cmp-b">
+<div class="cmp-i now">
+<div class="cmp-k">In use</div>
+<div class="cmp-v">$0</div>
+<div class="cmp-x">No zero-based budgeting, no AI, no smart infrastructure.</div>
+</div>
+<div class="cmp-i com">
+<div class="cmp-k">Costed and funded</div>
+<div class="cmp-v">$8.2–14M / yr</div>
+<div class="cmp-x">Operating savings at steady state, from competitive bidding, a zero-based review, administrative efficiency and smart streetlighting.</div>
+</div>
+</div>
+</div>
+
+</div>
+<figcaption class="fig-c">Left column: the Diagnostic above. Right column: the caps in <a href="#balance">The Balance Sheet</a> and the measures in <a href="#measures">Every Measure</a>. <strong>Bars are shown only where both sides share a unit</strong> — where they do not, the commitment is stated in words rather than drawn to a scale it does not belong on.</figcaption>
+</figure>
+
 <nav class="toc" aria-label="On this page">
 <div class="toc-h">◆ On this page</div>
 <ol>
@@ -388,7 +536,25 @@ h2.adt em{font-style:italic;color:var(--gold-ink);font-weight:400}
 </ol>
 </nav>
 
-<section id="pillars" class="sc rv">
+<!-- Sticky section navigator. This page is 43 screens on a desktop and 64 on a
+     phone, over half of it inside Every Measure, so the table of contents above
+     stops being reachable almost immediately. Same control as the savings
+     analysis and the comparison matrix. The option list is built by jumpnav.js
+     from the [data-jump-label] sections, so it cannot drift from the page. -->
+<div class="jumpbar" id="jumpbar" data-jump-targets="section[data-jump-label], .pgr[data-jump-label]">
+<div class="jumpin">
+<label class="jl2" for="jumpsel">Jump to</label>
+<select id="jumpsel" class="jumpsel" aria-label="Jump to a section">
+<option value="">Choose a section…</option>
+</select>
+<button type="button" class="jumpbtn" id="jumpprev" aria-label="Previous section">↑</button>
+<button type="button" class="jumpbtn" id="jumpnext" aria-label="Next section">↓</button>
+<a class="jumpbtn jumptop" href="#top" aria-label="Back to top">Top</a>
+</div>
+<div class="jumpprog" aria-hidden="true"><i id="jumpfill"></i></div>
+</div>
+
+<section id="pillars" data-jump-label="Five Pillars" class="sc rv">
 <div class="se">◆ Structure</div>
 <h2 class="st">Five Pillars · One Foundation</h2>
 <p class="si">Every measure belongs to one of five pillars, anchored by a foundational commitment to right relations with the host Nations. Every one costed.</p>
@@ -400,7 +566,7 @@ h2.adt em{font-style:italic;color:var(--gold-ink);font-weight:400}
 </div>
 </section>
 
-<section id="how-to-use" class="sc rv">
+<section id="how-to-use" data-jump-label="How to Use" class="sc rv">
 <div class="se">◆ How to Engage</div>
 <h2 class="st">How to use this framework.</h2>
 <p class="si">There is <strong>no exclusivity</strong> and no campaign attached to this document. The goal is to raise the standard of debate — to make it normal for Victoria candidates to publish costed, measurable, sourced platforms with quarterly accountability.</p>
@@ -454,7 +620,7 @@ h2.adt em{font-style:italic;color:var(--gold-ink);font-weight:400}
 </div>
 </div>
 
-<section id="method" class="sc rv">
+<section id="method" data-jump-label="The Method" class="sc rv">
 <div class="se">◆ How this framework was built</div>
 <h2 class="st">0% ideology. 100% pragmatic.</h2>
 <p class="si">We started where the truth is most visible: the budget. Politicians make promises; numbers don't lie. Victoria's operating budget grew <strong>31.4% in three years</strong>, from $300.0M in 2023 to the <strong>$394.1M adopted for 2026</strong>, alongside $160.1M in capital — with VicPD's budget nearly doubling in a decade, from $50.6M to $86.8M requested for 2026, and no competitive benchmarking, AI, or smart infrastructure deployed. For every problem a Victorian faces daily, we applied the same six-step method.</p>
@@ -481,7 +647,7 @@ h2.adt em{font-style:italic;color:var(--gold-ink);font-weight:400}
 </div>
 </div>
 
-<section id="v2030" class="sc rv">
+<section id="v2030" data-jump-label="Victoria in 2030" class="sc rv">
 <div class="se">◆ What delivery looks like</div>
 <h2 class="st">Victoria in <em>2030.</em></h2>
 <p class="si" style="font-style:italic">Everything below is the result of these measures being delivered. It is written in the present tense because that is the point of a plan.</p>
@@ -510,7 +676,7 @@ h2.adt em{font-style:italic;color:var(--gold-ink);font-weight:400}
 <p class="si" style="font-size:15px;margin-top:16px">A framework that discusses only the City and the senior governments leaves out a large and fast-growing share of what a household actually pays. That is why the regional level is on this diagram.</p>
 </div>
 
-<section id="measures" class="sc rv">
+<section id="measures" data-jump-label="Every Measure" class="sc rv">
 <div class="se">◆ The Substance</div>
 <h2 class="st">Every measure, in full.</h2>
 <p class="si">Every measure, with its full text and budget impact. <strong>The public number is the 12 Commitments scorecard</strong>, reported quarterly — the framework carries far more than that, and deliberately no longer states a total, because three earlier versions published a count that did not survive a hand count. Filter by pillar, or search by keyword.</p>
@@ -536,7 +702,7 @@ h2.adt em{font-style:italic;color:var(--gold-ink);font-weight:400}
 <div id="mctr"></div>
 </section>
 
-<section id="scorecard" class="sc rv">
+<section id="scorecard" data-jump-label="12 Commitments" class="sc rv">
 <div class="se">◆ Accountability</div>
 <h2 class="st">12 commitments. Measured every quarter.</h2>
 <p class="si">Twelve numerical targets, each tracked publicly, each with a baseline. Every quarter, the scorecard is published. No excuses, no spin — just results.</p>
@@ -544,7 +710,7 @@ h2.adt em{font-style:italic;color:var(--gold-ink);font-weight:400}
 <div id="ccrd" class="scm"></div>
 </section>
 
-<section id="balance" class="sc rv">
+<section id="balance" data-jump-label="Balance Sheet" class="sc rv">
 <div class="se">◆ How we pay for it</div>
 <h2 class="st">The Balance Sheet.</h2>
 <p class="si">A safer, cleaner, greener, better-managed city — with tax increases on a credible glide path back to inflation + growth. Spend smarter, not more.</p>
@@ -578,6 +744,117 @@ h2.adt em{font-style:italic;color:var(--gold-ink);font-weight:400}
 <p style="font-size:12px;color:#57534e;font-style:italic;line-height:1.5;margin:16px 0 0">The cap is on the <strong>residential rate</strong>, not total revenue — a cap on the total would let a council deliver a 9% homeowner bill and describe it as 6.5%. Any increase above the cap requires a supermajority of Council, <strong>6 of the 9 members</strong> (the mayor plus 8 councillors), with a public explanation on the record. The same 6-of-9 standard governs the M66b refund, the M66c debt rule, the M66d utility discipline and the M50b arts floor.</p>
 </div>
 </div>
+
+<!-- The four points on the moss line are the four figures in the Tax Glide
+     Path box directly above. The rust line is the 2026 rate held flat — a
+     reference for reading the descent against, not a forecast of anyone's
+     policy. Deliberately not translated into dollars on a typical bill: that
+     needs an assessed-value figure this framework does not publish. -->
+<figure class="fig rv" style="max-width:none;margin-top:40px">
+<div class="fig-e">◆ The glide path</div>
+<h2 class="fig-t" style="border:none;padding:0">Back to inflation plus growth, in three budgets.</h2>
+<p class="fig-s">Each cap is on the residential rate, not on total revenue. Going above any of them takes 6 of 9 Council votes and a public explanation on the record.</p>
+<div class="fig-l">
+<span><i class="k-ref"></i>2026 rate, held flat (reference)</span>
+<span><i class="k-com"></i>Committed caps</span>
+</div>
+<svg class="gp" viewBox="0 0 640 290" role="img" aria-labelledby="gp-t gp-d" preserveAspectRatio="xMidYMid meet">
+<title id="gp-t">Residential tax increase, committed glide path</title>
+<desc id="gp-d">The 2026 residential increase as levied is 9.34 percent. The committed caps are 6.5 percent or less in Year 1, 5.0 percent or less in Year 2, and about 3.5 percent from Year 3 — CPI plus population growth. A flat reference line marks the 2026 rate carried across for comparison.</desc>
+
+<!-- gridlines at 0,2,4,6,8,10% — y = 240 - pct*20 -->
+<line class="gl" x1="70" y1="240" x2="620" y2="240"/>
+<line class="gl" x1="70" y1="200" x2="620" y2="200"/>
+<line class="gl" x1="70" y1="160" x2="620" y2="160"/>
+<line class="gl" x1="70" y1="120" x2="620" y2="120"/>
+<line class="gl" x1="70" y1="80"  x2="620" y2="80"/>
+<line class="gl" x1="70" y1="40"  x2="620" y2="40"/>
+<text class="lab" x="58" y="245" text-anchor="end">0%</text>
+<text class="lab" x="58" y="205" text-anchor="end">2%</text>
+<text class="lab" x="58" y="165" text-anchor="end">4%</text>
+<text class="lab" x="58" y="125" text-anchor="end">6%</text>
+<text class="lab" x="58" y="85"  text-anchor="end">8%</text>
+<text class="lab" x="58" y="45"  text-anchor="end">10%</text>
+<line class="ax" x1="70" y1="240" x2="620" y2="240"/>
+
+<!-- reference: 9.34% carried flat  → y = 240 - 9.34*20 = 53.2 -->
+<path class="ref" d="M100 53.2 H600"/>
+<text class="lab lab-s v-now" x="600" y="43" text-anchor="end">2026 rate held flat</text>
+
+<!-- committed step path: 9.34 → 6.5 → 5.0 → 3.5
+     y: 53.2, 110, 140, 170   x centres: 100, 267, 434, 600 -->
+<path class="com" d="M100 53.2 H183 V110 H350 V140 H517 V170 H600"/>
+<circle class="dot" cx="100" cy="53.2" r="6"/>
+<circle class="dot" cx="267" cy="110" r="6"/>
+<circle class="dot" cx="434" cy="140" r="6"/>
+<circle class="dot" cx="600" cy="170" r="6"/>
+
+<text class="val v-now" x="100" y="36" text-anchor="middle">9.34%</text>
+<text class="val v-com" x="267" y="98" text-anchor="middle">≤ 6.5%</text>
+<text class="val v-com" x="434" y="128" text-anchor="middle">≤ 5.0%</text>
+<text class="val v-com" x="600" y="158" text-anchor="end">~3.5%</text>
+
+<text class="lab" x="100" y="264" text-anchor="middle">2026</text>
+<text class="lab" x="267" y="264" text-anchor="middle">Year 1</text>
+<text class="lab" x="434" y="264" text-anchor="middle">Year 2</text>
+<text class="lab" x="600" y="264" text-anchor="end">Year 3+</text>
+<text class="lab lab-s" x="100" y="282" text-anchor="middle">as levied</text>
+<text class="lab lab-s" x="600" y="282" text-anchor="end">CPI + growth</text>
+</svg>
+<figcaption class="fig-c">Source: the Tax Glide Path above. <strong>The reference line is not a forecast</strong> — it is the 2026 rate drawn flat so the committed descent can be read against something. What a given rate costs a given household depends on assessed value, which this framework does not publish, so no dollar figure is shown.</figcaption>
+</figure>
+
+<!-- Top-level categories from the summary table in the Savings & Revenue
+     Analysis, not the itemised list above: those items carry qualifiers that
+     make them un-summable, and a chart that appeared to add them to the
+     published headroom would be claiming arithmetic the analysis does not.
+     These three reconcile exactly — 8.2 + 9.5 − 13.3 = 4.4, and
+     14 + 18 − 18.0 = 14.0 — and the pessimistic pairing is the same numbers
+     with low inflows against high outflows: 8.2 + 9.5 − 18.0 = −0.3. -->
+<figure class="fig rv" style="max-width:none">
+<div class="fig-e">◆ Where the headroom comes from</div>
+<h2 class="fig-t" style="border:none;padding:0">Every range published, including the one that hurts.</h2>
+<p class="fig-s">Annual figures at steady state, at the end of a four-year implementation. Bars show each published low-to-high band on a shared scale.</p>
+<div class="fig-l">
+<span><i class="k-com"></i>Savings and new revenue</span>
+<span><i class="k-now"></i>New costs and debt service</span>
+</div>
+
+<div class="rng">
+<div class="rng-scale" aria-hidden="true"><span></span><span class="sc-in"><span style="left:0%">−$20M</span><span style="left:25%">−$10M</span><span style="left:50%">0</span><span style="left:75%">+$10M</span><span style="left:100%">+$20M</span></span><span></span></div>
+
+<div class="rng-r pos">
+<div class="rng-l">Operating savings</div>
+<div class="rng-t"><span class="rng-z" style="left:50%"></span><i style="left:70.5%;width:14.5%"></i></div>
+<div class="rng-v">+$8.2–14M</div>
+</div>
+
+<div class="rng-r pos">
+<div class="rng-l">New ongoing operating revenue and avoided costs</div>
+<div class="rng-t"><span class="rng-z" style="left:50%"></span><i style="left:73.75%;width:21.25%"></i></div>
+<div class="rng-v">+$9.5–18M</div>
+</div>
+
+<div class="rng-r neg">
+<div class="rng-l">New recurring operating costs plus capital debt service</div>
+<div class="rng-t"><span class="rng-z" style="left:50%"></span><i style="left:5%;width:11.75%"></i></div>
+<div class="rng-v">−$13.3–18.0M</div>
+</div>
+
+<div class="rng-r net">
+<div class="rng-l">Net fiscal headroom — central pairing</div>
+<div class="rng-t"><span class="rng-z" style="left:50%"></span><i style="left:60.75%;width:24.25%"></i></div>
+<div class="rng-v">+$4.3–14.0M</div>
+</div>
+
+<div class="rng-r neg">
+<div class="rng-l">Net fiscal headroom — pessimistic pairing <em style="color:#57534e;font-style:italic">(low savings against high costs)</em></div>
+<div class="rng-t"><span class="rng-z" style="left:50%"></span><i style="left:49.25%;width:.75%"></i></div>
+<div class="rng-v">≈ −$0.3M</div>
+</div>
+</div>
+<figcaption class="fig-c">Source: the summary table in the <a href="savings.html">Savings &amp; Revenue Analysis</a>, which carries the line-by-line derivation. <strong>The pessimistic pairing is published on purpose</strong>: pair the low savings against the high costs and the headroom is roughly break-even. Any analysis quoting only the central range is being generous to us.</figcaption>
+</figure>
 </section>
 
 <div class="rv" style="margin-top:64px">
@@ -635,7 +912,7 @@ h2.adt em{font-style:italic;color:var(--gold-ink);font-weight:400}
 </div>
 </div>
 
-<section id="neighbourhoods" class="sc rv">
+<section id="neighbourhoods" data-jump-label="Neighbourhood Priorities" class="sc rv">
 <div class="se">◆ Implementation</div>
 <h2 class="st">Neighbourhood priorities.</h2>
 <p class="si">Every neighbourhood in Victoria has its own character and its own concerns. This framework is city-wide, but implementation must be neighbourhood-specific.</p>
@@ -647,14 +924,14 @@ h2.adt em{font-style:italic;color:var(--gold-ink);font-weight:400}
 </div>
 </section>
 
-<section id="faq" class="sc rv">
+<section id="faq" data-jump-label="Q&amp;A" class="sc rv">
 <div class="se">◆ Responses to common criticisms</div>
 <h2 class="st">The honest answers.</h2>
 <p class="si">The questions we hear most — and the answers we stand by. More are answered on the <a href="faq.html" style="color:var(--navy)">full FAQ page</a>.</p>
 <div id="fqc" class="fql"></div>
 </section>
 
-<section id="adopt" class="ad">
+<section id="adopt" data-jump-label="Endorse / Subscribe" class="ad">
 <div class="adh rv">
 <div class="se">◆ The Choice on October 17, 2026</div>
 <h2 class="adt">This framework is <em>open.</em></h2>
@@ -700,7 +977,38 @@ h2.adt em{font-style:italic;color:var(--gold-ink);font-weight:400}
 <div id="footer-mount"></div>
 <script src="site.js"></script>
 <script src="measures.js"></script>
+<!-- After measures.js: the pillar groups this navigates are rendered from that
+     file's DOMContentLoaded handler, and script order puts it first. -->
+<script src="jumpnav.js"></script>
 <script>
+/* Hands the sticky slot to whichever bar is the useful one here. Every Measure
+   is over half this page, and inside it the filter bar is the navigator: its
+   six pillar pills reach the same six groups the jump select lists, and it
+   also carries the search box. Outside it, the jump select is the only way to
+   move between sections. Showing both cost 257px of a 812px phone screen.
+
+   The handover point is where the filter bar starts sticking, so the bars
+   swap exactly once on the way in and once on the way out. */
+(function(){
+  var meas=document.getElementById('measures'), fb=document.querySelector('.fb');
+  if(!meas||!fb) return;
+  var root=document.documentElement, tick=false;
+  function sync(){
+    var hdr=document.querySelector('header'), h=hdr?hdr.offsetHeight:56;
+    var r=meas.getBoundingClientRect();
+    /* Measures owns the slot once its top has passed under the header and
+       while its bottom is still below — i.e. exactly while the filter bar has
+       something left to filter on screen. */
+    root.classList.toggle('fmeas', r.top<=h && r.bottom>h+fb.offsetHeight);
+  }
+  window.addEventListener('scroll',function(){
+    if(tick) return; tick=true;
+    requestAnimationFrame(function(){ sync(); tick=false; });
+  },{passive:true});
+  window.addEventListener('resize',sync,{passive:true});
+  sync();
+})();
+
 /* Quarterly Digest signup — posts to Google Form (entry.533410964) via a hidden
    iframe target. A real form POST is accepted cross-origin; fetch(no-cors) is not. */
 (function(){

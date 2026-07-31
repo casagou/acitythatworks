@@ -1,13 +1,70 @@
-/* A City That Works — sticky section navigator, shared by the two long
-   documents (the comparison matrix and the savings analysis). Kept in one file
-   rather than pasted into each page, because two copies of a behaviour drift.
+/* A City That Works — sticky section navigator, shared by every long document.
+   Kept in one file rather than pasted into each page, because two copies of a
+   behaviour drift.
 
    A page opts in by providing #jumpsel, #jumpprev, #jumpnext and #jumpfill.
-   The <details> handling is a no-op on pages that have none. */
+   The <details> handling is a no-op on pages that have none.
+
+   Two things are configurable, both optional:
+
+   - data-jump-targets on #jumpbar overrides which headings are navigable.
+     The default suits a .prose document; index.html's sections sit outside
+     .prose, so it passes its own selector rather than being restyled to fit.
+   - The <option> list builds itself from those targets when the page ships
+     only the placeholder. Hand-maintained lists (14 options on savings, 64 on
+     comparison) drift the moment a heading is added, and nothing catches it.
+     A page that ships a full list keeps it — the curated grouping on the
+     comparison matrix is better than anything derived. */
 (function(){
+/* Deferred to DOMContentLoaded rather than running at parse time, because on
+   the homepage the headings this navigates are written by measures.js from its
+   own DOMContentLoaded handler. Script order puts that handler first, so by
+   the time this runs the measures exist. On the hand-written pages the DOM is
+   already complete either way. */
+if(document.readyState==='loading'){
+  document.addEventListener('DOMContentLoaded',init);
+} else { init(); }
+
+function init(){
   var sel=document.getElementById('jumpsel');
   if(!sel) return;
-  var targets=[].slice.call(document.querySelectorAll('.prose h2[id], .prose h3[id]'));
+  var bar=document.getElementById('jumpbar');
+  var q=(bar&&bar.getAttribute('data-jump-targets'))||'.prose h2[id], .prose h3[id]';
+  var targets=[].slice.call(document.querySelectorAll(q)).filter(function(el){return el.id;});
+  if(!targets.length) return;
+
+  /* Marks the page as carrying a bar, so the extra scroll offset in styles.css
+     applies only where the bar is actually taking up that space. */
+  document.documentElement.classList.add('jn');
+
+  /* A heading's text can carry inline badges ("Sub-measure") and footnote
+     marks that are noise in a 40-character select. data-jump-label wins where
+     a page wants to say something shorter. */
+  function labelFor(el){
+    var t=el.getAttribute('data-jump-label');
+    if(!t) t=(el.textContent||'').replace(/\s+/g,' ').trim();
+    return t.length>64?t.slice(0,63).replace(/[\s,;:—-]+$/,'')+'…':t;
+  }
+  if(sel.options.length<=1){
+    var frag=document.createDocumentFragment(), group=null;
+    /* Only nest when the page actually has two levels; a flat run of h2s in an
+       <optgroup> apiece reads worse than a flat list. */
+    var tiered=targets.some(function(el){return el.tagName==='H3';})
+            && targets.some(function(el){return el.tagName==='H2';});
+    targets.forEach(function(el){
+      var o=document.createElement('option');
+      o.value=el.id; o.textContent=labelFor(el);
+      if(tiered&&el.tagName==='H2'){
+        group=document.createElement('optgroup');
+        group.label=labelFor(el);
+        /* The h2 itself stays selectable — it is a destination, not just a
+           heading for the ones under it. */
+        group.appendChild(o); frag.appendChild(group);
+      } else if(tiered&&group){ group.appendChild(o); }
+      else { frag.appendChild(o); }
+    });
+    sel.appendChild(frag);
+  }
 
   /* A candidate profile is a closed <details>. Landing on one without opening
      it drops the reader on a collapsed card with nothing to read, so any jump
@@ -19,7 +76,10 @@
     while(p){ if(p.tagName==='DETAILS'){ p.open=true; } p=p.parentElement; }
     if(here){
       here.open=true;
-      [].forEach.call(document.querySelectorAll('details.cand.hl'),function(x){x.classList.remove('hl')});
+      /* Any highlighted card, not just a candidate profile — the homepage
+         highlights measures the same way, and a selector that only cleared
+         .cand would let old highlights pile up there. */
+      [].forEach.call(document.querySelectorAll('details.hl'),function(x){x.classList.remove('hl')});
       here.classList.add('hl');
     }
     return here||el;
@@ -51,8 +111,12 @@
     lastIdx=n;
     if(targets[n]) goto(targets[n].id);
   }
-  document.getElementById('jumpprev').addEventListener('click',function(){step(-1)});
-  document.getElementById('jumpnext').addEventListener('click',function(){step(1)});
+  /* Guarded: the select is the required half of the contract, the steppers are
+     the optional half, and a page that ships one without the other should lose
+     that button rather than the whole navigator. */
+  var prev=document.getElementById('jumpprev'), next=document.getElementById('jumpnext');
+  if(prev) prev.addEventListener('click',function(){step(-1)});
+  if(next) next.addEventListener('click',function(){step(1)});
   /* keep the select showing where the reader actually is */
   var tick=false;
   window.addEventListener('scroll',function(){
@@ -106,10 +170,32 @@
     var el=document.getElementById(id);
     if(!el) return;
     var t=reveal(el);
+    /* Force a layout flush before measuring. On the homepage the 131 measures
+       are injected by innerHTML moments earlier, and scrolling against a
+       layout the browser has not computed yet lands nowhere. */
+    void document.body.offsetHeight;
     /* The browser already scrolled to the collapsed position; correct it once
-       the card has expanded. */
-    setTimeout(function(){ t.scrollIntoView({block:'start'}); },0);
+       the card has expanded.
+
+       Explicitly instant: html carries scroll-behavior:smooth, and arriving
+       cold on /#m48 would otherwise animate 32,000px down the homepage. A
+       shared link should land where it points, not travel there. In-page
+       jumps through goto() stay smooth, because there the motion is the cue
+       that you moved rather than followed a link. */
+    setTimeout(function(){ t.scrollIntoView({block:'start',behavior:'instant'}); },0);
   }
   openFromHash();
   window.addEventListener('hashchange',openFromHash);
+  /* Again once webfonts and images have settled: Fraunces and Public Sans
+     swap in after this point and re-flow everything above the target, so a
+     deep link that was correct at DOMContentLoaded drifts by the time the
+     reader sees it. Only for the load-time hash, and only if the reader has
+     not already scrolled away themselves. */
+  if(location.hash){
+    var landed=window.scrollY;
+    window.addEventListener('load',function(){
+      if(Math.abs(window.scrollY-landed)<4) openFromHash();
+    });
+  }
+}
 })();

@@ -225,6 +225,41 @@ button,a,input,summary{outline:none}
 .toc li::before{content:counter(tocitem,decimal-leading-zero);flex:none;width:24px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--gold-ink);font-weight:600}
 .toc a{display:inline-block;min-width:0;min-height:28px;padding-top:2px;color:var(--navy);text-decoration:none;border-bottom:1px solid transparent;transition:border-color .15s}
 .toc a:hover{border-bottom-color:var(--gold)}
+/* 28px clears WCAG 2.5.5 AA (24px) but sits under the 44px this site holds
+   itself to everywhere else. Raised only for coarse pointers: that is where a
+   mis-tap actually costs something, and it keeps the two-column desktop list
+   compact rather than adding 160px of chrome to a page that is already long. */
+@media (pointer:coarse){.toc a{min-height:44px;display:flex;align-items:center}}
+
+/* Sticky section navigator — shared by every long document.
+
+   This lived as an identical copy in savings.html and comparison.html while
+   the behaviour it styles lived in one file (jumpnav.js). Two copies of a
+   rule drift, and these already had: the JS was extracted and the CSS was
+   not. One copy here, and adding the bar to a page is now markup only.
+
+   A table of contents that exists only at the top is no use from Part E of
+   eight, so the control travels with the reader. */
+.jumpbar{position:sticky;top:var(--h);z-index:20;margin:18px 0 4px;padding:10px 0;background:rgba(250,247,240,.96);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid rgba(26,54,104,.12);border-bottom:1px solid rgba(26,54,104,.18)}
+.jumpin{display:flex;align-items:center;gap:8px;padding:0}
+.jl2{font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.15em;color:var(--navy);opacity:.75;white-space:nowrap}
+.jumpsel{flex:1;min-width:0;min-height:44px;padding:8px 10px;font-family:'JetBrains Mono',monospace;font-size:13px;background:#fff;border:1px solid rgba(26,54,104,.3);color:var(--navy)}
+.jumpsel:focus{border-color:var(--navy);outline:2px solid var(--gold-ink);outline-offset:1px}
+.jumpbtn{display:inline-flex;align-items:center;justify-content:center;min-width:44px;min-height:44px;padding:0 10px;font-family:'JetBrains Mono',monospace;font-size:13px;background:transparent;border:1px solid rgba(26,54,104,.3);color:var(--navy);text-decoration:none;cursor:pointer;transition:background .15s}
+.jumpbtn:hover{background:rgba(26,54,104,.06)}
+.jumptop{font-size:11px;text-transform:uppercase;letter-spacing:.1em}
+/* On a phone the arrows and Top are the whole point; the "Jump to" label is not. */
+@media(max-width:519px){.jl2{display:none}.jumpin{gap:6px}.jumpsel{font-size:12px;padding:8px 6px}.jumpbtn{min-width:40px;padding:0 6px}.jumptop{font-size:10px}}
+/* How far through the document the reader actually is — a page this long
+   gives no other cue about its length or where they are in it.
+   position:sticky already makes .jumpbar a containing block, so the bar must
+   NOT be given position:relative here — that would cancel the stickiness. */
+.jumpprog{position:absolute;left:0;right:0;bottom:-1px;height:2px;background:transparent}
+.jumpprog i{display:block;height:100%;width:0;background:var(--gold);transition:width .1s linear}
+/* jumpnav.js stamps .jn on <html> when it finds a bar, so the extra scroll
+   offset applies only where a bar is actually occupying that space. Pages
+   without one keep the plain scroll-padding-top set on html above. */
+.jn h2[id],.jn h3[id],.jn [data-jump-label]{scroll-margin-top:calc(var(--h) + 76px)}
 
 /* Breadcrumb back-strip */
 .crumbs{display:flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.15em;color:#6b6664;padding:16px 0 0;margin-bottom:-8px}

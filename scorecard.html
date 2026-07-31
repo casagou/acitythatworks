@@ -49,6 +49,27 @@ table.sc tbody tr{border-top:1px solid rgba(26,54,104,.14)}
 table.sc tbody tr:nth-child(4n+3){background:rgba(26,54,104,.03)}
 table.sc td{padding:10px 6px;text-align:center;vertical-align:middle}
 table.sc td.who{text-align:left;padding-left:14px}
+/* The candidate column stays put while the grades scroll under it. The table
+   is 820px at minimum inside a 375px viewport, so a reader who swipes across
+   to Fiscal or Reconciliation was left reading a row of letter grades with no
+   way to see whose they were. The header row was already pinned vertically;
+   this is the same fix on the other axis.
+
+   A sticky cell paints over the cells sliding beneath it, so it cannot be
+   transparent and cannot inherit the row's tint — each row variant has to
+   restate its own background. The two tinted values are the opaque
+   equivalents of the rgba() tints above composited on white, so the pinned
+   cell matches its row exactly rather than approximately. */
+table.sc thead th.who,table.sc tbody td.who{position:sticky;left:0}
+table.sc tbody td.who{z-index:1;background:#fff}
+table.sc tbody tr:nth-child(4n+3) td.who{background:#f8f9fa}
+/* Above the body cells on both axes: this is the corner that has to stay on
+   top of the pinned column and the pinned header at the same time. */
+table.sc thead th.who{z-index:3}
+/* An edge rule, so the pinned column reads as pinned rather than as content
+   that happens to be sitting there. Sticky is a positioned ancestor, so the
+   pseudo-element hangs off the cell itself. */
+table.sc .who::after{content:"";position:absolute;top:0;right:0;bottom:0;width:1px;background:rgba(26,54,104,.16);pointer-events:none}
 .cn-name{font-family:'Fraunces',serif;font-size:16px;font-weight:600;color:var(--navy);line-height:1.25}
 .cn-role{font-size:11px;color:#57534e;margin-top:2px}
 .sc-cell{border:none;background:none;padding:4px;cursor:pointer;min-width:44px;min-height:44px;display:inline-flex;align-items:center;justify-content:center}
@@ -111,7 +132,7 @@ table.sc td.who{text-align:left;padding-left:14px}
 <a href="index.html">Framework</a><span class="sep">/</span><span class="here">Candidate Scorecard</span>
 </nav>
 <div class="hero">
-<div class="eyb"><span>📊 Candidate Scorecard</span><span class="dot">◆</span><span>Victoria, BC · 2026</span><span class="dot">◆</span><span>v1.9 · July 30, 2026</span></div>
+<div class="eyb"><span>📊 Candidate Scorecard</span><span class="dot">◆</span><span>Victoria, BC · 2026</span><span class="dot">◆</span><span>v1.9.1 · July 30, 2026</span></div>
 <h1 class="ph1">Where each candidate <em>stands.</em></h1>
 <p class="lead" style="margin-top:18px">Every declared Victoria candidate, graded against the framework across 30 topic areas. Grades come from the <a href="comparison.html">Candidate Comparison Matrix</a>, where every cell shows the underlying evidence.</p>
 <a href="index.html" class="pgback">← Back to the framework</a>

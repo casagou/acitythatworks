@@ -20,6 +20,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Public+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="charts.css">
 <style>
 .pill-grid{display:grid;grid-template-columns:1fr;gap:12px;margin:24px 0 8px}
 @media(min-width:640px){.pill-grid{grid-template-columns:repeat(2,1fr);gap:14px}}
@@ -126,7 +127,35 @@
 <div class="dl-a"><a href="A-City-That-Works-One-Page.pdf" class="bn bnp" download type="application/pdf">Download PDF <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></a></div>
 </div>
 
-<h2>The Problem in 30 Seconds</h2>
+<nav class="toc" aria-label="On this page">
+<div class="toc-h">◆ On this page</div>
+<ol>
+<li><a href="#problem">The Problem in 30 Seconds</a></li>
+<li><a href="#pillars">The Five Pillars</a></li>
+<li><a href="#flagship">The Flagship Measures</a></li>
+<li><a href="#math">The Math</a></li>
+<li><a href="#decided">How Every Major New Project Gets Decided</a></li>
+<li><a href="#isnt">What This Is — And Isn't</a></li>
+<li><a href="#involved">Get Involved</a></li>
+</ol>
+</nav>
+<!-- Sticky section navigator. This "60-second version" runs 3,000 words and
+     23 screens on a phone, so it needs the same travelling control as the
+     longer documents. Option list built by jumpnav.js from the headings. -->
+<div class="jumpbar" id="jumpbar">
+<div class="jumpin">
+<label class="jl2" for="jumpsel">Jump to</label>
+<select id="jumpsel" class="jumpsel" aria-label="Jump to a section">
+<option value="">Choose a section…</option>
+</select>
+<button type="button" class="jumpbtn" id="jumpprev" aria-label="Previous section">↑</button>
+<button type="button" class="jumpbtn" id="jumpnext" aria-label="Next section">↓</button>
+<a class="jumpbtn jumptop" href="#main" aria-label="Back to top">Top</a>
+</div>
+<div class="jumpprog" aria-hidden="true"><i id="jumpfill"></i></div>
+</div>
+
+<h2 id="problem">The Problem in 30 Seconds</h2>
 <div class="callout blue">
 <div class="lbl">◆ Where Victoria is today</div>
 <p style="margin:0 0 10px">Victoria's operating budget is up <strong>roughly 31% in three years</strong> — $300.0M adopted in 2023 to the <strong>$394.1M adopted for 2026</strong>, plus $160.1M in capital (<em>City of Victoria</em>). The 2026 budget <strong>opened at 13.3% in November, was cut to 7.2% in March, and was adopted at 7.28% on May 7</strong> — and only after roughly $7M of late one-time cuts, including a cancelled $2M debt-reduction payment and a $2.8M parking-reserve contribution. <strong>Four consecutive years above inflation plus population growth, every one closed with one-time measures rather than structural savings.</strong></p>
@@ -137,7 +166,7 @@
 <p style="margin:0"><strong>Victoria does not need to spend more. It needs to spend smarter.</strong></p>
 </div>
 
-<h2>The Five Pillars</h2>
+<h2 id="pillars">The Five Pillars</h2>
 <div class="pill-grid">
 <div class="pill-card"><div class="ic">🏠</div><div class="nm">A Liveable City</div><div class="ds">Housing, families, mobility</div></div>
 <div class="pill-card"><div class="ic">🛡️</div><div class="nm">A Safe City</div><div class="ds">Order, accountability, modern infrastructure</div></div>
@@ -147,26 +176,26 @@
 <div class="pill-foot"><strong>🗳️ A Democratic City</strong> — Referendums, transparency, public-visualization tools</div>
 <p class="pf-found">Built on a foundation of working partnership with the host Nations — Songhees and Esquimalt.</p>
 
-<h2>The Flagship Measures</h2>
+<h2 id="flagship">The Flagship Measures</h2>
 
 <div class="flag-block">
 <h3><span class="em">🏠</span> Liveable</h3>
 <ul>
 <li><strong>12,000+ net new homes by 2030</strong> with composition targets: 25% missing middle, 20% 3BR+, 15% non-market, 30% rental. Victoria is ahead of the provincial five-year target of 4,902 net new units on volume and behind on three-bedroom and below-market. <strong>Composition is the problem, not volume</strong></li>
-<li><strong>A pre-approved pattern book</strong> for duplex, triplex, fourplex, townhouse and laneway forms, with an automatic fast lane for anything built from it. Missing Middle produced 61 permits in 2024 against a target of 150, and the binding constraint is no longer zoning — it is cost and delay <em>(v1.9)</em></li>
-<li><strong>Legalize the suites that already exist</strong> — a 24-month, life-safety-only amnesty with a named permitting concierge, no retroactive penalty, and no rent reset for the sitting tenant. Rental homes at zero land cost and zero construction <em>(v1.9)</em></li>
-<li><strong>City land bank</strong> — strategic acquisition and competitive disposition of City-owned land <em>(v1.2, continuing Alto 2022)</em></li>
+<li><strong>A pre-approved pattern book</strong> for duplex, triplex, fourplex, townhouse and laneway forms, with an automatic fast lane for anything built from it. Missing Middle produced 61 permits in 2024 against a target of 150, and the binding constraint is no longer zoning — it is cost and delay</li>
+<li><strong>Legalize the suites that already exist</strong> — a 24-month, life-safety-only amnesty with a named permitting concierge, no retroactive penalty, and no rent reset for the sitting tenant. Rental homes at zero land cost and zero construction</li>
+<li><strong>City land bank</strong> — strategic acquisition and competitive disposition of City-owned land <em>(continuing Alto 2022)</em></li>
 <li><strong>Published permit times by category:</strong> simple &lt;6 weeks, complex &lt;6 months, rezoning &lt;9 months</li>
 <li><strong>Adaptive traffic signals</strong> on major corridors (Pittsburgh evidence: −25% travel time, −21% emissions)</li>
 <li><strong>Champion Westshore rapid transit and the E&amp;N corridor</strong> — endorse LRT/BRT, protect right-of-way</li>
 <li><strong>First-hour free parking</strong> in commercial areas + real-time parking availability</li>
-<li><strong>STEP-style supportive-housing throughput</strong> with BC Housing + Island Health + Pacifica — free up the supportive units, not just add to them <em>(v1.1)</em></li>
-<li><strong>Short-term rental licensing tightening</strong> to protect the long-term rental pool <em>(v1.1)</em></li>
-<li><strong>Reach Victoria's young adults (18–25)</strong> — youth-priority space, late-evening hours, post-secondary partnerships <em>(v1.2)</em></li>
-<li><strong>Universal accessibility audit and remediation</strong> — every sidewalk, public building, washroom, transit-adjacent site <em>(v1.2)</em></li>
-<li><strong>A walking city</strong> — published sidewalk gap inventory, annual kilometres closed, a crossing-spacing standard, and pedestrian signal timing at real walking speeds <em>(v1.8)</em></li>
-<li><strong>Transit: what the City controls and will fund</strong> — a named transit priority capital line for bus lanes, queue jumps and signal priority, plus a published City position and a record of Commission decisions. No promises about routes and fares, which are not ours <em>(v1.8)</em></li>
-<li><strong>A standing agreement with School District 61</strong> — joint use of gyms, fields and playgrounds, safe routes to school as a program, childcare on school sites <em>(v1.8)</em></li>
+<li><strong>STEP-style supportive-housing throughput</strong> with BC Housing + Island Health + Pacifica — free up the supportive units, not just add to them</li>
+<li><strong>Short-term rental licensing tightening</strong> to protect the long-term rental pool</li>
+<li><strong>Reach Victoria's young adults (18–25)</strong> — youth-priority space, late-evening hours, post-secondary partnerships</li>
+<li><strong>Universal accessibility audit and remediation</strong> — every sidewalk, public building, washroom, transit-adjacent site</li>
+<li><strong>A walking city</strong> — published sidewalk gap inventory, annual kilometres closed, a crossing-spacing standard, and pedestrian signal timing at real walking speeds</li>
+<li><strong>Transit: what the City controls and will fund</strong> — a named transit priority capital line for bus lanes, queue jumps and signal priority, plus a published City position and a record of Commission decisions. No promises about routes and fares, which are not ours</li>
+<li><strong>A standing agreement with School District 61</strong> — joint use of gyms, fields and playgrounds, safe routes to school as a program, childcare on school sites</li>
 </ul>
 </div>
 
@@ -176,35 +205,35 @@
 <li><strong>Downtown Public Order Team (DPOT)</strong> — unified VicPD + Bylaw + Sanitation + Outreach, single daily briefing</li>
 <li><strong>Bylaw enforcement 6 AM – 10 PM, 7 days a week</strong> (vs. current 7 AM – 4 PM)</li>
 <li><strong>Smart LED streetlights</strong> — Kelowna/Halifax model. <strong>No audio surveillance. No behavioural AI. No City cameras.</strong> Self-financing in 3–4 years</li>
-<li><strong>Civilian crisis response</strong> — the right responder for the call, gated on a confirmed health-authority cost-share partner <em>(v1.9)</em></li>
-<li><strong>Community paramedicine</strong> — reduce the calls, not just the response time <em>(v1.9)</em></li>
-<li><strong>A voluntary business camera registry</strong> — VicPD-led, and the City owns no cameras and holds no recordings <em>(v1.5)</em></li>
+<li><strong>Civilian crisis response</strong> — the right responder for the call, gated on a confirmed health-authority cost-share partner</li>
+<li><strong>Community paramedicine</strong> — reduce the calls, not just the response time</li>
+<li><strong>A voluntary business camera registry</strong> — VicPD-led, and the City owns no cameras and holds no recordings</li>
 <li><strong>Resolve the VicPD funding dispute with Esquimalt</strong> — transparent service-consumption formula, binding mediation if needed</li>
-<li><strong>Greater Victoria Regional Policing Services Review</strong> — 18-month co-sponsored review with binding mediation outcome <em>(v1.1)</em></li>
+<li><strong>Greater Victoria Regional Policing Services Review</strong> — 18-month co-sponsored review with binding mediation outcome</li>
 <li><strong>Phased capacity-first enforcement:</strong> enforce when there is somewhere to send people, not when there isn't</li>
-<li><strong>Drug-use buffer zones</strong> around schools, playgrounds, libraries and community centres <em>(v1.1)</em></li>
+<li><strong>Drug-use buffer zones</strong> around schools, playgrounds, libraries and community centres</li>
 <li><strong>Reclaim the priority public spaces</strong> — permanent visible presence in the Inner Harbour, the Pandora corridor, Centennial Square and Beacon Hill Park, with a same-day protocol for structures blocking sidewalks and doorways. Humane, documented and predictable, with property stored for retrieval</li>
-<li><strong>Relentless with the dangerous, compassionate with the vulnerable</strong> — focused deterrence on trafficking, weapons and violent repeat offenders, coordinated with Crown counsel, built on the data Coun. Hammond's FOI surfaced: <strong>24% of all 2022 police calls came from 19 addresses.</strong> Every enforcement action is published quarterly, including how much of it survived adjudication <em>(v1.6)</em></li>
+<li><strong>Relentless with the dangerous, compassionate with the vulnerable</strong> — focused deterrence on trafficking, weapons and violent repeat offenders, coordinated with Crown counsel, built on the data Coun. Hammond's FOI surfaced: <strong>24% of all 2022 police calls came from 19 addresses.</strong> Every enforcement action is published quarterly, including how much of it survived adjudication</li>
 </ul>
 </div>
 
 <div class="flag-block">
 <h3><span class="em">🌳</span> Beautiful</h3>
 <ul>
-<li><strong>Modernize underground utility GIS (M53)</strong> — coordinate excavation, reduce re-trenched streets, federal modernization-grant eligible <em>(v1.3 reframe of the Digital Twin)</em></li>
-<li><strong>One-time LIDAR scan of the downtown core (M53c)</strong> — heritage protection, emergency-management baseline, planning-support data layer <em>(v1.3)</em></li>
+<li><strong>Modernize underground utility GIS (M53)</strong> — coordinate excavation, reduce re-trenched streets, federal modernization-grant eligible</li>
+<li><strong>One-time LIDAR scan of the downtown core (M53c)</strong> — heritage protection, emergency-management baseline, planning-support data layer</li>
 <li><strong>AI-generated public consultation imagery (M53b)</strong> — continuing Coun. Dell's Beacon Hill precedent, on every meaningful public project</li>
 <li><strong>Heritage protection + restored street furniture</strong> — Victoria's character is its competitive advantage</li>
-<li><strong>Cultural-venue preservation tool</strong> — right-of-first-refusal plus a lease-bridge fund for designated live-music and arts spaces <em>(v1.1)</em></li>
-<li><strong>Pedestrianization pilots</strong> — Bastion Square full, Government Street seasonal <em>(v1.2)</em></li>
-<li><strong>One signature public-space project, chosen by residents</strong> — three costed concepts shortlisted (a Pandora corridor linear park, a continuous Inner Harbour promenade, a full Centennial Square renewal), all three visualized before the vote, decided by referendum, with a senior-government cost-share secured first. <strong>Sequenced after the safety and capacity work, not instead of it</strong> <em>(v1.5)</em></li>
-<li><strong>Royal Athletic Park restoration</strong> — reverse the 2025 reserve raid and complete deferred upgrades <em>(v1.2, continuing Alto 2022)</em></li>
-<li><strong>5,000 new trees by 2030, and a published canopy target of 35% by 2035</strong> — a planting count measures effort, a canopy percentage measures result. Free seedlings for homeowners, because 75% of Victoria's canopy sits on private land <em>(v1.9)</em></li>
+<li><strong>Cultural-venue preservation tool</strong> — right-of-first-refusal plus a lease-bridge fund for designated live-music and arts spaces</li>
+<li><strong>Pedestrianization pilots</strong> — Bastion Square full, Government Street seasonal</li>
+<li><strong>One signature public-space project, chosen by residents</strong> — three costed concepts shortlisted (a Pandora corridor linear park, a continuous Inner Harbour promenade, a full Centennial Square renewal), all three visualized before the vote, decided by referendum, with a senior-government cost-share secured first. <strong>Sequenced after the safety and capacity work, not instead of it</strong></li>
+<li><strong>Royal Athletic Park restoration</strong> — reverse the 2025 reserve raid and complete deferred upgrades <em>(continuing Alto 2022)</em></li>
+<li><strong>5,000 new trees by 2030, and a published canopy target of 35% by 2035</strong> — a planting count measures effort, a canopy percentage measures result. Free seedlings for homeowners, because 75% of Victoria's canopy sits on private land</li>
 <li><strong>−50% community GHG by 2030</strong> (19 points still needed from the current −31%)</li>
-<li><strong>Maximum-temperature rental bylaw (26°C)</strong> in at least one room during declared heat-warning periods <em>(v1.1)</em></li>
-<li><strong>An arts and culture funding floor</strong> — published, set at the current level, reducible only by supermajority with a published rationale. Fiscal discipline paid for by the cultural sector is not discipline <em>(v1.8)</em></li>
-<li><strong>A published municipal AI standard</strong> — public register, human-in-the-loop mandatory, automated adverse decisions prohibited, all AI-generated imagery labelled, prompts and outputs as FIPPA records. No comparable BC municipality has one <em>(v1.8)</em></li>
-<li><strong>Seismic and coastal resilience</strong> — the hazard Victoria actually faces <em>(v1.5)</em></li>
+<li><strong>Maximum-temperature rental bylaw (26°C)</strong> in at least one room during declared heat-warning periods</li>
+<li><strong>An arts and culture funding floor</strong> — published, set at the current level, reducible only by supermajority with a published rationale. Fiscal discipline paid for by the cultural sector is not discipline</li>
+<li><strong>A published municipal AI standard</strong> — public register, human-in-the-loop mandatory, automated adverse decisions prohibited, all AI-generated imagery labelled, prompts and outputs as FIPPA records. No comparable BC municipality has one</li>
+<li><strong>Seismic and coastal resilience</strong> — the hazard Victoria actually faces</li>
 </ul>
 </div>
 
@@ -214,15 +243,15 @@
 <li><strong>Competitive testing for waste and street cleaning</strong> — roughly <strong>$2.4M/year</strong>, run in <em>both directions against the same specification</em> so City crews bid alongside private firms and the cheaper competent option wins either way. <strong>Workers protected</strong> by mandatory re-employment clauses (Phoenix precedent: $25M+ saved 1978–1988)</li>
 <li><strong>Zero-based budget review</strong> of all 200+ programs on a rotating cycle (Calgary SAVE: $74M targeted by 2022; $60M actually found per March 2026)</li>
 <li><strong>Tax glide path, on the number you actually pay:</strong> Year 1 ≤6.5%, Year 2 ≤5%, Year 3+ ≈CPI + population growth (3.5%) — <strong>capped on the residential rate, not on total revenue.</strong> Measured against the <strong>9.34% residential increase council levied in 2026</strong>, not the 7.28% aggregate and not the 13.3% opening draft. A cap on the total would let a council send homeowners a 9% bill and call it 6.5%; this one cannot. Paired with a rule that the business-to-residential ratio is not moved to manufacture the number, and honesty that an individual bill still moves with BC Assessment's valuation. Year 1's differentiator is also the method: ≤6.5% <strong>without</strong> cancelling the debt-reduction payment, raiding the parking reserve, or deferring capital</li>
-<li><strong>Return over-collection to taxpayers</strong> — a credit on the notice rather than a sweep into reserves, overridable only 6 of 9 in public <em>(v1.5)</em></li>
-<li><strong>A debt rule</strong> — stop borrowing against the next council <em>(v1.5)</em></li>
+<li><strong>Return over-collection to taxpayers</strong> — a credit on the notice rather than a sweep into reserves, overridable only 6 of 9 in public</li>
+<li><strong>A debt rule</strong> — stop borrowing against the next council</li>
 <li><strong>Vacant storefront strategy:</strong> advocate to the Province for enabling legislation, use existing levers (licensing, façade conditions, pop-up facilitation), publish a quarterly transparency report</li>
-<li><strong>Confront provincial downloading</strong> — quarterly public ledger of unfunded mandates plus a formal refusal threshold <em>(v1.1)</em></li>
+<li><strong>Confront provincial downloading</strong> — quarterly public ledger of unfunded mandates plus a formal refusal threshold</li>
 <li><strong>Rationalize City real estate</strong> — sell or lease underused properties; proceeds to property-related debt and capital acquisition, per Community Charter s.188(2)(e)</li>
-<li><strong>The Household Bill</strong> — one published number covering property tax plus water, sewer, solid waste and stormwater, with a five-year forward view, published beside the glide path and never apart from it. Supermajority discipline on City-controlled utility increases above CPI plus growth <em>(v1.8)</em></li>
-<li><strong>The regional bill</strong> — a published annual City position on CRD cost, a published record of Victoria representatives' votes, and staged approval of the $1.07 billion Goldstream filtration plant with a published business case, an independent alternatives analysis, and a rate impact stated in household dollars <em>(v1.8)</em></li>
-<li><strong>Protect employment lands</strong> — no net loss of employment-designated land without a published replacement plan; marine-industrial land as a distinct protected category <em>(v1.8)</em></li>
-<li><strong>A published Strategic Economic Plan</strong> and a simplification charter — every new rule earns its place, every old rule gets reviewed <em>(v1.5, v1.9)</em></li>
+<li><strong>The Household Bill</strong> — one published number covering property tax plus water, sewer, solid waste and stormwater, with a five-year forward view, published beside the glide path and never apart from it. Supermajority discipline on City-controlled utility increases above CPI plus growth</li>
+<li><strong>The regional bill</strong> — a published annual City position on CRD cost, a published record of Victoria representatives' votes, and staged approval of the $1.07 billion Goldstream filtration plant with a published business case, an independent alternatives analysis, and a rate impact stated in household dollars</li>
+<li><strong>Protect employment lands</strong> — no net loss of employment-designated land without a published replacement plan; marine-industrial land as a distinct protected category</li>
+<li><strong>A published Strategic Economic Plan</strong> and a simplification charter — every new rule earns its place, every old rule gets reviewed</li>
 </ul>
 </div>
 
@@ -231,18 +260,67 @@
 <ul>
 <li><strong>Referendum on every new (non-lifecycle) capital project over $25M</strong> — within the BC Local Government Act and Community Charter framework (Assent Voting or the Alternative Approval Process)</li>
 <li><strong>Finish the Saanich amalgamation file</strong> — the Citizens' Assembly already sat (48 randomly selected residents, eight sessions, September 2024 to April 2025) and recommended amalgamation on April 5, 2025. Commission the financial, transitional and service-impact analysis the Province required in April 2026, begin the First Nations consultation it named, then return and request a binding referendum. <strong>Do not re-run the Assembly</strong></li>
-<li><strong>Integrity Commissioner office</strong> plus an MNP governance report implementation tracker <em>(v1.1)</em></li>
-<li><strong>A public lobbyist registry for development files, and no fee to ask a question</strong> — BC's provincial registry does not cover municipalities. Meetings between development proponents and Council or staff are filed by the City within 10 business days, with no exemption for the mayor. The $10 freedom-of-information application fee is waived <em>(v1.9)</em></li>
-<li><strong>Council pay changes take effect only after the next election</strong> — the independent review still happens; the councillors who vote on it are simply not the ones who receive it <em>(v1.9)</em></li>
-<li><strong>The material change rule</strong> — no substantive change after the hearing without renotification <em>(v1.9)</em></li>
+<li><strong>Integrity Commissioner office</strong> plus an MNP governance report implementation tracker</li>
+<li><strong>A public lobbyist registry for development files, and no fee to ask a question</strong> — BC's provincial registry does not cover municipalities. Meetings between development proponents and Council or staff are filed by the City within 10 business days, with no exemption for the mayor. The $10 freedom-of-information application fee is waived</li>
+<li><strong>Council pay changes take effect only after the next election</strong> — the independent review still happens; the councillors who vote on it are simply not the ones who receive it</li>
+<li><strong>The material change rule</strong> — no substantive change after the hearing without renotification</li>
 <li><strong>Quarterly performance dashboard</strong> — permits, potholes, crime, housing, budget variance — published, no spin</li>
 <li><strong>Government-to-government working tables</strong> with the Songhees Nation and the Esquimalt Nation, on a standing quarterly cadence</li>
-<li><strong>Bring back Local Area Plans</strong> — two neighbourhood plans a year on a published schedule, with parcel-level clarity a resident or a small builder can read without hiring a consultant, and infrastructure capacity stated in each one. <strong>Housing capacity is not reduced by this</strong>, and the alternative of repealing the 2025 OCP would consume a term and stall supply <em>(v1.9)</em></li>
-<li><strong>Turnout and ballot access</strong> — 2022 turnout was roughly 38%. At least one weekend advance voting day (all four 2026 advance days are weekdays), voting places weighted toward the lowest-turnout neighbourhoods, campus and multi-unit voting, a turnout report by neighbourhood within 90 days, and election bylaws set 12 months out so no council writes the rules of its own re-election <em>(v1.8)</em></li>
+<li><strong>Bring back Local Area Plans</strong> — two neighbourhood plans a year on a published schedule, with parcel-level clarity a resident or a small builder can read without hiring a consultant, and infrastructure capacity stated in each one. <strong>Housing capacity is not reduced by this</strong>, and the alternative of repealing the 2025 OCP would consume a term and stall supply</li>
+<li><strong>Turnout and ballot access</strong> — 2022 turnout was roughly 38%. At least one weekend advance voting day (all four 2026 advance days are weekdays), voting places weighted toward the lowest-turnout neighbourhoods, campus and multi-unit voting, a turnout report by neighbourhood within 90 days, and election bylaws set 12 months out so no council writes the rules of its own re-election</li>
 </ul>
 </div>
 
-<h2>The Math</h2>
+<h2 id="math">The Math</h2>
+
+<!-- The four points are the four glide-path rows in the table directly below.
+     The rust line is the 2026 rate drawn flat as a reading reference, not a
+     forecast. The dollar figure in the caption is the one published in the
+     table below it; it is not carried forward into later years, because doing
+     that would need assumptions about future assessed values that this
+     framework does not make. -->
+<figure class="fig">
+<div class="fig-l">
+<span><i class="k-ref"></i>2026 rate, held flat (reference)</span>
+<span><i class="k-com"></i>Committed caps</span>
+</div>
+<svg class="gp" viewBox="0 0 640 290" role="img" aria-labelledby="sgp-t sgp-d" preserveAspectRatio="xMidYMid meet">
+<title id="sgp-t">Residential tax increase, committed glide path</title>
+<desc id="sgp-d">The 2026 residential increase as levied is 9.34 percent. The committed caps are 6.5 percent or less in Year 1, 5.0 percent or less in Year 2, and about 3.5 percent from Year 3 — CPI plus population growth.</desc>
+<line class="gl" x1="70" y1="240" x2="620" y2="240"/>
+<line class="gl" x1="70" y1="200" x2="620" y2="200"/>
+<line class="gl" x1="70" y1="160" x2="620" y2="160"/>
+<line class="gl" x1="70" y1="120" x2="620" y2="120"/>
+<line class="gl" x1="70" y1="80"  x2="620" y2="80"/>
+<line class="gl" x1="70" y1="40"  x2="620" y2="40"/>
+<text class="lab" x="58" y="245" text-anchor="end">0%</text>
+<text class="lab" x="58" y="205" text-anchor="end">2%</text>
+<text class="lab" x="58" y="165" text-anchor="end">4%</text>
+<text class="lab" x="58" y="125" text-anchor="end">6%</text>
+<text class="lab" x="58" y="85"  text-anchor="end">8%</text>
+<text class="lab" x="58" y="45"  text-anchor="end">10%</text>
+<line class="ax" x1="70" y1="240" x2="620" y2="240"/>
+<path class="ref" d="M100 53.2 H600"/>
+<text class="lab lab-s v-now" x="600" y="43" text-anchor="end">2026 rate held flat</text>
+<path class="com" d="M100 53.2 H183 V110 H350 V140 H517 V170 H600"/>
+<circle class="dot" cx="100" cy="53.2" r="6"/>
+<circle class="dot" cx="267" cy="110" r="6"/>
+<circle class="dot" cx="434" cy="140" r="6"/>
+<circle class="dot" cx="600" cy="170" r="6"/>
+<text class="val v-now" x="100" y="36" text-anchor="middle">9.34%</text>
+<text class="val v-com" x="267" y="98" text-anchor="middle">≤ 6.5%</text>
+<text class="val v-com" x="434" y="128" text-anchor="middle">≤ 5.0%</text>
+<text class="val v-com" x="600" y="158" text-anchor="end">~3.5%</text>
+<text class="lab" x="100" y="264" text-anchor="middle">2026</text>
+<text class="lab" x="267" y="264" text-anchor="middle">Year 1</text>
+<text class="lab" x="434" y="264" text-anchor="middle">Year 2</text>
+<text class="lab" x="600" y="264" text-anchor="end">Year 3+</text>
+<text class="lab lab-s" x="100" y="282" text-anchor="middle">as levied</text>
+<text class="lab lab-s" x="600" y="282" text-anchor="end">CPI + growth</text>
+</svg>
+<figcaption class="fig-c">The 2026 increase of <strong>9.34%</strong> meant <strong>+$323</strong> on a median home assessed at $1,015,000. <strong>That figure is not carried forward</strong> — what a capped rate costs in Year 2 or Year 3 depends on assessed values nobody can responsibly predict, so only the rates are shown.</figcaption>
+</figure>
+
 <div class="tbl-wrap">
 <table class="dt">
 <thead><tr><th>Item</th><th style="text-align:right">Number</th></tr></thead>
@@ -264,9 +342,9 @@
 </tbody>
 </table>
 </div>
-<p style="font-size:14px;color:#57534e;font-style:italic;margin-top:14px">Year one is a fraction of steady state, and the glide path is honest about that. Net fiscal headroom after every operating cost this framework creates is $4.3–14.0M per year on central assumptions, and approximately −$0.3M on pessimistic ones, pairing low savings and revenue against high costs. The pessimistic figure is published deliberately: on central assumptions the glide path is funded with room to spare, and on pessimistic ones it is funded by nothing and Year 1 slips. Six cost-bearing commitments across v1.8 and v1.9, worth roughly $0.95–1.55M a year, are gated on verified Year 1 savings rather than booked — because a framework that spends its own projected savings before they arrive is doing what it criticizes the current council for doing. Full line-item math in the <a href="savings.html">Savings &amp; Revenue Analysis</a>.</p>
+<p style="font-size:14px;color:#57534e;font-style:italic;margin-top:14px">Year one is a fraction of steady state, and the glide path is honest about that. Net fiscal headroom after every operating cost this framework creates is $4.3–14.0M per year on central assumptions, and approximately −$0.3M on pessimistic ones, pairing low savings and revenue against high costs. The pessimistic figure is published deliberately: on central assumptions the glide path is funded with room to spare, and on pessimistic ones it is funded by nothing and Year 1 slips. Six cost-bearing commitments, worth roughly $0.95–1.55M a year, are gated on verified Year 1 savings rather than booked — because a framework that spends its own projected savings before they arrive is doing what it criticizes the current council for doing. Full line-item math in the <a href="savings.html">Savings &amp; Revenue Analysis</a>.</p>
 
-<h2>How Every Major New Project Gets Decided</h2>
+<h2 id="decided">How Every Major New Project Gets Decided</h2>
 <ol class="method-list">
 <li><strong>Consult locally</strong> — what residents say needs to improve</li>
 <li><strong>Design with experts</strong> — engineers, planners, affected residents</li>
@@ -275,7 +353,7 @@
 <li><strong>Report quarterly</strong> during construction — on time, on budget, or explain why not</li>
 </ol>
 
-<h2>What This Is — And Isn't</h2>
+<h2 id="isnt">What This Is — And Isn't</h2>
 <div class="two-col">
 <div class="callout green">
 <div class="lbl">✓ Is</div>
@@ -287,7 +365,7 @@
 </div>
 </div>
 
-<h2>Get Involved</h2>
+<h2 id="involved">Get Involved</h2>
 <ul>
 <li><strong>Read the full program</strong> — every measure costed and sourced, on the <a href="index.html#measures">Measures page</a>. The public number to hold us to is the 12 Commitments scorecard</li>
 <li><strong>Endorse or adopt</strong> — any candidate is free to use these measures in whole, in part, or as a starting point. See the <a href="endorse.html">Endorsement Pack</a></li>
@@ -306,7 +384,7 @@
 The Victoria municipal election is on <strong>October 17, 2026</strong>. The ballot also elects <strong>3 CRD directors</strong> and <strong>School District 61 trustees</strong>, and carries the non-binding question <em>"Do you support Saanich and Victoria becoming one municipality?"</em> Between now and then, every candidate should be able to answer one question clearly: <em>"What works elsewhere that you would bring to Victoria?"</em>
 </div>
 
-<p style="margin-top:32px;font-size:13px;color:#57534e;font-style:italic;line-height:1.6">Version 1.9.1 — updated July 30, 2026. v1.9.1 corrected the three-year growth figure to roughly 31% ($299,976,550 adopted in 2023 against $394,060,040 adopted for 2026, verified on the same envelope), reconciled the headroom figures on this page to $4.3–14.0M central and −$0.3M pessimistic, and rewrote Measure 40 as advocacy after confirming that BC's Intersection Safety Camera programme is not operated by or delegated to municipalities. Earlier: v1.9 absorbed eleven new sub-measures for roughly $15–30K/year recurring, with $500–850K/year of further additions placed in a gated conditional tier rather than booked. v1.8.1 decided what Measure 66 caps: the residential rate, not the total levy — council raised total revenue 7.28% in 2026 and distributed it at 9.34% residential / 4.78% business, so a cap on the total would have permitted a 9% homeowner bill described as 6.5%. v1.8 closed the questionnaire and coalition gaps with eight new sub-measures and corrected one case where Measure 24 had committed the City to street-level computer vision against the framework's own no-City-cameras commitment. v1.7 rewrote Measure 81, because the Victoria–Saanich Citizens' Assembly finished in April 2025 and the measure now commissions the impact analysis the Province required rather than proposing to create the Assembly. v1.3 demoted the full city-scale Digital Twin to a Year 3+ aspiration, replacing it with M53 GIS modernization, M53b AI consultation imagery and M53c a one-time LIDAR scan. The public "100 active commitments" framing is retired; the 12 Commitments scorecard is the public-facing number.</p>
+<p style="margin-top:32px;font-size:13px;color:#57534e;font-style:italic;line-height:1.6">Version 1.9.1 — updated July 30, 2026. Every change to this framework since May 2026 is dated and explained, including the corrections, in the <a href="version-history.html" style="color:var(--navy)">version history</a>.</p>
 
 <p style="margin-top:14px;font-size:13px;color:#57534e;font-style:italic">No copyright. Attribution to <em>A City That Works — A Citizens' Framework for Victoria 2026</em> appreciated but not required.</p>
 
@@ -318,6 +396,7 @@ The Victoria municipal election is on <strong>October 17, 2026</strong>. The bal
 
 <div id="footer-mount"></div>
 <script src="site.js"></script>
+<script src="jumpnav.js"></script>
 
 </body>
 </html>

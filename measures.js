@@ -216,6 +216,13 @@ function renderPillars(){
   $$("[data-pj]").forEach(function(a){a.addEventListener("click",function(){setTimeout(function(){setFilter(a.getAttribute("data-pj"));},80);});});
 }
 
+/* Stable, readable ids for the section wrappers. Derived from the section
+   title rather than an index, so an id keeps working when a section moves. */
+function slug(s){
+  return String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'')
+    .replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'');
+}
+
 function renderMeasures(){
   var c=$("#mctr"); if(!c) return; var h="";
   PILLAR_ORDER.forEach(function(pk){
@@ -231,14 +238,17 @@ function renderMeasures(){
     });
     items.forEach(function(m){ if(sections.indexOf(m.section)<0) sections.push(m.section); });
     var f=items[0].id, l=items[items.length-1].id;
-    h+='<div class="pgr" data-pg="'+pk+'" style="border-top-color:'+p.color+'40">'+
+    /* The em-dash prefix reads as one level of indent inside the jump list,
+       which is a flat <select> on this page — the sections and the pillar
+       groups inside Every Measure are not the same kind of destination. */
+    h+='<div class="pgr" id="pg-'+pk+'" data-jump-label="— '+esc(p.emoji+' '+p.label)+'" data-pg="'+pk+'" style="border-top-color:'+p.color+'40">'+
        '<div class="pgh"><div class="pgt" style="color:'+p.color+'"><span style="font-size:1.1em">'+p.emoji+'</span> '+esc(p.label)+'</div>'+
        '<span class="pgg" style="color:'+p.color+'">'+items.length+' measures · M'+f+'–M'+l+'</span></div>';
     if(p.tagline) h+='<p class="pgtag">'+esc(p.tagline)+'</p>';
     if(p.intro) h+='<div class="pgintro">'+p.intro+'</div>';
     sections.forEach(function(sec){
       var sm=items.filter(function(m){return m.section===sec;});
-      h+='<div data-sec="'+esc(sec)+'" data-p="'+pk+'"'+(sm.length?'':' data-empty="1"')+'><div class="shd">◆ '+esc(sec)+'</div>';
+      h+='<div id="sec-'+slug(sec)+'" data-sec="'+esc(sec)+'" data-p="'+pk+'"'+(sm.length?'':' data-empty="1"')+'><div class="shd">◆ '+esc(sec)+'</div>';
       if(SECTION_INTRO[sec]) h+='<div class="secintro">'+SECTION_INTRO[sec]+'</div>';
       sm.forEach(function(m){
         var tg=m.tier==="sub"?'<span class="mtg">Sub-measure</span>':"";
@@ -247,13 +257,17 @@ function renderMeasures(){
         /* Collapsed by default: 100 expanded measures made the homepage 132
            screens tall on mobile. The <h3> stays inside <summary> so the
            heading outline is unchanged for screen readers. */
-        h+='<details class="mi mit" data-p="'+pk+'" data-s="'+esc(search)+'">'+
+        h+='<details class="mi mit" id="m'+esc(m.id)+'" data-p="'+pk+'" data-s="'+esc(search)+'">'+
            '<summary class="misum">'+
            '<div class="mnu">M'+esc(m.id)+'</div>'+
            '<div class="mb2"><h3 class="mti" style="color:'+p.color+'">'+esc(m.title)+tg+'</h3></div>'+
            '<svg class="mchev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>'+
            '</summary>'+
            '<div class="mbody">'+m.body+'</div>'+bu+
+           /* A measure is the unit people actually argue about, so each one
+              needs its own address to send. jumpnav.js opens whatever
+              <details> a hash resolves into, so the link arrives expanded. */
+           '<a class="mlink" href="#m'+esc(m.id)+'">Link to M'+esc(m.id)+'</a>'+
            '</details>';
       });
       h+='</div>';

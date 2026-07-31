@@ -17,21 +17,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Public+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 <style>
-/* Sticky section navigator. Part A to Part H is 16,000px of scrolling, and a
-   table of contents that only exists at the top is no use from Part E. Same
-   control as the comparison matrix, so the two long documents behave alike. */
-.jumpbar{position:sticky;top:var(--h);z-index:20;margin:18px 0 4px;padding:10px 0;background:rgba(250,247,240,.96);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid rgba(26,54,104,.12);border-bottom:1px solid rgba(26,54,104,.18)}
-.jumpin{display:flex;align-items:center;gap:8px;padding:0}
-.jl2{font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.15em;color:var(--navy);opacity:.75;white-space:nowrap}
-.jumpsel{flex:1;min-width:0;min-height:44px;padding:8px 10px;font-family:'JetBrains Mono',monospace;font-size:13px;background:#fff;border:1px solid rgba(26,54,104,.3);color:var(--navy)}
-.jumpsel:focus{border-color:var(--navy);outline:2px solid var(--gold-ink);outline-offset:1px}
-.jumpbtn{display:inline-flex;align-items:center;justify-content:center;min-width:44px;min-height:44px;padding:0 10px;font-family:'JetBrains Mono',monospace;font-size:13px;background:transparent;border:1px solid rgba(26,54,104,.3);color:var(--navy);text-decoration:none;cursor:pointer;transition:background .15s}
-.jumpbtn:hover{background:rgba(26,54,104,.06)}
-.jumptop{font-size:11px;text-transform:uppercase;letter-spacing:.1em}
-@media(max-width:519px){.jl2{display:none}.jumpin{gap:6px}.jumpsel{font-size:12px;padding:8px 6px}.jumpbtn{min-width:40px;padding:0 6px}.jumptop{font-size:10px}}
-.jumpprog{position:absolute;left:0;right:0;bottom:-1px;height:2px;background:transparent}
-.jumpprog i{display:block;height:100%;width:0;background:var(--gold);transition:width .1s linear}
-h2[id],h3[id]{scroll-margin-top:calc(var(--h) + 76px)}
+/* The sticky section navigator now lives in styles.css, shared with every
+   other long page. */
 .scale{max-width:640px;margin:14px 0 0;font-size:14px;line-height:1.6;color:#57534e}
 .scale strong{color:var(--navy);font-weight:600}
 </style>
@@ -82,7 +69,7 @@ h2[id],h3[id]{scroll-margin-top:calc(var(--h) + 76px)}
 <a href="index.html">Framework</a><span class="sep">/</span><span class="here">Savings &amp; Revenue Analysis</span>
 </nav>
 <div class="hero">
-<div class="eyb"><span>💰 The Math</span><span class="dot">◆</span><span>v1.9 · July 30, 2026</span></div>
+<div class="eyb"><span>💰 The Math</span><span class="dot">◆</span><span>v1.9.1 · July 30, 2026</span></div>
 <h1 class="ph1">Savings &amp; Revenue Analysis</h1>
 <p class="lead" style="margin-top:18px">The math behind the tax glide path — operating savings, new revenue, and the honest reckoning of what the framework costs.</p>
 <p class="scale">Eight parts, nine tables, about 25 minutes end to end. <strong>Use the jump bar below</strong> — it follows you down the page.</p>

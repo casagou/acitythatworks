@@ -1,0 +1,122 @@
+/* A City That Works — charts v1.0
+
+   Hand-authored CSS bars and one inline SVG. No chart library, no build step,
+   nothing that needs JavaScript: every figure here is real text that has been
+   given a bar behind it, so it reads the same to a screen reader, to a printer
+   and to a browser with scripting off. The number is always written out — the
+   bar reinforces it, it never replaces it.
+
+   Two rules the palette has to obey:
+
+   1. Never colour alone. --rust is the record and --moss is the commitment,
+      but every series is also labelled in words, so the contrast survives
+      greyscale printing and colour-blind readers.
+   2. Every value traces to a figure already published on the page it sits on.
+      Nothing here is derived, rounded or extrapolated. */
+
+.fig{margin:32px 0 36px;max-width:760px}
+.fig-e{font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.2em;color:var(--gold-ink);margin-bottom:6px}
+.fig-t{font-family:'Fraunces',Georgia,serif;font-size:21px;font-weight:600;color:var(--navy);line-height:1.25;margin:0 0 4px;letter-spacing:-.01em}
+.fig-s{font-size:14px;line-height:1.6;color:#57534e;margin:0 0 18px;max-width:640px}
+figcaption.fig-c{font-size:13px;line-height:1.6;color:#57534e;margin-top:14px;padding-top:12px;border-top:1px solid rgba(26,54,104,.15)}
+figcaption.fig-c strong{color:var(--navy);font-weight:600}
+
+/* Legend — the words that keep the chart readable without the colours. */
+.fig-l{display:flex;flex-wrap:wrap;gap:8px 18px;margin-bottom:16px;font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.12em}
+.fig-l span{display:inline-flex;align-items:center;gap:7px;color:#57534e}
+.fig-l i{width:14px;height:10px;flex:none;display:block}
+.fig-l .k-now{background:var(--rust)}
+/* The commitment series is hatched as well as coloured, so the two are still
+   distinguishable in greyscale. */
+.fig-l .k-com{background:var(--moss)}
+.fig-l .k-ref{background:repeating-linear-gradient(90deg,var(--rust) 0 4px,transparent 4px 7px)}
+
+/* ---- Paired comparison rows: the record against the commitment ---- */
+.cmp{border-top:1px solid rgba(26,54,104,.18)}
+.cmp-r{padding:16px 0;border-bottom:1px solid rgba(26,54,104,.12)}
+.cmp-q{font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.15em;color:var(--navy);opacity:.8;margin-bottom:10px}
+.cmp-b{display:grid;grid-template-columns:1fr;gap:8px}
+@media(min-width:620px){.cmp-b{grid-template-columns:1fr 1fr;gap:20px}}
+.cmp-i{min-width:0}
+.cmp-k{font-family:'JetBrains Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:.14em;margin-bottom:4px}
+.cmp-i.now .cmp-k{color:var(--rust)}
+.cmp-i.com .cmp-k{color:var(--moss)}
+.cmp-v{font-family:'JetBrains Mono',monospace;font-size:19px;font-weight:600;line-height:1.1;margin-bottom:5px}
+.cmp-i.now .cmp-v{color:var(--rust)}
+.cmp-i.com .cmp-v{color:var(--moss)}
+.cmp-x{font-size:13px;line-height:1.5;color:#33312e}
+/* The bar is a proportion of the row's own scale, set inline per row. */
+.cmp-t{height:8px;background:rgba(26,54,104,.09);margin-bottom:7px;overflow:hidden}
+.cmp-t i{display:block;height:100%}
+.cmp-i.now .cmp-t i{background:var(--rust)}
+.cmp-i.com .cmp-t i{background:var(--moss)}
+
+/* ---- Range bars: a published low-to-high band on a shared scale ---- */
+.rng{margin:0}
+.rng-r{display:grid;grid-template-columns:1fr;gap:2px;padding:11px 0;border-bottom:1px solid rgba(26,54,104,.12)}
+@media(min-width:620px){.rng-r{grid-template-columns:210px 1fr 118px;gap:14px;align-items:center}}
+.rng-l{font-size:13.5px;line-height:1.4;color:#33312e}
+.rng-v{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:600;color:var(--navy);white-space:nowrap}
+@media(min-width:620px){.rng-v{text-align:right}}
+/* The track is the full published scale; the span is where this line sits on
+   it. Both are positioned inline as percentages, because the scale belongs to
+   the figure and not to the stylesheet. */
+.rng-t{position:relative;height:14px;background:rgba(26,54,104,.07);margin:4px 0}
+.rng-t i{position:absolute;top:0;bottom:0;display:block}
+.rng-r.pos .rng-t i{background:var(--moss)}
+.rng-r.neg .rng-t i{background:var(--rust)}
+.rng-r.net .rng-t i{background:var(--navy)}
+.rng-r.net{border-top:2px solid rgba(26,54,104,.3);border-bottom:none;margin-top:4px;padding-top:14px}
+.rng-r.net .rng-l{font-weight:600;color:var(--navy)}
+.rng-r.net .rng-v{font-size:14px}
+/* Zero line, drawn once across the plotting column. */
+.rng-z{position:absolute;top:-2px;bottom:-2px;width:1px;background:rgba(26,54,104,.45)}
+.rng-scale{display:none}
+@media(min-width:620px){
+  .rng-scale{display:grid;grid-template-columns:210px 1fr 118px;gap:14px;font-family:'JetBrains Mono',monospace;font-size:10px;color:#57534e;letter-spacing:.08em}
+  .rng-scale .sc-in{position:relative;height:16px}
+  .rng-scale .sc-in span{position:absolute;transform:translateX(-50%);white-space:nowrap}
+}
+
+/* ---- Glide path: the one figure that is genuinely a line ----
+
+   Text inside an SVG scales with the viewBox, so its on-screen size is set by
+   how wide the element is allowed to get. Capped at 660px against a 640-unit
+   viewBox — roughly 1:1 — so a 20-unit label lands at about 20px on a desktop
+   instead of the 37px it would reach if this filled a 1200px container. */
+.gp{width:100%;max-width:660px;height:auto;display:block;overflow:visible}
+.gp .ax{stroke:rgba(26,54,104,.25);stroke-width:1}
+.gp .gl{stroke:rgba(26,54,104,.10);stroke-width:1}
+.gp .lab{font-family:'JetBrains Mono',monospace;font-size:17px;fill:#57534e;letter-spacing:.04em}
+.gp .lab-s{font-size:15px}
+.gp .val{font-family:'JetBrains Mono',monospace;font-size:20px;font-weight:600}
+/* On a phone the same viewBox is drawn at about 0.54 scale, which would put
+   these labels near 9px. Sized up in viewBox units so they land readable. */
+@media(max-width:640px){
+  .gp .lab{font-size:24px}
+  .gp .lab-s{font-size:21px}
+  .gp .val{font-size:28px}
+}
+.gp .ref{fill:none;stroke:var(--rust);stroke-width:3;stroke-dasharray:9 7}
+.gp .com{fill:none;stroke:var(--moss);stroke-width:4;stroke-linejoin:round;stroke-linecap:round}
+.gp .dot{fill:var(--moss)}
+.gp .v-now{fill:var(--rust)}
+.gp .v-com{fill:var(--moss)}
+
+/* Motion: the site had no reduced-motion block at all before these charts.
+   Covers the bar transitions here and the global smooth scrolling. */
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+}
+
+/* Print: the tints vanish on most printers, so give every bar a border and
+   let the written numbers carry the figure. */
+@media print{
+  .fig{break-inside:avoid;page-break-inside:avoid}
+  .cmp-t,.rng-t{border:1px solid #999}
+  .cmp-t i,.rng-t i{background:#666!important}
+  .gp .ref{stroke:#111}
+  .gp .com{stroke:#111}
+  .fig-l i{border:1px solid #999}
+}

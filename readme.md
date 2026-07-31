@@ -1,4 +1,4 @@
-# A City That Works — Website (v1.3)
+# A City That Works — Website (v1.9.1)
 
 A complete, multi-page static website for the citizens' framework. No build step, no dependencies. Lives at **[acitythatworks.ca](https://acitythatworks.ca)**, auto-deployed from this repo via Netlify on every push to `main`.
 
@@ -6,7 +6,7 @@ A complete, multi-page static website for the citizens' framework. No build step
 
 | File | What it is |
 |------|------------|
-| `index.html` | Home — hero, five pillars, method, **all ~101 measures** (filterable + searchable, full text inline), 12-commitment scorecard, balance sheet, principles, criticisms Q&A, subscribe/endorse |
+| `index.html` | Home — hero, five pillars, method, **every measure** (filterable, searchable, full text inline, each one individually linkable as `#m48`), 12-commitment scorecard, balance sheet, principles, criticisms Q&A, subscribe/endorse |
 | `summary.html` | One-Page Summary — the 60-second version (problem → pillars → flagship measures → math → method), plus the printable PDF download |
 | `A-City-That-Works-One-Page.pdf` | The printable one-pager, linked from `summary.html`. Designed separately; drop a new file in at the same path to update the download |
 | `savings.html` | Savings & Revenue Analysis — the full math, every table, with sources and honest caveats |
@@ -14,13 +14,17 @@ A complete, multi-page static website for the citizens' framework. No build step
 | `endorse.html` | Candidate Endorsement Pack — three tiers, campaign language, full measure checklist, endorsement form |
 | `comparison.html` | Candidate Comparison Matrix — every 2026 candidate scored against the framework |
 | `faq.html` | Frequently Asked Questions — the full skeptic's Q&A |
-| `styles.css` | Shared stylesheet for every page (includes print rules) |
+| `styles.css` | Shared stylesheet for every page (includes the sticky section navigator and print rules) |
+| `charts.css` | Chart styles — CSS bars and the glide-path SVG. Linked from `index.html` and `summary.html` |
+| `jumpnav.js` | The sticky section navigator, shared by every long page. A page opts in with the `#jumpsel` markup; the option list builds itself from the page's headings |
+| `scorecard.html` | Candidate Scorecard — filterable grade table |
+| `version-history.html` | Every dated change to the framework |
 | `site.js` | Shared footer (contact + social) and mobile-menu logic, injected on every page |
-| `measures.js` | The 100 measures + scorecard + pillar data and all rendering for the home page |
+| `measures.js` | Measure, scorecard and pillar data, plus all rendering for the home page. The framework deliberately publishes no measure total |
 | `sitemap.xml` | Search engine sitemap |
 | `robots.txt` | Search engine directives |
 
-Mirrors the Notion master copy (the working document); the internal/archival pages in Notion (Version History, v1.1/v1.2 archive snapshots, Brand Assets) are not public-facing and are intentionally not mirrored here.
+Mirrors the Notion master copy (the working document). Version History **is** public at `version-history.html`; the remaining internal/archival Notion pages (archive snapshots, Brand Assets) are not mirrored here.
 
 ## How it deploys
 
@@ -42,7 +46,7 @@ The subscribe box on the home page is wired to **Netlify Forms** (form name: `ne
 - **Email:** info@acitythatworks.ca
 - **Instagram / X / Facebook:** @CityThatWorksYYJ
 
-All four live in `site.js` (footer) and on the home page's Endorse section. To change any of them, **edit `site.js` once** — the footer is shared across all seven pages.
+All four live in `site.js` (footer) and on the home page's Endorse section. To change any of them, **edit `site.js` once** — the footer is shared across all nine pages.
 
 > ⚠️ `info@acitythatworks.ca` requires the domain mailbox/forwarder to be set up. Until then, mail to it will bounce.
 
@@ -56,16 +60,23 @@ All four live in `site.js` (footer) and on the home page's Endorse section. To c
 
 Every page uses the same canonical header nav:
 
-> **Framework · Summary · Measures · Savings · City Hall · Compare · FAQ · [ENDORSE]**
+> **Framework · Summary · Measures · Savings · City Hall · Scorecard · Compare · FAQ · [ENDORSE]**
+
+`version-history.html` is reachable from the footer and the mobile drawer rather than the header, which is already full.
 
 Active page highlighted with a gold underline. Mobile menu groups all pages under "Detailed documents" plus the home-page anchors (Pillars, Method, etc.).
 
-All long pages (Savings, City Hall, Endorse, FAQ, Comparison) have an in-page **On this page** TOC right after the hero, plus a breadcrumb back to the framework.
+Every long page carries an **On this page** TOC plus a **sticky section navigator** — a jump select, prev/next steppers, a Top link and a reading-progress rule — that follows the reader down the page. The navigator is `jumpnav.js` and its styles live in `styles.css`; a page opts in with markup alone and the option list is derived from its own headings, so it cannot drift from the document.
+
+On the home page the navigator and the measure filter bar share one sticky slot: inside **Every Measure** the pillar filter takes over, because its six pills reach the same six groups the jump select offers, and showing both cost a third of a phone screen.
+
+Every measure is individually addressable — `index.html#m48` opens that measure expanded and highlighted.
 
 ## Notes
 
 - Pure static HTML/CSS/JS. The only external resource is Google Fonts.
-- Works fully on desktop and mobile: sticky top nav (8 items at 1100px+, hamburger below), a floating "Jump to…" drawer on the home page, touch-friendly filter chips, and a scorecard that switches from a table to cards on small screens.
+- Works fully on desktop and mobile: sticky top nav (hamburger below 1024px), the sticky section navigator on every long page, touch-friendly filter chips, and a scorecard whose candidate column stays pinned while the grades scroll sideways.
+- Charts are hand-authored CSS bars and one inline SVG — no chart library, and every figure renders with JavaScript disabled. Every charted number traces to a figure published in the prose; nothing is derived or projected.
 - Print stylesheet hides chrome, expands every `<details>`, and uses printer-safe borders. Try **⌘P** on any page.
 - iOS safe-area insets respected.
 - `sitemap.xml` + `robots.txt` included for SEO.
