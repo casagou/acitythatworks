@@ -186,7 +186,7 @@ function init(){
        is correct: step() already falls back to reading the live scroll
        position whenever lastIdx is -1. */
     lastIdx=indexOfId(id);
-    /* Force a layout flush before measuring. On the homepage the 131 measures
+    /* Force a layout flush before measuring. On the homepage the 132 measures
        are injected by innerHTML moments earlier, and scrolling against a
        layout the browser has not computed yet lands nowhere. */
     void document.body.offsetHeight;

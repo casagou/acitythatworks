@@ -82,6 +82,25 @@
 .ac{padding:20px;border-bottom:1px solid rgba(26,54,104,.18);border-left:2px solid var(--gold)}
 .act{font-family:'Fraunces',serif;font-size:18px;font-weight:500;color:var(--navy);margin-bottom:6px}
 .acx{font-size:14px;color:#44403c;line-height:1.5}
+/* "Start with Measures…" routing line under each audience card. Monospace and
+   gold to read as an instrument rather than more prose, since it sits directly
+   under a sentence it must not be mistaken for. */
+.acm{margin-top:10px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.04em;color:#57534e;line-height:1.9}
+.acm b{color:var(--gold-ink);font-weight:500}
+.acm a{color:var(--navy);text-decoration:none;border-bottom:1px solid rgba(26,54,104,.3);padding:2px 1px}
+.acm a:hover{border-bottom-color:var(--navy)}
+/* Start Here — the 13 flagship measures, as a numbered index of whole rows.
+   The row is the link (not just the measure name) so the tap target is the
+   full line at every width rather than a few words inside it. */
+.fsl{list-style:none;margin:28px 0 0;padding:0}
+.fsi{display:flex;gap:14px;align-items:baseline;padding:14px 10px;min-height:44px;text-decoration:none;color:inherit;border-bottom:1px solid rgba(26,54,104,.14);transition:background .15s}
+.fsi:hover{background:rgba(212,168,67,.09)}
+.fsl li:last-child .fsi{border-bottom:none}
+.fsn{flex:none;width:26px;font-family:'Fraunces',serif;font-size:17px;color:var(--gold-ink)}
+.fst{font-size:14.5px;line-height:1.55;color:#33312e}
+.fst strong{color:var(--navy)}
+.fsr{margin-top:22px;padding:14px 16px;background:rgba(212,168,67,.12);border-left:3px solid var(--gold);font-size:14.5px;line-height:1.55}
+.fsr a{color:var(--navy)}
 .mg{display:grid;grid-template-columns:1fr;gap:24px;margin-top:40px}
 @media(min-width:640px){.mg{grid-template-columns:repeat(2,1fr);column-gap:40px;row-gap:32px}}
 .ms{display:flex;gap:20px}
@@ -320,9 +339,9 @@ h2.adt em{font-style:italic;color:var(--gold-ink);font-weight:400}
 </div>
 <div class="diag">
 <div class="dh">◆ The Diagnostic</div>
-<div class="dr2"><span class="dnu">31.4%</span><span class="dtx">Operating budget growth in 3 years ($300.0M → $394.1M adopted, plus $160.1M capital)</span></div>
+<div class="dr2"><span class="dnu">31.4%</span><span class="dtx">Operating budget growth in 3 years ($300.0M → $394.1M adopted, plus $160.1M in 2026 capital improvements)</span></div>
 <div class="dr2"><span class="dnu">9.34%</span><span class="dtx">Residential tax increase levied for 2026 — 13.3% opening draft, 7.28% adopted aggregate, split 9.34% residential / 4.78% business</span></div>
-<div class="dr2"><span class="dnu">$750</span><span class="dtx">Per-capita policing cost — highest of any BC municipal force</span></div>
+<div class="dr2"><span class="dnu">$598</span><span class="dtx">Per-capita policing cost (2023) — highest of any police department in BC</span></div>
 <div class="dr2"><span class="dnu">61</span><span class="dtx">Missing-middle permits in 2024 vs. 150 target</span></div>
 <div class="dr2"><span class="dnu">59%</span><span class="dtx">Feel safe downtown by day (was 83% in 2020)</span></div>
 <div class="dr2"><span class="dnu">$25M+</span><span class="dtx">Spent on homelessness since 2023 — no published outcomes</span></div>
@@ -406,7 +425,7 @@ h2.adt em{font-style:italic;color:var(--gold-ink);font-weight:400}
 <div class="cmp-i now">
 <div class="cmp-k">2023 → 2026 adopted</div>
 <div class="cmp-v">+31.4%</div>
-<div class="cmp-x">$300.0M → $394.1M, plus $160.1M capital.</div>
+<div class="cmp-x">$300.0M → $394.1M, plus $160.1M in 2026 capital improvements.</div>
 </div>
 <div class="cmp-i com">
 <div class="cmp-k">The discipline</div>
@@ -456,6 +475,7 @@ h2.adt em{font-style:italic;color:var(--gold-ink);font-weight:400}
 <div class="toc-h">◆ On this page</div>
 <ol>
 <li><a href="#pillars">Five Pillars</a></li>
+<li><a href="#start-here">Start Here — the 13 flagship measures</a></li>
 <li><a href="#how-to-use">How to Use</a></li>
 <li><a href="#candidates">Where Candidates Stand</a></li>
 <li><a href="#method">The Method</a></li>
@@ -493,12 +513,40 @@ h2.adt em{font-style:italic;color:var(--gold-ink);font-weight:400}
 <div class="se">◆ Structure</div>
 <h2 class="st">Five Pillars · One Foundation</h2>
 <p class="si">Every measure belongs to one of five pillars, anchored by a foundational commitment to right relations with the host Nations. Every one costed.</p>
-<div id="pgd" class="pg"><!--PRERENDER:pgd--><a class="pc" href="measures.html?pillar=foundation" style="border-top:3px solid #7A6B3D"><div class="pch"><span class="pce">🌿</span><span class="pct" style="color:#7D6E41">5 measures</span></div><div class="pti" style="color:#7A6B3D">Honouring the Host Nations</div><div class="pd">Government-to-government tables, Indigenous procurement, place names, cultural protocols, urban Indigenous services.</div><div class="pca" style="color:#7D6E41">View measures <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></a><a class="pc" href="measures.html?pillar=liveable" style="border-top:3px solid #1A3668"><div class="pch"><span class="pce">🏠</span><span class="pct" style="color:#5A6E92">32 measures</span></div><div class="pti" style="color:#1A3668">A Liveable City</div><div class="pd">Housing, families, childcare, cleanliness, mobility, accessibility.</div><div class="pca" style="color:#5A6E92">View measures <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></a><a class="pc" href="measures.html?pillar=safe" style="border-top:3px solid #B5341F"><div class="pch"><span class="pce">🛡️</span><span class="pct" style="color:#BC4835">26 measures</span></div><div class="pti" style="color:#B5341F">A Safe City</div><div class="pd">Public safety, order, accountability, modern infrastructure, Vision Zero.</div><div class="pca" style="color:#BC4835">View measures <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></a><a class="pc" href="measures.html?pillar=beautiful" style="border-top:3px solid #227247"><div class="pch"><span class="pce">🌳</span><span class="pct" style="color:#317C54">32 measures</span></div><div class="pti" style="color:#227247">A Beautiful City</div><div class="pd">Heritage, parks, urban aesthetics, technology leadership, climate resilience.</div><div class="pca" style="color:#317C54">View measures <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></a><a class="pc" href="measures.html?pillar=managed" style="border-top:3px solid #8B6914"><div class="pch"><span class="pce">💰</span><span class="pct" style="color:#8B6914">21 measures</span></div><div class="pti" style="color:#8B6914">A Well-Managed City</div><div class="pd">Taxes, permits, performance, fiscal discipline, cost of living.</div><div class="pca" style="color:#8B6914">View measures <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></a><a class="pc" href="measures.html?pillar=democratic" style="border-top:3px solid #3D5A8C"><div class="pch"><span class="pce">🗳️</span><span class="pct" style="color:#566F9B">15 measures</span></div><div class="pti" style="color:#3D5A8C">A Democratic City</div><div class="pd">Referendums, transparency, participation, public-visualization tools.</div><div class="pca" style="color:#566F9B">View measures <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></a><!--/PRERENDER:pgd--></div>
+<div id="pgd" class="pg"><!--PRERENDER:pgd--><a class="pc" href="measures.html?pillar=foundation" style="border-top:3px solid #7A6B3D"><div class="pch"><span class="pce">🌿</span><span class="pct" style="color:#7D6E41">5 measures</span></div><div class="pti" style="color:#7A6B3D">Honouring the Host Nations</div><div class="pd">Government-to-government tables, Indigenous procurement, place names, cultural protocols, urban Indigenous services.</div><div class="pca" style="color:#7D6E41">View measures <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></a><a class="pc" href="measures.html?pillar=liveable" style="border-top:3px solid #1A3668"><div class="pch"><span class="pce">🏠</span><span class="pct" style="color:#5A6E92">33 measures</span></div><div class="pti" style="color:#1A3668">A Liveable City</div><div class="pd">Housing, families, childcare, cleanliness, mobility, accessibility.</div><div class="pca" style="color:#5A6E92">View measures <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></a><a class="pc" href="measures.html?pillar=safe" style="border-top:3px solid #B5341F"><div class="pch"><span class="pce">🛡️</span><span class="pct" style="color:#BC4835">26 measures</span></div><div class="pti" style="color:#B5341F">A Safe City</div><div class="pd">Public safety, order, accountability, modern infrastructure, Vision Zero.</div><div class="pca" style="color:#BC4835">View measures <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></a><a class="pc" href="measures.html?pillar=beautiful" style="border-top:3px solid #227247"><div class="pch"><span class="pce">🌳</span><span class="pct" style="color:#317C54">32 measures</span></div><div class="pti" style="color:#227247">A Beautiful City</div><div class="pd">Heritage, parks, urban aesthetics, technology leadership, climate resilience.</div><div class="pca" style="color:#317C54">View measures <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></a><a class="pc" href="measures.html?pillar=managed" style="border-top:3px solid #8B6914"><div class="pch"><span class="pce">💰</span><span class="pct" style="color:#8B6914">21 measures</span></div><div class="pti" style="color:#8B6914">A Well-Managed City</div><div class="pd">Taxes, permits, performance, fiscal discipline, cost of living.</div><div class="pca" style="color:#8B6914">View measures <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></a><a class="pc" href="measures.html?pillar=democratic" style="border-top:3px solid #3D5A8C"><div class="pch"><span class="pce">🗳️</span><span class="pct" style="color:#566F9B">15 measures</span></div><div class="pti" style="color:#3D5A8C">A Democratic City</div><div class="pd">Referendums, transparency, participation, public-visualization tools.</div><div class="pca" style="color:#566F9B">View measures <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></a><!--/PRERENDER:pgd--></div>
 <div class="fnd rv">
 <div class="lbl">◆ A Foundation, Not a Pillar — Honouring the Host Nations</div>
 <p>Victoria is built on the unceded traditional territories of the lək̓ʷəŋən-speaking peoples — today represented by the <strong>Songhees Nation</strong> and the <strong>Esquimalt Nation</strong>. Any serious program for the City must recognize this and build it into how the City operates, not just how it speaks.</p>
 <p>The full program includes specific measures on government-to-government working tables, Indigenous procurement, lək̓ʷəŋən place names, cultural protocols, and urban Indigenous services. <a href="measures.html?pillar=foundation">See Foundation measures M1–M5 →</a></p>
 </div>
+</section>
+
+<!-- Start Here (v1.9.6). Measure numbers are frozen identifiers through
+     October 17, 2026 — every external document cites measures by number, so
+     reading order is handled here, at the presentation layer, instead of by
+     renumbering. This list can be reordered at any time without touching a
+     single cross-reference, which is the whole point of separating the
+     identifier from the running order. -->
+<section id="start-here" data-jump-label="Start Here" class="sc rv">
+<div class="se">◆ Start Here</div>
+<h2 class="st">Thirteen measures define this framework.</h2>
+<p class="si">More than a hundred costed measures is a toolkit, not a reading assignment. <strong>These thirteen define the framework</strong>; every other measure supports one of them. Each carries a ⭐ beside its heading in <a href="measures.html" style="color:var(--navy)">Every Measure</a>.</p>
+<ol class="fsl">
+<li><a class="fsi" href="measures.html#m65"><span class="fsn">01</span><span class="fst"><strong>Measure 65 — Zero-based budgeting.</strong> Every one of the City's 200+ programs justified from zero on a rotating cycle. The engine that pays for everything else on this page.</span></a></li>
+<li><a class="fsi" href="measures.html#m66"><span class="fsn">02</span><span class="fst"><strong>Measures 66–66d — The Taxpayer Guarantee.</strong> A capped tax glide path, over-collection refunded to taxpayers rather than swept into reserves, a debt rule, and one published Household Bill.</span></a></li>
+<li><a class="fsi" href="measures.html#m15"><span class="fsn">03</span><span class="fst"><strong>Measure 15 — Competitive testing for waste and street cleaning.</strong> In-house and private bids on the same specification, both directions; the cheaper competent option wins.</span></a></li>
+<li><a class="fsi" href="measures.html#m7"><span class="fsn">04</span><span class="fst"><strong>Measure 7 — Published permit times, by category.</strong> A published target for every permit category, and your answer in writing.</span></a></li>
+<li><a class="fsi" href="measures.html#m26"><span class="fsn">05</span><span class="fst"><strong>Measure 26 — Downtown Public Order Team.</strong> One integrated command for the blocks that need it most.</span></a></li>
+<li><a class="fsi" href="measures.html#m27"><span class="fsn">06</span><span class="fst"><strong>Measure 27 — Bylaw enforcement 6 AM to 10 PM, 7 days a week.</strong> Disorder does not keep office hours; enforcement should not either.</span></a></li>
+<li><a class="fsi" href="measures.html#m11"><span class="fsn">07</span><span class="fst"><strong>Measure 11 — Cut unsheltered homelessness by 50%.</strong> Housing-First with STEP throughput, capacity-first enforcement, and a published quarterly count.</span></a></li>
+<li><a class="fsi" href="measures.html#m30"><span class="fsn">08</span><span class="fst"><strong>Measure 30 — Modern smart streetlighting.</strong> The Kelowna/Halifax model: LED, IoT, lit all night — and no cameras, no behavioural AI, no audio surveillance.</span></a></li>
+<li><a class="fsi" href="measures.html#m71"><span class="fsn">09</span><span class="fst"><strong>Measures 71 + 73b — A downtown revival with an owner.</strong> Storefront vacancy from 11% to 5%, one Team Victoria office, one number, one flagship event.</span></a></li>
+<li><a class="fsi" href="measures.html#m45c"><span class="fsn">10</span><span class="fst"><strong>Measure 45c — One signature public-space project.</strong> A Pandora linear park or a continuous Inner Harbour promenade: shortlisted by residents, approved by referendum, delivered on time and on budget.</span></a></li>
+<li><a class="fsi" href="measures.html#m77"><span class="fsn">11</span><span class="fst"><strong>Measures 77 + 78 — You vote on the big spends.</strong> A referendum for new capital over $25 million, and the 5-step process for every major project.</span></a></li>
+<li><a class="fsi" href="measures.html#m79b"><span class="fsn">12</span><span class="fst"><strong>Measure 79b — An Integrity Commissioner</strong>, anchoring the Integrity Package: lobbyist registry, FOI fee abolished, published mandate letters, and a council-pay rule.</span></a></li>
+<li><a class="fsi" href="measures.html#m64b"><span class="fsn">13</span><span class="fst"><strong>Measure 64b — Seismic and coastal resilience.</strong> The hazard Victoria actually faces, funded and scheduled.</span></a></li>
+</ol>
+<p class="fsr"><strong>If you read only one pillar, read <a href="measures.html?pillar=managed">A Well-Managed City</a>. It pays for the other four.</strong></p>
 </section>
 
 <section id="how-to-use" data-jump-label="How to Use" class="sc rv">
@@ -553,19 +601,19 @@ h2.adt em{font-style:italic;color:var(--gold-ink);font-weight:400}
 <div class="se">◆ By Audience</div>
 <h2 class="st" style="font-size:28px;max-width:640px">Whoever you are, Victoria should work for you.</h2>
 <div class="ag">
-<div class="ac"><div class="act">For Families</div><div class="acx">Childcare, school safety, parks, housing, food quality in schools.</div></div>
-<div class="ac"><div class="act">For Renters</div><div class="acx">Tenant protections, vacancy targets, affordability, transparent waitlists.</div></div>
-<div class="ac"><div class="act">For Business Owners</div><div class="acx">Permits, tax base, downtown revival, free first-hour parking.</div></div>
-<div class="ac"><div class="act">For Cyclists &amp; Transit Users</div><div class="acx">Bike network, RapidBus, contactless fares, adaptive signals.</div></div>
-<div class="ac"><div class="act">For Seniors</div><div class="acx">Safety, accessibility, neighbourhood services, modern lighting.</div></div>
-<div class="ac"><div class="act">For Homeowners</div><div class="acx">Property tax restraint, heritage protection, infrastructure, homeownership pathways.</div></div>
+<div class="ac"><div class="act">For Families</div><div class="acx">Childcare, school safety, parks, housing, food quality in schools.</div><div class="acm"><b>Start with</b> <a href="measures.html#m12">M12</a> <a href="measures.html#m13">M13</a> <a href="measures.html#m13b">M13b</a> <a href="measures.html#m13d">M13d</a> <a href="measures.html#m40">M40</a> <a href="measures.html#m49">M49</a></div></div>
+<div class="ac"><div class="act">For Renters</div><div class="acx">Tenant protections, vacancy targets, affordability, transparent waitlists.</div><div class="acm"><b>Start with</b> <a href="measures.html#m8">M8</a> <a href="measures.html#m9">M9</a> <a href="measures.html#m9b">M9b</a> <a href="measures.html#m10">M10</a> <a href="measures.html#m64">M64</a></div></div>
+<div class="ac"><div class="act">For Business Owners</div><div class="acx">Permits, tax base, downtown revival, free first-hour parking.</div><div class="acm"><b>Start with</b> <a href="measures.html#m7">M7</a> <a href="measures.html#m28b">M28b</a> <a href="measures.html#m71">M71</a> <a href="measures.html#m72">M72</a> <a href="measures.html#m73b">M73b</a> <a href="measures.html#m75">M75</a></div></div>
+<div class="ac"><div class="act">For Cyclists &amp; Transit Users</div><div class="acx">Bike network, RapidBus, contactless fares, adaptive signals.</div><div class="acm"><b>Start with</b> <a href="measures.html#m19">M19</a> <a href="measures.html#m20">M20</a> <a href="measures.html#m21">M21</a> <a href="measures.html#m23">M23</a> <a href="measures.html#m41">M41</a></div></div>
+<div class="ac"><div class="act">For Seniors</div><div class="acx">Safety, accessibility, neighbourhood services, modern lighting.</div><div class="acm"><b>Start with</b> <a href="measures.html#m25b">M25b</a> <a href="measures.html#m26">M26</a> <a href="measures.html#m27">M27</a> <a href="measures.html#m37">M37</a> <a href="measures.html#m64">M64</a></div></div>
+<div class="ac"><div class="act">For Homeowners</div><div class="acx">Property tax restraint, heritage protection, infrastructure, homeownership pathways.</div><div class="acm"><b>Start with</b> <a href="measures.html#m25">M25</a> <a href="measures.html#m43">M43</a> <a href="measures.html#m64b">M64b</a> <a href="measures.html#m66">M66</a> <a href="measures.html#m66b">M66b</a> <a href="measures.html#m76">M76</a></div></div>
 </div>
 </div>
 
 <section id="method" data-jump-label="The Method" class="sc rv">
 <div class="se">◆ How this framework was built</div>
 <h2 class="st">0% ideology. 100% pragmatic.</h2>
-<p class="si">We started where the truth is most visible: the budget. Politicians make promises; numbers don't lie. Victoria's operating budget grew <strong>31.4% in three years</strong>, from $300.0M in 2023 to the <strong>$394.1M adopted for 2026</strong>, alongside $160.1M in capital — with VicPD's budget nearly doubling in a decade, from $50.6M to $86.8M requested for 2026, and no competitive benchmarking, AI, or smart infrastructure deployed. For every problem a Victorian faces daily, we applied the same six-step method.</p>
+<p class="si">We started where the truth is most visible: the budget. Politicians make promises; numbers don't lie. Victoria's operating budget grew <strong>31.4% in three years</strong>, from $300.0M in 2023 to the <strong>$394.1M adopted for 2026</strong>, alongside <strong>$160.1M in 2026 capital improvements</strong> (both figures from the 2026–2030 Financial Plan adopted May 7, 2026) — with VicPD's budget nearly doubling in a decade, from $50.6M to $86.8M requested for 2026, and no competitive benchmarking, AI, or smart infrastructure deployed. For every problem a Victorian faces daily, we applied the same six-step method.</p>
 <div class="mg">
 <div class="ms"><div class="msn">01</div><div><div class="mst">Identify the root cause</div><div class="msx">Not the symptom — the structural reason the problem exists.</div></div></div>
 <div class="ms"><div class="msn">02</div><div><div class="mst">Assess what the City can actually do</div><div class="msx">Municipalities have specific powers. Don't promise what requires provincial or federal action.</div></div></div>

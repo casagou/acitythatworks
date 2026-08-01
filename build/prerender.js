@@ -2,7 +2,7 @@
 /* A City That Works — pre-render build/prerender.js
    ---------------------------------------------------
    Bakes the current measures.js data into index.html and measures.html so
-   the site's deepest content (all 131 measures, the pillar cards, the
+   the site's deepest content (all 132 measures, the pillar cards, the
    12-Commitments table, the home Q&A) is real HTML from the first byte —
    not an empty <div> waiting for 318KB of JS to parse. Search engines,
    preview bots, archive crawlers, and no-JS readers all see the content
