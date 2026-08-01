@@ -14,6 +14,24 @@
     { name: 'Facebook',    handle: 'CityThatWorksYYJ',  url: 'https://www.facebook.com/CityThatWorksYYJ',   svg: FB_SVG }
   ];
 
+  // The six audience companion pages (v1.9.7). Declared once and injected into
+  // the footer, the header "More" panel and the mobile drawer, because a set
+  // of six that lives in three hand-maintained copies is a set of six that
+  // ends up different in three places.
+  var AUDIENCE = [
+    { href: 'for-families.html',   label: 'For Families' },
+    { href: 'for-renters.html',    label: 'For Renters' },
+    { href: 'for-business.html',   label: 'For Business Owners' },
+    { href: 'for-cyclists.html',   label: 'For Cyclists &amp; Transit Users' },
+    { href: 'for-seniors.html',    label: 'For Seniors' },
+    { href: 'for-homeowners.html', label: 'For Homeowners' }
+  ];
+  function audienceLinks() {
+    return AUDIENCE.map(function (a) {
+      return '<a href="' + a.href + '">' + a.label + '</a>';
+    }).join('');
+  }
+
   function socialLinks(cls) {
     return SOCIAL.map(function (s) {
       var label = s.name + ' — ' + s.handle;
@@ -30,7 +48,7 @@
 '<p class="fdc">A Citizens\' Framework for Victoria 2026. Every measure costed. Zero ideology. Just results.</p>' +
 '<div class="fsoc">' + socialLinks('') + '</div>' +
 '<p class="fhandle">Instagram &amp; Facebook <strong>@CityThatWorksYYJ</strong> · X <strong>@YYJThatWorks</strong></p>' +
-'<p class="fvr"><a href="version-history.html" style="color:inherit;text-decoration:underline;text-decoration-color:currentColor">v1.9.2 · July 31, 2026</a></p>' +
+'<p class="fvr"><a href="version-history.html" style="color:inherit;text-decoration:underline;text-decoration-color:currentColor">v1.9.7 · July 31, 2026</a></p>' +
 '</div>' +
 '<div>' +
 '<div class="fhd">The Framework</div>' +
@@ -41,6 +59,8 @@
 '<a href="index.html#balance">Balance Sheet</a>' +
 '<a href="index.html#adopt">Endorse / Subscribe</a>' +
 '</div>' +
+'<div class="fhd" style="margin-top:24px">By Audience</div>' +
+'<div class="fls">' + audienceLinks() + '</div>' +
 '</div>' +
 '<div>' +
 '<div class="fhd">Detailed Documents</div>' +
@@ -78,8 +98,21 @@
     if (burger) { hr.insertBefore(hs, burger); } else { hr.appendChild(hs); }
   }
 
-  // …and in the mobile drawer, where the header row has no space for them.
+  // The audience pages go into the drawer too, ahead of the "Detailed
+  // documents" group, so the phone menu carries the same map as the footer.
+  // Injected rather than pasted into every page's hand-written drawer.
   var mmi = document.querySelector('#mn .mmi');
+  if (mmi && !mmi.querySelector('.aud-grp')) {
+    var det = [].filter.call(mmi.querySelectorAll('.grp'), function (g) {
+      return /detailed/i.test(g.textContent);
+    })[0];
+    var frag = document.createElement('div');
+    frag.innerHTML = '<div class="grp aud-grp">By Audience</div>' + audienceLinks();
+    var nodes = [].slice.call(frag.childNodes);
+    nodes.forEach(function (n) { mmi.insertBefore(n, det || null); });
+  }
+
+  // …and the social icons, where the header row has no space for them.
   if (mmi && !mmi.querySelector('.msoc')) {
     var wrap = document.createElement('div');
     wrap.className = 'msoc';
@@ -106,6 +139,8 @@
         '<a href="measures.html">All Measures</a>' +
         '<a href="index.html#scorecard">12 Commitments</a>' +
         '<a href="index.html#balance">Balance Sheet</a>' +
+        '<div class="grp">By Audience</div>' +
+        audienceLinks() +
         '<div class="grp">Detailed Documents</div>' +
         '<a href="summary.html">One-Page Summary</a>' +
         '<a href="savings.html">Savings &amp; Revenue Analysis</a>' +
