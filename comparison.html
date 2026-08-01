@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="description" content="Where each Victoria 2026 candidate stands relative to A City That Works. A spec-sheet view: scan the rows, see the gaps.">
 <meta name="theme-color" content="#1A3668">
-<title>Candidate Comparison Matrix — A City That Works</title>
+<title>Candidate Comparison Matrix — A City That Works, Victoria 2026</title>
 <meta property="og:title" content="Candidate Comparison Matrix — A City That Works">
 <meta property="og:description" content="Where each Victoria 2026 candidate stands relative to A City That Works. A spec-sheet view: scan the rows, see the gaps.">
 <meta property="og:type" content="website">
@@ -167,6 +167,16 @@ table.mgrid abbr{text-decoration:none;border:0}
 .lg7{display:flex;gap:10px;align-items:baseline;padding:9px 12px;background:#fff;border:1px solid rgba(26,54,104,.16);border-left:3px solid rgba(26,54,104,.3);font-size:13.5px;line-height:1.45}
 .lg7 .s{font-size:16px;line-height:1;flex:none}
 .lg7 b{color:var(--navy)}
+/* 50 topic tables x up to 18 rows lay out ~7,200 DOM nodes on first paint even
+   though only a handful are ever on screen at once. content-visibility:auto
+   skips layout/paint for whichever tables are off-screen and restores them
+   automatically on scroll or fragment navigation (the browser un-skips a
+   skipped subtree to satisfy scrollIntoView/anchor targeting) — the topic
+   heading itself is untouched, so jump-nav still lands exactly on id="t-*".
+   contain-intrinsic-size is a placeholder height for the still-skipped state;
+   :has(table.cmp3) scopes this to the per-topic tables only, leaving the
+   master grid's own scroll container (.gridwrap) unaffected. */
+.tbl-wrap:has(> table.cmp3){content-visibility:auto;contain-intrinsic-size:auto 1000px}
 </style>
 </head>
 <body>

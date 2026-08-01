@@ -1,0 +1,31 @@
+# No filename here carries a content hash, so nothing can be cached
+# indefinitely without risking a stale asset after the next deploy — this
+# site ships several times a day. HTML always revalidates: it's what changes
+# most and must never be served stale. CSS/JS/JSON get a short cache so a
+# repeat visit within the same session skips the revalidation round trip
+# without risking more than an hour of staleness. Images and favicons change
+# rarely, so they get a longer window — still bounded, still must-revalidate.
+
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+/*.css
+  Cache-Control: public, max-age=3600, must-revalidate
+
+/*.js
+  Cache-Control: public, max-age=3600, must-revalidate
+
+/*.json
+  Cache-Control: public, max-age=3600, must-revalidate
+
+/*.png
+  Cache-Control: public, max-age=86400, must-revalidate
+
+/*.jpg
+  Cache-Control: public, max-age=86400, must-revalidate
+
+/*.svg
+  Cache-Control: public, max-age=86400, must-revalidate
+
+/*.ico
+  Cache-Control: public, max-age=86400, must-revalidate

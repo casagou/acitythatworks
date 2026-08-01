@@ -161,6 +161,37 @@
     clearTimeout(rt); rt = setTimeout(tableHints, 200);
   });
 
+  // "Link to M48" (and its FAQ-question equivalent) used to just navigate —
+  // reading the URL back out of the address bar to actually share it was a
+  // second click, a third to copy. preventDefault turns the same click into
+  // a clipboard write instead; the href is untouched, so a screen reader, a
+  // no-JS visit, or a right-click "copy link address" all still work exactly
+  // as before. Delegated on document, once here, so every page that carries
+  // an .mlink — measures, FAQ questions — gets it for free rather than each
+  // page wiring its own copy of the same handler.
+  if (navigator.clipboard) {
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest && e.target.closest("a.mlink[href^='#']");
+      if (!a) return;
+      e.preventDefault();
+      var href = a.getAttribute('href');
+      var url = location.href.split('#')[0] + href;
+      navigator.clipboard.writeText(url).then(function () {
+        history.replaceState(null, '', href);
+        var was = a.textContent;
+        a.textContent = 'Copied ✓';
+        a.classList.add('copied');
+        clearTimeout(a._copyTimer);
+        a._copyTimer = setTimeout(function () { a.textContent = was; a.classList.remove('copied'); }, 1600);
+      }).catch(function () {
+        // Permission denied, insecure context, document unfocused — whatever
+        // blocked the clipboard write, the click still has to do something:
+        // fall back to the plain navigation preventDefault() suppressed.
+        location.hash = href;
+      });
+    });
+  }
+
   // Mobile menu — single source of truth for all pages. Reports open/closed
   // state to assistive tech and closes on Escape.
   var t = document.getElementById('mt'), m = document.getElementById('mn');

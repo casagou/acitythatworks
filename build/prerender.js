@@ -62,10 +62,8 @@ console.log("Pre-rendering measures.js data into static HTML...");
 (function buildIndex() {
   var file = path.join(ROOT, "index.html");
   var html = fs.readFileSync(file, "utf8");
-  var commit = data.buildCommitmentsHTML();
   html = replaceMarked(html, "pgd", data.buildPillarsHTML());
-  html = replaceMarked(html, "ctbl", commit.table);
-  html = replaceMarked(html, "ccrd", commit.cards);
+  html = replaceMarked(html, "ccrd", data.buildCommitmentsHTML());
   html = replaceMarked(html, "fqc", data.buildFaqHTML());
   writeIfChanged(file, html);
 })();
