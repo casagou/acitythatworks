@@ -233,6 +233,35 @@ const GRID = [
   "2.0  .   .   .   .   .   .   .   .   .   .   .   .   .   . ",  // M81
 ];
 
+/* Scorecard v5.0 — the fifteen reader-facing columns, and which v3.0 topics
+   feed each one. Every one of the 55 topics is used exactly once: nothing is
+   double-counted and nothing is dropped, which build/matrix.js asserts.
+   General is the whole grid, so it is computed separately rather than listed.
+
+   Placement judgements the master discloses, repeated here so a reader can
+   discount them: M7 permits sits in Business & Downtown rather than Housing.
+   M54–M57 sits in Climate & Energy because both scored marks in that cluster
+   are energy instruments, though the cluster also holds procurement and open
+   data. M68 attrition and M69 real-estate rationalisation sit in Fiscal
+   Method as asset-and-overhead instruments. M70/M70b stays in Governance. */
+const COLUMNS = [
+  { key: "general",   label: "General",             short: "Gen",            all: true },
+  { key: "housing",   label: "Housing",             short: "Housing",        topics: ["M6", "M6b", "M7b", "M8/M8b", "M9/M9b/M9c/M64", "M10"] },
+  { key: "homeless",  label: "Homelessness",        short: "Homeless",       topics: ["M11"] },
+  { key: "mobility",  label: "Mobility & Streets",  short: "Mobility",       topics: ["M19/M22/M38–M42b", "M25"] },
+  { key: "walk",      label: "Walking & Transit",   short: "Walk/Transit",   topics: ["M20b/M23b"] },
+  { key: "climate",   label: "Climate & Energy",    short: "Climate",        topics: ["M54–M57", "M58/M58b/M64b", "M59–M63"] },
+  { key: "arts",      label: "Arts & Heritage",     short: "Arts/Herit",     topics: ["M43–M46b", "M45b/M45c", "M47–M49", "M50/M50b/M51/M52"] },
+  { key: "family",    label: "Families & Access",   short: "Fam/Access",     topics: ["M12/M13/M13b/M13c", "M13d", "M24b/M25b"] },
+  { key: "clean",     label: "Cleanliness",         short: "Clean",          topics: ["M14/M16/M17/M18"] },
+  { key: "safety",    label: "Safety",              short: "Safety",         topics: ["M26", "M26b", "M27", "M28", "M28b", "M28d", "M29/M29b", "M30", "M31/M31b/M31c/M32", "M33", "M33b", "M34–M37"] },
+  { key: "fiscal",    label: "Fiscal Method",       short: "Fiscal",         topics: ["M15", "M65", "M66", "M67", "M68", "M69"] },
+  { key: "cost",      label: "Cost of Living",      short: "Cost of Living", topics: ["M66b/M66c", "M66d", "M70c", "M74/M75/M76"] },
+  { key: "business",  label: "Business & Downtown", short: "Business",       topics: ["M7", "M71–M73d"] },
+  { key: "govern",    label: "Governance",          short: "Governance",     topics: ["M53/M53b/M53c", "M53d", "M70/M70b", "M77/M78/M78b", "M79/M79b", "M79c–f", "M80/M80b/M80c", "M81", "M82/M82b"] },
+  { key: "recon",     label: "Reconciliation",      short: "Recon",          topics: ["M1–M5"] },
+];
+
 /* Published pillar grades, kept so the build can assert its own recomputation
    against the master rather than silently diverging from it. n is the number
    of scored topics in that pillar for that candidate. */
@@ -328,5 +357,5 @@ const OPEN_ITEMS = [
 ];
 
 if (typeof module !== "undefined" && module.exports) {
-  module.exports = { MATRIX_META, SCALE, CANDIDATES, UNKNOWN, PILLARS, TOPICS, GRID, PILLAR_PUBLISHED, DEFECTS, NON_SOURCES, PLATFORM_STATUS, BIAS, OPEN_ITEMS };
+  module.exports = { MATRIX_META, SCALE, CANDIDATES, UNKNOWN, PILLARS, TOPICS, GRID, COLUMNS, PILLAR_PUBLISHED, DEFECTS, NON_SOURCES, PLATFORM_STATUS, BIAS, OPEN_ITEMS };
 }

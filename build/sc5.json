@@ -1,0 +1,937 @@
+{
+ "header": [
+  "Candidate",
+  "Gen",
+  "Housing",
+  "Homeless",
+  "Mobility",
+  "Walk/Transit",
+  "Climate",
+  "Arts/Herit",
+  "Fam/Access",
+  "Clean",
+  "Safety",
+  "Fiscal",
+  "Cost of Living",
+  "Business",
+  "Governance",
+  "Recon"
+ ],
+ "grid": {
+  "Jack Sandor": [
+   "B 25/55",
+   "B 4/6",
+   "B 1/1",
+   "B 1/2",
+   "A 1/1",
+   "B 3/3",
+   "B 3/4",
+   "B 3/3",
+   "—",
+   "A 2/12 ⚠",
+   "A− 2/6",
+   "D 1/4",
+   "A 1/2",
+   "B 3/9",
+   "—"
+  ],
+  "Marianne Alto": [
+   "B− 24/55",
+   "B 3/6",
+   "B 1/1",
+   "D 1/2",
+   "D 1/1",
+   "C− 1/3",
+   "B 3/4",
+   "B 2/3",
+   "B 1/1",
+   "B+ 4/12",
+   "B 1/6 ⚠",
+   "📋 0/4",
+   "B 1/2",
+   "C 4/9",
+   "A 1/1"
+  ],
+  "Arthur McInnis": [
+   "B− 16/55",
+   "B+ 3/6",
+   "—",
+   "D 1/2",
+   "D 1/1",
+   "—",
+   "—",
+   "—",
+   "—",
+   "B 3/12",
+   "A− 3/6",
+   "D 1/4",
+   "D 1/2 ⚠",
+   "B− 3/9",
+   "—"
+  ],
+  "Dave Thompson": [
+   "B− 15/55",
+   "A− 2/6",
+   "A 1/1",
+   "A 1/2",
+   "B 1/1",
+   "B 2/3",
+   "—",
+   "—",
+   "—",
+   "B− 4/12",
+   "—",
+   "—",
+   "—",
+   "D 3/9",
+   "D 1/1"
+  ],
+  "Bella Lee": [
+   "C+ 21/55",
+   "B 3/6",
+   "B 1/1",
+   "C 2/2",
+   "B 1/1",
+   "B 1/3",
+   "B 2/4",
+   "B 1/3",
+   "B 1/1",
+   "D 4/12 ⚠",
+   "—",
+   "C− 1/4",
+   "B 1/2",
+   "C+ 3/9",
+   "—"
+  ],
+  "Jeremy Caradonna": [
+   "C+ 14/55",
+   "A− 2/6",
+   "B 1/1",
+   "D 1/2",
+   "B 1/1",
+   "D 1/3",
+   "D 1/4",
+   "—",
+   "—",
+   "B− 4/12",
+   "—",
+   "—",
+   "—",
+   "C+ 2/9",
+   "D 1/1"
+  ],
+  "Krista Loughton": [
+   "C+ 12/55",
+   "B− 2/6",
+   "A 1/1",
+   "—",
+   "—",
+   "—",
+   "—",
+   "—",
+   "—",
+   "B 4/12",
+   "D 1/6",
+   "—",
+   "—",
+   "D 3/9",
+   "D 1/1"
+  ],
+  "Matt Dell": [
+   "C 19/55",
+   "B 2/6",
+   "D 1/1",
+   "D 1/2",
+   "—",
+   "D 1/3",
+   "A− 2/4",
+   "—",
+   "B 1/1",
+   "B− 4/12",
+   "B 1/6",
+   "—",
+   "D 1/2",
+   "C 4/9",
+   "D 1/1"
+  ],
+  "Stephen Hammond": [
+   "C 15/55",
+   "F 1/6 ⚠",
+   "A 1/1",
+   "—",
+   "—",
+   "—",
+   "—",
+   "—",
+   "—",
+   "B 8/12",
+   "C− 1/6",
+   "—",
+   "D 1/2",
+   "D 3/9",
+   "—"
+  ],
+  "Susan Kim": [
+   "C 16/55",
+   "A− 2/6",
+   "D 1/1",
+   "B 1/2",
+   "B 1/1",
+   "D 1/3",
+   "—",
+   "A 1/3",
+   "—",
+   "D 4/12 ⚠",
+   "C− 1/6",
+   "—",
+   "—",
+   "C+ 3/9",
+   "D 1/1"
+  ],
+  "Marg Gardiner": [
+   "C− 16/55",
+   "F 1/6 ⚠",
+   "B 1/1",
+   "—",
+   "—",
+   "—",
+   "D 1/4",
+   "—",
+   "D 1/1",
+   "C+ 4/12",
+   "C− 3/6",
+   "—",
+   "D 1/2",
+   "C+ 4/9",
+   "—"
+  ],
+  "Chris Coleman": [
+   "D 9/55",
+   "F 1/6 ⚠",
+   "D 1/1",
+   "—",
+   "—",
+   "—",
+   "—",
+   "—",
+   "—",
+   "C 4/12",
+   "D 1/6",
+   "—",
+   "—",
+   "D 2/9",
+   "—"
+  ],
+  "Karen Rothe": [
+   "D 9/55",
+   "—",
+   "—",
+   "—",
+   "D 1/1",
+   "—",
+   "D 1/4",
+   "—",
+   "—",
+   "D 1/12",
+   "D 1/6",
+   "C− 1/4",
+   "D 1/2",
+   "D 3/9",
+   "—"
+  ],
+  "Wendy Bowkett": [
+   "D 8/55",
+   "C− 1/6",
+   "—",
+   "D 1/2",
+   "—",
+   "—",
+   "D 1/4",
+   "—",
+   "D 1/1",
+   "D 1/12",
+   "D 1/6",
+   "—",
+   "—",
+   "D 2/9",
+   "—"
+  ],
+  "Melissa Cseszko": [
+   "D 6/55",
+   "—",
+   "—",
+   "D 1/2",
+   "—",
+   "—",
+   "C− 1/4",
+   "—",
+   "—",
+   "D 1/12",
+   "D 2/6",
+   "—",
+   "D 1/2",
+   "—",
+   "—"
+  ],
+  "*Garcia · Gibbs · Girard · Haley*": [
+   "⛔",
+   "⛔",
+   "⛔",
+   "⛔",
+   "⛔",
+   "⛔",
+   "⛔",
+   "⛔",
+   "⛔",
+   "⛔",
+   "⛔",
+   "⛔",
+   "⛔",
+   "⛔",
+   "⛔"
+  ]
+ },
+ "just": {
+  "Jack Sandor": {
+   "role": "Cand.",
+   "overall": "B",
+   "mean": "2.14",
+   "n": 25,
+   "cols": {
+    "Housing": {
+     "grade": "B 4/6",
+     "ev": "M6 2.0 \"housing of all kinds… family suitable housing\" · M6b 2.0 city co-op financing pilot · M8/M8b 2.0 permanent fee exemption for non-market housing — first in the field on this cluster · M9 2.0 Greater Victoria Rent Bank funding (jacksandor.ca/platform, read 31 Jul)"
+    },
+    "Homelessness": {
+     "grade": "B 1/1",
+     "ev": "M11 2.0 increase assistance for people moving through supportive housing — the STEP throughput argument with its rationale"
+    },
+    "Mobility": {
+     "grade": "B 1/2",
+     "ev": "M19 2.0 Douglas St rail preparation, traffic enforcement, accessible street parking"
+    },
+    "Walk/Transit": {
+     "grade": "A 1/1",
+     "ev": "M20b/M23b 3.0 — states the City-vs-BC-Transit jurisdictional line directly (<em>Martlet</em>, Apr 2026) plus bus lanes and transit signal priority. <strong>This mark falsified a MAX differentiation claim</strong>"
+    },
+    "Climate": {
+     "grade": "B 3/3",
+     "ev": "M54 2.0 legalize balcony solar · M58 2.0 construction-site recycling, housing-as-climate-action · M59 2.0 community and boulevard gardens"
+    },
+    "Arts/Herit": {
+     "grade": "B 3/4",
+     "ev": "M43 2.0 easier renovation of old spaces · M47 2.0 park-activation pilot (alcohol in parks) · M50 2.0 increase arts and culture funding"
+    },
+    "Fam/Access": {
+     "grade": "B 3/3",
+     "ev": "M12/13 2.0 municipal clinic on the Colwood/Langford model · M13d 2.0 school-gym joint use · M24b 2.0 more public washrooms, accessibility framing"
+    },
+    "Safety": {
+     "grade": "A 2/12 ⚠",
+     "ev": "M26b 3.0 CRCL funding — the measure's own named organization · M29b 3.0 regional police force"
+    },
+    "Fiscal": {
+     "grade": "A− 2/6",
+     "ev": "M67 2.0 council voting dashboard · M69 3.0 \"use our land more efficiently, to save tax money and avoid austerity\""
+    },
+    "Cost of Living": {
+     "grade": "D 1/4",
+     "ev": "M66d 0.5 (see Full Format)"
+    },
+    "Business": {
+     "grade": "A 1/2",
+     "ev": "M71–73d 3.0 commercial vacancy tax advocacy + stacked industrial units (employment-lands protection)"
+    },
+    "Governance": {
+     "grade": "B 3/9",
+     "ev": "M79c–f 2.0 mandatory investment-property disclosure for councillors · M80 2.0 community listening sessions · M82 2.0 livestream council meetings"
+    }
+   }
+  },
+  "Marianne Alto": {
+   "role": "Mayor",
+   "overall": "B−",
+   "mean": "1.81",
+   "n": 24,
+   "cols": {
+    "Housing": {
+     "grade": "B 3/6",
+     "ev": "M6 1.0 \"unlock more homes,\" no composition target · M6b 3.0 city land bank, 2022 platform · M9 2.0 rent banks + 2026 rental-support motion"
+    },
+    "Homelessness": {
+     "grade": "B 1/1",
+     "ev": "M11 2.0 convened the CSWB panel — authoring a plan is naming an instrument"
+    },
+    "Mobility": {
+     "grade": "D 1/2",
+     "ev": "M19 0.5 \"reimagine transportation\" — a goal with no stated action scores Weak under the two-question scale"
+    },
+    "Walk/Transit": {
+     "grade": "D 1/1",
+     "ev": "M20b 0.5 same plank; no jurisdictional line, capital figure or sidewalk commitment. She sits on the Transit Commission — publishing how Victoria's representatives vote would be an immediate Aligned"
+    },
+    "Climate": {
+     "grade": "C− 1/3",
+     "ev": "M58 1.0 Climate Leadership Plan support; Climate Friendly Homes uptake unpublished"
+    },
+    "Arts/Herit": {
+     "grade": "B 3/4",
+     "ev": "M43 2.0 façade grants · M47 2.0 parks acquisition strategy · M50 2.0 arts and innovation district, Create Victoria, Royal Athletic Park"
+    },
+    "Fam/Access": {
+     "grade": "B 2/3",
+     "ev": "M12/13 3.0 clinic-space and permissive-tax planks — <strong>M13b absorbed both 2022 planks verbatim, raised Close→Aligned in v3.0</strong> · M13d 1.0 Royal Athletic Park incl. SD61"
+    },
+    "Clean": {
+     "grade": "B 1/1",
+     "ev": "M14 2.0 expanded cleaning, ambassadors, OUR DWTN; no standard, no metric"
+    },
+    "Safety": {
+     "grade": "B+ 4/12",
+     "ev": "M26 1.0 CSWB without unified command · M27 2.0 +12 bylaw staff · M29 3.0 regional policing plank, May 2026 · M33 3.0 recorded YES, 8–1"
+    },
+    "Fiscal": {
+     "grade": "B 1/6 ⚠",
+     "ev": "M69 2.0 co-located civic infrastructure. All budget-method items remain 📋 Record"
+    },
+    "Cost of Living": {
+     "grade": "📋 0/4",
+     "ev": "Record facts only — cancelled $2M debt payment, $2.8M parking-reserve draw. No stated position either way"
+    },
+    "Business": {
+     "grade": "B 1/2",
+     "ev": "M71 2.0 welcome programme, façade grants, permissive exemptions, tourism"
+    },
+    "Governance": {
+     "grade": "C 4/9",
+     "ev": "M70b 0.5 \"a more serious discussion about the sources of income\" — <strong>downgraded in v3.0, a call for a discussion is not a ledger</strong> · M77 1.0 Crystal Pool as one-off · M80 2.0 My Great Neighbourhood grants, Neighbourhoods division · M81 2.0 co-requested provincial referendum authorization"
+    },
+    "Recon": {
+     "grade": "A 1/1",
+     "ev": "M1 3.0 lək̓ʷəŋən place naming, longhouse funding, language app — the strongest host-Nations record of any sitting member"
+    }
+   }
+  },
+  "Arthur McInnis": {
+   "role": "Cand.",
+   "overall": "B−",
+   "mean": "1.81",
+   "n": 16,
+   "cols": {
+    "Housing": {
+     "grade": "B+ 3/6",
+     "ev": "M6 2.0 townhouses, multiplexes, courtyard housing — the M6 composition mix · M6b 2.0 co-operative housing + city-owned land · M7b 3.0 \"pattern books and pre-approved designs,\" near-verbatim"
+    },
+    "Mobility": {
+     "grade": "D 1/2",
+     "ev": "M19 0.5 parking availability and travel time named, no mechanism"
+    },
+    "Walk/Transit": {
+     "grade": "D 1/1",
+     "ev": "M20b 0.5 transportation as a platform area, no mechanism"
+    },
+    "Safety": {
+     "grade": "B 3/12",
+     "ev": "M26b 3.0 tiered dispatch + mental-health coordination · M27 0.5 · M28d 3.0 community paramedicine, \"I will push to maintain or implement them\""
+    },
+    "Fiscal": {
+     "grade": "A− 3/6",
+     "ev": "M65 3.0 \"audits of existing city programs and spending\" — <strong>the only Aligned mark on M65 in the field</strong> · M66 2.0 public-consultation requirement for above-inflation increases · M67 3.0 (see Full Format)"
+    },
+    "Cost of Living": {
+     "grade": "D 1/4",
+     "ev": "M66d 0.5 cross-reference of the consultation sentence"
+    },
+    "Business": {
+     "grade": "D 1/2 ⚠",
+     "ev": "M7 0.5 infrastructure reviews tied to approvals — same area, opposite direction; disclosed scale limitation"
+    },
+    "Governance": {
+     "grade": "B− 3/9",
+     "ev": "M77 2.0 · M79b 3.0 independent Integrity Commissioner · M80 0.5"
+    }
+   }
+  },
+  "Dave Thompson": {
+   "role": "Cllr.",
+   "overall": "B−",
+   "mean": "1.77",
+   "n": 15,
+   "cols": {
+    "Housing": {
+     "grade": "A− 2/6",
+     "ev": "M6 2.0 pro-supply, eliminate parking minimums · M9 3.0 cooling bylaw co-author"
+    },
+    "Homelessness": {
+     "grade": "A 1/1",
+     "ev": "M11 3.0 co-author, Coordinated Access downtown prioritization motion, June 2025"
+    },
+    "Mobility": {
+     "grade": "A 1/2",
+     "ev": "M19 3.0 Hoboken Vision Zero benchmark cited publicly — ACTW's own peer-city evidence"
+    },
+    "Walk/Transit": {
+     "grade": "B 1/1",
+     "ev": "M20b 2.0 protected bike-and-roll peer-city benchmarking"
+    },
+    "Climate": {
+     "grade": "B 2/3",
+     "ev": "M54 2.0 EV-ready wiring mandate + income-tested e-bike rebates — <strong>scored for the first time in v3.0; previously listed as ideas ACTW lacks and never scored</strong> · M58 2.0"
+    },
+    "Safety": {
+     "grade": "B− 4/12",
+     "ev": "M26 1.0 · M27 1.0 · M29 2.0 voted for the 4→2 cut (5–4, 3 Mar 2026) · M33 3.0 recorded YES"
+    },
+    "Governance": {
+     "grade": "D 3/9",
+     "ev": "M70b 0.5 · M77 1.0 · M80 0.5"
+    },
+    "Recon": {
+     "grade": "D 1/1",
+     "ev": "M1 0.5 pro-reconciliation, no mechanism"
+    }
+   }
+  },
+  "Bella Lee": {
+   "role": "Cand.",
+   "overall": "C+",
+   "mean": "1.62",
+   "n": 21,
+   "cols": {
+    "Housing": {
+     "grade": "B 3/6",
+     "ev": "M6 2.0 \"encourage the building of 3 &amp; 4 bedroom units\" — the 3BR+ composition direction · M6b 2.0 purpose-built co-ops, easier co-op formation · M9 2.0 city repair-and-bill enforcement with 25% service tax, pets in rentals"
+    },
+    "Homelessness": {
+     "grade": "B 1/1",
+     "ev": "M11 2.0 housing liaison out of transitional housing + provincial treatment beds"
+    },
+    "Mobility": {
+     "grade": "C 2/2",
+     "ev": "M19 2.0 fare-free transit for seniors, lower fares advocacy · M25 0.5"
+    },
+    "Walk/Transit": {
+     "grade": "B 1/1",
+     "ev": "M20b 2.0 bike-lane connections to other municipalities + bus shelters"
+    },
+    "Climate": {
+     "grade": "B 1/3",
+     "ev": "M58 2.0 Crystal Pool energy standards, disposal penalties"
+    },
+    "Arts/Herit": {
+     "grade": "B 2/4",
+     "ev": "M47 2.0 Rock Bay plan, Jubilee and James Bay community centres, Quadra Village library · M50 2.0 arts investment, easier festivals, CRD Rec pass"
+    },
+    "Fam/Access": {
+     "grade": "B 1/3",
+     "ev": "M12/13 2.0 purpose-built housing for doctors in return for a practice + city-owned walk-in clinic, Colwood model"
+    },
+    "Clean": {
+     "grade": "B 1/1",
+     "ev": "M14 2.0 DVBA graffiti-removal and façade funding"
+    },
+    "Safety": {
+     "grade": "D 4/12 ⚠",
+     "ev": "M26b 0.5 · M28b 2.0 special unit for business theft · M29b 3.0 regional police force · M33 −2.0 published opposition to daytime sheltering enforcement — <strong>without this single Opposed the column is B−</strong>"
+    },
+    "Cost of Living": {
+     "grade": "C− 1/4",
+     "ev": "M66d 1.0 (see Full Format)"
+    },
+    "Business": {
+     "grade": "B 1/2",
+     "ev": "M71 2.0 storefront vacancy tax, partial-hours business registry, shared eatery spaces"
+    },
+    "Governance": {
+     "grade": "C+ 3/9",
+     "ev": "M70b 2.0 CRD fair-share on homelessness and policing costs · M77 1.0 · M80 2.0 tools for community associations"
+    }
+   }
+  },
+  "Jeremy Caradonna": {
+   "role": "Cllr.",
+   "overall": "C+",
+   "mean": "1.50",
+   "n": 14,
+   "cols": {
+    "Housing": {
+     "grade": "A− 2/6",
+     "ev": "M6 2.0 drafted the Sept 2023 Missing Middle overhaul; council adopted the first family housing policy — a composition instrument · M9 3.0 cooling bylaw co-author"
+    },
+    "Homelessness": {
+     "grade": "B 1/1",
+     "ev": "M11 2.0 Caledonia Place regional fair-share motion"
+    },
+    "Mobility": {
+     "grade": "D 1/2",
+     "ev": "M19 0.5 pro-transit, pro-bike posture"
+    },
+    "Walk/Transit": {
+     "grade": "B 1/1",
+     "ev": "M20b 2.0 advanced a new CRD transportation service as CRD vice-chair — an act, not the seat"
+    },
+    "Climate": {
+     "grade": "D 1/3",
+     "ev": "M58 0.5 — the cooling bylaw is scored once, under Housing; \"climate leader\" is a posture"
+    },
+    "Arts/Herit": {
+     "grade": "D 1/4",
+     "ev": "M43 0.5 \"a miniature London or Paris\""
+    },
+    "Safety": {
+     "grade": "B− 4/12",
+     "ev": "M26 1.0 · M27 1.0 · M29 2.0 sponsored the VicPD 4→2 cut · M33 3.0 recorded YES"
+    },
+    "Governance": {
+     "grade": "C+ 2/9",
+     "ev": "M70b 2.0 Caledonia Place · M77 1.0 Crystal Pool YES"
+    },
+    "Recon": {
+     "grade": "D 1/1",
+     "ev": "M1 0.5 pro-reconciliation, no named mechanism"
+    }
+   }
+  },
+  "Krista Loughton": {
+   "role": "Cllr.",
+   "overall": "C+",
+   "mean": "1.50",
+   "n": 12,
+   "cols": {
+    "Housing": {
+     "grade": "B− 2/6",
+     "ev": "M6 0.5 pro-supply, STEP is throughput not composition · M9 3.0 <strong>Renters' Hub — raised Close→Aligned in v3.0; it is M9's own named mechanism</strong>"
+    },
+    "Homelessness": {
+     "grade": "A 1/1",
+     "ev": "M11 3.0 STEP motion originator, Jan 2026 — Measure 11 absorbs her work directly"
+    },
+    "Safety": {
+     "grade": "B 4/12",
+     "ev": "M26 2.0 · M27 1.0 · M29 2.0 seconded the VicPD cut · M33 3.0 recorded YES"
+    },
+    "Fiscal": {
+     "grade": "D 1/6",
+     "ev": "M66 0.5"
+    },
+    "Governance": {
+     "grade": "D 3/9",
+     "ev": "M70b 0.5 · M77 1.0 · M80 1.0"
+    },
+    "Recon": {
+     "grade": "D 1/1",
+     "ev": "M1 0.5"
+    }
+   }
+  },
+  "Matt Dell": {
+   "role": "Cllr.",
+   "overall": "C",
+   "mean": "1.45",
+   "n": 19,
+   "cols": {
+    "Housing": {
+     "grade": "B 2/6",
+     "ev": "M6 1.0 \"7000+ units approved,\" volume without composition · M9 3.0 cooling bylaw co-author"
+    },
+    "Homelessness": {
+     "grade": "D 1/1",
+     "ev": "M11 0.5 CSWB supporter, no named mechanism"
+    },
+    "Mobility": {
+     "grade": "D 1/2",
+     "ev": "M19 0.5 pro-bike posture"
+    },
+    "Climate": {
+     "grade": "D 1/3",
+     "ev": "M58 0.5"
+    },
+    "Arts/Herit": {
+     "grade": "A− 2/4",
+     "ev": "M43 3.0 Hermann's Jazz Club preservation (M46b) · M50 2.0 BreakOut West motion + YMCA replacement pool. <strong>M45c excluded in v3.0 — sentence could not be re-sourced; returns when attached</strong>"
+    },
+    "Clean": {
+     "grade": "B 1/1",
+     "ev": "M14 2.0 OUR DWTN, $1M annual funded programme"
+    },
+    "Safety": {
+     "grade": "B− 4/12",
+     "ev": "M26 1.0 · M27 1.0 · M29 2.0 — <strong>recorded-vote correction: he voted for the 4→2 cut</strong> · M33 3.0"
+    },
+    "Fiscal": {
+     "grade": "B 1/6",
+     "ev": "M65 2.0 annual line-by-line budget review posture"
+    },
+    "Business": {
+     "grade": "D 1/2",
+     "ev": "M7 0.5 \"the epitome of bad governance is the failure to make a decision\" — process critique, no mechanism"
+    },
+    "Governance": {
+     "grade": "C 4/9",
+     "ev": "M53 3.0 AI consultation imagery pioneer · M53d 0.5 uses AI without governing its use · M70b 0.5 · M77 1.0"
+    },
+    "Recon": {
+     "grade": "D 1/1",
+     "ev": "M1 0.5"
+    }
+   }
+  },
+  "Stephen Hammond": {
+   "role": "Cllr.",
+   "overall": "C",
+   "mean": "1.37",
+   "n": 15,
+   "cols": {
+    "Housing": {
+     "grade": "F 1/6 ⚠",
+     "ev": "M6 −2.0 recorded NO, Jan 2023 and Sept 2023 Missing Middle. <strong>One vote; without it, no housing marks at all</strong>"
+    },
+    "Homelessness": {
+     "grade": "A 1/1",
+     "ev": "M11 3.0 sheltering-ban author — capacity-first sequencing aligns directly"
+    },
+    "Safety": {
+     "grade": "B 8/12",
+     "ev": "M26 1.0 · M27 0.5 · M28 3.0 FOI-driven targeted enforcement · M28b 3.0 business security cost-spreading · M29 0.5 opposed the cut · M31 2.0 FOI publication of enforcement data · M33 3.0 author of the ban, passed 8–1 · M33b 3.0 drug-use buffer bylaw he drafted. <strong>The widest safety base in the field.</strong> v3.0 defect 3 applies: the scale does not distinguish authoring an instrument from voting for one, so this B understates his distance from the field on enforcement"
+    },
+    "Fiscal": {
+     "grade": "C− 1/6",
+     "ev": "M66 1.0"
+    },
+    "Business": {
+     "grade": "D 1/2",
+     "ev": "M7 0.5 reduce-red-tape posture, no benchmark"
+    },
+    "Governance": {
+     "grade": "D 3/9",
+     "ev": "M70b 0.5 · M77 1.0 · M79b 0.5"
+    }
+   }
+  },
+  "Susan Kim": {
+   "role": "Cllr.",
+   "overall": "C",
+   "mean": "1.31",
+   "n": 16,
+   "cols": {
+    "Housing": {
+     "grade": "A− 2/6",
+     "ev": "M6 2.0 non-market, public and co-op emphasis on the 15% line · M9 3.0 vacancy control + STR licensing — <strong>her own 2022 planks, absorbed as M9b/M9c</strong>"
+    },
+    "Homelessness": {
+     "grade": "D 1/1",
+     "ev": "M11 0.5 pro-supportive-housing"
+    },
+    "Mobility": {
+     "grade": "B 1/2",
+     "ev": "M19 2.0 bike valet expansion, reduce parking minimums"
+    },
+    "Walk/Transit": {
+     "grade": "B 1/1",
+     "ev": "M20b 2.0 car-share and e-bike incentives"
+    },
+    "Climate": {
+     "grade": "D 1/3",
+     "ev": "M58 0.5"
+    },
+    "Fam/Access": {
+     "grade": "A 1/3",
+     "ev": "M24b 3.0 public bathrooms as transportation infrastructure — <strong>her own plank, absorbed outright; the clearest case of ACTW adopting a sitting councillor's idea</strong>"
+    },
+    "Safety": {
+     "grade": "D 4/12 ⚠",
+     "ev": "M26 1.0 · M27 1.0 · M29 2.0 voted for the cut · M33 −2.0 lone NO on the sheltering ban, 8–1. <strong>One recorded vote produces the lowest safety grade among incumbents; without it the column is C. This sentence must sit beside the D wherever it is published</strong>"
+    },
+    "Fiscal": {
+     "grade": "C− 1/6",
+     "ev": "M66 1.0 voted against the 2026 budget"
+    },
+    "Governance": {
+     "grade": "C+ 3/9",
+     "ev": "M70b 0.5 · M77 1.0 · M80 3.0 (see Full Format M80 table)"
+    },
+    "Recon": {
+     "grade": "D 1/1",
+     "ev": "M1 0.5"
+    }
+   }
+  },
+  "Marg Gardiner": {
+   "role": "Cllr.",
+   "overall": "C−",
+   "mean": "1.12",
+   "n": 16,
+   "cols": {
+    "Housing": {
+     "grade": "F 1/6 ⚠",
+     "ev": "M6 −2.0 recorded NO; demanded the MNP governance review first. One vote"
+    },
+    "Homelessness": {
+     "grade": "B 1/1",
+     "ev": "M11 2.0 Five Pillars approach"
+    },
+    "Clean": {
+     "grade": "D 1/1",
+     "ev": "M14 0.5 cleanliness leads her 2022 framing, no standard or mechanism"
+    },
+    "Arts/Herit": {
+     "grade": "D 1/4",
+     "ev": "M43 0.5"
+    },
+    "Safety": {
+     "grade": "C+ 4/12",
+     "ev": "M26 2.0 · M27 1.0 · M29 0.5 opposed the cut · M33 3.0 recorded YES"
+    },
+    "Fiscal": {
+     "grade": "C− 3/6",
+     "ev": "M65 0.5 \"no serious thought given to introducing rigour\" — <strong>downgraded Aligned→Weak in v3.0: a diagnosis names the principle and no action or instrument</strong> · M66 1.0 · M67 2.0 monthly fiscal newsletter, a recurring reporting instrument"
+    },
+    "Business": {
+     "grade": "D 1/2",
+     "ev": "M7 0.5 reduce-red-tape posture"
+    },
+    "Governance": {
+     "grade": "C+ 4/9",
+     "ev": "M70b 0.5 · M77 1.0 · M79b 3.0 Integrity Commissioner · M80 2.0 published opposition to limits on public input + endorsement of a structured co-development forum (marggardiner.ca, read 31 Jul)"
+    }
+   }
+  },
+  "Chris Coleman": {
+   "role": "Cllr. (undeclared)",
+   "overall": "D",
+   "mean": "0.67",
+   "n": 9,
+   "cols": {
+    "Housing": {
+     "grade": "F 1/6 ⚠",
+     "ev": "M6 −2.0 recorded NO, Jan and Sept 2023 — process objections rather than principle, but a recorded vote is a recorded vote"
+    },
+    "Homelessness": {
+     "grade": "D 1/1",
+     "ev": "M11 0.5 CSWB supporter; NO on Dowler Place zoning"
+    },
+    "Safety": {
+     "grade": "C 4/12",
+     "ev": "M26 1.0 · M27 1.0 · M29 0.5 opposed the cut · M33 3.0 recorded YES"
+    },
+    "Fiscal": {
+     "grade": "D 1/6",
+     "ev": "M66 0.5"
+    },
+    "Governance": {
+     "grade": "D 2/9",
+     "ev": "M77 1.0 · M79b 0.5. <strong>Chairing the Citizens' Assembly Council Committee is a role — banned inference 5, not scored, applied to him as it was to Alto, Bowkett and Lee</strong>"
+    }
+   }
+  },
+  "Karen Rothe": {
+   "role": "Cand.",
+   "overall": "D",
+   "mean": "0.67",
+   "n": 9,
+   "cols": {
+    "Walk/Transit": {
+     "grade": "D 1/1",
+     "ev": "M20b 0.5 transit named among core local-government responsibilities, no mechanism"
+    },
+    "Arts/Herit": {
+     "grade": "D 1/4",
+     "ev": "M45c 0.5 Centennial Square"
+    },
+    "Safety": {
+     "grade": "D 1/12",
+     "ev": "M27 0.5"
+    },
+    "Fiscal": {
+     "grade": "D 1/6",
+     "ev": "M67 0.5"
+    },
+    "Cost of Living": {
+     "grade": "C− 1/4",
+     "ev": "M66b/c 1.0 intergenerational-deferral and debt concern"
+    },
+    "Business": {
+     "grade": "D 1/2",
+     "ev": "M71 0.5 restore-downtown commitment"
+    },
+    "Governance": {
+     "grade": "D 3/9",
+     "ev": "M77 0.5 · M79b 0.5 · M80 1.5 Partial+ — a commitment with a stated target (see Full Format)"
+    }
+   }
+  },
+  "Wendy Bowkett": {
+   "role": "Cand.",
+   "overall": "D",
+   "mean": "0.56",
+   "n": 8,
+   "cols": {
+    "Housing": {
+     "grade": "C− 1/6",
+     "ev": "M6 1.0 \"housing that fits into complete communities\" + the documented 518-units/yr, two-public-toilets amenity critique — <strong>the field's closest published analogue to ACTW's composition-and-amenity argument, with no target attached</strong>"
+    },
+    "Clean": {
+     "grade": "D 1/1",
+     "ev": "M14 0.5 reliable services, well-maintained parks"
+    },
+    "Mobility": {
+     "grade": "D 1/2",
+     "ev": "M25 0.5 well-maintained roads (road maintenance, not Vision Zero)"
+    },
+    "Arts/Herit": {
+     "grade": "D 1/4",
+     "ev": "M47 0.5 parks"
+    },
+    "Safety": {
+     "grade": "D 1/12",
+     "ev": "M27 0.5"
+    },
+    "Fiscal": {
+     "grade": "D 1/6",
+     "ev": "M67 0.5"
+    },
+    "Governance": {
+     "grade": "D 2/9",
+     "ev": "M77 0.5 · M80 0.5"
+    }
+   }
+  },
+  "Melissa Cseszko": {
+   "role": "Cand.",
+   "overall": "D",
+   "mean": "0.67",
+   "n": 6,
+   "cols": {
+    "Mobility": {
+     "grade": "D 1/2",
+     "ev": "M19 0.5 \"I want to make the streets accessible again\" (CHEK)"
+    },
+    "Arts/Herit": {
+     "grade": "C− 1/4",
+     "ev": "M43 1.0 protecting heritage, charm, historic buildings"
+    },
+    "Safety": {
+     "grade": "D 1/12",
+     "ev": "M27 0.5"
+    },
+    "Fiscal": {
+     "grade": "D 2/6",
+     "ev": "M65 1.0 review-and-adjust programs · M67 0.5"
+    },
+    "Business": {
+     "grade": "D 1/2",
+     "ev": "M71 0.5"
+    }
+   }
+  }
+ },
+ "warns": [
+  "<strong>Kim · Safety D 4/12.</strong> Three positive marks and one recorded vote — her lone NO on the July 2024 sheltering ban (−2.0). Without that single vote the column is C. She also holds two measures the framework absorbed from her outright (M9 vacancy control and STR licensing, M24b washrooms-as-infrastructure). <strong>The D is one vote, not a record.</strong>",
+  "<strong>Lee · Safety D 4/12.</strong> One published sentence opposing daytime sheltering enforcement (−2.0) sits beside an <em>Aligned</em> regional-police-force commitment. Without the single Opposed the column is B−.",
+  "<strong>Hammond, Gardiner, Coleman · Housing F 1/6.</strong> Each F is one recorded Missing Middle NO. Gardiner's without it would be no mark at all; the F is a vote, not a housing portfolio.",
+  "<strong>Sandor · Safety A 2/12.</strong> Two topics of twelve — CRCL funding (M26b's named organization) and a regional police force. An A on two topics is not a safety platform.",
+  "<strong>Alto · Fiscal B 1/6.</strong> One mark (M69 co-located civic infrastructure, Close). Her four-year budget record — above-inflation growth, no ZBB, the cancelled $2M debt payment, the $2.8M parking-reserve draw — remains 📋 Record and is excluded by rule. She has stated no position against any of it; stating one would convert 📋 into a real grade.",
+  "<strong>McInnis · Business D 1/2.</strong> His M7 mark is Weak for \"infrastructure reviews tied to development approvals\" — the same policy area running the opposite direction from M7's compression. The scale has no symbol between Partial and Opposed; disclosed rather than invented.",
+  "<strong>Cseszko · everything.</strong> Six marks, platform unpublished. <strong>This is a publication schedule, not a policy gap.</strong> Re-score on release."
+ ]
+}

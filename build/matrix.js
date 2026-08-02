@@ -29,6 +29,10 @@ const M = require(path.join(ROOT, "matrix-v3.js"));
 
 const EV_PATH = path.join(__dirname, "evidence.json");
 const EV = fs.existsSync(EV_PATH) ? JSON.parse(fs.readFileSync(EV_PATH, "utf8")) : {};
+/* Scorecard v5.0: the published 15-column grid and, for every scored column
+   cell, the marks and quoted evidence behind it. This is what makes a grade
+   explainable — a reader opens a cell and sees the sentences, not a number. */
+const SC5 = JSON.parse(fs.readFileSync(path.join(__dirname, "sc5.json"), "utf8"));
 
 const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 /* Content strings in matrix-v3.js already carry <strong>/<em>; keep those. */
@@ -101,6 +105,57 @@ comp.forEach((x) => {
 });
 const totalMarks = rows.reduce((a, r) => a + r.filter((v) => v !== ".").length, 0);
 if (totalMarks !== M.MATRIX_META.marks) errs.push("grid holds " + totalMarks + " marks, master states " + M.MATRIX_META.marks);
+
+/* ---- column layer (Scorecard v5.0) ------------------------------------ */
+const idOf = M.TOPICS.map((t) => t[0]);
+/* the 15 columns must use all 55 topics exactly once */
+const useCount = {};
+M.COLUMNS.filter((c) => !c.all).forEach((c) => c.topics.forEach((t) => {
+  const i = idOf.indexOf(t);
+  if (i === -1) errs.push("column " + c.key + " names unknown topic " + t);
+  else useCount[i] = (useCount[i] || 0) + 1;
+}));
+idOf.forEach((t, i) => {
+  if (!useCount[i]) errs.push("topic " + t + " is in no column");
+  else if (useCount[i] > 1) errs.push("topic " + t + " is double-counted across columns");
+});
+
+const colGrid = {}; // key -> { colKey -> {grade,n,total,mean,record} }
+comp.forEach((x) => {
+  const ci = x.ci;
+  const per = {};
+  M.COLUMNS.forEach((col) => {
+    const idxs = col.all ? M.TOPICS.map((_, i) => i) : col.topics.map((t) => idOf.indexOf(t));
+    const vals = idxs.map((i) => rows[i][ci]).filter((v) => v !== ".").map(parseFloat);
+    const total = col.all ? 55 : col.topics.length;
+    if (!vals.length) { per[col.key] = { n: 0, total }; return; }
+    const mean = round2(vals.reduce((a, b) => a + b, 0) / vals.length);
+    per[col.key] = { grade: band(mean), mean, n: vals.length, total };
+  });
+  colGrid[x.c.key] = per;
+});
+
+/* assert every computed column cell against the published v5.0 grid */
+const pubRow = (name) => SC5.grid[name] || SC5.grid["**" + name + "**"];
+comp.forEach((x) => {
+  const pub = pubRow(x.c.name);
+  if (!pub) { errs.push("no published v5.0 row for " + x.c.name); return; }
+  M.COLUMNS.forEach((col, k) => {
+    const cell = (pub[k] || "").trim();
+    const got = colGrid[x.c.key][col.key];
+    const m = cell.match(/(A−|A|B\+|B−|B|C\+|C−|C|D|F)\s+(\d+)\/(\d+)/);
+    if (!m) {
+      /* a Record-only cell publishes 📋 n/total and carries no letter — the
+         computed side must agree that nothing here is scored */
+      if (/📋/.test(cell)) { if (got.n !== 0) errs.push(x.c.name + "/" + col.short + " published Record but computed n=" + got.n); return; }
+      if (got.n !== 0) errs.push(x.c.name + "/" + col.short + " computed n=" + got.n + " but published \"" + cell + "\"");
+      return;
+    }
+    if (got.grade !== m[1]) errs.push(x.c.name + "/" + col.short + " computed " + got.grade + " vs published " + m[1]);
+    if (got.n !== +m[2]) errs.push(x.c.name + "/" + col.short + " n " + got.n + " vs published " + m[2]);
+    if (got.total !== +m[3]) errs.push(x.c.name + "/" + col.short + " total " + got.total + " vs published " + m[3]);
+  });
+});
 if (errs.length) { console.error("BUILD ABORTED — grid does not reconcile to the master:"); errs.forEach((e) => console.error("  " + e)); process.exit(1); }
 
 /* evidence coverage, reported honestly on the page */
@@ -173,6 +228,43 @@ let pillarBody = ranked.map((x) => {
   return "<tr><td class=\"who\">" + esc(x.c.name) + "</td>" + tds + "</tr>";
 }).join("\n");
 
+/* ---- the 15-column grid: the reader-facing surface -------------------- */
+/* Cell keys map to the justification blocks, whose column labels are the
+   master's short names. Matched leniently so a label tweak upstream doesn't
+   silently drop a cell's evidence. */
+function justFor(name, col) {
+  const j = SC5.just[name];
+  if (!j) return null;
+  const want = (s) => String(s).replace(/\s|&|-/g, "").toLowerCase();
+  const k = Object.keys(j.cols).find((x) => want(x) === want(col.short) || want(x) === want(col.label));
+  return k ? j.cols[k] : null;
+}
+
+let colHead = M.COLUMNS.map((col) =>
+  '<th class="ch" title="' + esc(col.label) + '"><abbr title="' + esc(col.label) + ' — ' +
+  (col.all ? "all 55 topics" : col.topics.length + " topic" + (col.topics.length > 1 ? "s" : "") + ": " + esc(col.topics.join(" · "))) +
+  '">' + esc(col.short) + "</abbr></th>").join("");
+
+let colBody = ranked.map((x) => {
+  const tds = M.COLUMNS.map((col) => {
+    const g = colGrid[x.c.key][col.key];
+    const j = justFor(x.c.name, col);
+    if (!g.n) {
+      if (j && /📋|Record/.test(j.grade + j.ev)) {
+        return '<td class="cc rec" tabindex="0" role="button" data-c="' + x.c.key + '" data-col="' + col.key +
+          '" title="Record only — nothing scored">📋<span class="cn">0/' + g.total + "</span></td>";
+      }
+      return '<td class="cc none">—</td>';
+    }
+    return '<td class="cc" tabindex="0" role="button" data-c="' + x.c.key + '" data-col="' + col.key + '">' +
+      '<span class="g ' + gradeCls(g.grade) + '">' + g.grade + "</span>" +
+      '<span class="cn">' + g.n + "/" + g.total + "</span></td>";
+  }).join("");
+  return '<tr><td class="who">' + esc(x.c.name) + '<span class="wr">' + esc(x.c.office) + "</span></td>" + tds + "</tr>";
+}).join("\n");
+
+const warnHtml = SC5.warns.map((w) => "<li>" + w + "</li>").join("\n");
+
 /* master grid */
 let gridHead = C.map((c) => '<th class="gh" title="' + esc(c.name) + '"><abbr title="' + esc(c.name) + '">' + c.key + "</abbr></th>").join("");
 let gridBody = M.TOPICS.map((t, ti) => {
@@ -207,6 +299,19 @@ const payload = {
     M.TOPICS.forEach((t, ti) => { const st = evByKey[norm(t[0])]; if (st && st.actw) o[ti] = st.actw; });
     return o;
   })(),
+  cols: M.COLUMNS.map((c) => ({ key: c.key, label: c.label, short: c.short, topics: c.all ? null : c.topics })),
+  warns: SC5.warns,
+  colGrid: colGrid,
+  /* candidateKey|columnKey -> { grade, ev } straight from the master's
+     per-grade justification tables */
+  just: (() => {
+    const o = {};
+    C.forEach((c) => M.COLUMNS.forEach((col) => {
+      const j = justFor(c.name, col);
+      if (j) o[c.key + "|" + col.key] = j;
+    }));
+    return o;
+  })(),
 };
 
 const defectRows = M.DEFECTS[0].table.map((r) => "<tr><td>" + r[0] + '</td><td class="bad">' + r[1] + "</td><td>" + r[2] + "</td></tr>").join("");
@@ -223,6 +328,9 @@ const out = tpl
   .replace("<!--PLATFORM_STATUS-->", M.PLATFORM_STATUS.map((r) => "<tr><td><strong>" + r[0] + "</strong></td><td>" + rich(r[1]) + "</td><td>" + rich(r[2]) + "</td></tr>").join("\n"))
   .replace("<!--BIAS-->", M.BIAS.map((b) => "<li>" + rich(b) + "</li>").join("\n"))
   .replace("<!--OPEN-->", M.OPEN_ITEMS.map((b) => "<li>" + rich(b) + "</li>").join("\n"))
+  .replace("<!--COL_HEAD-->", colHead)
+  .replace("<!--COL_BODY-->", colBody)
+  .replace("<!--WARNS-->", warnHtml)
   .replace("<!--EVCOV-->", evHave + " of " + M.MATRIX_META.marks)
   .replace(/<!--SCOREDATA-->/, JSON.stringify(payload));
 
@@ -232,3 +340,8 @@ console.log("  candidates      :", C.length, "| marks:", totalMarks, "| topics:"
 console.log("  evidence cells  :", evHave, "of", totalMarks, "(" + Math.round(evHave / totalMarks * 100) + "%)");
 console.log("  letters withheld:", comp.reduce((a, x) => a + M.PILLARS.filter((p) => x.pillars[p.key] && x.pillars[p.key].withheld === "opposed").length, 0), "pillar cells (Opposed on a thin base)");
 console.log("  grid reconciles to the master on every n, mean, grade and pillar figure");
+const justCount = Object.keys(payload.just).length;
+let scoredColCells = 0;
+C.forEach((c) => M.COLUMNS.forEach((col) => { if (!col.all && colGrid[c.key][col.key].n) scoredColCells++; }));
+console.log("  15-column grid  : verified against the published v5.0 grid, cell by cell");
+console.log("  justifications  :", justCount, "column cells carry their marks and evidence (" + scoredColCells + " scored)");
