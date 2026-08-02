@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="description" content="Where each Victoria 2026 candidate stands against A City That Works. 55 topics, 225 marks, computed on a published two-question scale — with the scale's own defects disclosed.">
+<meta name="theme-color" content="#1A3668">
+<title>Candidate Scorecard — A City That Works, Victoria 2026</title>
+<meta property="og:title" content="Candidate Scorecard — A City That Works">
+<meta property="og:description" content="55 topics, 225 marks, computed not assigned. Every grade opens onto the mark, its value and the sentence it rests on.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://acitythatworks.ca/scorecard.html">
+<meta property="og:site_name" content="A City That Works">
+<meta property="og:locale" content="en_CA">
+<meta property="og:image" content="https://acitythatworks.ca/og-card-scorecard.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Candidate Scorecard — A City That Works">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://acitythatworks.ca/og-card-scorecard.png">
+<link rel="canonical" href="https://acitythatworks.ca/scorecard.html">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Public+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+/* ── grade chips ─────────────────────────────────────────────────────── */
+.g{display:inline-flex;align-items:center;justify-content:center;min-width:34px;padding:3px 7px;font-family:'Fraunces',serif;font-size:17px;font-weight:600;line-height:1.15;color:#fff}
+.g.a{background:#227247}.g.b{background:#3D6E4E}.g.c{background:#8B6914}.g.d{background:#B5651F}.g.f{background:#B5341F}.g.x{background:#8a8580}
+/* ── overall table ───────────────────────────────────────────────────── */
+.ovt{width:100%;border-collapse:collapse;font-size:14px;margin-top:20px}
+.ovt th{text-align:left;padding:10px 10px 10px 0;font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--navy);border-bottom:2px solid rgba(26,54,104,.3)}
+.ovt td{padding:12px 10px 12px 0;border-bottom:1px solid rgba(26,54,104,.14);vertical-align:middle}
+.ov-rk{font-family:'JetBrains Mono',monospace;font-size:12px;color:#8a8580;width:26px}
+.cn-name{display:block;font-family:'Fraunces',serif;font-size:16px;font-weight:500;color:var(--navy);line-height:1.2}
+.cn-role{display:block;font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:#6b6664;margin-top:3px}
+.ov-mn{font-family:'JetBrains Mono',monospace;font-size:14px;color:var(--navy);white-space:nowrap}
+.ov-n{font-family:'JetBrains Mono',monospace;font-size:13px;white-space:nowrap;color:var(--navy)}
+.ov-n .of{display:block;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:#8a8580}
+.mkbar{display:flex;height:11px;min-width:110px;border:1px solid rgba(26,54,104,.2)}
+.mkbar i{display:block}
+.mk-a{background:#227247}.mk-b{background:#6FA07C}.mk-c{background:#D9B45B}.mk-d{background:#E2D2A6}.mk-f{background:#B5341F}
+/* ── pillar table ────────────────────────────────────────────────────── */
+.plt{width:100%;border-collapse:collapse;font-size:13px;min-width:660px}
+.plt th{padding:8px 6px;font-family:'JetBrains Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:.06em;color:var(--navy);border-bottom:2px solid rgba(26,54,104,.3);text-align:center}
+.plt th .pe{display:block;font-size:14px}
+.plt td{padding:9px 6px;border-bottom:1px solid rgba(26,54,104,.12);text-align:center;vertical-align:middle}
+.plt td.who{text-align:left;font-family:'Fraunces',serif;font-size:14px;color:var(--navy);white-space:nowrap;position:sticky;left:0;background:#fff;border-right:1px solid rgba(26,54,104,.14)}
+.pn{display:block;font-family:'JetBrains Mono',monospace;font-size:9px;color:#6b6664;margin-top:3px;white-space:nowrap}
+.pc.thin .g{opacity:.92;box-shadow:inset 0 0 0 2px rgba(255,255,255,.55)}
+.pc.thin .pn{color:#8B6914}
+.pc-w .pw{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:9.5px;text-transform:uppercase;letter-spacing:.06em;color:#8B6914;border:1px dashed rgba(139,105,20,.55);padding:3px 5px}
+.pc-e{color:#c9c4bf}
+.pc-f .pn{color:#8a8580}
+/* ── master grid ─────────────────────────────────────────────────────── */
+.gwrap{max-height:74vh;overflow:auto;border:1px solid rgba(26,54,104,.18);margin-top:18px}
+table.mg{border-collapse:separate;border-spacing:0;font-size:12px;background:#fff;width:100%}
+table.mg th,table.mg td{padding:5px 6px;border-bottom:1px solid rgba(26,54,104,.1)}
+table.mg thead th{position:sticky;top:0;z-index:2;background:var(--paper);font-family:'JetBrains Mono',monospace;font-size:9px;text-transform:uppercase;color:var(--navy);border-bottom:2px solid rgba(26,54,104,.3)}
+table.mg th.gt,table.mg td.gt{position:sticky;left:0;z-index:1;background:#fff;text-align:left;min-width:15em;max-width:19em;border-right:1px solid rgba(26,54,104,.14)}
+table.mg thead th.gt{z-index:3;background:var(--paper)}
+.gm{display:block;font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--gold-ink);letter-spacing:.04em}
+.gd{display:block;font-size:11.5px;line-height:1.3;color:var(--navy)}
+.gp{display:block;font-size:11px;margin-top:2px}
+.newt{font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.1em;background:var(--gold);color:#3a2c05;padding:1px 4px}
+td.gc{text-align:center;font-family:'JetBrains Mono',monospace;font-size:11px;white-space:nowrap;cursor:pointer;color:#1c1917}
+td.gc:focus{outline:2px solid var(--navy);outline-offset:-2px}
+td.gc.gx{color:#cfcac5;cursor:default}
+table.mg tbody tr:hover td{background:rgba(212,168,67,.10)}
+table.mg tbody tr:hover td.gt{background:rgba(212,168,67,.16)}
+th.gh abbr{text-decoration:none;border:0}
+/* ── detail panel ────────────────────────────────────────────────────── */
+.sc-panel{margin:16px 0;border:1px solid rgba(26,54,104,.25);background:#fff;box-shadow:0 2px 14px rgba(26,54,104,.10)}
+.sc-panel .in{padding:18px 20px}
+.sc-panel h4{margin:0 0 4px;font-family:'Fraunces',serif;font-size:19px;color:var(--navy)}
+.sc-panel .close{float:right;font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.12em;background:none;border:1px solid rgba(26,54,104,.3);padding:7px 11px;min-height:36px;cursor:pointer;color:var(--navy)}
+.dsub{font-family:'JetBrains Mono',monospace;font-size:10.5px;text-transform:uppercase;letter-spacing:.1em;color:#6b6664;margin-bottom:12px}
+.dmark{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;padding:11px 13px;background:rgba(26,54,104,.05);border-left:3px solid var(--gold);margin-bottom:12px}
+.dmark b{font-family:'Fraunces',serif;font-size:18px;color:var(--navy)}
+.dmark .dv{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--gold-ink)}
+.dlab{font-family:'JetBrains Mono',monospace;font-size:9.5px;text-transform:uppercase;letter-spacing:.12em;color:var(--navy);margin:14px 0 5px}
+.dtext{font-size:14.5px;line-height:1.6;color:#33312e}
+.dnone{font-size:13.5px;line-height:1.6;color:#57534e;font-style:italic}
+.sc-backdrop{position:fixed;inset:0;background:rgba(20,18,16,.5);z-index:40}
+.sc-panel.sheet{position:fixed;left:0;right:0;bottom:0;z-index:41;margin:0;max-height:82vh;overflow:auto;border-radius:10px 10px 0 0}
+body.no-scroll{overflow:hidden}
+/* ── misc ────────────────────────────────────────────────────────────── */
+.defect{border:1px solid rgba(181,52,31,.35);background:rgba(181,52,31,.05);padding:16px 18px;margin:14px 0}
+.defect h3{margin:0 0 6px;font-family:'Fraunces',serif;font-size:18px;color:#8f2a19}
+.defect .fixnote{margin-top:10px;padding:10px 12px;background:#fff;border-left:3px solid var(--navy);font-size:14px;line-height:1.55}
+td.bad{color:#B5341F;font-weight:600}
+.scale-t{width:100%;border-collapse:collapse;font-size:13px;margin:14px 0;min-width:520px}
+.scale-t th,.scale-t td{padding:8px 9px;border:1px solid rgba(26,54,104,.18);text-align:center}
+.scale-t th{background:rgba(26,54,104,.06);font-family:'JetBrains Mono',monospace;font-size:9.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--navy)}
+.scale-t td:first-child,.scale-t th:first-child{text-align:left;font-weight:600;color:var(--navy)}
+.bands{font-family:'JetBrains Mono',monospace;font-size:12px;line-height:2;color:var(--navy)}
+.legend{display:flex;flex-wrap:wrap;gap:8px 16px;margin:12px 0;font-size:13px}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.legend i{width:14px;height:11px;display:inline-block;border:1px solid rgba(26,54,104,.25)}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+
+<header>
+<div class="c hr">
+<a href="index.html" class="brand"><svg class="bicn" viewBox="0 0 240 240" aria-hidden="true"><circle cx="120" cy="120" r="112" fill="#FAF7F0"/><g fill="none" stroke="#16335c" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"><path d="M52 92  q22.5 -14 45 0 t45 0 t45 0"/><path d="M52 120 q22.5 -14 45 0 t45 0 t45 0" opacity="0.88"/><path d="M52 148 q22.5 -14 45 0 t45 0 t45 0" opacity="0.76"/></g></svg><span class="nm">A City That Works</span></a>
+<nav class="nv">
+<a href="summary.html">Summary</a>
+<a href="measures.html">Measures</a>
+<a href="scorecard.html" class="nv-sc cur">Candidates</a>
+<a href="city-hall.html">City Hall</a>
+<a href="faq.html">FAQ</a>
+<a href="endorse.html" class="btn-end">Endorse</a>
+</nav>
+<button id="mt" class="mb" aria-label="Open menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+</div>
+<div id="mn" class="mm">
+<div class="c mmi">
+<a href="index.html">Framework</a>
+<a href="summary.html">One-Page Summary</a>
+<a href="measures.html">All Measures</a>
+<a href="index.html#scorecard">12 Commitments</a>
+<a href="index.html#balance">Balance Sheet</a>
+<div class="grp">Detailed documents</div>
+<a href="savings.html">Savings &amp; Revenue Analysis</a>
+<a href="city-hall.html">How City Hall Works</a>
+<a href="endorse.html">Candidate Endorsement Pack</a>
+<a href="comparison.html">Candidate Comparison Matrix</a>
+<a href="scorecard.html" class="gd">Candidate Scorecard</a>
+<a href="faq.html">Frequently Asked Questions</a>
+<a href="version-history.html">Version History</a>
+<div class="grp"></div>
+<a href="endorse.html" class="gd">Endorse the framework →</a>
+</div>
+</div>
+</header>
+
+<main id="main">
+<div class="cn">
+<nav class="crumbs" aria-label="Breadcrumb">
+<a href="index.html">Framework</a><span class="sep">/</span><span class="here">Candidate Scorecard</span>
+</nav>
+<div class="hero">
+<div class="eyb"><span>📊 The Ballot</span><span class="dot">◆</span><span>Matrix v3.0 · 1 August 2026</span><span class="dot">◆</span><span><a href="version-history.html" style="color:inherit">v1.9.7</a></span></div>
+<h1 class="ph1">Where each candidate <em>stands.</em></h1>
+<p class="lead" style="margin-top:18px"><strong>55 topics · 225 scored marks · 15 candidates.</strong> Every mark is the output of two questions asked in order, so the same evidence produces the same mark regardless of who reads it. <strong>A grade is computed, not assigned</strong> — and every number on this page can be recomputed from the grid below.</p>
+<p class="scale"><strong>The scale measures distance from this framework, not quality.</strong> A low grade means a candidate proposes something different, or has not yet said how. It does not mean they are wrong.</p>
+<a href="index.html" class="pgback">← Back to the framework</a>
+</div>
+
+<div class="callout gold" style="margin-top:6px">
+<div class="lbl">◆ Read this before the grades</div>
+<p><strong>Read the “graded on” column before the grade.</strong> A grade computed on 6 topics and a grade computed on 25 are not comparable claims. <strong>Silence is never scored</strong>, so a narrow base is a fact about a publication calendar, not about a candidate.</p>
+<p><strong>Most municipal candidates publish platform detail in September.</strong> A matrix scored in July and August therefore <strong>systematically under-reports challengers relative to incumbents</strong>, who have four years of votes on the record. That is a property of the calendar, not a finding about anyone, and it is the single most important caveat on this page. <strong>A re-score after nominations close on 11 September is mandatory before this document informs anything.</strong></p>
+<p><strong>This page discloses two defects in its own scale and withholds four letter grades because of one of them.</strong> <a href="#defects">Read the defects</a> before quoting any cell.</p>
+</div>
+
+<nav class="toc" aria-label="On this page">
+<div class="toc-h">◆ On this page</div>
+<ol>
+<li><a href="#grades">Overall grades</a></li>
+<li><a href="#pillars">Grades by pillar</a></li>
+<li><a href="#grid">The full grid — 55 topics</a></li>
+<li><a href="#scale">How a mark is decided</a></li>
+<li><a href="#sourcing">What counts as a source</a></li>
+<li><a href="#blank">What a blank means</a></li>
+<li><a href="#defects">Three defects in the scale</a></li>
+<li><a href="#bias">This document's own bias</a></li>
+<li><a href="#open">Open items</a></li>
+</ol>
+</nav>
+
+<div class="jumpbar" id="jumpbar">
+<div class="jumpin">
+<label class="jl2" for="jumpsel">Jump to</label>
+<select id="jumpsel" class="jumpsel" aria-label="Jump to a section">
+<option value="">Choose a section…</option>
+</select>
+<button type="button" class="jumpbtn" id="jumpprev" aria-label="Previous section">↑</button>
+<button type="button" class="jumpbtn" id="jumpnext" aria-label="Next section">↓</button>
+<a class="jumpbtn jumptop" href="#main" aria-label="Back to top">Top</a>
+</div>
+<div class="jumpprog" aria-hidden="true"><i id="jumpfill"></i></div>
+</div>
+
+<div class="prose">
+
+<h2 id="grades">Overall grades</h2>
+<p>The mean of every scored topic for that candidate. <strong>Excluded marks — no public position, Record, no information — are left out of the mean entirely</strong>, so silence never lowers a grade. It only narrows the base.</p>
+<div class="legend">
+<span><i class="mk-a"></i> Aligned 3.0</span><span><i class="mk-b"></i> Close 2.0</span><span><i class="mk-c"></i> Partial+ 1.5 / Partial 1.0</span><span><i class="mk-d"></i> Weak 0.5</span><span><i class="mk-f"></i> Opposed −2.0</span>
+</div>
+<div class="tbl-wrap">
+<table class="ovt">
+<thead><tr><th></th><th>Candidate</th><th>Grade</th><th>Mean</th><th>Graded on</th><th>Marks</th></tr></thead>
+<tbody><!--OVERALL--></tbody>
+</table>
+</div>
+<p style="font-size:13.5px;color:#57534e"><strong>Not scored:</strong> Jerry Garcia · Peter Gibbs · Martin Girard · Owen Haley. No site, platform, statement or coverage located for any of the four — roughly a quarter of the apparent council field. <strong>Unknown, not empty.</strong> This page should not be read as evidence about them.</p>
+
+<h2 id="pillars">Grades by pillar</h2>
+<p>The same marks, grouped by the framework's six pillars. <strong>Every pillar grade shows its n.</strong> A grade resting on fewer than five scored topics is marked as a thin base — the number under it is the mean and the count it rests on.</p>
+<p><strong>Where a pillar contains a recorded Opposed and fewer than five scored topics, no letter is shown.</strong> The mean and the marks are still published; only the letter is withheld. <a href="#defects">The reason is defect 1 below</a>, and it affects four columns.</p>
+<div class="tbl-wrap gridwrap" style="max-height:none">
+<table class="plt">
+<thead><tr><th style="text-align:left">Candidate</th><!--PILLAR_HEAD--></tr></thead>
+<tbody><!--PILLAR_BODY--></tbody>
+</table>
+</div>
+
+<h2 id="grid">The full grid — 55 topics</h2>
+<p><strong>Select any number to see the mark, its value and the sentence it rests on.</strong> A dot means the mark is excluded: no public position, a Record entry, or no information. Three topics are new in v3.0, created because candidates hold published positions the previous topic set had nowhere to record.</p>
+<p style="font-size:13.5px;color:#57534e"><strong>Evidence coverage, stated plainly.</strong> <!--EVCOV--> marks currently display the sentence they rest on. The rest show the mark and its value; their evidence sentence lives in the master and is being migrated. <strong>The full per-cell ledger — Q1, Q2, mark, value and evidence for all 225 marks — is held outside Notion and available on request.</strong></p>
+<div class="gwrap">
+<table class="mg">
+<thead><tr><th class="gt">Topic</th><!--GRID_HEAD--></tr></thead>
+<tbody><!--GRID_BODY--></tbody>
+</table>
+</div>
+
+<h2 id="scale">How a mark is decided</h2>
+<p>A mark requires a citable public source: a recorded council vote, a published platform, or a direct quotation in a named outlet. <strong>It is not a judgement about whether a candidate is good.</strong> It is the answer to two questions, asked in order.</p>
+<p><strong>Question 1 — does the candidate share the goal?</strong> <em>Commits</em> states an action they will take · <em>Agrees</em> names it as a goal or priority but states no action · <em>Mentions</em> raises the topic, states no goal · <em>Disagrees</em> a recorded vote against, or an explicit statement of opposition.</p>
+<p><strong>Question 2 — how would they do it?</strong> <em>Same instrument</em> names the mechanism this framework proposes · <em>Comparable</em> a different mechanism doing substantially the same work · <em>A target, no instrument</em> no mechanism but a number, a date or a dollar figure · <em>Neither</em>.</p>
+<div class="tbl-wrap">
+<table class="scale-t">
+<thead><tr><th></th><th>Same instrument</th><th>Comparable</th><th>Target, no instrument</th><th>Neither</th></tr></thead>
+<tbody>
+<tr><td>Commits</td><td>Aligned 3.0</td><td>Close 2.0</td><td>Partial+ 1.5</td><td>Partial 1.0</td></tr>
+<tr><td>Agrees</td><td>Close 2.0</td><td>Partial+ 1.5</td><td>Partial 1.0</td><td>Weak 0.5</td></tr>
+<tr><td>Mentions</td><td>resolves up</td><td>resolves up</td><td>Weak 0.5</td><td>Weak 0.5</td></tr>
+<tr><td>Disagrees</td><td>Opposed −2.0</td><td>Opposed −2.0</td><td>Opposed −2.0</td><td>Opposed −2.0</td></tr>
+</tbody>
+</table>
+</div>
+<p><strong>Bands.</strong></p>
+<p class="bands">A 2.75–3.00 · A− 2.50 · B+ 2.25 · B 2.00 · B− 1.75 · C+ 1.50 · C 1.25 · C− 1.00 · D 0.50 · F below 0.50</p>
+<p><strong>A C is not a bad grade.</strong> It means the candidate has said something concrete without naming an instrument, which is the ordinary state of a municipal platform in August. Below three scored topics no letter is shown. Ambiguity resolves upward.</p>
+<p><strong>One sentence, one topic.</strong> Where a quotation could be filed under several measures it is scored once, in the topic whose stated purpose it matches, and cross-referenced elsewhere. <strong>Position and delivery are separated:</strong> a published plank is a position and is scored as one, including a 2022 plank. Whether it was delivered is a separate Record line and is never scored.</p>
+
+<h2 id="sourcing">What counts as a source</h2>
+<p>Every non-excluded cell requires a citable public source. <strong>The following are not sources and may not produce a score:</strong></p>
+<ol>
+<!--NONSOURCES-->
+</ol>
+<p><strong>The test applied to every cell: could this score be defended to the candidate's face, with the source in hand?</strong> If not, it is excluded.</p>
+<p><strong>Coverage and selection.</strong> A scorecard that picks its own topics can produce almost any result without changing a single score, and the bias is invisible unless the selection rule is published. The rule: <strong>a measure gets a topic if at least one candidate has a locatable public position on it</strong>, so there is something to compare. Sub-measures are scored inside their parent's topic. <strong>Nothing is excluded because of who it would help or hurt.</strong> Coverage is <strong>55 topics reaching all 131 measures</strong> of Program v1.9.1.</p>
+<p><strong>Which direction the omissions ran, checked rather than asserted.</strong> The clusters missing from the earlier topic set were families and schools, cleanliness, culture and sport, accessibility, parks, economic development and cost of living — exactly the areas where sitting councillors have operational records and where business-background challengers would score. Adding them produced new aligned marks for sitting councillors. <strong>The old selection understated the field, not this framework.</strong> The same held in v3.0: 21 new marks, 14 of them to two challengers with no relationship to the framework.</p>
+
+<h2 id="blank">What a blank means, per candidate</h2>
+<p>A blank was doing three different jobs and hiding the difference. <strong>A platform published that does not cover the measure, positioning published with detail pending, and nothing locatable are three different states of knowledge.</strong> Read every blank against this table.</p>
+<div class="tbl-wrap">
+<table class="dt"><thead><tr><th>Candidate</th><th>Evidence base</th><th>So a blank means</th></tr></thead>
+<tbody><!--PLATFORM_STATUS--></tbody>
+</table>
+</div>
+
+<h2 id="defects">Three defects in the scale, quantified</h2>
+<p><strong>These are properties of the methodology, not of the evidence.</strong> They are published here because a grade with a known defect that its publisher does not disclose is worse than no grade at all.</p>
+
+<div class="defect">
+<h3>1. Opposed at −2.0 is arithmetically asymmetric, and it decides four column grades</h3>
+<p>The positive range runs 0.5 to 3.0; the negative value is −2.0. On a four-topic column <strong>one Opposed cancels roughly four Aligned</strong>. Gardiner's F on Liveable is one Missing Middle vote. Lee's D on Safe is one sentence about 7 a.m. tent removals, sitting alongside a regional police force commitment graded Aligned. <strong>A grade that a single vote can drive to F is a grade an opponent will destroy in one sentence.</strong></p>
+<div class="tbl-wrap">
+<table class="dt"><thead><tr><th>Column</th><th>Grade as computed</th><th>With the single Opposed removed</th></tr></thead>
+<tbody><!--DEFECT_ROWS--></tbody>
+</table>
+</div>
+<div class="fixnote"><strong>What this site does about it.</strong> Where a pillar contains an Opposed and fewer than five scored topics, <strong>no letter is shown</strong> — the cell reads <em>not graded</em>, with the mean and the count still published. Nothing is hidden; the letter is simply not presented as a verdict the sample cannot carry. All four columns above are affected.</div>
+</div>
+
+<div class="defect">
+<h3>2. Small-n columns produce letters that look like findings and are not</h3>
+<p>Eleven of the fifteen candidates have at least one pillar graded on exactly three topics. Three is the stated floor; <strong>it is too low for a letter that will be read as a verdict.</strong></p>
+<div class="fixnote"><strong>What this site does about it.</strong> Every pillar grade shows its <strong>n</strong>, and any pillar resting on fewer than five scored topics is marked as a thin base.</div>
+</div>
+
+<div class="defect">
+<h3>3. “Commits” does not distinguish authoring an instrument from voting for one</h3>
+<p>Hammond authoring the sheltering ban and seven colleagues voting for it all score Aligned 3.0. That is the methodology working as written, and it is also why Hammond's Safe pillar understates the distance between him and the field on enforcement.</p>
+<div class="fixnote"><strong>Not corrected.</strong> Fixing it needs a fifth level on Question 1, which would change every mark on the page. It is disclosed instead.</div>
+</div>
+
+<h2 id="bias">Four things a reader should know about this document's own bias</h2>
+<ol>
+<!--BIAS-->
+</ol>
+<p><strong>The check a reader is entitled to make.</strong> The four candidates this document's author works with grade D, D, D and B−. Three of the four are the three lowest in the field, and the two candidates who gained most in v3.0 have no relationship to the framework.</p>
+
+<h2 id="open">Open items before this page informs anything</h2>
+<ol>
+<!--OPEN-->
+</ol>
+<p><strong>This document is open to correction.</strong> Spot an error in scoring, a misread of a public position, or a position that has evolved? Write to <a href="mailto:info@acitythatworks.ca">info@acitythatworks.ca</a>. <strong>Corrections are free and dated</strong> — any candidate or reader who sends a citable source that changes a mark gets the mark changed.</p>
+
+<p style="margin-top:32px"><a href="comparison.html" class="pgback">← The full comparison matrix, topic by topic</a></p>
+</div>
+</div>
+</main>
+
+<div id="footer-mount"></div>
+<script id="scdata" type="application/json"><!--SCOREDATA--></script>
+<script src="site.js"></script>
+<script src="jumpnav.js"></script>
+<script>
+(function(){
+  var DATA = JSON.parse(document.getElementById('scdata').textContent);
+  var wrap = document.querySelector('.gwrap');
+  var lastTrigger = null;
+
+  function closeAll(returnFocus){
+    var p=document.querySelector('.sc-panel'); if(p) p.remove();
+    var bd=document.querySelector('.sc-backdrop'); if(bd) bd.remove();
+    document.body.classList.remove('no-scroll');
+    [].forEach.call(document.querySelectorAll('td.gc.open'),function(d){d.classList.remove('open');});
+    if(returnFocus!==false && lastTrigger){
+      lastTrigger.scrollIntoView({block:'nearest'});
+      if(lastTrigger.focus) lastTrigger.focus({preventScroll:true});
+    }
+    lastTrigger=null;
+  }
+
+  /* The panel states the mark and its value, then the sentence it rests on.
+     It deliberately does not guess the Q1/Q2 pair: several marks are
+     reachable from two different combinations, and the per-cell ledger that
+     records which one was used is not published. Saying so is better than
+     inventing a derivation. */
+  function panelHtml(ti, ck){
+    var t = DATA.topics[ti];
+    var c = DATA.cands.filter(function(x){return x.key===ck;})[0];
+    var v = parseFloat(DATA.grid[ti][DATA.cands.map(function(x){return x.key;}).indexOf(ck)]);
+    var mk=null; for(var k in DATA.marks){ if(DATA.marks[k].value===v) mk=DATA.marks[k]; }
+    var ev = DATA.ev[ti+'|'+ck];
+    var actw = DATA.actw[ti];
+    var h = '<h4>'+c.name+'</h4>';
+    h += '<div class="dsub">'+t.id+' · '+t.label+'</div>';
+    h += '<div class="dmark"><b>'+mk.label+'</b><span class="dv">'+(v===-2?'−2.0':v.toFixed(1))+'</span>'+
+         '<span class="dv" style="color:#6b6664">counts toward '+c.name.split(' ').slice(-1)[0]+"'s mean of "+c.mean.toFixed(2)+' over '+c.n+' scored topics</span></div>';
+    if(actw){ h += '<div class="dlab">What this framework proposes</div><div class="dtext">'+actw+'</div>'; }
+    h += '<div class="dlab">The sentence this mark rests on</div>';
+    h += ev ? '<div class="dtext">'+ev+'</div>'
+            : '<div class="dnone">Not yet migrated to this site. This mark’s evidence sentence is held in the master document; the full per-cell ledger with Q1, Q2, mark, value and evidence for all 225 marks is available on request from <a href="mailto:info@acitythatworks.ca">info@acitythatworks.ca</a>.</div>';
+    h += '<div class="dlab">How this mark was reached</div><div class="dtext" style="font-size:13.5px">'+
+         'Two questions, asked in order: does the candidate share the goal, and how would they do it. '+
+         '<a href="#scale">The full scale is published above.</a> Ambiguity resolves upward, and silence is never scored.</div>';
+    return h;
+  }
+
+  function open(td){
+    var same = td.classList.contains('open');
+    closeAll(false);
+    if(same) return;
+    td.classList.add('open');
+    lastTrigger = td;
+    var p=document.createElement('div');
+    p.className='sc-panel';
+    p.innerHTML='<div class="in"><button type="button" class="close" aria-label="Close">Close</button>'+
+      panelHtml(+td.getAttribute('data-t'), td.getAttribute('data-c'))+'</div>';
+    p.querySelector('.close').addEventListener('click',function(){ closeAll(); });
+    /* On a touch screen the grid can run most of a screen tall, so an inline
+       panel lands far from the cell that opened it. Same bottom-sheet
+       treatment the measure pages use. */
+    if(matchMedia('(pointer: coarse)').matches){
+      p.classList.add('sheet'); p.setAttribute('role','dialog'); p.setAttribute('aria-modal','true');
+      var bd=document.createElement('div'); bd.className='sc-backdrop';
+      bd.addEventListener('click',function(){ closeAll(); });
+      document.body.appendChild(bd); document.body.appendChild(p);
+      document.body.classList.add('no-scroll');
+      p.querySelector('.close').focus();
+    } else {
+      wrap.parentNode.insertBefore(p, wrap.nextSibling);
+      p.scrollIntoView({block:'nearest'});
+    }
+  }
+
+  document.addEventListener('click', function(e){
+    var td = e.target.closest && e.target.closest('td.gc[data-t]');
+    if(td) open(td);
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key==='Escape' && document.querySelector('.sc-panel')){ closeAll(); return; }
+    if(e.key!=='Enter' && e.key!==' ') return;
+    var td = e.target.closest && e.target.closest('td.gc[data-t]');
+    if(!td) return;
+    e.preventDefault(); open(td);
+  });
+})();
+</script>
+</body>
+</html>
