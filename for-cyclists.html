@@ -5,8 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <!-- The candidate switch: one boolean in flags.js hides every candidate page
      and every link to one. Loaded first and synchronously so a gated page
-     leaves before it paints. -->
-<script src="flags.js"></script>
+     leaves before it paints. The ?v=2 is a one-time cache break: earlier
+     deploys served this file with max-age=3600, so browsers went on running
+     a stale copy — and a stale switch is an open door. flags.js is max-age=0
+     in _headers now, so revalidation keeps it fresh from here and the query
+     never needs bumping again. -->
+<script src="flags.js?v=2"></script>
 <meta name="description" content="Victoria's framework read through a rider's eyes: finish the AAA network, adaptive signals with transit priority, and an honest account of what the City controls on transit.">
 <meta name="theme-color" content="#1A3668">
 <title>For Cyclists &amp; Transit Users — A City That Works, Victoria 2026</title>

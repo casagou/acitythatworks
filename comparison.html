@@ -11,8 +11,12 @@
 <noscript data-cand-gate><meta http-equiv="refresh" content="0;url=index.html"></noscript>
 <!-- The candidate switch: one boolean in flags.js hides every candidate page
      and every link to one. Loaded first and synchronously so a gated page
-     leaves before it paints. -->
-<script src="flags.js"></script>
+     leaves before it paints. The ?v=2 is a one-time cache break: earlier
+     deploys served this file with max-age=3600, so browsers went on running
+     a stale copy — and a stale switch is an open door. flags.js is max-age=0
+     in _headers now, so revalidation keeps it fresh from here and the query
+     never needs bumping again. -->
+<script src="flags.js?v=2"></script>
 <meta name="description" content="Where each Victoria 2026 candidate stands relative to A City That Works. A spec-sheet view: scan the rows, see the gaps.">
 <meta name="theme-color" content="#1A3668">
 <title>Candidate Comparison Matrix — A City That Works, Victoria 2026</title>
