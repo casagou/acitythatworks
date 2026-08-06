@@ -179,6 +179,7 @@ body.no-scroll{overflow:hidden}
    header and jump bar already own the top of the viewport, and a second
    sticky row competing with them lands on top of one of them. */
 .areawrap{max-height:80vh;margin-top:0}
+.vh{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;border:0}
 /* Only when it actually overflows: a fade at the right edge, so a table that
    is one column short of fitting says so instead of looking finished. */
 .areawrap.spill{background:linear-gradient(to left, rgba(26,54,104,.12), rgba(26,54,104,0) 42px) right / 42px 100% no-repeat local}
@@ -323,7 +324,7 @@ td.bad{color:#B5341F;font-weight:600}
 <a href="index.html">Framework</a><span class="sep">/</span><span class="here">Candidate Scorecard</span>
 </nav>
 <div class="hero">
-<div class="eyb"><span>📊 The Ballot</span><span class="dot">◆</span><span>Scorecard v<!--SCVER--> · <!--SCDATE--></span><span class="dot">◆</span><span>Matrix v<!--MVER--></span><span class="dot">◆</span><span><a href="version-history.html" style="color:inherit">v1.10</a></span></div>
+<div class="eyb"><span>📊 The Ballot</span><span class="dot">◆</span><span>Scorecard v<!--SCVER--> · <!--SCDATE--></span><span class="dot">◆</span><span>Matrix v<!--MVER--></span><span class="dot">◆</span><span><a href="version-history.html" style="color:inherit"><!--PROGRAM--></a></span></div>
 <h1 class="ph1">Where each candidate <em>stands.</em></h1>
 <p class="lead" style="margin-top:14px"><strong>55 topics · <!--MARKS--> scored marks · <!--NCAND--> candidates.</strong> Every mark answers two questions asked in order, so the same evidence produces the same mark whoever reads it. <strong>A grade is computed, not assigned</strong>, and every number here can be recomputed from the grid at the foot of the page.</p>
 <a href="#areas" class="tojump">Straight to the table ↓</a>
@@ -399,7 +400,7 @@ td.bad{color:#B5341F;font-weight:600}
 <option value="general">Overall grade</option>
 <option value="_name">Candidate name</option>
 <option value="_n">How much is graded</option>
-<!--AREA_OPTS-->
+<!--SORT_OPTS-->
 </select>
 </div>
 <div class="ctl-b">
@@ -421,7 +422,8 @@ td.bad{color:#B5341F;font-weight:600}
 
 <div class="tbl-wrap gridwrap areawrap">
 <table class="colt" id="areat">
-<thead><tr><th class="who">Candidate</th><!--COL_HEAD--></tr></thead>
+<caption class="vh">Every candidate against all fifteen policy areas. The first column names the candidate; each remaining column is one area, showing the grade and the number of scored topics it rests on.</caption>
+<thead><tr><th class="who" scope="col">Candidate</th><!--COL_HEAD--></tr></thead>
 <tbody><!--COL_BODY--></tbody>
 </table>
 </div>
@@ -576,7 +578,7 @@ td.bad{color:#B5341F;font-weight:600}
     var p=document.querySelector('.sc-panel'); if(p) p.remove();
     var bd=document.querySelector('.sc-backdrop'); if(bd) bd.remove();
     document.body.classList.remove('no-scroll');
-    [].forEach.call(document.querySelectorAll('td.gc.open'),function(d){d.classList.remove('open');});
+    [].forEach.call(document.querySelectorAll('td.open'),function(d){d.classList.remove('open');if(d.hasAttribute('aria-expanded'))d.setAttribute('aria-expanded','false');});
     if(returnFocus!==false && lastTrigger){
       lastTrigger.scrollIntoView({block:'nearest'});
       if(lastTrigger.focus) lastTrigger.focus({preventScroll:true});
@@ -723,6 +725,7 @@ td.bad{color:#B5341F;font-weight:600}
     closeAll(false);
     if(same) return;
     td.classList.add('open');
+    if(td.hasAttribute('aria-expanded')) td.setAttribute('aria-expanded','true');
     lastTrigger = td;
     var p=document.createElement('div');
     p.className='sc-panel';

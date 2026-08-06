@@ -296,7 +296,7 @@ let pillarBody = ranked.map((x) => {
     return '<td class="pc' + (g.thin ? " thin" : "") + '"><span class="g ' + gradeCls(g.letter) + '">' + g.letter + "</span>" +
       '<span class="pn">' + num2(g.mean) + " · n=" + g.n + "</span></td>";
   }).join("");
-  return '<tr><td class="who">' + nameLink(x.c.name) + "</td>" + tds + "</tr>";
+  return '<tr><td class="who" role="rowheader">' + nameLink(x.c.name) + "</td>" + tds + "</tr>";
 }).join("\n");
 
 /* ---- the 15-column grid: the reader-facing surface -------------------- */
@@ -318,7 +318,7 @@ let colHead = M.COLUMNS.map((col) => {
   const what = col.all
     ? "all " + M.TOPICS.length + " topics"
     : col.topics.length + " topic" + (col.topics.length > 1 ? "s" : "") + ": " + col.topics.join(" · ");
-  return '<th class="ch" data-col="' + col.key + '" aria-sort="none">' +
+  return '<th class="ch" scope="col" data-col="' + col.key + '" aria-sort="none">' +
     '<button type="button" class="chs" data-sort="' + col.key + '">' +
     '<abbr title="' + esc(col.label + " — " + what) + '">' + esc(col.short) + "</abbr>" +
     '<span class="sar" aria-hidden="true"></span></button></th>';
@@ -330,7 +330,7 @@ let colHead = M.COLUMNS.map((col) => {
 function cellHtml(ck, col, g) {
   const base = ' data-col="' + col.key + '" data-n="' + g.n + '" data-mean="' + (g.n ? g.mean : "") + '"';
   if (g.state === "record") {
-    return '<td class="cc rec" tabindex="0" role="button" data-c="' + ck + '"' + base +
+    return '<td class="cc rec" tabindex="0" role="button" aria-expanded="false" data-c="' + ck + '"' + base +
       ' title="Record only — a documented term in office, never scored">📋<span class="cn">0/' + g.total + "</span></td>";
   }
   if (g.state === "empty") return '<td class="cc none"' + base + ">—</td>";
@@ -338,13 +338,13 @@ function cellHtml(ck, col, g) {
     /* 1 or 2 scored topics. The master's rule 3: report the marks, not a
        letter, because there is nothing to average and a letter would be read
        as a verdict on the whole area. */
-    return '<td class="cc few" tabindex="0" role="button" data-c="' + ck + '"' + base +
+    return '<td class="cc few" tabindex="0" role="button" aria-expanded="false" data-c="' + ck + '"' + base +
       ' title="' + g.n + ' scored topic' + (g.n > 1 ? "s" : "") + ' of ' + g.total +
       ' — below the three-topic floor, so no letter is printed">' +
       '<span class="few-m">' + num2(g.mean) + "</span>" +
       '<span class="cn">' + g.n + "/" + g.total + "</span></td>";
   }
-  return '<td class="cc" tabindex="0" role="button" data-c="' + ck + '"' + base + '>' +
+  return '<td class="cc" tabindex="0" role="button" aria-expanded="false" data-c="' + ck + '"' + base + '>' +
     '<span class="g ' + gradeCls(g.grade) + '">' + g.grade + "</span>" +
     '<span class="cn">' + g.n + "/" + g.total + "</span></td>";
 }
@@ -361,7 +361,7 @@ let colBody = ranked.map((x) => {
   return '<tr id="sc-' + c.key + '" class="cr" data-c="' + c.key + '" data-name="' + esc(c.name.toLowerCase()) +
     '" data-surname="' + esc(surname.toLowerCase()) + '" data-office="' + esc(c.office.toLowerCase()) +
     '" data-mean="' + c.mean + '" data-n="' + c.n + '">' +
-    '<td class="who"><div class="whorow">' +
+    '<td class="who" role="rowheader"><div class="whorow">' +
     '<label class="pick"><input type="checkbox" class="pickbox" aria-label="Compare ' + esc(c.name) + '"></label>' +
     '<span class="whon">' + nameLink(c.name) + '<span class="wr">' + esc(c.office) + "</span></span>" +
     "</div></td>" + tds + "</tr>";
@@ -369,6 +369,11 @@ let colBody = ranked.map((x) => {
 
 /* Area filter options, so the reader can pull the table down to one area. */
 const areaOpts = M.COLUMNS.map((col) =>
+  '<option value="' + col.key + '">' + esc(col.label) + "</option>").join("");
+/* The sort menu already opens with "Overall grade", which is the general
+   column. Offering "General" again below it is the same sort under a second
+   name, and a reader who picks it learns nothing changed. */
+const sortOpts = M.COLUMNS.filter((col) => col.key !== "general").map((col) =>
   '<option value="' + col.key + '">' + esc(col.label) + "</option>").join("");
 
 const warnHtml = SC5.warns.map((w) =>
@@ -385,7 +390,7 @@ let gridBody = M.TOPICS.map((t, ti) => {
        the two the same way would hide a four-year record behind a dot. */
     if (raw === "R") return '<td class="gc grec" title="Record — a documented fact about the term in office, never scored">📋</td>';
     const v = parseFloat(raw); const mk = markOf(v);
-    return '<td class="gc mk-' + mk.cls + '" tabindex="0" role="button" data-t="' + ti + '" data-c="' + c.key + '" data-v="' + v + '">' +
+    return '<td class="gc mk-' + mk.cls + '" tabindex="0" role="button" aria-expanded="false" data-t="' + ti + '" data-c="' + c.key + '" data-v="' + v + '">' +
       (v < 0 ? "−" : "") + Math.abs(v).toFixed(1) + "</td>";
   }).join("");
   /* The topic cell is a control, not a label. Before v3.3 a reader could see
@@ -393,7 +398,7 @@ let gridBody = M.TOPICS.map((t, ti) => {
      anywhere what the row proposed; clicking it now opens the definition. The
      title attribute carries the same sentence in plain text so a hover, a
      screen reader and a printout all get it without opening anything. */
-  return '<tr><td class="gt" tabindex="0" role="button" data-topic="' + ti +
+  return '<tr><td class="gt" tabindex="0" role="button" aria-expanded="false" data-topic="' + ti +
     '" title="' + esc(t.code + " · " + stripTags(t.what)) + '">' +
     '<span class="gm">' + esc(t.id) + '</span><span class="gd">' + esc(t.label) +
     '</span><span class="gp" style="color:var(--navy)">' + pil.emoji +
@@ -485,6 +490,7 @@ const out = tpl
   .replace("<!--COL_BODY-->", colBody)
   /* Two lists share these options — the focus picker and the sort picker. */
   .replace(/<!--AREA_OPTS-->/g, areaOpts)
+  .replace(/<!--SORT_OPTS-->/g, sortOpts)
   .replace("<!--WARNS-->", warnHtml)
   .replace("<!--EVCOV-->", evHave + " of " + M.MATRIX_META.marks)
   .replace(/<!--MARKS-->/g, String(M.MATRIX_META.marks))

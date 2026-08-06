@@ -1,7 +1,7 @@
 {
  "version": "5.1",
  "date": "4 August 2026",
- "source": "Recomputed independently from the §6 coverage grid of Grade Breakdown v3.2. Every General mean and n reconciles exactly with that master.",
+ "source": "Recomputed independently from the §6 coverage grid of Grade Breakdown v3.2, with the B2 evidence line refreshed from v3.4. Every General mean and n reconciles exactly with that master.",
  "header": [
   "Candidate",
   "Gen",
@@ -656,7 +656,7 @@
      "ev": "M20b 0.5 transit named among core local-government responsibilities, no mechanism"
     },
     "Arts/Herit": {
-     "ev": "M45c 0.5 Centennial Square"
+     "ev": "M45c 0.5 “It wasn’t the right plan nor the right time” — an objection to plan and timing, not to the project. M45c’s own mechanism is consult → shortlist → referendum, which is what she asks for"
     },
     "Safety": {
      "ev": "M27 0.5"
