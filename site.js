@@ -59,7 +59,7 @@
 '<p class="fdc">A Citizens\' Framework for Victoria 2026. Every measure costed. Zero ideology. Just results.</p>' +
 '<div class="fsoc">' + socialLinks('') + '</div>' +
 '<p class="fhandle">Instagram &amp; Facebook <strong>@CityThatWorksYYJ</strong> · X <strong>@YYJThatWorks</strong></p>' +
-'<p class="fvr"><a href="version-history.html" style="color:inherit;text-decoration:underline;text-decoration-color:currentColor">v1.9.7 · July 31, 2026</a></p>' +
+'<p class="fvr"><a href="version-history.html" style="color:inherit;text-decoration:underline;text-decoration-color:currentColor">v1.10 · August 5, 2026</a></p>' +
 '</div>' +
 '<div>' +
 '<div class="fhd">The Framework</div>' +
