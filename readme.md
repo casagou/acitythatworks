@@ -21,6 +21,7 @@ A complete, multi-page static website for the citizens' framework. No build step
 | `scorecard.html` | Candidate Scorecard — filterable grade table |
 | `version-history.html` | Every dated change to the framework |
 | `site.js` | Shared footer (contact + social) and mobile-menu logic, injected on every page |
+| `flags.js` | The candidate switch — see below. Loaded first in every page's `<head>` |
 | `measures.js` | Measure, scorecard and pillar data, plus all rendering for the home page. The framework deliberately publishes no measure total |
 | `sitemap.xml` | Search engine sitemap |
 | `robots.txt` | Search engine directives |
@@ -69,11 +70,44 @@ node build/prerender.js
 
 then commit the regenerated `index.html` and `measures.html` alongside your `measures.js` change. The script has no dependencies (plain Node, `require()`s `measures.js` directly) and is idempotent — running it with no data changes reports both files unchanged. If you forget this step, the site still works (the browser falls back to client-side rendering), but the content silently goes back to being invisible to anything that doesn't run JS until the next rebuild.
 
+## The candidate switch
+
+**The Candidate Scorecard and the Candidate Comparison Matrix are currently hidden.** They are still in the repo, still built by their build scripts, still complete — they are gated, not removed.
+
+The gate is one boolean at the top of `flags.js`:
+
+```js
+var CANDIDATES_LIVE = false;   // false = hidden site-wide
+```
+
+`flags.js` loads synchronously in every page's `<head>`, ahead of everything else, so the decision is made before the first paint. With the switch off:
+
+- `scorecard.html` and `comparison.html` redirect to the home page before they render
+- every link to either one disappears — the header "Candidates" item, the "More" panel, the mobile drawer, the footer
+- the blocks that exist only to point at them go with them: the homepage's "Where the candidates stand" section and its On-this-page entry, the two Get Involved bullets on the homepage and the summary, the FAQ's index entry. Those are marked `data-cand` in the HTML — mark a new one the same way and it is covered
+- anything else still linking there keeps its words and loses its link, so a sentence in the version history never breaks mid-clause
+
+CSS (`.cands-off` on `<html>`) hides those nodes before paint; `flags.js` then removes them from the DOM at `DOMContentLoaded`, ahead of `jumpnav.js`, so the section navigator never offers a jump to a heading that is gone.
+
+### Previewing while the site stays dark
+
+Append `?candidates=on` to any URL. That browser — and only that browser — sees the candidate pages, remembered in `localStorage`, with a badge in the corner so a preview is never mistaken for the live site. `?candidates=off` re-hides them; `?candidates=clear` drops the override and returns to whatever the master switch says.
+
+### Turning it back on
+
+Flip the boolean to `true`. That is the only edit the site's behaviour needs. Three static files also carry a crawler-facing copy of the same decision, which JavaScript cannot undo for a bot that does not run it — `flags.js` prints a console reminder listing them the first time you load a candidate page with the switch on:
+
+1. delete the two `data-cand-gate` tags from the head of `scorecard.html` **and** `build/scorecard.tpl.html` (the template rebuilds the page), and the same two from `comparison.html`
+2. uncomment the two `<url>` blocks in `sitemap.xml`
+3. delete the two `Disallow:` lines in `robots.txt`
+
 ## Navigation
 
 Every page uses the same canonical header nav:
 
 > **Framework · Summary · Measures · Savings · City Hall · Scorecard · Compare · FAQ · [ENDORSE]**
+
+(Scorecard and Compare are hidden while the candidate switch is off — see above.)
 
 `version-history.html` is reachable from the footer and the mobile drawer rather than the header, which is already full.
 

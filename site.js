@@ -32,6 +32,15 @@
     }).join('');
   }
 
+  // The two candidate documents are behind the switch in flags.js. The footer
+  // and the "More" panel are built here as strings, so they ask the switch
+  // rather than being swept afterwards — the markup is never written at all.
+  function candLinks() {
+    if (window.ACTW && window.ACTW.candidates === false) { return ''; }
+    return '<a href="comparison.html">Candidate Comparison Matrix</a>' +
+           '<a href="scorecard.html">Candidate Scorecard</a>';
+  }
+
   function socialLinks(cls) {
     return SOCIAL.map(function (s) {
       var label = s.name + ' — ' + s.handle;
@@ -69,8 +78,7 @@
 '<a href="savings.html">Savings &amp; Revenue Analysis</a>' +
 '<a href="city-hall.html">How City Hall Works</a>' +
 '<a href="endorse.html">Candidate Endorsement Pack</a>' +
-'<a href="comparison.html">Candidate Comparison Matrix</a>' +
-'<a href="scorecard.html">Candidate Scorecard</a>' +
+candLinks() +
 '<a href="faq.html">Frequently Asked Questions</a>' +
 '<a href="version-history.html">Version History</a>' +
 '</div>' +
@@ -146,8 +154,7 @@
         '<a href="savings.html">Savings &amp; Revenue Analysis</a>' +
         '<a href="city-hall.html">How City Hall Works</a>' +
         '<a href="endorse.html">Candidate Endorsement Pack</a>' +
-        '<a href="comparison.html">Candidate Comparison Matrix</a>' +
-        '<a href="scorecard.html">Candidate Scorecard</a>' +
+        candLinks() +
         '<a href="faq.html">Frequently Asked Questions</a>' +
         '<a href="version-history.html">Version History</a>' +
       '</div>';

@@ -3,6 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<!-- Held back by the candidate switch (flags.js). These two tags are the
+     no-JavaScript half of it: a crawler that never runs scripts still sees
+     noindex, and a reader with scripting off still gets bounced. flags.js
+     strips both the moment the switch is turned on. -->
+<meta name="robots" content="noindex,nofollow" data-cand-gate>
+<noscript data-cand-gate><meta http-equiv="refresh" content="0;url=index.html"></noscript>
+<!-- The candidate switch: one boolean in flags.js hides every candidate page
+     and every link to one. Loaded first and synchronously so a gated page
+     leaves before it paints. -->
+<script src="flags.js"></script>
 <meta name="description" content="Where each Victoria 2026 candidate stands against A City That Works. 55 topics, 225 marks, computed on a published two-question scale — with the scale's own defects disclosed.">
 <meta name="theme-color" content="#1A3668">
 <title>Candidate Scorecard — A City That Works, Victoria 2026</title>
@@ -132,7 +142,7 @@ td.bad{color:#B5341F;font-weight:600}
 <nav class="nv">
 <a href="summary.html">Summary</a>
 <a href="measures.html">Measures</a>
-<a href="scorecard.html" class="nv-sc cur">Candidates</a>
+<a href="scorecard.html" data-cand class="nv-sc cur">Candidates</a>
 <a href="city-hall.html">City Hall</a>
 <a href="faq.html">FAQ</a>
 <a href="endorse.html" class="btn-end">Endorse</a>
@@ -150,7 +160,7 @@ td.bad{color:#B5341F;font-weight:600}
 <a href="savings.html">Savings &amp; Revenue Analysis</a>
 <a href="city-hall.html">How City Hall Works</a>
 <a href="endorse.html">Candidate Endorsement Pack</a>
-<a href="comparison.html">Candidate Comparison Matrix</a>
+<a href="comparison.html" data-cand>Candidate Comparison Matrix</a>
 <a href="scorecard.html" class="gd">Candidate Scorecard</a>
 <a href="faq.html">Frequently Asked Questions</a>
 <a href="version-history.html">Version History</a>
