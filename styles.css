@@ -389,3 +389,12 @@ h3.reg-gh{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:u
    stylesheet can arrive looking like a line of plain text. Only the print
    rule stays, because a stale copy of it hides nothing that matters. */
 @media print {.cand-badge {display:none !important}}
+
+/* Annex cross-links, rendered inside measure bodies and section intros on
+   measures.html. The v1.10 annexes govern their own subject matter — the
+   Legal Annex for the safety measures, Capital Financing for the M45c cost
+   basis — so a reader who reaches the measure is pointed at the document
+   that defends it rather than having to find it in the site map. Styled as
+   a footnote to the measure, not as a callout competing with it. */
+.anxlink{margin:14px 0 0;padding:9px 12px;background:rgba(26,54,104,.05);border-left:2px solid var(--gold);font-size:14px;line-height:1.55;color:#44403c}
+.anxlink a{color:var(--navy);font-weight:600}

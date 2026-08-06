@@ -32,6 +32,25 @@
     }).join('');
   }
 
+  // The five annex documents (v1.10). Canonical pages, not derivations: each
+  // carries its own version stamp and governs its own subject matter, which
+  // is why they sit in their own group rather than inside By Audience. Same
+  // reason as AUDIENCE for declaring them once — a set of five maintained in
+  // three hand-written copies is a set of five that ends up different in
+  // three places.
+  var ANNEXES = [
+    { href: 'implementation.html', label: 'Implementation &amp; Governance' },
+    { href: 'legal.html',          label: 'Legal Defensibility Annex' },
+    { href: 'partnerships.html',   label: 'Partnership Strategy' },
+    { href: 'kpis.html',           label: '2030, Measured — KPI Library' },
+    { href: 'capital.html',        label: 'Capital Financing Structure' }
+  ];
+  function annexLinks() {
+    return ANNEXES.map(function (a) {
+      return '<a href="' + a.href + '">' + a.label + '</a>';
+    }).join('');
+  }
+
   // The three candidate documents are behind the switch in flags.js. The
   // footer and the "More" panel are built here as strings, so they ask the
   // switch rather than being swept afterwards — the markup is never written
@@ -84,6 +103,8 @@ candLinks() +
 '<a href="faq.html">Frequently Asked Questions</a>' +
 '<a href="version-history.html">Version History</a>' +
 '</div>' +
+'<div class="fhd" style="margin-top:24px">The Annexes</div>' +
+'<div class="fls">' + annexLinks() + '</div>' +
 '<div class="fhd" style="margin-top:24px">Contact</div>' +
 '<div class="fls"><a href="mailto:info@acitythatworks.ca">info@acitythatworks.ca</a></div>' +
 '</div>' +
@@ -117,7 +138,8 @@ candLinks() +
       return /detailed/i.test(g.textContent);
     })[0];
     var frag = document.createElement('div');
-    frag.innerHTML = '<div class="grp aud-grp">By Audience</div>' + audienceLinks();
+    frag.innerHTML = '<div class="grp aud-grp">By Audience</div>' + audienceLinks() +
+                     '<div class="grp">The Annexes</div>' + annexLinks();
     var nodes = [].slice.call(frag.childNodes);
     nodes.forEach(function (n) { mmi.insertBefore(n, det || null); });
   }
@@ -151,6 +173,8 @@ candLinks() +
         '<a href="index.html#balance">Balance Sheet</a>' +
         '<div class="grp">By Audience</div>' +
         audienceLinks() +
+        '<div class="grp">The Annexes</div>' +
+        annexLinks() +
         '<div class="grp">Detailed Documents</div>' +
         '<a href="summary.html">One-Page Summary</a>' +
         '<a href="savings.html">Savings &amp; Revenue Analysis</a>' +

@@ -52,6 +52,38 @@
     <priority>0.8</priority>
   </url>
   -->
+  <!-- The five v1.10 annexes: canonical documents, each governing its own
+       subject matter. Added to the deploy manifest with the v1.10 release. -->
+  <url>
+    <loc>https://acitythatworks.ca/implementation.html</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://acitythatworks.ca/legal.html</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://acitythatworks.ca/partnerships.html</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://acitythatworks.ca/kpis.html</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://acitythatworks.ca/capital.html</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
   <url>
     <loc>https://acitythatworks.ca/city-hall.html</loc>
     <lastmod>2026-07-30</lastmod>

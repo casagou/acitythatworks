@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<script src="flags.js?v=2"></script>
+<meta name="description" content="2030, Measured — the KPI library behind the 12 Commitments. Every indicator with its definition, baseline, 2030 target, data source and cadence. A City That Works, Victoria 2026. Annex v1.10.">
+<meta name="theme-color" content="#1A3668">
+<title>2030, Measured — The KPI Library — A City That Works, Victoria 2026</title>
+<meta property="og:title" content="2030, Measured — The KPI Library">
+<meta property="og:description" content="Every indicator with a baseline, a 2030 target, a source and a cadence. How you check whether it happened.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://acitythatworks.ca/kpis.html">
+<meta property="og:site_name" content="A City That Works">
+<meta property="og:locale" content="en_CA">
+<meta property="og:image" content="https://acitythatworks.ca/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="A City That Works — A Citizens' Framework for Victoria 2026">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://acitythatworks.ca/og-card.png">
+<link rel="canonical" href="https://acitythatworks.ca/kpis.html">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Public+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+/* An indicator is four facts — what, from where, to where, measured how. The
+   master sets them as a four-column table; four columns of prose scroll
+   sideways on a phone and the baseline is the column that gets lost, which
+   is the one that makes a target checkable. Stacked, paired above 720px. */
+.kpis{list-style:none;padding:0;margin:18px 0 0}
+.kpis li{padding:15px 0;border-top:1px solid rgba(26,54,104,.14);margin:0}
+.kpis li:first-child{border-top:none}
+.kn{font-family:'Fraunces',serif;font-size:17.5px;font-weight:600;color:var(--navy);line-height:1.3;margin-bottom:8px}
+.kg{display:grid;grid-template-columns:1fr;gap:9px}
+@media(min-width:720px){.kg{grid-template-columns:1fr 1fr;gap:20px}}
+.kg div{font-size:14px;line-height:1.55;color:#44403c}
+.kg strong{color:var(--navy);font-weight:600}
+.k3{display:block;font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.13em;margin-bottom:3px}
+.kb .k3{color:var(--rust)}
+.k30 .k3{color:var(--moss)}
+.ks{margin-top:8px;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.06em;color:var(--olive)}
+/* The five most-asked-about indicators carry the rail, so a reader scanning
+   for them does not have to read every row to find them. */
+.kpis li.head{background:rgba(212,168,67,.08);border-left:3px solid var(--gold);padding-left:13px;margin-left:-16px}
+@media(max-width:559px){.kpis li.head{margin-left:0;padding-left:11px}}
+.fr{font-style:italic;color:#6b6560}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+
+<header>
+<div class="c hr">
+<a href="index.html" class="brand"><svg class="bicn" viewBox="0 0 240 240" aria-hidden="true"><circle cx="120" cy="120" r="112" fill="#FAF7F0"/><g fill="none" stroke="#16335c" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"><path d="M52 92  q22.5 -14 45 0 t45 0 t45 0"/><path d="M52 120 q22.5 -14 45 0 t45 0 t45 0" opacity="0.88"/><path d="M52 148 q22.5 -14 45 0 t45 0 t45 0" opacity="0.76"/></g></svg><span class="nm">A City That Works</span></a>
+<nav class="nv">
+<a href="summary.html">Summary</a>
+<a href="measures.html">Measures</a>
+<a href="scorecard.html" data-cand class="nv-sc">Candidates</a>
+<a href="city-hall.html">City Hall</a>
+<a href="faq.html">FAQ</a>
+<a href="endorse.html" class="btn-end">Endorse</a>
+</nav>
+<button id="mt" class="mb" aria-label="Open menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+</div>
+<div id="mn" class="mm">
+<div class="c mmi">
+<a href="index.html">Framework</a>
+<a href="summary.html">One-Page Summary</a>
+<a href="measures.html">All Measures</a>
+<a href="index.html#scorecard">12 Commitments</a>
+<a href="index.html#balance">Balance Sheet</a>
+<div class="grp">Detailed documents</div>
+<a href="savings.html">Savings &amp; Revenue Analysis</a>
+<a href="city-hall.html">How City Hall Works</a>
+<a href="endorse.html">Candidate Endorsement Pack</a>
+<a href="comparison.html" data-cand>Candidate Comparison Matrix</a>
+<a href="scorecard.html" data-cand>Candidate Scorecard</a>
+<a href="profiles.html" data-cand>Candidate Profiles</a>
+<a href="faq.html">Frequently Asked Questions</a>
+<a href="version-history.html">Version History</a>
+<div class="grp"></div>
+<a href="index.html#adopt" class="gd">Endorse the framework →</a>
+</div>
+</div>
+</header>
+
+<main id="main">
+<div class="cn">
+<nav class="crumbs" aria-label="Breadcrumb">
+<a href="index.html">Framework</a><span class="sep">/</span><span class="here">2030, Measured</span>
+</nav>
+<div class="hero">
+<div class="eyb"><span>📊 Annex</span><span class="dot">◆</span><span>The KPI library</span><span class="dot">◆</span><span><a href="version-history.html" style="color:inherit;text-decoration:underline;text-decoration-color:currentColor">v1.10 · August 5, 2026</a></span></div>
+<h1 class="ph1">2030, <em>Measured.</em></h1>
+<p class="lead" style="margin-top:18px">"Victoria in 2030" is written in the present tense because that is the point of a plan. This page is how you check whether it happened.</p>
+<a href="index.html" class="pgback">← Back to the framework</a>
+</div>
+
+<div class="prose">
+
+<div class="callout blue">
+<div class="lbl">◆ How this relates to the 12 Commitments</div>
+<p style="margin:0 0 10px">Every indicator below has a definition, a baseline, a 2030 direction or target, a data source and a cadence. <strong>The <a href="index.html#scorecard">12 Commitments</a> remain the headline set</strong> — where a Commitment states a target for the same indicator, <strong>the Commitment's number governs.</strong> This library is the full instrument panel behind them, published through the quarterly dashboard (<a href="measures.html#m67">M67</a>).</p>
+<p style="margin:0"><strong>Measurement cost sits entirely inside lines already booked</strong> — M67 ($120–180K/yr within the <a href="measures.html#m68">M68</a> envelope), the GIS and sensor lines (<a href="measures.html#m53">M53</a>, <a href="measures.html#m56">M56</a>), and the annual survey (<a href="measures.html#m82">M82</a>). <strong>This page adds no measure and books no cost.</strong></p>
+</div>
+
+<div class="callout gold">
+<div class="lbl">◆ The baseline rule</div>
+<p style="margin:0">Where the City publishes no baseline today, <strong>the first quarterly report sets it from City data and locks it.</strong> A baseline set later cannot be quietly moved — the material-change rule (<a href="measures.html#m78b">M78b</a>) applies to measurement the same as to money. Marked below as <span class="fr">first report</span>.</p>
+</div>
+
+<nav class="toc" aria-label="On this page">
+<div class="toc-h">◆ On this page</div>
+<ol>
+<li><a href="#foundation">Foundation — Honouring the Host Nations</a></li>
+<li><a href="#liveable">Liveable — Housing and Families</a></li>
+<li><a href="#safe">Safe</a></li>
+<li><a href="#beautiful">Beautiful</a></li>
+<li><a href="#managed">Well-Managed</a></li>
+<li><a href="#democratic">Democratic</a></li>
+</ol>
+</nav>
+<div class="jumpbar" id="jumpbar">
+<div class="jumpin">
+<label class="jl2" for="jumpsel">Jump to</label>
+<select id="jumpsel" class="jumpsel" aria-label="Jump to a section">
+<option value="">Choose a section…</option>
+</select>
+<button type="button" class="jumpbtn" id="jumpprev" aria-label="Previous section">↑</button>
+<button type="button" class="jumpbtn" id="jumpnext" aria-label="Next section">↓</button>
+<a class="jumpbtn jumptop" href="#main" aria-label="Back to top">Top</a>
+</div>
+<div class="jumpprog" aria-hidden="true"><i id="jumpfill"></i></div>
+</div>
+
+<h2 id="foundation">Foundation — Honouring the Host Nations</h2>
+<ul class="kpis">
+<li>
+<div class="kn">G2G working tables held, minutes and action tracker published (<a href="measures.html#m1">M1</a>, <a href="measures.html#m5">M5</a>)</div>
+<div class="kg"><div class="kb"><span class="k3">Baseline</span><span class="fr">first report</span></div><div class="k30"><span class="k3">By 2030</span>100% of scheduled tables held and published</div></div>
+<div class="ks">City · quarterly</div>
+</li>
+<li>
+<div class="kn">Indigenous procurement share of City contract value (<a href="measures.html#m3">M3</a>)</div>
+<div class="kg"><div class="kb"><span class="k3">Baseline</span><span class="fr">first report</span></div><div class="k30"><span class="k3">By 2030</span>Rising every year from the locked baseline</div></div>
+<div class="ks">Finance · annual</div>
+</li>
+<li>
+<div class="kn">lək̓ʷəŋən place names adopted (<a href="measures.html#m4">M4</a>)</div>
+<div class="kg"><div class="kb"><span class="k3">Baseline</span><span class="fr">first report</span></div><div class="k30"><span class="k3">By 2030</span>Programme delivered with the Nations, at their pace</div></div>
+<div class="ks">With the Nations · annual</div>
+</li>
+</ul>
+
+<h2 id="liveable">Liveable — Housing and Families</h2>
+<ul class="kpis">
+<li>
+<div class="kn">Net new completed homes (occupancy permit)</div>
+<div class="kg"><div class="kb"><span class="k3">Baseline</span>2,359 in 2024–25, against the provincial five-year target of 4,902</div><div class="k30"><span class="k3">By 2030</span><strong>12,000+ cumulative</strong> (<a href="measures.html#m6">M6</a>)</div></div>
+<div class="ks">City · quarterly</div>
+</li>
+<li>
+<div class="kn">Missing-middle permits per year</div>
+<div class="kg"><div class="kb"><span class="k3">Baseline</span><strong>61</strong> (2024)</div><div class="k30"><span class="k3">By 2030</span><strong>150 per year</strong> — the City's own target, hit</div></div>
+<div class="ks">City · quarterly</div>
+</li>
+<li>
+<div class="kn">Pipeline composition — missing middle / 3BR+ / non-market / rental</div>
+<div class="kg"><div class="kb"><span class="k3">Baseline</span><span class="fr">first report</span></div><div class="k30"><span class="k3">By 2030</span><strong>25% / 20% / 15% / 30%</strong> (<a href="measures.html#m6">M6</a> targets)</div></div>
+<div class="ks">City · annual</div>
+</li>
+<li class="head">
+<div class="kn">Median permit time, by category</div>
+<div class="kg"><div class="kb"><span class="k3">Baseline</span><span class="fr">first report — locked from City data</span></div><div class="k30"><span class="k3">By 2030</span>Published service standard per category set in Year 1 (<a href="measures.html#m7">M7</a>, <a href="measures.html#m72b">M72b</a>); <strong>every category's median falls every year</strong> from the locked baseline</div></div>
+<div class="ks">M67 · quarterly</div>
+</li>
+<li>
+<div class="kn">Childcare spaces facilitated (<a href="measures.html#m12">M12</a>)</div>
+<div class="kg"><div class="kb"><span class="k3">Baseline</span><span class="fr">first report</span></div><div class="k30"><span class="k3">By 2030</span>Rising every year</div></div>
+<div class="ks">City · annual</div>
+</li>
+</ul>
+
+<h2 id="safe">Safe</h2>
+<ul class="kpis">
+<li>
+<div class="kn">Feeling safe downtown by day</div>
+<div class="kg"><div class="kb"><span class="k3">Baseline</span><strong>59%</strong> (down from 83% in 2020)</div><div class="k30"><span class="k3">By 2030</span>Improvement at every annual survey; <strong>the 2020 level (83%) is the reference standard</strong></div></div>
+<div class="ks">M82 survey · annual</div>
+</li>
+<li class="head">
+<div class="kn">Unsheltered count, Point-in-Time</div>
+<div class="kg"><div class="kb"><span class="k3">Baseline</span><strong>318</strong> (2025 regional count; one outlet reported 308 — noted)</div><div class="k30"><span class="k3">By 2030</span><strong>Down at every count — with the shelter-avoidance rate (76% in 2025) falling alongside</strong>, because beds people refuse for safety count for nothing (see the <a href="legal.html#encampments">Legal Defensibility Annex</a>)</div></div>
+<div class="ks">CRD PiT · per count</div>
+</li>
+<li>
+<div class="kn">Shelter spaces open and available at 5 PM</div>
+<div class="kg"><div class="kb"><span class="k3">Baseline</span><span class="fr">first report</span></div><div class="k30"><span class="k3">By 2030</span>Published daily; never a mystery again</div></div>
+<div class="ks">BC Housing + City · daily</div>
+</li>
+<li class="head">
+<div class="kn">Enforcement-survival rate — share of disputed bylaw enforcement actions upheld at adjudication or in court</div>
+<div class="kg"><div class="kb"><span class="k3">Baseline</span><span class="fr">first report</span></div><div class="k30"><span class="k3">By 2030</span>Published quarterly; <strong>any quarter below 90% triggers a published enforcement-practice review</strong> (<a href="measures.html#m31b">M31b</a>, <a href="measures.html#m31c">M31c</a>)</div></div>
+<div class="ks">M31b · quarterly</div>
+</li>
+<li>
+<div class="kn">Bylaw coverage 6 AM–10 PM, seven days (<a href="measures.html#m27">M27</a>)</div>
+<div class="kg"><div class="kb"><span class="k3">Baseline</span>Not in force</div><div class="k30"><span class="k3">By 2030</span>In force from Year 1, sustained</div></div>
+<div class="ks">M31b · quarterly</div>
+</li>
+<li>
+<div class="kn">Encampment-damage repair spend</div>
+<div class="kg"><div class="kb"><span class="k3">Baseline</span><strong>$11M cumulative 2023–2025</strong></div><div class="k30"><span class="k3">By 2030</span>Falling every year</div></div>
+<div class="ks">Finance · annual</div>
+</li>
+</ul>
+
+<h2 id="beautiful">Beautiful</h2>
+<ul class="kpis">
+<li class="head">
+<div class="kn">Downtown storefront vacancy</div>
+<div class="kg"><div class="kb"><span class="k3">Baseline</span><strong>10.7%</strong> (DVBA 2025)</div><div class="k30"><span class="k3">By 2030</span><strong>5%</strong></div></div>
+<div class="ks">DVBA survey · annual</div>
+</li>
+<li class="head">
+<div class="kn">Tree canopy cover, citywide</div>
+<div class="kg"><div class="kb"><span class="k3">Baseline</span>Roughly <strong>30%</strong> — 28.8% at the 2019 City LiDAR cycle, up 2.37 points since 2013</div><div class="k30"><span class="k3">By 2035</span><strong>35%</strong>, the target set by <a href="measures.html#m61">Measure 61</a> and carried at row 12 of the 12 Commitments. Interim: <strong>5,000 net new trees planted</strong> by 2030 ($1.25M, booked)</div></div>
+<div class="ks">City LiDAR · per cycle</div>
+</li>
+</ul>
+<p style="font-size:14px;color:#57534e;line-height:1.6;margin-top:12px">Victoria is a Tree City of the World with <strong>no adopted canopy target of its own</strong>, which is why this framework publishes one. Where the planting count and the canopy percentage diverge, <strong>the canopy number governs</strong> and the planting programme is what changes. Free seedlings for homeowners are the decisive half, because 75% of the canopy sits on private land.</p>
+<ul class="kpis" style="margin-top:16px">
+<li>
+<div class="kn">Graffiti removed within 48 hours</div>
+<div class="kg"><div class="kb"><span class="k3">Baseline</span><span class="fr">first report</span></div><div class="k30"><span class="k3">By 2030</span>≥95% within the 48-hour standard</div></div>
+<div class="ks">M67 · quarterly</div>
+</li>
+<li>
+<div class="kn">Pothole report-to-fix, median days</div>
+<div class="kg"><div class="kb"><span class="k3">Baseline</span><span class="fr">first report</span></div><div class="k30"><span class="k3">By 2030</span>Falling every year from the locked baseline</div></div>
+<div class="ks">M67 · quarterly</div>
+</li>
+<li>
+<div class="kn">24/7 public bathroom network sites open (<a href="measures.html#m24b">M24b</a>)</div>
+<div class="kg"><div class="kb"><span class="k3">Baseline</span><span class="fr">first report</span></div><div class="k30"><span class="k3">By 2030</span>Network delivered per plan</div></div>
+<div class="ks">City · quarterly</div>
+</li>
+</ul>
+
+<h2 id="managed">Well-Managed</h2>
+<ul class="kpis">
+<li>
+<div class="kn">Residential tax increase</div>
+<div class="kg"><div class="kb"><span class="k3">Baseline</span><strong>9.34%</strong> levied 2026</div><div class="k30"><span class="k3">By 2030</span><strong>≤6.5% → ≤5.0% → ~3.5%</strong> (<a href="measures.html#m66">M66</a> glide path; 6-of-9 to exceed, on the record)</div></div>
+<div class="ks">Budget · annual</div>
+</li>
+<li>
+<div class="kn">Savings realized against plan — managed competition / ZBB / attrition</div>
+<div class="kg"><div class="kb"><span class="k3">Baseline</span>$0</div><div class="k30"><span class="k3">By 2030</span><strong>$2.4M / $3–6M / $1.9–4M per year at steady state</strong> (Parts A1–A3), tracked against the Year-1 band of $1.4–2.7M first</div></div>
+<div class="ks">M67 vs S&amp;R · quarterly</div>
+</li>
+<li>
+<div class="kn">Part C1 envelope consumption</div>
+<div class="kg"><div class="kb"><span class="k3">Baseline</span>9–27% of the <a href="measures.html#m68">M68</a> envelope</div><div class="k30"><span class="k3">By 2030</span>Never exceeds the published share without a published explanation</div></div>
+<div class="ks">M67 · quarterly</div>
+</li>
+<li>
+<div class="kn">Debt outstanding and debt per household</div>
+<div class="kg"><div class="kb"><span class="k3">Baseline</span><span class="fr">first report</span></div><div class="k30"><span class="k3">By 2030</span>Within the debt rule (<a href="measures.html#m66c">M66c</a>), published every quarter</div></div>
+<div class="ks">M66c · quarterly</div>
+</li>
+<li>
+<div class="kn">Household Bill published — one notice, City and regional charges together</div>
+<div class="kg"><div class="kb"><span class="k3">Baseline</span>Does not exist</div><div class="k30"><span class="k3">By 2030</span>Published every year (<a href="measures.html#m66d">M66d</a>)</div></div>
+<div class="ks">Finance · annual</div>
+</li>
+</ul>
+
+<h2 id="democratic">Democratic</h2>
+<ul class="kpis">
+<li>
+<div class="kn">Quarterly reports published on time, in full</div>
+<div class="kg"><div class="kb"><span class="k3">Baseline</span>0 published today</div><div class="k30"><span class="k3">By 2030</span><strong>16 of 16</strong> within six weeks of quarter end</div></div>
+<div class="ks">M67 · quarterly</div>
+</li>
+<li>
+<div class="kn">Voter turnout</div>
+<div class="kg"><div class="kb"><span class="k3">Baseline</span>2026 certified result, once declared</div><div class="k30"><span class="k3">By 2030</span><strong>2030 turnout above 2026</strong> (<a href="measures.html#m82b">M82b</a>)</div></div>
+<div class="ks">Elections BC · per election</div>
+</li>
+<li>
+<div class="kn">Lobbyist registry live, entries published (<a href="measures.html#m79d">M79d</a>)</div>
+<div class="kg"><div class="kb"><span class="k3">Baseline</span>Does not exist</div><div class="k30"><span class="k3">By 2030</span>Live in Year 1, current thereafter</div></div>
+<div class="ks">Registry · continuous</div>
+</li>
+<li>
+<div class="kn">Annual community survey fielded and published (<a href="measures.html#m82">M82</a>)</div>
+<div class="kg"><div class="kb"><span class="k3">Baseline</span><span class="fr">first report</span></div><div class="k30"><span class="k3">By 2030</span>Every year, methodology stated</div></div>
+<div class="ks">M82 · annual</div>
+</li>
+<li>
+<div class="kn">Mandate letters and portfolio scorecards published (<a href="measures.html#m79c">M79c</a>)</div>
+<div class="kg"><div class="kb"><span class="k3">Baseline</span>Do not exist</div><div class="k30"><span class="k3">By 2030</span>Published in the first 30 days, refreshed annually</div></div>
+<div class="ks">City · annual</div>
+</li>
+</ul>
+
+<div class="callout blue" style="margin-top:32px">
+<div class="lbl">◆ Why this page exists</div>
+<p style="margin:0 0 10px"><strong>A vision without instrumentation is a mood.</strong> The five indicators most often asked about — <strong>permit times, canopy, downtown vacancy, the unsheltered count, and the enforcement-survival rate</strong> — are all above, each with its baseline and its clock.</p>
+<p style="margin:0">In 2030 this page either shows the lines moving or it shows they did not, and <strong>the framework accepts both readings</strong>, because that is the standard it demanded of everyone else.</p>
+</div>
+
+<div class="cta" style="margin-top:28px">
+<a href="index.html#scorecard" class="bn bnp">The 12 Commitments <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+<a href="implementation.html" class="bn bns">Implementation &amp; Governance</a>
+<a href="savings.html" class="bn bns">Savings &amp; Revenue Analysis</a>
+<a href="measures.html" class="bn bns">Every measure</a>
+</div>
+
+<p style="margin-top:32px;font-size:13px;color:#57534e;font-style:italic;line-height:1.6">Annex version 1.10 — July 31, 2026, published to this site August 5, 2026. This page adds no measure and books no cost. Changes are dated in the <a href="version-history.html" style="color:var(--navy)">version history</a>.</p>
+
+<p style="margin-top:14px;font-size:13px;color:#57534e;font-style:italic">No copyright. Attribution to <em>A City That Works — A Citizens' Framework for Victoria 2026</em> appreciated but not required.</p>
+
+<p style="margin-top:32px"><a href="index.html" class="pgback">← Back to the framework</a></p>
+
+</div>
+</div>
+</main>
+
+<div id="footer-mount"></div>
+<script src="site.js"></script>
+<script src="jumpnav.js"></script>
+
+</body>
+</html>

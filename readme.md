@@ -11,6 +11,11 @@ A complete, multi-page static website for the citizens' framework. No build step
 | `summary.html` | One-Page Summary — the 60-second version (problem → pillars → flagship measures → math → method), plus the printable PDF download |
 | `A-City-That-Works-One-Page.pdf` | The printable one-pager, linked from `summary.html`. **Generated** from `build/one-page.html` — see below. Do not edit the PDF |
 | `savings.html` | Savings & Revenue Analysis — the full math, every table, with sources and honest caveats |
+| `implementation.html` | **Annex** — Implementation & Governance: portfolio ownership, the first 100 days, the quarterly cadence |
+| `legal.html` | **Annex** — Legal Defensibility: the *Police Act* command structure, the accessible-shelter cases, the post-2026 CDSA position, bylaw fine ceilings, the OIPC camera order |
+| `partnerships.html` | **Annex** — Partnership Strategy: eight partner files, each with what they control, the ask, and the fallback if no partner comes |
+| `kpis.html` | **Annex** — 2030, Measured: every indicator with baseline, source, direction and cadence |
+| `capital.html` | **Annex** — Capital Financing Structure: every capital dollar by financing route, the sources stack, the $25M referendum gate, and the authoritative M45c cost basis |
 | `city-hall.html` | How City Hall Actually Works — plain-language guide to municipal power |
 | `endorse.html` | Candidate Endorsement Pack — three tiers, campaign language, full measure checklist, endorsement form |
 | `comparison.html` | Candidate Comparison Matrix — every 2026 candidate scored against the framework |
@@ -86,6 +91,31 @@ Edit the master and re-run; do not edit the profile cards in the page, because t
 ```
 node build/matrix.js; node build/profiles.js
 ```
+
+### The five annexes, and how they are wired in
+
+The v1.10 annexes are **canonical documents, not derivations**. The By Audience companions restate the master for one reader; the annexes govern their own subject matter and carry their own version stamp — `capital.html` is now authoritative for the M45c cost basis, and the master's own measure text is being aligned to it rather than the reverse. Keep that distinction when editing: a companion is rewritten when the master moves, an annex is reconciled with it.
+
+They are declared **once**, in the `ANNEXES` array in `site.js`, and injected into the footer, the mobile drawer and the header "More" panel — same reason as `AUDIENCE`. Adding a sixth annex means editing that array, not five headers.
+
+Each is linked from the material it defends, per the master's deploy manifest:
+
+| Annex | Reached from |
+|-------|--------------|
+| `legal.html` | The Safe-pillar section intros and `M33b` — injected via `SECTION_INTRO` / measure bodies in `measures.js`, so **run `node build/prerender.js` after changing them** |
+| `capital.html` | `M45c`'s measure body, same mechanism |
+| `kpis.html` | The 12 Commitments section on `index.html` |
+| `implementation.html` | The Method section on `index.html` |
+
+Those in-measure links use single-quoted HTML attributes (`<a href='legal.html'>`), because the measure bodies are double-quoted JS string literals in `measures.js`. Double quotes there break the file — that is a two-minute mistake to make and a confusing one to diagnose.
+
+### Checking internal links
+
+```
+node build/checklinks.js
+```
+
+Fails, names every offender, and exits non-zero if any page links to a file that is not in the repo, to an `#anchor` that does not exist on the target page, or to a `measures.html#mNN` measure number that is not in `measures.js`. The annexes and the One-Page Summary cite measures by number in hand-written prose — a renamed or removed measure leaves those links pointing at nothing, and a broken fragment is invisible in a browser: the page just opens at the top and the reader assumes they misread. Run it before any deploy that touched measure numbers or added a page.
 
 ### The third exception: the one-page PDF is generated
 
