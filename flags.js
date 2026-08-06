@@ -50,15 +50,20 @@
   var STEMS = GATED.map(stem);
   function gated(u) { return STEMS.indexOf(stem(u)) > -1; }
 
-  var KEY = 'actw.candidates';
-  var on = CANDIDATES_LIVE, override = false;
+  var KEY = 'actw.candidates';   // 'on' | 'off' — this browser's override
+  var PANEL = 'actw.panel';      // '1' — this browser gets the toggle panel
+  var on = CANDIDATES_LIVE, override = false, panel = false;
 
   /* localStorage throws outright in a few privacy configurations, and a
      failure to read a preview flag must never take the page down with it. */
   try {
     var q = /[?&]candidates=(on|off|clear)/.exec(location.search);
     if (q) {
-      if (q[1] === 'clear') { localStorage.removeItem(KEY); }
+      /* Using the parameter at all is what unlocks the panel, and the unlock
+         outlives 'clear' — otherwise turning the pages back off would take
+         the only control for turning them on again with it. */
+      localStorage.setItem(PANEL, '1');
+      if (q[1] === 'clear') { localStorage.removeItem(KEY); localStorage.removeItem(PANEL); }
       else { localStorage.setItem(KEY, q[1]); }
     }
     var saved = localStorage.getItem(KEY);
@@ -66,6 +71,7 @@
       on = saved === 'on';
       override = on !== CANDIDATES_LIVE;
     }
+    panel = localStorage.getItem(PANEL) === '1';
   } catch (e) { /* no storage, no override — the master switch stands */ }
 
   window.ACTW = window.ACTW || {};
@@ -168,14 +174,30 @@
     return false;
   }
 
-  /* A preview that looks identical to the live site is how a page gets left
-     switched on by accident. */
-  if (override) {
+  /* The toggle. It is deliberately not on the page for everyone: a button
+     the public can see is a button that says there are hidden pages and
+     here is how to read them, which is the opposite of hiding them. So the
+     panel belongs to a browser rather than to the site — ?candidates=on or
+     ?candidates=off once, and this browser keeps the control from then on.
+     It also states which way the switch is currently set, because a preview
+     that looks identical to the live site is how a page gets left switched
+     on by accident.
+
+     Both buttons are plain links that reload. Toggling has to reload
+     anyway: with the switch off the candidate markup is removed from the
+     document, and nothing can put back what is no longer there. */
+  if (panel) {
     ready(function () {
+      var base = location.pathname;
       var b = document.createElement('div');
-      b.className = 'cand-badge';
-      b.innerHTML = 'Candidate pages <strong>' + (on ? 'ON' : 'OFF') +
-        '</strong> — this browser only · <a href="?candidates=clear">reset</a>';
+      b.className = 'cand-badge' + (on ? ' is-on' : '');
+      b.innerHTML =
+        '<span class="cb-l">Candidate pages</span> ' +
+        '<strong>' + (on ? 'ON' : 'OFF') + '</strong>' +
+        '<span class="cb-s">' + (override ? 'this browser only' : 'site default') + '</span>' +
+        '<a class="cb-b" href="' + base + '?candidates=' + (on ? 'off' : 'on') + '">' +
+          'Turn ' + (on ? 'off' : 'on') + '</a>' +
+        '<a class="cb-x" href="' + base + '?candidates=clear" title="Remove this panel from this browser">×</a>';
       document.body.appendChild(b);
     });
   }

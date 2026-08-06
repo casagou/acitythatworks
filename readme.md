@@ -110,9 +110,13 @@ CSS (`.cands-off` on `<html>`) hides those nodes before paint; `flags.js` then r
 
 Hiding is also keyed on `data-cand` and never on the `href`, for the same reason — the one CSS selector that would catch both URL forms, `[href*="scorecard"]`, also catches `index.html#scorecard`, which is the 12 Commitments anchor and has to stay.
 
-### Previewing while the site stays dark
+### The toggle, and why it isn't a button on the page
 
-Append `?candidates=on` to any URL. That browser — and only that browser — sees the candidate pages, remembered in `localStorage`, with a badge in the corner so a preview is never mistaken for the live site. `?candidates=off` re-hides them; `?candidates=clear` drops the override and returns to whatever the master switch says.
+Append **`?candidates=on`** to any URL on the site — once. From then on that browser carries a small panel in the bottom-left corner: it names the current state and has a **Turn on / Turn off** button, so no URL has to be typed again. The `×` removes the panel from that browser and drops the override with it.
+
+The panel is not shown to the public, and that is the point. A toggle everyone can see is a toggle that announces there are hidden pages and offers to open them, which is the opposite of hiding them. So the control belongs to a browser rather than to the site: one URL unlocks it, `localStorage` remembers it, and nothing about it reaches a visitor who never typed the parameter.
+
+It changes what **that browser** sees, never what the site serves. `CANDIDATES_LIVE` in `flags.js` is still the only thing that moves the public site.
 
 ### Turning it back on
 
