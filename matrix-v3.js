@@ -1,8 +1,22 @@
-/* Candidate Comparison Matrix — v3.0 numeric data
+/* Candidate Comparison Matrix — v3.2 numeric data
    ================================================
-   Transcribed from the Notion master "Topic Scoring v3.0 — Numeric Re-Grade
-   Under the Two-Question Methodology" (31 July 2026) and the hub page
-   "Candidate Comparison Matrix" v3.0 (1 August 2026).
+   Transcribed from the §6 complete coverage grid of the Notion master
+   "Grade Breakdown — Every Topic, Every Candidate" v3.2 (2 August 2026),
+   which supersedes the v3.0 numeric re-grade of 31 July as the authoritative
+   cell-by-cell source. Two upstream revisions are folded into this file:
+
+     v3.1 (1 Aug) — a full mark-by-mark re-verification. 15 marks excluded
+     for resting on characterisations rather than citable sentences
+     (pro-reconciliation, pro-transit, province-blaming, climate leadership,
+     pro-heritage tone, unnamed pro-enforcement votes); 3 regraded (the CSWB
+     adoption vote carried Commits at M26 and M27 but Agrees at M11 for the
+     same councillors on the same act, and is now Commits at all three).
+     Every excluded mark was worth +0.5, below almost every mean, so the
+     correction ran upward. Each is restorable the moment a vote or quotation
+     is attached.
+
+     v3.2 (2 Aug) — Opposed moved from −2.0 to −1.0. See SCALE below and the
+     DEFECTS entry, which records the conflict of interest on that change.
 
    This file is the single source of truth for the scorecard. Every published
    grade, mean and pillar figure is recomputed from GRID at build time by
@@ -30,10 +44,13 @@
    entirely, so silence never lowers a grade — it only narrows the base. */
 
 const MATRIX_META = {
-  version: "3.0",
-  date: "1 August 2026",
+  version: "3.2",
+  date: "2 August 2026",
+  scorecard: "5.1",
+  scorecardDate: "4 August 2026",
   topics: 55,
-  marks: 225,
+  marks: 210,
+  record: 8,
   graded: 15,
   program: "v1.9.1",
   measures: 131,
@@ -67,7 +84,11 @@ const SCALE = {
     partialPlus: { label: "Partial+", value: 1.5,  cls: "c" },
     partial:     { label: "Partial",  value: 1.0,  cls: "c" },
     weak:        { label: "Weak",     value: 0.5,  cls: "d" },
-    opposed:     { label: "Opposed",  value: -2.0, cls: "f" },
+    /* −1.0 since v3.2. At −2.0 a single contrary vote sat 2.5 points below the
+       nearest positive mark, which on a small column decided the letter by
+       itself. −1.0 keeps every vote counted and negative without letting one
+       of them outweigh ten considered positions. */
+    opposed:     { label: "Opposed",  value: -1.0, cls: "f" },
   },
   /* Ordered high to low; first band whose floor the mean reaches wins. */
   bands: [
@@ -82,19 +103,19 @@ const SCALE = {
 /* Column order in GRID. */
 const CANDIDATES = [
   { key: "Al", name: "Marianne Alto",     office: "Mayor",     status: "Declared 20 May 2026", statusNote: "Unopposed", grade: "B−", mean: 1.81, n: 24, posture: "Progressive incumbent. “Experience that delivers.”" },
-  { key: "Ca", name: "Jeremy Caradonna",  office: "Council",   status: "Declared 21 Dec 2025", grade: "C+", mean: 1.50, n: 14, posture: "Progressive bloc leader. Climate and housing. Sponsored the VicPD ask cut" },
-  { key: "De", name: "Matt Dell",         office: "Council",   status: "Declared 31 Dec 2025", grade: "C",  mean: 1.45, n: 19, posture: "Progressive. Pro-housing, arts, technology curiosity" },
-  { key: "Th", name: "Dave Thompson",     office: "Council",   status: "Declared Jan 2026", grade: "B−", mean: 1.77, n: 15, posture: "Progressive. Climate and Vision Zero" },
-  { key: "Ki", name: "Susan Kim",         office: "Council",   status: "Unconfirmed", statusNote: "Livable CRD volunteer list only, no outlet launch located", grade: "C", mean: 1.31, n: 16, posture: "Progressive system critic. Voted against the 2026 budget from the left" },
-  { key: "Lo", name: "Krista Loughton",   office: "Council",   status: "Unconfirmed", statusNote: "Same source, listed there as “Laughton”", grade: "C+", mean: 1.50, n: 12, posture: "Progressive. STEP throughput originator" },
-  { key: "Co", name: "Chris Coleman",     office: "Council",   status: "Undeclared", statusNote: "His stated mid-July window has closed", grade: "D", mean: 0.67, n: 9, posture: "Centrist. “Governance over politics.” Chairs the Citizens’ Assembly Council Committee" },
-  { key: "Ha", name: "Stephen Hammond",   office: "Council",   status: "Declared 6 July 2026", grade: "C", mean: 1.37, n: 15, posture: "Fiscal restraint and enforce existing rules" },
-  { key: "Ga", name: "Marg Gardiner",     office: "Council",   status: "Declared Jan 2026", grade: "C−", mean: 1.12, n: 16, posture: "Fiscal restraint. “Rigour in budgeting”" },
+  { key: "Ca", name: "Jeremy Caradonna",  office: "Council",   status: "Declared 21 Dec 2025", grade: "B−", mean: 1.77, n: 11, posture: "Progressive bloc leader. Climate and housing. Sponsored the VicPD ask cut" },
+  { key: "De", name: "Matt Dell",         office: "Council",   status: "Declared 31 Dec 2025", grade: "C+", mean: 1.73, n: 15, posture: "Progressive. Pro-housing, arts, technology curiosity" },
+  { key: "Th", name: "Dave Thompson",     office: "Council",   status: "Declared Jan 2026", grade: "B−", mean: 1.96, n: 13, posture: "Progressive. Climate and Vision Zero" },
+  { key: "Ki", name: "Susan Kim",         office: "Council",   status: "Unconfirmed", statusNote: "Livable CRD volunteer list only, no outlet launch located", grade: "C+", mean: 1.54, n: 14, posture: "Progressive system critic. Voted against the 2026 budget from the left" },
+  { key: "Lo", name: "Krista Loughton",   office: "Council",   status: "Unconfirmed", statusNote: "Same source, listed there as “Laughton”", grade: "C+", mean: 1.70, n: 10, posture: "Progressive. STEP throughput originator" },
+  { key: "Co", name: "Chris Coleman",     office: "Council",   status: "Undeclared", statusNote: "His stated mid-July window has closed", grade: "D", mean: 0.83, n: 9, posture: "Centrist. “Governance over politics.” Chairs the Citizens’ Assembly Council Committee" },
+  { key: "Ha", name: "Stephen Hammond",   office: "Council",   status: "Declared 6 July 2026", grade: "C", mean: 1.43, n: 15, posture: "Fiscal restraint and enforce existing rules" },
+  { key: "Ga", name: "Marg Gardiner",     office: "Council",   status: "Declared Jan 2026", grade: "C", mean: 1.25, n: 14, posture: "Fiscal restraint. “Rigour in budgeting”" },
   { key: "Cs", name: "Melissa Cseszko",   office: "Council",   status: "Declared 12 May 2026", statusNote: "Detailed platform pending", grade: "D", mean: 0.67, n: 6, posture: "Small-business owner. “Results over ideology”" },
   { key: "Ro", name: "Karen Rothe",       office: "Council",   status: "Declared 27 May 2026", grade: "D", mean: 0.67, n: 9, posture: "Career BC public servant. “Restoring confidence in city hall”" },
   { key: "Bo", name: "Wendy Bowkett",     office: "Council",   status: "Declared ~15 May 2026", grade: "D", mean: 0.56, n: 8, posture: "Business strategist, MBA, former VDRA leader. “Refocus on the basics”" },
   { key: "Mc", name: "Arthur McInnis",    office: "Council",   status: "Declared 25 June 2026", grade: "B−", mean: 1.81, n: 16, posture: "30+ years lawyer, educator, infrastructure and finance advisor. “Back to basics”" },
-  { key: "Le", name: "Bella Lee",         office: "Council",   status: "Declared June 2026", grade: "C+", mean: 1.62, n: 21, posture: "27, senior advisor MCFD. Cost of living. Platform self-described as a living document" },
+  { key: "Le", name: "Bella Lee",         office: "Council",   status: "Declared June 2026", grade: "C+", mean: 1.67, n: 21, posture: "27, senior advisor MCFD. Cost of living. Platform self-described as a living document" },
   { key: "Sa", name: "Jack Sandor",       office: "Council",   status: "Declared June 2026", grade: "B", mean: 2.14, n: 25, posture: "27, Red Seal electrician. Housing supply as root cause. Nine-section platform, running jointly with Lee" },
 ];
 
@@ -174,63 +195,71 @@ const TOPICS = [
 
 /* One row per topic, in TOPICS order; one value per candidate, in CANDIDATES
    order (Al Ca De Th Ki Lo Co Ha Ga Cs Ro Bo Mc Le Sa).
-   "." = excluded (no public position, Record, or no information). */
+
+   "." = ⚪ no public position, researched and nothing located.
+   "R" = 📋 Record: a documented fact about the 2022–2026 term rather than a
+         stated position. Never scored, but distinct from silence — all eight
+         are Alto's, and a cell built only from them prints 📋 rather than —
+         so a four-year record is not displayed as an absence.
+
+   Both are excluded from every mean. 210 cells carry a value, 8 are Record,
+   the remaining 607 of the 15-candidate field are ⚪. */
 const GRID = [
-  "3.0 0.5 0.5 0.5 0.5 0.5  .   .   .   .   .   .   .   .   . ",  // M1–M5
-  "1.0 2.0 1.0 2.0 2.0 0.5 -2.0 -2.0 -2.0  .   .  1.0 2.0 2.0 2.0", // M6
-  "3.0  .   .   .   .   .   .   .   .   .   .   .  2.0 2.0 2.0",  // M6b
-  " .   .  0.5  .   .   .   .  0.5 0.5  .   .   .  0.5  .   . ",  // M7
-  " .   .   .   .   .   .   .   .   .   .   .   .  3.0  .   . ",  // M7b
-  " .   .   .   .   .   .   .   .   .   .   .   .   .   .  2.0",  // M8/M8b
-  "2.0 3.0 3.0 3.0 3.0 3.0  .   .   .   .   .   .   .  2.0 2.0",  // M9/M9b/M9c/M64
-  " .   .   .   .   .   .   .   .   .   .   .   .   .   .   . ",  // M10
-  "2.0 2.0 0.5 3.0 0.5 3.0 0.5 3.0 2.0  .   .   .   .  2.0 2.0",  // M11
-  "3.0  .   .   .   .   .   .   .   .   .   .   .   .  2.0 2.0",  // M12/M13/M13b/M13c
-  "1.0  .   .   .   .   .   .   .   .   .   .   .   .   .  2.0",  // M13d
-  "2.0  .  2.0  .   .   .   .   .  0.5  .   .  0.5  .  2.0  . ",  // M14/M16/M17/M18
-  "0.5 0.5 0.5 3.0 2.0  .   .   .   .  0.5  .   .  0.5 2.0 2.0",  // M19/M22/M38–M42b
-  "0.5 2.0  .  2.0 2.0  .   .   .   .   .  0.5  .  0.5 2.0 3.0",  // M20b/M23b
-  " .   .   .   .  3.0  .   .   .   .   .   .   .   .   .  2.0",  // M24b/M25b
-  " .   .   .   .   .   .   .   .   .   .   .  0.5  .  0.5  . ",  // M25
-  "1.0 1.0 1.0 1.0 1.0 2.0 1.0 1.0 2.0  .   .   .   .   .   . ",  // M26
-  " .   .   .   .   .   .   .   .   .   .   .   .  3.0 0.5 3.0",  // M26b
-  "2.0 1.0 1.0 1.0 1.0 1.0 1.0 0.5 1.0 0.5 0.5 0.5 0.5  .   . ",  // M27
-  " .   .   .   .   .   .   .  3.0  .   .   .   .   .   .   . ",  // M28
-  " .   .   .   .   .   .   .  3.0  .   .   .   .   .  2.0  . ",  // M28b
-  " .   .   .   .   .   .   .   .   .   .   .   .  3.0  .   . ",  // M28d
-  "3.0 2.0 2.0 2.0 2.0 2.0 0.5 0.5 0.5  .   .   .   .  3.0 3.0",  // M29/M29b
-  " .   .   .   .   .   .   .   .   .   .   .   .   .   .   . ",  // M30
-  " .   .   .   .   .   .   .  2.0  .   .   .   .   .   .   . ",  // M31/M31b/M31c/M32
-  "3.0 3.0 3.0 3.0 -2.0 3.0 3.0 3.0 3.0  .   .   .   . -2.0  . ", // M33
-  " .   .   .   .   .   .   .  3.0  .   .   .   .   .   .   . ",  // M33b
-  " .   .   .   .   .   .   .   .   .   .   .   .   .   .   . ",  // M34–M37
-  "2.0 0.5 3.0  .   .   .   .   .  0.5 1.0  .   .   .   .  2.0",  // M43–M46b
-  " .   .   .   .   .   .   .   .   .   .  0.5  .   .   .   . ",  // M45b/M45c
-  "2.0  .   .   .   .   .   .   .   .   .   .  0.5  .  2.0 2.0",  // M47–M49
-  "2.0  .  2.0  .   .   .   .   .   .   .   .   .   .  2.0 2.0",  // M50/M50b/M51/M52
-  " .   .  3.0  .   .   .   .   .   .   .   .   .   .   .   . ",  // M53/M53b/M53c
-  " .   .  0.5  .   .   .   .   .   .   .   .   .   .   .   . ",  // M53d
-  " .   .   .  2.0  .   .   .   .   .   .   .   .   .   .  2.0",  // M54–M57
-  "1.0 0.5 0.5 2.0 0.5  .   .   .   .   .   .   .   .  2.0 2.0",  // M58/M58b/M64b
-  " .   .   .   .   .   .   .   .   .   .   .   .   .   .  2.0",  // M59–M63
-  " .   .   .   .   .   .   .   .   .   .   .   .   .   .   . ",  // M15
-  " .   .  2.0  .   .   .   .   .  0.5 1.0  .   .  3.0  .   . ",  // M65
-  " .   .   .   .  1.0 0.5 0.5 1.0 1.0  .   .   .  2.0  .   . ",  // M66
-  " .   .   .   .   .   .   .   .   .   .  1.0  .   .   .   . ",  // M66b/M66c
-  " .   .   .   .   .   .   .   .   .   .   .   .  0.5 1.0 0.5",  // M66d
-  " .   .   .   .   .   .   .   .  2.0 0.5 0.5 0.5 3.0  .  2.0",  // M67
-  " .   .   .   .   .   .   .   .   .   .   .   .   .   .   . ",  // M68
-  "2.0  .   .   .   .   .   .   .   .   .   .   .   .   .  3.0",  // M69 NEW
-  "0.5 2.0 0.5 0.5 0.5 0.5  .  0.5 0.5  .   .   .   .  2.0  . ",  // M70/M70b
-  " .   .   .   .   .   .   .   .   .   .   .   .   .   .   . ",  // M70c
-  "2.0  .   .   .   .   .   .   .   .  0.5 0.5  .   .  2.0 3.0",  // M71–M73d
-  " .   .   .   .   .   .   .   .   .   .   .   .   .   .   . ",  // M74/M75/M76
-  "1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0  .  0.5 0.5 2.0 1.0  . ",  // M77/M78/M78b
-  " .   .   .   .   .   .  0.5 0.5 3.0  .  0.5  .  3.0  .   . ",  // M79/M79b
-  " .   .   .   .   .   .   .   .   .   .   .   .   .   .  2.0",  // M79c–f NEW
-  "2.0  .   .  0.5 3.0 1.0  .   .  2.0  .  1.5 0.5 0.5 2.0 2.0",  // M80/M80b/M80c
-  " .   .   .   .   .   .   .   .   .   .   .   .   .   .  2.0",  // M82/M82b NEW
-  "2.0  .   .   .   .   .   .   .   .   .   .   .   .   .   . ",  // M81
+  " 3.0    .    .    .    .    .    .    .    .    .    .    .    .    .    .",  // M1–M5
+  " 1.0  2.0  1.0  2.0  2.0  0.5 -1.0 -1.0 -1.0    .    .  1.0  2.0  2.0  2.0",  // M6
+  " 3.0    .    .    .    .    .    .    .    .    .    .    .  2.0  2.0  2.0",  // M6b
+  "   .    .  0.5    .    .    .    .  0.5  0.5    .    .    .  0.5    .    .",  // M7
+  "   .    .    .    .    .    .    .    .    .    .    .    .  3.0    .    .",  // M7b
+  "   .    .    .    .    .    .    .    .    .    .    .    .    .    .  2.0",  // M8/M8b
+  " 2.0  3.0  3.0  3.0  3.0  3.0    .    .    .    .    .    .    .  2.0  2.0",  // M9/M9b/M9c/M64
+  "   .    .    .    .    .    .    .    .    .    .    .    .    .    .    .",  // M10
+  " 2.0  2.0  1.0  3.0  1.0  3.0  1.0  3.0  2.0    .    .    .    .  2.0  2.0",  // M11
+  " 3.0    .    .    .    .    .    .    .    .    .    .    .    .  2.0  2.0",  // M12/M13/M13b/M13c
+  " 1.0    .    .    .    .    .    .    .    .    .    .    .    .    .  2.0",  // M13d
+  " 2.0    .  2.0    .    .    .    .    .  0.5    .    .  0.5    .  2.0    .",  // M14/M16/M17/M18
+  " 0.5    .    .  3.0  2.0    .    .    .    .  0.5    .    .  0.5  2.0  2.0",  // M19/M22/M38–M42b
+  " 0.5  2.0    .  2.0  2.0    .    .    .    .    .  0.5    .  0.5  2.0  3.0",  // M20b/M23b
+  "   .    .    .    .  3.0    .    .    .    .    .    .    .    .    .  2.0",  // M24b/M25b
+  "   .    .    .    .    .    .    .    .    .    .    .  0.5    .  0.5    .",  // M25
+  " 1.0  1.0  1.0  1.0  1.0  2.0  1.0  1.0  2.0    .    .    .    .    .    .",  // M26
+  "   .    .    .    .    .    .    .    .    .    .    .    .  3.0  0.5  3.0",  // M26b
+  " 2.0  1.0  1.0  1.0  1.0  1.0  1.0  0.5    .  0.5  0.5  0.5  0.5    .    .",  // M27
+  "   .    .    .    .    .    .    .  3.0    .    .    .    .    .    .    .",  // M28
+  "   .    .    .    .    .    .    .  3.0    .    .    .    .    .  2.0    .",  // M28b
+  "   .    .    .    .    .    .    .    .    .    .    .    .  3.0    .    .",  // M28d
+  " 3.0  2.0  2.0  2.0  2.0  2.0  0.5  0.5  0.5    .    .    .    .  3.0  3.0",  // M29/M29b
+  "   .    .    .    .    .    .    .    .    .    .    .    .    .    .    .",  // M30
+  "   .    .    .    .    .    .    .  2.0    .    .    .    .    .    .    .",  // M31/M31b/M31c/M32
+  " 3.0  3.0  3.0  3.0 -1.0  3.0  3.0  3.0  3.0    .    .    .    . -1.0    .",  // M33
+  "   .    .    .    .    .    .    .  3.0    .    .    .    .    .    .    .",  // M33b
+  "   .    .    .    .    .    .    .    .    .    .    .    .    .    .    .",  // M34–M37
+  " 2.0  0.5  3.0    .    .    .    .    .    .  1.0    .    .    .    .  2.0",  // M43–M46b
+  "   R    .    .    .    .    .    .    .    .    .  0.5    .    .    .    .",  // M45b/M45c
+  " 2.0    .    .    .    .    .    .    .    .    .    .  0.5    .  2.0  2.0",  // M47–M49
+  " 2.0    .  2.0    .    .    .    .    .    .    .    .    .    .  2.0  2.0",  // M50/M50b/M51/M52
+  "   .    .  3.0    .    .    .    .    .    .    .    .    .    .    .    .",  // M53/M53b/M53c
+  "   .    .  0.5    .    .    .    .    .    .    .    .    .    .    .    .",  // M53d
+  "   .    .    .  2.0    .    .    .    .    .    .    .    .    .    .  2.0",  // M54–M57
+  " 1.0    .    .  2.0    .    .    .    .    .    .    .    .    .  2.0  2.0",  // M58/M58b/M64b
+  "   .    .    .    .    .    .    .    .    .    .    .    .    .    .  2.0",  // M59–M63
+  "   R    .    .    .    .    .    .    .    .    .    .    .    .    .    .",  // M15
+  "   R    .  2.0    .    .    .    .    .  0.5  1.0    .    .  3.0    .    .",  // M65
+  "   R    .    .    .  1.0  0.5  0.5  1.0  1.0    .    .    .  2.0    .    .",  // M66
+  "   R    .    .    .    .    .    .    .    .    .  1.0    .    .    .    .",  // M66b/M66c
+  "   R    .    .    .    .    .    .    .    .    .    .    .  0.5  1.0  0.5",  // M66d
+  "   R    .    .    .    .    .    .    .  2.0  0.5  0.5  0.5  3.0    .  2.0",  // M67
+  "   .    .    .    .    .    .    .    .    .    .    .    .    .    .    .",  // M68
+  " 2.0    .    .    .    .    .    .    .    .    .    .    .    .    .  3.0",  // M69 NEW
+  " 0.5  2.0    .    .  0.5    .    .  0.5  0.5    .    .    .    .  2.0    .",  // M70/M70b
+  "   R    .    .    .    .    .    .    .    .    .    .    .    .    .    .",  // M70c
+  " 2.0    .    .    .    .    .    .    .    .  0.5  0.5    .    .  2.0  3.0",  // M71–M73d
+  "   .    .    .    .    .    .    .    .    .    .    .    .    .    .    .",  // M74/M75/M76
+  " 1.0  1.0  1.0  1.0  1.0  1.0  1.0  1.0  1.0    .  0.5  0.5  2.0  1.0    .",  // M77/M78/M78b
+  "   .    .    .    .    .    .  0.5  0.5  3.0    .  0.5    .  3.0    .    .",  // M79/M79b
+  "   .    .    .    .    .    .    .    .    .    .    .    .    .    .  2.0",  // M79c–f NEW
+  " 2.0    .    .  0.5  3.0  1.0    .    .  2.0    .  1.5  0.5  0.5  2.0  2.0",  // M80/M80b/M80c
+  "   .    .    .    .    .    .    .    .    .    .    .    .    .    .  2.0",  // M82/M82b NEW
+  " 2.0    .    .    .    .    .    .    .    .    .    .    .    .    .    .",  // M81
 ];
 
 /* Scorecard v5.0 — the fifteen reader-facing columns, and which v3.0 topics
@@ -262,54 +291,93 @@ const COLUMNS = [
   { key: "recon",     label: "Reconciliation",      short: "Recon",          topics: ["M1–M5"] },
 ];
 
-/* Published pillar grades, kept so the build can assert its own recomputation
-   against the master rather than silently diverging from it. n is the number
-   of scored topics in that pillar for that candidate. */
+/* Published pillar grades from §2 of Grade Breakdown v3.2, kept so the build
+   can assert its own recomputation against the master rather than silently
+   diverging from it. [letter, n] — n is the number of scored topics in that
+   pillar for that candidate; letter is null where the master prints · because
+   n is below the three-topic floor, and the whole entry is null where there
+   is no scored topic at all. The means are deliberately not stored: they are
+   what the build computes, and asserting a letter the master published is a
+   real check where asserting a mean copied from the same arithmetic is not. */
 const PILLAR_PUBLISHED = {
-  Sa: { foundation: null, liveable: [2.10, 10], safe: [null, 2], beautiful: [2.00, 6], managed: [2.12, 4], democratic: [2.00, 3] },
-  Al: { foundation: [null, 1], liveable: [1.67, 9], safe: [2.25, 4], beautiful: [1.75, 4], managed: [1.50, 3], democratic: [1.67, 3] },
-  Mc: { foundation: null, liveable: [1.42, 6], safe: [2.17, 3], beautiful: null, managed: [2.12, 4], democratic: [1.83, 3] },
-  Th: { foundation: [null, 1], liveable: [2.60, 5], safe: [1.75, 4], beautiful: [null, 2], managed: [null, 1], democratic: [null, 2] },
-  Le: { foundation: null, liveable: [1.83, 9], safe: [0.88, 4], beautiful: [2.00, 3], managed: [1.67, 3], democratic: [null, 2] },
-  Ca: { foundation: [null, 1], liveable: [1.90, 5], safe: [1.75, 4], beautiful: [null, 2], managed: [null, 1], democratic: [null, 1] },
-  Lo: { foundation: [null, 1], liveable: [2.17, 3], safe: [2.00, 4], beautiful: null, managed: [null, 2], democratic: [null, 2] },
-  De: { foundation: [null, 1], liveable: [1.25, 6], safe: [1.75, 4], beautiful: [1.80, 5], managed: [null, 2], democratic: [null, 1] },
-  Ha: { foundation: null, liveable: [0.50, 3], safe: [2.00, 8], beautiful: null, managed: [null, 2], democratic: [null, 2] },
-  Ki: { foundation: [null, 1], liveable: [2.08, 6], safe: [0.50, 4], beautiful: [null, 1], managed: [null, 2], democratic: [null, 2] },
-  Ga: { foundation: null, liveable: [0.25, 4], safe: [1.62, 4], beautiful: [null, 1], managed: [1.00, 4], democratic: [2.00, 3] },
-  Co: { foundation: null, liveable: [null, 2], safe: [1.38, 4], beautiful: null, managed: [null, 1], democratic: [null, 2] },
-  Cs: { foundation: null, liveable: [null, 1], safe: [null, 1], beautiful: [null, 1], managed: [0.67, 3], democratic: null },
-  Ro: { foundation: null, liveable: [null, 1], safe: [null, 1], beautiful: [null, 1], managed: [0.67, 3], democratic: [0.83, 3] },
-  Bo: { foundation: null, liveable: [0.67, 3], safe: [null, 1], beautiful: [null, 1], managed: [null, 1], democratic: [null, 2] },
+  Sa: { foundation: null, liveable: ["B", 10], safe: [null, 2], beautiful: ["B", 6], managed: ["B", 4], democratic: ["B", 3] },
+  Th: { foundation: null, liveable: ["A−", 5], safe: ["B−", 4], beautiful: [null, 2], managed: null, democratic: [null, 2] },
+  Al: { foundation: [null, 1], liveable: ["C+", 9], safe: ["B+", 4], beautiful: ["B−", 4], managed: ["C+", 3], democratic: ["C+", 3] },
+  Mc: { foundation: null, liveable: ["C", 6], safe: ["B", 3], beautiful: null, managed: ["B", 4], democratic: ["B−", 3] },
+  Ca: { foundation: null, liveable: ["B+", 4], safe: ["B−", 4], beautiful: [null, 1], managed: [null, 1], democratic: [null, 1] },
+  De: { foundation: null, liveable: ["C+", 5], safe: ["B−", 4], beautiful: ["B", 4], managed: [null, 1], democratic: [null, 1] },
+  Lo: { foundation: null, liveable: ["B", 3], safe: ["B", 4], beautiful: null, managed: [null, 1], democratic: [null, 2] },
+  Le: { foundation: null, liveable: ["B−", 9], safe: ["C−", 4], beautiful: ["B", 3], managed: ["C+", 3], democratic: [null, 2] },
+  Ki: { foundation: null, liveable: ["B", 6], safe: ["D", 4], beautiful: null, managed: [null, 2], democratic: [null, 2] },
+  Ha: { foundation: null, liveable: ["D", 3], safe: ["B", 8], beautiful: null, managed: [null, 2], democratic: [null, 2] },
+  Ga: { foundation: null, liveable: ["D", 4], safe: ["B−", 3], beautiful: null, managed: ["C−", 4], democratic: ["B", 3] },
+  Co: { foundation: null, liveable: [null, 2], safe: ["C", 4], beautiful: null, managed: [null, 1], democratic: [null, 2] },
+  Cs: { foundation: null, liveable: [null, 1], safe: [null, 1], beautiful: [null, 1], managed: ["D", 3], democratic: null },
+  Ro: { foundation: null, liveable: [null, 1], safe: [null, 1], beautiful: [null, 1], managed: ["D", 3], democratic: ["D", 3] },
+  Bo: { foundation: null, liveable: ["D", 3], safe: [null, 1], beautiful: [null, 1], managed: [null, 1], democratic: [null, 2] },
 };
 
-/* The three defects the master documents. Published on the site verbatim in
+/* The 15 marks v3.1 excluded, and the 3 it regraded. Kept as data because the
+   candidate profiles on comparison.html are a 31 July transcription of their
+   own Notion master and still describe several of these as scored positions.
+   Rather than silently editing someone else's prose, the profiles section
+   prints this list beside it and says which way the correction ran. Each is
+   restorable the moment a vote or a quotation is attached to it. */
+const EXCLUSIONS = {
+  date: "1 August 2026",
+  rule: "A characterisation is not a citable sentence. Fifteen marks rested on tone or posture rather than on something a candidate said or voted for, and were excluded.",
+  items: [
+    ["Pro-reconciliation", "M1–M5", "Caradonna · Dell · Thompson · Kim · Loughton"],
+    ["Pro-transit / pro-bike", "M19/M22/M38–M42b", "Caradonna · Dell"],
+    ["Province-blaming present in framing", "M70/M70b", "Dell · Thompson · Loughton"],
+    ["Climate leadership stated", "M58/M58b/M64b", "Caradonna · Dell · Kim — the cooling bylaw is already scored once at M9"],
+    ["Pro-heritage tone", "M43–M46b", "Gardiner"],
+    ["Recorded pro-enforcement votes, unnamed", "M27", "Gardiner — the qualifying vote is already scored once at M33"],
+  ],
+  regrade: "Three marks were regraded upward: the CSWB adoption vote of 3 July 2025 carried <em>Commits</em> at M26 and M27 but <em>Agrees</em> at M11 for the same councillors on the same act. It is now Commits at all three (Dell, Kim and Coleman at M11, Weak → Partial).",
+  net: "Every excluded mark was worth +0.5, below almost every mean, so the correction ran <strong>upward</strong>. The defect had been quietly suppressing sitting councillors' grades: Caradonna moved C+ → B− and Dell C → C+.",
+};
+
+/* The four defects the master documents. Published on the site verbatim in
    substance, because a grade with a known defect that the publisher does not
    disclose is worse than no grade. */
 const DEFECTS = [
   {
     n: 1,
-    title: "Opposed at −2.0 is arithmetically asymmetric, and it decides four column grades",
-    body: "The positive range runs 0.5 to 3.0; the negative value is −2.0. On a four-topic column one Opposed cancels roughly four Aligned. Gardiner's F on Liveable is one Missing Middle vote. Lee's D on Safe is one sentence about 7 a.m. tent removals, sitting alongside a regional police force commitment graded Aligned. <strong>A grade that a single vote can drive to F is a grade an opponent will destroy in one sentence.</strong>",
+    status: "resolved",
+    title: "Opposed at −2.0 was arithmetically asymmetric — fixed in v3.2 at −1.0",
+    body: "The positive range runs 0.5 to 3.0; the negative value was −2.0, which put one contrary vote 2.5 points below the nearest positive mark. Because a grade is a <strong>mean</strong>, on a ten-topic column that is a quarter point of mean — <strong>a full grade band decided by a single vote.</strong> The four options were computed on the real data before one was chosen.",
     table: [
-      ["Gardiner · Liveable", "F (0.25, n=4)", "C− (1.00, n=3)"],
-      ["Kim · Safe", "D (0.50, n=4)", "C (1.33, n=3)"],
-      ["Lee · Safe", "D (0.88, n=4)", "B− (1.83, n=3)"],
-      ["Hammond · Liveable", "D (0.50, n=3)", "insufficient basis (1.75, n=2)"],
+      ["Gardiner", "C− 1.18", "C 1.25", "C 1.32", "C 1.42"],
+      ["Hammond", "C 1.37", "C 1.43", "C+ 1.50", "C+ 1.61"],
+      ["Coleman", "D 0.72", "D 0.83", "D 0.94", "C− 1.06"],
+      ["Kim", "C 1.46", "C+ 1.54", "C+ 1.61", "C+ 1.73"],
+      ["Lee", "C+ 1.62", "C+ 1.67", "C+ 1.71", "B− 1.80"],
     ],
-    fix: "This site applies the master's third option: <strong>where a column contains an Opposed and fewer than five scored topics, no letter is shown</strong>. The mean and the marks are still published, so nothing is hidden — but a letter that one recorded vote can move by four bands is not presented as a verdict.",
+    tableHead: ["Candidate", "A. Keep −2.0", "B. −1.0 (chosen)", "C. 0.0", "D. Exclude"],
+    fix: "<strong>Option B.</strong> Option A lets one 2023 vote outweigh ten considered positions, which measures the scale rather than the candidate. Option C sets a stated opposition equal in weight to no opposition at all, discarding real information a voter is entitled to. <strong>Option D removes the votes from the calculation entirely, and a scorecard that deletes the evidence it finds inconvenient has no claim on anyone's trust.</strong> B keeps every vote counted, keeps it negative, and stops it deciding a grade by itself.",
+    coi: "<strong>The conflict of interest on this change, stated plainly.</strong> Five candidates hold an Opposed mark. <strong>Two of them, Gardiner and Hammond, are incumbents this document's author works with</strong>, and softening the penalty helps them. That is a genuine appearance problem and it does not disappear by being unintentional. What limits it: none of the four coordinated independents the author supports holds an Opposed mark anywhere in the matrix, so the change is worth <strong>nothing</strong> to them. Of the two candidates who actually crossed a band, <strong>one is Susan Kim, a progressive councillor with no relationship to this framework.</strong> The top five positions are identical under the old weighting and the new one.",
   },
   {
     n: 2,
-    title: "Small-n columns produce letters that look like findings and are not",
-    body: "Eleven of the fifteen candidates have at least one pillar graded on exactly three topics. Three is the stated floor; it is too low for a letter that will be read as a verdict.",
-    fix: "Every pillar grade on this site shows its <strong>n</strong>, and any pillar resting on fewer than five scored topics is marked as a thin base.",
+    status: "open",
+    title: "Below three scored topics a letter is not a finding",
+    body: "Six of the fifteen areas can never reach the three-topic floor at all: Homelessness, Walking &amp; Transit, Cleanliness and Reconciliation each contain one topic; Mobility and Business contain two. Eleven of the fifteen candidates also have at least one pillar below the floor.",
+    fix: "<strong>No letter is printed below three scored topics</strong>, in the area grid and in the pillar table alike. The cell reports the marks it holds and their mean instead, because a single mark needs no averaging and a letter computed from one mark would be read as a verdict on a portfolio. Every grade that is printed shows its n.",
   },
   {
     n: 3,
+    status: "open",
+    title: "One Opposed mark may not be an Opposed mark",
+    body: "Four of the five Opposed marks are roll-call votes: dated, unambiguous, in the minutes. <strong>Bella Lee's is one sentence on her own website</strong>, read as opposition to the measure rather than as criticism of how the bylaw is enforced. Moving Opposed to −1.0 reduces what that reading costs her; it does not make the reading correct.",
+    fix: "Not resolved. <strong>It must be put to her directly before her Safety cell is used publicly.</strong> The cell is footnoted wherever it appears.",
+  },
+  {
+    n: 4,
+    status: "open",
     title: "“Commits” does not distinguish authoring an instrument from voting for one",
     body: "Hammond authoring the sheltering ban and seven colleagues voting for it all score Aligned 3.0. That is the methodology working as written, and it is also why Hammond's Safe pillar understates the distance between him and the field on enforcement.",
-    fix: "Not corrected. Fixing it needs a fifth Q1 level, which would change every mark on the page. It is disclosed instead.",
+    fix: "Not corrected. Fixing it needs a fifth level on Question 1, which would change every mark on the page. It is disclosed instead.",
   },
 ];
 
@@ -357,5 +425,5 @@ const OPEN_ITEMS = [
 ];
 
 if (typeof module !== "undefined" && module.exports) {
-  module.exports = { MATRIX_META, SCALE, CANDIDATES, UNKNOWN, PILLARS, TOPICS, GRID, COLUMNS, PILLAR_PUBLISHED, DEFECTS, NON_SOURCES, PLATFORM_STATUS, BIAS, OPEN_ITEMS };
+  module.exports = { MATRIX_META, SCALE, CANDIDATES, UNKNOWN, PILLARS, TOPICS, GRID, COLUMNS, PILLAR_PUBLISHED, EXCLUSIONS, DEFECTS, NON_SOURCES, PLATFORM_STATUS, BIAS, OPEN_ITEMS };
 }

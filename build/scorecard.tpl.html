@@ -13,11 +13,11 @@
      and every link to one. Loaded first and synchronously so a gated page
      leaves before it paints. -->
 <script src="flags.js"></script>
-<meta name="description" content="Where each Victoria 2026 candidate stands against A City That Works. 55 topics, 225 marks, computed on a published two-question scale — with the scale's own defects disclosed.">
+<meta name="description" content="Where each Victoria 2026 candidate stands against A City That Works. A sortable, filterable table of 15 candidates across 15 policy areas, computed on a published two-question scale — with the scale's own defects disclosed.">
 <meta name="theme-color" content="#1A3668">
 <title>Candidate Scorecard — A City That Works, Victoria 2026</title>
 <meta property="og:title" content="Candidate Scorecard — A City That Works">
-<meta property="og:description" content="55 topics, 225 marks, computed not assigned. Every grade opens onto the mark, its value and the sentence it rests on.">
+<meta property="og:description" content="Sort it, filter it, compare any two candidates. 15 candidates across 15 policy areas, computed not assigned — every grade opens onto the mark, its value and the sentence it rests on.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://acitythatworks.ca/scorecard.html">
 <meta property="og:site_name" content="A City That Works">
@@ -79,7 +79,7 @@ a.cn-name:hover:after{opacity:1}
 .pn{display:block;font-family:'JetBrains Mono',monospace;font-size:9px;color:#6b6664;margin-top:3px;white-space:nowrap}
 .pc.thin .g{opacity:.92;box-shadow:inset 0 0 0 2px rgba(255,255,255,.55)}
 .pc.thin .pn{color:#8B6914}
-.pc-w .pw{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:9.5px;text-transform:uppercase;letter-spacing:.06em;color:#8B6914;border:1px dashed rgba(139,105,20,.55);padding:3px 5px}
+.pc-f .pw{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:600;color:#8B6914;border:1px dashed rgba(139,105,20,.55);padding:2px 6px;min-width:34px}
 .pc-e{color:#c9c4bf}
 .pc-f .pn{color:#8a8580}
 /* ── master grid ─────────────────────────────────────────────────────── */
@@ -96,6 +96,7 @@ table.mg thead th.gt{z-index:3;background:var(--paper)}
 td.gc{text-align:center;font-family:'JetBrains Mono',monospace;font-size:11px;white-space:nowrap;cursor:pointer;color:#1c1917}
 td.gc:focus{outline:2px solid var(--navy);outline-offset:-2px}
 td.gc.gx{color:#cfcac5;cursor:default}
+td.gc.grec{cursor:default;font-size:11px;background:rgba(212,168,67,.14)}
 table.mg tbody tr:hover td{background:rgba(212,168,67,.10)}
 table.mg tbody tr:hover td.gt{background:rgba(212,168,67,.16)}
 th.gh abbr{text-decoration:none;border:0}
@@ -116,25 +117,88 @@ th.gh abbr{text-decoration:none;border:0}
 .sc-backdrop{position:fixed;inset:0;background:rgba(20,18,16,.5);z-index:40}
 .sc-panel.sheet{position:fixed;left:0;right:0;bottom:0;z-index:41;margin:0;max-height:82vh;overflow:auto;border-radius:10px 10px 0 0}
 body.no-scroll{overflow:hidden}
-/* ── 15-column area grid ─────────────────────────────────────────────── */
-.colt{width:100%;border-collapse:collapse;font-size:12.5px;min-width:960px}
-.colt th{padding:8px 5px;font-family:'JetBrains Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:.05em;color:var(--navy);border-bottom:2px solid rgba(26,54,104,.3);text-align:center;vertical-align:bottom}
-.colt th.who{text-align:left;min-width:12em}
+/* ── 15-area grid: controls ──────────────────────────────────────────── */
+.ctl{border:1px solid rgba(26,54,104,.2);background:rgba(26,54,104,.035);padding:12px 14px;margin:16px 0 0}
+.ctl-r{display:flex;flex-wrap:wrap;align-items:flex-end;gap:10px 18px}
+.ctl-f{display:flex;flex-direction:column;gap:4px;min-width:0}
+.ctl-f label{font-family:'JetBrains Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:.1em;color:var(--navy)}
+.ctl-f input[type=search],.ctl-f select{font-family:'Public Sans',system-ui,sans-serif;font-size:14px;padding:7px 9px;border:1px solid rgba(26,54,104,.3);background:#fff;color:#1c1917;min-width:11em;max-width:100%}
+.ctl-f input[type=search]{min-width:13em}
+.ctl-f select:focus,.ctl-f input:focus,.ctl button:focus{outline:2px solid var(--navy);outline-offset:1px}
+.ctl-b{display:flex;gap:8px;flex-wrap:wrap}
+.ctl button{font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.08em;padding:9px 12px;border:1px solid rgba(26,54,104,.35);background:#fff;color:var(--navy);cursor:pointer}
+.ctl button:hover{background:rgba(212,168,67,.18)}
+.ctl button[aria-pressed=true]{background:var(--navy);color:#fff;border-color:var(--navy)}
+.ctl-s{margin-top:10px;font-size:13px;color:#57534e;display:flex;flex-wrap:wrap;gap:4px 14px;align-items:baseline}
+.ctl-s b{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--navy)}
+.nores{padding:22px 6px;text-align:center;font-size:14px;color:#57534e}
+/* ── 15-area grid: table ─────────────────────────────────────────────── */
+/* Its own scroll container in both axes, so the heading row and the name
+   column pin against the table rather than against the page — the site
+   header and jump bar already own the top of the viewport, and a second
+   sticky row competing with them lands on top of one of them. */
+.areawrap{max-height:78vh}
+.colt{width:100%;border-collapse:collapse;font-size:12.5px;min-width:1020px}
+.colt th{padding:0;font-family:'JetBrains Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:.05em;color:var(--navy);border-bottom:2px solid rgba(26,54,104,.3);text-align:center;vertical-align:bottom}
+.colt thead th{position:sticky;top:0;z-index:2;background:var(--paper)}
+.colt th.who{text-align:left;min-width:13.5em;padding:8px 5px;left:0;z-index:3}
 .colt th abbr{text-decoration:none;border-bottom:1px dotted rgba(26,54,104,.45);cursor:help}
+.chs{display:flex;flex-direction:column;align-items:center;gap:2px;width:100%;padding:8px 4px;border:0;background:none;font:inherit;color:inherit;text-transform:inherit;letter-spacing:inherit;cursor:pointer}
+.chs:hover{background:rgba(212,168,67,.2)}
+.chs:focus-visible{outline:2px solid var(--navy);outline-offset:-2px}
+.sar{font-size:8px;line-height:1;color:transparent}
+.sar::after{content:"\25BC"}
+th[aria-sort=descending] .sar{color:var(--navy)}
+th[aria-sort=ascending] .sar{color:var(--navy);transform:rotate(180deg)}
+th[aria-sort=descending] .chs,th[aria-sort=ascending] .chs{background:rgba(212,168,67,.22)}
 .colt td{padding:7px 5px;border-bottom:1px solid rgba(26,54,104,.12);text-align:center;vertical-align:middle}
 .colt td.who{text-align:left;font-family:'Fraunces',serif;font-size:14px;color:var(--navy);white-space:nowrap;position:sticky;left:0;background:#fff;border-right:1px solid rgba(26,54,104,.14)}
-.colt td.who .wr{display:block;font-family:'JetBrains Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:.07em;color:#6b6664;margin-top:2px}
+.colt td.who .wr{display:block;font-family:'JetBrains Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:.07em;color:#6b6664;margin-top:2px;white-space:normal}
+/* The tick box sits beside the name rather than around it — the name is a
+   link to that candidate's profile, and a label wrapping it would navigate
+   and toggle on the same click. */
+.whorow{display:flex;align-items:flex-start;gap:8px}
+.pick{display:block;flex:none;cursor:pointer;padding:2px 0}
+.pickbox{display:block;width:15px;height:15px;accent-color:#1A3668;cursor:pointer}
+.whon{display:block;min-width:0}
+tr.cr.on td{background:rgba(212,168,67,.16)}
+tr.cr.on td.who{background:rgba(212,168,67,.26);box-shadow:inset 3px 0 0 var(--gold)}
+tr.cr:hover td{background:rgba(212,168,67,.09)}
+tr.cr:hover td.who{background:rgba(212,168,67,.17)}
+tr.cr.hide{display:none}
 /* Arriving from a profile lands on that candidate's row, so it clears the
    sticky header and says which of fifteen rows was asked for. */
 .colt tr[id]{scroll-margin-top:calc(var(--h) + 96px)}
 .colt tr[id]:target td{background:rgba(212,168,67,.16)}
 .colt tr[id]:target td.who{background:rgba(212,168,67,.24);box-shadow:inset 3px 0 0 var(--gold)}
 td.cc{cursor:pointer}
-td.cc:hover{background:rgba(212,168,67,.14)}
+td.cc:hover{background:rgba(212,168,67,.2)}
 td.cc:focus{outline:2px solid var(--navy);outline-offset:-2px}
 .cn{display:block;font-family:'JetBrains Mono',monospace;font-size:9px;color:#6b6664;margin-top:3px}
 td.cc.none{color:#c9c4bf;cursor:default}
 td.cc.rec{font-size:14px;color:var(--gold-ink)}
+/* Below the three-topic floor the cell prints its mean, deliberately in a
+   form that cannot be mistaken for a letter grade. */
+.few-m{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:600;color:var(--gold-ink);border:1px dashed rgba(139,105,20,.6);padding:2px 6px;min-width:34px}
+/* Focusing one area pushes the other fourteen back without removing them —
+   a reader comparing on Housing still needs to see that Safety exists. */
+.colt.focus td.cc:not(.foc),.colt.focus th.ch:not(.foc){opacity:.24}
+.colt.focus th.ch.foc .chs,.colt.focus td.cc.foc{background:rgba(212,168,67,.22)}
+.colt.focus td.cc:not(.foc):hover{opacity:.6}
+/* On a phone the sticky name column is competing with the grid for a 343px
+   viewport, so it gives back what it can and the tick target grows to
+   something a thumb can hit. */
+@media (max-width:560px){
+  .colt th.who{min-width:9.5em}
+  .colt td.who{font-size:13px}
+  .ctl-f input[type=search],.ctl-f select{width:100%}
+  .ctl-f{flex:1 1 100%}
+  .ctl button{padding:11px 13px}
+}
+@media (pointer:coarse){
+  .pickbox{width:20px;height:20px}
+  .pick{padding:2px 0}
+}
 .warns{margin:12px 0 0;padding-left:20px}
 .warns li{font-size:14px;line-height:1.6;margin:9px 0;color:#33312e}
 .dtopics{font-family:'JetBrains Mono',monospace;font-size:11px;line-height:1.7;color:var(--gold-ink)}
@@ -143,7 +207,14 @@ td.cc.rec{font-size:14px;color:var(--gold-ink)}
 .defect{border:1px solid rgba(181,52,31,.35);background:rgba(181,52,31,.05);padding:16px 18px;margin:14px 0}
 .defect h3{margin:0 0 6px;font-family:'Fraunces',serif;font-size:18px;color:#8f2a19}
 .defect .fixnote{margin-top:10px;padding:10px 12px;background:#fff;border-left:3px solid var(--navy);font-size:14px;line-height:1.55}
+.defect.fixed{border-color:rgba(34,114,71,.4);background:rgba(34,114,71,.05)}
+.defect.fixed h3{color:#1c5c39}
+.dstat{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:.1em;padding:3px 7px;margin-bottom:8px;color:#fff;background:#B5341F}
+.defect.fixed .dstat{background:#227247}
+.coi{margin-top:10px;padding:11px 13px;background:rgba(212,168,67,.14);border-left:3px solid var(--gold);font-size:13.5px;line-height:1.55}
 td.bad{color:#B5341F;font-weight:600}
+.dt td.chosen,.dt th.chosen{background:rgba(34,114,71,.12);font-weight:600;color:#1c5c39}
+.dt td.alt{color:#6b6664}
 .scale-t{width:100%;border-collapse:collapse;font-size:13px;margin:14px 0;min-width:520px}
 .scale-t th,.scale-t td{padding:8px 9px;border:1px solid rgba(26,54,104,.18);text-align:center}
 .scale-t th{background:rgba(26,54,104,.06);font-family:'JetBrains Mono',monospace;font-size:9.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--navy)}
@@ -152,6 +223,7 @@ td.bad{color:#B5341F;font-weight:600}
 .legend{display:flex;flex-wrap:wrap;gap:8px 16px;margin:12px 0;font-size:13px}
 .legend span{display:inline-flex;align-items:center;gap:6px}
 .legend i{width:14px;height:11px;display:inline-block;border:1px solid rgba(26,54,104,.25)}
+.lnkb{border:0;background:none;padding:0;font:inherit;color:var(--navy);text-decoration:underline;cursor:pointer}
 </style>
 </head>
 <body>
@@ -198,9 +270,9 @@ td.bad{color:#B5341F;font-weight:600}
 <a href="index.html">Framework</a><span class="sep">/</span><span class="here">Candidate Scorecard</span>
 </nav>
 <div class="hero">
-<div class="eyb"><span>📊 The Ballot</span><span class="dot">◆</span><span>Matrix v3.0 · 1 August 2026</span><span class="dot">◆</span><span><a href="version-history.html" style="color:inherit">v1.9.7</a></span></div>
+<div class="eyb"><span>📊 The Ballot</span><span class="dot">◆</span><span>Scorecard v<!--SCVER--> · <!--SCDATE--></span><span class="dot">◆</span><span>Matrix v<!--MVER--></span><span class="dot">◆</span><span><a href="version-history.html" style="color:inherit">v1.9.7</a></span></div>
 <h1 class="ph1">Where each candidate <em>stands.</em></h1>
-<p class="lead" style="margin-top:18px"><strong>55 topics · 225 scored marks · 15 candidates.</strong> Every mark is the output of two questions asked in order, so the same evidence produces the same mark regardless of who reads it. <strong>A grade is computed, not assigned</strong> — and every number on this page can be recomputed from the grid below.</p>
+<p class="lead" style="margin-top:18px"><strong>55 topics · <!--MARKS--> scored marks · <!--NCAND--> candidates.</strong> Every mark is the output of two questions asked in order, so the same evidence produces the same mark regardless of who reads it. <strong>A grade is computed, not assigned</strong> — and every number on this page can be recomputed from the grid below.</p>
 <p class="scale"><strong>The scale measures distance from this framework, not quality.</strong> A low grade means a candidate proposes something different, or has not yet said how. It does not mean they are wrong.</p>
 <a href="index.html" class="pgback">← Back to the framework</a>
 </div>
@@ -209,21 +281,21 @@ td.bad{color:#B5341F;font-weight:600}
 <div class="lbl">◆ Read this before the grades</div>
 <p><strong>Read the “graded on” column before the grade.</strong> A grade computed on 6 topics and a grade computed on 25 are not comparable claims. <strong>Silence is never scored</strong>, so a narrow base is a fact about a publication calendar, not about a candidate.</p>
 <p><strong>Most municipal candidates publish platform detail in September.</strong> A matrix scored in July and August therefore <strong>systematically under-reports challengers relative to incumbents</strong>, who have four years of votes on the record. That is a property of the calendar, not a finding about anyone, and it is the single most important caveat on this page. <strong>A re-score after nominations close on 11 September is mandatory before this document informs anything.</strong></p>
-<p><strong>This page discloses two defects in its own scale and withholds four letter grades because of one of them.</strong> <a href="#defects">Read the defects</a> before quoting any cell.</p>
+<p><strong>This page discloses four defects in its own scale, one of them now fixed at source, and prints no letter at all where the base is thinner than three topics.</strong> <a href="#defects">Read the defects</a> before quoting any cell.</p>
 </div>
 
 <nav class="toc" aria-label="On this page">
 <div class="toc-h">◆ On this page</div>
 <ol>
 <li><a href="#grades">Overall grades</a></li>
-<li><a href="#areas">The fifteen areas — every grade, every source</a></li>
-<li><a href="#misread">Seven cells that will be misread</a></li>
+<li><a href="#areas">The fifteen areas — every candidate, every grade</a></li>
+<li><a href="#misread">Cells that will be misread</a></li>
 <li><a href="#pillars">Grades by pillar</a></li>
 <li><a href="#grid">The full grid — 55 topics</a></li>
 <li><a href="#scale">How a mark is decided</a></li>
 <li><a href="#sourcing">What counts as a source</a></li>
 <li><a href="#blank">What a blank means</a></li>
-<li><a href="#defects">Three defects in the scale</a></li>
+<li><a href="#defects">Four defects in the scale</a></li>
 <li><a href="#bias">This document's own bias</a></li>
 <li><a href="#open">Open items</a></li>
 </ol>
@@ -248,7 +320,7 @@ td.bad{color:#B5341F;font-weight:600}
 <p>The mean of every scored topic for that candidate. <strong>Excluded marks — no public position, Record, no information — are left out of the mean entirely</strong>, so silence never lowers a grade. It only narrows the base.</p>
 <p><strong>Every candidate's name on this page links to their <a href="profiles.html">profile</a></strong> — the evidence base the grade rests on and its vintage, their own site and social accounts, the sources, what is on the record, what is still unscored, and what would move the grade. A grade is a number; the profile is the reason for it.</p>
 <div class="legend">
-<span><i class="mk-a"></i> Aligned 3.0</span><span><i class="mk-b"></i> Close 2.0</span><span><i class="mk-c"></i> Partial+ 1.5 / Partial 1.0</span><span><i class="mk-d"></i> Weak 0.5</span><span><i class="mk-f"></i> Opposed −2.0</span>
+<span><i class="mk-a"></i> Aligned 3.0</span><span><i class="mk-b"></i> Close 2.0</span><span><i class="mk-c"></i> Partial+ 1.5 / Partial 1.0</span><span><i class="mk-d"></i> Weak 0.5</span><span><i class="mk-f"></i> Opposed −1.0</span>
 </div>
 <div class="tbl-wrap">
 <table class="ovt">
@@ -258,28 +330,65 @@ td.bad{color:#B5341F;font-weight:600}
 </div>
 <p style="font-size:13.5px;color:#57534e"><strong>Not scored:</strong> <a href="profiles.html#cand-four-unconfirmed">Jerry Garcia · Peter Gibbs · Martin Girard · Owen Haley</a>. No site, platform, statement or coverage located for any of the four — roughly a quarter of the apparent council field. <strong>Unknown, not empty.</strong> This page should not be read as evidence about them.</p>
 
-<h2 id="areas">The fifteen areas — every grade, every source</h2>
-<p><strong>Select any grade to see exactly what it is made of:</strong> which measures were scored, what mark each got, and the sentence the candidate actually said or the vote they actually cast. Nothing here is an opinion about a candidate — it is arithmetic on published positions, and you can check every step.</p>
-<p>Each column aggregates a named set of the 55 topics, and <strong>all 55 are used exactly once</strong> — nothing double-counted, nothing dropped. The number under each grade is <strong>how many topics in that column the candidate has a scored position on, out of how many exist</strong>. Hover a column heading to see which measures feed it.</p>
+<h2 id="areas">The fifteen areas — every candidate, every grade</h2>
+<p><strong>Sort it, filter it, or tick two candidates and compare them side by side.</strong> Select any cell to see exactly what the grade is made of: which measures were scored, what mark each got, and the sentence the candidate actually said or the vote they actually cast. Nothing here is an opinion about a candidate — it is arithmetic on published positions, and you can check every step.</p>
+<p>Each area aggregates a named set of the 55 topics, and <strong>all 55 are used exactly once</strong> — nothing double-counted, nothing dropped. The number under each grade is <strong>how many topics in that area the candidate has a scored position on, out of how many exist</strong>. Hover an area heading to see which measures feed it.</p>
 <div class="callout gold" style="margin:14px 0">
-<p style="margin:0"><strong>Read n/total before the letter.</strong> A grade on 1 of 12 topics is a statement about one topic, not a verdict on a portfolio. On the single-topic columns — Homelessness, Walking &amp; Transit, Cleanliness, Reconciliation — the letter is a direct translation of one mark, with nothing averaged.</p>
+<p style="margin:0"><strong>Read n/total before the letter.</strong> A grade on 3 of 12 topics is a statement about three topics, not a verdict on a portfolio. <strong>Below three scored topics no letter is printed at all</strong> — the cell shows the mean of the marks it holds, in a dashed box, because a letter computed from one mark would be read as a verdict on the whole area. Six of the fifteen areas can never reach that floor: Homelessness, Walking &amp; Transit, Cleanliness and Reconciliation contain one topic each; Mobility and Business contain two.</p>
 </div>
-<div class="tbl-wrap gridwrap" style="max-height:none">
-<table class="colt">
+
+<div class="ctl" id="areactl" hidden>
+<div class="ctl-r">
+<div class="ctl-f">
+<label for="fq">Find a candidate</label>
+<input type="search" id="fq" placeholder="Type a name…" autocomplete="off">
+</div>
+<div class="ctl-f">
+<label for="foff">Running for</label>
+<select id="foff"><option value="">Mayor and council</option><option value="mayor">Mayor</option><option value="council">Council</option></select>
+</div>
+<div class="ctl-f">
+<label for="farea">Focus one area</label>
+<select id="farea"><option value="">All fifteen areas</option><!--AREA_OPTS--></select>
+</div>
+<div class="ctl-f">
+<label for="fsort">Sort by</label>
+<select id="fsort">
+<option value="general">Overall grade</option>
+<option value="_name">Candidate name</option>
+<option value="_n">How much is graded</option>
+<!--AREA_OPTS-->
+</select>
+</div>
+<div class="ctl-b">
+<button type="button" id="fdir" aria-label="Reverse the sort order">High to low</button>
+<button type="button" id="fsel" aria-pressed="false">Compare ticked only</button>
+<button type="button" id="freset">Reset</button>
+</div>
+</div>
+<div class="ctl-s">
+<span>Showing <b id="fcount">15</b> of <b><!--NCAND--></b> graded candidates<span id="fsel-n"></span>.</span>
+<span id="fnote"></span>
+</div>
+</div>
+
+<div class="tbl-wrap gridwrap areawrap">
+<table class="colt" id="areat">
 <thead><tr><th class="who">Candidate</th><!--COL_HEAD--></tr></thead>
 <tbody><!--COL_BODY--></tbody>
 </table>
 </div>
-<p style="font-size:13.5px;color:#57534e">📋 means <strong>Record only</strong> — facts about a term in office, which are never scored. — means no scored position and no record in that area.</p>
+<p class="nores" id="fnone" hidden>No candidate matches those filters. <button type="button" class="lnkb" id="fclear">Clear them</button></p>
+<p style="font-size:13.5px;color:#57534e"><strong>A letter</strong> is a grade on three or more scored topics. <strong>A dashed number</strong> is the mean of one or two marks, printed instead of a letter. <strong>📋</strong> is Record only — documented facts about a term in office, which are never scored. <strong>—</strong> is no scored position and no record in that area. The four states are never collapsed into one another.</p>
 
-<h3 id="misread">Seven cells that will be misread — read these before quoting the grid</h3>
+<h3 id="misread">Cells that will be misread — read these before quoting the grid</h3>
 <ul class="warns">
 <!--WARNS-->
 </ul>
 
 <h2 id="pillars">Grades by pillar</h2>
 <p>The same marks, grouped by the framework's six pillars. <strong>Every pillar grade shows its n.</strong> A grade resting on fewer than five scored topics is marked as a thin base — the number under it is the mean and the count it rests on.</p>
-<p><strong>Where a pillar contains a recorded Opposed and fewer than five scored topics, no letter is shown.</strong> The mean and the marks are still published; only the letter is withheld. <a href="#defects">The reason is defect 1 below</a>, and it affects four columns.</p>
+<p><strong>Below three scored topics no letter is shown</strong>, here as in the area grid above: the cell prints the mean in a dashed box instead. Eleven of the fifteen candidates have at least one pillar in that state. <a href="#defects">The reason is defect 2 below.</a></p>
 <div class="tbl-wrap gridwrap" style="max-height:none">
 <table class="plt">
 <thead><tr><th style="text-align:left">Candidate</th><!--PILLAR_HEAD--></tr></thead>
@@ -289,7 +398,7 @@ td.bad{color:#B5341F;font-weight:600}
 
 <h2 id="grid">The full grid — 55 topics</h2>
 <p><strong>Select any number to see the mark, its value and the sentence it rests on.</strong> A dot means the mark is excluded: no public position, a Record entry, or no information. Three topics are new in v3.0, created because candidates hold published positions the previous topic set had nowhere to record.</p>
-<p style="font-size:13.5px;color:#57534e"><strong>Evidence coverage, stated plainly.</strong> <!--EVCOV--> marks currently display the sentence they rest on. The rest show the mark and its value; their evidence sentence lives in the master and is being migrated. <strong>The full per-cell ledger — Q1, Q2, mark, value and evidence for all 225 marks — is held outside Notion and available on request.</strong></p>
+<p style="font-size:13.5px;color:#57534e"><strong>Evidence coverage, stated plainly.</strong> <!--EVCOV--> marks currently display the sentence they rest on. The rest show the mark and its value; their evidence sentence lives in the master and is being migrated. <strong>The full per-cell ledger — Q1, Q2, mark, value and evidence for all <!--MARKS--> marks — is held outside Notion and available on request.</strong></p>
 <div class="gwrap">
 <table class="mg">
 <thead><tr><th class="gt">Topic</th><!--GRID_HEAD--></tr></thead>
@@ -303,13 +412,8 @@ td.bad{color:#B5341F;font-weight:600}
 <p><strong>Question 2 — how would they do it?</strong> <em>Same instrument</em> names the mechanism this framework proposes · <em>Comparable</em> a different mechanism doing substantially the same work · <em>A target, no instrument</em> no mechanism but a number, a date or a dollar figure · <em>Neither</em>.</p>
 <div class="tbl-wrap">
 <table class="scale-t">
-<thead><tr><th></th><th>Same instrument</th><th>Comparable</th><th>Target, no instrument</th><th>Neither</th></tr></thead>
-<tbody>
-<tr><td>Commits</td><td>Aligned 3.0</td><td>Close 2.0</td><td>Partial+ 1.5</td><td>Partial 1.0</td></tr>
-<tr><td>Agrees</td><td>Close 2.0</td><td>Partial+ 1.5</td><td>Partial 1.0</td><td>Weak 0.5</td></tr>
-<tr><td>Mentions</td><td>resolves up</td><td>resolves up</td><td>Weak 0.5</td><td>Weak 0.5</td></tr>
-<tr><td>Disagrees</td><td>Opposed −2.0</td><td>Opposed −2.0</td><td>Opposed −2.0</td><td>Opposed −2.0</td></tr>
-</tbody>
+<thead><tr><th></th><!--SCALE_HEAD--></tr></thead>
+<tbody><!--SCALE_ROWS--></tbody>
 </table>
 </div>
 <p><strong>Bands.</strong></p>
@@ -334,28 +438,39 @@ td.bad{color:#B5341F;font-weight:600}
 </table>
 </div>
 
-<h2 id="defects">Three defects in the scale, quantified</h2>
-<p><strong>These are properties of the methodology, not of the evidence.</strong> They are published here because a grade with a known defect that its publisher does not disclose is worse than no grade at all.</p>
+<h2 id="defects">Four defects in the scale, quantified</h2>
+<p><strong>These are properties of the methodology, not of the evidence.</strong> They are published here because a grade with a known defect that its publisher does not disclose is worse than no grade at all. One has now been fixed at source; three have not.</p>
 
-<div class="defect">
-<h3>1. Opposed at −2.0 is arithmetically asymmetric, and it decides four column grades</h3>
-<p>The positive range runs 0.5 to 3.0; the negative value is −2.0. On a four-topic column <strong>one Opposed cancels roughly four Aligned</strong>. Gardiner's F on Liveable is one Missing Middle vote. Lee's D on Safe is one sentence about 7 a.m. tent removals, sitting alongside a regional police force commitment graded Aligned. <strong>A grade that a single vote can drive to F is a grade an opponent will destroy in one sentence.</strong></p>
+<div class="defect fixed">
+<span class="dstat">Fixed in v3.2 · 2 August 2026</span>
+<h3>1. Opposed at −2.0 was arithmetically asymmetric</h3>
+<p>The positive range runs 0.5 to 3.0; the negative value was −2.0, putting one contrary vote 2.5 points below the nearest positive mark. Because a grade is a <strong>mean</strong>, on a ten-topic column that is a quarter point of mean — <strong>a full grade band decided by a single vote</strong>, and a grade a single vote can decide is a grade an opponent destroys in one sentence. All four weightings were costed on the real data before one was chosen.</p>
 <div class="tbl-wrap">
-<table class="dt"><thead><tr><th>Column</th><th>Grade as computed</th><th>With the single Opposed removed</th></tr></thead>
+<table class="dt"><thead><tr><!--DEFECT_HEAD--></tr></thead>
 <tbody><!--DEFECT_ROWS--></tbody>
 </table>
 </div>
-<div class="fixnote"><strong>What this site does about it.</strong> Where a pillar contains an Opposed and fewer than five scored topics, <strong>no letter is shown</strong> — the cell reads <em>not graded</em>, with the mean and the count still published. Nothing is hidden; the letter is simply not presented as a verdict the sample cannot carry. All four columns above are affected.</div>
+<div class="fixnote"><strong>Why B rather than the others.</strong> Option A lets one 2023 vote outweigh ten considered positions, which measures the scale rather than the candidate. Option C sets a stated opposition equal in weight to no opposition at all, discarding real information a voter is entitled to. <strong>Option D removes the votes from the calculation entirely, and a scorecard that deletes the evidence it finds inconvenient has no claim on anyone's trust.</strong> B keeps every vote counted, keeps it negative, and stops it deciding a grade by itself. <strong>Opposed is −1.0 everywhere on this page.</strong></div>
+<div class="coi"><strong>The conflict of interest on this change, stated plainly.</strong> Five candidates hold an Opposed mark. <strong>Two of them, Gardiner and Hammond, are incumbents this document's author works with</strong>, and softening the penalty helps them. That is a genuine appearance problem and it does not disappear by being unintentional. <strong>What limits it:</strong> none of the four coordinated independents the author supports holds an Opposed mark anywhere in the matrix, so the change is worth <em>nothing</em> to them. Of the two candidates who actually crossed a band, one is <strong>Susan Kim, a progressive councillor with no relationship to this framework.</strong> The top five positions are identical under the old weighting and the new one.</div>
 </div>
 
 <div class="defect">
-<h3>2. Small-n columns produce letters that look like findings and are not</h3>
-<p>Eleven of the fifteen candidates have at least one pillar graded on exactly three topics. Three is the stated floor; <strong>it is too low for a letter that will be read as a verdict.</strong></p>
-<div class="fixnote"><strong>What this site does about it.</strong> Every pillar grade shows its <strong>n</strong>, and any pillar resting on fewer than five scored topics is marked as a thin base.</div>
+<span class="dstat">Open</span>
+<h3>2. Below three scored topics, a letter is not a finding</h3>
+<p><strong>Six of the fifteen areas can never reach the three-topic floor at all.</strong> Homelessness, Walking &amp; Transit, Cleanliness and Reconciliation contain one topic each; Mobility and Business contain two. Eleven of the fifteen candidates also have at least one pillar below the floor. The only real fix is more published platform material, which September will supply.</p>
+<div class="fixnote"><strong>What this site does about it.</strong> No letter is printed below three scored topics, in the area grid and the pillar table alike — <strong>the cell reports the marks it holds and their mean instead</strong>, in a dashed box that cannot be mistaken for a grade. Every letter that is printed shows its n, and any base under five topics is flagged as thin.</div>
 </div>
 
 <div class="defect">
-<h3>3. “Commits” does not distinguish authoring an instrument from voting for one</h3>
+<span class="dstat">Open</span>
+<h3>3. One Opposed mark may not be an Opposed mark</h3>
+<p>Four of the five Opposed marks are roll-call votes: dated, unambiguous, in the minutes. <strong>Bella Lee's is one sentence on her own website</strong>, read as opposition to the measure rather than as criticism of how the bylaw is enforced. Moving Opposed to −1.0 reduces what that reading costs her; <strong>it does not make the reading correct.</strong></p>
+<div class="fixnote"><strong>Not resolved.</strong> It must be put to her directly before her Safety cell is used publicly. The cell is footnoted wherever it appears on this page.</div>
+</div>
+
+<div class="defect">
+<span class="dstat">Open</span>
+<h3>4. “Commits” does not distinguish authoring an instrument from voting for one</h3>
 <p>Hammond authoring the sheltering ban and seven colleagues voting for it all score Aligned 3.0. That is the methodology working as written, and it is also why Hammond's Safe pillar understates the distance between him and the field on enforcement.</p>
 <div class="fixnote"><strong>Not corrected.</strong> Fixing it needs a fifth level on Question 1, which would change every mark on the page. It is disclosed instead.</div>
 </div>
@@ -384,8 +499,10 @@ td.bad{color:#B5341F;font-weight:600}
 <script>
 (function(){
   var DATA = JSON.parse(document.getElementById('scdata').textContent);
-  var wrap = document.querySelector('.gwrap');
   var lastTrigger = null;
+  /* One formatter for every mark value on the page, so a negative sign is a
+     real minus in the panel exactly as it is in the grid. */
+  function fmt(v){ return (v<0 ? '−' : '')+Math.abs(v).toFixed(1); }
 
   function closeAll(returnFocus){
     var p=document.querySelector('.sc-panel'); if(p) p.remove();
@@ -413,12 +530,12 @@ td.bad{color:#B5341F;font-weight:600}
     var actw = DATA.actw[ti];
     var h = '<h4>'+c.name+'</h4>';
     h += '<div class="dsub">'+t.id+' · '+t.label+'</div>';
-    h += '<div class="dmark"><b>'+mk.label+'</b><span class="dv">'+(v===-2?'−2.0':v.toFixed(1))+'</span>'+
+    h += '<div class="dmark"><b>'+mk.label+'</b><span class="dv">'+fmt(v)+'</span>'+
          '<span class="dv" style="color:#6b6664">counts toward '+c.name.split(' ').slice(-1)[0]+"'s mean of "+c.mean.toFixed(2)+' over '+c.n+' scored topics</span></div>';
     if(actw){ h += '<div class="dlab">What this framework proposes</div><div class="dtext">'+actw+'</div>'; }
     h += '<div class="dlab">The sentence this mark rests on</div>';
     h += ev ? '<div class="dtext">'+ev+'</div>'
-            : '<div class="dnone">Not yet migrated to this site. This mark’s evidence sentence is held in the master document; the full per-cell ledger with Q1, Q2, mark, value and evidence for all 225 marks is available on request from <a href="mailto:info@acitythatworks.ca">info@acitythatworks.ca</a>.</div>';
+            : '<div class="dnone">Not yet migrated to this site. This mark’s evidence sentence is held in the master document; the full per-cell ledger with Q1, Q2, mark, value and evidence for all '+DATA.nmarks+' marks is available on request from <a href="mailto:info@acitythatworks.ca">info@acitythatworks.ca</a>.</div>';
     h += '<div class="dlab">How this mark was reached</div><div class="dtext" style="font-size:13.5px">'+
          'Two questions, asked in order: does the candidate share the goal, and how would they do it. '+
          '<a href="#scale">The full scale is published above.</a> Ambiguity resolves upward, and silence is never scored.</div>';
@@ -441,29 +558,49 @@ td.bad{color:#B5341F;font-weight:600}
   function areaHtml(ck, colKey){
     var c = DATA.cands.filter(function(x){return x.key===ck;})[0];
     var col = DATA.cols.filter(function(x){return x.key===colKey;})[0];
-    var g = DATA.colGrid[ck][colKey];
+    var g = DATA.colGrid[ck][colKey] || {state:'empty', n:0};
     var j = DATA.just[ck+'|'+colKey];
     var h = '<h4>'+c.name+' · '+col.label+'</h4>';
-    h += '<div class="dsub">'+c.office+' · overall '+c.grade+' ('+c.mean.toFixed(2)+') on '+c.n+' of 55 topics</div>';
-    if(g && g.n){
+    h += '<div class="dsub">'+c.office+' · overall '+c.grade+' ('+c.mean.toFixed(2)+') on '+c.n+' of '+DATA.topics.length+' topics</div>';
+    var of = ' of the '+g.total+' topic'+(g.total>1?'s':'')+' in this area';
+    if(g.state==='graded'){
       h += '<div class="dmark"><b>'+g.grade+'</b><span class="dv">mean '+g.mean.toFixed(2)+'</span>'+
-           '<span class="dv" style="color:#6b6664">scored on '+g.n+' of the '+g.total+' topic'+(g.total>1?'s':'')+' in this area</span></div>';
-    } else {
+           '<span class="dv" style="color:#6b6664">scored on '+g.n+of+'</span></div>';
+    } else if(g.state==='marks'){
+      /* The single most misreadable cell on the page, so the panel leads with
+         why there is no letter rather than leaving the dashed box to explain
+         itself. */
+      h += '<div class="dmark"><b>'+g.mean.toFixed(2)+'</b><span class="dv">mean of '+g.n+' mark'+(g.n>1?'s':'')+'</span>'+
+           '<span class="dv" style="color:#6b6664">scored on '+g.n+of+'</span></div>';
+      h += '<div class="dwarn"><strong>No letter is printed here.</strong> '+g.n+' scored topic'+(g.n>1?'s are':' is')+
+           ' below the three-topic floor, so this cell reports the mark'+(g.n>1?'s it holds':' it holds')+
+           ' and their mean. <strong>It is not a grade for '+col.label+'</strong>, and it should not be quoted as one. '+
+           '<a href="#defects">Defect 2 explains the rule.</a></div>';
+    } else if(g.state==='record'){
       h += '<div class="dmark"><b>📋</b><span class="dv">Record only — nothing scored</span></div>';
+      h += '<div class="dtext">Every topic in this area is a documented fact about the 2022–2026 term rather than a stated position. '+
+           '<strong>Record is never scored</strong>, in either direction. Stating a position on any of these measures would turn this cell into a real grade.</div>';
+    } else {
+      h += '<div class="dmark"><b>—</b><span class="dv">No scored position located</span></div>';
     }
     if(col.topics){
       h += '<div class="dlab">Measures in this area</div><div class="dtopics">'+col.topics.join(' · ')+'</div>';
     }
-    h += '<div class="dlab">The marks, and what each rests on</div>';
-    h += j ? '<div class="dtext">'+j.ev+'</div>'
-           : '<div class="dnone">No per-mark breakdown published for this cell.</div>';
-    var w = (DATA.warns||[]).filter(function(t){
-      return t.indexOf(c.name.split(' ').slice(-1)[0])>-1 && t.toLowerCase().indexOf(col.short.toLowerCase().split('/')[0])>-1;
-    })[0];
-    if(w) h += '<div class="dwarn"><strong>Read this before quoting the cell.</strong> '+w+'</div>';
+    if(g.state==='graded'||g.state==='marks'){
+      h += '<div class="dlab">The marks, and what each rests on</div>';
+      h += j ? '<div class="dtext">'+j.ev+'</div>'
+             : '<div class="dnone">No per-mark breakdown published for this cell.</div>';
+    }
+    /* Caveats name the cell they qualify, so this is a lookup rather than a
+       substring search over the prose that used to mis-fire on short names. */
+    (DATA.warns||[]).forEach(function(w){
+      if(w.c!==ck) return;
+      if(w.col && w.col!==colKey) return;
+      h += '<div class="dwarn"><strong>Read this before quoting the cell.</strong> '+w.html+'</div>';
+    });
     h += '<div class="dlab">How a mark is decided</div><div class="dtext" style="font-size:13.5px">'+
          'Two questions, asked in order: does the candidate share the goal, and how would they do it. '+
-         'Aligned 3.0 · Close 2.0 · Partial+ 1.5 · Partial 1.0 · Weak 0.5 · Opposed −2.0. '+
+         'Aligned 3.0 · Close 2.0 · Partial+ 1.5 · Partial 1.0 · Weak 0.5 · Opposed '+fmt(DATA.opposed)+'. '+
          'Silence is never scored — it narrows the base instead. <a href="#scale">The full scale is published below.</a></div>';
     h += profileLink(c);
     return h;
@@ -493,7 +630,12 @@ td.bad{color:#B5341F;font-weight:600}
       document.body.classList.add('no-scroll');
       p.querySelector('.close').focus();
     } else {
-      wrap.parentNode.insertBefore(p, wrap.nextSibling);
+      /* Anchor the panel to the table that was actually clicked. Both grids
+         scroll inside their own container, so the panel has to land just
+         below that container — pinning it to one fixed element put the area
+         panel a full screen away from the cell that opened it. */
+      var host = td.closest('.gwrap, .tbl-wrap') || td.closest('table');
+      host.parentNode.insertBefore(p, host.nextSibling);
       p.scrollIntoView({block:'nearest'});
     }
   }
@@ -513,6 +655,160 @@ td.bad{color:#B5341F;font-weight:600}
     if(!td) return;
     e.preventDefault(); open(td);
   });
+
+  /* ── the fifteen-area table: sort, filter, compare ──────────────────────
+     The rows are already in the HTML, ranked by overall grade, so the page
+     is complete and readable before this runs and stays complete if it never
+     does — the controls are revealed here rather than shipped hidden-by-CSS,
+     which is why a reader without JS is never shown a filter that does
+     nothing. Everything below reorders and hides existing rows; no cell is
+     ever re-rendered, so a grade cannot drift from the one the build
+     asserted against the master. */
+  var tbl = document.getElementById('areat');
+  var ctl = document.getElementById('areactl');
+  if(tbl && ctl){ (function(){
+    var tb   = tbl.tBodies[0];
+    var rows = [].slice.call(tb.rows);
+    var q    = document.getElementById('fq');
+    var off  = document.getElementById('foff');
+    var area = document.getElementById('farea');
+    var sort = document.getElementById('fsort');
+    var dir  = document.getElementById('fdir');
+    var selB = document.getElementById('fsel');
+    var reset= document.getElementById('freset');
+    var count= document.getElementById('fcount');
+    var selN = document.getElementById('fsel-n');
+    var note = document.getElementById('fnote');
+    var none = document.getElementById('fnone');
+    var clear= document.getElementById('fclear');
+    var desc = true, selOnly = false;
+
+    function cellOf(tr, key){ return tr.querySelector('td.cc[data-col="'+key+'"]'); }
+    function picked(tr){ return tr.querySelector('.pickbox').checked; }
+
+    /* Sort key. An area with no scored mark has no mean, and inventing one
+       would rank "said nothing" against "said something" — so those rows sink
+       to the bottom whichever way the sort runs, and the count says so. */
+    function keyOf(tr, k){
+      if(k==='_name') return tr.getAttribute('data-surname');
+      if(k==='_n')    return +tr.getAttribute('data-n');
+      var td = cellOf(tr, k);
+      var m = td && td.getAttribute('data-mean');
+      return (m==='' || m===null) ? null : +m;
+    }
+
+    function apply(){
+      var term = q.value.trim().toLowerCase();
+      var wantOff = off.value;
+      var k = sort.value, focus = area.value;
+      var shown = 0, sel = 0;
+
+      rows.forEach(function(tr){ if(picked(tr)) sel++; });
+
+      var byOverall = function(a,b){ return +b.getAttribute('data-mean') - +a.getAttribute('data-mean'); };
+      var ordered = rows.slice().sort(function(a,b){
+        var ka = keyOf(a,k), kb = keyOf(b,k);
+        if(ka===null && kb===null) return byOverall(a,b);
+        if(ka===null) return 1;          /* no mark in this area: always last, */
+        if(kb===null) return -1;         /* in both directions */
+        var d = (typeof ka==='string') ? ka.localeCompare(kb) : kb-ka;
+        if(!d) d = byOverall(a,b);
+        return desc ? d : -d;
+      });
+
+      var frag = document.createDocumentFragment();
+      ordered.forEach(function(tr){
+        var ok = (!term || tr.getAttribute('data-name').indexOf(term)>-1) &&
+                 (!wantOff || tr.getAttribute('data-office')===wantOff) &&
+                 (!selOnly || picked(tr));
+        tr.classList.toggle('hide', !ok);
+        if(ok) shown++;
+        frag.appendChild(tr);
+      });
+      tb.appendChild(frag);
+
+      /* Focus dims the other fourteen areas rather than removing them: a
+         reader comparing on Housing still needs to see that Safety exists. */
+      tbl.classList.toggle('focus', !!focus);
+      [].forEach.call(tbl.querySelectorAll('td.cc,th.ch'), function(el){
+        el.classList.toggle('foc', !!focus && el.getAttribute('data-col')===focus);
+      });
+
+      [].forEach.call(tbl.querySelectorAll('th.ch'), function(th){
+        var on = th.getAttribute('data-col')===k;
+        th.setAttribute('aria-sort', on ? (desc?'descending':'ascending') : 'none');
+      });
+
+      count.textContent = shown;
+      selN.textContent = sel ? ' · '+sel+' ticked' : '';
+      selB.disabled = !sel && !selOnly;
+      none.hidden = shown>0;
+      /* "High to low" is meaningless on a name column, so the toggle says
+         what it will actually do. */
+      dir.textContent = (k==='_name')
+        ? (desc ? 'A to Z' : 'Z to A')
+        : (desc ? 'High to low' : 'Low to high');
+
+      var msgs = [];
+      if(k!=='_name' && k!=='_n'){
+        var lbl = (DATA.cols.filter(function(c){return c.key===k;})[0]||{}).label;
+        var blank = rows.filter(function(tr){ return !tr.classList.contains('hide') && keyOf(tr,k)===null; }).length;
+        if(lbl && blank) msgs.push('Sorted by '+lbl+'. '+blank+' candidate'+(blank>1?'s have':' has')+' no scored mark there and sit'+(blank>1?'':'s')+' at the bottom.');
+      }
+      if(focus && focus!==k) msgs.push('Focusing '+(DATA.cols.filter(function(c){return c.key===focus;})[0]||{}).label+'.');
+      note.textContent = msgs.join(' ');
+    }
+
+    dir.addEventListener('click', function(){
+      desc = !desc;
+      dir.textContent = desc ? 'High to low' : 'Low to high';
+      apply();
+    });
+    selB.addEventListener('click', function(){
+      selOnly = !selOnly;
+      selB.setAttribute('aria-pressed', String(selOnly));
+      apply();
+    });
+    tb.addEventListener('change', function(e){
+      if(!e.target.classList.contains('pickbox')) return;
+      e.target.closest('tr').classList.toggle('on', e.target.checked);
+      apply();
+    });
+    /* The checkbox lives inside the sticky name cell; without this a tick
+       would also open the detail panel behind it. */
+    tb.addEventListener('click', function(e){
+      if(e.target.closest('.pick')) e.stopPropagation();
+    }, true);
+
+    [q, off, area, sort].forEach(function(el){
+      el.addEventListener(el.tagName==='INPUT' ? 'input' : 'change', apply);
+    });
+    /* Choosing an area to focus is almost always a request to rank by it. */
+    area.addEventListener('change', function(){ if(area.value) sort.value = area.value; apply(); });
+    tbl.addEventListener('click', function(e){
+      var b = e.target.closest && e.target.closest('.chs');
+      if(!b) return;
+      var k = b.getAttribute('data-sort');
+      if(sort.value===k){ desc = !desc; dir.textContent = desc ? 'High to low' : 'Low to high'; }
+      else sort.value = k;
+      apply();
+    });
+    function clearAll(){
+      q.value=''; off.value=''; area.value=''; sort.value='general';
+      desc = true; dir.textContent='High to low';
+      selOnly = false; selB.setAttribute('aria-pressed','false');
+      rows.forEach(function(tr){
+        tr.querySelector('.pickbox').checked = false;
+        tr.classList.remove('on');
+      });
+      apply();
+    }
+    reset.addEventListener('click', clearAll);
+    clear.addEventListener('click', clearAll);
+
+    ctl.hidden = false;
+    apply();
+  })(); }
 })();
 </script>
 </body>
