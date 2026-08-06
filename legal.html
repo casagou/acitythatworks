@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<script src="flags.js?v=2"></script>
+<meta name="description" content="Legal Defensibility Annex — the Police Act board structure, the Adams and Bamberger accessible-shelter test, the post-2026 CDSA position, real bylaw fine ceilings, and why this framework refuses City surveillance cameras. Annex v1.10.">
+<meta name="theme-color" content="#1A3668">
+<title>Legal Defensibility Annex — A City That Works, Victoria 2026</title>
+<meta property="og:title" content="Legal Defensibility Annex — A City That Works">
+<meta property="og:description" content="Safety, encampments and privacy — the statutes and case law every safety measure was drafted inside.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://acitythatworks.ca/legal.html">
+<meta property="og:site_name" content="A City That Works">
+<meta property="og:locale" content="en_CA">
+<meta property="og:image" content="https://acitythatworks.ca/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="A City That Works — A Citizens' Framework for Victoria 2026">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://acitythatworks.ca/og-card.png">
+<link rel="canonical" href="https://acitythatworks.ca/legal.html">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Public+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+/* Case law, as a list rather than a table. Two columns of legal citation
+   scroll sideways on a phone, and the holding is the column that gets lost
+   when they do — which is the only column that matters here. */
+.cases{list-style:none;padding:0;margin:20px 0 0}
+.cases li{padding:14px 0;border-top:1px solid rgba(26,54,104,.14);margin:0}
+.cases li:first-child{border-top:none}
+.cases .cn2{font-family:'Fraunces',serif;font-size:17px;font-weight:600;color:var(--navy);font-style:italic;line-height:1.3}
+.cases .cc{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--olive);margin-top:2px}
+.cases .ch{font-size:15px;line-height:1.6;color:#33312e;margin-top:6px}
+/* Fine ceilings. The number is the point, so it leads. */
+.fines{list-style:none;padding:0;margin:20px 0 0}
+.fines li{display:grid;grid-template-columns:1fr;gap:2px;padding:13px 0;border-top:1px solid rgba(26,54,104,.14);margin:0}
+@media(min-width:640px){.fines li{grid-template-columns:auto 1fr;gap:6px 20px;align-items:baseline}}
+.fines li:first-child{border-top:none}
+.fines .amt2{font-family:'JetBrains Mono',monospace;font-size:22px;font-weight:600;color:var(--navy);line-height:1.1}
+.fines .rt{font-weight:600;color:var(--navy);font-size:15px}
+.fines .inst2{font-size:14px;line-height:1.55;color:#57534e}
+@media(min-width:640px){.fines .rt,.fines .inst2{grid-column:2}}
+.seq{counter-reset:sq;list-style:none;padding-left:0;margin:20px 0}
+.seq li{counter-increment:sq;padding-left:44px;position:relative;margin:14px 0;font-size:16px;line-height:1.6;color:#33312e}
+.seq li::before{content:counter(sq);position:absolute;left:0;top:-1px;width:30px;height:30px;background:var(--navy);color:var(--paper);font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:600;display:flex;align-items:center;justify-content:center;border-radius:50%}
+.seq li strong{color:var(--navy)}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+
+<header>
+<div class="c hr">
+<a href="index.html" class="brand"><svg class="bicn" viewBox="0 0 240 240" aria-hidden="true"><circle cx="120" cy="120" r="112" fill="#FAF7F0"/><g fill="none" stroke="#16335c" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"><path d="M52 92  q22.5 -14 45 0 t45 0 t45 0"/><path d="M52 120 q22.5 -14 45 0 t45 0 t45 0" opacity="0.88"/><path d="M52 148 q22.5 -14 45 0 t45 0 t45 0" opacity="0.76"/></g></svg><span class="nm">A City That Works</span></a>
+<nav class="nv">
+<a href="summary.html">Summary</a>
+<a href="measures.html">Measures</a>
+<a href="scorecard.html" data-cand class="nv-sc">Candidates</a>
+<a href="city-hall.html">City Hall</a>
+<a href="faq.html">FAQ</a>
+<a href="endorse.html" class="btn-end">Endorse</a>
+</nav>
+<button id="mt" class="mb" aria-label="Open menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+</div>
+<div id="mn" class="mm">
+<div class="c mmi">
+<a href="index.html">Framework</a>
+<a href="summary.html">One-Page Summary</a>
+<a href="measures.html">All Measures</a>
+<a href="index.html#scorecard">12 Commitments</a>
+<a href="index.html#balance">Balance Sheet</a>
+<div class="grp">Detailed documents</div>
+<a href="savings.html">Savings &amp; Revenue Analysis</a>
+<a href="city-hall.html">How City Hall Works</a>
+<a href="endorse.html">Candidate Endorsement Pack</a>
+<a href="comparison.html" data-cand>Candidate Comparison Matrix</a>
+<a href="scorecard.html" data-cand>Candidate Scorecard</a>
+<a href="profiles.html" data-cand>Candidate Profiles</a>
+<a href="faq.html">Frequently Asked Questions</a>
+<a href="version-history.html">Version History</a>
+<div class="grp"></div>
+<a href="index.html#adopt" class="gd">Endorse the framework →</a>
+</div>
+</div>
+</header>
+
+<main id="main">
+<div class="cn">
+<nav class="crumbs" aria-label="Breadcrumb">
+<a href="index.html">Framework</a><span class="sep">/</span><span class="here">Legal Defensibility Annex</span>
+</nav>
+<div class="hero">
+<div class="eyb"><span>⚖️ Annex</span><span class="dot">◆</span><span>Safety, encampments and privacy</span><span class="dot">◆</span><span><a href="version-history.html" style="color:inherit;text-decoration:underline;text-decoration-color:currentColor">v1.10 · August 5, 2026</a></span></div>
+<h1 class="ph1">Legal <em>Defensibility.</em></h1>
+<p class="lead" style="margin-top:18px">Every safety and public-space measure in this framework was drafted inside the statutes and case law on this page. A promise that cannot survive judicial review is not a promise — it is a delay with better marketing.</p>
+<a href="index.html" class="pgback">← Back to the framework</a>
+</div>
+
+<div class="prose">
+
+<div class="callout blue">
+<div class="lbl">◆ What this page is, and is not</div>
+<p style="margin:0 0 10px">Most municipal platforms treat the law as an obstacle to be discovered after the press conference. <strong>This one publishes the constraints first.</strong></p>
+<p style="margin:0"><strong>This annex adds no measure and books no cost.</strong> It is drafted from public sources, <strong>it is not legal advice</strong>, and like every page in this framework it is open to correction by anyone with expertise. Companion to <a href="city-hall.html">How City Hall Works</a>.</p>
+</div>
+
+<nav class="toc" aria-label="On this page">
+<div class="toc-h">◆ On this page</div>
+<ol>
+<li><a href="#police">Who actually commands the police</a></li>
+<li><a href="#encampments">Encampments — the accessible-shelter test</a></li>
+<li><a href="#drugs">Drugs, after January 31, 2026</a></li>
+<li><a href="#fines">Bylaw fines — the real ceilings</a></li>
+<li><a href="#privacy">Privacy — why no City cameras</a></li>
+</ol>
+</nav>
+<div class="jumpbar" id="jumpbar">
+<div class="jumpin">
+<label class="jl2" for="jumpsel">Jump to</label>
+<select id="jumpsel" class="jumpsel" aria-label="Jump to a section">
+<option value="">Choose a section…</option>
+</select>
+<button type="button" class="jumpbtn" id="jumpprev" aria-label="Previous section">↑</button>
+<button type="button" class="jumpbtn" id="jumpnext" aria-label="Next section">↓</button>
+<a class="jumpbtn jumptop" href="#main" aria-label="Back to top">Top</a>
+</div>
+<div class="jumpprog" aria-hidden="true"><i id="jumpfill"></i></div>
+</div>
+
+<h2 id="police">1. Who actually commands the police</h2>
+<p><strong>Under the <em>Police Act</em> (RSBC 1996, c. 367), no mayor and no council directs police operations — and this framework never pretends otherwise.</strong> VicPD is governed by the Victoria and Esquimalt Police Board. The mayor chairs the board (s. 25), the board sets the department's priorities, goals and objectives each year in consultation with the chief (s. 26(4)), and <strong>the chief constable holds general supervision and command over the department (s. 34)</strong>. Day-to-day enforcement decisions cannot be directed by any political body — that independence is the design, not a loophole.</p>
+<p><strong>The budget lever is real but bounded.</strong> The board submits a provisional budget to the councils by November 30 (s. 27). Council approves it; items council does not approve go to the provincial Director of Police Services, whose determination council must then fund (s. 27, as amended by the <em>Police Amendment Act, 2024</em>). The bill is shared 86.33% Victoria / 13.67% Esquimalt.</p>
+<p>The verifiable cost facts: <strong>$598 per resident in 2023, the highest per capita of any police department in BC</strong> (<em>BC Ministry of Public Safety report, cited by CBC News</em>); a Provisional 2026 Budget request of a 9.82% increase ($7,755,058) to an $86,753,970 core budget; and a council trim of the new-officer component from four to two on March 3, 2026.</p>
+<p><strong>What follows for this framework.</strong> It promises only what council lawfully holds: funding posture and a performance contract attaching published outcomes to City funding (<a href="measures.html#m31c">M31c</a>); civilian and bylaw capacity, which council does control — the Downtown Public Order Team and extended bylaw hours (<a href="measures.html#m26">M26</a>, <a href="measures.html#m27">M27</a>, $1.0–1.5M/yr); a published quarterly enforcement record (<a href="measures.html#m31b">M31b</a>); and the regional policing services review (<a href="measures.html#m29b">M29b</a>, $0.3–0.5M one-time) in step with the Province's own <em>Police Act</em> modernization, which began from the all-party Special Committee on Reforming the Police Act (2022).</p>
+<div class="callout gold">
+<div class="lbl">◆ The test to apply to any candidate</div>
+<p style="margin:0"><strong>Any candidate promising to "order" zero-tolerance policing is promising something the <em>Police Act</em> does not permit them to deliver.</strong></p>
+</div>
+
+<h2 id="encampments">2. Encampments — the accessible-shelter test</h2>
+<p><strong>Four decisions govern what a BC city may do about public sheltering, and they all point the same direction:</strong></p>
+<ul class="cases">
+<li>
+<div class="cn2">Victoria (City) v. Adams</div>
+<div class="cc">2008 BCSC 1363, aff'd 2009 BCCA 563</div>
+<div class="ch">Where accessible shelter is insufficient, prohibiting overnight sheltering in parks violates s. 7 of the <em>Charter</em>.</div>
+</li>
+<li>
+<div class="cn2">Abbotsford (City) v. Shantz</div>
+<div class="cc">2015 BCSC 1909</div>
+<div class="ch">Extends and refines <em>Adams</em>: displacement without somewhere lawful to go is not enforceable policy.</div>
+</li>
+<li>
+<div class="cn2">Prince George (City) v. Stewart</div>
+<div class="cc">2021 BCSC 2089</div>
+<div class="ch">The test is <strong>suitability and accessibility</strong>, not a raw bed count.</div>
+</li>
+<li>
+<div class="cn2">Bamberger v. Vancouver (Board of Parks and Recreation)</div>
+<div class="cc">2022 BCSC 49</div>
+<div class="ch">Decampment paused where shelter was not truly accessible to the people being moved.</div>
+</li>
+</ul>
+
+<p style="margin-top:22px"><strong>The operative word is <em>accessible</em>, and the 2025 data shows why bed-count parity is not the test.</strong> The 2025 Greater Victoria Point-in-Time Count found 1,749 people experiencing homelessness, 318 of them unsheltered (<em>CRD, September 2025; one outlet reported 308 — the discrepancy is noted rather than hidden</em>). <strong>76% of respondents reported a reason to avoid shelters, with safety the top reason — up from 45% in 2023</strong> (<em>Capital Daily, reporting the 2025 count</em>). A bed people rationally refuse for safety does not satisfy <em>Adams</em>, and it does not solve the street either.</p>
+<p>Victoria also already carries roughly <strong>89% of the region's shelter spaces and 83% of its supportive and transitional units</strong> (<em>City of Victoria, January 2026</em>) — a regional fairness fact that belongs in every conversation with the Province.</p>
+
+<h3 style="font-family:'Fraunces',serif;font-size:21px;font-weight:600;color:var(--navy);margin:28px 0 6px">The capacity-first sequence — a precondition, not a preference</h3>
+<ol class="seq">
+<li><strong>Accessible spaces first</strong>, in partnership with BC Housing — whose HEARTH program opened its eighth Victoria project, Bridge Street Pathways (34 spaces), in January 2026, prioritized for people sheltering on the 900-block of Pandora — with safety and low-barrier standards that answer the 76% figure, <strong>because capacity people refuse is not capacity.</strong></li>
+<li><strong>Individualized offers, notice, and storage protocols</strong> — the procedural fairness the cases require.</li>
+<li><strong>Then enforcement of time, place and conduct rules where capacity exists</strong>, with every outcome published quarterly, including the survival rate of disputed actions (<a href="measures.html#m31b">M31b</a>).</li>
+<li><strong>Reclaimed priority spaces stay reclaimed</strong> — extended bylaw presence (<a href="measures.html#m27">M27</a>) and park stewardship (<a href="measures.html#m49">M49</a>) hold what step 3 recovers. The $11M the City spent repairing encampment damage in 2023–2025 is the cost of skipping this sequence, and it is the offset already booked against <a href="measures.html#m11">M11</a>.</li>
+</ol>
+<p><strong>This sequence is not reluctance. It is the only sequence that survives judicial review, and the framework says so before the election instead of discovering it after.</strong> The signature public-space project (<a href="measures.html#m45c">M45c</a>) is sequenced behind this work and gated by referendum regardless — see the <a href="capital.html">Capital Financing Structure</a>.</p>
+
+<h2 id="drugs">3. Drugs, after January 31, 2026</h2>
+<p><strong>The federal exemption that decriminalized simple possession in BC (January 31, 2023 – January 31, 2026) has expired.</strong> Possession is again a matter of the federal <em>Controlled Drugs and Substances Act</em>, enforced by police, province-wide, outside exempted health sites.</p>
+<p><strong>The City's lawful lane is coordination:</strong> signage near schools, parks and playgrounds, referral pathways, and alignment of bylaw presence with police and health responses. The framework books no municipal drug-law power because none exists — <a href="measures.html#m33b">M33b</a> was drafted under the exemption regime, and its function under the current one is signage and coordination; <strong>its text is being aligned accordingly.</strong></p>
+
+<h2 id="fines">4. Bylaw fines — the real ceilings</h2>
+<p><strong>A platform that promises $5,000 littering fines is promising a number the statute does not allow.</strong> The actual ceilings:</p>
+<ul class="fines">
+<li>
+<div class="amt2">$500</div>
+<div class="rt">Bylaw notice</div>
+<div class="inst2"><em>Local Government Bylaw Notice Enforcement Act</em> — adjudicated locally, no court</div>
+</li>
+<li>
+<div class="amt2">$3,000</div>
+<div class="rt">Municipal ticket (MTI) — $1,000 for minors</div>
+<div class="inst2"><em>Community Charter</em>, Bylaw Enforcement Ticket Regulation — payable or disputed in Provincial Court</div>
+</li>
+<li>
+<div class="amt2">$50,000</div>
+<div class="rt">Long-form prosecution — and up to six months</div>
+<div class="inst2"><em>Offence Act</em> prosecution, for serious contraventions</div>
+</li>
+</ul>
+<p style="margin-top:20px"><strong>The framework's civic-order posture is therefore consistency and visibility, not invented fine sizes</strong>: enforcement present until 10 PM seven days a week (<a href="measures.html#m27">M27</a>), every outcome published (<a href="measures.html#m31b">M31b</a>), continuing offences ticketed per day where the regulation allows — plus support for the UBCM resolution asking the Province to raise the $500 bylaw-notice cap, which is the lawful way to make the number bigger.</p>
+
+<h2 id="privacy">5. Privacy — why this framework refuses City surveillance cameras</h2>
+<p><strong>In January 2026 the OIPC ordered the City of Richmond to remove its public-safety camera system</strong> (<em>OIPC Investigation Report 26-01 and Order F26-01</em>), holding that law enforcement is the police's mandate under the <em>Police Act</em> and a municipality cannot run policing surveillance itself, and issued updated <strong>Public Sector Surveillance Guidelines</strong> (January 2026, replacing the 2014 guidelines) requiring privacy impact assessments and prohibiting function creep under FIPPA.</p>
+<div class="callout green">
+<div class="lbl">◆ The rule, and its vindication</div>
+<p style="margin:0"><strong>This framework's rule predates that order and now stands vindicated by it: no City surveillance cameras, no behavioural AI — better lighting instead.</strong></p>
+</div>
+<p>What the framework runs instead, and how each stays inside FIPPA:</p>
+<ul>
+<li>A <strong>voluntary business camera registry</strong> (<a href="measures.html#m28c">M28c</a>) — businesses register their own lawful cameras so police can request footage faster; <strong>the City operates nothing and views nothing</strong>; annual privacy impact assessment review, $15–25K/yr as booked.</li>
+<li>The <strong>municipal AI standard</strong> (<a href="measures.html#m53d">M53d</a>) — public register of every system in use, annual bias and accuracy testing, and <strong>a named human decides every adverse decision</strong>, $40–60K/yr as booked.</li>
+</ul>
+
+<div class="callout blue" style="margin-top:32px">
+<div class="lbl">◆ The point of this annex</div>
+<p style="margin:0">Every hard promise in this framework — order on Pandora, visible enforcement, a safer downtown — is engineered to be <em>keepable</em>: sequenced on capacity the courts require, funded through the board process the <em>Police Act</em> prescribes, fined at ceilings the statutes set, and watched by lighting rather than lenses the OIPC has just finished ordering another city to tear out. <strong>That is not caution. That is how you make the promise survive contact with a courtroom.</strong></p>
+</div>
+
+<div class="cta" style="margin-top:28px">
+<a href="measures.html?pillar=safe" class="bn bnp">Every Safe City measure <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+<a href="city-hall.html" class="bn bns">How City Hall Actually Works</a>
+<a href="partnerships.html" class="bn bns">Partnership Strategy</a>
+<a href="capital.html" class="bn bns">Capital Financing Structure</a>
+</div>
+
+<p style="margin-top:32px;font-size:13px;color:#57534e;font-style:italic;line-height:1.6">Annex version 1.10 — July 31, 2026, published to this site August 5, 2026. Drafted from public sources; <strong>not legal advice</strong>. This page adds no measure and books no cost. Changes are dated in the <a href="version-history.html" style="color:var(--navy)">version history</a>.</p>
+
+<p style="margin-top:14px;font-size:13px;color:#57534e;font-style:italic">No copyright. Attribution to <em>A City That Works — A Citizens' Framework for Victoria 2026</em> appreciated but not required.</p>
+
+<p style="margin-top:32px"><a href="index.html" class="pgback">← Back to the framework</a></p>
+
+</div>
+</div>
+</main>
+
+<div id="footer-mount"></div>
+<script src="site.js"></script>
+<script src="jumpnav.js"></script>
+
+</body>
+</html>

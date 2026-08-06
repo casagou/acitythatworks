@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<script src="flags.js?v=2"></script>
+<meta name="description" content="Implementation &amp; Governance — who owns each measure, the first 100 days, and what publishes every quarter. A City That Works, Victoria 2026. Annex v1.10.">
+<meta name="theme-color" content="#1A3668">
+<title>Implementation &amp; Governance — A City That Works, Victoria 2026</title>
+<meta property="og:title" content="Implementation &amp; Governance — A City That Works">
+<meta property="og:description" content="Who owns each measure, the first 100 days, and the quarterly reporting package.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://acitythatworks.ca/implementation.html">
+<meta property="og:site_name" content="A City That Works">
+<meta property="og:locale" content="en_CA">
+<meta property="og:image" content="https://acitythatworks.ca/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="A City That Works — A Citizens' Framework for Victoria 2026">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://acitythatworks.ca/og-card.png">
+<link rel="canonical" href="https://acitythatworks.ca/implementation.html">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Public+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+/* Day-phase blocks. The 100-day list is the part of this page a reader
+   checks a council against later, so each phase is addressable and its
+   items are numbered rather than bulleted. */
+.phase{margin:22px 0}
+.phase h3{font-family:'Fraunces',serif;font-size:21px;font-weight:600;color:var(--navy);margin:0 0 4px}
+.phase .pd{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.13em;color:var(--gold-ink);margin-bottom:8px}
+.prose .phase ol{margin:10px 0 0;padding-left:22px}
+.phase li{font-size:15px;line-height:1.6;margin:8px 0}
+.phase li strong{color:var(--navy)}
+/* Owner table: three columns is one too many for a phone, so the instrument
+   column drops under the portfolio name rather than forcing a sideways
+   scroll on the page that says who is accountable. */
+.own{list-style:none;padding:0;margin:20px 0 0}
+.own li{padding:14px 0;border-top:1px solid rgba(26,54,104,.14);margin:0;font-size:15px;line-height:1.55}
+.own li:first-child{border-top:none}
+.own .who{font-family:'Fraunces',serif;font-size:18px;font-weight:600;color:var(--navy);margin-bottom:4px}
+.own .owns{color:#44403c;font-size:14.5px}
+.own .inst{margin-top:5px;font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--olive)}
+.own .inst b{font-weight:600;color:var(--olive)}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+
+<header>
+<div class="c hr">
+<a href="index.html" class="brand"><svg class="bicn" viewBox="0 0 240 240" aria-hidden="true"><circle cx="120" cy="120" r="112" fill="#FAF7F0"/><g fill="none" stroke="#16335c" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"><path d="M52 92  q22.5 -14 45 0 t45 0 t45 0"/><path d="M52 120 q22.5 -14 45 0 t45 0 t45 0" opacity="0.88"/><path d="M52 148 q22.5 -14 45 0 t45 0 t45 0" opacity="0.76"/></g></svg><span class="nm">A City That Works</span></a>
+<nav class="nv">
+<a href="summary.html">Summary</a>
+<a href="measures.html">Measures</a>
+<a href="scorecard.html" data-cand class="nv-sc">Candidates</a>
+<a href="city-hall.html">City Hall</a>
+<a href="faq.html">FAQ</a>
+<a href="endorse.html" class="btn-end">Endorse</a>
+</nav>
+<button id="mt" class="mb" aria-label="Open menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+</div>
+<div id="mn" class="mm">
+<div class="c mmi">
+<a href="index.html">Framework</a>
+<a href="summary.html">One-Page Summary</a>
+<a href="measures.html">All Measures</a>
+<a href="index.html#scorecard">12 Commitments</a>
+<a href="index.html#balance">Balance Sheet</a>
+<div class="grp">Detailed documents</div>
+<a href="savings.html">Savings &amp; Revenue Analysis</a>
+<a href="city-hall.html">How City Hall Works</a>
+<a href="endorse.html">Candidate Endorsement Pack</a>
+<a href="comparison.html" data-cand>Candidate Comparison Matrix</a>
+<a href="scorecard.html" data-cand>Candidate Scorecard</a>
+<a href="profiles.html" data-cand>Candidate Profiles</a>
+<a href="faq.html">Frequently Asked Questions</a>
+<a href="version-history.html">Version History</a>
+<div class="grp"></div>
+<a href="index.html#adopt" class="gd">Endorse the framework →</a>
+</div>
+</div>
+</header>
+
+<main id="main">
+<div class="cn">
+<nav class="crumbs" aria-label="Breadcrumb">
+<a href="index.html">Framework</a><span class="sep">/</span><span class="here">Implementation &amp; Governance</span>
+</nav>
+<div class="hero">
+<div class="eyb"><span>🧭 Annex</span><span class="dot">◆</span><span>Delivery, ownership and cadence</span><span class="dot">◆</span><span><a href="version-history.html" style="color:inherit;text-decoration:underline;text-decoration-color:currentColor">v1.10 · August 5, 2026</a></span></div>
+<h1 class="ph1">Implementation &amp; <em>Governance.</em></h1>
+<p class="lead" style="margin-top:18px">Who owns each measure, what happens in the first 100 days, and what publishes every quarter. A plan is a promise about a clock as much as about a policy.</p>
+<a href="index.html" class="pgback">← Back to the framework</a>
+</div>
+
+<div class="prose">
+
+<div class="callout blue">
+<div class="lbl">◆ What this page is, and is not</div>
+<p style="margin:0 0 10px"><strong>How the framework gets delivered, by whom, and on what clock.</strong> Every instrument on this page already exists as a costed measure — the mandate letters (<a href="measures.html#m79c">M79c</a>, $0), the quarterly dashboard (<a href="measures.html#m67">M67</a>, $120–180K/yr inside the <a href="measures.html#m68">M68</a> envelope), the material-change rule (<a href="measures.html#m78b">M78b</a>, $0) and the 12 Commitments scorecard.</p>
+<p style="margin:0"><strong>This page adds no measure and books no cost.</strong> It packages commitments the framework has already made, so a reader can see who owns what, what happens in the first 100 days, and what publishes every quarter.</p>
+</div>
+
+<nav class="toc" aria-label="On this page">
+<div class="toc-h">◆ On this page</div>
+<ol>
+<li><a href="#ownership">The ownership rule</a></li>
+<li><a href="#owners">Who owns what</a></li>
+<li><a href="#first100">The first 100 days</a></li>
+<li><a href="#cadence">The quarterly cadence</a></li>
+</ol>
+</nav>
+<div class="jumpbar" id="jumpbar">
+<div class="jumpin">
+<label class="jl2" for="jumpsel">Jump to</label>
+<select id="jumpsel" class="jumpsel" aria-label="Jump to a section">
+<option value="">Choose a section…</option>
+</select>
+<button type="button" class="jumpbtn" id="jumpprev" aria-label="Previous section">↑</button>
+<button type="button" class="jumpbtn" id="jumpnext" aria-label="Next section">↓</button>
+<a class="jumpbtn jumptop" href="#main" aria-label="Back to top">Top</a>
+</div>
+<div class="jumpprog" aria-hidden="true"><i id="jumpfill"></i></div>
+</div>
+
+<h2 id="ownership">The ownership rule</h2>
+<p><strong>Every measure has one named, accountable owner, published in a mandate letter within the first 30 days (<a href="measures.html#m79c">M79c</a>).</strong> A measure with two owners has none.</p>
+<p>Where delivery depends on a body council does not control — the police board, the transit commission, the CRD — the letter names the City's <strong>position and its contribution</strong>, not an outcome the City cannot lawfully order. That distinction is the spine of the <a href="legal.html">Legal Defensibility Annex</a>.</p>
+
+<h2 id="owners">Who owns what</h2>
+<ul class="own">
+<li>
+<div class="who">Mayor &amp; Council</div>
+<div class="owns">Tax glide path and the 6-of-9 supermajority family (<a href="measures.html#m66">M66</a>, <a href="measures.html#m66b">M66b</a>, <a href="measures.html#m66c">M66c</a>, <a href="measures.html#m66d">M66d</a>, <a href="measures.html#m50b">M50b</a>) · material-change rule <a href="measures.html#m78b">M78b</a> · remuneration deferral <a href="measures.html#m79f">M79f</a> · mandate letters <a href="measures.html#m79c">M79c</a></div>
+<div class="inst">Instrument · <b>Public votes, on the record</b></div>
+</li>
+<li>
+<div class="who">City Manager</div>
+<div class="owns">Whole-of-organization delivery · zero-based reviews <a href="measures.html#m65">M65</a> · attrition and technology <a href="measures.html#m68">M68</a> · simplification charter <a href="measures.html#m72b">M72b</a></div>
+<div class="inst">Instrument · <b>Quarterly variance report, signed</b></div>
+</li>
+<li>
+<div class="who">Finance</div>
+<div class="owns"><a href="measures.html#m66b">M66b</a> refund calculation · <a href="measures.html#m66c">M66c</a> debt metrics · <a href="measures.html#m66d">M66d</a> Household Bill · <a href="measures.html#m67">M67</a> dashboard · variance against <a href="savings.html">Savings &amp; Revenue Analysis</a> Parts A–D</div>
+<div class="inst">Instrument · <b>Quarterly release</b></div>
+</li>
+<li>
+<div class="who">Planning &amp; Development</div>
+<div class="owns">Housing family <a href="measures.html#m6">M6</a>–<a href="measures.html#m8">M8</a> · e-permitting <a href="measures.html#m7">M7</a> · pattern book <a href="measures.html#m7b">M7b</a> · fee waivers <a href="measures.html#m76">M76</a> · permit-time standards</div>
+<div class="inst">Instrument · <b>Permit-time KPIs, quarterly</b></div>
+</li>
+<li>
+<div class="who">Engineering &amp; Public Works</div>
+<div class="owns">Managed competition <a href="measures.html#m15">M15</a> (with procurement) · adaptive signals <a href="measures.html#m19">M19</a> · pedestrian standard <a href="measures.html#m20b">M20b</a> · bathrooms <a href="measures.html#m24b">M24b</a> · streetlights · GIS and LIDAR <a href="measures.html#m53">M53</a>/<a href="measures.html#m53c">M53c</a> · sensors <a href="measures.html#m56">M56</a></div>
+<div class="inst">Instrument · <b>Project and savings tracker</b></div>
+</li>
+<li>
+<div class="who">Bylaw &amp; Community Safety</div>
+<div class="owns">DPOT <a href="measures.html#m26">M26</a> · extended hours <a href="measures.html#m27">M27</a> · camera registry <a href="measures.html#m28c">M28c</a> · enforcement record <a href="measures.html#m31b">M31b</a> · safety-plan performance contract <a href="measures.html#m31c">M31c</a> · encampment response coordination <a href="measures.html#m11">M11</a>, with BC Housing — see the <a href="partnerships.html">Partnership Strategy</a></div>
+<div class="inst">Instrument · <b>M31b quarterly record</b></div>
+</li>
+<li>
+<div class="who">Parks, Recreation &amp; Facilities</div>
+<div class="owns">Parks <a href="measures.html#m49">M49</a> · activation <a href="measures.html#m51">M51</a> · Royal Athletic Park <a href="measures.html#m52">M52</a> · tree planting · cooling and heat <a href="measures.html#m64">M64</a></div>
+<div class="inst">Instrument · <b>KPI library</b></div>
+</li>
+<li>
+<div class="who">Culture &amp; Heritage</div>
+<div class="owns">Street furniture <a href="measures.html#m44">M44</a> · heritage fund <a href="measures.html#m46">M46</a> · venue preservation <a href="measures.html#m46b">M46b</a> · heritage lighting <a href="measures.html#m48">M48</a> · cultural hours <a href="measures.html#m50">M50</a> · arts floor <a href="measures.html#m50b">M50b</a></div>
+<div class="inst">Instrument · <b>Annual report</b></div>
+</li>
+<li>
+<div class="who">Economic Development</div>
+<div class="owns">Business attraction <a href="measures.html#m71">M71</a> · welcome program <a href="measures.html#m72">M72</a> · tourism <a href="measures.html#m73">M73</a> · Team Victoria <a href="measures.html#m73b">M73b</a> · Conference Centre review <a href="measures.html#m73c">M73c</a> · ocean economy <a href="measures.html#m55b">M55b</a></div>
+<div class="inst">Instrument · <b>Annual plan, published</b></div>
+</li>
+<li>
+<div class="who">City Clerk &amp; Governance</div>
+<div class="owns">Integrity Commissioner <a href="measures.html#m79b">M79b</a> · lobbyist registry <a href="measures.html#m79d">M79d</a> · FOI fee waiver <a href="measures.html#m79e">M79e</a> · survey <a href="measures.html#m82">M82</a> · turnout and ballot access <a href="measures.html#m82b">M82b</a></div>
+<div class="inst">Instrument · <b>Registry and reports</b></div>
+</li>
+<li>
+<div class="who">External boards, named honestly</div>
+<div class="owns"><strong>VicPD Board</strong> — budget request; the City's lever is the <a href="measures.html#m31c">M31c</a> performance contract on City funding, never operational direction. <strong>Victoria Regional Transit Commission</strong> — <a href="measures.html#m23b">M23b</a> published position. <strong>CRD Board</strong> — <a href="measures.html#m70c">M70c</a> regional bill and voting record. <strong>School District 61</strong> — <a href="measures.html#m13d">M13d</a> standing agreement.</div>
+<div class="inst">Instrument · <b>Published positions and decision records</b></div>
+</li>
+</ul>
+<p style="font-size:14px;color:#57534e;font-style:italic;margin-top:16px">Portfolio names above are functional. On day one they map onto the City's actual organization chart as it stands — this framework publishes a plan; it does not reorganize the administration in order to publish one.</p>
+
+<h2 id="first100">The first 100 days</h2>
+<div class="callout gold">
+<div class="lbl">◆ Stated up front</div>
+<p style="margin:0">Everything below runs inside lines already costed in the <a href="savings.html">Savings &amp; Revenue Analysis</a>. <strong>There is no new money on this list</strong>, and there are no savings claims beyond the Year-1 realization band already published ($1.4–2.7M full-year, Part A6) — most of which lands after day 100. That is stated up front because a 100-day list that quietly promises steady-state results is the kind of list this framework exists to replace.</p>
+</div>
+
+<div class="phase">
+<div class="pd">Days 1–30</div>
+<h3>Set the operating system</h3>
+<ol>
+<li><strong>Lean-baseline budget instruction issued</strong> — the deferred additions from the council's 13.3% opening draft are not re-adopted by default, the first structural decision named in Part E.</li>
+<li><strong>Attrition-only policy in force</strong> — departures reviewed before backfill (<a href="measures.html#m68">M68</a>).</li>
+<li><strong>Mandate letters published</strong> for every portfolio above (<a href="measures.html#m79c">M79c</a>).</li>
+<li><strong>The material-change rule adopted</strong> — mid-year surprises are disclosed when they are known, not when convenient (<a href="measures.html#m78b">M78b</a>). Council remuneration deferral adopted (<a href="measures.html#m79f">M79f</a>).</li>
+<li><strong>First dashboard cut published</strong> from data the City already holds — the baselines the <a href="kpis.html">KPI library</a> locks (<a href="measures.html#m67">M67</a>).</li>
+</ol>
+</div>
+
+<div class="phase">
+<div class="pd">Days 31–60</div>
+<h3>Start the savings engine, and the visible work</h3>
+<ol>
+<li><strong>Managed-competition tender issued</strong> for waste and street cleaning, with the employee-protection clauses stated in the tender (<a href="measures.html#m15">M15</a>).</li>
+<li><strong>First zero-based review scoped</strong> — grants and contracts over $50K, with condition verification (<a href="measures.html#m65">M65</a>, <a href="measures.html#m9b">M9b</a> extension).</li>
+<li><strong>Extended bylaw hours phase-in begins</strong> toward 6 AM–10 PM, seven days; the Downtown Public Order Team stands up inside that line (<a href="measures.html#m27">M27</a>, <a href="measures.html#m26">M26</a> — $1.0–1.5M/yr as booked).</li>
+<li><strong>The 24-month suite amnesty and concierge open</strong> (<a href="measures.html#m8b">M8b</a> — years 1–2 add-back, funded from M15 savings as booked).</li>
+<li><strong>Partnership letters go to BC Housing, Island Health and the Province</strong> on the exact asks in the <a href="partnerships.html">Partnership Strategy</a>. The gated measures (<a href="measures.html#m26b">M26b</a>, <a href="measures.html#m28d">M28d</a>) remain at $0 until a cost-share partner signs — the gate is the negotiating position.</li>
+</ol>
+</div>
+
+<div class="phase">
+<div class="pd">Days 61–100</div>
+<h3>Build the instruments</h3>
+<ol>
+<li><strong>Pattern-book design competition launched</strong> inside the <a href="measures.html#m7">M7</a> platform envelope (<a href="measures.html#m7b">M7b</a>).</li>
+<li><strong>Lobbyist-registry build starts</strong> (<a href="measures.html#m79d">M79d</a>); Integrity Commissioner shared-service negotiation opens (<a href="measures.html#m79b">M79b</a>).</li>
+<li><strong>School District 61 standing-agreement talks begin</strong> (<a href="measures.html#m13d">M13d</a>).</li>
+<li><strong>Sidewalk inventory and crossing-gap analysis tendered</strong>, sequenced with the LIDAR scan to reduce cost (<a href="measures.html#m20b">M20b</a>, <a href="measures.html#m53c">M53c</a>).</li>
+<li><strong>The first quarterly variance report is published — the first receipt.</strong> If any of items 1–14 slipped, the report says so and says why.</li>
+</ol>
+</div>
+
+<h2 id="cadence">The quarterly cadence</h2>
+<p><strong>One release, within six weeks of quarter end, published whether or not the numbers flatter anyone.</strong> Contents, every quarter:</p>
+
+<div class="tbl-wrap">
+<table class="dt">
+<thead><tr><th>#</th><th>What publishes</th><th>Instrument</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>The 12 Commitments scorecard — every commitment, its number, its baseline</td><td><a href="index.html#scorecard">Scorecard</a></td></tr>
+<tr><td>2</td><td>Budget variance, line by line, against <a href="savings.html">Savings &amp; Revenue Analysis</a> Parts A–D, including Part C1 envelope consumption</td><td><a href="measures.html#m67">M67</a></td></tr>
+<tr><td>3</td><td>The enforcement record, including the enforcement-survival rate</td><td><a href="measures.html#m31b">M31b</a></td></tr>
+<tr><td>4</td><td>Debt metrics under the debt rule</td><td><a href="measures.html#m66c">M66c</a></td></tr>
+<tr><td>5</td><td>Glide-path tracker against Part E</td><td><a href="measures.html#m66">M66</a></td></tr>
+<tr><td>6</td><td>KPI library deltas</td><td><a href="kpis.html">2030, Measured</a></td></tr>
+<tr><td>7</td><td>Gate status for the v1.8 and v1.9 conditional tiers — triggered, waiting, or dead</td><td>Part C</td></tr>
+</tbody>
+</table>
+</div>
+
+<p><strong>Annually:</strong> the Household Bill (<a href="measures.html#m66d">M66d</a>), the community survey (<a href="measures.html#m82">M82</a>), the regional bill and CRD voting record (<a href="measures.html#m70c">M70c</a>), and the City's published transit position (<a href="measures.html#m23b">M23b</a>).</p>
+
+<div class="callout gold">
+<div class="lbl">◆ The rule that makes the cadence mean something</div>
+<p style="margin:0">A miss is published with a variance note and a correction path, <strong>in the same release, at the same prominence as the wins.</strong> A framework that grades the current council on published outcomes accepts the same grading.</p>
+</div>
+
+<div class="cta" style="margin-top:28px">
+<a href="measures.html" class="bn bnp">Read every measure <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+<a href="kpis.html" class="bn bns">2030, Measured — the KPI Library</a>
+<a href="partnerships.html" class="bn bns">Partnership Strategy</a>
+<a href="legal.html" class="bn bns">Legal Defensibility Annex</a>
+</div>
+
+<p style="margin-top:32px;font-size:13px;color:#57534e;font-style:italic;line-height:1.6">Annex version 1.10 — July 31, 2026, published to this site August 5, 2026. This page adds no measure and books no cost; every instrument on it is costed in the <a href="savings.html" style="color:var(--navy)">Savings &amp; Revenue Analysis</a>. Changes are dated in the <a href="version-history.html" style="color:var(--navy)">version history</a>.</p>
+
+<p style="margin-top:14px;font-size:13px;color:#57534e;font-style:italic">No copyright. Attribution to <em>A City That Works — A Citizens' Framework for Victoria 2026</em> appreciated but not required.</p>
+
+<p style="margin-top:32px"><a href="index.html" class="pgback">← Back to the framework</a></p>
+
+</div>
+</div>
+</main>
+
+<div id="footer-mount"></div>
+<script src="site.js"></script>
+<script src="jumpnav.js"></script>
+
+</body>
+</html>
