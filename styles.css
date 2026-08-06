@@ -373,12 +373,14 @@ h3.reg-gh{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:u
    before the first paint; the sweep that removes the same nodes runs at
    DOMContentLoaded, which is late enough for a nav item to have flashed.
    CSS hides, JS removes — the two together mean nothing is ever seen and
-   nothing is left in the accessibility tree. */
+   nothing is left in the accessibility tree.
+
+   Hiding is keyed on data-cand alone and never on the href. Netlify's pretty
+   URLs mean the same page is scorecard.html here and /scorecard once
+   deployed, and the one selector that would catch both — [href*="scorecard"]
+   — also catches index.html#scorecard, which is the 12 Commitments anchor and
+   must stay. Marking the element is unambiguous; matching its href is not. */
 .cands-off [data-cand] {display:none !important}
-.cands-off header a[href*="scorecard.html"],
-.cands-off header a[href*="comparison.html"],
-.cands-off footer a[href*="scorecard.html"],
-.cands-off footer a[href*="comparison.html"] {display:none !important}
 
 /* The preview badge, shown only while a browser is overriding the master
    switch — see flags.js. */

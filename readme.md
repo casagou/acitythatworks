@@ -89,6 +89,10 @@ var CANDIDATES_LIVE = false;   // false = hidden site-wide
 
 CSS (`.cands-off` on `<html>`) hides those nodes before paint; `flags.js` then removes them from the DOM at `DOMContentLoaded`, ahead of `jumpnav.js`, so the section navigator never offers a jump to a heading that is gone.
 
+**Netlify serves this site with pretty URLs on**, and that matters here more than anywhere else on the site: `scorecard.html` is also reachable as `/scorecard`, and every in-page `href` is rewritten to the extensionless form on the way out. Nothing in the switch compares whole URLs — both sides are reduced to a bare filename first (`flags.js`'s `stem()`), so `/comparison`, `comparison.html` and `comparison.html#profiles` are one page. Matching on the literal `.html` spelling gates the local copy and misses the deployed one entirely; that is exactly how the first version shipped a gate that tested clean locally and did nothing live. `window.ACTW.isCandidateUrl(url)` is exposed so the matching can be checked from the console against real deployed URL forms without deploying to find out.
+
+Hiding is also keyed on `data-cand` and never on the `href`, for the same reason — the one CSS selector that would catch both URL forms, `[href*="scorecard"]`, also catches `index.html#scorecard`, which is the 12 Commitments anchor and has to stay.
+
 ### Previewing while the site stays dark
 
 Append `?candidates=on` to any URL. That browser — and only that browser — sees the candidate pages, remembered in `localStorage`, with a badge in the corner so a preview is never mistaken for the live site. `?candidates=off` re-hides them; `?candidates=clear` drops the override and returns to whatever the master switch says.

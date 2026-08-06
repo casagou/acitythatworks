@@ -15,6 +15,13 @@
 /*.js
   Cache-Control: public, max-age=3600, must-revalidate
 
+# flags.js decides whether the candidate pages are reachable at all, so it
+# revalidates like HTML rather than sitting in a browser cache for an hour
+# after the switch has been flipped. More specific path, so it wins over the
+# /*.js rule above.
+/flags.js
+  Cache-Control: public, max-age=0, must-revalidate
+
 /*.json
   Cache-Control: public, max-age=3600, must-revalidate
 

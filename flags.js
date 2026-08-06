@@ -35,6 +35,20 @@
      same terms — redirected when off, and every link to it swept. */
   var GATED = ['scorecard.html', 'comparison.html'];
 
+  /* Netlify serves this site with pretty URLs on: scorecard.html is also
+     reachable as /scorecard, and every in-page href is rewritten to the
+     extensionless form on the way out. So nothing here may compare whole
+     hrefs — /comparison and comparison.html and comparison.html#profiles are
+     one page, and matching on the literal ".html" spelling would gate the
+     local copy and miss the deployed one entirely. Reduce both sides to the
+     bare filename and compare that. */
+  function stem(u) {
+    u = String(u || '').split('#')[0].split('?')[0];
+    return (u.split('/').pop() || '').toLowerCase().replace(/\.html$/, '');
+  }
+  var STEMS = GATED.map(stem);
+  function gated(u) { return STEMS.indexOf(stem(u)) > -1; }
+
   var KEY = 'actw.candidates';
   var on = CANDIDATES_LIVE, override = false;
 
@@ -56,11 +70,17 @@
   window.ACTW = window.ACTW || {};
   window.ACTW.candidates = on;
   window.ACTW.candidatesGated = GATED;
+  /* Exposed so the URL matching can be checked from the console against the
+     forms the deploy actually serves — /comparison, comparison.html,
+     comparison.html#profiles — without deploying to find out. Getting this
+     wrong is how the first version of this file shipped a gate that worked
+     locally and did nothing on the live site. */
+  window.ACTW.isCandidateUrl = gated;
 
   document.documentElement.classList.add(on ? 'cands-on' : 'cands-off');
 
-  var here = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
-  var onGatedPage = GATED.indexOf(here) > -1;
+  var here = stem(location.pathname) || 'index';
+  var onGatedPage = gated(location.pathname);
 
   /* Leave before the document body is parsed rather than after — a hidden
      page that renders for half a second has not been hidden. replace() keeps
@@ -110,17 +130,23 @@
         if (blocks[i].parentNode) { blocks[i].parentNode.removeChild(blocks[i]); }
       }
 
-      /* Everything else that still points at a gated page. A link sitting in
-         running prose loses its href and keeps its words; a link that is an
-         item in its own right — a nav entry, a footer line, a button — goes
-         entirely, because unlinking it would leave a dead label behind. The
-         test is whether the anchor has a non-empty text sibling. */
-      var sel = [];
-      for (i = 0; i < GATED.length; i++) { sel.push('a[href*="' + GATED[i] + '"]'); }
-      var links = document.querySelectorAll(sel.join(','));
+      /* Everything else that still points at a gated page. Every anchor is
+         read and its href reduced to a stem rather than matched with an
+         attribute selector, because the selector would have to spell the
+         extension and the deployed pages do not carry one. It also keeps
+         index.html#scorecard — the 12 Commitments anchor, a different thing
+         with a colliding name — out of the sweep, which a looser
+         [href*="scorecard"] would have swallowed.
+
+         A link sitting in running prose loses its href and keeps its words;
+         a link that is an item in its own right — a nav entry, a footer
+         line, a button — goes entirely, because unlinking it would leave a
+         dead label behind. The test is whether the anchor has a non-empty
+         text sibling. */
+      var links = document.querySelectorAll('a[href]');
       for (i = 0; i < links.length; i++) {
         var a = links[i];
-        if (!a.parentNode) { continue; }
+        if (!a.parentNode || !gated(a.getAttribute('href'))) { continue; }
         if (inProse(a)) {
           var s = document.createElement('span');
           while (a.firstChild) { s.appendChild(a.firstChild); }
