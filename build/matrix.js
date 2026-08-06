@@ -58,6 +58,9 @@ function profileHref(name) {
 }
 
 const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+/* The topic definitions carry <strong>/<em>. Attributes cannot, so the same
+   sentence is flattened for title= rather than written out a second time. */
+const stripTags = (s) => String(s).replace(/<[^>]+>/g, "");
 /* The name, linked to its profile. The master grid heads its columns with
    two-letter keys rather than names, so it is exempt by construction. */
 function nameLink(name, cls) {
@@ -111,7 +114,7 @@ const comp = C.map((c, ci) => {
 
   const pillars = {};
   M.PILLARS.forEach((p) => {
-    const vs = cells.filter((x) => M.TOPICS[x.ti][2] === p.key);
+    const vs = cells.filter((x) => M.TOPICS[x.ti].pillar === p.key);
     if (!vs.length) { pillars[p.key] = null; return; }
     const pm = round2(vs.reduce((a, b) => a + b.v, 0) / vs.length);
     const n = vs.length;
@@ -160,7 +163,7 @@ if (PROFILE_IDS) {
 }
 
 /* ---- column layer (Scorecard v5.1) ------------------------------------ */
-const idOf = M.TOPICS.map((t) => t[0]);
+const idOf = M.TOPICS.map((t) => t.id);
 /* the 15 columns must use all 55 topics exactly once */
 const useCount = {};
 M.COLUMNS.filter((c) => !c.all).forEach((c) => c.topics.forEach((t) => {
@@ -243,7 +246,7 @@ let evHave = 0;
 comp.forEach((x) => x.cells.forEach((cell) => { if (sentence(cell.ti, x.c.key)) evHave++; }));
 
 function sentence(ti, ck) {
-  const store = evByKey[norm(M.TOPICS[ti][0])];
+  const store = evByKey[norm(M.TOPICS[ti].id)];
   if (!store) return null;
   const e = store.ev[ck];
   if (!e) return null;
@@ -384,7 +387,7 @@ const warnHtml = SC5.warns.map((w) =>
 /* master grid */
 let gridHead = C.map((c) => '<th class="gh" title="' + esc(c.name) + '"><abbr title="' + esc(c.name) + '">' + c.key + "</abbr></th>").join("");
 let gridBody = M.TOPICS.map((t, ti) => {
-  const pil = M.PILLARS.find((p) => p.key === t[2]);
+  const pil = M.PILLARS.find((p) => p.key === t.pillar);
   const tds = C.map((c, ci) => {
     const raw = rows[ti][ci];
     if (raw === ".") return '<td class="gc gx" title="No public position located">·</td>';
@@ -395,12 +398,21 @@ let gridBody = M.TOPICS.map((t, ti) => {
     return '<td class="gc mk-' + mk.cls + '" tabindex="0" role="button" data-t="' + ti + '" data-c="' + c.key + '" data-v="' + v + '">' +
       (v < 0 ? "−" : "") + Math.abs(v).toFixed(1) + "</td>";
   }).join("");
-  return '<tr><td class="gt"><span class="gm">' + esc(t[0]) + '</span><span class="gd">' + esc(t[1]) + '</span><span class="gp" style="color:var(--navy)">' + pil.emoji + (t[3] === "NEW" ? ' <b class="newt">NEW</b>' : "") + "</span></td>" + tds + "</tr>";
+  /* The topic cell is a control, not a label. Before v3.3 a reader could see
+     that nine candidates were scored on a row without being able to find out
+     anywhere what the row proposed; clicking it now opens the definition. The
+     title attribute carries the same sentence in plain text so a hover, a
+     screen reader and a printout all get it without opening anything. */
+  return '<tr><td class="gt" tabindex="0" role="button" data-topic="' + ti +
+    '" title="' + esc(t.code + " · " + stripTags(t.what)) + '">' +
+    '<span class="gm">' + esc(t.id) + '</span><span class="gd">' + esc(t.label) +
+    '</span><span class="gp" style="color:var(--navy)">' + pil.emoji +
+    (t.isNew ? ' <b class="newt">NEW</b>' : "") + "</span></td>" + tds + "</tr>";
 }).join("\n");
 
 /* payload for the detail panel */
 const payload = {
-  topics: M.TOPICS.map((t) => ({ id: t[0], label: t[1], pillar: t[2], isNew: t[3] === "NEW" })),
+  topics: M.TOPICS.map((t) => ({ id: t.id, code: t.code, label: t.label, what: t.what, pillar: t.pillar, isNew: !!t.isNew })),
   cands: C.map((c) => ({ key: c.key, name: c.name, office: c.office, grade: c.grade, mean: c.mean, n: c.n, profile: profileHref(c.name) })),
   marks: M.SCALE.marks,
   grid: rows,
@@ -412,11 +424,6 @@ const payload = {
         if (s) o[ti + "|" + c.key] = s;
       });
     });
-    return o;
-  })(),
-  actw: (() => {
-    const o = {};
-    M.TOPICS.forEach((t, ti) => { const st = evByKey[norm(t[0])]; if (st && st.actw) o[ti] = st.actw; });
     return o;
   })(),
   cols: M.COLUMNS.map((c) => ({ key: c.key, label: c.label, short: c.short, topics: c.all ? null : c.topics })),
@@ -485,6 +492,7 @@ const out = tpl
   .replace("<!--EVCOV-->", evHave + " of " + M.MATRIX_META.marks)
   .replace(/<!--MARKS-->/g, String(M.MATRIX_META.marks))
   .replace(/<!--MVER-->/g, M.MATRIX_META.version)
+  .replace(/<!--PROGRAM-->/g, M.MATRIX_META.program)
   .replace(/<!--MDATE-->/g, M.MATRIX_META.date)
   .replace(/<!--SCVER-->/g, M.MATRIX_META.scorecard)
   .replace(/<!--SCDATE-->/g, M.MATRIX_META.scorecardDate)

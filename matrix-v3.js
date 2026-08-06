@@ -21,13 +21,17 @@
      v3.3 (5 Aug) — plain-English definitions added to all 55 topics upstream,
      and nine coverage-grid row labels widened where the abbreviation had
      dropped a concept the topic actually covers. No mark, mean or grade
-     changed. The definitions are not carried here; the widened labels are,
-     in TOPICS.
+     changed. Both are carried here, in TOPICS: the widened labels as `label`,
+     the definitions as `what`. An accessibility audit had found that a reader
+     could see how many candidates were scored on a topic without being able
+     to tell what the topic was, which on the seven topics carrying no marks
+     at all meant reporting that the whole field was silent on something
+     without ever saying what that something was.
 
      v3.4 (5 Aug) — those definitions verified line by line against the
-     Program master. 54 of 55 rewritten, 28 carrying a real defect, four
-     describing the wrong measure outright. No mark, mean or grade changed
-     again, but two topic TITLES were corrected with them and both are
+     Program master at v1.10. 54 of 55 rewritten, 28 carrying a real defect,
+     four describing the wrong measure outright. No mark, mean or grade
+     changed again, but two topic TITLES were corrected with them and both are
      carried here: M8 is a 5% rental vacancy target of which the DCC
      reduction is one instrument, not a DCC measure; and M45c is one
      signature public-space project chosen by residents from a shortlist of
@@ -35,6 +39,19 @@
      a Pandora linear park and an Inner Harbour promenade — naming
      Centennial Square as the project stated a choice residents have not
      made. Both titles had been wrong on the published page.
+
+     The master's own lesson from v3.4 is worth repeating where the work was
+     done rather than only where it was reported: every one of the 28 defects
+     existed because the definitions had been drafted from a review of the
+     framework instead of from the framework, and the defect rate on that
+     method was 51%. The `what` strings below are transcribed from the v3.4
+     master, which is transcribed from Program v1.10 — not summarised from
+     either. Four of them name a number the earlier drafts got wrong: graffiti
+     is a 90% standard within 48 hours rather than a flat 48 hours, attrition
+     is 12 to 15% rather than 10%, bylaw hours today run 7 a.m. to 4 p.m. on
+     weekdays only, and real-estate proceeds retire the debt attached to the
+     property sold under s.188 of the Community Charter rather than general
+     debt.
 
    This file is the single source of truth for the scorecard. Every published
    grade, mean and pillar figure is recomputed from GRID at build time by
@@ -70,7 +87,7 @@ const MATRIX_META = {
   marks: 210,
   record: 8,
   graded: 15,
-  program: "v1.9.1",
+  program: "v1.10",
   measures: 131,
 };
 
@@ -152,63 +169,189 @@ const PILLARS = [
   { key: "democratic", label: "Democratic", full: "A Democratic City", emoji: "🗳️" },
 ];
 
-/* 55 topics in master order, each tagged with the pillar it scores under. */
+/* The 55 topics in master order. Each carries the measure ids it covers, the
+   master's own topic code (F1, L1..L15, S1..S12, B1..B9, W1..W12, D1..D6 — the
+   numbering §5 and §6 of the Grade Breakdown both use, so a reader can carry a
+   cell straight back to the source), the pillar it scores under, its title,
+   and `what` — the plain-English definition of the measure itself.
+
+   `what` is the whole point of v3.3 and v3.4 and it is not decoration. Before
+   it existed, the line under every topic was a statistics line: a reader could
+   see that nine candidates were scored on L11 without being able to find out
+   anywhere on the page what L11 proposed. On the seven topics where the entire
+   field is silent, that meant publishing "nobody has a position on this"
+   without saying what "this" was. Every acronym the framework uses is expanded
+   in place here — DCC, STR, STEP, GIS, LIDAR, FOI, IoT — rather than assumed.
+
+   The titles are the master's §5 headings, which are the fuller form. §6
+   abbreviates them to fit sixteen columns on one screen; where the two differ
+   the longer one is carried, because this file feeds a page with room for it. */
 const TOPICS = [
-  ["M1–M5",   "Host Nations Foundation", "foundation"],
-  ["M6",      "Housing supply + composition", "liveable"],
-  ["M6b",     "Land bank + co-operative housing", "liveable"],
-  ["M7",      "Permits + AI pre-screening", "liveable"],
-  ["M7b",     "Pre-approved pattern-book housing", "liveable"],
-  ["M8/M8b",  "5% vacancy target, DCC cuts, suite amnesty", "liveable"],
-  ["M9/M9b/M9c/M64", "Tenant protections, STR, heat bylaw", "liveable"],
-  ["M10",     "Transparent algorithmic waitlist", "liveable"],
-  ["M11",     "Homelessness — Housing First + STEP", "liveable"],
-  ["M12/M13/M13b/M13c", "Families, childcare, doctors, youth", "liveable"],
-  ["M13d",    "Standing School District 61 agreement", "liveable"],
-  ["M14/M16/M17/M18", "Cleanliness and the public realm", "liveable"],
-  ["M19/M22/M38–M42b", "Mobility + Vision Zero", "liveable"],
-  ["M20b/M23b", "Walking + transit jurisdiction", "liveable"],
-  ["M24b/M25b", "Accessibility and public washrooms", "liveable"],
-  ["M25",     "Fix roads first", "liveable"],
-  ["M26",     "Downtown Public Order Team", "safe"],
-  ["M26b",    "Civilian crisis response team", "safe"],
-  ["M27",     "Bylaw enforcement hours 6am–10pm", "safe"],
-  ["M28",     "Data-targeted enforcement", "safe"],
-  ["M28b",    "Business security cost-spreading", "safe"],
-  ["M28d",    "Community paramedicine", "safe"],
-  ["M29/M29b", "VicPD + regional policing review", "safe"],
-  ["M30",     "Streetlights, no surveillance", "safe"],
-  ["M31/M31b/M31c/M32", "Safety dashboard, published enforcement record", "safe"],
-  ["M33",     "Enforce existing bylaws", "safe"],
-  ["M33b",    "Drug-use buffer zones", "safe"],
-  ["M34–M37", "Encampment response, reclaimed spaces, night lighting", "safe"],
-  ["M43–M46b", "Heritage and cultural venues", "beautiful"],
-  ["M45b/M45c", "Pedestrianisation and the signature project", "beautiful"],
-  ["M47–M49", "Heritage incentives, lighting, parks", "beautiful"],
-  ["M50/M50b/M51/M52", "Culture, sport, arts floor", "beautiful"],
-  ["M53/M53b/M53c", "GIS, AI imagery, LIDAR", "beautiful"],
-  ["M53d",    "Published municipal AI standard", "beautiful"],
-  ["M54–M57", "Local-tech procurement, open data, Wi-Fi, EV", "beautiful"],
-  ["M58/M58b/M64b", "Climate, district energy, seismic", "beautiful"],
-  ["M59–M63", "Trees, mode share, ecosystems, emergency prep", "beautiful"],
-  ["M15",     "Managed competition", "managed"],
-  ["M65",     "Rotating zero-based reviews", "managed"],
-  ["M66",     "Tax glide path, residential rate cap", "managed"],
-  ["M66b/M66c", "Refund + debt rule", "managed"],
-  ["M66d",    "The Household Bill", "managed"],
-  ["M67",     "Quarterly performance dashboard", "managed"],
-  ["M68",     "Administrative overhead by attrition", "managed"],
-  ["M69",     "Real-estate rationalisation", "managed", "NEW"],
-  ["M70/M70b", "Provincial downloading ledger", "managed"],
-  ["M70c",    "Regional bill, CRD cost, Goldstream", "managed"],
-  ["M71–M73d", "Business, downtown, economic development", "managed"],
-  ["M74/M75/M76", "Capital threshold, first-hour parking, permit fees", "managed"],
-  ["M77/M78/M78b", "Referendum + 5-step process", "democratic"],
-  ["M79/M79b", "Integrity Commissioner", "democratic"],
-  ["M79c–f",  "Lobbyist registry, FOI fee", "democratic", "NEW"],
-  ["M80/M80b/M80c", "Neighbourhoods, language, LAPs", "democratic"],
-  ["M82/M82b", "Turnout and ballot access", "democratic", "NEW"],
-  ["M81",     "Saanich amalgamation", "democratic"],
+  { id: "M1–M5", code: "F1", pillar: "foundation",
+    label: "Host Nations Foundation",
+    what: "Standing government-to-government tables with the Songhees and Esquimalt Nations, a 5% Indigenous procurement target, lək̓ʷəŋən place names, cultural protocols, and an urban Indigenous liaison." },
+  { id: "M6", code: "L1", pillar: "liveable",
+    label: "Housing supply + composition",
+    what: "Build 12,000-plus net new homes by 2030 and set what kind gets built: at least 25% missing middle, 20% three-bedroom or larger, 15% below-market, 30% purpose-built rental, reported quarterly." },
+  { id: "M6b", code: "L2", pillar: "liveable",
+    label: "Land bank + co-operative housing",
+    what: "A public inventory of city-owned land, a fund to acquire more, and disposition scored on speed to completion, affordability and family-sized units rather than on price alone, with right of first refusal for non-profit and Indigenous housing partners." },
+  { id: "M7", code: "L3", pillar: "liveable",
+    label: "Permits + AI pre-screening",
+    what: "Publish how long each permit type actually takes and commit to a target: under 6 weeks for simple residential, under 6 months for complex, under 9 months for rezoning. AI pre-screens applications and produces a conformity report for a human to review." },
+  { id: "M7b", code: "L4", pillar: "liveable",
+    label: "Pre-approved pattern-book housing",
+    what: "A free municipal pattern book of pre-approved designs for duplexes, triplexes, fourplexes, townhouses and laneway homes, with an automatic fast lane on the 6-week permit target for anything built from it unamended. BC has published provincial standardised designs; this is the Victoria version." },
+  { id: "M8/M8b", code: "L5", pillar: "liveable",
+    label: "5% vacancy target, DCC cuts, suite amnesty",
+    what: "M8 targets a 5% rental vacancy rate, using targeted Development Cost Charge reductions (the per-unit fees a builder pays the city) for purpose-built rental. M8b is a 24-month amnesty letting owners legalise existing unpermitted suites against a life-safety standard, with no retroactive penalty and no rent reset for the tenant." },
+  { id: "M9/M9b/M9c/M64", code: "L6", pillar: "liveable",
+    label: "Tenant protections, STR, heat bylaw",
+    what: "Demoviction protection (12-month notice, moving-cost compensation, right of return, replacement units), a Renters' Hub for tenant rights, tighter short-term rental licensing, advocacy for vacancy control between tenancies, and a bylaw requiring landlords to keep one room of every rental at or below 26°C during heat warnings." },
+  { id: "M10", code: "L7", pillar: "liveable",
+    label: "Transparent algorithmic waitlist allocation",
+    what: "One digital portal for City-affiliated and partner non-profit housing waitlists, with the point weights published, your position in the queue visible, and no way to jump it. BC Housing remains the social-housing operator." },
+  { id: "M11", code: "L8", pillar: "liveable",
+    label: "Homelessness — Housing First + STEP throughput",
+    what: "Cut unsheltered homelessness by half, from about 320 to under 160, through Housing First, plus a STEP-style programme (Supporting Tenants, Enabling Pathways) that moves stabilised residents out of supportive housing so the unit behind them frees up. Reported as cost per successful placement, not dollars spent." },
+  { id: "M12/M13/M13b/M13c", code: "L9", pillar: "liveable",
+    label: "Families, childcare, doctors, youth",
+    what: "Municipal levers for families: advocacy for 500 new childcare spaces with childcare permits issued in 60 days, school food quality, low-rent clinic space and tax exemptions to recruit family doctors, and programming for 18 to 25 year olds." },
+  { id: "M13d", code: "L10", pillar: "liveable",
+    label: "Standing School District 61 agreement",
+    what: "One standing agreement with School District 61: a published annual work plan, a joint council-and-board meeting held in public once a year, school gyms, fields and playgrounds open to residents outside school hours, and safe walking routes to every school run as a programme rather than a complaint queue." },
+  { id: "M14/M16/M17/M18", code: "L11", pillar: "liveable",
+    label: "Cleanliness and the public realm",
+    what: "A published cleanliness standard: 90% of graffiti removed within 48 hours with the share reported quarterly, an anti-rat and pest plan, street sweeping in the evenings and on weekends downtown, and murals on the surfaces that get tagged repeatedly." },
+  { id: "M19/M22/M38–M42b", code: "L12", pillar: "liveable",
+    label: "Mobility + Vision Zero",
+    what: "Adaptive traffic signals starting with 10 intersections on Douglas Street, advocacy for rapid transit on the E&N corridor to the Westshore, and Vision Zero: the road-safety approach that treats zero traffic deaths as the target rather than an acceptable rate." },
+  { id: "M20b/M23b", code: "L13", pillar: "liveable",
+    label: "Walking, and transit — what the City controls",
+    what: "A published sidewalk gap inventory and crossing standard, and a named capital line for bus lanes, signal priority and stops. Routes, fares and frequency belong to BC Transit, so the City publishes its annual position and how its Commission representatives voted rather than promising what it cannot deliver." },
+  { id: "M24b/M25b", code: "L14", pillar: "liveable",
+    label: "Accessibility and public washrooms",
+    what: "A publicly accessible 24/7 washroom at least every 500 metres downtown, in the Inner Harbour and on the main commercial corridors, plus a 24-month accessibility audit of every City sidewalk, building, park and washroom against a published standard." },
+  { id: "M25", code: "L15", pillar: "liveable",
+    label: "Fix roads first",
+    what: "A sequencing rule inside the existing road capital budget rather than new money: fix the maintenance backlog before building new things, repair potholes within 7 days of report, and publish road condition quarterly." },
+  { id: "M26", code: "S1", pillar: "safe",
+    label: "Downtown Public Order Team",
+    what: "One command structure putting VicPD, bylaw, sanitation and outreach on the same downtown deployment plan, with a single 8 a.m. briefing, one field supervisor per shift and one co-located desk, instead of four agencies working the same block separately." },
+  { id: "M26b", code: "S2", pillar: "safe",
+    label: "Civilian crisis response team",
+    what: "Trained civilian crisis workers, not police, on mental-health and wellness calls, dispatched from the same board as the downtown team, with the dispatch criteria published before launch. It proceeds only if a provincial or health-authority partner cost-shares." },
+  { id: "M27", code: "S3", pillar: "safe",
+    label: "Bylaw enforcement hours 6am–10pm",
+    what: "Extend bylaw enforcement to 6 a.m. to 10 p.m., seven days a week. It currently runs 7 a.m. to 4 p.m. on weekdays only, missing the evenings and weekends when disorder peaks. Funded from the competitive-testing savings at M15." },
+  { id: "M28", code: "S4", pillar: "safe",
+    label: "Data-targeted enforcement",
+    what: "Direct enforcement at the specific addresses and hours the call data identifies rather than spreading patrol evenly, with focused deterrence and Crown coordination on violent repeat offenders, and outreach decoupled from enforcement for everyone else." },
+  { id: "M28b", code: "S5", pillar: "safe",
+    label: "Business security cost-spreading",
+    what: "A capped City reimbursement for street-front businesses in designated high-exposure zones, covering private security hours, glazing repair and sharps-bin servicing above a deductible. Eligibility is set by police call-volume data rather than by application." },
+  { id: "M28d", code: "S6", pillar: "safe",
+    label: "Community paramedicine",
+    what: "Paramedics working proactively with the high-frequency callers who generate the most emergency calls, so the call is never placed. BC Emergency Health Services delivers it; the City funds a partnership share, provides space and advocates." },
+  { id: "M29/M29b", code: "S7", pillar: "safe",
+    label: "VicPD funding + regional policing review",
+    what: "Renegotiate the VicPD cost split with Esquimalt, which Victoria currently funds at 86.33%, with binding mediation if the two cannot agree. Then co-sponsor an 18-month review of whether policing across Greater Victoria should be delivered regionally." },
+  { id: "M30", code: "S8", pillar: "safe",
+    label: "Smart LED + IoT streetlights, no surveillance",
+    what: "Convert Victoria's roughly 7,000 to 10,000 streetlights to connected LEDs that report their own outages, dim adaptively and cut energy cost, with an explicit rule against cameras, facial recognition, audio detection and behavioural AI on that network." },
+  { id: "M31/M31b/M31c/M32", code: "S9", pillar: "safe",
+    label: "Safety dashboard, published enforcement record, crime target",
+    what: "A weekly operations dashboard, a quarterly enforcement record showing outcomes rather than tickets issued, the existing community safety plan retrofitted so every commitment names a legal authority, a lead, a deadline, a target and a cost, and a 15% crime reduction by 2030." },
+  { id: "M33", code: "S10", pillar: "safe",
+    label: "Enforce existing bylaws (daytime sheltering)",
+    what: "The rules already exist, including overnight sheltering in designated parks down by 7 a.m. and sidewalk obstruction. The gap is enforcement capacity, not missing law. This adds no rules and no staff; it commits to applying them consistently and publishing whether we did." },
+  { id: "M33b", code: "S11", pillar: "safe",
+    label: "Drug-use buffer zones",
+    what: "Illicit drug use and possession prohibited within 30 metres of schools, playgrounds, sports fields, libraries and other child-focused spaces, enforced by verbal direction first, then seizure, then referral to treatment, with arrest only where public safety requires it." },
+  { id: "M34–M37", code: "S12", pillar: "safe",
+    label: "Encampment response, reclaiming spaces, night lighting",
+    what: "Same-day removal of structures blocking sidewalks and doorways with belongings stored for retrieval, a 5 p.m. daily publication of available shelter spaces so enforcement only follows capacity, named priority areas (Inner Harbour, Centennial Square and Pandora, Beacon Hill Park), and streetlights dimmed rather than switched off at midnight." },
+  { id: "M43–M46b", code: "B1", pillar: "beautiful",
+    label: "Heritage and cultural-venue preservation",
+    what: "Design standards for new buildings in heritage areas, a Victoria standard for street furniture as it is replaced, restoration incentives for heritage facades, and a right of first refusal plus a lease-bridge fund so long-standing cultural venues are not lost when a lease ends." },
+  { id: "M45b/M45c", code: "B2", pillar: "beautiful",
+    label: "Pedestrianisation and the signature project",
+    what: "Pedestrianisation pilots at Bastion Square, on Government Street in summer and in Fan Tan Alley, reversed after two seasons if they miss published criteria. Plus one signature public-space project chosen by residents from a shortlist of three (a Pandora linear park, a continuous Inner Harbour promenade, or a full Centennial Square renewal) and approved by referendum." },
+  { id: "M47–M49", code: "B3", pillar: "beautiful",
+    label: "Heritage incentives, lighting, parks",
+    what: "Close the gaps in the waterfront walkway so the whole coastline is walkable, keep heritage and ornamental lighting on until midnight instead of switching it off at 10 p.m., and restore skilled horticulture in the parks with a five-year Beacon Hill Park restoration." },
+  { id: "M50/M50b/M51/M52", code: "B4", pillar: "beautiful",
+    label: "Culture, sport, and the arts funding floor",
+    what: "Civic cultural spaces open two evenings a week until 9 p.m. and libraries on Sundays, year-round outdoor activation (night markets, heated patios, busking zones), sport facilities open 6 a.m. to 10 p.m. with the Royal Athletic Park budget restored, and an arts funding floor that cannot be lowered without 6 of 9 councillors and a published reason." },
+  { id: "M53/M53b/M53c", code: "B5", pillar: "beautiful",
+    label: "GIS, AI consultation imagery, LIDAR",
+    what: "Put the City's underground utility records (water, stormwater, sewer, telecom) on one map so the same street is not dug up twice, generate AI imagery so residents can see a proposal before it is built, and run a one-time LIDAR laser scan of downtown. The full digital twin was deliberately dropped as too big for a city Victoria's size." },
+  { id: "M53d", code: "B6", pillar: "beautiful",
+    label: "Published municipal AI standard",
+    what: "A public register of every AI system the City uses, mandatory human decision-making with automated decisions against a resident prohibited, AI-generated images labelled as such, and prompts and outputs treated as records disclosable under freedom of information." },
+  { id: "M54–M57", code: "B7", pillar: "beautiful",
+    label: "Local-tech procurement, open data, Wi-Fi, EV charging",
+    what: "Local-preference scoring for Victoria's technology cluster, the ocean economy named as the city's declared economic vertical, an expanded open-data portal with air-quality sensors and free public Wi-Fi, and more public EV charging." },
+  { id: "M58/M58b/M64b", code: "B8", pillar: "beautiful",
+    label: "Climate, district energy, seismic",
+    what: "A 50% cut in community emissions by 2030 against 2007, district energy (shared low-carbon heat for a cluster of buildings, run as a ring-fenced utility paid for by the ratepayers who use it), and a seismic and coastal-resilience inventory for the hazard Victoria actually faces." },
+  { id: "M59–M63", code: "B9", pillar: "beautiful",
+    label: "Trees, mode share, ecosystems, emergency preparedness",
+    what: "Replace the oldest stormwater pipes and prepare the coast for sea-level rise, expand the Climate Friendly Homes retrofit rebates and finally publish the uptake, plant 5,000 trees toward a 35% canopy by 2035, and shift 60% of trips to transit, walking or cycling by 2030." },
+  { id: "M15", code: "W1", pillar: "managed",
+    label: "Managed competition",
+    what: "Every contract cycle, the City's own crews submit a costed bid alongside private bidders on the same specification, and the cheaper competent option wins. At least 80% of existing City workers are re-hired at equal or better pay whoever wins, and the City winning is a permitted outcome rather than a failure. Phoenix ran this model for a decade." },
+  { id: "M65", code: "W2", pillar: "managed",
+    label: "Rotating zero-based reviews",
+    what: "Every programme justifies itself from zero rather than from last year's number, 3 to 4 service areas per budget cycle on a rotation. Every grant over $50,000 is reviewed against three published questions: is this the City's job, is it delivering, and is someone else already funding it. It is explicitly not a test of a recipient's opinions." },
+  { id: "M66", code: "W3", pillar: "managed",
+    label: "Tax glide path, capped on the residential rate",
+    what: "A declining cap on the property tax increase, 6.5% then 5% then inflation plus population growth of about 3.5%, measured on the residential rate rather than the aggregate. Going above the cap takes 6 of 9 councillors and a published reason." },
+  { id: "M66b/M66c", code: "W4", pillar: "managed",
+    label: "Over-collection refund + debt rule",
+    what: "Where audited results beat budget by more than 1.5% of operating expenditure, the excess goes back as a credit on the next tax notice instead of into reserves. And the scheduled debt-reduction payment stops being available as a balancing item: deferring it takes 6 of 9 councillors and a published reason." },
+  { id: "M66d", code: "W5", pillar: "managed",
+    label: "The Household Bill",
+    what: "One published figure for what the City and the CRD together cost a household per year, property tax plus water, sewer, solid waste and stormwater, given as a dollar amount, a year-over-year change and a five-year forward view, so the real bill is visible instead of split across four lines." },
+  { id: "M67", code: "W6", pillar: "managed",
+    label: "Quarterly performance dashboard",
+    what: "A public dashboard, updated every quarter, carrying more than twenty published series: permit times, pothole repair, crime, the debt set, the Household Bill, the enforcement record, the AI register and the rest, so residents can hold council to account between elections rather than only at them." },
+  { id: "M68", code: "W7", pillar: "managed",
+    label: "Administrative overhead reduction by attrition",
+    what: "Reduce administrative positions by 12 to 15% over the term by not automatically refilling vacancies as people retire or leave, paired with digitising paper processes. No layoffs." },
+  { id: "M69", code: "W8", pillar: "managed", isNew: true,
+    label: "Real-estate rationalisation",
+    what: "A full inventory and utilisation audit of every City-owned property, then sell or lease what does not serve an essential public function. Under section 188 of the Community Charter the proceeds retire debt attached to that property and buy capital assets; they are not available as general revenue, and the measure says so." },
+  { id: "M70/M70b", code: "W9", pillar: "managed",
+    label: "Provincial downloading ledger",
+    what: "A quarterly public ledger of every provincial or federal responsibility Victoria delivers without funding, with an estimated cost per file, twice-yearly advocacy resolutions file by file, and a published list of services the City will not take on any more of without dedicated money." },
+  { id: "M70c", code: "W10", pillar: "managed",
+    label: "The regional bill, CRD cost and the Goldstream plant",
+    what: "A published annual City position on regional cost and a published record of how Victoria's CRD representatives voted, so the part of the bill decided at the region stops being invisible. On the Goldstream filtration plant, ACTW takes no position on whether it should be built, only on the standard of evidence required before a billion-dollar commitment is locked in." },
+  { id: "M71–M73d", code: "W11", pillar: "managed",
+    label: "Business, downtown, economic development",
+    what: "Cut downtown storefront vacancy from 11% to 5%, reduce small-business red tape, protect the last of the industrial and marine-industrial land from residential conversion, and fold tourism and economic development into one small office that owns that one number." },
+  { id: "M74/M75/M76", code: "W12", pillar: "managed",
+    label: "Capital threshold, first-hour parking, permit fees",
+    what: "Voter approval for any new capital project over $25 million, though not for lifecycle replacement of existing infrastructure, a free first hour of downtown parking, and reduced or waived permit fees on renovations under $50,000 that add a suite, improve accessibility or cut energy use." },
+  { id: "M77/M78/M78b", code: "D1", pillar: "democratic",
+    label: "$25M referendum threshold, 5-step process, material change rule",
+    what: "Any new capital project over $25 million goes to a binding public vote, every major project follows the same five steps (consult, design, publish the visualisation and impact analysis, vote, report quarterly during construction), and a private development amended by more than 10% after the public hearing has closed goes back to the people who spoke to it." },
+  { id: "M79/M79b", code: "D2", pillar: "democratic",
+    label: "Integrity Commissioner + 60-day consultation response",
+    what: "An arm's-length Integrity Commissioner with jurisdiction over conflicts of interest, gifts, post-employment restrictions and code-of-conduct breaches, plus a written response to every public consultation within 60 days and the draft published 30 days before the adoption vote." },
+  { id: "M79c–f", code: "D3", pillar: "democratic", isNew: true,
+    label: "Lobbyist registry, FOI fee, remuneration",
+    what: "Published mandate letters and quarterly scorecards so residents can tell who owns what, a searchable registry of meetings between development proponents and council or staff, the $10 freedom-of-information application fee waived, and any change to council pay taking effect only after the next election." },
+  { id: "M80/M80b/M80c", code: "D4", pillar: "democratic",
+    label: "Neighbourhoods, language access, Local Area Plans",
+    what: "Real budgets and a delivery role for neighbourhood associations, civic access in Canada's two official languages (plain-language English plus French for the core forms and notices, with interpretation on request), and two new Local Area Plans per year giving parcel-level certainty about what can be built where." },
+  { id: "M82/M82b", code: "D5", pillar: "democratic", isNew: true,
+    label: "Community surveys, turnout and ballot access",
+    what: "An annual statistically valid survey across all 12 neighbourhoods, plus better ballot access: at least one weekend advance voting day, voting places weighted toward the neighbourhoods that turned out lowest, campus and care-home voting, and a published turnout target of 50% for 2030." },
+  { id: "M81", code: "D6", pillar: "democratic",
+    label: "Saanich amalgamation",
+    what: "Finish the amalgamation file rather than restart it. The Citizens' Assembly already sat and recommended a merger in April 2025, and the 17 October ballot question is non-binding. The Province will not authorise a binding vote until financial, transitional and service-impact analysis is done and First Nations are consulted, so the commitment is to deliver those and then ask again." },
 ];
 
 /* One row per topic, in TOPICS order; one value per candidate, in CANDIDATES
@@ -309,7 +452,7 @@ const COLUMNS = [
   { key: "recon",     label: "Reconciliation",      short: "Recon",          topics: ["M1–M5"] },
 ];
 
-/* Published pillar grades from §2 of Grade Breakdown v3.2, kept so the build
+/* Published pillar grades from §2 of Grade Breakdown v3.4, kept so the build
    can assert its own recomputation against the master rather than silently
    diverging from it. [letter, n] — n is the number of scored topics in that
    pillar for that candidate; letter is null where the master prints · because
@@ -353,12 +496,23 @@ const EXCLUSIONS = {
     ["Recorded pro-enforcement votes, unnamed", "M27", "Gardiner — the qualifying vote is already scored once at M33"],
   ],
   regrade: "Three marks were regraded upward: the CSWB adoption vote of 3 July 2025 carried <em>Commits</em> at M26 and M27 but <em>Agrees</em> at M11 for the same councillors on the same act. It is now Commits at all three (Dell, Kim and Coleman at M11, Weak → Partial).",
+  sourced: "Two further marks were <strong>sourced rather than changed</strong>: Gardiner and Kim held marks at M70/M70b on thin wording where a real quotation existed. The sentences are attached; the marks themselves are unchanged. It is recorded here because a mark that survives a re-verification on better evidence is a different object from one that was never checked.",
   net: "Every excluded mark was worth +0.5, below almost every mean, so the correction ran <strong>upward</strong>. The defect had been quietly suppressing sitting councillors' grades: Caradonna moved C+ → B− and Dell C → C+.",
 };
 
-/* The four defects the master documents. Published on the site verbatim in
-   substance, because a grade with a known defect that the publisher does not
-   disclose is worse than no grade. */
+/* The defects, published on the site verbatim in substance, because a grade
+   with a known defect that the publisher does not disclose is worse than no
+   grade at all.
+
+   Four of the five are the four §4 of Grade Breakdown v3.4 documents, in its
+   order. The fifth — “Commits” not distinguishing authoring an instrument from
+   voting for one — was documented at v3.2 and is not restated at v3.4. It is
+   kept here rather than dropped, and labelled as carried forward so nobody
+   mistakes it for something the current master says. The methodology it
+   describes has not changed, so the caveat is still true of every mark on this
+   page; and a page whose whole argument is that a publisher should disclose
+   what is wrong with its own scale does not get to quietly stop disclosing one
+   because the upstream document stopped repeating it. */
 const DEFECTS = [
   {
     n: 1,
@@ -379,23 +533,32 @@ const DEFECTS = [
   {
     n: 2,
     status: "open",
+    isNew: true,
+    title: "One mark may rest on a measure text the framework has since rewritten",
+    body: "<strong>Susan Kim holds Aligned 3.0 at M80/M80b/M80c</strong>, her highest mark, on non-English grant applications — her own 2022 plank, recorded at the time as absorbed into M80b. <strong>M80b now reads “civic access in Canada's two official languages”</strong>: plain-language English plus French for the core corpus, with no parallel community-language channels, referring residents who need other languages to the settlement sector. On that text her plank was not absorbed. It was declined.",
+    fix: "Not resolved, and deliberately so. <strong>The mark stands pending a decision.</strong> Lowering a mark held by a councillor with no relationship to this framework, on the strength of the framework's own redrafting of its own measure, is not a correction that should be made quietly — the change is in ACTW's text, not in anything Kim said or did. It is disclosed here instead and it should be resolved before this cell is quoted.",
+  },
+  {
+    n: 3,
+    status: "open",
     title: "Below three scored topics a letter is not a finding",
     body: "Six of the fifteen areas can never reach the three-topic floor at all: Homelessness, Walking &amp; Transit, Cleanliness and Reconciliation each contain one topic; Mobility and Business contain two. Eleven of the fifteen candidates also have at least one pillar below the floor.",
     fix: "<strong>No letter is printed below three scored topics</strong>, in the area grid and in the pillar table alike. The cell reports the marks it holds and their mean instead, because a single mark needs no averaging and a letter computed from one mark would be read as a verdict on a portfolio. Every grade that is printed shows its n.",
   },
   {
-    n: 3,
+    n: 4,
     status: "open",
     title: "One Opposed mark may not be an Opposed mark",
     body: "Four of the five Opposed marks are roll-call votes: dated, unambiguous, in the minutes. <strong>Bella Lee's is one sentence on her own website</strong>, read as opposition to the measure rather than as criticism of how the bylaw is enforced. Moving Opposed to −1.0 reduces what that reading costs her; it does not make the reading correct.",
     fix: "Not resolved. <strong>It must be put to her directly before her Safety cell is used publicly.</strong> The cell is footnoted wherever it appears.",
   },
   {
-    n: 4,
+    n: 5,
     status: "open",
+    carried: "Documented at v3.2 · not restated at v3.4 · kept here",
     title: "“Commits” does not distinguish authoring an instrument from voting for one",
     body: "Hammond authoring the sheltering ban and seven colleagues voting for it all score Aligned 3.0. That is the methodology working as written, and it is also why Hammond's Safe pillar understates the distance between him and the field on enforcement.",
-    fix: "Not corrected. Fixing it needs a fifth level on Question 1, which would change every mark on the page. It is disclosed instead.",
+    fix: "Not corrected. Fixing it needs a fifth level on Question 1, which would change every mark on the page. It is disclosed instead. <strong>The master stopped restating this defect at v3.4 without resolving it</strong>; the scale it describes is unchanged, so it is kept on this page rather than dropped.",
   },
 ];
 

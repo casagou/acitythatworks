@@ -97,6 +97,13 @@ table.mg thead th.gt{z-index:3;background:var(--paper)}
 .gd{display:block;font-size:11.5px;line-height:1.3;color:var(--navy)}
 .gp{display:block;font-size:11px;margin-top:2px}
 .newt{font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.1em;background:var(--gold);color:#3a2c05;padding:1px 4px}
+/* The topic name opens the topic's own definition, so it has to look like a
+   control. A dotted underline on the title says "there is more here" without
+   the weight of a link colour repeated 55 times down a sticky column. */
+td.gt[data-topic]{cursor:pointer}
+td.gt[data-topic] .gd{border-bottom:1px dotted rgba(26,54,104,.45);display:inline-block}
+td.gt[data-topic]:hover .gd,td.gt[data-topic].open .gd{border-bottom-color:var(--gold-ink);color:var(--gold-ink)}
+td.gt[data-topic]:focus-visible{outline:2px solid var(--navy);outline-offset:-2px}
 td.gc{text-align:center;font-family:'JetBrains Mono',monospace;font-size:11px;white-space:nowrap;cursor:pointer;color:#1c1917}
 td.gc:focus{outline:2px solid var(--navy);outline-offset:-2px}
 td.gc.gx{color:#cfcac5;cursor:default}
@@ -285,7 +292,7 @@ td.bad{color:#B5341F;font-weight:600}
 <div class="lbl">◆ Read this before the grades</div>
 <p><strong>Read the “graded on” column before the grade.</strong> A grade computed on 6 topics and a grade computed on 25 are not comparable claims. <strong>Silence is never scored</strong>, so a narrow base is a fact about a publication calendar, not about a candidate.</p>
 <p><strong>Most municipal candidates publish platform detail in September.</strong> A matrix scored in July and August therefore <strong>systematically under-reports challengers relative to incumbents</strong>, who have four years of votes on the record. That is a property of the calendar, not a finding about anyone, and it is the single most important caveat on this page. <strong>A re-score after nominations close on 11 September is mandatory before this document informs anything.</strong></p>
-<p><strong>This page discloses four defects in its own scale, one of them now fixed at source, and prints no letter at all where the base is thinner than three topics.</strong> <a href="#defects">Read the defects</a> before quoting any cell.</p>
+<p><strong>This page discloses five defects in its own scale, one of them now fixed at source, and prints no letter at all where the base is thinner than three topics.</strong> <a href="#defects">Read the defects</a> before quoting any cell.</p>
 </div>
 
 <nav class="toc" aria-label="On this page">
@@ -299,7 +306,7 @@ td.bad{color:#B5341F;font-weight:600}
 <li><a href="#scale">How a mark is decided</a></li>
 <li><a href="#sourcing">What counts as a source</a></li>
 <li><a href="#blank">What a blank means</a></li>
-<li><a href="#defects">Four defects in the scale</a></li>
+<li><a href="#defects">Five defects in the scale</a></li>
 <li><a href="#bias">This document's own bias</a></li>
 <li><a href="#open">Open items</a></li>
 </ol>
@@ -392,7 +399,7 @@ td.bad{color:#B5341F;font-weight:600}
 
 <h2 id="pillars">Grades by pillar</h2>
 <p>The same marks, grouped by the framework's six pillars. <strong>Every pillar grade shows its n.</strong> A grade resting on fewer than five scored topics is marked as a thin base — the number under it is the mean and the count it rests on.</p>
-<p><strong>Below three scored topics no letter is shown</strong>, here as in the area grid above: the cell prints the mean in a dashed box instead. Eleven of the fifteen candidates have at least one pillar in that state. <a href="#defects">The reason is defect 2 below.</a></p>
+<p><strong>Below three scored topics no letter is shown</strong>, here as in the area grid above: the cell prints the mean in a dashed box instead. Eleven of the fifteen candidates have at least one pillar in that state. <a href="#defects">The reason is defect 3 below.</a></p>
 <div class="tbl-wrap gridwrap" style="max-height:none">
 <table class="plt">
 <thead><tr><th style="text-align:left">Candidate</th><!--PILLAR_HEAD--></tr></thead>
@@ -402,6 +409,7 @@ td.bad{color:#B5341F;font-weight:600}
 
 <h2 id="grid">The full grid — 55 topics</h2>
 <p><strong>Select any number to see the mark, its value and the sentence it rests on.</strong> A dot means the mark is excluded: no public position, a Record entry, or no information. Three topics are new in v3.0, created because candidates hold published positions the previous topic set had nowhere to record.</p>
+<p><strong>Select a topic name to see what the topic actually is.</strong> Every one of the 55 now carries a plain-English definition of the measure behind it, expanding the acronyms in place — DCC, STR, STEP, GIS, LIDAR, FOI, IoT. <strong>Seven rows are deliberately empty</strong>, because the entire field is silent on them; they are printed anyway, since a topic list that quietly drops what nobody answered can produce almost any result without changing a single mark.</p>
 <p style="font-size:13.5px;color:#57534e"><strong>Evidence coverage, stated plainly.</strong> <!--EVCOV--> marks currently display the sentence they rest on. The rest show the mark and its value; their evidence sentence lives in the master and is being migrated. <strong>The full per-cell ledger — Q1, Q2, mark, value and evidence for all <!--MARKS--> marks — is held outside Notion and available on request.</strong></p>
 <div class="gwrap">
 <table class="mg">
@@ -442,8 +450,8 @@ td.bad{color:#B5341F;font-weight:600}
 </table>
 </div>
 
-<h2 id="defects">Four defects in the scale, quantified</h2>
-<p><strong>These are properties of the methodology, not of the evidence.</strong> They are published here because a grade with a known defect that its publisher does not disclose is worse than no grade at all. One has now been fixed at source; three have not.</p>
+<h2 id="defects">Five defects in the scale, quantified</h2>
+<p><strong>These are properties of the methodology, not of the evidence.</strong> They are published here because a grade with a known defect that its publisher does not disclose is worse than no grade at all. One has been fixed at source; four have not.</p>
 
 <div class="defect fixed">
 <span class="dstat">Fixed in v3.2 · 2 August 2026</span>
@@ -459,24 +467,31 @@ td.bad{color:#B5341F;font-weight:600}
 </div>
 
 <div class="defect">
+<span class="dstat">Open · new in v3.4</span>
+<h3>2. One mark may rest on a measure text this framework has since rewritten</h3>
+<p><strong>Cllr Susan Kim holds Aligned 3.0 on Neighbourhoods, language access and Local Area Plans</strong> — her highest mark anywhere — for non-English grant applications, a 2022 plank of hers recorded at the time as absorbed into ACTW's M80b. <strong>M80b now reads “civic access in Canada's two official languages”</strong>: plain-language English plus French for the core corpus, explicitly no parallel community-language channels, referring residents who need other languages to the settlement sector. On that text her plank was not absorbed. <strong>It was declined.</strong></p>
+<div class="fixnote"><strong>Not resolved, and deliberately not resolved quietly.</strong> The mark stands pending a decision. What changed is ACTW's own text, not anything Kim said or did — and lowering a mark held by a councillor with no relationship to this framework, on the strength of the framework rewriting its own measure, is not a correction to make in silence. It is disclosed here instead, and it should be settled before this cell is quoted.</div>
+</div>
+
+<div class="defect">
 <span class="dstat">Open</span>
-<h3>2. Below three scored topics, a letter is not a finding</h3>
+<h3>3. Below three scored topics, a letter is not a finding</h3>
 <p><strong>Six of the fifteen areas can never reach the three-topic floor at all.</strong> Homelessness, Walking &amp; Transit, Cleanliness and Reconciliation contain one topic each; Mobility and Business contain two. Eleven of the fifteen candidates also have at least one pillar below the floor. The only real fix is more published platform material, which September will supply.</p>
 <div class="fixnote"><strong>What this site does about it.</strong> No letter is printed below three scored topics, in the area grid and the pillar table alike — <strong>the cell reports the marks it holds and their mean instead</strong>, in a dashed box that cannot be mistaken for a grade. Every letter that is printed shows its n, and any base under five topics is flagged as thin.</div>
 </div>
 
 <div class="defect">
 <span class="dstat">Open</span>
-<h3>3. One Opposed mark may not be an Opposed mark</h3>
+<h3>4. One Opposed mark may not be an Opposed mark</h3>
 <p>Four of the five Opposed marks are roll-call votes: dated, unambiguous, in the minutes. <strong>Bella Lee's is one sentence on her own website</strong>, read as opposition to the measure rather than as criticism of how the bylaw is enforced. Moving Opposed to −1.0 reduces what that reading costs her; <strong>it does not make the reading correct.</strong></p>
 <div class="fixnote"><strong>Not resolved.</strong> It must be put to her directly before her Safety cell is used publicly. The cell is footnoted wherever it appears on this page.</div>
 </div>
 
 <div class="defect">
-<span class="dstat">Open</span>
-<h3>4. “Commits” does not distinguish authoring an instrument from voting for one</h3>
+<span class="dstat">Open · carried forward from v3.2</span>
+<h3>5. “Commits” does not distinguish authoring an instrument from voting for one</h3>
 <p>Hammond authoring the sheltering ban and seven colleagues voting for it all score Aligned 3.0. That is the methodology working as written, and it is also why Hammond's Safe pillar understates the distance between him and the field on enforcement.</p>
-<div class="fixnote"><strong>Not corrected.</strong> Fixing it needs a fifth level on Question 1, which would change every mark on the page. It is disclosed instead.</div>
+<div class="fixnote"><strong>Not corrected.</strong> Fixing it needs a fifth level on Question 1, which would change every mark on the page. It is disclosed instead. <strong>The master stopped restating this defect at v3.4 without resolving it.</strong> The scale it describes is unchanged and still produces every mark above, so it is kept here rather than dropped — a page arguing that publishers should disclose what is wrong with their own scale does not get to stop disclosing one because the upstream document stopped repeating it.</div>
 </div>
 
 <h2 id="bias">Four things a reader should know about this document's own bias</h2>
@@ -531,12 +546,15 @@ td.bad{color:#B5341F;font-weight:600}
     var v = parseFloat(DATA.grid[ti][DATA.cands.map(function(x){return x.key;}).indexOf(ck)]);
     var mk=null; for(var k in DATA.marks){ if(DATA.marks[k].value===v) mk=DATA.marks[k]; }
     var ev = DATA.ev[ti+'|'+ck];
-    var actw = DATA.actw[ti];
     var h = '<h4>'+c.name+'</h4>';
-    h += '<div class="dsub">'+t.id+' · '+t.label+'</div>';
+    h += '<div class="dsub">'+t.code+' · '+t.id+' · '+t.label+'</div>';
     h += '<div class="dmark"><b>'+mk.label+'</b><span class="dv">'+fmt(v)+'</span>'+
          '<span class="dv" style="color:#6b6664">counts toward '+c.name.split(' ').slice(-1)[0]+"'s mean of "+c.mean.toFixed(2)+' over '+c.n+' scored topics</span></div>';
-    if(actw){ h += '<div class="dlab">What this framework proposes</div><div class="dtext">'+actw+'</div>'; }
+    /* The measure itself, before the candidate's distance from it. A mark is
+       unreadable without it: "Aligned 3.0" says nothing until you know what
+       the candidate is aligned WITH. This replaced a shorter line that existed
+       for only 15 of the 55 topics and predated the v1.10 reconciliation. */
+    h += '<div class="dlab">What this topic is</div><div class="dtext">'+t.what+'</div>';
     h += '<div class="dlab">The sentence this mark rests on</div>';
     h += ev ? '<div class="dtext">'+ev+'</div>'
             : '<div class="dnone">Not yet migrated to this site. This mark’s evidence sentence is held in the master document; the full per-cell ledger with Q1, Q2, mark, value and evidence for all '+DATA.nmarks+' marks is available on request from <a href="mailto:info@acitythatworks.ca">info@acitythatworks.ca</a>.</div>';
@@ -579,7 +597,7 @@ td.bad{color:#B5341F;font-weight:600}
       h += '<div class="dwarn"><strong>No letter is printed here.</strong> '+g.n+' scored topic'+(g.n>1?'s are':' is')+
            ' below the three-topic floor, so this cell reports the mark'+(g.n>1?'s it holds':' it holds')+
            ' and their mean. <strong>It is not a grade for '+col.label+'</strong>, and it should not be quoted as one. '+
-           '<a href="#defects">Defect 2 explains the rule.</a></div>';
+           '<a href="#defects">Defect 3 explains the rule.</a></div>';
     } else if(g.state==='record'){
       h += '<div class="dmark"><b>📋</b><span class="dv">Record only — nothing scored</span></div>';
       h += '<div class="dtext">Every topic in this area is a documented fact about the 2022–2026 term rather than a stated position. '+
@@ -610,6 +628,37 @@ td.bad{color:#B5341F;font-weight:600}
     return h;
   }
 
+  /* The topic itself, with no candidate in it. Until v3.3 the master had no
+     definition for any of the 55 topics: a reader could count how many
+     candidates were scored on a row without being able to discover anywhere
+     what the row proposed, and on the seven rows where the whole field is
+     silent that meant publishing "nobody has said anything about this"
+     without ever saying what "this" was. Clicking the topic name answers it. */
+  function topicHtml(ti){
+    var t = DATA.topics[ti];
+    var row = DATA.grid[ti];
+    var scored = row.filter(function(v){ return v!=='.' && v!=='R'; }).length;
+    var rec = row.filter(function(v){ return v==='R'; }).length;
+    var h = '<h4>'+t.label+'</h4>';
+    h += '<div class="dsub">'+t.code+' · '+t.id+(t.isNew?' · new in v3.0':'')+'</div>';
+    h += '<div class="dlab">What this topic is</div><div class="dtext">'+t.what+'</div>';
+    h += '<div class="dlab">Coverage</div><div class="dtext" style="font-size:13.5px">';
+    if(scored){
+      h += '<strong>'+scored+' of '+DATA.cands.length+' candidates</strong> hold a scored position here'+
+           (rec? ', and '+rec+(rec===1?' cell is':' cells are')+' Record — a documented fact about the 2022–2026 term rather than a stated position, never scored':'')+
+           '. The rest were researched and nothing was located, which is excluded from every mean rather than scored zero.';
+    } else {
+      h += '<strong>No candidate in the field holds a located position on this topic.</strong> '+
+           'It is printed anyway, with its row empty, because a measure the whole field is silent on is a finding — '+
+           'and dropping it would let the topic list quietly choose the result.';
+    }
+    h += '</div>';
+    h += '<div class="dlab">Where this came from</div><div class="dtext" style="font-size:13.5px">'+
+         'Program <!--PROGRAM-->, read through §5 of Grade Breakdown v<!--MVER-->. '+
+         'Click any coloured cell in this row to see that candidate’s mark and the sentence it rests on.</div>';
+    return h;
+  }
+
   function open(td){
     var same = td.classList.contains('open');
     closeAll(false);
@@ -618,7 +667,9 @@ td.bad{color:#B5341F;font-weight:600}
     lastTrigger = td;
     var p=document.createElement('div');
     p.className='sc-panel';
-    var body = td.hasAttribute('data-col')
+    var body = td.hasAttribute('data-topic')
+      ? topicHtml(+td.getAttribute('data-topic'))
+      : td.hasAttribute('data-col')
       ? areaHtml(td.getAttribute('data-c'), td.getAttribute('data-col'))
       : panelHtml(+td.getAttribute('data-t'), td.getAttribute('data-c'));
     p.innerHTML='<div class="in"><button type="button" class="close" aria-label="Close">Close</button>'+body+'</div>';
@@ -644,10 +695,11 @@ td.bad{color:#B5341F;font-weight:600}
     }
   }
 
-  /* Two openable surfaces: an area grade in the 15-column grid, and a single
-     mark in the 55-topic grid. Both route through open(); the selector has to
-     cover both or the headline grid silently does nothing when clicked. */
-  var SEL = 'td.gc[data-t], td.cc[data-col]';
+  /* Three openable surfaces: an area grade in the 15-column grid, a single
+     mark in the 55-topic grid, and — since v3.4 put a definition on every
+     topic — the topic name itself. All route through open(); the selector has
+     to cover all three or a grid silently does nothing when clicked. */
+  var SEL = 'td.gc[data-t], td.cc[data-col], td.gt[data-topic]';
   document.addEventListener('click', function(e){
     var td = e.target.closest && e.target.closest(SEL);
     if(td) open(td);
