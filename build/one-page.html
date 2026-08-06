@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>A City That Works — One Page</title>
+<!--
+  SOURCE FOR A-City-That-Works-One-Page.pdf.
+
+  This file is the printable one-pager. It is not served to the web — it is
+  rendered to PDF and the PDF is what summary.html links. Regenerate with:
+
+      node build/onepage.js
+
+  which drives headless Chrome. Edit this file, never the PDF.
+
+  It is a single US Letter page by construction: .sheet is 8.5in x 11in with
+  @page margin 0, so what fits here is exactly what prints. Adding a bullet
+  means taking one out. If content overflows, the build script fails rather
+  than silently shipping a two-page "one-pager".
+
+  Fonts are a system stack on purpose. A door-knocking handout that renders
+  differently depending on whether the build machine could reach Google
+  Fonts is not a reproducible artifact.
+-->
+<style>
+@page{size:8.5in 11in;margin:0}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:8.5in}
+/* Sized to fill the sheet, not to fit it. This is read at a door and pinned
+   to a noticeboard, so the type runs as large as one page allows; the build
+   script fails the render if a change pushes it to two. */
+body{font-family:"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:#1c1917;font-size:8.37px;line-height:1.36;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+/* min-height, never height: a fixed height would let overflowing content
+   spill over the footer inside one page, which is exactly how a broken
+   layout slips past a page-count check. Growing past 11in paginates, and
+   the build script refuses a second page. */
+.sheet{width:8.5in;min-height:11in;display:flex;flex-direction:column;background:#fff}
+
+/* ── Masthead ─────────────────────────────────────────────────── */
+.mast{background:#1A3668;color:#fff;padding:22px 34px 20px;display:flex;align-items:flex-end;justify-content:space-between}
+.mast h1{font-size:31.28px;font-weight:800;letter-spacing:-.6px;line-height:.95}
+.mast .sub{font-size:9.2px;margin-top:6px;color:#cfd8e8}
+.mast .meta{text-align:right;font-size:7.36px;line-height:1.5;color:#cfd8e8}
+.mast .meta b{display:block;color:#fff;font-size:8.28px;font-weight:700}
+.rule-gold{height:3px;background:#D4A843}
+
+/* ── Section furniture ────────────────────────────────────────── */
+.body{flex:1;padding:14px 34px 0;display:flex;flex-direction:column}
+.sh{font-size:8.37px;font-weight:800;letter-spacing:.9px;color:#1A3668;text-transform:uppercase;border-bottom:1.4px solid #1A3668;padding-bottom:3px;margin-bottom:8px}
+.grp{font-size:7.82px;font-weight:800;letter-spacing:.7px;color:#7F5A0F;text-transform:uppercase;margin:7px 0 3px}
+.grp:first-child{margin-top:0}
+
+/* ── Stat tiles ───────────────────────────────────────────────── */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-bottom:8px}
+.stat{background:#eef1f7;border-left:2.5px solid #1A3668;padding:7px 9px 8px}
+.stat .n{font-size:21.16px;font-weight:800;color:#1A3668;line-height:1}
+.stat .l{font-size:7.36px;color:#44403c;margin-top:3px;line-height:1.3}
+.lede{font-size:8.19px;line-height:1.42;margin-bottom:8px}
+.lede b{color:#1A3668}
+
+/* ── Vision quote ─────────────────────────────────────────────── */
+.vision{background:#eef1f7;border-left:2.5px solid #1A3668;padding:8px 11px 7px;margin-bottom:10px}
+.vision p{font-style:italic;font-size:8.19px;line-height:1.44;color:#22304a}
+.vision .cap{font-size:6.99px;font-weight:800;letter-spacing:.7px;color:#1A3668;text-transform:uppercase;margin-top:5px}
+
+/* ── Two columns ──────────────────────────────────────────────── */
+.cols{display:grid;grid-template-columns:1.06fr 1fr;gap:22px;flex:1}
+ul{list-style:none}
+li{margin-bottom:4.05px;padding-left:7px;position:relative;line-height:1.33}
+li:before{content:"";position:absolute;left:0;top:3.6px;width:2.6px;height:2.6px;background:#1A3668;border-radius:50%}
+li b{color:#1A3668}
+
+/* ── Commitments ──────────────────────────────────────────────── */
+.cm{display:grid;grid-template-columns:13px 1fr auto;gap:5px;padding:3.04px 0;border-bottom:.5px solid #e3e5ea;align-items:baseline}
+.cm:last-child{border-bottom:none}
+.cm .i{font-size:7.27px;font-weight:700;color:#7F5A0F;text-align:right}
+.cm .t{font-weight:700;color:#1A3668;font-size:8.0px}
+.cm .v{font-size:7.45px;color:#57534e;text-align:right;white-space:nowrap}
+.cm.hi{background:#faf3e2}
+
+/* ── Money ────────────────────────────────────────────────────── */
+.money{margin-top:9px}
+.mr{display:flex;justify-content:space-between;gap:8px;padding:2.94px 0;border-bottom:.5px solid #e3e5ea;font-size:8.0px}
+.mr .a{white-space:nowrap;color:#44403c}
+.mr.tot{border-bottom:none;border-top:1.2px solid #1A3668;margin-top:2px;padding-top:4.5px;font-weight:800;color:#1A3668;font-size:8.46px}
+.mr.pes{border-bottom:none;font-style:italic;color:#B5341F;font-size:7.45px}
+
+/* ── Your address ─────────────────────────────────────────────── */
+.addr{margin-top:9px;background:#faf3e2;border:1px solid #e0c579;border-left:2.5px solid #D4A843;padding:7px 10px 8px}
+.addr .h{font-size:7.82px;font-weight:800;letter-spacing:.6px;color:#1A3668;text-transform:uppercase}
+.addr .s{font-size:7.27px;color:#57534e;margin:2px 0 4px}
+.ar{display:flex;justify-content:space-between;font-size:8.0px;padding:2.12px 0}
+.ar.d{font-weight:800;color:#1A3668;border-top:1px solid #e0c579;margin-top:2px;padding-top:3px}
+.addr .note{font-size:6.72px;font-style:italic;color:#6b6560;margin-top:5px;line-height:1.35}
+
+/* ── Is / Isn't ───────────────────────────────────────────────── */
+.isnt{display:grid;grid-template-columns:1fr 1fr;gap:22px;padding:9px 34px 10px}
+.isnt .h{font-size:8.1px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;margin-bottom:3px}
+.isnt .a .h{color:#227247}
+.isnt .b .h{color:#B5341F}
+.isnt p{font-size:7.82px;line-height:1.42;color:#44403c}
+
+/* ── Footer ───────────────────────────────────────────────────── */
+.foot{background:#1A3668;color:#fff;padding:10px 34px;display:flex;justify-content:space-between;align-items:center;font-size:8.0px}
+.foot b{font-size:9.02px}
+.foot .r{color:#cfd8e8;text-align:right;line-height:1.4}
+</style>
+</head>
+<body>
+<div class="sheet">
+
+<div class="mast">
+<div>
+<h1>A CITY THAT WORKS</h1>
+<div class="sub">A citizens' framework for Victoria 2026. &nbsp;Proven ideas. Measurable results.</div>
+</div>
+<div class="meta">
+<b>acitythatworks.ca</b>
+Version 1.10 &middot; August 5, 2026<br>
+Every measure costed and sourced
+</div>
+</div>
+<div class="rule-gold"></div>
+
+<div class="body">
+
+<div class="sh">The problem in 30 seconds</div>
+<div class="stats">
+<div class="stat"><div class="n">31%</div><div class="l">operating budget growth in three years, $300.0M to $394.1M</div></div>
+<div class="stat"><div class="n">9.34%</div><div class="l">residential tax rise in 2026, not the 7.28% headline</div></div>
+<div class="stat"><div class="n">$598</div><div class="l">policing per resident, the highest in BC (2023)</div></div>
+<div class="stat"><div class="n">61</div><div class="l">missing-middle permits in 2024, against a target of 150</div></div>
+</div>
+<div class="lede">Four consecutive years above inflation plus population growth, every one of them closed with one-time measures rather than structural savings &mdash; the 2026 budget was balanced in part by cancelling a $2M debt-reduction payment. And the tax rate is not the whole bill: on top of it sit water, sewer, solid waste and a $218.42 stormwater fee, against a CRD forecast that compounds to roughly 65% by 2030. More than $25M has gone to homelessness response since 2023 with no published outcome metrics, plus $11M repairing encampment damage. No competitive benchmarking. No published permit times. No zero-based reviews. No quarterly dashboard. No published household bill. <b>Victoria does not need to spend more. It needs to spend smarter.</b></div>
+
+<div class="vision">
+<p>Pandora is a linear park, and nobody was pushed to the next block to build it. Housing came first, the province paid its share, and the City published the count every quarter until the unsheltered number fell by half. Your tax notice carries a credit when the City over-collects. Your permit answer comes in writing. Every capital project over $25M goes to the voters. The budget grew 31% in three years and the city did not get 31% better &mdash; that gap is the mandate, and closing it pays for all of this without a single new tax.</p>
+<div class="cap">Victoria in 2030, if this framework is delivered</div>
+</div>
+
+<div class="cols">
+
+<div>
+<div class="sh">What we would do &mdash; fifteen flagship measures</div>
+
+<div class="grp">Foundation</div>
+<ul>
+<li><b>Government-to-government working tables</b> with the Songhees Nation and the Esquimalt Nation, on a standing quarterly cadence (M1&ndash;M5). Relationship precedes every other commitment on this page.</li>
+</ul>
+
+<div class="grp">Liveable</div>
+<ul>
+<li><b>Published permit times, by category (M7).</b> Simple under 6 weeks, complex under 6 months, rezoning under 9 months &mdash; your answer in writing, with a published quarterly variance report.</li>
+<li><b>12,000+ net new homes by 2030, and the right ones (M6, M7b, M8b).</b> 25% missing middle, 20% three-bedroom or larger, 15% non-market, 30% purpose-built rental, through a pre-approved pattern book with an automatic fast lane and a 24-month life-safety amnesty for the suites Victoria already has. Composition is the problem, not volume.</li>
+<li><b>Cut unsheltered homelessness by half (M11).</b> Housing-First with STEP throughput so supportive units free up rather than only multiply, capacity-first enforcement, and a published quarterly count.</li>
+</ul>
+
+<div class="grp">Safe</div>
+<ul>
+<li><b>Downtown Public Order Team (M26).</b> VicPD, bylaw, sanitation and outreach under one daily briefing, for the blocks that need it most.</li>
+<li><b>Bylaw enforcement 6 AM to 10 PM, seven days (M27),</b> against today's 7 AM to 4 PM. Every action published quarterly, including how much of it survived adjudication.</li>
+<li><b>Modern smart streetlighting (M30).</b> The Kelowna and Halifax model &mdash; LED, lit all night, self-financing in three to four years. No cameras. No behavioural AI. No audio surveillance.</li>
+</ul>
+
+<div class="grp">Beautiful</div>
+<ul>
+<li><b>One signature public space, chosen by residents (M45c).</b> Three costed concepts, all visualized before the vote, decided by referendum with a senior-government cost-share secured first &mdash; sequenced after the safety and capacity work, not instead of it.</li>
+<li><b>5,000 trees by 2030 and a 35% canopy by 2035 (M61),</b> from roughly 30% today. Free seedlings for homeowners, because 75% of Victoria's canopy sits on private land.</li>
+<li><b>Seismic and coastal resilience (M64b).</b> A published vulnerability inventory and a costed retrofit programme for City-owned buildings &mdash; and no private retrofit mandate, because the <i>Building Act</i> does not permit one.</li>
+</ul>
+
+<div class="grp">Well-managed</div>
+<ul>
+<li><b>Zero-based review of all 200+ programmes (M65).</b> Every programme justified from zero on a rotating cycle. This is the engine that pays for everything else here.</li>
+<li><b>The Taxpayer Guarantee (M66&ndash;M66d).</b> A glide path capped on the residential rate, over-collection refunded as a credit on your next notice rather than swept into reserves, a debt rule, and one published Household Bill with a five-year forward view.</li>
+<li><b>Competitive testing on waste and street cleaning (M15).</b> City crews and private bidders on the same specification, tested in both directions; the cheaper competent option wins and workers are protected either way.</li>
+</ul>
+
+<div class="grp">Democratic</div>
+<ul>
+<li><b>A referendum on every new capital project over $25M (M77, M78),</b> and one published process for every major project: consult, design, visualize, vote, report.</li>
+<li><b>The Integrity Package (M79b&ndash;M79f).</b> An Integrity Commissioner, a lobbyist registry for development files with no exemption for the mayor, the $10 FOI application fee abolished, and council pay changes that take effect only after the next election.</li>
+<li><b>Quarterly performance dashboard (M67).</b> Permits, potholes, crime, housing, budget variance. Published green or red, no spin.</li>
+</ul>
+</div>
+
+<div>
+<div class="sh">12 commitments, measured every quarter</div>
+<div class="cm hi"><div class="i">1</div><div class="t">Residential tax rate</div><div class="v">6.5%, 5%, then CPI+growth</div></div>
+<div class="cm hi"><div class="i">2</div><div class="t">Verified annual savings</div><div class="v">$8&ndash;14M/yr by Year 4</div></div>
+<div class="cm"><div class="i">3</div><div class="t">New homes, by type</div><div class="v">12,000+ net new by 2030</div></div>
+<div class="cm"><div class="i">4</div><div class="t">Rental vacancy</div><div class="v">5%</div></div>
+<div class="cm"><div class="i">5</div><div class="t">Unsheltered homelessness</div><div class="v">down 50%</div></div>
+<div class="cm"><div class="i">6</div><div class="t">Crime severity</div><div class="v">down 15%</div></div>
+<div class="cm"><div class="i">7</div><div class="t">Graffiti removed in 48h</div><div class="v">90%</div></div>
+<div class="cm"><div class="i">8</div><div class="t">Permit speed</div><div class="v">target per category</div></div>
+<div class="cm"><div class="i">9</div><div class="t">Downtown storefront vacancy</div><div class="v">11% to 5%</div></div>
+<div class="cm"><div class="i">10</div><div class="t">Dangerous intersections</div><div class="v">top 10 redesigned</div></div>
+<div class="cm hi"><div class="i">11</div><div class="t">Transparency delivered</div><div class="v">registry, FOI, reports</div></div>
+<div class="cm"><div class="i">12</div><div class="t">Climate and canopy</div><div class="v">&minus;50% GHG, 35% canopy</div></div>
+
+<div class="money">
+<div class="sh">Where the money comes from</div>
+<div class="mr"><span>Waste and street cleaning put out to tender</span><span class="a">+$2.4M</span></div>
+<div class="mr"><span>Every programme reviewed line by line</span><span class="a">+$3 to 6M</span></div>
+<div class="mr"><span>Fewer managers, through retirements</span><span class="a">+$1.9 to 4M</span></div>
+<div class="mr"><span>Property tax from 12,000 new homes</span><span class="a">+$8 to 15M</span></div>
+<div class="mr"><span>LED streetlights, cheaper to run</span><span class="a">+$0.5 to 1M</span></div>
+<div class="mr"><span>Less what everything here costs to run</span><span class="a">&minus;$13.3 to 18M</span></div>
+<div class="mr tot"><span>Left over, every year</span><span class="a">$4.3 to 14.0M</span></div>
+<div class="mr pes"><span>If everything goes wrong</span><span class="a">about &minus;$0.3M</span></div>
+</div>
+
+<div class="addr">
+<div class="h">What that means at your address</div>
+<div class="s">The median Victoria home, assessed at $1,015,000</div>
+<div class="ar"><span>Council's 2026 increase</span><span>+$323</span></div>
+<div class="ar"><span>The same year, capped at 6.5%</span><span>+$225</span></div>
+<div class="ar d"><span>Difference, one year, one house</span><span>$98</span></div>
+<div class="note">No projection and no assumed future council: the two rates, the same house, the same year. Your own bill also moves with BC Assessment's valuation, and the cap holds only if the savings above land. If they do not, Year 1 slips and we publish that too.</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="isnt">
+<div class="a">
+<div class="h">What this is</div>
+<p>Non-partisan and open. Costed, sourced and measurable. Reported every quarter. Free for any candidate to adopt in whole, in part, or as a starting point.</p>
+</div>
+<div class="b">
+<div class="h">What it is not</div>
+<p>Not a political party. Not a candidate slate. Not City surveillance cameras. Not a machine deciding about a person. Not ideology dressed as policy.</p>
+</div>
+</div>
+
+<div class="foot">
+<div><b>Victoria votes Saturday, October 17, 2026</b></div>
+<div class="r">Nominations close September 11 &middot; Advance voting October 7, 13, 14, 15<br>acitythatworks.ca &nbsp;|&nbsp; info@acitythatworks.ca</div>
+</div>
+
+</div>
+</body>
+</html>
