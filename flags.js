@@ -6,8 +6,9 @@
    of it back exactly as it was.
 
    What the candidate switch governs when it is off:
-     - scorecard.html and comparison.html redirect to the home page
-     - every link to either of them disappears from the header, the "More"
+     - scorecard.html, comparison.html and profiles.html redirect to the home
+       page
+     - every link to any of them disappears from the header, the "More"
        panel, the mobile drawer and the footer
      - the blocks that exist only to point at them (the homepage's "Where the
        candidates stand" section, the two Get Involved bullets, the FAQ index
@@ -33,7 +34,7 @@
 
   /* The pages the switch governs. Add a filename here and it is gated on the
      same terms — redirected when off, and every link to it swept. */
-  var GATED = ['scorecard.html', 'comparison.html'];
+  var GATED = ['scorecard.html', 'comparison.html', 'profiles.html'];
 
   /* Netlify serves this site with pretty URLs on: scorecard.html is also
      reachable as /scorecard, and every in-page href is rewritten to the
@@ -101,7 +102,7 @@
     if (stale.length && window.console) {
       console.info('ACTW: candidate switch is ON. ' + here + ' still ships the ' +
         'no-JavaScript gate — delete its two data-cand-gate tags when you publish, ' +
-        'and put scorecard.html and comparison.html back in sitemap.xml and robots.txt.');
+        'and put ' + GATED.join(', ') + ' back in sitemap.xml and robots.txt.');
     }
   }
 

@@ -50,6 +50,20 @@
 .ov-rk{font-family:'JetBrains Mono',monospace;font-size:12px;color:#8a8580;width:26px}
 .cn-name{display:block;font-family:'Fraunces',serif;font-size:16px;font-weight:500;color:var(--navy);line-height:1.2}
 .cn-role{display:block;font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:#6b6664;margin-top:3px}
+/* ── the name is the way to that candidate's profile ─────────────────────
+   The reciprocal of the profile page's link into this one. Underlined rather
+   than coloured, so fifteen of them in a column do not read as a warning; the
+   arrow on the overall table says where it goes, because that is the one
+   table a reader meets before they know the link exists. */
+a.plink{text-decoration:none;color:inherit;border-bottom:1px solid rgba(26,54,104,.3)}
+a.plink:hover{color:var(--gold-ink);border-bottom-color:var(--gold-ink)}
+a.plink:focus-visible{outline:2px solid var(--gold-ink);outline-offset:2px}
+/* The sticky "who" cells already set navy and plink inherits it; the overall
+   table's cell does not, so the name says so itself rather than dropping to
+   the grey it would otherwise inherit. */
+a.cn-name{display:inline-block;color:var(--navy)}
+a.cn-name:after{content:"→";font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--gold-ink);margin-left:7px;vertical-align:1px;opacity:.6}
+a.cn-name:hover:after{opacity:1}
 .ov-mn{font-family:'JetBrains Mono',monospace;font-size:14px;color:var(--navy);white-space:nowrap}
 .ov-n{font-family:'JetBrains Mono',monospace;font-size:13px;white-space:nowrap;color:var(--navy)}
 .ov-n .of{display:block;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:#8a8580}
@@ -97,6 +111,8 @@ th.gh abbr{text-decoration:none;border:0}
 .dlab{font-family:'JetBrains Mono',monospace;font-size:9.5px;text-transform:uppercase;letter-spacing:.12em;color:var(--navy);margin:14px 0 5px}
 .dtext{font-size:14.5px;line-height:1.6;color:#33312e}
 .dnone{font-size:13.5px;line-height:1.6;color:#57534e;font-style:italic}
+.dmore{margin-top:16px;padding-top:13px;border-top:1px solid rgba(26,54,104,.14)}
+.dmore a{display:inline-block;font-size:13.5px;line-height:1.5;color:var(--navy);font-weight:600}
 .sc-backdrop{position:fixed;inset:0;background:rgba(20,18,16,.5);z-index:40}
 .sc-panel.sheet{position:fixed;left:0;right:0;bottom:0;z-index:41;margin:0;max-height:82vh;overflow:auto;border-radius:10px 10px 0 0}
 body.no-scroll{overflow:hidden}
@@ -108,6 +124,11 @@ body.no-scroll{overflow:hidden}
 .colt td{padding:7px 5px;border-bottom:1px solid rgba(26,54,104,.12);text-align:center;vertical-align:middle}
 .colt td.who{text-align:left;font-family:'Fraunces',serif;font-size:14px;color:var(--navy);white-space:nowrap;position:sticky;left:0;background:#fff;border-right:1px solid rgba(26,54,104,.14)}
 .colt td.who .wr{display:block;font-family:'JetBrains Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:.07em;color:#6b6664;margin-top:2px}
+/* Arriving from a profile lands on that candidate's row, so it clears the
+   sticky header and says which of fifteen rows was asked for. */
+.colt tr[id]{scroll-margin-top:calc(var(--h) + 96px)}
+.colt tr[id]:target td{background:rgba(212,168,67,.16)}
+.colt tr[id]:target td.who{background:rgba(212,168,67,.24);box-shadow:inset 3px 0 0 var(--gold)}
 td.cc{cursor:pointer}
 td.cc:hover{background:rgba(212,168,67,.14)}
 td.cc:focus{outline:2px solid var(--navy);outline-offset:-2px}
@@ -162,6 +183,7 @@ td.bad{color:#B5341F;font-weight:600}
 <a href="endorse.html">Candidate Endorsement Pack</a>
 <a href="comparison.html" data-cand>Candidate Comparison Matrix</a>
 <a href="scorecard.html" class="gd">Candidate Scorecard</a>
+<a href="profiles.html" data-cand>Candidate Profiles</a>
 <a href="faq.html">Frequently Asked Questions</a>
 <a href="version-history.html">Version History</a>
 <div class="grp"></div>
@@ -224,6 +246,7 @@ td.bad{color:#B5341F;font-weight:600}
 
 <h2 id="grades">Overall grades</h2>
 <p>The mean of every scored topic for that candidate. <strong>Excluded marks — no public position, Record, no information — are left out of the mean entirely</strong>, so silence never lowers a grade. It only narrows the base.</p>
+<p><strong>Every candidate's name on this page links to their <a href="profiles.html">profile</a></strong> — the evidence base the grade rests on and its vintage, their own site and social accounts, the sources, what is on the record, what is still unscored, and what would move the grade. A grade is a number; the profile is the reason for it.</p>
 <div class="legend">
 <span><i class="mk-a"></i> Aligned 3.0</span><span><i class="mk-b"></i> Close 2.0</span><span><i class="mk-c"></i> Partial+ 1.5 / Partial 1.0</span><span><i class="mk-d"></i> Weak 0.5</span><span><i class="mk-f"></i> Opposed −2.0</span>
 </div>
@@ -233,7 +256,7 @@ td.bad{color:#B5341F;font-weight:600}
 <tbody><!--OVERALL--></tbody>
 </table>
 </div>
-<p style="font-size:13.5px;color:#57534e"><strong>Not scored:</strong> Jerry Garcia · Peter Gibbs · Martin Girard · Owen Haley. No site, platform, statement or coverage located for any of the four — roughly a quarter of the apparent council field. <strong>Unknown, not empty.</strong> This page should not be read as evidence about them.</p>
+<p style="font-size:13.5px;color:#57534e"><strong>Not scored:</strong> <a href="profiles.html#cand-four-unconfirmed">Jerry Garcia · Peter Gibbs · Martin Girard · Owen Haley</a>. No site, platform, statement or coverage located for any of the four — roughly a quarter of the apparent council field. <strong>Unknown, not empty.</strong> This page should not be read as evidence about them.</p>
 
 <h2 id="areas">The fifteen areas — every grade, every source</h2>
 <p><strong>Select any grade to see exactly what it is made of:</strong> which measures were scored, what mark each got, and the sentence the candidate actually said or the vote they actually cast. Nothing here is an opinion about a candidate — it is arithmetic on published positions, and you can check every step.</p>
@@ -399,7 +422,17 @@ td.bad{color:#B5341F;font-weight:600}
     h += '<div class="dlab">How this mark was reached</div><div class="dtext" style="font-size:13.5px">'+
          'Two questions, asked in order: does the candidate share the goal, and how would they do it. '+
          '<a href="#scale">The full scale is published above.</a> Ambiguity resolves upward, and silence is never scored.</div>';
+    h += profileLink(c);
     return h;
+  }
+
+  /* The reciprocal of the profile page's "see every area grade" link: one mark
+     is the smallest thing this page shows, and the profile is the largest
+     thing it can hand you about the same person. */
+  function profileLink(c){
+    if(!c.profile) return '';
+    return '<div class="dmore"><a href="'+c.profile+'">Read '+c.name+
+           "'s full profile — the evidence base, the sources, and what would move the grade →</a></div>";
   }
 
   /* An area grade is the thing most readers will click, so it has to answer
@@ -432,6 +465,7 @@ td.bad{color:#B5341F;font-weight:600}
          'Two questions, asked in order: does the candidate share the goal, and how would they do it. '+
          'Aligned 3.0 · Close 2.0 · Partial+ 1.5 · Partial 1.0 · Weak 0.5 · Opposed −2.0. '+
          'Silence is never scored — it narrows the base instead. <a href="#scale">The full scale is published below.</a></div>';
+    h += profileLink(c);
     return h;
   }
 

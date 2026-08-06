@@ -346,6 +346,7 @@ function page(a) {
 <a href="endorse.html">Candidate Endorsement Pack</a>
 <a href="comparison.html" data-cand>Candidate Comparison Matrix</a>
 <a href="scorecard.html" data-cand>Candidate Scorecard</a>
+<a href="profiles.html" data-cand>Candidate Profiles</a>
 <a href="faq.html">Frequently Asked Questions</a>
 <a href="version-history.html">Version History</a>
 <div class="grp"></div>
