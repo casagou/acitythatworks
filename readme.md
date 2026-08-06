@@ -106,12 +106,12 @@ The type is deliberately sized to fill the page rather than fit it — this is r
 
 ## The candidate switch
 
-**The Candidate Scorecard, the Candidate Comparison Matrix and the Candidate Profiles are currently hidden.** They are still in the repo, still built by their build scripts, still complete — they are gated, not removed.
+**The Candidate Scorecard, the Candidate Comparison Matrix and the Candidate Profiles are live**, as of 5 August 2026. The switch that hides them is still in place and still works; it is simply on.
 
 The gate is one boolean at the top of `flags.js`:
 
 ```js
-var CANDIDATES_LIVE = false;   // false = hidden site-wide
+var CANDIDATES_LIVE = true;    // false = hidden site-wide
 ```
 
 `flags.js` loads synchronously in every page's `<head>`, ahead of everything else, so the decision is made before the first paint. With the switch off:
@@ -137,13 +137,26 @@ The panel is not shown to the public, and that is the point. A toggle everyone c
 
 It changes what **that browser** sees, never what the site serves. `CANDIDATES_LIVE` in `flags.js` is still the only thing that moves the public site.
 
-### Turning it back on
+### Turning it off again
 
-Flip the boolean to `true`. That is the only edit the site's behaviour needs. Three static files also carry a crawler-facing copy of the same decision, which JavaScript cannot undo for a bot that does not run it — `flags.js` prints a console reminder listing them the first time you load a candidate page with the switch on:
+Flip the boolean to `false`. That is the only edit the site's behaviour needs, and it is enough on its own: every visitor is redirected and every link is swept before the first paint.
 
-1. delete the two `data-cand-gate` tags from the head of `scorecard.html` **and** `build/scorecard.tpl.html` (the template rebuilds the page), and the same two from `comparison.html` and from `profiles.html`
-2. uncomment the three `<url>` blocks in `sitemap.xml`
-3. delete the three `Disallow:` lines in `robots.txt`
+**The crawler-facing half is a separate decision, because it is not reversible on the same timescale.** When the three pages were first held back they also carried a static `noindex` tag and a `<noscript>` redirect, three `Disallow:` lines in `robots.txt`, and three commented-out `<url>` blocks in `sitemap.xml` — the half a bot that never runs JavaScript actually obeys. All of that was removed when the switch went on, on 5 August 2026, and the three pages are now indexable.
+
+Turning the switch off again therefore hides the pages from people immediately, but does not un-publish them from a search index. If they need to go back to being genuinely unlisted rather than merely unreachable, restore all three:
+
+1. re-add the two `data-cand-gate` tags to the head of `build/scorecard.tpl.html` (the template rebuilds `scorecard.html`), `comparison.html` and `profiles.html`
+2. comment the three `<url>` blocks back out in `sitemap.xml`
+3. re-add the three `Disallow:` lines to `robots.txt`
+
+The tags were:
+
+```html
+<meta name="robots" content="noindex,nofollow" data-cand-gate>
+<noscript data-cand-gate><meta http-equiv="refresh" content="0;url=index.html"></noscript>
+```
+
+`flags.js` strips any `data-cand-gate` node it finds when the switch is on, so restoring them costs nothing while it stays on.
 
 ## Navigation
 
@@ -151,7 +164,7 @@ Every page uses the same canonical header nav:
 
 > **Framework · Summary · Measures · Savings · City Hall · Scorecard · Compare · FAQ · [ENDORSE]**
 
-(Scorecard and Compare are hidden while the candidate switch is off — see above.)
+(Scorecard and Compare disappear from it whenever the candidate switch is off — see above.)
 
 `version-history.html` is reachable from the footer and the mobile drawer rather than the header, which is already full.
 
