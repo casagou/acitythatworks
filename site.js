@@ -85,6 +85,7 @@
 '<div class="fls">' +
 '<a href="index.html">Home</a>' +
 '<a href="measures.html">All Measures</a>' +
+'<a href="neighbourhoods.html">Neighbourhoods</a>' +
 '<a href="index.html#scorecard">12 Commitments</a>' +
 '<a href="index.html#balance">Balance Sheet</a>' +
 '<a href="index.html#adopt">Endorse / Subscribe</a>' +
@@ -169,6 +170,7 @@ candLinks() +
         '<div class="grp">The Framework</div>' +
         '<a href="index.html">Home</a>' +
         '<a href="measures.html">All Measures</a>' +
+        '<a href="neighbourhoods.html">Neighbourhoods</a>' +
         '<a href="index.html#scorecard">12 Commitments</a>' +
         '<a href="index.html#balance">Balance Sheet</a>' +
         '<div class="grp">By Audience</div>' +

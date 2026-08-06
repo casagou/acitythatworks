@@ -16,6 +16,8 @@ A complete, multi-page static website for the citizens' framework. No build step
 | `partnerships.html` | **Annex** — Partnership Strategy: eight partner files, each with what they control, the ask, and the fallback if no partner comes |
 | `kpis.html` | **Annex** — 2030, Measured: every indicator with baseline, source, direction and cadence |
 | `capital.html` | **Annex** — Capital Financing Structure: every capital dollar by financing route, the sources stack, the $25M referendum gate, and the authoritative M45c cost basis |
+| `neighbourhoods.html` | Victoria 2030, Neighbourhood by Neighbourhood — the hub: how to read the pages, the plain-English glossary, the ground rules, and the 13 cards. The card grid is generated; the shell is hand-maintained |
+| `neighbourhood-*.html` | One page per neighbourhood — 12 official, plus Harris Green. **Generated** by `build/neighbourhoods.js` from `build/neighbourhoods.md`; edit the master, not the pages |
 | `city-hall.html` | How City Hall Actually Works — plain-language guide to municipal power |
 | `endorse.html` | Candidate Endorsement Pack — three tiers, campaign language, full measure checklist, endorsement form |
 | `comparison.html` | Candidate Comparison Matrix — every 2026 candidate scored against the framework |
@@ -91,6 +93,22 @@ Edit the master and re-run; do not edit the profile cards in the page, because t
 ```
 node build/matrix.js; node build/profiles.js
 ```
+
+### The fourth exception: the 13 neighbourhood pages are generated
+
+`build/neighbourhoods.md` is the dump of the Notion master ("Victoria 2030, Neighbourhood by Neighbourhood"). `build/neighbourhoods.js` parses it and writes every `neighbourhood-<slug>.html` in full — shell included — plus the card grid inside `neighbourhoods.html` and the one in the Neighbourhood Priorities section of `index.html`, both between `<!-- NB:HUB:… -->` / `<!-- NB:HOME:… -->` markers.
+
+```
+node build/neighbourhoods.js
+```
+
+Edit the master and re-run; do not edit a `neighbourhood-*.html` or anything between the markers, because the next run overwrites it. The script reports how many pages it wrote and how many were unchanged, and is idempotent.
+
+**Measure references are linked by the build, not by hand.** The master writes them as bare text — `(M27)`, `(M66d)` — and the script turns each into a link to `measures.html#m27`. Across 13 pages that is roughly 500 links, which is 500 chances to cite a measure that does not exist; **an unknown measure id aborts the build** rather than shipping a link to nothing. Same rule `build/matrix.js` applies to candidate names. `node build/checklinks.js` is the second net under it.
+
+**Adding a neighbourhood** means a new `=== slug` block in the master, a re-run, and a new `<url>` in `sitemap.xml` — that last list is hand-maintained.
+
+**What is deliberately not on these pages:** the master's internal pre-deployment note. It is an instruction to the editor, not content for a reader.
 
 ### The five annexes, and how they are wired in
 

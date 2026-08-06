@@ -64,7 +64,7 @@
 <a href="summary.html">Summary</a>
 <a href="measures.html">Measures</a>
 <a href="scorecard.html" data-cand class="nv-sc">Candidates</a>
-<a href="city-hall.html">City Hall</a>
+<a href="neighbourhoods.html">Neighbourhoods</a>
 <a href="faq.html">FAQ</a>
 <a href="endorse.html" class="btn-end">Endorse</a>
 </nav>
@@ -75,6 +75,7 @@
 <a href="index.html">Framework</a>
 <a href="summary.html">One-Page Summary</a>
 <a href="measures.html">All Measures</a>
+<a href="neighbourhoods.html">Neighbourhoods</a>
 <a href="index.html#scorecard">12 Commitments</a>
 <a href="index.html#balance">Balance Sheet</a>
 <div class="grp">Detailed documents</div>
@@ -145,6 +146,16 @@
 </ul>
 
 <h2 id="current">Current version</h2>
+
+<div class="rel cur">
+<div class="relh"><span class="relv">v1.10 · Neighbourhood pages</span><span class="reld">August 5, 2026</span><span class="badge">Live</span></div>
+<div class="relt">Victoria 2030, neighbourhood by neighbourhood — thirteen pages, and a correction to the home page grid</div>
+<p><strong>The framework is city-wide. Life is local.</strong> <a href="neighbourhoods.html">Thirteen new pages</a> translate the same measures into what they do on one neighbourhood's streets: a page for each of the City's <strong>12 official neighbourhoods</strong>, plus Harris Green, which is not a separate neighbourhood — it sits inside Downtown — but is the renter-densest ground in the city, where the housing measures land differently than they do three blocks west. Each page says the same five things: where things stand in 2026, what a normal day looks like in 2030, what the framework does here measure by measure, the first 18 months, and how you measure it.</p>
+<p><strong>Zero new measures. Zero new cost.</strong> Every commitment on these pages already exists in the Program and is already booked in the <a href="savings.html">Savings &amp; Revenue Analysis</a>. What the pages add is <strong>sequencing and siting</strong> — where existing measures land first, and why. The framework is past its cost ceiling in the pessimistic case, so neighbourhood specificity had to come from prioritization rather than from spending, and it does.</p>
+<p><strong>The home page grid was wrong in two ways, and both are fixed.</strong> It grouped eleven neighbourhoods into four cards, listed <strong>Rock Bay as a neighbourhood</strong> when it is an area inside Burnside, and <strong>omitted Jubilee entirely</strong>. All 12 are now named individually, each linking to its own page, with Harris Green shown separately and labelled as not official.</p>
+<p><strong>Every page names who speaks for the neighbourhood, and it is not this document.</strong> The city-wide figures are sourced in the full Program; the neighbourhood-level observations are this framework's own read of public City data, open data and local reporting — <strong>not a survey of residents, and not a substitute for one</strong>. Each page links its community association and ends with a <em>Straight goods</em> box naming what it cannot promise, who else has to say yes, and what is gated. Corrections are published in the open, the same as every other correction here.</p>
+<p><strong>The pages are generated, not hand-written.</strong> <code>build/neighbourhoods.md</code> is the master and <code>node build/neighbourhoods.js</code> writes all thirteen pages plus both card grids. Roughly <strong>500 measure references</strong> across the set are linked to <a href="measures.html">Every Measure</a> by the build rather than by hand, and <strong>a reference to a measure number that does not exist aborts the build</strong> instead of shipping a link to nothing.</p>
+</div>
 
 <div class="rel cur">
 <div class="relh"><span class="relv">v1.10</span><span class="reld">August 5, 2026</span><span class="badge">Live</span></div>
