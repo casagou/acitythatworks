@@ -94,6 +94,14 @@ Edit the master and re-run; do not edit the profile cards in the page, because t
 node build/matrix.js; node build/profiles.js
 ```
 
+**The scorecard's detail panels quote `comparison.html`, and the quoting is built too.** Opening any grade on the scorecard shows the marks behind it and the sentence each one rests on — the same sentences the comparison matrix publishes, so a reader never has to leave the cell they clicked to find out what it rests on. `build/evidence.js` extracts all 50 topic tables from `comparison.html` into `build/evidence.json`, keyed by `matrix-v3.js` topic id, and `build/matrix.js` reads that file. **Re-run it after editing any evidence table in `comparison.html`**, or the scorecard keeps quoting the old sentence:
+
+```
+node build/evidence.js; node build/matrix.js
+```
+
+Two rules are enforced there rather than left to judgment. Nine comparison tables stand behind more than one master topic (`M65 / M66` is one table, two topics); the split is declared in `TABLE_MAP` and each affected panel says the sentence covers the group. And a sentence is carried **only where the store's own symbol says a position exists** — the store is a different vintage from the grid, and in 45 places the grid now holds a mark the store still records as silence, so those marks print their value and say why rather than putting "No public position" under a Close 2.0.
+
 ### The fourth exception: the 13 neighbourhood pages are generated
 
 `build/neighbourhoods.md` is the dump of the Notion master ("Victoria 2030, Neighbourhood by Neighbourhood"). `build/neighbourhoods.js` parses it and writes every `neighbourhood-<slug>.html` in full — shell included — plus the card grid inside `neighbourhoods.html` and the one in the Neighbourhood Priorities section of `index.html`, both between `<!-- NB:HUB:… -->` / `<!-- NB:HOME:… -->` markers.
