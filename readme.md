@@ -9,7 +9,7 @@ A complete, multi-page static website for the citizens' framework. No build step
 | `index.html` | Home — hero, diagnostic, five pillars (linking into Every Measure pre-filtered), method, 12-commitment scorecard, balance sheet, principles, criticisms Q&A, subscribe/endorse |
 | `measures.html` | Every Measure — all 131 measures, filterable by pillar and searchable by keyword, full text and budget impact inline, each one individually linkable as `#m48`. Reached from every page's nav as "Measures" |
 | `summary.html` | One-Page Summary — the 60-second version (problem → pillars → flagship measures → math → method), plus the printable PDF download |
-| `A-City-That-Works-One-Page.pdf` | The printable one-pager, linked from `summary.html`. Designed separately; drop a new file in at the same path to update the download |
+| `A-City-That-Works-One-Page.pdf` | The printable one-pager, linked from `summary.html`. **Generated** from `build/one-page.html` — see below. Do not edit the PDF |
 | `savings.html` | Savings & Revenue Analysis — the full math, every table, with sources and honest caveats |
 | `city-hall.html` | How City Hall Actually Works — plain-language guide to municipal power |
 | `endorse.html` | Candidate Endorsement Pack — three tiers, campaign language, full measure checklist, endorsement form |
@@ -86,6 +86,23 @@ Edit the master and re-run; do not edit the profile cards in the page, because t
 ```
 node build/matrix.js; node build/profiles.js
 ```
+
+### The third exception: the one-page PDF is generated
+
+`A-City-That-Works-One-Page.pdf` used to be drawn by hand and dropped in at that path. It is now built from `build/one-page.html`, which is a plain print-styled page, by a script that drives headless Chrome:
+
+```
+node build/onepage.js
+```
+
+Edit the HTML, re-run, commit both. **Never edit the PDF**, and never hand-place a replacement — the next build overwrites it.
+
+The script refuses to write in two cases, and both are there because both already happened:
+
+1. **More than one page.** The whole artifact is the claim that the framework fits on a sheet. `.sheet` is `min-height:11in`, never `height` — a fixed height lets overflowing content spill over the footer *inside* one page, which is how a broken layout walks straight past a page count. Growing past 11in paginates instead, and the build fails and leaves the existing PDF alone.
+2. **A retracted figure.** `RETRACTED` in the script lists numbers this framework has struck. The `$750`-per-resident policing figure, removed everywhere else by v1.9.3, went on printing on this sheet for four releases because nothing checked. Add a number to that list the moment a release retracts it.
+
+The type is deliberately sized to fill the page rather than fit it — this is read at a door and pinned to noticeboards. If a change stops it fitting, shrink the type or drop a bullet; do not raise the page limit. Fonts are a system stack on purpose, so the artifact does not depend on whether the build machine could reach Google Fonts.
 
 ## The candidate switch
 
