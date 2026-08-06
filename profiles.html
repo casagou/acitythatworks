@@ -84,19 +84,55 @@ details.cand .body li{margin:5px 0;font-size:14px;line-height:1.55}
    can see which of eighteen cards the link actually landed on. */
 details.cand.hl{border-color:var(--gold);box-shadow:0 0 0 2px rgba(212,168,67,.35)}
 
+/* One caveat block instead of a stack of two, with the long half — the
+   fifteen-mark exclusion ledger — behind a disclosure. */
+.callout.pcav{margin:16px 0}
+.callout.pcav details.excl{margin-top:10px;border-top:1px solid rgba(212,168,67,.45);padding-top:10px}
+/* Block, not flex: the summary holds a <strong> lead followed by a text node,
+   and as flex children those become two columns of prose side by side instead
+   of one sentence. The marker is positioned out of the flow so the text still
+   hangs off it. */
+.callout.pcav details.excl summary{cursor:pointer;font-size:14px;line-height:1.55;color:var(--navy);list-style:none;display:block;position:relative;min-height:44px;padding:4px 0 4px 22px}
+.callout.pcav details.excl summary::-webkit-details-marker{display:none}
+.callout.pcav details.excl summary:before{content:"+";position:absolute;left:0;top:3px;font-family:'JetBrains Mono',monospace;color:var(--gold-ink);font-size:17px;line-height:1.4}
+.callout.pcav details.excl[open] summary:before{content:"–"}
+.callout.pcav details.excl summary:hover{color:var(--gold-ink)}
+.callout.pcav details.excl summary:focus-visible{outline:2px solid var(--gold-ink);outline-offset:2px}
+.callout.pcav .excl-b{padding-top:4px}
+.callout.pcav .excl-b ul{font-size:14px;line-height:1.6;margin:8px 0 0;padding-left:20px}
+.callout.pcav .excl-m{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--gold-ink)}
+
 /* Candidate index — eighteen profiles is more than anyone will scroll for. */
-.cand-bar{margin:16px 0 8px;padding:14px 16px;background:rgba(26,54,104,.04);border:1px solid rgba(26,54,104,.14);border-radius:3px}
+.cand-bar{margin:16px 0 8px;padding:14px 16px;background:rgba(26,54,104,.04);border:1px solid rgba(26,54,104,.14);border-radius:3px;scroll-margin-top:calc(var(--h) + 76px)}
+/* The chips are a navigation control, and one that says so. Without this they
+   are fifteen surnames in pills, which reads as filters, or tags, or nothing. */
+.cand-lbl{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.14em;color:var(--gold-ink);margin-bottom:9px}
 .cand-idx{display:flex;flex-wrap:wrap;gap:6px}
 .cchip{display:inline-flex;align-items:center;min-height:36px;padding:4px 12px;font-size:13px;line-height:1.2;color:var(--navy);background:#fff;border:1px solid rgba(26,54,104,.25);border-radius:999px;text-decoration:none}
 .prose .cchip{text-decoration:none}
 .cchip:hover{border-color:var(--navy);background:rgba(212,168,67,.16)}
-.cand-acts{display:flex;gap:8px;margin-top:12px}
-.cbtn{min-height:36px;padding:0 12px;font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.09em;color:var(--navy);background:#fff;border:1px solid rgba(26,54,104,.3);cursor:pointer}
+.cchip:focus-visible{outline:2px solid var(--gold-ink);outline-offset:2px}
+.cand-acts{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.cbtn{display:inline-flex;align-items:center;min-height:36px;padding:0 12px;font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.09em;color:var(--navy);background:#fff;border:1px solid rgba(26,54,104,.3);cursor:pointer;text-decoration:none}
+.prose a.cbtn{text-decoration:none}
 .cbtn:hover{background:rgba(26,54,104,.06)}
+.cbtn-up{margin-left:auto}
+/* Repeated after the last card, so "collapse all" is not twenty screens away
+   from the reader who pressed "expand all". */
+.cand-bar-end{margin:26px 0 8px}
+/* 36px is a comfortable mouse target and an uncomfortable thumb. Where the
+   pointer is coarse the chips and buttons go to the 44px touch target and the
+   gutters widen, because fifteen pills wrapped over five rows on a phone is
+   exactly the arrangement that produces a mis-tap. */
+@media (pointer:coarse){
+  .cand-idx{gap:8px}
+  .cchip{min-height:44px;padding:4px 15px;font-size:14px}
+  .cand-acts{gap:10px}
+  .cbtn{min-height:44px;padding:0 14px}
+}
 h3.cand-grp{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.14em;color:var(--gold-ink);margin:38px 0 6px;scroll-margin-top:calc(var(--h) + 76px)}
 h3.cand-grp .cand-n{display:inline-block;margin-left:6px;padding:1px 7px;background:rgba(26,54,104,.09);border-radius:999px;color:var(--navy);letter-spacing:0}
 .prose p.grp-note{margin:0 0 10px;font-size:13.5px;line-height:1.55;color:#57534e}
-.prose p.pnote{font-size:13.5px;color:#57534e}
 
 /* Nobody should discover how long this document is by scrolling it. */
 .scale{max-width:640px;margin:14px 0 0;font-size:14px;line-height:1.6;color:#57534e}
@@ -174,23 +210,29 @@ h3.cand-grp .cand-n{display:inline-block;margin-left:6px;padding:1px 7px;backgro
 <div class="prose">
 
 <!-- PROFILES:START -->
-<p class="pnote"><strong>A profile is not a verdict.</strong> The grade measures distance from this framework, not quality, and a narrow evidence base is a fact about a publication calendar rather than about a candidate. Most challengers publish detail in September; a re-score after nominations close 11 September is mandatory.</p>
-<div class="callout gold" style="margin:16px 0">
+<div class="callout gold pcav">
 <div class="lbl">◆ Read this before the profiles</div>
-<p><strong>Every grade on this page is current. Some of the prose is not.</strong> These profiles were written against the 31 July evidence base. On 1 August 2026 a full mark-by-mark re-verification applied one rule harder than before: <em>A characterisation is not a citable sentence. Fifteen marks rested on tone or posture rather than on something a candidate said or voted for, and were excluded.</em> <strong>Several profiles below still describe those positions as marks.</strong> They are listed here so nothing is quietly deleted:</p>
-<ul style="font-size:14px;line-height:1.6;margin:8px 0 0;padding-left:20px">
-<li><strong>Pro-reconciliation</strong> <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--gold-ink)">M1–M5</span> — Caradonna · Dell · Thompson · Kim · Loughton</li>
-<li><strong>Pro-transit / pro-bike</strong> <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--gold-ink)">M19/M22/M38–M42b</span> — Caradonna · Dell</li>
-<li><strong>Province-blaming present in framing</strong> <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--gold-ink)">M70/M70b</span> — Dell · Thompson · Loughton</li>
-<li><strong>Climate leadership stated</strong> <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--gold-ink)">M58/M58b/M64b</span> — Caradonna · Dell · Kim — the cooling bylaw is already scored once at M9</li>
-<li><strong>Pro-heritage tone</strong> <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--gold-ink)">M43–M46b</span> — Gardiner</li>
-<li><strong>Recorded pro-enforcement votes, unnamed</strong> <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--gold-ink)">M27</span> — Gardiner — the qualifying vote is already scored once at M33</li>
+<p><strong>A profile is not a verdict.</strong> The grade measures distance from this framework, not quality, and a narrow evidence base is a fact about a publication calendar rather than about a candidate. Most challengers publish detail in September; a re-score after nominations close 11 September is mandatory.</p>
+<details class="excl">
+<summary><strong>Every grade here is current. Some of the prose is not.</strong> Marks excluded on 1 August 2026 are still described as marks in a few profiles — open for the full list, and which way each correction ran</summary>
+<div class="excl-b">
+<p>These profiles were written against the 31 July evidence base. On 1 August 2026 a full mark-by-mark re-verification applied one rule harder than before: <em>A characterisation is not a citable sentence. Fifteen marks rested on tone or posture rather than on something a candidate said or voted for, and were excluded.</em> <strong>Several profiles below still describe those positions as marks.</strong> They are listed here so nothing is quietly deleted:</p>
+<ul>
+<li><strong>Pro-reconciliation</strong> <span class="excl-m">M1–M5</span> — Caradonna · Dell · Thompson · Kim · Loughton</li>
+<li><strong>Pro-transit / pro-bike</strong> <span class="excl-m">M19/M22/M38–M42b</span> — Caradonna · Dell</li>
+<li><strong>Province-blaming present in framing</strong> <span class="excl-m">M70/M70b</span> — Dell · Thompson · Loughton</li>
+<li><strong>Climate leadership stated</strong> <span class="excl-m">M58/M58b/M64b</span> — Caradonna · Dell · Kim — the cooling bylaw is already scored once at M9</li>
+<li><strong>Pro-heritage tone</strong> <span class="excl-m">M43–M46b</span> — Gardiner</li>
+<li><strong>Recorded pro-enforcement votes, unnamed</strong> <span class="excl-m">M27</span> — Gardiner — the qualifying vote is already scored once at M33</li>
 </ul>
 <p>Three marks were regraded upward: the CSWB adoption vote of 3 July 2025 carried <em>Commits</em> at M26 and M27 but <em>Agrees</em> at M11 for the same councillors on the same act. It is now Commits at all three (Dell, Kim and Coleman at M11, Weak → Partial).</p>
 <p>Every excluded mark was worth +0.5, below almost every mean, so the correction ran <strong>upward</strong>. The defect had been quietly suppressing sitting councillors' grades: Caradonna moved C+ → B− and Dell C → C+. Each excluded mark is <strong>restorable the moment a vote or a quotation is attached to it</strong> — write to <a href="mailto:info@acitythatworks.ca">info@acitythatworks.ca</a>.</p>
 </div>
-<div class="cand-bar">
-<div class="cand-idx" aria-label="Jump to a candidate">
+</details>
+</div>
+<div class="cand-bar" id="candidate-index">
+<div class="cand-lbl" id="cand-idx-lbl">Jump to a candidate</div>
+<div class="cand-idx" role="group" aria-labelledby="cand-idx-lbl">
 <a class="cchip" href="#cand-marianne-alto">Alto</a>
 <a class="cchip" href="#cand-jeremy-caradonna">Caradonna</a>
 <a class="cchip" href="#cand-matt-dell">Dell</a>
@@ -237,6 +279,9 @@ h3.cand-grp .cand-n{display:inline-block;margin-left:6px;padding:1px 7px;backgro
 <p class="grp-note">Retained because each explains something about the shape of the field.</p>
 <details class="cand" id="cand-del-manak" data-jump-label="Del Manak"><summary><span class="cs-t"><strong>Del Manak</strong> — NOT running, confirmed April 15 2026</span></summary><div class="body"><p class="pf "><strong class="pfl">Status.</strong> 35 years policing, 32.5 with VicPD and 9.5 as Chief. Retired August 2025. <strong>"After careful reflection and many thoughtful conversations… I have decided that I will not be running for mayor… I want to focus my energy on other opportunities where I feel I add value outside of politics"</strong> (X, April 15 2026). <strong>On record before withdrawing</strong> (<em>Times Colonist</em>, January 2026): "When you don't have endless money and citizens don't have the ability to continue to pay these tax amounts, then it's incumbent on local government to consider what they should cut back on." He also criticised the council's hanging-basket cut, $260K to $130K.</p><p class="pf "><strong class="pfl">Why it matters.</strong> <strong>His withdrawal left the fiscally-restrained mayoral lane empty and it has stayed empty.</strong> Alto remains the only declared mayoral candidate, <strong>78 days from the election, with nominations opening in 32 days and closing in 42.</strong> <strong>That is the single most consequential fact about this field.</strong></p></div></details>
 <details class="cand" id="cand-stephen-andrew" data-jump-label="Stephen Andrew"><summary><span class="cs-t"><strong>Stephen Andrew</strong> — no 2026 signal</span></summary><div class="body"><p class="pf "><strong class="pfl">Status.</strong> Former councillor 2020–2022 by-election. 2022 mayoral candidate, lost to Alto by roughly 5,200 votes. 2024 BC Conservative candidate for Oak Bay–Gordon Head, third place with 7,843 votes. <strong>No public 2026 municipal signal located as of July 31 2026</strong> — not named in any reporter's roundup, no announcement, no site update. Re-checked in the July 31 verification pass.</p><p class="pf "><strong class="pfl">2022 planks absorbed into the framework.</strong> Family-doctor incentives via low or no-rent clinic space plus property tax exemptions, and permissive tax exemptions for not-for-profit clinics — both into <strong>M13b</strong>.</p><p class="pf "><strong class="pfl">Trigger to watch.</strong> If he declares, the fiscal-restraint lane is contested and the differentiation argument has to shift from values to method. ---</p></div></details>
+<div class="cand-bar cand-bar-end">
+<div class="cand-acts"><button type="button" class="cbtn" data-cand-all="open">Expand all</button><button type="button" class="cbtn" data-cand-all="close">Collapse all</button><a class="cbtn cbtn-up" href="#candidate-index">↑ Back to the index</a></div>
+</div>
 <!-- PROFILES:END -->
 
 <p style="margin-top:32px"><a href="index.html" class="pgback">← Back to the framework</a></p>

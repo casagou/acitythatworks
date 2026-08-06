@@ -151,43 +151,79 @@ function renderGroup(g) {
     members.map(renderProfile).join("\n");
 }
 
-/* The profile prose below is a 31 July transcription of its own master and
-   still describes several positions that the 1 August re-verification then
-   excluded — the grades beside them are current, the sentences are not.
-   Rewriting someone else's evidence prose to match would be worse than saying
-   so, so this note names every excluded mark and which way the correction
-   ran. It disappears from the page the moment the master is re-transcribed
-   and EXCLUSIONS is dropped. */
-function exclusionNote() {
+/* One caveat block, not a stack of them. Two separate warnings used to sit
+   between the heading and the first profile — the "not a verdict" note and the
+   exclusion list — so a reader met two before meeting a candidate. They are
+   one block now, and the long half is behind a disclosure: the sentence that
+   matters is always visible, the fifteen-item ledger is one click away for the
+   reader who wants to audit it.
+
+   The exclusion half exists because the profile prose is a 31 July
+   transcription of its own master and still describes several positions that
+   the 1 August re-verification then excluded — the grades beside them are
+   current, the sentences are not. Rewriting someone else's evidence prose to
+   match would be worse than saying so, so the note names every excluded mark
+   and which way the correction ran. It disappears the moment the master is
+   re-transcribed and EXCLUSIONS is dropped, and the block correctly falls back
+   to the short caveat alone. */
+function caveatBlock() {
   const X = M.EXCLUSIONS;
-  if (!X) return "";
-  return '<div class="callout gold" style="margin:16px 0">\n' +
+  let h = '<div class="callout gold pcav">\n' +
     '<div class="lbl">◆ Read this before the profiles</div>\n' +
-    "<p><strong>Every grade on this page is current. Some of the prose is not.</strong> These profiles were written against the 31 July evidence base. " +
-    "On " + X.date + " a full mark-by-mark re-verification applied one rule harder than before: <em>" + X.rule + "</em> " +
-    "<strong>Several profiles below still describe those positions as marks.</strong> They are listed here so nothing is quietly deleted:</p>\n" +
-    "<ul style=\"font-size:14px;line-height:1.6;margin:8px 0 0;padding-left:20px\">\n" +
-    X.items.map((i) => "<li><strong>" + i[0] + "</strong> <span style=\"font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--gold-ink)\">" +
-      i[1] + "</span> — " + i[2] + "</li>").join("\n") + "\n</ul>\n" +
-    "<p>" + X.regrade + "</p>\n" +
-    "<p>" + X.net + " Each excluded mark is <strong>restorable the moment a vote or a quotation is attached to it</strong> — write to " +
-    '<a href="mailto:info@acitythatworks.ca">info@acitythatworks.ca</a>.</p>\n</div>\n';
+    "<p><strong>A profile is not a verdict.</strong> The grade measures distance from this framework, not quality, " +
+    "and a narrow evidence base is a fact about a publication calendar rather than about a candidate. " +
+    "Most challengers publish detail in September; a re-score after nominations close 11 September is mandatory.</p>\n";
+  if (X) {
+    /* No count in the summary. items.length is the number of grouped findings,
+       not the number of marks — the mark count lives inside X.rule as prose,
+       and putting the wrong one of the two beside the words "marks were
+       excluded" is exactly the kind of quiet error this note exists to avoid. */
+    h += '<details class="excl">\n' +
+      "<summary><strong>Every grade here is current. Some of the prose is not.</strong> " +
+      "Marks excluded on " + X.date + " are still described as marks in a few profiles — open for the full list, and which way each correction ran</summary>\n" +
+      '<div class="excl-b">\n' +
+      "<p>These profiles were written against the 31 July evidence base. On " + X.date +
+      " a full mark-by-mark re-verification applied one rule harder than before: <em>" + X.rule + "</em> " +
+      "<strong>Several profiles below still describe those positions as marks.</strong> They are listed here so nothing is quietly deleted:</p>\n" +
+      "<ul>\n" +
+      X.items.map((i) => "<li><strong>" + i[0] + "</strong> <span class=\"excl-m\">" +
+        i[1] + "</span> — " + i[2] + "</li>").join("\n") + "\n</ul>\n" +
+      "<p>" + X.regrade + "</p>\n" +
+      "<p>" + X.net + " Each excluded mark is <strong>restorable the moment a vote or a quotation is attached to it</strong> — write to " +
+      '<a href="mailto:info@acitythatworks.ca">info@acitythatworks.ca</a>.</p>\n' +
+      "</div>\n</details>\n";
+  }
+  return h + "</div>\n";
+}
+
+/* Expand / collapse, repeated after the last card. Opening all eighteen turns
+   the page into roughly twenty screens, and the only way back to the control
+   used to be scrolling every one of them. jumpnav.js wires every
+   [data-cand-all] it finds, so a second pair costs nothing but markup. */
+function actions(where) {
+  return '<div class="cand-acts">' +
+    '<button type="button" class="cbtn" data-cand-all="open">Expand all</button>' +
+    '<button type="button" class="cbtn" data-cand-all="close">Collapse all</button>' +
+    (where === "end" ? '<a class="cbtn cbtn-up" href="#candidate-index">↑ Back to the index</a>' : "") +
+    "</div>";
 }
 
 const section =
-  '<p class="pnote"><strong>A profile is not a verdict.</strong> The grade measures distance from this framework, not quality, and a narrow evidence base is a fact about a publication calendar rather than about a candidate. ' +
-  "Most challengers publish detail in September; a re-score after nominations close 11 September is mandatory.</p>\n" +
-  exclusionNote() +
-  '<div class="cand-bar">\n<div class="cand-idx" aria-label="Jump to a candidate">\n' + chips + "\n</div>\n" +
-  '<div class="cand-acts"><button type="button" class="cbtn" data-cand-all="open">Expand all</button>' +
-  '<button type="button" class="cbtn" data-cand-all="close">Collapse all</button></div>\n</div>\n' +
+  caveatBlock() +
+  /* The chips used to open cold — fifteen surnames and nothing saying what
+     they were. An aria-label told a screen reader and nobody else. */
+  '<div class="cand-bar" id="candidate-index">\n' +
+  '<div class="cand-lbl" id="cand-idx-lbl">Jump to a candidate</div>\n' +
+  '<div class="cand-idx" role="group" aria-labelledby="cand-idx-lbl">\n' + chips + "\n</div>\n" +
+  actions("top") + "\n</div>\n" +
   GROUPS.map(renderGroup).filter(Boolean).join("\n") + "\n" +
   (context.length
     ? '<h3 class="cand-grp" id="context-entries" data-jump-label="Context entries">Context entries — not candidates' +
       '<span class="cand-n">' + context.length + "</span></h3>\n" +
       '<p class="grp-note">Retained because each explains something about the shape of the field.</p>\n' +
       context.map(renderProfile).join("\n") + "\n"
-    : "");
+    : "") +
+  '<div class="cand-bar cand-bar-end">\n' + actions("end") + "\n</div>\n";
 
 /* ---- splice ----------------------------------------------------------- */
 const OPEN = "<!-- PROFILES:START -->";
