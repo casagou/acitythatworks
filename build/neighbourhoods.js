@@ -200,7 +200,7 @@ function head(n) {
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Public+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles.css?v=2">
 </head>
 <body>
 <a class="skip" href="#main">Skip to main content</a>
@@ -320,7 +320,7 @@ ${chips(all, n.slug)}
 </main>
 
 <div id="footer-mount"></div>
-<script src="site.js"></script>
+<script src="site.js?v=2"></script>
 <script src="jumpnav.js"></script>
 </body>
 </html>
