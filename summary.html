@@ -3,6 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<!-- The candidate switch: one boolean in flags.js hides every candidate page
+     and every link to one. Loaded first and synchronously so a gated page
+     leaves before it paints. -->
+<script src="flags.js"></script>
 <meta name="description" content="A City That Works — the 60-second version. Five pillars, flagship measures, fiscal math, and a glide path. Version 1.9.7, July 31, 2026. Free one-page PDF.">
 <meta name="theme-color" content="#1A3668">
 <title>One-Page Summary — A City That Works, Victoria 2026</title>
@@ -82,7 +86,7 @@
 <nav class="nv">
 <a href="summary.html" class="cur">Summary</a>
 <a href="measures.html">Measures</a>
-<a href="scorecard.html" class="nv-sc">Candidates</a>
+<a href="scorecard.html" data-cand class="nv-sc">Candidates</a>
 <a href="city-hall.html">City Hall</a>
 <a href="faq.html">FAQ</a>
 <a href="endorse.html" class="btn-end">Endorse</a>
@@ -100,8 +104,8 @@
 <a href="savings.html">Savings &amp; Revenue Analysis</a>
 <a href="city-hall.html">How City Hall Works</a>
 <a href="endorse.html">Candidate Endorsement Pack</a>
-<a href="comparison.html">Candidate Comparison Matrix</a>
-<a href="scorecard.html">Candidate Scorecard</a>
+<a href="comparison.html" data-cand>Candidate Comparison Matrix</a>
+<a href="scorecard.html" data-cand>Candidate Scorecard</a>
 <a href="faq.html">Frequently Asked Questions</a>
 <a href="version-history.html">Version History</a>
 <div class="grp"></div>
@@ -377,12 +381,12 @@
 <li><strong>Endorse or adopt</strong> — any candidate is free to use these measures in whole, in part, or as a starting point. See the <a href="endorse.html">Endorsement Pack</a></li>
 <li><strong>Suggest improvements</strong> — every measure is open to correction by anyone with expertise</li>
 <li><strong>Print and share it</strong> — the <a href="A-City-That-Works-One-Page.pdf" download>one-page PDF</a> is free to reproduce, post on a noticeboard, or hand out at a door</li>
-<li><strong>See where each candidate stands</strong> — 16 candidates, graded across 15 areas, on the <a href="scorecard.html">Candidate Scorecard</a></li>
+<li data-cand><strong>See where each candidate stands</strong> — 16 candidates, graded across 15 areas, on the <a href="scorecard.html">Candidate Scorecard</a></li>
 <li><strong>Contact:</strong> <a href="mailto:info@acitythatworks.ca">info@acitythatworks.ca</a></li>
 </ul>
 <div class="cta" style="margin-top:24px">
 <a href="measures.html" class="bn bnp">Read every measure <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-<a href="scorecard.html" class="bn bns">See where each candidate stands →</a>
+<a href="scorecard.html" data-cand class="bn bns">See where each candidate stands →</a>
 <a href="A-City-That-Works-One-Page.pdf" class="bn bns" download type="application/pdf">Download the one-page PDF</a>
 <a href="endorse.html" class="bn bns">Endorsement Pack</a>
 </div>

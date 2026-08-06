@@ -1,4 +1,9 @@
 User-agent: *
 Allow: /
 
+# Held back by the candidate switch in flags.js. Delete these two lines (and
+# restore the sitemap entries) when the switch goes back on.
+Disallow: /scorecard.html
+Disallow: /comparison.html
+
 Sitemap: https://acitythatworks.ca/sitemap.xml

@@ -3,6 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<!-- The candidate switch: one boolean in flags.js hides every candidate page
+     and every link to one. Loaded first and synchronously so a gated page
+     leaves before it paints. -->
+<script src="flags.js"></script>
 <!-- Every Measure moved to measures.html. A bookmarked or shared #m48 from
      before that split still needs to land on the measure it names rather
      than nowhere, so send it on before anything else renders. -->
@@ -295,7 +299,7 @@ h2.adt em{font-style:italic;color:var(--gold-ink);font-weight:400}
 <nav class="nv">
 <a href="summary.html">Summary</a>
 <a href="measures.html">Measures</a>
-<a href="scorecard.html" class="nv-sc">Candidates</a>
+<a href="scorecard.html" data-cand class="nv-sc">Candidates</a>
 <a href="city-hall.html">City Hall</a>
 <a href="faq.html">FAQ</a>
 <a href="endorse.html" class="btn-end">Endorse</a>
@@ -310,8 +314,8 @@ h2.adt em{font-style:italic;color:var(--gold-ink);font-weight:400}
 <a href="savings.html">Savings &amp; Revenue Analysis</a>
 <a href="city-hall.html">How City Hall Works</a>
 <a href="endorse.html">Candidate Endorsement Pack</a>
-<a href="comparison.html">Candidate Comparison Matrix</a>
-<a href="scorecard.html">Candidate Scorecard</a>
+<a href="comparison.html" data-cand>Candidate Comparison Matrix</a>
+<a href="scorecard.html" data-cand>Candidate Scorecard</a>
 <a href="faq.html">Frequently Asked Questions</a>
 <a href="version-history.html">Version History</a>
 <div class="grp"></div>
@@ -483,7 +487,7 @@ h2.adt em{font-style:italic;color:var(--gold-ink);font-weight:400}
 <li><a href="#pillars">Five Pillars</a></li>
 <li><a href="#start-here">Start Here — the 13 flagship measures</a></li>
 <li><a href="#how-to-use">How to Use</a></li>
-<li><a href="#candidates">Where Candidates Stand</a></li>
+<li data-cand><a href="#candidates">Where Candidates Stand</a></li>
 <li><a href="#method">The Method</a></li>
 <li><a href="#v2030">Victoria in 2030</a></li>
 <li><a href="#jurisdiction">What the City Controls</a></li>
@@ -578,7 +582,7 @@ h2.adt em{font-style:italic;color:var(--gold-ink);font-weight:400}
 <li><strong>Start</strong> with the <a href="summary.html">one-page summary</a> — the 60-second version</li>
 <li><strong>Then read</strong> the measures on the issues you care about</li>
 <li><strong>Suggest</strong> improvements — every measure is open to criticism and correction</li>
-<li><strong>Ask</strong> your candidates which specific measures they support — or check the <a href="scorecard.html">candidate scorecard</a> first, to see who already has</li>
+<li data-cand><strong>Ask</strong> your candidates which specific measures they support — or check the <a href="scorecard.html">candidate scorecard</a> first, to see who already has</li>
 <li><strong>Share</strong> with neighbours and community associations</li>
 </ul>
 <a href="summary.html" class="bn bnp">One-page summary →</a>
@@ -596,7 +600,7 @@ h2.adt em{font-style:italic;color:var(--gold-ink);font-weight:400}
 </div>
 </section>
 
-<section id="candidates" data-jump-label="Where Candidates Stand" class="sc rv">
+<section id="candidates" data-cand data-jump-label="Where Candidates Stand" class="sc rv">
 <div class="se">◆ The Ballot</div>
 <h2 class="st">Where the candidates stand.</h2>
 <p class="si">Every declared Victoria candidate, graded against this framework — <strong>15 candidates, 55 topics, 225 scored marks</strong>. Since <strong>Matrix v3.0</strong> every mark is the output of two questions asked in order, so the same evidence produces the same mark regardless of who reads it. <strong>A grade is computed, not assigned</strong>, and every number can be recomputed from the published grid. Four candidates are listed but not scored: nothing locatable exists for them, which is <em>unknown</em>, not <em>empty</em>.</p>
@@ -941,7 +945,7 @@ h2.adt em{font-style:italic;color:var(--gold-ink);font-weight:400}
 <div class="adl">
 <a href="mailto:info@acitythatworks.ca"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> info@acitythatworks.ca</a>
 <a href="endorse.html"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg> Candidate Endorsement Pack →</a>
-<a href="comparison.html"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg> Candidate Comparison Matrix →</a>
+<a href="comparison.html" data-cand><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg> Candidate Comparison Matrix →</a>
 <a href="faq.html"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12" y2="17"/></svg> Frequently Asked Questions →</a>
 </div>
 </div>

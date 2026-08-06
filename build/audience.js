@@ -286,6 +286,10 @@ function page(a) {
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<!-- The candidate switch: one boolean in flags.js hides every candidate page
+     and every link to one. Loaded first and synchronously so a gated page
+     leaves before it paints. -->
+<script src="flags.js"></script>
 <meta name="description" content="${esc(a.desc)}">
 <meta name="theme-color" content="#1A3668">
 <title>${esc(title)}</title>
@@ -322,7 +326,7 @@ function page(a) {
 <nav class="nv">
 <a href="summary.html">Summary</a>
 <a href="measures.html">Measures</a>
-<a href="scorecard.html" class="nv-sc">Candidates</a>
+<a href="scorecard.html" data-cand class="nv-sc">Candidates</a>
 <a href="city-hall.html">City Hall</a>
 <a href="faq.html">FAQ</a>
 <a href="endorse.html" class="btn-end">Endorse</a>
@@ -340,8 +344,8 @@ function page(a) {
 <a href="savings.html">Savings &amp; Revenue Analysis</a>
 <a href="city-hall.html">How City Hall Works</a>
 <a href="endorse.html">Candidate Endorsement Pack</a>
-<a href="comparison.html">Candidate Comparison Matrix</a>
-<a href="scorecard.html">Candidate Scorecard</a>
+<a href="comparison.html" data-cand>Candidate Comparison Matrix</a>
+<a href="scorecard.html" data-cand>Candidate Scorecard</a>
 <a href="faq.html">Frequently Asked Questions</a>
 <a href="version-history.html">Version History</a>
 <div class="grp"></div>
