@@ -112,7 +112,14 @@
     }
   }
 
-  if (on && !override) { return; }
+  /* Nothing left to do only when the pages are visible AND this browser has
+     no reason to be told about it. `panel` has to be in this test: with the
+     master switch on and no override in force, `override` is false, and an
+     earlier version returned here — which silently took the toggle away from
+     the one browser that had asked for it, on the exact day the switch was
+     turned on. The sweep below is already guarded by `if (!on)`, so this
+     return is only ever an early exit past the panel. */
+  if (on && !override && !panel) { return; }
 
   function ready(fn) {
     if (document.readyState === 'loading') {
