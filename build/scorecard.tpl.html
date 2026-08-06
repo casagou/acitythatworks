@@ -41,33 +41,51 @@
 /* ── grade chips ─────────────────────────────────────────────────────── */
 .g{display:inline-flex;align-items:center;justify-content:center;min-width:34px;padding:3px 7px;font-family:'Fraunces',serif;font-size:17px;font-weight:600;line-height:1.15;color:#fff}
 .g.a{background:#227247}.g.b{background:#3D6E4E}.g.c{background:#8B6914}.g.d{background:#B5651F}.g.f{background:#B5341F}.g.x{background:#8a8580}
-/* ── overall table ───────────────────────────────────────────────────── */
-.ovt{width:100%;border-collapse:collapse;font-size:14px;margin-top:20px}
-.ovt th{text-align:left;padding:10px 10px 10px 0;font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--navy);border-bottom:2px solid rgba(26,54,104,.3)}
-.ovt td{padding:12px 10px 12px 0;border-bottom:1px solid rgba(26,54,104,.14);vertical-align:middle}
-.ov-rk{font-family:'JetBrains Mono',monospace;font-size:12px;color:#8a8580;width:26px}
-.cn-name{display:block;font-family:'Fraunces',serif;font-size:16px;font-weight:500;color:var(--navy);line-height:1.2}
-.cn-role{display:block;font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:#6b6664;margin-top:3px}
+.mk-a{background:#227247}.mk-b{background:#6FA07C}.mk-c{background:#D9B45B}.mk-d{background:#E2D2A6}.mk-f{background:#B5341F}
 /* ── the name is the way to that candidate's profile ─────────────────────
    The reciprocal of the profile page's link into this one. Underlined rather
-   than coloured, so fifteen of them in a column do not read as a warning; the
-   arrow on the overall table says where it goes, because that is the one
-   table a reader meets before they know the link exists. */
+   than coloured, so fifteen of them in a column do not read as a warning. */
 a.plink{text-decoration:none;color:inherit;border-bottom:1px solid rgba(26,54,104,.3)}
 a.plink:hover{color:var(--gold-ink);border-bottom-color:var(--gold-ink)}
 a.plink:focus-visible{outline:2px solid var(--gold-ink);outline-offset:2px}
-/* The sticky "who" cells already set navy and plink inherits it; the overall
-   table's cell does not, so the name says so itself rather than dropping to
-   the grey it would otherwise inherit. */
-a.cn-name{display:inline-block;color:var(--navy)}
-a.cn-name:after{content:"→";font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--gold-ink);margin-left:7px;vertical-align:1px;opacity:.6}
-a.cn-name:hover:after{opacity:1}
-.ov-mn{font-family:'JetBrains Mono',monospace;font-size:14px;color:var(--navy);white-space:nowrap}
-.ov-n{font-family:'JetBrains Mono',monospace;font-size:13px;white-space:nowrap;color:var(--navy)}
-.ov-n .of{display:block;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:#8a8580}
-.mkbar{display:flex;height:11px;min-width:110px;border:1px solid rgba(26,54,104,.2)}
-.mkbar i{display:block}
-.mk-a{background:#227247}.mk-b{background:#6FA07C}.mk-c{background:#D9B45B}.mk-d{background:#E2D2A6}.mk-f{background:#B5341F}
+/* ── the contents list, folded ───────────────────────────────────────── */
+.toc-fold{margin:16px 0;padding:0}
+.toc-fold>summary{cursor:pointer;list-style:none}
+.toc-fold>summary::-webkit-details-marker{display:none}
+.toc-fold>summary::after{content:" ▾";font-size:10px}
+.toc-fold[open]>summary::after{content:" ▴"}
+/* ── the cell key, under the table ───────────────────────────────────── */
+.cellkey{margin:14px 0 0;font-size:13.5px;line-height:1.6;color:#57534e}
+.cellkey p{margin:0 0 8px;max-width:none}
+.ckh{font-size:14px;color:#33312e}
+/* A grid rather than inline runs: the descriptions are sentences, and an
+   inline run that must not wrap is an inline run that overflows the page. */
+.cklist{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:8px 22px;margin:0 0 10px;padding:0;list-style:none}
+.cklist li{display:flex;align-items:flex-start;gap:9px}
+.cklist li>span:last-child{min-width:0}
+.cklist .g{min-width:26px;font-size:14px;padding:1px 5px;flex:none}
+.cklist .few-m{font-size:11px;padding:1px 5px;min-width:26px;flex:none}
+.ckr{color:var(--gold-ink);flex:none;width:26px;text-align:center}
+.ckn{color:#c9c4bf;font-size:16px;flex:none;width:26px;text-align:center}
+.ckn2{font-size:13px;color:#6b6664}
+/* ── this page opens on a table ───────────────────────────────────────────
+   Every other page on the site is prose, and the shared hero is sized for
+   prose: 72px of padding over a 26px lead. Here the reader came for the
+   grid, so the masthead is tightened and the intro is one paragraph at body
+   size. The words are unchanged — only the room they take. */
+.hero{padding-top:40px;padding-bottom:22px}
+/* styles.css sets .lead with !important, twice, so overriding it here needs
+   the same weapon rather than a specificity trick that a later edit there
+   would silently undo. */
+.hero .lead{font-size:19px !important;line-height:1.5 !important;margin-bottom:14px}
+.ph1{font-size:40px;margin-top:12px}
+.prose h2#areas{margin-top:26px;padding-top:0}
+.prose p.lede-t{max-width:none;font-size:15px;line-height:1.6;margin:10px 0 14px}
+.callout.gold p{font-size:14.5px;margin:10px 0}
+/* Straight to the grid, for a reader who already knows what this page is. */
+.tojump{display:inline-flex;align-items:center;gap:8px;margin-top:6px;font-family:'JetBrains Mono',monospace;font-size:10.5px;text-transform:uppercase;letter-spacing:.1em;color:var(--navy);text-decoration:none;border:1px solid rgba(26,54,104,.3);padding:9px 13px}
+.tojump:hover{background:rgba(212,168,67,.2)}
+.tojump:focus-visible{outline:2px solid var(--navy);outline-offset:2px}
 /* ── pillar table ────────────────────────────────────────────────────── */
 .plt{width:100%;border-collapse:collapse;font-size:13px;min-width:660px}
 .plt th{padding:8px 6px;font-family:'JetBrains Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:.06em;color:var(--navy);border-bottom:2px solid rgba(26,54,104,.3);text-align:center}
@@ -130,18 +148,39 @@ body.no-scroll{overflow:hidden}
 .ctl-s{margin-top:10px;font-size:13px;color:#57534e;display:flex;flex-wrap:wrap;gap:4px 14px;align-items:baseline}
 .ctl-s b{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--navy)}
 .nores{padding:22px 6px;text-align:center;font-size:14px;color:#57534e}
+.ctlsum{cursor:pointer;list-style:none;font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--navy);padding:4px 0}
+.ctlsum::-webkit-details-marker{display:none}
+.ctlsum::after{content:" ▾";font-size:9px}
+.ctlfold[open]>.ctlsum::after{content:" ▴"}
+.ctlsum-n{font-family:'Public Sans',system-ui,sans-serif;text-transform:none;letter-spacing:0;color:#6b6664;margin-left:10px}
+.ctlfold[open]>.ctlsum{margin-bottom:10px}
+@media(min-width:720px){.ctlsum{display:none}}
 /* ── 15-area grid: table ─────────────────────────────────────────────── */
+/* The prose column is 760px and the table needs about 1150px to show all
+   fifteen areas at once, so it breaks out of the column symmetrically with
+   negative margins rather than a transform — a transformed ancestor changes
+   what position:sticky inside it resolves against, and both the heading row
+   and the name column depend on that. It never exceeds the viewport, so a
+   phone gets the same table with the same horizontal scroll as before. */
+/* 100vw counts the vertical scrollbar, so bleeding to it overflows the page
+   by exactly the scrollbar's width. --sbw is measured once in script and set
+   on :root; the 18px fallback is a classic scrollbar, which is the safe way
+   to be wrong before that runs and for a reader with no JavaScript at all. */
+.ctl,.areawrap,.cellkey,.nores{--bleed:min(1380px, calc(100vw - 28px - var(--sbw, 18px)));width:var(--bleed);margin-left:calc((100% - var(--bleed)) / 2);margin-right:calc((100% - var(--bleed)) / 2)}
 /* Its own scroll container in both axes, so the heading row and the name
    column pin against the table rather than against the page — the site
    header and jump bar already own the top of the viewport, and a second
    sticky row competing with them lands on top of one of them. */
-.areawrap{max-height:78vh}
-.colt{width:100%;border-collapse:collapse;font-size:12.5px;min-width:1020px}
-.colt th{padding:0;font-family:'JetBrains Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:.05em;color:var(--navy);border-bottom:2px solid rgba(26,54,104,.3);text-align:center;vertical-align:bottom}
+.areawrap{max-height:80vh;margin-top:0}
+/* Only when it actually overflows: a fade at the right edge, so a table that
+   is one column short of fitting says so instead of looking finished. */
+.areawrap.spill{background:linear-gradient(to left, rgba(26,54,104,.12), rgba(26,54,104,0) 42px) right / 42px 100% no-repeat local}
+.colt{width:100%;border-collapse:collapse;font-size:12px;min-width:1130px}
+.colt th{padding:0;font-family:'JetBrains Mono',monospace;font-size:8.5px;text-transform:uppercase;letter-spacing:.03em;color:var(--navy);border-bottom:2px solid rgba(26,54,104,.3);text-align:center;vertical-align:bottom}
 .colt thead th{position:sticky;top:0;z-index:2;background:var(--paper)}
-.colt th.who{text-align:left;min-width:13.5em;padding:8px 5px;left:0;z-index:3}
-.colt th abbr{text-decoration:none;border-bottom:1px dotted rgba(26,54,104,.45);cursor:help}
-.chs{display:flex;flex-direction:column;align-items:center;gap:2px;width:100%;padding:8px 4px;border:0;background:none;font:inherit;color:inherit;text-transform:inherit;letter-spacing:inherit;cursor:pointer}
+.colt th.who{text-align:left;min-width:11.5em;padding:8px 5px;left:0;z-index:3}
+.colt th abbr{text-decoration:none;border-bottom:1px dotted rgba(26,54,104,.45);cursor:help;display:block;white-space:normal;line-height:1.25}
+.chs{display:flex;flex-direction:column;align-items:center;gap:2px;width:100%;padding:7px 3px;border:0;background:none;font:inherit;color:inherit;text-transform:inherit;letter-spacing:inherit;cursor:pointer}
 .chs:hover{background:rgba(212,168,67,.2)}
 .chs:focus-visible{outline:2px solid var(--navy);outline-offset:-2px}
 .sar{font-size:8px;line-height:1;color:transparent}
@@ -149,8 +188,10 @@ body.no-scroll{overflow:hidden}
 th[aria-sort=descending] .sar{color:var(--navy)}
 th[aria-sort=ascending] .sar{color:var(--navy);transform:rotate(180deg)}
 th[aria-sort=descending] .chs,th[aria-sort=ascending] .chs{background:rgba(212,168,67,.22)}
-.colt td{padding:7px 5px;border-bottom:1px solid rgba(26,54,104,.12);text-align:center;vertical-align:middle}
-.colt td.who{text-align:left;font-family:'Fraunces',serif;font-size:14px;color:var(--navy);white-space:nowrap;position:sticky;left:0;background:#fff;border-right:1px solid rgba(26,54,104,.14)}
+.colt td{padding:6px 2px;border-bottom:1px solid rgba(26,54,104,.12);text-align:center;vertical-align:middle}
+.colt td .g{min-width:27px;font-size:15px;padding:2px 4px}
+.colt td .few-m{padding:2px 4px;min-width:30px}
+.colt td.who{text-align:left;font-family:'Fraunces',serif;font-size:13.5px;color:var(--navy);white-space:nowrap;position:sticky;left:0;background:#fff;border-right:1px solid rgba(26,54,104,.14);padding-left:6px}
 .colt td.who .wr{display:block;font-family:'JetBrains Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:.07em;color:#6b6664;margin-top:2px;white-space:normal}
 /* The tick box sits beside the name rather than around it — the name is a
    link to that candidate's profile, and a label wrapping it would navigate
@@ -187,6 +228,13 @@ td.cc.rec{font-size:14px;color:var(--gold-ink)}
    viewport, so it gives back what it can and the tick target grows to
    something a thumb can hit. */
 @media (max-width:560px){
+  /* A phone has no room to show the masthead and the table at once, so the
+     masthead gives up what it can and the jump link earns its place. */
+  .hero{padding-top:22px;padding-bottom:12px}
+  .ph1{font-size:31px;margin-top:10px}
+  .hero .lead{font-size:16.5px !important;margin-bottom:12px}
+  .callout.gold p{font-size:14px}
+  .prose p.lede-t{font-size:14.5px}
   .colt th.who{min-width:9.5em}
   .colt td.who{font-size:13px}
   .ctl-f input[type=search],.ctl-f select{width:100%}
@@ -270,22 +318,23 @@ td.bad{color:#B5341F;font-weight:600}
 <div class="hero">
 <div class="eyb"><span>📊 The Ballot</span><span class="dot">◆</span><span>Scorecard v<!--SCVER--> · <!--SCDATE--></span><span class="dot">◆</span><span>Matrix v<!--MVER--></span><span class="dot">◆</span><span><a href="version-history.html" style="color:inherit">v1.9.7</a></span></div>
 <h1 class="ph1">Where each candidate <em>stands.</em></h1>
-<p class="lead" style="margin-top:18px"><strong>55 topics · <!--MARKS--> scored marks · <!--NCAND--> candidates.</strong> Every mark is the output of two questions asked in order, so the same evidence produces the same mark regardless of who reads it. <strong>A grade is computed, not assigned</strong> — and every number on this page can be recomputed from the grid below.</p>
-<p class="scale"><strong>The scale measures distance from this framework, not quality.</strong> A low grade means a candidate proposes something different, or has not yet said how. It does not mean they are wrong.</p>
-<a href="index.html" class="pgback">← Back to the framework</a>
+<p class="lead" style="margin-top:14px"><strong>55 topics · <!--MARKS--> scored marks · <!--NCAND--> candidates.</strong> Every mark answers two questions asked in order, so the same evidence produces the same mark whoever reads it. <strong>A grade is computed, not assigned</strong>, and every number here can be recomputed from the grid at the foot of the page.</p>
+<a href="#areas" class="tojump">Straight to the table ↓</a>
 </div>
 
 <div class="callout gold" style="margin-top:6px">
 <div class="lbl">◆ Read this before the grades</div>
-<p><strong>Read the “graded on” column before the grade.</strong> A grade computed on 6 topics and a grade computed on 25 are not comparable claims. <strong>Silence is never scored</strong>, so a narrow base is a fact about a publication calendar, not about a candidate.</p>
-<p><strong>Most municipal candidates publish platform detail in September.</strong> A matrix scored in July and August therefore <strong>systematically under-reports challengers relative to incumbents</strong>, who have four years of votes on the record. That is a property of the calendar, not a finding about anyone, and it is the single most important caveat on this page. <strong>A re-score after nominations close on 11 September is mandatory before this document informs anything.</strong></p>
-<p><strong>This page discloses four defects in its own scale, one of them now fixed at source, and prints no letter at all where the base is thinner than three topics.</strong> <a href="#defects">Read the defects</a> before quoting any cell.</p>
+<p><strong>The scale measures distance from this framework, not quality</strong> — a low grade means a candidate proposes something different, or has not yet said how. <strong>Read n of 55 before the letter</strong>, because silence is never scored: a narrow base is a fact about a publication calendar, not about a candidate.</p>
+<p><strong>Most challengers publish detail in September</strong>, so a matrix scored in August under-reports them against incumbents with four years of votes on the record. <strong>A re-score after nominations close on 11 September is mandatory before this page informs anything.</strong> It also discloses <a href="#defects">four defects in its own scale</a> and <a href="#open">its open items</a>.</p>
 </div>
 
-<nav class="toc" aria-label="On this page">
-<div class="toc-h">◆ On this page</div>
+<!-- Collapsed by default. The sticky jump bar directly below does the same
+     job and travels with the reader, so an eleven-item list expanded at the
+     top of the page was a screen of navigation between a reader and the
+     table they came for. It is still here, and still the whole list. -->
+<details class="toc toc-fold">
+<summary class="toc-h">◆ On this page — eleven sections</summary>
 <ol>
-<li><a href="#grades">Overall grades</a></li>
 <li><a href="#areas">The fifteen areas — every candidate, every grade</a></li>
 <li><a href="#misread">Cells that will be misread</a></li>
 <li><a href="#pillars">Grades by pillar</a></li>
@@ -297,7 +346,7 @@ td.bad{color:#B5341F;font-weight:600}
 <li><a href="#bias">This document's own bias</a></li>
 <li><a href="#open">Open items</a></li>
 </ol>
-</nav>
+</details>
 
 <div class="jumpbar" id="jumpbar">
 <div class="jumpin">
@@ -314,28 +363,16 @@ td.bad{color:#B5341F;font-weight:600}
 
 <div class="prose">
 
-<h2 id="grades">Overall grades</h2>
-<p>The mean of every scored topic for that candidate. <strong>Excluded marks — no public position, Record, no information — are left out of the mean entirely</strong>, so silence never lowers a grade. It only narrows the base.</p>
-<p><strong>Every candidate's name on this page links to their <a href="profiles.html">profile</a></strong> — the evidence base the grade rests on and its vintage, their own site and social accounts, the sources, what is on the record, what is still unscored, and what would move the grade. A grade is a number; the profile is the reason for it.</p>
-<div class="legend">
-<span><i class="mk-a"></i> Aligned 3.0</span><span><i class="mk-b"></i> Close 2.0</span><span><i class="mk-c"></i> Partial+ 1.5 / Partial 1.0</span><span><i class="mk-d"></i> Weak 0.5</span><span><i class="mk-f"></i> Opposed −1.0</span>
-</div>
-<div class="tbl-wrap">
-<table class="ovt">
-<thead><tr><th></th><th>Candidate</th><th>Grade</th><th>Mean</th><th>Graded on</th><th>Marks</th></tr></thead>
-<tbody><!--OVERALL--></tbody>
-</table>
-</div>
-<p style="font-size:13.5px;color:#57534e"><strong>Not scored:</strong> <a href="profiles.html#cand-four-unconfirmed">Jerry Garcia · Peter Gibbs · Martin Girard · Owen Haley</a>. No site, platform, statement or coverage located for any of the four — roughly a quarter of the apparent council field. <strong>Unknown, not empty.</strong> This page should not be read as evidence about them.</p>
-
-<h2 id="areas">The fifteen areas — every candidate, every grade</h2>
-<p><strong>Sort it, filter it, or tick two candidates and compare them side by side.</strong> Select any cell to see exactly what the grade is made of: which measures were scored, what mark each got, and the sentence the candidate actually said or the vote they actually cast. Nothing here is an opinion about a candidate — it is arithmetic on published positions, and you can check every step.</p>
-<p>Each area aggregates a named set of the 55 topics, and <strong>all 55 are used exactly once</strong> — nothing double-counted, nothing dropped. The number under each grade is <strong>how many topics in that area the candidate has a scored position on, out of how many exist</strong>. Hover an area heading to see which measures feed it.</p>
-<div class="callout gold" style="margin:14px 0">
-<p style="margin:0"><strong>Read n/total before the letter.</strong> A grade on 3 of 12 topics is a statement about three topics, not a verdict on a portfolio. <strong>Below three scored topics no letter is printed at all</strong> — the cell shows the mean of the marks it holds, in a dashed box, because a letter computed from one mark would be read as a verdict on the whole area. Six of the fifteen areas can never reach that floor: Homelessness, Walking &amp; Transit, Cleanliness and Reconciliation contain one topic each; Mobility and Business contain two.</p>
-</div>
+<h2 id="areas">Every candidate, every area</h2>
+<p class="lede-t"><strong>Sort it, filter it, or tick candidates to compare them side by side — and select any cell to see the marks and the sentences behind that grade.</strong> <strong>Gen</strong> is the overall grade; the other fourteen areas each take a named set of the 55 topics, all used exactly once. The figure under a grade is how many topics in that area the candidate has a scored position on.</p>
 
 <div class="ctl" id="areactl" hidden>
+<!-- Folded on a phone, where four stacked fields put 450px of controls
+     between the reader and the table; open and with its summary hidden on
+     anything wider. Script decides which, because CSS can open a <details>
+     but cannot close one. -->
+<details class="ctlfold" id="ctlfold">
+<summary class="ctlsum">Sort, filter and compare<span class="ctlsum-n"></span></summary>
 <div class="ctl-r">
 <div class="ctl-f">
 <label for="fq">Find a candidate</label>
@@ -364,8 +401,13 @@ td.bad{color:#B5341F;font-weight:600}
 <button type="button" id="freset">Reset</button>
 </div>
 </div>
+</details>
+<!-- Outside the fold on purpose: how many candidates are showing, and how
+     many areas are off the right edge, are exactly what a reader needs when
+     the controls are collapsed. -->
 <div class="ctl-s">
 <span>Showing <b id="fcount">15</b> of <b><!--NCAND--></b> graded candidates<span id="fsel-n"></span>.</span>
+<span id="fhint" hidden></span>
 <span id="fnote"></span>
 </div>
 </div>
@@ -377,7 +419,17 @@ td.bad{color:#B5341F;font-weight:600}
 </table>
 </div>
 <p class="nores" id="fnone" hidden>No candidate matches those filters. <button type="button" class="lnkb" id="fclear">Clear them</button></p>
-<p style="font-size:13.5px;color:#57534e"><strong>A letter</strong> is a grade on three or more scored topics. <strong>A dashed number</strong> is the mean of one or two marks, printed instead of a letter. <strong>📋</strong> is Record only — documented facts about a term in office, which are never scored. <strong>—</strong> is no scored position and no record in that area. The four states are never collapsed into one another.</p>
+<div class="cellkey">
+<p class="ckh"><strong>What a cell can say.</strong> The four states are never collapsed into one another.</p>
+<ul class="cklist">
+<li><span class="g b">B</span><span>A <strong>grade</strong>, on three or more scored topics.</span></li>
+<li><span class="few-m">2.50</span><span>The <strong>mean of one or two marks</strong>, printed instead of a letter — <a href="#defects">below the three-topic floor</a>, and not a verdict on the area.</span></li>
+<li><b class="ckr">📋</b><span><strong>Record only</strong>: documented facts about a term in office, which are never scored.</span></li>
+<li><b class="ckn">—</b><span><strong>No scored position</strong> and no record in that area.</span></li>
+</ul>
+<p class="ckn2">Six of the fifteen areas can never reach the three-topic floor: Homelessness, Walking &amp; Transit, Cleanliness and Reconciliation hold one topic each; Mobility and Business hold two. Hover an area heading to see which measures feed it. <strong>Every name links to that candidate's <a href="profiles.html">profile</a></strong> — the evidence base the grade rests on, and the reason behind the number.</p>
+<p class="ckn2"><strong>Not scored at all:</strong> <a href="profiles.html#cand-four-unconfirmed">Jerry Garcia · Peter Gibbs · Martin Girard · Owen Haley</a> — no site, platform, statement or coverage located for any of the four, roughly a quarter of the apparent council field. <strong>Unknown, not empty.</strong> This page should not be read as evidence about them.</p>
+</div>
 
 <h3 id="misread">Cells that will be misread — read these before quoting the grid</h3>
 <ul class="warns">
@@ -397,6 +449,9 @@ td.bad{color:#B5341F;font-weight:600}
 <h2 id="grid">The full grid — 55 topics</h2>
 <p><strong>Select any number to see the mark, its value and the sentence it rests on.</strong> A dot means the mark is excluded: no public position, a Record entry, or no information. Three topics are new in v3.0, created because candidates hold published positions the previous topic set had nowhere to record.</p>
 <p style="font-size:13.5px;color:#57534e"><strong>Evidence coverage, stated plainly.</strong> <!--EVCOV--> marks currently display the sentence they rest on. The rest show the mark and its value; their evidence sentence lives in the master and is being migrated. <strong>The full per-cell ledger — Q1, Q2, mark, value and evidence for all <!--MARKS--> marks — is held outside Notion and available on request.</strong></p>
+<div class="legend">
+<span><i class="mk-a"></i> Aligned 3.0</span><span><i class="mk-b"></i> Close 2.0</span><span><i class="mk-c"></i> Partial+ 1.5 / Partial 1.0</span><span><i class="mk-d"></i> Weak 0.5</span><span><i class="mk-f"></i> Opposed −1.0</span>
+</div>
 <div class="gwrap">
 <table class="mg">
 <thead><tr><th class="gt">Topic</th><!--GRID_HEAD--></tr></thead>
@@ -581,6 +636,16 @@ td.bad{color:#B5341F;font-weight:600}
     } else {
       h += '<div class="dmark"><b>—</b><span class="dv">No scored position located</span></div>';
     }
+    /* General is the whole grid, so instead of listing 55 topics it shows the
+       shape of the marks behind the mean — the one thing the retired overall
+       table displayed that no cell does. */
+    if(!col.topics && c.marks && c.marks.length){
+      h += '<div class="dlab">The '+c.n+' marks behind that mean</div>';
+      h += '<span class="mkbar" role="img" aria-label="'+c.marks.map(function(m){return m.n+' '+m.label;}).join(', ')+'">'+
+           c.marks.map(function(m){return '<i class="mk-'+m.cls+'" style="flex:'+m.n+'" title="'+m.n+' '+m.label+'"></i>';}).join('')+
+           '</span>';
+      h += '<div class="dtopics">'+c.marks.map(function(m){return m.n+' '+m.label;}).join(' · ')+'</div>';
+    }
     if(col.topics){
       h += '<div class="dlab">Measures in this area</div><div class="dtopics">'+col.topics.join(' · ')+'</div>';
     }
@@ -677,12 +742,69 @@ td.bad{color:#B5341F;font-weight:600}
     var count= document.getElementById('fcount');
     var selN = document.getElementById('fsel-n');
     var note = document.getElementById('fnote');
+    var hint = document.getElementById('fhint');
     var none = document.getElementById('fnone');
     var clear= document.getElementById('fclear');
     var desc = true, selOnly = false;
 
     function cellOf(tr, key){ return tr.querySelector('td.cc[data-col="'+key+'"]'); }
     function picked(tr){ return tr.querySelector('.pickbox').checked; }
+
+    /* The table is sized to show all fifteen areas at once on a normal
+       desktop, and to scroll when it cannot. The reader has to be able to
+       tell which of the two is happening: a fifteen-column table that is
+       silently showing thirteen looks complete. The fade only appears while
+       there is genuinely something past the right edge, and goes when the
+       last column scrolls into view. */
+    var wrap = tbl.closest('.areawrap');
+    function spill(){
+      /* Two different questions, and an earlier version answered the wrong
+         one: the fade asks "is there anything further right", which is false
+         once you have scrolled to the end, while the count asks "how many
+         areas are off screen", which is still four at that point — they are
+         simply off the left instead. */
+      wrap.classList.toggle('spill', wrap.scrollWidth - wrap.clientWidth - wrap.scrollLeft > 2);
+
+      var box = wrap.getBoundingClientRect();
+      var left = box.left + nameW(), hidden = 0;
+      [].forEach.call(tbl.tHead.rows[0].cells, function(th){
+        if (!th.classList.contains('ch')) return;
+        var r = th.getBoundingClientRect();
+        if (r.right > box.right + 1 || r.left < left - 1) hidden++;
+      });
+      hint.textContent = hidden
+        ? hidden + ' of the 15 areas are off screen — scroll the table sideways, or focus one area.'
+        : 'All 15 areas fit on screen.';
+      hint.hidden = false;
+    }
+    /* The candidate column is sticky, so it sits on top of whatever has been
+       scrolled under it; an area hidden behind it is hidden. */
+    function nameW(){
+      var th = tbl.tHead.rows[0].cells[0];
+      return th ? th.getBoundingClientRect().width : 0;
+    }
+    /* Measure now, then again on the next frame: layout after a resize or a
+       re-sort is not settled inside the handler that caused it. The immediate
+       call matters because requestAnimationFrame is throttled in a background
+       tab, and a page opened in one would otherwise show no reading at all
+       until it was looked at. */
+    var queued = false;
+    function spillSoon(){
+      spill();
+      if (queued) return;
+      queued = true;
+      requestAnimationFrame(function(){ queued = false; spill(); });
+    }
+    /* The exact scrollbar width, so the full-bleed table lands flush with the
+       viewport instead of pushing the page sideways by however wide this
+       platform draws one. Overlay scrollbars measure 0, which is correct. */
+    function sbw(){
+      document.documentElement.style.setProperty('--sbw',
+        (window.innerWidth - document.documentElement.clientWidth) + 'px');
+    }
+    sbw();
+    wrap.addEventListener('scroll', spill, {passive:true});
+    addEventListener('resize', function(){ sbw(); spillSoon(); }, {passive:true});
 
     /* Sort key. An area with no scored mark has no mean, and inventing one
        would rank "said nothing" against "said something" — so those rows sink
@@ -737,6 +859,10 @@ td.bad{color:#B5341F;font-weight:600}
         th.setAttribute('aria-sort', on ? (desc?'descending':'ascending') : 'none');
       });
 
+      spillSoon();
+      /* Folded controls must not hide the fact that a filter is on. */
+      if (foldN) foldN.textContent = (!fold.open && (shown < rows.length || sel))
+        ? '· ' + shown + ' of ' + rows.length + ' shown' : '';
       count.textContent = shown;
       selN.textContent = sel ? ' · '+sel+' ticked' : '';
       selB.disabled = !sel && !selOnly;
@@ -803,6 +929,21 @@ td.bad{color:#B5341F;font-weight:600}
     }
     reset.addEventListener('click', clearAll);
     clear.addEventListener('click', clearAll);
+
+    /* Open on anything with room for the fields side by side, folded on a
+       phone — but only until the reader touches it, after which their choice
+       stands through any number of rotations. */
+    var fold = document.getElementById('ctlfold'), foldTouched = false;
+    var foldN = fold.querySelector('.ctlsum-n');
+    function autoFold(){
+      if (!foldTouched) fold.open = matchMedia('(min-width: 720px)').matches;
+    }
+    fold.addEventListener('toggle', function(){
+      if (fold.open) spillSoon();
+    });
+    fold.querySelector('.ctlsum').addEventListener('click', function(){ foldTouched = true; });
+    addEventListener('resize', autoFold, {passive:true});
+    autoFold();
 
     ctl.hidden = false;
     apply();
