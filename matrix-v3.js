@@ -1,9 +1,9 @@
-/* Candidate Comparison Matrix — v3.2 numeric data
+/* Candidate Comparison Matrix — v3.4 numeric data
    ================================================
    Transcribed from the §6 complete coverage grid of the Notion master
-   "Grade Breakdown — Every Topic, Every Candidate" v3.2 (2 August 2026),
+   "Grade Breakdown — Every Topic, Every Candidate" v3.4 (5 August 2026),
    which supersedes the v3.0 numeric re-grade of 31 July as the authoritative
-   cell-by-cell source. Two upstream revisions are folded into this file:
+   cell-by-cell source. Four upstream revisions are folded into this file:
 
      v3.1 (1 Aug) — a full mark-by-mark re-verification. 15 marks excluded
      for resting on characterisations rather than citable sentences
@@ -17,6 +17,24 @@
 
      v3.2 (2 Aug) — Opposed moved from −2.0 to −1.0. See SCALE below and the
      DEFECTS entry, which records the conflict of interest on that change.
+
+     v3.3 (5 Aug) — plain-English definitions added to all 55 topics upstream,
+     and nine coverage-grid row labels widened where the abbreviation had
+     dropped a concept the topic actually covers. No mark, mean or grade
+     changed. The definitions are not carried here; the widened labels are,
+     in TOPICS.
+
+     v3.4 (5 Aug) — those definitions verified line by line against the
+     Program master. 54 of 55 rewritten, 28 carrying a real defect, four
+     describing the wrong measure outright. No mark, mean or grade changed
+     again, but two topic TITLES were corrected with them and both are
+     carried here: M8 is a 5% rental vacancy target of which the DCC
+     reduction is one instrument, not a DCC measure; and M45c is one
+     signature public-space project chosen by residents from a shortlist of
+     three, of which a Centennial Square renewal is one candidate alongside
+     a Pandora linear park and an Inner Harbour promenade — naming
+     Centennial Square as the project stated a choice residents have not
+     made. Both titles had been wrong on the published page.
 
    This file is the single source of truth for the scorecard. Every published
    grade, mean and pillar figure is recomputed from GRID at build time by
@@ -44,8 +62,8 @@
    entirely, so silence never lowers a grade — it only narrows the base. */
 
 const MATRIX_META = {
-  version: "3.2",
-  date: "2 August 2026",
+  version: "3.4",
+  date: "5 August 2026",
   scorecard: "5.1",
   scorecardDate: "4 August 2026",
   topics: 55,
@@ -141,7 +159,7 @@ const TOPICS = [
   ["M6b",     "Land bank + co-operative housing", "liveable"],
   ["M7",      "Permits + AI pre-screening", "liveable"],
   ["M7b",     "Pre-approved pattern-book housing", "liveable"],
-  ["M8/M8b",  "DCC reductions + suite amnesty", "liveable"],
+  ["M8/M8b",  "5% vacancy target, DCC cuts, suite amnesty", "liveable"],
   ["M9/M9b/M9c/M64", "Tenant protections, STR, heat bylaw", "liveable"],
   ["M10",     "Transparent algorithmic waitlist", "liveable"],
   ["M11",     "Homelessness — Housing First + STEP", "liveable"],
@@ -160,19 +178,19 @@ const TOPICS = [
   ["M28d",    "Community paramedicine", "safe"],
   ["M29/M29b", "VicPD + regional policing review", "safe"],
   ["M30",     "Streetlights, no surveillance", "safe"],
-  ["M31/M31b/M31c/M32", "Dashboards, enforcement record", "safe"],
+  ["M31/M31b/M31c/M32", "Safety dashboard, published enforcement record", "safe"],
   ["M33",     "Enforce existing bylaws", "safe"],
   ["M33b",    "Drug-use buffer zones", "safe"],
-  ["M34–M37", "Encampment response, night lighting", "safe"],
+  ["M34–M37", "Encampment response, reclaimed spaces, night lighting", "safe"],
   ["M43–M46b", "Heritage and cultural venues", "beautiful"],
-  ["M45b/M45c", "Pedestrianisation, Centennial Square", "beautiful"],
+  ["M45b/M45c", "Pedestrianisation and the signature project", "beautiful"],
   ["M47–M49", "Heritage incentives, lighting, parks", "beautiful"],
   ["M50/M50b/M51/M52", "Culture, sport, arts floor", "beautiful"],
   ["M53/M53b/M53c", "GIS, AI imagery, LIDAR", "beautiful"],
   ["M53d",    "Published municipal AI standard", "beautiful"],
-  ["M54–M57", "Procurement, open data, Wi-Fi, EV", "beautiful"],
+  ["M54–M57", "Local-tech procurement, open data, Wi-Fi, EV", "beautiful"],
   ["M58/M58b/M64b", "Climate, district energy, seismic", "beautiful"],
-  ["M59–M63", "Trees, ecosystems, emergency prep", "beautiful"],
+  ["M59–M63", "Trees, mode share, ecosystems, emergency prep", "beautiful"],
   ["M15",     "Managed competition", "managed"],
   ["M65",     "Rotating zero-based reviews", "managed"],
   ["M66",     "Tax glide path, residential rate cap", "managed"],
@@ -183,8 +201,8 @@ const TOPICS = [
   ["M69",     "Real-estate rationalisation", "managed", "NEW"],
   ["M70/M70b", "Provincial downloading ledger", "managed"],
   ["M70c",    "Regional bill, CRD cost, Goldstream", "managed"],
-  ["M71–M73d", "Business, downtown, economy", "managed"],
-  ["M74/M75/M76", "Capital threshold, parking, fees", "managed"],
+  ["M71–M73d", "Business, downtown, economic development", "managed"],
+  ["M74/M75/M76", "Capital threshold, first-hour parking, permit fees", "managed"],
   ["M77/M78/M78b", "Referendum + 5-step process", "democratic"],
   ["M79/M79b", "Integrity Commissioner", "democratic"],
   ["M79c–f",  "Lobbyist registry, FOI fee", "democratic", "NEW"],
