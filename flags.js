@@ -30,7 +30,7 @@
        THE SWITCH.  false = candidate pages hidden site-wide.
                     true  = the site as published.
      ════════════════════════════════════════════════════════════════ */
-  var CANDIDATES_LIVE = false;
+  var CANDIDATES_LIVE = true;
 
   /* The pages the switch governs. Add a filename here and it is gated on the
      same terms — redirected when off, and every link to it swept. */
