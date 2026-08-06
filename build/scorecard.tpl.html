@@ -257,6 +257,32 @@ td.cc.rec{font-size:14px;color:var(--gold-ink)}
 .warns li{font-size:14px;line-height:1.6;margin:9px 0;color:#33312e}
 .dtopics{font-family:'JetBrains Mono',monospace;font-size:11px;line-height:1.7;color:var(--gold-ink)}
 .dwarn{margin-top:12px;padding:11px 13px;background:rgba(181,52,31,.06);border-left:3px solid #B5341F;font-size:13.5px;line-height:1.55}
+/* ── the per-mark ledger inside a detail panel ───────────────────────── */
+/* One block per scored topic: what the measure is, what the candidate got,
+   and the sentence behind it. Safety runs to twelve of these and the panel
+   gets tall, which is the right trade: on a phone the panel is already a
+   bottom sheet with its own scroll, and a second scroller nested inside it
+   would swallow the gesture that closes the first. */
+.dled{border-top:1px solid rgba(26,54,104,.14)}
+.dle{padding:9px 0;border-bottom:1px solid rgba(26,54,104,.10)}
+.dleh{display:flex;align-items:baseline;gap:9px;flex-wrap:wrap}
+.dlei{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;color:var(--navy);white-space:nowrap}
+.dlet{flex:1 1 160px;font-size:13.5px;line-height:1.4;color:#33312e}
+.dlem{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.04em;padding:2px 7px;white-space:nowrap;color:#1c1917}
+.dlem.mk-a,.dlem.mk-f{color:#fff}
+.dlee{margin-top:5px;font-size:13.5px;line-height:1.6;color:#57534e}
+.dles{display:block;margin-top:4px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.03em;color:#8a8580}
+.dprov{margin-top:8px;font-family:'JetBrains Mono',monospace;font-size:10px;line-height:1.65;letter-spacing:.03em;color:#8a8580}
+.dprov a{color:#6b6664}
+/* ── the fourteen-area roll-up inside a General cell ─────────────────── */
+.drol{border-top:1px solid rgba(26,54,104,.14)}
+.dro{padding:9px 0;border-bottom:1px solid rgba(26,54,104,.10)}
+.droh{display:flex;align-items:baseline;gap:9px;flex-wrap:wrap}
+.droh .g{font-size:14px;min-width:28px;padding:2px 6px}
+.drob{font-family:'JetBrains Mono',monospace;font-size:12px;min-width:28px;padding:3px 6px;background:rgba(26,54,104,.07);color:var(--navy);text-align:center}
+.drol-l{flex:1 1 120px;font-size:14px;color:var(--navy);font-weight:600}
+.drol-n{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.04em;color:#6b6664}
+.droe{margin-top:5px;font-size:13px;line-height:1.6;color:#57534e}
 /* ── misc ────────────────────────────────────────────────────────────── */
 .defect{border:1px solid rgba(181,52,31,.35);background:rgba(181,52,31,.05);padding:16px 18px;margin:14px 0}
 .defect h3{margin:0 0 6px;font-family:'Fraunces',serif;font-size:18px;color:#8f2a19}
@@ -459,7 +485,7 @@ td.bad{color:#B5341F;font-weight:600}
 <h2 id="grid">The full grid — 55 topics</h2>
 <p><strong>Select any number to see the mark, its value and the sentence it rests on.</strong> A dot means the mark is excluded: no public position, a Record entry, or no information. Three topics are new in v3.0, created because candidates hold published positions the previous topic set had nowhere to record.</p>
 <p><strong>Select a topic name to see what the topic actually is.</strong> Every one of the 55 now carries a plain-English definition of the measure behind it, expanding the acronyms in place — DCC, STR, STEP, GIS, LIDAR, FOI, IoT. <strong>Seven rows are deliberately empty</strong>, because the entire field is silent on them; they are printed anyway, since a topic list that quietly drops what nobody answered can produce almost any result without changing a single mark.</p>
-<p style="font-size:13.5px;color:#57534e"><strong>Evidence coverage, stated plainly.</strong> <!--EVCOV--> marks currently display the sentence they rest on. The rest show the mark and its value; their evidence sentence lives in the master and is being migrated. <strong>The full per-cell ledger — Q1, Q2, mark, value and evidence for all <!--MARKS--> marks — is held outside Notion and available on request.</strong></p>
+<p style="font-size:13.5px;color:#57534e"><strong>Evidence coverage, stated plainly.</strong> <!--EVCOV--> marks display the sentence they rest on, here and in every area cell above — the sentences are drawn from <a href="comparison.html">the comparison matrix</a>, which is the evidence store this site publishes. The rest show the mark and its value: the store was compiled on 31 July and records no located position for them, while the mark comes from the later master, and printing a sentence about an absence under a mark that exists would be worse than printing none. <strong>The full per-cell ledger — Q1, Q2, mark, value and evidence for all <!--MARKS--> marks — is held outside Notion and available on request.</strong></p>
 <div class="legend">
 <span><i class="mk-a"></i> Aligned 3.0</span><span><i class="mk-b"></i> Close 2.0</span><span><i class="mk-c"></i> Partial+ 1.5 / Partial 1.0</span><span><i class="mk-d"></i> Weak 0.5</span><span><i class="mk-f"></i> Opposed −1.0</span>
 </div>
@@ -575,6 +601,33 @@ td.bad{color:#B5341F;font-weight:600}
      real minus in the panel exactly as it is in the grid. */
   function fmt(v){ return (v<0 ? '−' : '')+Math.abs(v).toFixed(1); }
 
+  /* Three lookups the panels need constantly, built once. The grid is stored
+     as rows of raw strings in candidate order, so every read of it needs the
+     candidate's column index; the columns name their topics by id, so every
+     area panel needs the id-to-row index. */
+  var CI = {}; DATA.cands.forEach(function(c,i){ CI[c.key]=i; });
+  var TI = {}; DATA.topics.forEach(function(t,i){ TI[t.id]=i; });
+  function markFor(v){ var m=null; for(var k in DATA.marks){ if(DATA.marks[k].value===v) m=DATA.marks[k]; } return m; }
+  /* Both prose sources reason out loud in the older symbolic scale — "no target
+     named, so 🟡", "scored ✅ under M28" — and neither symbol means anything on
+     a page that grades in numbers. They are quotations, and editing a source to
+     suit the frame it has been moved into is not an option, so the symbols get
+     a key instead. Run against the finished panel rather than one block of it,
+     because they turn up in the borrowed sentences, in the master's
+     justification lines and in the caveats alike. 📋 is left out: Record is
+     explained on the page in its own right. */
+  function legacyKey(html){
+    if(!/[✅🟢🟡❌⚪⛔]/.test(html)) return '';
+    return '<div class="dprov">✅ 🟢 met · 🟡 partial · ❌ opposed · ⚪ ⛔ nothing located — the older symbolic scale, '+
+           'left standing in the sentences that were written on it. The numeric mark beside each measure is the one this page grades on.</div>';
+  }
+  /* The row indices an area covers. General has no topic list — it is the
+     whole grid — so it answers with all 55. */
+  function colRows(col){
+    if(!col.topics) return DATA.topics.map(function(_,i){return i;});
+    return col.topics.map(function(id){ return TI[id]; }).filter(function(i){ return i!==undefined; });
+  }
+
   function closeAll(returnFocus){
     var p=document.querySelector('.sc-panel'); if(p) p.remove();
     var bd=document.querySelector('.sc-backdrop'); if(bd) bd.remove();
@@ -608,11 +661,15 @@ td.bad{color:#B5341F;font-weight:600}
        for only 15 of the 55 topics and predated the v1.10 reconciliation. */
     h += '<div class="dlab">What this topic is</div><div class="dtext">'+t.what+'</div>';
     h += '<div class="dlab">The sentence this mark rests on</div>';
-    h += ev ? '<div class="dtext">'+ev+'</div>'
-            : '<div class="dnone">Not yet migrated to this site. This mark’s evidence sentence is held in the master document; the full per-cell ledger with Q1, Q2, mark, value and evidence for all '+DATA.nmarks+' marks is available on request from <a href="mailto:info@acitythatworks.ca">info@acitythatworks.ca</a>.</div>';
+    h += ev ? '<div class="dtext">'+ev+'</div>'+
+              '<div class="dprov">From the evidence store — <a href="comparison.html">the comparison matrix</a>, v'+
+              DATA.evmeta.version+' · '+DATA.evmeta.date+'. The mark is from Grade Breakdown v<!--MVER--> · <!--MDATE-->.</div>'
+            : '<div class="dnone">The evidence store — <a href="comparison.html">the comparison matrix</a>, v'+DATA.evmeta.version+' · '+DATA.evmeta.date+
+              ' — records no located position for this cell, and the mark comes from the later master. Rather than print a sentence about an absence beneath a mark, the page says so. The full per-cell ledger with Q1, Q2, mark, value and evidence for all '+DATA.nmarks+' marks is available on request from <a href="mailto:info@acitythatworks.ca">info@acitythatworks.ca</a>.</div>';
     h += '<div class="dlab">How this mark was reached</div><div class="dtext" style="font-size:13.5px">'+
          'Two questions, asked in order: does the candidate share the goal, and how would they do it. '+
          '<a href="#scale">The full scale is published above.</a> Ambiguity resolves upward, and silence is never scored.</div>';
+    h += legacyKey(h);
     h += profileLink(c);
     return h;
   }
@@ -625,6 +682,153 @@ td.bad{color:#B5341F;font-weight:600}
     return '<div class="dmore"><a href="'+c.profile+'">Read '+c.name+
            "'s full profile — the evidence base, the sources, and what would move the grade →</a></div>";
   }
+
+  /* Every scored topic in one area cell, each with its mark and the sentence
+     that mark rests on. This is the answer to "why is this a B?", and until
+     v1.11 the page did not give it: the panel printed the master's one-line
+     justification where one existed and "no per-mark breakdown published"
+     where one did not, which sent the reader to comparison.html for the
+     evidence — a second page, for the thing they had just clicked on.
+
+     Nothing here is new data. The grid supplies the marks and the evidence
+     store supplies the sentences; both were already on the site, on two
+     different pages, and this puts them in the cell they explain. */
+  function ledgerHtml(ck, col, g){
+    var ci = CI[ck];
+    var rows = colRows(col);
+    var scored = [], silent = [], record = [], noEv = 0;
+    rows.forEach(function(ti){
+      var raw = DATA.grid[ti][ci];
+      if(raw==='R'){ record.push(DATA.topics[ti]); return; }
+      if(raw==='.'){ silent.push(DATA.topics[ti]); return; }
+      var ev = DATA.ev[ti+'|'+ck];
+      if(!ev) noEv++;
+      scored.push({t:DATA.topics[ti], v:parseFloat(raw), ev:ev});
+    });
+    if(!scored.length) return '';
+    /* Strongest mark first: a reader scanning a cell wants to know what the
+       candidate is best on, and ordering by the grid's row order instead would
+       be ordering by an internal numbering nobody outside this page can see. */
+    scored.sort(function(a,b){ return b.v-a.v; });
+    var h = '<div class="dled">';
+    /* Where one evidence table stands behind two master topics — M65 and M66
+       are one table in the store and two rows in the grid — both marks resolve
+       to the same sentence. Printing it twice would read as two separate
+       findings that happen to be word for word identical, so the second says
+       where it came from instead. */
+    var said = {};
+    scored.forEach(function(s){
+      var mk = markFor(s.v);
+      h += '<div class="dle"><div class="dleh"><span class="dlei">'+s.t.id+'</span>'+
+           '<span class="dlet">'+s.t.label+'</span>'+
+           '<span class="dlem mk-'+mk.cls+'">'+mk.label+' '+fmt(s.v)+'</span></div>';
+      if(s.ev && said[s.ev]){
+        h += '<div class="dles" style="margin-top:5px">rests on the '+said[s.ev]+' sentence above — the evidence store keeps '+
+             (s.t.shared||'these measures')+' as one table</div>';
+      } else if(s.ev){
+        said[s.ev] = s.t.id;
+        h += '<div class="dlee">'+s.ev+
+             (s.t.shared? '<span class="dles">the evidence store keeps '+s.t.shared+' as one table, so this sentence covers the group</span>':'')+
+             '</div>';
+      }
+      h += '</div>';
+    });
+    h += '</div>';
+    if(noEv){
+      /* Said rather than hidden. Printing the store's "no public position" line
+         under a mark it does not know about would be worse than printing
+         nothing, so those marks show their value and say why. */
+      var them = noEv>1 ? 'them' : 'it';
+      h += '<div class="dnone">'+
+           (noEv===scored.length
+             ? (noEv>1 ? 'None of these '+noEv+' marks carries' : 'This mark carries')
+             : noEv+' of these '+scored.length+' marks '+(noEv>1?'carry':'carries'))+
+           ' no sentence here: the evidence store records no located position for '+them+
+           ', and the mark comes from the later master. '+
+           (DATA.just[ck+'|'+col.key]
+             ? 'The justification line below is the master’s own account of '+them+'.'
+             : 'The per-cell ledger behind '+them+' is available from <a href="mailto:info@acitythatworks.ca">info@acitythatworks.ca</a>.')+'</div>';
+    }
+    /* What was researched and not found is part of the explanation of a grade
+       — a B on 4 of 12 is a different claim from a B on 12 of 12 — so the
+       unscored topics are named rather than left as a count in the header. */
+    if(silent.length || record.length){
+      h += '<div class="dtopics" style="margin-top:9px">';
+      if(silent.length) h += '<strong style="color:#6b6664">Researched, nothing located:</strong> '+silent.map(function(t){return t.id;}).join(' · ');
+      if(record.length) h += (silent.length?'<br>':'')+'<strong style="color:#6b6664">📋 Record, never scored:</strong> '+record.map(function(t){return t.id;}).join(' · ');
+      h += '</div>';
+    }
+    /* Two stores, two dates, and they can disagree — a sentence written for the
+       comparison matrix predates corrections the master has since made. Both
+       are shown and both are dated, so the reader can see which is which
+       instead of meeting a contradiction with no way to resolve it. Printed
+       only when there is a borrowed sentence for it to date. */
+    if(noEv < scored.length){
+      h += '<div class="dprov">Sentences from the evidence store — <a href="comparison.html">the comparison matrix</a>, v'+
+           DATA.evmeta.version+' · '+DATA.evmeta.date+'. Marks from Grade Breakdown v<!--MVER--> · <!--MDATE-->. '+
+           'Where the two differ the master governs'+(DATA.just[ck+'|'+col.key]? ', and its line for this cell is below':'')+'.</div>';
+    }
+    return h;
+  }
+
+  /* General is every topic at once, so a 25-row ledger inside it would bury the
+     thing a reader actually asked: what is this overall grade made of. The
+     fourteen areas are that answer — each one with its own letter, its own base
+     and its own marks — and every one of them is a click away in the same row
+     for the sentences underneath. */
+  function generalHtml(ck, c){
+    var ci = CI[ck];
+    var h = '<div class="dlab">How the fourteen areas make this mean</div>';
+    h += '<div class="dtext" style="font-size:13.5px;margin-bottom:10px">The overall mean is the mean of all '+c.n+
+         ' marks, <strong>not</strong> the mean of these fourteen letters — an area with one mark and an area with twelve '+
+         'weigh what their marks weigh. Each area below is its own cell in this row.</div>';
+    var empty = [];
+    h += '<div class="drol">';
+    DATA.cols.forEach(function(col){
+      if(!col.topics) return;
+      var g = DATA.colGrid[ck][col.key] || {state:'empty', n:0};
+      if(g.state==='empty'){ empty.push(col.label); return; }
+      if(g.state==='record'){
+        h += '<div class="dro"><div class="droh"><span class="drob">📋</span><span class="drol-l">'+col.label+'</span>'+
+             '<span class="drol-n">Record only · 0 of '+g.total+'</span></div></div>';
+        return;
+      }
+      var j = DATA.just[ck+'|'+col.key];
+      h += '<div class="dro"><div class="droh">'+
+           (g.state==='graded'
+             ? '<span class="g '+gcls(g.grade)+'">'+g.grade+'</span>'
+             : '<span class="drob">'+num2(g.mean)+'</span>')+
+           '<span class="drol-l">'+col.label+'</span>'+
+           '<span class="drol-n">'+(g.state==='graded'? 'mean '+num2(g.mean) : 'no letter — under the floor')+
+           ' · '+g.n+' of '+g.total+'</span></div>';
+      h += '<div class="droe">'+(j ? j.ev : markList(ck, col))+'</div>';
+      h += '</div>';
+    });
+    h += '</div>';
+    if(empty.length){
+      h += '<div class="dtopics" style="margin-top:9px"><strong style="color:#6b6664">No scored position located in:</strong> '+
+           empty.join(' · ')+'</div>';
+    }
+    return h;
+  }
+
+  /* The bare marks of one area, for the handful of cells the master's
+     justification tables do not cover. It states what is there rather than
+     claiming nothing is. */
+  function markList(ck, col){
+    var ci = CI[ck];
+    return colRows(col).map(function(ti){
+      var raw = DATA.grid[ti][ci];
+      if(raw==='.'||raw==='R') return null;
+      return DATA.topics[ti].id+' '+fmt(parseFloat(raw));
+    }).filter(Boolean).join(' · ');
+  }
+
+  function gcls(g){
+    if(!g) return 'x';
+    return {A:'a',B:'b',C:'c',D:'d'}[g[0]] || 'f';
+  }
+  function num2(x){ return (x<0?'−':'')+Math.abs(x).toFixed(2); }
 
   /* An area grade is the thing most readers will click, so it has to answer
      "why is this a B?" without sending anyone elsewhere: which measures feed
@@ -671,9 +875,23 @@ td.bad{color:#B5341F;font-weight:600}
       h += '<div class="dlab">Measures in this area</div><div class="dtopics">'+col.topics.join(' · ')+'</div>';
     }
     if(g.state==='graded'||g.state==='marks'){
-      h += '<div class="dlab">The marks, and what each rests on</div>';
-      h += j ? '<div class="dtext">'+j.ev+'</div>'
-             : '<div class="dnone">No per-mark breakdown published for this cell.</div>';
+      if(col.topics){
+        /* Every mark in the cell, with its sentence — the panel's whole
+           purpose, and the reason a reader no longer has to open the
+           comparison matrix to find out what a grade rests on. */
+        h += '<div class="dlab">The marks, and the sentence each rests on</div>';
+        h += ledgerHtml(ck, col, g);
+        /* The master's own line for the cell is kept below the ledger rather
+           than in place of it: it carries editorial judgments the evidence
+           store does not — a recorded-vote correction, a mark that falsified a
+           differentiation claim — and losing those to a tidier panel would be
+           losing the part only the master knows. */
+        if(j){
+          h += '<div class="dlab">The master’s justification for this cell</div><div class="dtext">'+j.ev+'</div>';
+        }
+      } else {
+        h += generalHtml(ck, c);
+      }
     }
     /* Caveats name the cell they qualify, so this is a lookup rather than a
        substring search over the prose that used to mis-fire on short names. */
@@ -686,6 +904,7 @@ td.bad{color:#B5341F;font-weight:600}
          'Two questions, asked in order: does the candidate share the goal, and how would they do it. '+
          'Aligned 3.0 · Close 2.0 · Partial+ 1.5 · Partial 1.0 · Weak 0.5 · Opposed '+fmt(DATA.opposed)+'. '+
          'Silence is never scored — it narrows the base instead. <a href="#scale">The full scale is published below.</a></div>';
+    h += legacyKey(h);
     h += profileLink(c);
     return h;
   }

@@ -1,7 +1,85 @@
 {
+ "_meta": {
+  "version": "2.0",
+  "date": "July 31, 2026"
+ },
+ "M1–M5": {
+  "head": "M1–M5 · Host Nations Foundation",
+  "table": "M1–M5",
+  "shared": null,
+  "actw": "<strong>Standing quarterly working tables with Songhees and Esquimalt Nation leadership, with published meeting summaries subject to Nation approval</strong> (M1); a 5% Indigenous procurement standard (M2); ləᵏʷəŋən place names (M3); cultural protocols (M4); urban Indigenous liaison (M5)",
+  "record": "<strong>DRIPA has immediate legal effect in BC (confirmed in <em>Gitxaała v. British Columbia</em>, 2023) and Victoria sits on the unceded traditional territories of the ləᵏʷəŋən-speaking peoples.</strong> ACTW adds operational discipline — a standing quarterly cadence, published summaries and a procurement standard — to a relationship the mayor has led on symbolically",
+  "what": "Standing government-to-government tables with the Songhees and Esquimalt Nations, a 5% Indigenous procurement target, lək̓ʷəŋən place names, cultural protocols, and an urban Indigenous liaison.",
+  "ev": {
+   "Al": {
+    "symbol": "✅",
+    "text": "<strong>ləᵏʷəŋən place-naming, longhouse funding atop Migan/Beacon Hill, and the language app — the strongest record on the host-Nations relationship of any sitting member.</strong> She also sits on the South Island Reconciliation and Advisory Committee (2025–2026), <strong>which is a role rather than a position</strong>"
+   },
+   "Ca": {
+    "symbol": "🟡",
+    "text": "Pro-reconciliation; cites reconciliation work with local First Nations among his term's achievements. <strong>No specific G2G mechanism, procurement standard or published cadence</strong>"
+   },
+   "De": {
+    "symbol": "🟡",
+    "text": "Pro-reconciliation; no specific G2G mechanism"
+   },
+   "Th": {
+    "symbol": "🟡",
+    "text": "Pro-reconciliation; no specific mechanism"
+   },
+   "Ki": {
+    "symbol": "🟡",
+    "text": "Pro-reconciliation; no specific mechanism"
+   },
+   "Lo": {
+    "symbol": "🟡",
+    "text": "Pro-reconciliation; no specific mechanism"
+   },
+   "Co": {
+    "symbol": "⚪",
+    "text": "No specific G2G position"
+   },
+   "Ha": {
+    "symbol": "⚪",
+    "text": "No specific G2G position"
+   },
+   "Ga": {
+    "symbol": "⚪",
+    "text": "No specific G2G position"
+   },
+   "Cs": {
+    "symbol": "⚪",
+    "text": "No specific G2G position"
+   },
+   "Ro": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Bo": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Mc": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Le": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Sa": {
+    "symbol": "⚪",
+    "text": "No public position"
+   }
+  }
+ },
  "M6": {
   "head": "M6 · Housing supply + composition",
-  "actw": "ACTW: 12,000+ homes by 2030 with composition targets: 25% missing middle, 20% 3BR+, 15% non-market, 30% rental. Quarterly reporting on each",
+  "table": "M6",
+  "shared": null,
+  "actw": "12,000+ homes by 2030 with composition targets: 25% missing middle, 20% 3BR+, 15% non-market, 30% rental. <strong>Quarterly reporting on each</strong>",
+  "record": "<strong>61 Missing Middle permits in 2024 against a 150 target</strong>; 3 applications in the first six months. <strong>56 apartments built per townhouse</strong> (CMHC). <strong>DCCs +258%</strong>, ACCs added Oct 2025",
+  "what": "Build 12,000-plus net new homes by 2030 and set what kind gets built: at least 25% missing middle, 20% three-bedroom or larger, 15% below-market, 30% purpose-built rental, reported quarterly.",
   "ev": {
    "Al": {
     "symbol": "🟡",
@@ -53,21 +131,25 @@
    },
    "Mc": {
     "symbol": "🟢",
-    "text": "\"More Missing Middle housing: <strong>townhouses, multiplexes, courtyard housing</strong>\" (arthurmcinnis.ca) — the composition mix M6 targets. <strong>Found July 30; this page previously recorded him as having none</strong>"
+    "text": "\"More Missing Middle housing: <strong>townhouses, multiplexes, courtyard housing</strong>\" (<a href=\"http://arthurmcinnis.ca\" target=\"_blank\" rel=\"noopener\">arthurmcinnis.ca</a>) — the composition mix M6 targets. <strong>Found July 30; this page previously recorded him as having none</strong>"
    },
    "Le": {
-    "symbol": "🟢",
-    "text": "<strong>\"Encourage the building of 3 &amp; 4 bedroom units, so families have space to live\"</strong> — the M6 20% 3BR+ composition line with a named direction — plus \"Build affordable housing\" and \"More purpose built co-ops and below market housing\" (bellalee.ca/policy, read July 31 2026). No numeric target"
+    "symbol": "🟡",
+    "text": "Housing and affordability her declared central issue, run jointly with Sandor. Pro-supply, no targets"
    },
    "Sa": {
-    "symbol": "🟢",
-    "text": "<strong>\"Build more housing of all kinds, especially deeply affordable housing\"; \"Make it easier to build family suitable housing… keep families in Victoria\"</strong> (jacksandor.ca/platform, read July 31 2026). Family-suitable and non-market composition directions named; no numeric target"
+    "symbol": "🟡",
+    "text": "<strong>The most supply-forward newcomer platform.</strong> Red Seal electrician who has built subsidized seniors housing, condos and townhomes; scarcity framed as root cause. No composition target"
    }
   }
  },
  "M6b": {
-  "head": "M6b · City land bank + co-operative housing",
-  "actw": "ACTW: A City land bank acquiring and holding land for non-market and affordable delivery",
+  "head": "M6b · Land bank + co-operative housing",
+  "table": "M6b",
+  "shared": null,
+  "actw": "A City land bank acquiring and holding land for non-market and affordable delivery",
+  "record": "<strong>The land bank was never established in four years</strong>",
+  "what": "A public inventory of city-owned land, a fund to acquire more, and disposition scored on speed to completion, affordability and family-sized units rather than on price alone, with right of first refusal for non-profit and Indigenous housing partners.",
   "ev": {
    "Al": {
     "symbol": "✅",
@@ -119,21 +201,25 @@
    },
    "Mc": {
     "symbol": "🟢",
-    "text": "\"Greater use of <strong>co-operative housing and city-owned land</strong> to create homes for working families, seniors, and young people\" (arthurmcinnis.ca). Same asset, different vehicle"
+    "text": "\"Greater use of <strong>co-operative housing and city-owned land</strong> to create homes for working families, seniors, and young people\" (<a href=\"http://arthurmcinnis.ca\" target=\"_blank\" rel=\"noopener\">arthurmcinnis.ca</a>). Same asset, different vehicle"
    },
    "Le": {
-    "symbol": "🟢",
-    "text": "<strong>\"More purpose built co-ops and below market housing. Including making it easier to form a housing co-op\"</strong>; empty lots and derelict buildings turned into affordable housing (bellalee.ca/policy). Co-op delivery named; a different vehicle than a land bank"
+    "symbol": "⚪",
+    "text": "No public position"
    },
    "Sa": {
-    "symbol": "🟢",
-    "text": "<strong>\"Pilot a city financing program for co-op housing, to increase the diversity and affordability of housing\"</strong> (jacksandor.ca/platform). Co-op delivery via city financing — same asset class, different vehicle"
+    "symbol": "⚪",
+    "text": "No public position"
    }
   }
  },
  "M7": {
   "head": "M7 · Permits + AI pre-screening",
-  "actw": "ACTW: Published targets by category (simple &lt;6 weeks, complex &lt;6 months, rezoning &lt;9 months); AI pre-screening on the Kelowna KAI model; one-stop development centre; quarterly variance reports",
+  "table": "M7",
+  "shared": null,
+  "actw": "Published targets by category (simple \\&lt;6 weeks, complex \\&lt;6 months, rezoning \\&lt;9 months); AI pre-screening on the Kelowna KAI model; one-stop development centre; quarterly variance reports",
+  "record": "<strong>Victoria publishes no permit-processing benchmarks.</strong> VRBA cites \"regulatory hurdles, slow approval processes, escalating fees\"",
+  "what": "Publish how long each permit type actually takes and commit to a target: under 6 weeks for simple residential, under 6 months for complex, under 9 months for rezoning. AI pre-screens applications and produces a conformity report for a human to review.",
   "ev": {
    "Al": {
     "symbol": "⚪",
@@ -198,8 +284,12 @@
   }
  },
  "M7b": {
-  "head": "M7b · Pre-approved pattern-book housing *(v1.9)*",
-  "actw": "ACTW: Municipal pattern book for duplex, triplex, fourplex, townhouse, courtyard and laneway forms, with an automatic expedited permit stream at the M7 simple-permit target",
+  "head": "M7b · Pre-approved pattern-book housing",
+  "table": "M7b",
+  "shared": null,
+  "actw": "Municipal pattern book for duplex, triplex, fourplex, townhouse, courtyard and laneway forms, with an automatic expedited permit stream at the M7 simple-permit target",
+  "record": null,
+  "what": "A free municipal pattern book of pre-approved designs for duplexes, triplexes, fourplexes, townhouses and laneway homes, with an automatic fast lane on the 6-week permit target for anything built from it unamended. BC has published provincial standardised designs; this is the Victoria version.",
   "ev": {
    "Al": {
     "symbol": "⚪",
@@ -251,7 +341,7 @@
    },
    "Mc": {
     "symbol": "✅",
-    "text": "\"Streamlining approvals for appropriate infill through tools such as <strong>pattern books and pre-approved designs</strong>\" (arthurmcinnis.ca). <strong>The mechanism named almost verbatim</strong>"
+    "text": "\"Streamlining approvals for appropriate infill through tools such as <strong>pattern books and pre-approved designs</strong>\" (<a href=\"http://arthurmcinnis.ca\" target=\"_blank\" rel=\"noopener\">arthurmcinnis.ca</a>). <strong>The mechanism named almost verbatim</strong>"
    },
    "Le": {
     "symbol": "⚪",
@@ -263,9 +353,13 @@
    }
   }
  },
- "M8 / M8b": {
-  "head": "M8 / M8b · DCC reductions for rental; suite legalization amnesty *(M8b v1.9)*",
-  "actw": "ACTW: Targeted DCC reductions for purpose-built rental (M8); a 24-month life-safety-only amnesty for existing unpermitted secondary suites with a named concierge and tenant protection against eviction and rent reset (M8b)",
+ "M8/M8b": {
+  "head": "M8 / M8b · 5% vacancy target, DCC cuts, suite amnesty",
+  "table": "M8 / M8b",
+  "shared": null,
+  "actw": "Targeted DCC reductions for purpose-built rental (M8); a 24-month life-safety-only amnesty for existing unpermitted secondary suites with a named concierge and tenant protection against eviction and rent reset (M8b)",
+  "record": "<strong>DCCs raised 258%; Amenity Cost Charges added October 2025, further chilling builder economics</strong>",
+  "what": "M8 targets a 5% rental vacancy rate, using targeted Development Cost Charge reductions (the per-unit fees a builder pays the city) for purpose-built rental. M8b is a 24-month amnesty letting owners legalise existing unpermitted suites against a life-safety standard, with no retroactive penalty and no rent reset for the tenant.",
   "ev": {
    "Al": {
     "symbol": "⚪",
@@ -324,14 +418,18 @@
     "text": "No public position"
    },
    "Sa": {
-    "symbol": "🟢",
-    "text": "<strong>\"Permanently exempt nonmarket housing from all taxes, charges, and fees, to get as much deeply affordable housing as possible built as quickly as possible\"</strong> (jacksandor.ca/platform, read July 31 2026). The same fee-relief lever as M8, aimed at non-market rather than purpose-built rental. <strong>The first candidate in the field with a position on this cluster</strong>"
+    "symbol": "⚪",
+    "text": "No public position"
    }
   }
  },
- "M9 / M9b / M9c / M64": {
-  "head": "M9 / M9b / M9c / M64 · Tenant protections, STR licensing, heat bylaw",
-  "actw": "ACTW: STR licensing tightening (M9b); vacancy-control-between-tenancies advocacy (M9c); 26°C maximum-temperature rental bylaw (M64)",
+ "M9/M9b/M9c/M64": {
+  "head": "M9 / M9b / M9c / M64 · Tenant protections, STR, heat bylaw",
+  "table": "M9 / M9b / M9c / M64",
+  "shared": null,
+  "actw": "STR licensing tightening (M9b); vacancy-control-between-tenancies advocacy (M9c); <strong>26°C maximum-temperature rental bylaw</strong> (M64)",
+  "record": "The 2021 heat dome caused <strong>619 heat-related deaths in BC, 98% indoors, 67% aged 70+, 56% living alone</strong> (BC Coroners Service Death Review Panel). 26°C is the coroner-recognised indoor-danger threshold",
+  "what": "Demoviction protection (12-month notice, moving-cost compensation, right of return, replacement units), a Renters' Hub for tenant rights, tighter short-term rental licensing, advocacy for vacancy control between tenancies, and a bylaw requiring landlords to keep one room of every rental at or below 26°C during heat warnings.",
   "ev": {
    "Al": {
     "symbol": "🟡",
@@ -386,18 +484,22 @@
     "text": "No public position. <strong>Tenant protection appears in his platform pillars; scored under M6 rather than here</strong>"
    },
    "Le": {
-    "symbol": "🟢",
-    "text": "<strong>\"Support Renters… If a landlord refuses to make a repair, the City will do it and send them the bill with a 25% service tax\"; \"Allow pets in rentals\"</strong> (bellalee.ca/policy, read July 31 2026). A named tenant-protection enforcement mechanism, different from the Renters' Hub. No STR or heat-bylaw position"
+    "symbol": "⚪",
+    "text": "No public position"
    },
    "Sa": {
-    "symbol": "🟢",
-    "text": "<strong>\"Increase funding for the Greater Victoria Rent Bank, to keep people housed\"</strong> (jacksandor.ca/platform, read July 31 2026). A named tenant-stability funding instrument. No STR or heat-bylaw position"
+    "symbol": "⚪",
+    "text": "No public position"
    }
   }
  },
  "M10": {
   "head": "M10 · Transparent algorithmic waitlist allocation",
-  "actw": "ACTW: Transparent, points-based, publicly auditable allocation for subsidized housing waitlists",
+  "table": "M10",
+  "shared": null,
+  "actw": "Transparent, points-based, publicly auditable allocation for subsidized housing waitlists",
+  "record": null,
+  "what": "One digital portal for City-affiliated and partner non-profit housing waitlists, with the point weights published, your position in the queue visible, and no way to jump it. BC Housing remains the social-housing operator.",
   "ev": {
    "Al": {
     "symbol": "⚪",
@@ -463,7 +565,11 @@
  },
  "M11": {
   "head": "M11 · Homelessness — Housing First + STEP throughput",
-  "actw": "ACTW: 50% reduction in unsheltered homelessness via Housing-First plus STEP-style throughput (Loughton motion absorbed); capacity-first enforcement (M35); 89% regional burden flagged for fair-share advocacy",
+  "table": "M11",
+  "shared": null,
+  "actw": "50% reduction in unsheltered homelessness via Housing-First <strong>plus STEP-style throughput</strong> (Loughton motion absorbed); capacity-first enforcement (M35); 89% regional burden flagged for fair-share advocacy",
+  "record": "<strong>$25M spent 2023–25 with no published outcome metrics</strong>, plus $11M encampment damage repair. <strong>Regional PiT count 1,749 in 2025</strong>, up from 1,665 in 2023. Victoria carries <strong>89% of regional shelter capacity and 83% of supportive housing</strong> across 13 municipalities",
+  "what": "Cut unsheltered homelessness by half, from about 320 to under 160, through Housing First, plus a STEP-style programme (Supporting Tenants, Enabling Pathways) that moves stabilised residents out of supportive housing so the unit behind them frees up. Reported as cost per successful placement, not dollars spent.",
   "ev": {
    "Al": {
     "symbol": "🟢",
@@ -518,18 +624,22 @@
     "text": "No public position on homelessness policy"
    },
    "Le": {
-    "symbol": "🟢",
-    "text": "<strong>\"Create a housing liaison to help folks get out of transitional housing\"</strong> — STEP throughput in substance — plus \"Work with the Province to create more treatment beds\" and \"Support harm reduction, and safe supply\" (bellalee.ca/policy, read July 31 2026)"
+    "symbol": "⚪",
+    "text": "No public position"
    },
    "Sa": {
-    "symbol": "🟢",
-    "text": "<strong>\"Increase assistance for people moving through supportive housing, to make better use of our limited resources\"</strong> — the STEP throughput argument, rationale included — plus displacement-reducing zoning changes (jacksandor.ca/platform, read July 31 2026)"
+    "symbol": "⚪",
+    "text": "No public position"
    }
   }
  },
- "M12 / M13 / M13b / M13c": {
+ "M12/M13/M13b/M13c": {
   "head": "M12 / M13 / M13b / M13c · Families, childcare, doctors, youth",
-  "actw": "ACTW: Advocate 500 new childcare spaces (M12); school food quality with SD61 (M13); family-doctor recruitment via low or no-rent clinic space plus permissive tax exemption (M13b); reach young adults 18–25 (M13c)",
+  "table": "M12 / M13 / M13b / M13c",
+  "shared": null,
+  "actw": "Advocate 500 new childcare spaces (M12); school food quality with SD61 (M13); <strong>family-doctor recruitment via low or no-rent clinic space plus permissive tax exemption</strong> (M13b); reach young adults 18–25 (M13c)",
+  "record": "<strong>Both Alto clinic planks remain undelivered after four years</strong>",
+  "what": "Municipal levers for families: advocacy for 500 new childcare spaces with childcare permits issued in 60 days, school food quality, low-rent clinic space and tax exemptions to recruit family doctors, and programming for 18 to 25 year olds.",
   "ev": {
    "Al": {
     "symbol": "🟢",
@@ -584,22 +694,26 @@
     "text": "No public position on the family and school cluster"
    },
    "Le": {
-    "symbol": "🟢",
-    "text": "<strong>\"Build purpose-built housing for doctors and nurse practitioners in return for a practice in Victoria\"; \"Create a city owned walk in clinic\"</strong> — Colwood named as the model (bellalee.ca/policy, read July 31 2026). Comparable instruments to M13b's clinic-space-plus-tax-exemption. <strong>Her MCFD background note is superseded: she now has a published municipal position</strong>"
+    "symbol": "⚪",
+    "text": "<strong>The candidate with the most relevant working knowledge in the field and no published municipal position.</strong> Senior advisor to the Minister of Children and Family Development — <strong>background under banned inference 5</strong>"
    },
    "Sa": {
-    "symbol": "🟢",
-    "text": "<strong>\"Build a municipal clinic, following the success of Colwood and Langford, to attract more family doctors\"</strong> (jacksandor.ca/platform, read July 31 2026). A comparable instrument to M13b"
+    "symbol": "⚪",
+    "text": "No public position"
    }
   }
  },
  "M13d": {
-  "head": "M13d · Standing School District 61 agreement *(v1.8)*",
-  "actw": "ACTW: A standing agreement with SD61 — joint use of gyms, fields and playgrounds; safe routes to school as a programme rather than a complaint line; childcare on school sites",
+  "head": "M13d · Standing School District 61 agreement",
+  "table": "M13d",
+  "shared": null,
+  "actw": "A standing agreement with SD61 — joint use of gyms, fields and playgrounds; safe routes to school as a programme rather than a complaint line; childcare on school sites",
+  "record": "<strong>SD61 trustees are elected on the same ballot on the same day and no candidate in the council field has proposed a standing agreement with the board</strong>",
+  "what": "One standing agreement with School District 61: a published annual work plan, a joint council-and-board meeting held in public once a year, school gyms, fields and playgrounds open to residents outside school hours, and safe walking routes to every school run as a programme rather than a complaint queue.",
   "ev": {
    "Al": {
     "symbol": "🟡",
-    "text": "\"<strong>Enhanced use of Royal Athletic Park, including SD61</strong>, community organizations' programs, and public access\" (altomayor.ca). A named partner on one facility, not a standing agreement"
+    "text": "\"<strong>Enhanced use of Royal Athletic Park, including SD61</strong>, community organizations' programs, and public access\" (<a href=\"http://altomayor.ca\" target=\"_blank\" rel=\"noopener\">altomayor.ca</a>). A named partner on one facility, not a standing agreement"
    },
    "Ca": {
     "symbol": "⚪",
@@ -654,14 +768,18 @@
     "text": "No public position"
    },
    "Sa": {
-    "symbol": "🟢",
-    "text": "<strong>\"Work with school districts and other organizations to use underutilized spaces like school gyms for arts and culture events\"</strong> (jacksandor.ca/platform, read July 31 2026). The joint-use component of M13d, arts-scoped; not a standing agreement"
+    "symbol": "⚪",
+    "text": "No public position"
    }
   }
  },
- "M14 / M16 / M17 / M18": {
+ "M14/M16/M17/M18": {
   "head": "M14 / M16 / M17 / M18 · Cleanliness and the public realm",
-  "actw": "ACTW: 90% of graffiti removed within 48 hours, published quarterly with median report-to-removal time (M14); pest and rodent plan (M16); extended sanitation hours (M17); public art on repeatedly tagged surfaces from the existing $207K budget (M18)",
+  "table": "M14 / M16 / M17 / M18",
+  "shared": null,
+  "actw": "<strong>90% of graffiti removed within 48 hours</strong>, published quarterly with median report-to-removal time (M14); pest and rodent plan (M16); extended sanitation hours (M17); public art on repeatedly tagged surfaces from the existing $207K budget (M18)",
+  "record": "<strong>No cleanliness service standard and no published metric exist</strong>",
+  "what": "A published cleanliness standard: 90% of graffiti removed within 48 hours with the share reported quarterly, an anti-rat and pest plan, street sweeping in the evenings and on weekends downtown, and murals on the surfaces that get tagged repeatedly.",
   "ev": {
    "Al": {
     "symbol": "🟢",
@@ -716,8 +834,8 @@
     "text": "No public position on cleanliness"
    },
    "Le": {
-    "symbol": "🟢",
-    "text": "<strong>\"Continue to fund the Downtown Victoria Business Association to support local businesses with graffiti removal and facade repairs\"</strong>, plus \"caring about the little things like garbage and recycling being picked up on time\" (bellalee.ca/policy, read July 31 2026). A funded removal channel; no service standard or published metric, which is the whole of M14"
+    "symbol": "⚪",
+    "text": "No public position"
    },
    "Sa": {
     "symbol": "⚪",
@@ -725,9 +843,13 @@
    }
   }
  },
- "M19 / M22 / M38–42b": {
+ "M19/M22/M38–M42b": {
   "head": "M19 / M22 / M38–42b · Mobility + Vision Zero",
-  "actw": "ACTW: Adaptive traffic signals on major corridors (Pittsburgh SURTRAC model); Vision Zero 50% reduction by 2030 (Hoboken benchmark); first-hour free parking; Westshore E&amp;N advocacy; federal hood-height advocacy (M42b)",
+  "table": "M19 / M22 / M38–42b",
+  "shared": null,
+  "actw": "Adaptive traffic signals on major corridors (Pittsburgh SURTRAC model); Vision Zero 50% reduction by 2030 (Hoboken benchmark); first-hour free parking; Westshore E&amp;N advocacy; federal hood-height advocacy (M42b)",
+  "record": null,
+  "what": "Adaptive traffic signals starting with 10 intersections on Douglas Street, advocacy for rapid transit on the E&N corridor to the Westshore, and Vision Zero: the road-safety approach that treats zero traffic deaths as the target rather than an acceptable rate.",
   "ev": {
    "Al": {
     "symbol": "🟡",
@@ -771,29 +893,33 @@
    },
    "Ro": {
     "symbol": "🟡",
-    "text": "\"Remove the barriers stopping people from coming downtown and restore the vibrant downtown that has been lost\" (karenrothe.ca)"
+    "text": "\"Remove the barriers stopping people from coming downtown and restore the vibrant downtown that has been lost\" (<a href=\"http://karenrothe.ca\" target=\"_blank\" rel=\"noopener\">karenrothe.ca</a>)"
    },
    "Bo": {
-    "symbol": "⚪",
-    "text": "<em>Corrected July 31 (audit ③):</em> the \"well-maintained parks and roads\" clause is road maintenance and is scored under M25. <strong>Road maintenance is not Vision Zero</strong>"
+    "symbol": "🟡",
+    "text": "\"<strong>Well-maintained parks and roads</strong>\" (<em>Vic News</em> May 15 2026) — closest to M25 \"fix roads first\""
    },
    "Mc": {
     "symbol": "🟡",
     "text": "\"They can't find parking, they can't get where they want to go quickly\" (<em>Vic News</em> June 25 2026). <strong>Parking availability and travel time are precisely what M19 and M24 target.</strong> No mechanism named"
    },
    "Le": {
-    "symbol": "🟢",
-    "text": "<strong>\"Expand Fare Free transit to seniors\"; \"Advocate for lower bus fees\"</strong> (bellalee.ca/policy, read July 31 2026). Named transit-advocacy instruments; no Vision Zero target or signal position"
+    "symbol": "⚪",
+    "text": "No public position"
    },
    "Sa": {
-    "symbol": "🟢",
-    "text": "<strong>\"Prepare for rail transit on Douglas street\"; \"Increase traffic enforcement, to keep our roads safe for everyone\"; \"Increase the amount of accessible street parking downtown\"</strong> (jacksandor.ca/platform, read July 31 2026). Named instruments — enforcement-led rather than signal-led on safety; no Vision Zero target"
+    "symbol": "⚪",
+    "text": "No public position"
    }
   }
  },
- "M20b / M23b": {
-  "head": "M20b / M23b · Walking, and transit — what the City actually controls *(v1.8)*",
-  "actw": "ACTW: Walking: published sidewalk gap inventory, annual km closed, crossing-spacing standard, pedestrian signal timing at real walking speeds. Transit: a named transit-priority capital line; a published City transit position; a published record of how Victoria's Regional Transit Commission representatives voted; local share bounded by the M66 cap. Explicitly no promises on routes or fares",
+ "M20b/M23b": {
+  "head": "M20b / M23b · Walking, and transit — what the City controls",
+  "table": "M20b / M23b",
+  "shared": null,
+  "actw": "<strong>Walking:</strong> published sidewalk gap inventory, annual km closed, crossing-spacing standard, pedestrian signal timing at real walking speeds. <strong>Transit:</strong> a named transit-priority capital line; a published City transit position; <strong>a published record of how Victoria's Regional Transit Commission representatives voted</strong>; local share bounded by the M66 cap. <strong>Explicitly no promises on routes or fares</strong>",
+  "record": "<strong>Mayor Alto sits on the Victoria Regional Transit Commission (2025–2026) and the BC Transit Board (2023–2026). No published record exists of how Victoria's representatives vote, which is exactly what M23b asks for</strong>",
+  "what": "A published sidewalk gap inventory and crossing standard, and a named capital line for bus lanes, signal priority and stops. Routes, fares and frequency belong to BC Transit, so the City publishes its annual position and how its Commission representatives voted rather than promising what it cannot deliver.",
   "ev": {
    "Al": {
     "symbol": "🟡",
@@ -837,29 +963,33 @@
    },
    "Ro": {
     "symbol": "🟡",
-    "text": "<strong>Names transit among core local-government responsibilities:</strong> \"infrastructure, transportation, public safety, affordability, and <strong>public transportation systems that work for all</strong>\" (karenrothe.ca). No mechanism or jurisdictional distinction"
+    "text": "<strong>Names transit among core local-government responsibilities:</strong> \"infrastructure, transportation, public safety, affordability, and <strong>public transportation systems that work for all</strong>\" (<a href=\"http://karenrothe.ca\" target=\"_blank\" rel=\"noopener\">karenrothe.ca</a>). No mechanism or jurisdictional distinction"
    },
    "Bo": {
-    "symbol": "⚪",
-    "text": "<em>Corrected July 31 (audit ③):</em> the entry's own text said the clause \"is road maintenance (M25) rather than walking or transit.\" Scored under M25 only"
+    "symbol": "🟡",
+    "text": "\"Well-maintained parks and roads\" is road maintenance (M25) rather than walking or transit"
    },
    "Mc": {
     "symbol": "🟡",
     "text": "Transportation one of five named platform areas. No mechanism"
    },
    "Le": {
-    "symbol": "🟢",
-    "text": "<strong>\"Bike lane improvements and connecting bike lanes to other municipalities\"; \"Build more bus shelters\"</strong> (bellalee.ca/policy, read July 31 2026). Named city-controlled instruments; no sidewalk inventory, no transit-vote publication position"
+    "symbol": "⚪",
+    "text": "No public position"
    },
    "Sa": {
-    "symbol": "🟢",
-    "text": "<strong>The flagged weakest-🟡 is resolved exactly as directed — a published statement now exists.</strong> \"Build more Bike Valets, and extend their hours, to reduce bike theft and make cycling more convenient\" (jacksandor.ca/platform, read July 31 2026). The BetterTransitYYJ board seat reverts to background"
+    "symbol": "🟡",
+    "text": "Board member, BetterTransitYYJ. <strong>Flagged as the weakest 🟡 in this document</strong> — a governance seat is a stronger signal than professional background but is still an organizational role, not a published municipal position. <strong>Replace with a published statement when one exists, or downgrade to ⚪</strong>"
    }
   }
  },
- "M24b / M25b": {
+ "M24b/M25b": {
   "head": "M24b / M25b · Accessibility and public washrooms",
-  "actw": "ACTW: Public washrooms treated as transportation infrastructure, 24/7 network, $400–600K/yr (M24b, absorbing Coun. Kim's 2022 plank); universal accessibility audit and remediation of every sidewalk, public building, washroom and transit-adjacent site, with a Disability Advisory Committee (M25b)",
+  "table": "M24b / M25b",
+  "shared": null,
+  "actw": "<strong>Public washrooms treated as transportation infrastructure</strong>, 24/7 network, $400–600K/yr (M24b, absorbing Coun. Kim's 2022 plank); <strong>universal accessibility audit and remediation</strong> of every sidewalk, public building, washroom and transit-adjacent site, with a Disability Advisory Committee (M25b)",
+  "record": null,
+  "what": "A publicly accessible 24/7 washroom at least every 500 metres downtown, in the Inner Harbour and on the main commercial corridors, plus a 24-month accessibility audit of every City sidewalk, building, park and washroom against a published standard.",
   "ev": {
    "Al": {
     "symbol": "⚪",
@@ -918,14 +1048,18 @@
     "text": "No public position"
    },
    "Sa": {
-    "symbol": "🟢",
-    "text": "<strong>\"Build more public washrooms, and better maintain the ones we already have, to keep our streets clean and improve accessibility\"</strong>, and \"Increase the amount of accessible street parking downtown… for people with disabilities\" (jacksandor.ca/platform, read July 31 2026). The M24b mechanism named without the transportation-infrastructure framing that is Kim's ✅; accessibility direction on M25b without the audit instrument"
+    "symbol": "⚪",
+    "text": "No public position"
    }
   }
  },
  "M25": {
   "head": "M25 · Fix roads first",
-  "actw": "ACTW: Road and sidewalk maintenance prioritized ahead of discretionary capital",
+  "table": "M25",
+  "shared": null,
+  "actw": "Road and sidewalk maintenance prioritized ahead of discretionary capital",
+  "record": null,
+  "what": "A sequencing rule inside the existing road capital budget rather than new money: fix the maintenance backlog before building new things, repair potholes within 7 days of report, and publish road condition quarterly.",
   "ev": {
    "Al": {
     "symbol": "⚪",
@@ -974,6 +1108,2736 @@
    "Bo": {
     "symbol": "🟡",
     "text": "\"Safe streets, reliable services, <strong>well-maintained parks and roads</strong>\" (<em>Vic News</em> May 15 2026). Sourced on the area, no standard or budget line"
+   },
+   "Mc": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Le": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Sa": {
+    "symbol": "⚪",
+    "text": "No public position"
+   }
+  }
+ },
+ "M26": {
+  "head": "M26 · Downtown Public Order Team",
+  "table": "M26",
+  "shared": null,
+  "actw": "Unified VicPD + Bylaw + Public Works sanitation + Outreach. <strong>Single daily briefing, weekly metrics, one field supervisor per shift</strong>",
+  "record": null,
+  "what": "One command structure putting VicPD, bylaw, sanitation and outreach on the same downtown deployment plan, with a single 8 a.m. briefing, one field supervisor per shift and one co-located desk, instead of four agencies working the same block separately.",
+  "ev": {
+   "Al": {
+    "symbol": "🟡",
+    "text": "CSWB plan has elements but no unified-command operational structure"
+   },
+   "Ca": {
+    "symbol": "🟡",
+    "text": "CSWB supporter"
+   },
+   "De": {
+    "symbol": "🟡",
+    "text": "CSWB supporter"
+   },
+   "Th": {
+    "symbol": "🟡",
+    "text": "CSWB supporter"
+   },
+   "Ki": {
+    "symbol": "🟡",
+    "text": "CSWB supporter; left-flank dissent"
+   },
+   "Lo": {
+    "symbol": "🟢",
+    "text": "<strong>Coordinated Access and Assessment motion</strong> — a named coordination mechanism on the intake side. <em>Downgraded from ✅ in v1.8: it is not a unified-command field structure, and \"operationally similar concept\" was the inference doing the work</em>"
+   },
+   "Co": {
+    "symbol": "🟡",
+    "text": "CSWB supporter"
+   },
+   "Ha": {
+    "symbol": "🟡",
+    "text": "<em>Downgraded from ✅ in v1.8.</em> <strong>\"Methodologically close to DPOT data architecture\" was an analyst's judgement, not his position.</strong> His FOI-driven enforcement work is sourced and scored ✅ under M28"
+   },
+   "Ga": {
+    "symbol": "🟡",
+    "text": "<em>Downgraded from ✅ in v1.8.</em> <strong>Her Five Pillars framework is a published approach to vulnerable residents, not a position on a unified field-operations team</strong>"
+   },
+   "Cs": {
+    "symbol": "⚪",
+    "text": "<strong>\"Frame-aligned on visible order\" was inference.</strong> <em>Downgraded from 🟡 in v1.8</em>"
+   },
+   "Ro": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Bo": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Mc": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Le": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Sa": {
+    "symbol": "⚪",
+    "text": "No public position"
+   }
+  }
+ },
+ "M26b": {
+  "head": "M26b · Civilian crisis response team",
+  "table": "M26b",
+  "shared": null,
+  "actw": "A civilian crisis team answering the call that comes in. <strong>Distinct from M28d, which works on the resident who would otherwise place it. One is response, the other prevention</strong>",
+  "record": null,
+  "what": "Trained civilian crisis workers, not police, on mental-health and wellness calls, dispatched from the same board as the downtown team, with the dispatch criteria published before launch. It proceeds only if a provincial or health-authority partner cost-shares.",
+  "ev": {
+   "Al": {
+    "symbol": "⚪",
+    "text": "CSWB includes multi-sector partners; <strong>no civilian crisis team commitment located</strong>"
+   },
+   "Ca": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "De": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Th": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Ki": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Lo": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Co": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Ha": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Ga": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Cs": {
+    "symbol": "⚪",
+    "text": "Not yet published"
+   },
+   "Ro": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Bo": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Mc": {
+    "symbol": "🟢",
+    "text": "\"Every emergency doesn't need a police car. <strong>Tiered dispatch</strong> … and proper coordination with <strong>mental health and addictions services</strong> are practical tools that work\" (<a href=\"http://arthurmcinnis.ca\" target=\"_blank\" rel=\"noopener\">arthurmcinnis.ca</a>). <strong>Found July 30</strong>"
+   },
+   "Le": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Sa": {
+    "symbol": "⚪",
+    "text": "No public position"
+   }
+  }
+ },
+ "M27": {
+  "head": "M27 · Bylaw enforcement hours 6am–10pm",
+  "table": "M27",
+  "shared": null,
+  "actw": "Extend to <strong>6 AM – 10 PM, 7 days/week</strong> (current 7 AM – 4 PM). <strong>Funded from M15 managed-competition savings, not new tax</strong>",
+  "record": "<strong>Hours remain 7 AM – 4 PM. Roughly 80% of bylaw officer time is consumed by encampment management rather than general enforcement</strong>",
+  "what": "Extend bylaw enforcement to 6 a.m. to 10 p.m., seven days a week. It currently runs 7 a.m. to 4 p.m. on weekdays only, missing the evenings and weekends when disorder peaks. Funded from the competitive-testing savings at M15.",
+  "ev": {
+   "Al": {
+    "symbol": "🟢",
+    "text": "<strong>CSWB added 12 bylaw staff</strong> — a named resourcing action. Hours unchanged; 80% of officer time consumed by encampments"
+   },
+   "Ca": {
+    "symbol": "🟡",
+    "text": "CSWB supporter; no hour-extension position"
+   },
+   "De": {
+    "symbol": "🟡",
+    "text": "CSWB supporter; no hour-extension position"
+   },
+   "Th": {
+    "symbol": "🟡",
+    "text": "CSWB supporter; sponsored the VicPD ask cut, a different lever"
+   },
+   "Ki": {
+    "symbol": "🟡",
+    "text": "CSWB supporter; no hour-extension position"
+   },
+   "Lo": {
+    "symbol": "🟡",
+    "text": "CSWB supporter; no hour-extension position"
+   },
+   "Co": {
+    "symbol": "🟡",
+    "text": "CSWB supporter; no specific hour position"
+   },
+   "Ha": {
+    "symbol": "🟡",
+    "text": "<em>Downgraded from ✅ in v1.8.</em> <strong>\"Enforce existing bylaws consistently\" and the daytime sheltering ban he authored are a direct match to M33, not to M27's hours.</strong> Scored ✅ in the M33 area"
+   },
+   "Ga": {
+    "symbol": "🟡",
+    "text": "<em>Downgraded from ✅ in v1.8.</em> Recorded pro-enforcement votes and opposition to the Dowler Place process. <strong>No position on enforcement hours located</strong>"
+   },
+   "Cs": {
+    "symbol": "🟡",
+    "text": "<em>Downgraded from ✅ in v1.8.</em> \"Safety is not just about enforcement. It is about predictability, order, and trust,\" and she is a downtown business owner with repeated break-ins on record. <strong>No position on hours or on a funding source. A shopkeeper's experience of disorder is evidence about the problem, not a commitment on the mechanism</strong>"
+   },
+   "Ro": {
+    "symbol": "🟡",
+    "text": "Safety one of three named campaign pillars alongside affordability and restoring confidence in city hall (<em>Vic News</em> May 27 2026). No enforcement mechanism named"
+   },
+   "Bo": {
+    "symbol": "🟡",
+    "text": "\"They want <strong>safe streets</strong>, reliable services, well-maintained parks and roads\" (<em>Vic News</em> May 15 2026); public safety a platform pillar. No mechanism named"
+   },
+   "Mc": {
+    "symbol": "🟡",
+    "text": "Public safety one of five named platform areas; on record that residents \"don't feel safe\" downtown (<em>Vic News</em> June 25 2026). No enforcement-hours mechanism"
+   },
+   "Le": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Sa": {
+    "symbol": "⚪",
+    "text": "No public position"
+   }
+  }
+ },
+ "M28": {
+  "head": "M28 · Data-targeted enforcement",
+  "table": "M28",
+  "shared": null,
+  "actw": "Enforcement directed by call and incident data rather than by complaint volume",
+  "record": null,
+  "what": "Direct enforcement at the specific addresses and hours the call data identifies rather than spreading patrol evenly, with focused deterrence and Crown coordination on violent repeat offenders, and outreach decoupled from enforcement for everyone else.",
+  "ev": {
+   "Al": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Ca": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "De": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Th": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Ki": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Lo": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Co": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Ha": {
+    "symbol": "✅",
+    "text": "<strong>FOI analysis surfacing that roughly 24% of all 2022 police calls came from 19 identified addresses.</strong> <em>This document already described it as \"scored ✅ under M28\" while carrying no M28 table — corrected July 30</em>"
+   },
+   "Ga": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Cs": {
+    "symbol": "⚪",
+    "text": "Not yet published"
+   },
+   "Ro": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Bo": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Mc": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Le": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Sa": {
+    "symbol": "⚪",
+    "text": "No public position"
+   }
+  }
+ },
+ "M28b": {
+  "head": "M28b · Business security cost-spreading",
+  "table": "M28b",
+  "shared": null,
+  "actw": "City contribution toward security costs for businesses disproportionately exposed to crime spillover",
+  "record": null,
+  "what": "A capped City reimbursement for street-front businesses in designated high-exposure zones, covering private security hours, glazing repair and sharps-bin servicing above a deductible. Eligibility is set by police call-volume data rather than by application.",
+  "ev": {
+   "Al": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Ca": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "De": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Th": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Ki": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Lo": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Co": {
+    "symbol": "⚪",
+    "text": "No public position. <strong>Absent for the vote</strong>"
+   },
+   "Ha": {
+    "symbol": "🟢",
+    "text": "<strong>Security-cost compensation motion, July 2023, defeated 6–2</strong> — proposed City help funding private security for businesses disproportionately exposed to crime spillover. <strong>Absorbed into ACTW as M28b</strong>"
+   },
+   "Ga": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Cs": {
+    "symbol": "⚪",
+    "text": "<strong>Not yet published — and she is a downtown business owner with repeated break-ins on record, which is the constituency this measure serves</strong>"
+   },
+   "Ro": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Bo": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Mc": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Le": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Sa": {
+    "symbol": "⚪",
+    "text": "No public position"
+   }
+  }
+ },
+ "M28d": {
+  "head": "M28d · Community paramedicine",
+  "table": "M28d",
+  "shared": null,
+  "actw": "City partnership contribution plus provincial advocacy for a permanent <strong>urban</strong> programme targeted at the high-frequency-caller geography M28 identifies. <strong>Gated on confirmed BCEHS or provincial participation</strong>",
+  "record": null,
+  "what": "Paramedics working proactively with the high-frequency callers who generate the most emergency calls, so the call is never placed. BC Emergency Health Services delivers it; the City funds a partnership share, provides space and advocates.",
+  "ev": {
+   "Al": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Ca": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "De": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Th": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Ki": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Lo": {
+    "symbol": "⚪",
+    "text": "No public position. <strong>Her dedicated Island Health outreach worker idea is adjacent and is listed in <em>Where the Field Is Ahead</em></strong>"
+   },
+   "Co": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Ha": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Ga": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Cs": {
+    "symbol": "⚪",
+    "text": "Not yet published"
+   },
+   "Ro": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Bo": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Mc": {
+    "symbol": "✅",
+    "text": "\"Tiered dispatch, <strong>community paramedicine</strong>, and proper coordination with mental health and addictions services are practical tools that work, and <strong>I will push to maintain or implement them</strong>\" (<a href=\"http://arthurmcinnis.ca\" target=\"_blank\" rel=\"noopener\">arthurmcinnis.ca</a>). <strong>Found July 30</strong>"
+   },
+   "Le": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Sa": {
+    "symbol": "⚪",
+    "text": "No public position"
+   }
+  }
+ },
+ "M29/M29b": {
+  "head": "M29 / M29b · VicPD funding + regional policing review",
+  "table": "M29 / M29b",
+  "shared": null,
+  "actw": "4-year service-consumption funding formula with Esquimalt, <strong>binding mediation if no agreement</strong> (M29). <strong>Greater Victoria Regional Policing Services Review</strong> with a binding mediation outcome (M29b, v1.1 absorbing Alto's plank)",
+  "record": "<strong>$598 per resident (2023), the highest per capita of any police department in BC</strong> (<em>BC Ministry of Public Safety, via CBC News</em>). The Board's Provisional 2026 budget <strong>sought</strong> a 9.82% increase of $7,755,058, to $86,753,970 — a request, not an adopted figure. <strong>50–55 officers short, a 13% vacancy rate.</strong> Roughly 95% of VicPD's budget covers contractual obligations. Victoria pays 86.33% of the joint budget",
+  "what": "Renegotiate the VicPD cost split with Esquimalt, which Victoria currently funds at 86.33%, with binding mediation if the two cannot agree. Then co-sponsor an 18-month review of whether policing across Greater Victoria should be delivered regionally.",
+  "ev": {
+   "Al": {
+    "symbol": "✅",
+    "text": "<strong>Regional policing consolidation named in her May 2026 re-election platform</strong> — a significant new plank. Pro-full-VicPD-ask"
+   },
+   "Ca": {
+    "symbol": "🟢",
+    "text": "<strong>Sponsored the VicPD 2026 ask cut, 4→2 patrol officers</strong> — \"the ability of Victoria taxpayers to pay for police services is stretched to the absolute max\" (<em>Times Colonist</em> March 2026). A named budget action, not consolidation"
+   },
+   "De": {
+    "symbol": "🟡",
+    "text": "Pro-VicPD funding; aligned with Alto on the ask"
+   },
+   "Th": {
+    "symbol": "🟡",
+    "text": "<strong>Voted YES on the ask cut</strong> — \"the police budget has gone up by almost 40% during council's term\""
+   },
+   "Ki": {
+    "symbol": "🟡",
+    "text": "Voted YES on the ask cut"
+   },
+   "Lo": {
+    "symbol": "🟡",
+    "text": "Voted YES on the ask cut"
+   },
+   "Co": {
+    "symbol": "🟡",
+    "text": "<strong>Voted NO on the ask cut</strong> — full police ask supporter"
+   },
+   "Ha": {
+    "symbol": "🟡",
+    "text": "Voted NO on the ask cut"
+   },
+   "Ga": {
+    "symbol": "🟡",
+    "text": "<strong>Voted NO on the ask cut</strong> — \"going down the path of defunding the police… the challenges on the street are huge and we need VicPD to do what they're doing\""
+   },
+   "Cs": {
+    "symbol": "⚪",
+    "text": "No specific VicPD position"
+   },
+   "Ro": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Bo": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Mc": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Le": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Sa": {
+    "symbol": "⚪",
+    "text": "No public position"
+   }
+  }
+ },
+ "M30": {
+  "head": "M30 · Smart LED + IoT streetlights, no surveillance",
+  "table": "M30",
+  "shared": null,
+  "actw": "Full LED conversion plus IoT platform (Kelowna $1M/yr, Halifax $5M/yr precedents). <strong>No audio surveillance, no behavioural AI, no facial recognition.</strong> Self-financing in 3–4 years",
+  "record": "<strong>LED conversion budgeted at $150K and delayed by supplier issues. No IoT capability. Not one candidate in the field has taken a public position on streetlighting or on whether City infrastructure should carry surveillance — ACTW is alone both in proposing the upgrade and in ruling out the surveillance version</strong>",
+  "what": "Convert Victoria's roughly 7,000 to 10,000 streetlights to connected LEDs that report their own outages, dim adaptively and cut energy cost, with an explicit rule against cameras, facial recognition, audio detection and behavioural AI on that network.",
+  "ev": {
+   "Al": {
+    "symbol": "⚪",
+    "text": "No IoT position, no surveillance position"
+   },
+   "Ca": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "De": {
+    "symbol": "⚪",
+    "text": "No public position on streetlights specifically"
+   },
+   "Th": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Ki": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Lo": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Co": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Ha": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Ga": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Cs": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Ro": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Bo": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Mc": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Le": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Sa": {
+    "symbol": "⚪",
+    "text": "No public position"
+   }
+  }
+ },
+ "M31/M31b/M31c/M32": {
+  "head": "M31 / M31b / M31c / M32 · Safety dashboard, published enforcement record, crime target",
+  "table": "M31 / M31b / M31c / M32",
+  "shared": null,
+  "actw": "Weekly public-safety dashboard (M31); <strong>published enforcement record — notices and tickets by category and geography with disputed / upheld / cancelled / paid outcomes, and penalty revenue stated against enforcement cost</strong> (M31b); <strong>retrofit the CSWB plan with five mandatory fields per commitment — legal authority, lead body, timeline, measurable target, projected cost</strong> (M31c); 15% crime reduction by 2030 (M32)",
+  "record": "<strong>No enforcement volume or outcome data is published</strong>, which is why \"is enforcement happening\" is currently an argument rather than a number. <strong>59% feel safe downtown by day, down from 83% in 2020; 22% at night, down from 35%</strong> (VicPD community survey). Crime Severity Index fell 11% in 2024 to 152.65",
+  "what": "A weekly operations dashboard, a quarterly enforcement record showing outcomes rather than tickets issued, the existing community safety plan retrofitted so every commitment names a legal authority, a lead, a deadline, a target and a cost, and a 15% crime reduction by 2030.",
+  "ev": {
+   "Al": {
+    "symbol": "⚪",
+    "text": "No public position on any of the four"
+   },
+   "Ca": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "De": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Th": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Ki": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Lo": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Co": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Ha": {
+    "symbol": "⚪",
+    "text": "<strong>His FOI-driven call-data work is the closest thing on the field, and it is episodic rather than a standing publication.</strong> Scored ✅ under M28 and 🟢 under M67 rather than counted a third time here"
+   },
+   "Ga": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Cs": {
+    "symbol": "⚪",
+    "text": "Not yet published"
+   },
+   "Ro": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Bo": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Mc": {
+    "symbol": "⚪",
+    "text": "No public position. <strong>His real-time taxpayer dashboard is project-scoped and is scored under M67</strong>"
+   },
+   "Le": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Sa": {
+    "symbol": "⚪",
+    "text": "No public position"
+   }
+  }
+ },
+ "M33": {
+  "head": "M33 · Enforce existing bylaws (daytime sheltering)",
+  "table": "M33",
+  "shared": null,
+  "actw": "Enforce bylaws already on the books before inventing new ones, with capacity-first sequencing so enforcement follows shelter availability (M33, M35)",
+  "record": "<strong>A recorded vote is the highest tier of evidence under this document's own sourcing rule. This table was missing entirely until July 30, which cost Coun. Hammond three aligned marks the page had already described him as holding</strong>",
+  "what": "The rules already exist, including overnight sheltering in designated parks down by 7 a.m. and sidewalk obstruction. The gap is enforcement capacity, not missing law. This adds no rules and no staff; it commits to applying them consistently and publishing whether we did.",
+  "ev": {
+   "Al": {
+    "symbol": "✅",
+    "text": "<strong>Recorded YES</strong>, 8–1, July 2024"
+   },
+   "Ca": {
+    "symbol": "✅",
+    "text": "<strong>Recorded YES</strong>, 8–1"
+   },
+   "De": {
+    "symbol": "✅",
+    "text": "<strong>Recorded YES</strong>, 8–1"
+   },
+   "Th": {
+    "symbol": "✅",
+    "text": "<strong>Recorded YES</strong>, 8–1"
+   },
+   "Ki": {
+    "symbol": "❌",
+    "text": "<strong>Lone NO. The only recorded opposition on council to this measure.</strong> <em>This single vote is the entire reason her Safety grade is D and it should be read as one recorded position, not a general verdict</em>"
+   },
+   "Lo": {
+    "symbol": "✅",
+    "text": "<strong>Recorded YES</strong>, 8–1"
+   },
+   "Co": {
+    "symbol": "✅",
+    "text": "<strong>Recorded YES</strong>, 8–1"
+   },
+   "Ha": {
+    "symbol": "✅",
+    "text": "<strong>Author of the motion.</strong> \"It's never been legal for anyone in the city of Victoria to set up a tent or structure on our streets, boulevards or sidewalks during the day or at night… yet we have allowed it\" (<em>Times Colonist</em>)"
+   },
+   "Ga": {
+    "symbol": "✅",
+    "text": "<strong>Recorded YES</strong>, 8–1"
+   },
+   "Cs": {
+    "symbol": "⚪",
+    "text": "No position on bylaw enforcement consistency"
+   },
+   "Ro": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Bo": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Mc": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Le": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Sa": {
+    "symbol": "⚪",
+    "text": "No public position"
+   }
+  }
+ },
+ "M33b": {
+  "head": "M33b · Drug-use buffer zones",
+  "table": "M33b",
+  "shared": null,
+  "actw": "30m buffer around child-focused spaces — sports fields, playgrounds, tennis courts, picnic tables, bus shelters, libraries, community centres",
+  "record": "<strong>BC's decriminalization pilot ended January 31 2026.</strong> Drug possession offences fell from ~135/month pre-decriminalization to ~7/month during the full exemption, rebounding to ~50/month after public-space recriminalization in May 2024",
+  "what": "Illicit drug use and possession prohibited within 30 metres of schools, playgrounds, sports fields, libraries and other child-focused spaces, enforced by verbal direction first, then seizure, then referral to treatment, with arrest only where public safety requires it.",
+  "ev": {
+   "Al": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Ca": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "De": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Th": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Ki": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Lo": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Co": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Ha": {
+    "symbol": "✅",
+    "text": "<strong>Drafted the Sept 2023 illicit-drug-use bylaw</strong> banning use and possession within 30m of expanded child-focused spaces. <strong>Shelved after the provincial pivot and restored as M33b</strong>"
+   },
+   "Ga": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Cs": {
+    "symbol": "⚪",
+    "text": "Not yet published"
+   },
+   "Ro": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Bo": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Mc": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Le": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Sa": {
+    "symbol": "⚪",
+    "text": "No public position"
+   }
+  }
+ },
+ "M34–M37": {
+  "head": "M34–M37 · Encampment response, reclaiming spaces, night lighting",
+  "table": "M34–M37",
+  "shared": null,
+  "actw": "Rapid encampment removal <strong>conditional on shelter capacity existing</strong> (M34, M35); reclaiming public spaces (M36); full night lighting (M37)",
+  "record": "<strong><em>Adams</em> (2008/2009 BCSC/BCCA) and <em>Bamberger</em> (2022 BCSC) set a constitutional capacity floor — removal is lawful only where shelter capacity exists. The June 2026 BCSC ruling confirmed Victoria may legislate removals \"within authority,\" but the floor stands.</strong> $11M was spent repairing encampment damage",
+  "what": "Same-day removal of structures blocking sidewalks and doorways with belongings stored for retrieval, a 5 p.m. daily publication of available shelter spaces so enforcement only follows capacity, named priority areas (Inner Harbour, Centennial Square and Pandora, Beacon Hill Park), and streetlights dimmed rather than switched off at midnight.",
+  "ev": {
+   "Al": {
+    "symbol": "⚪",
+    "text": "No position beyond CSWB, scored under M11"
+   },
+   "Ca": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "De": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Th": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Ki": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Lo": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Co": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Ha": {
+    "symbol": "⚪",
+    "text": "Capacity-first sequencing scored ✅ under M11 rather than counted twice here"
+   },
+   "Ga": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Cs": {
+    "symbol": "⚪",
+    "text": "Not yet published"
+   },
+   "Ro": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Bo": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Mc": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Le": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Sa": {
+    "symbol": "⚪",
+    "text": "No public position"
+   }
+  }
+ },
+ "M43–M46b": {
+  "head": "M43–M46 / M46b · Heritage and cultural-venue preservation",
+  "table": "M43–M46 / M46b",
+  "shared": null,
+  "actw": "Strict heritage design standards (M43); restore distinctive street furniture (M44); heritage restoration incentives (M46); <strong>cultural-venue preservation tool — right-of-first-refusal plus lease-bridge fund</strong> (M46b, absorbing the Hermann's response)",
+  "record": null,
+  "what": "Design standards for new buildings in heritage areas, a Victoria standard for street furniture as it is replaced, restoration incentives for heritage facades, and a right of first refusal plus a lease-bridge fund so long-standing cultural venues are not lost when a lease ends.",
+  "ev": {
+   "Al": {
+    "symbol": "🟢",
+    "text": "<strong>Façade improvement grants</strong> (2022 platform); heritage and arts plank. No cultural-venue preservation mechanism"
+   },
+   "Ca": {
+    "symbol": "🟡",
+    "text": "\"Victoria will likely look more like a miniature London or Paris than a miniature Vancouver or Manhattan.\" An aesthetic frame, not a mechanism"
+   },
+   "De": {
+    "symbol": "✅",
+    "text": "<strong>Hermann's Jazz Club preservation advocate.</strong> His motion is the model M46b was written from"
+   },
+   "Th": {
+    "symbol": "⚪",
+    "text": "No specific position"
+   },
+   "Ki": {
+    "symbol": "⚪",
+    "text": "No specific position"
+   },
+   "Lo": {
+    "symbol": "⚪",
+    "text": "No specific position"
+   },
+   "Co": {
+    "symbol": "⚪",
+    "text": "No specific position"
+   },
+   "Ha": {
+    "symbol": "⚪",
+    "text": "No specific position"
+   },
+   "Ga": {
+    "symbol": "🟡",
+    "text": "Pro-character, pro-heritage tone. No mechanism named"
+   },
+   "Cs": {
+    "symbol": "🟡",
+    "text": "<em>Downgraded from ✅ in v1.8.</em> \"Reviving Victoria does not mean becoming another Vancouver. It means protecting what makes the city unique: heritage, charm, historic buildings, and local businesses.\" <strong>The clearest published heritage commitment of any candidate in the field, and still 🟡 because it names no design standard, no restoration incentive and no preservation tool</strong>"
+   },
+   "Ro": {
+    "symbol": "⚪",
+    "text": "No public position on heritage"
+   },
+   "Bo": {
+    "symbol": "⚪",
+    "text": "No public position on heritage"
+   },
+   "Mc": {
+    "symbol": "⚪",
+    "text": "No public position. <strong>\"Returning Victoria to world-class status\" is framing, not a heritage mechanism</strong>"
+   },
+   "Le": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Sa": {
+    "symbol": "⚪",
+    "text": "No public position"
+   }
+  }
+ },
+ "M45b/M45c": {
+  "head": "M45b / M45c · Pedestrianisation and the signature project",
+  "table": "M45b / M45c",
+  "shared": null,
+  "actw": "Pedestrianization pilots at Bastion Square and Government Street (M45b); <strong>Centennial Square full renewal by the M45c mechanism — consult → residents shortlist → referendum</strong>",
+  "record": "<strong>$2.5M was taken from Centennial Square revitalization to fund CSWB Phase 1</strong>",
+  "what": "Pedestrianisation pilots at Bastion Square, on Government Street in summer and in Fan Tan Alley, reversed after two seasons if they miss published criteria. Plus one signature public-space project chosen by residents from a shortlist of three (a Pandora linear park, a continuous Inner Harbour promenade, or a full Centennial Square renewal) and approved by referendum.",
+  "ev": {
+   "Al": {
+    "symbol": "⚪",
+    "text": "No public position on the renewal mechanism"
+   },
+   "Ca": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "De": {
+    "symbol": "⚪",
+    "text": "No public position. <strong>Centennial Square revitalization is one of his three named big capital projects, without the mechanism</strong>"
+   },
+   "Th": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Ki": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Lo": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Co": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Ha": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Ga": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Cs": {
+    "symbol": "⚪",
+    "text": "Not yet published"
+   },
+   "Ro": {
+    "symbol": "🟡",
+    "text": "\"It shouldn't have taken a public outcry to stop the redevelopment of Centennial Square; a Council that listens and is engaged would have quickly realized it wasn't the right plan nor the right time\" (<a href=\"http://karenrothe.ca\" target=\"_blank\" rel=\"noopener\">karenrothe.ca</a>). <strong>Her objection is to that plan and that timing, not to renewal — and M45c's own mechanism is what she asks for. The divergence recorded in an earlier version was overstated and is withdrawn</strong>"
+   },
+   "Bo": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Mc": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Le": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Sa": {
+    "symbol": "⚪",
+    "text": "No public position"
+   }
+  }
+ },
+ "M47–M49": {
+  "head": "M47–M49 · Heritage incentives, lighting, parks",
+  "table": "M47–M49",
+  "shared": null,
+  "actw": "Heritage restoration incentives (M47); heritage lighting (M48); parks quality and acquisition (M49)",
+  "record": null,
+  "what": "Close the gaps in the waterfront walkway so the whole coastline is walkable, keep heritage and ornamental lighting on until midnight instead of switching it off at 10 p.m., and restore skilled horticulture in the parks with a five-year Beacon Hill Park restoration.",
+  "ev": {
+   "Al": {
+    "symbol": "🟡",
+    "text": "<strong>Parks acquisition strategy</strong> for playgrounds, plazas and parklets, activating the Parks and Open Space Master Plan (<a href=\"http://altomayor.ca\" target=\"_blank\" rel=\"noopener\">altomayor.ca</a>, 2022)"
+   },
+   "Ca": {
+    "symbol": "⚪",
+    "text": "No specific position. \"Investing in Community Infrastructure\" is a declared 2026 priority without a parks mechanism"
+   },
+   "De": {
+    "symbol": "⚪",
+    "text": "No specific position. Parks named as a 2026 priority without a mechanism"
+   },
+   "Th": {
+    "symbol": "⚪",
+    "text": "No specific position"
+   },
+   "Ki": {
+    "symbol": "⚪",
+    "text": "No specific position"
+   },
+   "Lo": {
+    "symbol": "⚪",
+    "text": "No specific position"
+   },
+   "Co": {
+    "symbol": "⚪",
+    "text": "No specific position"
+   },
+   "Ha": {
+    "symbol": "⚪",
+    "text": "No specific position"
+   },
+   "Ga": {
+    "symbol": "⚪",
+    "text": "No specific position"
+   },
+   "Cs": {
+    "symbol": "⚪",
+    "text": "Not yet published"
+   },
+   "Ro": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Bo": {
+    "symbol": "🟡",
+    "text": "\"Well-maintained <strong>parks</strong> and roads\" named as a resident priority (<em>Vic News</em> May 15 2026)"
+   },
+   "Mc": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Le": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Sa": {
+    "symbol": "⚪",
+    "text": "No public position"
+   }
+  }
+ },
+ "M50/M50b/M51/M52": {
+  "head": "M50 / M50b / M51 / M52 · Culture, sport, and the arts funding floor",
+  "table": "M50 / M50b / M51 / M52",
+  "shared": null,
+  "actw": "Extended hours for civic cultural spaces (M50); <strong>an arts and culture funding floor — published per capita and as a share of operating expenditure, set at the current level, reducible only by a supermajority of 6 of 9 with published written rationale, plus three-year operating agreements for anchor organizations</strong> (M50b); year-round outdoor activation (M51); sport facilities used fully including Royal Athletic Park restoration (M52)",
+  "record": "<strong>Arts support across this entire field is expressed as goodwill and priority, never as a protected floor. A framework promising a tax glide path carries a specific obligation here, because arts funding is the first line a restraint-minded council reaches for, and \"we won't cut it\" is worth nothing without a mechanism</strong>",
+  "what": "Civic cultural spaces open two evenings a week until 9 p.m. and libraries on Sundays, year-round outdoor activation (night markets, heated patios, busking zones), sport facilities open 6 a.m. to 10 p.m. with the Royal Athletic Park budget restored, and an arts funding floor that cannot be lowered without 6 of 9 councillors and a published reason.",
+  "ev": {
+   "Al": {
+    "symbol": "🟢",
+    "text": "<strong>The most substantial cultural record in the field</strong>: arts and innovation district, Cultural Spaces Road Map, Create Victoria Master Plan, tax relief for community-serving groups, Royal Athletic Park enhancements. Arts and culture a declared 2026 priority. <strong>No funding floor and no protection mechanism, which is the whole of M50b</strong>"
+   },
+   "Ca": {
+    "symbol": "⚪",
+    "text": "No specific cultural-funding position. Cites the Hermann's purchase among his term's achievements without a preservation mechanism of his own"
+   },
+   "De": {
+    "symbol": "✅",
+    "text": "<strong>Two named mechanisms, both his own.</strong> Hermann's Jazz Club preservation, absorbed as M46b, and the <strong>BreakOut West motion</strong> (Sept 2025) committing up to $25,000 of in-kind Conference Centre space. Also OUR DWTN activation and <strong>the YMCA replacement pool securing service continuity through Crystal Pool construction</strong>. <strong>The strongest cultural-mechanism record of any candidate.</strong> He names no funding floor"
+   },
+   "Th": {
+    "symbol": "⚪",
+    "text": "No specific cultural position"
+   },
+   "Ki": {
+    "symbol": "⚪",
+    "text": "No specific cultural position"
+   },
+   "Lo": {
+    "symbol": "⚪",
+    "text": "No specific cultural-funding position. <strong>Her career as an award-winning documentary filmmaker is background, not a position — banned inference 5</strong>"
+   },
+   "Co": {
+    "symbol": "⚪",
+    "text": "No specific position"
+   },
+   "Ha": {
+    "symbol": "⚪",
+    "text": "No specific position"
+   },
+   "Ga": {
+    "symbol": "⚪",
+    "text": "No specific position"
+   },
+   "Cs": {
+    "symbol": "⚪",
+    "text": "<strong>Not yet published.</strong> Her \"heritage, charm, historic buildings\" line is scored under heritage rather than here"
+   },
+   "Ro": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Bo": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Mc": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Le": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Sa": {
+    "symbol": "⚪",
+    "text": "No public position"
+   }
+  }
+ },
+ "M53/M53b/M53c": {
+  "head": "M53 / M53b / M53c · GIS, AI consultation imagery, LIDAR",
+  "table": "M53 / M53b / M53c",
+  "shared": null,
+  "actw": "GIS and underground utility data modernization ($400–800K capital plus ~$50–80K/yr); <strong>AI-generated public consultation imagery as a permanent measure</strong> ($30–50K/yr, continuing Dell's precedent); one-time LIDAR scan of the downtown core ($150–250K). <strong>The full Digital Twin was demoted to a Year 3+ aspiration in v1.3</strong>",
+  "record": null,
+  "what": "Put the City's underground utility records (water, stormwater, sewer, telecom) on one map so the same street is not dug up twice, generate AI imagery so residents can see a proposal before it is built, and run a one-time LIDAR laser scan of downtown. The full digital twin was deliberately dropped as too big for a city Victoria's size.",
+  "ev": {
+   "Al": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Ca": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "De": {
+    "symbol": "✅",
+    "text": "<strong>AI public consultation imagery pioneer</strong> — the Beacon Hill All-Weather Field proposal (<em>CHEK News</em> 2025). <strong>ACTW absorbed his practice as M53b</strong>"
+   },
+   "Th": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Ki": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Lo": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Co": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Ha": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Ga": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Cs": {
+    "symbol": "⚪",
+    "text": "Not yet published"
+   },
+   "Ro": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Bo": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Mc": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Le": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Sa": {
+    "symbol": "⚪",
+    "text": "No public position. <strong>A Red Seal electrician whose trade depends on accurate underground utility data — background, not a position</strong>"
+   }
+  }
+ },
+ "M53d": {
+  "head": "M53d · Published municipal AI standard",
+  "table": "M53d",
+  "shared": null,
+  "actw": "A <strong>public register</strong> of every AI and automated decision-support system the City uses; <strong>mandatory human-in-the-loop with automated adverse decisions prohibited</strong>; <strong>every AI-generated image labelled on the image</strong>; prompts and outputs retained as FIPPA records; published accuracy and bias testing before deployment and annually; Canadian data residency; no vendor training on residents' data. <strong>Procurement terms, not aspirations</strong>",
+  "record": "<strong>No comparable BC municipality has published an AI policy and no candidate in this race has proposed one. The asymmetry is the argument: being first costs $40–60K a year; being last costs a privacy order, an access dispute or a withdrawn decision. The City will use these tools either way</strong>",
+  "what": "A public register of every AI system the City uses, mandatory human decision-making with automated decisions against a resident prohibited, AI-generated images labelled as such, and prompts and outputs treated as records disclosable under freedom of information.",
+  "ev": {
+   "Al": {
+    "symbol": "⚪",
+    "text": "No public position on municipal AI governance"
+   },
+   "Ca": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "De": {
+    "symbol": "🟡",
+    "text": "<strong>The only person in this field who has publicly used AI in a municipal context</strong>, generating consultation imagery for Beacon Hill. <strong>Recorded 🟡 because he is demonstrably engaged with the technology, not because he has taken a governance position. The distinction between using a tool and governing its use is the entire measure</strong>"
+   },
+   "Th": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Ki": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Lo": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Co": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Ha": {
+    "symbol": "⚪",
+    "text": "No public position. <strong>His FOI and records-access work is adjacent, and adjacency is banned inference 7</strong>"
+   },
+   "Ga": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Cs": {
+    "symbol": "⚪",
+    "text": "Not yet published"
+   },
+   "Ro": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Bo": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Mc": {
+    "symbol": "⚪",
+    "text": "No public position. <strong>A career in legal accountability and due process is background, not a position</strong>"
+   },
+   "Le": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Sa": {
+    "symbol": "⚪",
+    "text": "No public position"
+   }
+  }
+ },
+ "M54–M57": {
+  "head": "M54–M57 · Local-tech procurement, open data, Wi-Fi, EV charging",
+  "table": "M54–M57",
+  "shared": null,
+  "actw": "Local-tech procurement preference (M54); open data and free public Wi-Fi (M55/M56); EV charging network (M57)",
+  "record": null,
+  "what": "Local-preference scoring for Victoria's technology cluster, the ocean economy named as the city's declared economic vertical, an expanded open-data portal with air-quality sensors and free public Wi-Fi, and more public EV charging.",
+  "ev": {
+   "Al": {
+    "symbol": "⚪",
+    "text": "No specific position"
+   },
+   "Ca": {
+    "symbol": "⚪",
+    "text": "No specific position"
+   },
+   "De": {
+    "symbol": "⚪",
+    "text": "No specific position"
+   },
+   "Th": {
+    "symbol": "⚪",
+    "text": "<strong>No published position on M57 itself. His EV-ready wiring mandate for new private parking and e-bike rebates for lower-income households are ideas ACTW lacks and are listed in <em>Where the Field Is Ahead</em>, not scored here</strong>"
+   },
+   "Ki": {
+    "symbol": "⚪",
+    "text": "No specific position"
+   },
+   "Lo": {
+    "symbol": "⚪",
+    "text": "No specific position"
+   },
+   "Co": {
+    "symbol": "⚪",
+    "text": "No specific position"
+   },
+   "Ha": {
+    "symbol": "⚪",
+    "text": "No specific position"
+   },
+   "Ga": {
+    "symbol": "⚪",
+    "text": "No specific position"
+   },
+   "Cs": {
+    "symbol": "⚪",
+    "text": "Not yet published"
+   },
+   "Ro": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Bo": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Mc": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Le": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Sa": {
+    "symbol": "⚪",
+    "text": "No public position"
+   }
+  }
+ },
+ "M58/M58b/M64b": {
+  "head": "M58 / M58b / M64b · Climate, district energy, seismic",
+  "table": "M58 / M58b / M64b",
+  "shared": null,
+  "actw": "50% community GHG by 2030, 19 points to go from the current −31% (M58); <strong>26°C maximum-temperature rental bylaw</strong>, New Westminster April 2026 precedent (M64); <strong>Climate Friendly Homes uptake publication</strong>; district-energy utility results ring-fenced and rate-payer funded (M58b); <strong>seismic and coastal resilience — a published vulnerability inventory of City-owned and downtown pre-1975 stock, with honesty that a mandatory private retrofit bylaw is outside municipal authority under the \\*Building Act</strong> • (M64b)",
+  "record": "<strong>Climate Friendly Homes uptake not published in three years despite being a flagship programme.</strong> 31% GHG reduction from 2007 levels, needing 19 more points by 2030. <strong>No candidate has raised seismic risk despite BC Building Code 2024 naming the Capital Regional District explicitly as a high-risk area</strong>",
+  "what": "A 50% cut in community emissions by 2030 against 2007, district energy (shared low-carbon heat for a cluster of buildings, run as a ring-fenced utility paid for by the ratepayers who use it), and a seismic and coastal-resilience inventory for the hazard Victoria actually faces.",
+  "ev": {
+   "Al": {
+    "symbol": "🟡",
+    "text": "Climate Leadership Plan supporter. <strong>Climate Friendly Homes uptake not published</strong>"
+   },
+   "Ca": {
+    "symbol": "✅",
+    "text": "Climate leader; <strong>co-author of the 2026 cooling bylaw motion</strong>"
+   },
+   "De": {
+    "symbol": "✅",
+    "text": "<strong>Co-author of the 2026 cooling bylaw motion</strong>"
+   },
+   "Th": {
+    "symbol": "✅",
+    "text": "<strong>Co-author of the 2026 cooling bylaw motion</strong>; climate emergency advocate; e-bike rebates"
+   },
+   "Ki": {
+    "symbol": "✅",
+    "text": "<strong>Conceptually ahead of the 2026 motion</strong>; climate advocate"
+   },
+   "Lo": {
+    "symbol": "⚪",
+    "text": "Climate-friendly tone; no specific position on the heat bylaw"
+   },
+   "Co": {
+    "symbol": "⚪",
+    "text": "No specific climate position"
+   },
+   "Ha": {
+    "symbol": "⚪",
+    "text": "No specific climate position"
+   },
+   "Ga": {
+    "symbol": "⚪",
+    "text": "No specific climate position"
+   },
+   "Cs": {
+    "symbol": "⚪",
+    "text": "No specific climate position"
+   },
+   "Ro": {
+    "symbol": "⚪",
+    "text": "No public position. <strong>Her wildfire-evacuation and BC Search and Rescue funding work is directly relevant to M64b and is background, not a position</strong>"
+   },
+   "Bo": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Mc": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Le": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Sa": {
+    "symbol": "⚪",
+    "text": "No public position"
+   }
+  }
+ },
+ "M59–M63": {
+  "head": "M59–M63 · Trees, mode share, ecosystems, emergency preparedness",
+  "table": "M59–M63",
+  "shared": null,
+  "actw": "5,000 trees (M60); 60% non-auto mode share by 2030 (M61); ecosystem protection (M62); emergency preparedness (M63)",
+  "record": "The urban forest comprises ~150,000 trees at roughly 30% canopy cover; <strong>firm canopy targets have not been adopted.</strong> Victoria has the highest bike-to-work share in Canada at 5.3% and <strong>95% of residents live within 500m of an all-ages-and-abilities route</strong>",
+  "what": "Replace the oldest stormwater pipes and prepare the coast for sea-level rise, expand the Climate Friendly Homes retrofit rebates and finally publish the uptake, plant 5,000 trees toward a 35% canopy by 2035, and shift 60% of trips to transit, walking or cycling by 2030.",
+  "ev": {
+   "Al": {
+    "symbol": "⚪",
+    "text": "No specific position on any of the four"
+   },
+   "Ca": {
+    "symbol": "⚪",
+    "text": "No specific position"
+   },
+   "De": {
+    "symbol": "⚪",
+    "text": "No specific position"
+   },
+   "Th": {
+    "symbol": "⚪",
+    "text": "<strong>Mode-share advocacy is present in his active-transport record and no numerical target is published.</strong> Scored under M20b rather than here"
+   },
+   "Ki": {
+    "symbol": "⚪",
+    "text": "No specific position"
+   },
+   "Lo": {
+    "symbol": "⚪",
+    "text": "No specific position"
+   },
+   "Co": {
+    "symbol": "⚪",
+    "text": "No specific position"
+   },
+   "Ha": {
+    "symbol": "⚪",
+    "text": "No specific position"
+   },
+   "Ga": {
+    "symbol": "⚪",
+    "text": "No specific position"
+   },
+   "Cs": {
+    "symbol": "⚪",
+    "text": "Not yet published"
+   },
+   "Ro": {
+    "symbol": "⚪",
+    "text": "<strong>The candidate with the most relevant emergency-preparedness experience in the field and no published position on it.</strong> Part of teams on the 2017 Williams Lake wildfire evacuation and on securing sustained provincial funding for BC Search and Rescue. <strong>Background under banned inference 5</strong>"
+   },
+   "Bo": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Mc": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Le": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Sa": {
+    "symbol": "⚪",
+    "text": "No public position"
+   }
+  }
+ },
+ "M15": {
+  "head": "M15 · Managed competition",
+  "table": "M15",
+  "shared": null,
+  "actw": "Competitive bidding for waste collection and street cleaning on the Phoenix model, <strong>with an 80% re-hire employee-protection floor. ~$2.4M/year</strong>, funding extended bylaw hours without raising tax",
+  "record": "<strong>The single most serious defect the v1.8 audit found was four sitting councillors carrying ❌ here with no source at all, inferred purely from bloc membership. Assigning a named candidate a recorded position they have never stated, during a regulated period, was the most exposed thing this document was doing.</strong> The CRD already contracts blue-box recycling to GFL, so the principle is proven regionally",
+  "what": "Every contract cycle, the City's own crews submit a costed bid alongside private bidders on the same specification, and the cheaper competent option wins. At least 80% of existing City workers are re-hired at equal or better pay whoever wins, and the City winning is a permitted outcome rather than a failure. Phoenix ran this model for a decade.",
+  "ev": {
+   "Al": {
+    "symbol": "📋",
+    "text": "<strong>Record, not a position.</strong> No competitive benchmarking of any municipal service was considered during the 2022–2026 term. <strong>She has taken no public position for or against</strong>"
+   },
+   "Ca": {
+    "symbol": "⚪",
+    "text": "<strong>Previously scored ❌ on bloc inference; corrected in v1.8.</strong> No recorded vote or statement on competitive testing of a municipal service"
+   },
+   "De": {
+    "symbol": "⚪",
+    "text": "<strong>Previously scored ❌ on bloc inference; corrected in v1.8</strong>"
+   },
+   "Th": {
+    "symbol": "⚪",
+    "text": "<strong>Previously scored ❌ on bloc inference; corrected in v1.8</strong>"
+   },
+   "Ki": {
+    "symbol": "⚪",
+    "text": "<strong>Previously scored ❌; corrected in v1.8.</strong> Her disclosed Labour Council commitment concerned <strong>P3s</strong>, a different instrument from competitive testing of an existing in-house service. <strong>Her posture is plausibly unfavourable and is nonetheless unstated</strong>"
+   },
+   "Lo": {
+    "symbol": "⚪",
+    "text": "<strong>Previously scored ❌ on bloc inference; corrected in v1.8</strong>"
+   },
+   "Co": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Ha": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Ga": {
+    "symbol": "⚪",
+    "text": "<strong>No public position, despite holding the strongest budget-method rhetoric on council.</strong> The clearest gap between her framing and a mechanism"
+   },
+   "Cs": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Ro": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Bo": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Mc": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Le": {
+    "symbol": "⚪",
+    "text": "No public position. <strong>Watch item: Victoria Labour Council endorsement applications close 9 a.m. August 11 2026, and an endorsement would signal a position she has not stated</strong>"
+   },
+   "Sa": {
+    "symbol": "⚪",
+    "text": "No public position. <strong>Homes for Living is a supply-side advocate rather than a labour organization, so his posture is genuinely unknown rather than presumptively opposed</strong>"
+   }
+  }
+ },
+ "M65": {
+  "head": "M65 / M66 · Tax glide path + zero-based budgeting",
+  "table": "M65 / M66",
+  "shared": "M65 / M66",
+  "actw": "<strong>Glide path capped on the residential rate, not the total levy</strong>: Y1 ≤6.5%, Y2 ≤5%, Y3+ ~3.5%, measured against <strong>the 9.34% residential increase levied in 2026</strong>. Funded by <strong>rotating zero-based budget reviews</strong> (Calgary SAVE model). Supermajority plus public explanation to exceed. <strong>A ratio rule prevents moving the business-to-residential split to hit the number</strong>",
+  "record": "<strong>6.15% (2023), 7.93% (2024), 6.99% (2025), 7.28% aggregate (2026) — distributed as 9.34% residential and 4.78% business, about $323 more on a median $1,015,000 home. The 2026 budget opened at 13.3% in November, was cut to 7.2% in March. Roughly $7M of the reduction came from one-time measures including a cancelled $2M debt-reduction payment and a $2.8M parking-reserve draw. Operating budget $300.0M adopted 2023 to $394.1M adopted 2026, roughly 31%. No ZBB, no published efficiency programme, no dashboard</strong>",
+  "what": "Every programme justifies itself from zero rather than from last year's number, 3 to 4 service areas per budget cycle on a rotation. Every grant over $50,000 is reviewed against three published questions: is this the City's job, is it delivering, and is someone else already funding it. It is explicitly not a test of a recipient's opinions. A declining cap on the property tax increase, 6.5% then 5% then inflation plus population growth of about 3.5%, measured on the residential rate rather than the aggregate. Going above the cap takes 6 of 9 councillors and a published reason.",
+  "ev": {
+   "Al": {
+    "symbol": "📋",
+    "text": "<strong>Record, not a position.</strong> Four consecutive years above inflation. <strong>She has stated no position against a glide path or ZBB; this is what her council did, not what she opposes</strong>"
+   },
+   "Ca": {
+    "symbol": "🟡",
+    "text": "Voted YES on the 2026 budget (7.28%); sponsored the VicPD cut as a fiscal-restraint gesture from the progressive side"
+   },
+   "De": {
+    "symbol": "🟢",
+    "text": "<strong>Annual line-by-line budget review posture</strong> — a named method in M65's family. Also \"between 2023-2025 the City of Victoria had the lowest municipal tax increase of most surrounding major cities,\" a comparative frame rather than a restraint commitment"
+   },
+   "Th": {
+    "symbol": "🟡",
+    "text": "Voted YES on the 2026 budget; called out VicPD's 40% growth"
+   },
+   "Ki": {
+    "symbol": "✅",
+    "text": "<strong>Voted NO on the 2026 budget</strong> — \"the system itself is just flawed. We're being asked to tax in a way that just sucks.\" <strong>A critique from the left that aligns with ACTW's critique of method</strong>"
+   },
+   "Lo": {
+    "symbol": "🟡",
+    "text": "Voted YES \"with a heavy heart\": \"the public must understand the staggering cost of our current direction\""
+   },
+   "Co": {
+    "symbol": "🟡",
+    "text": "\"I think the tax lift is too high personally and I would hope we all work to bring that down\" — <strong>and voted YES on the 2026 budget</strong>"
+   },
+   "Ha": {
+    "symbol": "✅",
+    "text": "<strong>Voted NO on every annual tax increase</strong>; opposed the 2026 budget"
+   },
+   "Ga": {
+    "symbol": "✅",
+    "text": "<strong>\"The annual budget ritual that we follow is fundamentally flawed and no one seems to care. There is no serious thought given to introducing rigour into our budgeting process\"</strong> (<em>Vic News</em>, May 2026 final budget vote). <strong>The single most ACTW-aligned line uttered by any sitting councillor.</strong> Voted NO on every increase"
+   },
+   "Cs": {
+    "symbol": "🟡",
+    "text": "<em>Downgraded from ✅ in v1.8; over-promoted to 🟢 on July 30 and demoted the same day.</em> \"When public money is spent, there should be oversight, transparency, and performance. If a program is not delivering results, push for it to be reviewed and adjusted.\" <strong>A programme-review posture, and a posture is not an instrument.</strong> Not a zero-based cycle, not a multi-year cap path"
+   },
+   "Ro": {
+    "symbol": "🟡",
+    "text": "<strong>\"It's hard to convince people to spend money now to save in the future. The tendency is to kick the can down the road and leave the bill for others to pay later. I won't do that\"</strong> (<a href=\"http://karenrothe.ca\" target=\"_blank\" rel=\"noopener\">karenrothe.ca</a>, verified July 30). <strong>The intergenerational-deferral argument M66c is built on, in her own words.</strong> No cap path, no ZBB cycle, no debt rule"
+   },
+   "Bo": {
+    "symbol": "⚪",
+    "text": "No public position on tax method. \"Understand how public money is being used\" is scored under M67"
+   },
+   "Mc": {
+    "symbol": "✅",
+    "text": "<strong>\"Audits of existing city programs and spending\"</strong> (<em>Vic News</em> June 25 2026, verified against the full article) — <strong>M65 in substance: reviewing existing programmes rather than budgeting incrementally.</strong> <em>Missed on first pass, added July 30, and the M65 differentiation dropped from HIGH to MEDIUM as a result.</em> Also on record: \"council keeps raising their taxes each and every year — 10 per cent this year alone,\" which <em>Vic News</em> corrected in its own copy to 9.34%"
+   },
+   "Le": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Sa": {
+    "symbol": "⚪",
+    "text": "No public position"
+   }
+  }
+ },
+ "M66": {
+  "head": "M65 / M66 · Tax glide path + zero-based budgeting",
+  "table": "M65 / M66",
+  "shared": "M65 / M66",
+  "actw": "<strong>Glide path capped on the residential rate, not the total levy</strong>: Y1 ≤6.5%, Y2 ≤5%, Y3+ ~3.5%, measured against <strong>the 9.34% residential increase levied in 2026</strong>. Funded by <strong>rotating zero-based budget reviews</strong> (Calgary SAVE model). Supermajority plus public explanation to exceed. <strong>A ratio rule prevents moving the business-to-residential split to hit the number</strong>",
+  "record": "<strong>6.15% (2023), 7.93% (2024), 6.99% (2025), 7.28% aggregate (2026) — distributed as 9.34% residential and 4.78% business, about $323 more on a median $1,015,000 home. The 2026 budget opened at 13.3% in November, was cut to 7.2% in March. Roughly $7M of the reduction came from one-time measures including a cancelled $2M debt-reduction payment and a $2.8M parking-reserve draw. Operating budget $300.0M adopted 2023 to $394.1M adopted 2026, roughly 31%. No ZBB, no published efficiency programme, no dashboard</strong>",
+  "what": "Every programme justifies itself from zero rather than from last year's number, 3 to 4 service areas per budget cycle on a rotation. Every grant over $50,000 is reviewed against three published questions: is this the City's job, is it delivering, and is someone else already funding it. It is explicitly not a test of a recipient's opinions. A declining cap on the property tax increase, 6.5% then 5% then inflation plus population growth of about 3.5%, measured on the residential rate rather than the aggregate. Going above the cap takes 6 of 9 councillors and a published reason.",
+  "ev": {
+   "Al": {
+    "symbol": "📋",
+    "text": "<strong>Record, not a position.</strong> Four consecutive years above inflation. <strong>She has stated no position against a glide path or ZBB; this is what her council did, not what she opposes</strong>"
+   },
+   "Ca": {
+    "symbol": "🟡",
+    "text": "Voted YES on the 2026 budget (7.28%); sponsored the VicPD cut as a fiscal-restraint gesture from the progressive side"
+   },
+   "De": {
+    "symbol": "🟢",
+    "text": "<strong>Annual line-by-line budget review posture</strong> — a named method in M65's family. Also \"between 2023-2025 the City of Victoria had the lowest municipal tax increase of most surrounding major cities,\" a comparative frame rather than a restraint commitment"
+   },
+   "Th": {
+    "symbol": "🟡",
+    "text": "Voted YES on the 2026 budget; called out VicPD's 40% growth"
+   },
+   "Ki": {
+    "symbol": "✅",
+    "text": "<strong>Voted NO on the 2026 budget</strong> — \"the system itself is just flawed. We're being asked to tax in a way that just sucks.\" <strong>A critique from the left that aligns with ACTW's critique of method</strong>"
+   },
+   "Lo": {
+    "symbol": "🟡",
+    "text": "Voted YES \"with a heavy heart\": \"the public must understand the staggering cost of our current direction\""
+   },
+   "Co": {
+    "symbol": "🟡",
+    "text": "\"I think the tax lift is too high personally and I would hope we all work to bring that down\" — <strong>and voted YES on the 2026 budget</strong>"
+   },
+   "Ha": {
+    "symbol": "✅",
+    "text": "<strong>Voted NO on every annual tax increase</strong>; opposed the 2026 budget"
+   },
+   "Ga": {
+    "symbol": "✅",
+    "text": "<strong>\"The annual budget ritual that we follow is fundamentally flawed and no one seems to care. There is no serious thought given to introducing rigour into our budgeting process\"</strong> (<em>Vic News</em>, May 2026 final budget vote). <strong>The single most ACTW-aligned line uttered by any sitting councillor.</strong> Voted NO on every increase"
+   },
+   "Cs": {
+    "symbol": "🟡",
+    "text": "<em>Downgraded from ✅ in v1.8; over-promoted to 🟢 on July 30 and demoted the same day.</em> \"When public money is spent, there should be oversight, transparency, and performance. If a program is not delivering results, push for it to be reviewed and adjusted.\" <strong>A programme-review posture, and a posture is not an instrument.</strong> Not a zero-based cycle, not a multi-year cap path"
+   },
+   "Ro": {
+    "symbol": "🟡",
+    "text": "<strong>\"It's hard to convince people to spend money now to save in the future. The tendency is to kick the can down the road and leave the bill for others to pay later. I won't do that\"</strong> (<a href=\"http://karenrothe.ca\" target=\"_blank\" rel=\"noopener\">karenrothe.ca</a>, verified July 30). <strong>The intergenerational-deferral argument M66c is built on, in her own words.</strong> No cap path, no ZBB cycle, no debt rule"
+   },
+   "Bo": {
+    "symbol": "⚪",
+    "text": "No public position on tax method. \"Understand how public money is being used\" is scored under M67"
+   },
+   "Mc": {
+    "symbol": "✅",
+    "text": "<strong>\"Audits of existing city programs and spending\"</strong> (<em>Vic News</em> June 25 2026, verified against the full article) — <strong>M65 in substance: reviewing existing programmes rather than budgeting incrementally.</strong> <em>Missed on first pass, added July 30, and the M65 differentiation dropped from HIGH to MEDIUM as a result.</em> Also on record: \"council keeps raising their taxes each and every year — 10 per cent this year alone,\" which <em>Vic News</em> corrected in its own copy to 9.34%"
+   },
+   "Le": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Sa": {
+    "symbol": "⚪",
+    "text": "No public position"
+   }
+  }
+ },
+ "M66b/M66c": {
+  "head": "M66b / M66c / M66d · Over-collection refund, debt rule, the Household Bill",
+  "table": "M66b / M66c / M66d",
+  "shared": "M66b / M66c / M66d",
+  "actw": "Over-collection <strong>returned as a credit on the next tax notice</strong> rather than swept into reserves (M66b); a <strong>debt rule</strong> publishing debt outstanding, debt service, debt service as a share of operating expenditure and debt per household quarterly, <strong>with the scheduled debt-reduction contribution protected from use as a balancing item absent a 6-of-9 supermajority</strong> (M66c); <strong>the Household Bill — property tax plus water, sewer, solid waste and stormwater as one published number with a five-year forward view, for a median home, condominium and purpose-built rental</strong> (M66d)",
+  "record": "<strong>Nine candidates have a cost-of-living position of some kind and not one has published a total household cost figure</strong> — which matters because the fastest-rising part of a Victoria household's municipal bill is the CRD portion nobody campaigns on, <strong>forecast to compound roughly 65% over five years.</strong> Nobody proposes returning over-collection either. <strong>A tax-only promise caps the number residents see and says nothing about the number they pay</strong>",
+  "what": "Where audited results beat budget by more than 1.5% of operating expenditure, the excess goes back as a credit on the next tax notice instead of into reserves. And the scheduled debt-reduction payment stops being available as a balancing item: deferring it takes 6 of 9 councillors and a published reason. One published figure for what the City and the CRD together cost a household per year, property tax plus water, sewer, solid waste and stormwater, given as a dollar amount, a year-over-year change and a five-year forward view, so the real bill is visible instead of split across four lines.",
+  "ev": {
+   "Al": {
+    "symbol": "📋",
+    "text": "<strong>Record, not a position. In May 2026 the council did the opposite of M66c</strong>, cancelling a $2M debt-reduction payment and drawing $2.8M from the parking reserve to hold the tax line. <strong>She described that approach herself as not a long-term solution, which is closer to agreement with the principle than opposition to it</strong>"
+   },
+   "Ca": {
+    "symbol": "⚪",
+    "text": "No position on debt reporting, refunds or a household bill"
+   },
+   "De": {
+    "symbol": "⚪",
+    "text": "No position on this cluster. His line-by-line review posture is scored under M65"
+   },
+   "Th": {
+    "symbol": "⚪",
+    "text": "No position on this cluster"
+   },
+   "Ki": {
+    "symbol": "🟡",
+    "text": "\"We're being asked to tax in a way that just sucks\" — <strong>a structural critique of the municipal tax instrument itself, which is the argument the Household Bill framing rests on.</strong> No mechanism named"
+   },
+   "Lo": {
+    "symbol": "🟡",
+    "text": "\"The public must understand the staggering cost of our current direction\" — a transparency-about-cost statement, made while supporting the budget"
+   },
+   "Co": {
+    "symbol": "🟡",
+    "text": "\"I think the tax lift is too high personally and I would hope we all work to bring that down\""
+   },
+   "Ha": {
+    "symbol": "🟡",
+    "text": "Voted NO on every annual increase on a household-burden argument. Scored ✅ on the glide path itself; <strong>🟡 here because he names no debt rule, refund or utility-inclusive figure</strong>"
+   },
+   "Ga": {
+    "symbol": "🟢",
+    "text": "<strong>Her monthly fiscal newsletter is the closest existing practice in the field to publishing household-level fiscal facts.</strong> Scored ✅ under M67; <strong>🟢 here because it does not consolidate utilities or publish debt per household</strong>"
+   },
+   "Cs": {
+    "symbol": "⚪",
+    "text": "Not yet published"
+   },
+   "Ro": {
+    "symbol": "🟡",
+    "text": "<strong>The M66c argument in her own words</strong>, cross-referenced from the tax table. She names no debt rule or reporting set"
+   },
+   "Bo": {
+    "symbol": "⚪",
+    "text": "No position on this cluster. Her \"understand how public money is being used\" line is scored under M67"
+   },
+   "Mc": {
+    "symbol": "🟡",
+    "text": "Public consultation for tax increases above inflation, plus housing affordability as a platform pillar. <strong>Scored 🟢 under M66; not double-counted here.</strong> No debt rule, refund or utility-inclusive figure"
+   },
+   "Le": {
+    "symbol": "🟡",
+    "text": "Affordability her declared central issue: \"life in our city is just becoming really unaffordable.\" No municipal mechanism named"
+   },
+   "Sa": {
+    "symbol": "🟡",
+    "text": "Homeownership affordability framing: \"all we want is a fair shot like other previous generations had.\" No fiscal mechanism named"
+   }
+  }
+ },
+ "M66d": {
+  "head": "M66b / M66c / M66d · Over-collection refund, debt rule, the Household Bill",
+  "table": "M66b / M66c / M66d",
+  "shared": "M66b / M66c / M66d",
+  "actw": "Over-collection <strong>returned as a credit on the next tax notice</strong> rather than swept into reserves (M66b); a <strong>debt rule</strong> publishing debt outstanding, debt service, debt service as a share of operating expenditure and debt per household quarterly, <strong>with the scheduled debt-reduction contribution protected from use as a balancing item absent a 6-of-9 supermajority</strong> (M66c); <strong>the Household Bill — property tax plus water, sewer, solid waste and stormwater as one published number with a five-year forward view, for a median home, condominium and purpose-built rental</strong> (M66d)",
+  "record": "<strong>Nine candidates have a cost-of-living position of some kind and not one has published a total household cost figure</strong> — which matters because the fastest-rising part of a Victoria household's municipal bill is the CRD portion nobody campaigns on, <strong>forecast to compound roughly 65% over five years.</strong> Nobody proposes returning over-collection either. <strong>A tax-only promise caps the number residents see and says nothing about the number they pay</strong>",
+  "what": "Where audited results beat budget by more than 1.5% of operating expenditure, the excess goes back as a credit on the next tax notice instead of into reserves. And the scheduled debt-reduction payment stops being available as a balancing item: deferring it takes 6 of 9 councillors and a published reason. One published figure for what the City and the CRD together cost a household per year, property tax plus water, sewer, solid waste and stormwater, given as a dollar amount, a year-over-year change and a five-year forward view, so the real bill is visible instead of split across four lines.",
+  "ev": {
+   "Al": {
+    "symbol": "📋",
+    "text": "<strong>Record, not a position. In May 2026 the council did the opposite of M66c</strong>, cancelling a $2M debt-reduction payment and drawing $2.8M from the parking reserve to hold the tax line. <strong>She described that approach herself as not a long-term solution, which is closer to agreement with the principle than opposition to it</strong>"
+   },
+   "Ca": {
+    "symbol": "⚪",
+    "text": "No position on debt reporting, refunds or a household bill"
+   },
+   "De": {
+    "symbol": "⚪",
+    "text": "No position on this cluster. His line-by-line review posture is scored under M65"
+   },
+   "Th": {
+    "symbol": "⚪",
+    "text": "No position on this cluster"
+   },
+   "Ki": {
+    "symbol": "🟡",
+    "text": "\"We're being asked to tax in a way that just sucks\" — <strong>a structural critique of the municipal tax instrument itself, which is the argument the Household Bill framing rests on.</strong> No mechanism named"
+   },
+   "Lo": {
+    "symbol": "🟡",
+    "text": "\"The public must understand the staggering cost of our current direction\" — a transparency-about-cost statement, made while supporting the budget"
+   },
+   "Co": {
+    "symbol": "🟡",
+    "text": "\"I think the tax lift is too high personally and I would hope we all work to bring that down\""
+   },
+   "Ha": {
+    "symbol": "🟡",
+    "text": "Voted NO on every annual increase on a household-burden argument. Scored ✅ on the glide path itself; <strong>🟡 here because he names no debt rule, refund or utility-inclusive figure</strong>"
+   },
+   "Ga": {
+    "symbol": "🟢",
+    "text": "<strong>Her monthly fiscal newsletter is the closest existing practice in the field to publishing household-level fiscal facts.</strong> Scored ✅ under M67; <strong>🟢 here because it does not consolidate utilities or publish debt per household</strong>"
+   },
+   "Cs": {
+    "symbol": "⚪",
+    "text": "Not yet published"
+   },
+   "Ro": {
+    "symbol": "🟡",
+    "text": "<strong>The M66c argument in her own words</strong>, cross-referenced from the tax table. She names no debt rule or reporting set"
+   },
+   "Bo": {
+    "symbol": "⚪",
+    "text": "No position on this cluster. Her \"understand how public money is being used\" line is scored under M67"
+   },
+   "Mc": {
+    "symbol": "🟡",
+    "text": "Public consultation for tax increases above inflation, plus housing affordability as a platform pillar. <strong>Scored 🟢 under M66; not double-counted here.</strong> No debt rule, refund or utility-inclusive figure"
+   },
+   "Le": {
+    "symbol": "🟡",
+    "text": "Affordability her declared central issue: \"life in our city is just becoming really unaffordable.\" No municipal mechanism named"
+   },
+   "Sa": {
+    "symbol": "🟡",
+    "text": "Homeownership affordability framing: \"all we want is a fair shot like other previous generations had.\" No fiscal mechanism named"
+   }
+  }
+ },
+ "M67": {
+  "head": "M67 · Quarterly performance dashboard",
+  "table": "M67",
+  "shared": null,
+  "actw": "<strong>Quarterly public dashboard</strong>: permits, potholes, 311, crime, housing, budget variance. Plain language. Weekly safety dashboard separately (M31)",
+  "record": null,
+  "what": "A public dashboard, updated every quarter, carrying more than twenty published series: permit times, pothole repair, crime, the debt set, the Household Bill, the enforcement record, the AI register and the rest, so residents can hold council to account between elections rather than only at them.",
+  "ev": {
+   "Al": {
+    "symbol": "📋",
+    "text": "<strong>Record, not a position.</strong> No quarterly performance dashboard was published during the term; salary and benefits share is not publicly reported; debt-to-revenue ratios are not in an accessible format. <strong>She has stated no position for or against a dashboard</strong>"
+   },
+   "Ca": {
+    "symbol": "⚪",
+    "text": "No dashboard proposal"
+   },
+   "De": {
+    "symbol": "⚪",
+    "text": "No dashboard proposal"
+   },
+   "Th": {
+    "symbol": "⚪",
+    "text": "No dashboard proposal"
+   },
+   "Ki": {
+    "symbol": "⚪",
+    "text": "No dashboard proposal"
+   },
+   "Lo": {
+    "symbol": "⚪",
+    "text": "No dashboard proposal"
+   },
+   "Co": {
+    "symbol": "⚪",
+    "text": "No dashboard proposal"
+   },
+   "Ha": {
+    "symbol": "🟢",
+    "text": "<strong>FOI-driven publication of enforcement data</strong> — a real reporting mechanism, narrower than a quarterly service dashboard"
+   },
+   "Ga": {
+    "symbol": "✅",
+    "text": "<strong>Monthly fiscal newsletter</strong> — the closest analogue on council, and more frequent than quarterly"
+   },
+   "Cs": {
+    "symbol": "🟡",
+    "text": "<em>Downgraded from ✅ in v1.8.</em> \"Oversight, transparency, and performance\" is a published commitment to the principle. <strong>No reporting mechanism, cadence or KPI set named</strong>"
+   },
+   "Ro": {
+    "symbol": "🟡",
+    "text": "\"I commit to listening, communicating, and ensuring as much transparency as possible\" (<a href=\"http://karenrothe.ca\" target=\"_blank\" rel=\"noopener\">karenrothe.ca</a>), against a stated diagnosis that <strong>\"Council has delegated its responsibilities to staff,\"</strong> creating \"a lack of transparency, a lack of accountability, and an erosion of public trust.\" A commitment with no published mechanism"
+   },
+   "Bo": {
+    "symbol": "🟡",
+    "text": "\"Residents should see their input reflected, <strong>understand how public money is being used</strong>, and know that City Hall is focused on practical results\" (<a href=\"http://wendybowkett.ca\" target=\"_blank\" rel=\"noopener\">wendybowkett.ca</a>). Same principle as M67, no cadence or KPI set"
+   },
+   "Mc": {
+    "symbol": "✅",
+    "text": "<strong>A real-time taxpayer dashboard for major city projects</strong> (<em>Vic News</em> June 25 2026). <strong>Narrower in scope than M67, which covers city-wide service KPIs, and more demanding in cadence — real-time versus quarterly.</strong> <em>The previous version of this document said no candidate on the field had a dashboard position. That was wrong and is corrected</em>"
+   },
+   "Le": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Sa": {
+    "symbol": "⚪",
+    "text": "No public position"
+   }
+  }
+ },
+ "M68": {
+  "head": "M68 / M69 / M70 · Administrative attrition, real-estate rationalization, senior-government partnerships",
+  "table": "M68 / M69 / M70",
+  "shared": "M68 / M69 / M70",
+  "actw": "~10% administrative overhead reduction via attrition and technology (M68); real-estate rationalization with proceeds to debt reduction (M69); provincial and federal partnerships (M70)",
+  "record": "Over 53% of the operating budget goes to salaries and benefits. <strong>The City does not publicly report salary and benefits as a percentage of the operating budget, total debt outstanding, or debt-to-revenue ratios in accessible formats</strong>",
+  "what": "Reduce administrative positions by 12 to 15% over the term by not automatically refilling vacancies as people retire or leave, paired with digitising paper processes. No layoffs. A full inventory and utilisation audit of every City-owned property, then sell or lease what does not serve an essential public function. Under section 188 of the Community Charter the proceeds retire debt attached to that property and buy capital assets; they are not available as general revenue, and the measure says so.",
+  "ev": {
+   "Al": {
+    "symbol": "⚪",
+    "text": "No public position on any of the three"
+   },
+   "Ca": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "De": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Th": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Ki": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Lo": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Co": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Ha": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Ga": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Cs": {
+    "symbol": "⚪",
+    "text": "Not yet published"
+   },
+   "Ro": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Bo": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Mc": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Le": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Sa": {
+    "symbol": "⚪",
+    "text": "No public position"
+   }
+  }
+ },
+ "M69": {
+  "head": "M68 / M69 / M70 · Administrative attrition, real-estate rationalization, senior-government partnerships",
+  "table": "M68 / M69 / M70",
+  "shared": "M68 / M69 / M70",
+  "actw": "~10% administrative overhead reduction via attrition and technology (M68); real-estate rationalization with proceeds to debt reduction (M69); provincial and federal partnerships (M70)",
+  "record": "Over 53% of the operating budget goes to salaries and benefits. <strong>The City does not publicly report salary and benefits as a percentage of the operating budget, total debt outstanding, or debt-to-revenue ratios in accessible formats</strong>",
+  "what": "Reduce administrative positions by 12 to 15% over the term by not automatically refilling vacancies as people retire or leave, paired with digitising paper processes. No layoffs. A full inventory and utilisation audit of every City-owned property, then sell or lease what does not serve an essential public function. Under section 188 of the Community Charter the proceeds retire debt attached to that property and buy capital assets; they are not available as general revenue, and the measure says so.",
+  "ev": {
+   "Al": {
+    "symbol": "⚪",
+    "text": "No public position on any of the three"
+   },
+   "Ca": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "De": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Th": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Ki": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Lo": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Co": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Ha": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Ga": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Cs": {
+    "symbol": "⚪",
+    "text": "Not yet published"
+   },
+   "Ro": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Bo": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Mc": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Le": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Sa": {
+    "symbol": "⚪",
+    "text": "No public position"
+   }
+  }
+ },
+ "M70/M70b": {
+  "head": "M70b · Provincial downloading ledger",
+  "table": "M70b",
+  "shared": null,
+  "actw": "A <strong>quarterly downloading ledger</strong>, formal advocacy resolutions, and a <strong>published refusal threshold</strong> — services the City will not assume without indexed funding",
+  "record": "<strong>Naming the principle is near-universal on council. Only ACTW names the quarterly ledger and the published refusal threshold.</strong> Victoria carries 89% of the region's shelter capacity across 13 municipalities and has spent $25M+ on homelessness since 2023",
+  "what": "A quarterly public ledger of every provincial or federal responsibility Victoria delivers without funding, with an estimated cost per file, twice-yearly advocacy resolutions file by file, and a published list of services the City will not take on any more of without dedicated money.",
+  "ev": {
+   "Al": {
+    "symbol": "✅",
+    "text": "\"If you're going to continue to expect local governments to do things like having an impact on social housing or social services, even some aspects of policing, then you have to have <strong>a more serious discussion about the sources of income for local governments</strong>\" (<em>Times Colonist</em>)"
+   },
+   "Ca": {
+    "symbol": "✅",
+    "text": "<strong>Caledonia Place regional motion</strong> with Hammond — \"the city for too long has done it all\" (<em>CHEK News</em>)"
+   },
+   "De": {
+    "symbol": "🟡",
+    "text": "Province-blaming present in framing. No ledger or threshold"
+   },
+   "Th": {
+    "symbol": "🟡",
+    "text": "Province-blaming present in framing"
+   },
+   "Ki": {
+    "symbol": "✅",
+    "text": "\"The system itself is just flawed\" — a structural critique of municipal taxation"
+   },
+   "Lo": {
+    "symbol": "🟡",
+    "text": "Province-blaming present in framing"
+   },
+   "Co": {
+    "symbol": "⚪",
+    "text": "No specific downloading frame"
+   },
+   "Ha": {
+    "symbol": "✅",
+    "text": "\"People are expecting us to do things in which <strong>the province and the feds have the ability to spend and go into debt for</strong>\" (CBC)"
+   },
+   "Ga": {
+    "symbol": "✅",
+    "text": "<strong>Strongest critic of the City absorbing Island Health and BC Housing roles</strong>: \"These things will continue to happen as long as the city… is deciding the city should take over the role of Island Health and BC Housing\" (<em>CHEK News</em> June 2025)"
+   },
+   "Cs": {
+    "symbol": "⚪",
+    "text": "<strong>\"Frame-aligned\" was inference.</strong> <em>Downgraded from 🟡 in v1.8</em>"
+   },
+   "Ro": {
+    "symbol": "⚪",
+    "text": "No public position. She is described as \"well-versed in\" the roles and responsibilities of the three levels of government (<em>Vic News</em> May 27 2026), <strong>which is background, not a position</strong>"
+   },
+   "Bo": {
+    "symbol": "⚪",
+    "text": "No public position on downloading"
+   },
+   "Mc": {
+    "symbol": "⚪",
+    "text": "No public position on downloading"
+   },
+   "Le": {
+    "symbol": "⚪",
+    "text": "<strong>The candidate with the most direct working knowledge of this question in the field</strong> — a senior advisor inside a provincial ministry — <strong>and no published position on it</strong>"
+   },
+   "Sa": {
+    "symbol": "⚪",
+    "text": "No public position"
+   }
+  }
+ },
+ "M70c": {
+  "head": "M70c · The regional bill, CRD cost and the Goldstream plant",
+  "table": "M70c",
+  "shared": null,
+  "actw": "A <strong>published annual City position on regional cost</strong> before each CRD budget cycle; a <strong>published record of how Victoria's CRD representatives voted</strong>; <strong>staged approval of the $1.07B Goldstream filtration plant</strong> conditional on a published business case, an independent alternatives analysis, and a rate impact stated in dollars per household per year. <strong>Explicitly does not cap what the City cannot set — a director's vote is the director's own</strong>",
+  "record": "<strong>Three CRD Director positions are on the October 17 ballot.</strong> The CRD's own five-year forecast for regional water rates is <strong>7.6%, 9.4%, 10.9%, 12.3% and 12.6% — compounding roughly 65%.</strong> The Goldstream plant is a <strong>$1.07 billion</strong> commitment running to 2037. <strong>Not one candidate in this field, including two sitting CRD directors, has published a position on any of it. Unlike the four unresearched candidates this is not a research gap: these are the most-covered politicians in the region and the question has simply not been asked of them</strong>",
+  "what": "A published annual City position on regional cost and a published record of how Victoria's CRD representatives voted, so the part of the bill decided at the region stops being invisible. On the Goldstream filtration plant, ACTW takes no position on whether it should be built, only on the standard of evidence required before a billion-dollar commitment is locked in.",
+  "ev": {
+   "Al": {
+    "symbol": "📋",
+    "text": "<strong>Sits as a CRD director ex officio, on the BC Transit Board (2023–2026) and the Victoria Regional Transit Commission (2025–2026). That is a role, not a published position — banned inference 5. But M70c asks for a published record of how Victoria's representatives vote, and no such record exists</strong>"
+   },
+   "Ca": {
+    "symbol": "🟢",
+    "text": "<strong>Advanced a new CRD transportation service</strong> as CRD vice-chair (<em>Vic News</em> Dec 21 2025). <strong>An act on regional service delivery, distinct from the seat.</strong> No rate or plant position"
+   },
+   "De": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Th": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Ki": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Lo": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Co": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Ha": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Ga": {
+    "symbol": "⚪",
+    "text": "No public position. Her critique of the City absorbing Island Health and BC Housing roles is scored under M70b, <strong>which is a different question from regional utility cost</strong>"
+   },
+   "Cs": {
+    "symbol": "⚪",
+    "text": "Not yet published"
+   },
+   "Ro": {
+    "symbol": "⚪",
+    "text": "No public position. <strong>Her provincial background leading Metro Vancouver's regional growth strategy is the most relevant credential in the field and remains background</strong>"
+   },
+   "Bo": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Mc": {
+    "symbol": "⚪",
+    "text": "No public position. <strong>Notable given a career advising on infrastructure and finance projects</strong>"
+   },
+   "Le": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Sa": {
+    "symbol": "⚪",
+    "text": "No public position"
+   }
+  }
+ },
+ "M71–M73d": {
+  "head": "M71 / M72 / M72b / M73 / M73b / M73c / M73d · Business, downtown, economic development",
+  "table": "M71 / M72 / M72b / M73 / M73b / M73c / M73d",
+  "shared": null,
+  "actw": "Downtown vacancy from 11% to 5% via provincial advocacy for vacant-storefront enabling legislation, <strong>and no net loss of employment-designated land without a published replacement plan</strong> (M71); <strong>business licence processing under 5 business days</strong> (M72); a simplification charter with <strong>bylaw sunset clauses</strong> (M72b); tourism and wayfinding (M73); a <strong>Team Victoria attractiveness office</strong> (M73b); <strong>Conference Centre governance review with a published economic-impact target</strong> (M73c); <strong>a Council-adopted Strategic Economic Plan reporting median wage and full-time share by sector rather than business counts alone</strong> (M73d)",
+  "record": "<strong>Commercial vacancy on Pandora hit a historical high of 10.7% in February 2025</strong>; Arq Salon closed after 28 years due to street disorder. <strong>48% of downtown businesses would consider leaving if their lease expired</strong> (DVBA 2025 survey). <strong>Honest caveat: this is the cluster where challenger scores are most likely to rise once platforms publish, because it is the natural ground for business-background candidates</strong>",
+  "what": "Cut downtown storefront vacancy from 11% to 5%, reduce small-business red tape, protect the last of the industrial and marine-industrial land from residential conversion, and fold tourism and economic development into one small office that owns that one number.",
+  "ev": {
+   "Al": {
+    "symbol": "🟢",
+    "text": "Substantial business-facing record: the <strong>\"welcome and thank you\" business programme</strong>, façade improvement grants, permissive tax exemptions, and a tourism plank. <strong>No processing-time target and no vacancy target</strong>"
+   },
+   "Ca": {
+    "symbol": "⚪",
+    "text": "No specific economic-development mechanism"
+   },
+   "De": {
+    "symbol": "🟢",
+    "text": "<strong>OUR DWTN $1M annual</strong> and the BreakOut West venue motion address downtown vitality through events and activation. <strong>No licensing or vacancy mechanism</strong>"
+   },
+   "Th": {
+    "symbol": "⚪",
+    "text": "No specific position"
+   },
+   "Ki": {
+    "symbol": "⚪",
+    "text": "No specific position"
+   },
+   "Lo": {
+    "symbol": "⚪",
+    "text": "No specific position"
+   },
+   "Co": {
+    "symbol": "⚪",
+    "text": "No specific position"
+   },
+   "Ha": {
+    "symbol": "🟢",
+    "text": "<strong>The security-cost compensation motion</strong> (July 2023, defeated 6–2) — a named mechanism aimed squarely at business viability, absorbed as M28b. <strong>Addresses business cost rather than vacancy or licensing</strong>"
+   },
+   "Ga": {
+    "symbol": "⚪",
+    "text": "No specific mechanism. Her 2022 \"safer and prosperous\" framing is scored under cleanliness rather than counted twice"
+   },
+   "Cs": {
+    "symbol": "🟡",
+    "text": "<strong>The most directly relevant candidate in the field on this cluster, and her detailed platform is not out.</strong> \"I want to bring and make it desirable to come back downtown. I want to bring the heart back into the city\" (<em>CHEK News</em>), from a downtown shop owner of five years. <strong>Sourced on M71's policy area; no mechanism, target or timeline. This is the row most likely to change on publication</strong>"
+   },
+   "Ro": {
+    "symbol": "🟡",
+    "text": "\"I want to remove the barriers stopping people from coming downtown and restore the vibrant downtown that has been lost\" (<a href=\"http://karenrothe.ca\" target=\"_blank\" rel=\"noopener\">karenrothe.ca</a>). A stated goal; no mechanism"
+   },
+   "Bo": {
+    "symbol": "⚪",
+    "text": "<strong>No published economic-development position. She is a business strategist with an MBA and that is background, not a position — banned inference 5. Noted because it is exactly the kind of credential a looser matrix would have scored</strong>"
+   },
+   "Mc": {
+    "symbol": "🟡",
+    "text": "Downtown diagnosis on the record: visitors \"can't find parking, they can't get where they want to go quickly, and they don't feel safe\" (<em>Vic News</em>). \"Returning Victoria to world-class status\" is framing rather than a mechanism"
+   },
+   "Le": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Sa": {
+    "symbol": "⚪",
+    "text": "No public position"
+   }
+  }
+ },
+ "M74/M75/M76": {
+  "head": "M74 / M75 / M76 · Capital threshold, first-hour parking, permit fees",
+  "table": "M74 / M75 / M76",
+  "shared": null,
+  "actw": "Voter approval for capital over $25M (M74, operationalized in M77); first-hour free parking to support commerce (M75); reduced permit fees for small renovations (M76)",
+  "record": null,
+  "what": "Voter approval for any new capital project over $25 million, though not for lifecycle replacement of existing infrastructure, a free first hour of downtown parking, and reduced or waived permit fees on renovations under $50,000 that add a suite, improve accessibility or cut energy use.",
+  "ev": {
+   "Al": {
+    "symbol": "⚪",
+    "text": "No position beyond the Crystal Pool precedent, scored under M77"
+   },
+   "Ca": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "De": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Th": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Ki": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Lo": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Co": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Ha": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Ga": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Cs": {
+    "symbol": "⚪",
+    "text": "Not yet published"
+   },
+   "Ro": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Bo": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Mc": {
+    "symbol": "⚪",
+    "text": "<strong>No position on the parking mechanism.</strong> His diagnosis that downtown visitors \"can't find parking\" is scored under M19"
+   },
+   "Le": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Sa": {
+    "symbol": "⚪",
+    "text": "No public position"
+   }
+  }
+ },
+ "M77/M78/M78b": {
+  "head": "M77 / M78 / M78b · $25M referendum threshold, 5-step process, material change rule",
+  "table": "M77 / M78 / M78b",
+  "shared": null,
+  "actw": "<strong>Binding referendum on every new non-lifecycle capital project over $25M</strong> under the LGA / Community Charter. <strong>Five steps: consult → expert design → public visualization and impact analysis → referendum → quarterly progress reports.</strong> M78b: <strong>post-hearing amendments above a 10% threshold, or removing an amenity, affordability, heritage or public-access commitment, trigger a pause, a public staff report and renotification</strong>",
+  "record": "<strong>Dowler Place: a confidential draft motion authored by Mayor Alto to convert the site into a Pandora-relocation site, disclosed via CHEK FOI, June 2025. Consultation was skipped because \"we knew what the comments would be from the public.\" She apologised for a \"rocky\" rollout. This measure exists because of that file.</strong> The Crystal Pool assent vote (21.18% turnout of 73,409 eligible) is the local proof that the mechanism works",
+  "what": "Any new capital project over $25 million goes to a binding public vote, every major project follows the same five steps (consult, design, publish the visualisation and impact analysis, vote, report quarterly during construction), and a private development amended by more than 10% after the public hearing has closed goes back to the people who spoke to it.",
+  "ev": {
+   "Al": {
+    "symbol": "🟡",
+    "text": "Crystal Pool referendum precedent (Feb 2025, 58.71% yes, $168.9M borrowing). <strong>But the Dowler Place process bypassed consultation — \"we knew what the comments would be from the public\"</strong>"
+   },
+   "Ca": {
+    "symbol": "🟡",
+    "text": "Crystal Pool YES; no general $25M threshold position"
+   },
+   "De": {
+    "symbol": "🟡",
+    "text": "Crystal Pool YES; no general threshold position"
+   },
+   "Th": {
+    "symbol": "🟡",
+    "text": "Crystal Pool YES; no general threshold position"
+   },
+   "Ki": {
+    "symbol": "🟡",
+    "text": "Crystal Pool YES; no general threshold position"
+   },
+   "Lo": {
+    "symbol": "🟡",
+    "text": "Crystal Pool YES; no general threshold position"
+   },
+   "Co": {
+    "symbol": "🟡",
+    "text": "Crystal Pool YES; <strong>NO on Dowler Place zoning — a process critic</strong>"
+   },
+   "Ha": {
+    "symbol": "🟡",
+    "text": "Crystal Pool YES; process critic"
+   },
+   "Ga": {
+    "symbol": "🟡",
+    "text": "Crystal Pool YES; <strong>the strongest process critic of Dowler Place</strong> — \"the city should not take over BC Housing's role\""
+   },
+   "Cs": {
+    "symbol": "⚪",
+    "text": "<em>Downgraded from ✅ in v1.8.</em> <strong>\"Accountability and transparency frame aligns\" was inference, not a source.</strong> No position on a capital threshold or a codified project process"
+   },
+   "Ro": {
+    "symbol": "🟡",
+    "text": "<em>Over-promoted to 🟢 on July 30 and demoted the same day.</em> Consultation before commitment, <strong>which is M78 step 1</strong> — but a commitment to listen is not a named process. No capital threshold or referendum position"
+   },
+   "Bo": {
+    "symbol": "🟡",
+    "text": "\"Residents should see their input reflected\"; \"strong public trust depends on clear process, meaningful engagement, and accountable leadership\" (<a href=\"http://wendybowkett.ca\" target=\"_blank\" rel=\"noopener\">wendybowkett.ca</a>). <strong>A process commitment; no capital threshold</strong>"
+   },
+   "Mc": {
+    "symbol": "🟢",
+    "text": "<strong>Two codified process triggers</strong>: public consultation requirements for tax increases above inflation, and infrastructure reviews tied to development approvals (<em>Vic News</em> June 25 2026). <strong>Both fiscal or development rather than capital-project.</strong> No $25M threshold"
+   },
+   "Le": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Sa": {
+    "symbol": "⚪",
+    "text": "No public position"
+   }
+  }
+ },
+ "M79/M79b": {
+  "head": "M79 / M79b / M79c–f · Integrity Commissioner, lobbyist registry, FOI fee, remuneration timing",
+  "table": "M79 / M79b / M79c–f",
+  "shared": "M79 / M79b / M79c–f",
+  "actw": "An arm's-length <strong>Integrity Commissioner</strong> office (shared-service viable); an <strong>MNP governance report implementation tracker</strong>; an annual public caseload report (M79b); a <strong>60-day published response standard on consultations</strong> (M79); <strong>a public lobbyist registry for development files, filed by the City side within 10 business days, no exemption for the mayor</strong> (M79d); <strong>abolish the $10 FOI application fee</strong> (M79e); <strong>council remuneration changes take effect only at the start of the following term</strong> (M79f)",
+  "record": "<strong>The MNP governance report was not implemented during the term despite being on file. No candidate has addressed a lobbyist registry, the FOI application fee, or remuneration timing. BC's provincial Lobbyists Transparency Registry does not cover municipalities</strong>",
+  "what": "An arm's-length Integrity Commissioner with jurisdiction over conflicts of interest, gifts, post-employment restrictions and code-of-conduct breaches, plus a written response to every public consultation within 60 days and the draft published 30 days before the adoption vote. Published mandate letters and quarterly scorecards so residents can tell who owns what, a searchable registry of meetings between development proponents and council or staff, the $10 freedom-of-information application fee waived, and any change to council pay taking effect only after the next election.",
+  "ev": {
+   "Al": {
+    "symbol": "⚪",
+    "text": "<strong>MNP report not implemented during the term</strong>"
+   },
+   "Ca": {
+    "symbol": "⚪",
+    "text": "No specific Integrity Commissioner advocacy"
+   },
+   "De": {
+    "symbol": "⚪",
+    "text": "Process critic generally; no specific advocacy"
+   },
+   "Th": {
+    "symbol": "⚪",
+    "text": "No specific position"
+   },
+   "Ki": {
+    "symbol": "⚪",
+    "text": "No specific position"
+   },
+   "Lo": {
+    "symbol": "⚪",
+    "text": "No specific position"
+   },
+   "Co": {
+    "symbol": "🟡",
+    "text": "<em>Downgraded from ✅ in v1.8.</em> <strong>\"Council has been drifting away from the principles of good governance\" is a sourced statement on governance integrity. It is not advocacy for an Integrity Commissioner, and the earlier ✅ read one as the other</strong>"
+   },
+   "Ha": {
+    "symbol": "🟡",
+    "text": "<em>Downgraded from ✅ in v1.8.</em> Council-conduct accountability advocate, sourced. <strong>No located statement naming an Integrity Commissioner specifically</strong>"
+   },
+   "Ga": {
+    "symbol": "✅",
+    "text": "<strong>\"The recommendations in the MNP governance report — including setting up an integrity commissioner — should be addressed before a decision on Missing Middle\"</strong> (<em>Capital Daily</em>). <strong>Names the mechanism. The most explicit Integrity Commissioner advocate on council</strong>"
+   },
+   "Cs": {
+    "symbol": "⚪",
+    "text": "<em>Downgraded from ✅ in v1.8.</em> <strong>\"Accountability frame aligns\" was inference, not a source</strong>"
+   },
+   "Ro": {
+    "symbol": "🟡",
+    "text": "Names \"a lack of accountability\" and \"an erosion of public trust\" as the problem (<a href=\"http://karenrothe.ca\" target=\"_blank\" rel=\"noopener\">karenrothe.ca</a>). <strong>No Integrity Commissioner position located</strong>"
+   },
+   "Bo": {
+    "symbol": "🟡",
+    "text": "\"Strong public trust depends on clear process, meaningful engagement, and accountable leadership\"; worked on governance improvement with the Victoria Downtown Residents Association. <strong>No Commissioner position located</strong>"
+   },
+   "Mc": {
+    "symbol": "✅",
+    "text": "<strong>An independent integrity commissioner is a named plank in his published platform</strong> (<em>Vic News</em> June 25 2026), inside his \"open government and fiscal responsibility\" pillar. <strong>A direct match to M79b and the strongest single overlap between ACTW and any newcomer's platform.</strong> Former tribunal member"
+   },
+   "Le": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Sa": {
+    "symbol": "⚪",
+    "text": "No public position"
+   }
+  }
+ },
+ "M79c–f": {
+  "head": "M79 / M79b / M79c–f · Integrity Commissioner, lobbyist registry, FOI fee, remuneration timing",
+  "table": "M79 / M79b / M79c–f",
+  "shared": "M79 / M79b / M79c–f",
+  "actw": "An arm's-length <strong>Integrity Commissioner</strong> office (shared-service viable); an <strong>MNP governance report implementation tracker</strong>; an annual public caseload report (M79b); a <strong>60-day published response standard on consultations</strong> (M79); <strong>a public lobbyist registry for development files, filed by the City side within 10 business days, no exemption for the mayor</strong> (M79d); <strong>abolish the $10 FOI application fee</strong> (M79e); <strong>council remuneration changes take effect only at the start of the following term</strong> (M79f)",
+  "record": "<strong>The MNP governance report was not implemented during the term despite being on file. No candidate has addressed a lobbyist registry, the FOI application fee, or remuneration timing. BC's provincial Lobbyists Transparency Registry does not cover municipalities</strong>",
+  "what": "An arm's-length Integrity Commissioner with jurisdiction over conflicts of interest, gifts, post-employment restrictions and code-of-conduct breaches, plus a written response to every public consultation within 60 days and the draft published 30 days before the adoption vote. Published mandate letters and quarterly scorecards so residents can tell who owns what, a searchable registry of meetings between development proponents and council or staff, the $10 freedom-of-information application fee waived, and any change to council pay taking effect only after the next election.",
+  "ev": {
+   "Al": {
+    "symbol": "⚪",
+    "text": "<strong>MNP report not implemented during the term</strong>"
+   },
+   "Ca": {
+    "symbol": "⚪",
+    "text": "No specific Integrity Commissioner advocacy"
+   },
+   "De": {
+    "symbol": "⚪",
+    "text": "Process critic generally; no specific advocacy"
+   },
+   "Th": {
+    "symbol": "⚪",
+    "text": "No specific position"
+   },
+   "Ki": {
+    "symbol": "⚪",
+    "text": "No specific position"
+   },
+   "Lo": {
+    "symbol": "⚪",
+    "text": "No specific position"
+   },
+   "Co": {
+    "symbol": "🟡",
+    "text": "<em>Downgraded from ✅ in v1.8.</em> <strong>\"Council has been drifting away from the principles of good governance\" is a sourced statement on governance integrity. It is not advocacy for an Integrity Commissioner, and the earlier ✅ read one as the other</strong>"
+   },
+   "Ha": {
+    "symbol": "🟡",
+    "text": "<em>Downgraded from ✅ in v1.8.</em> Council-conduct accountability advocate, sourced. <strong>No located statement naming an Integrity Commissioner specifically</strong>"
+   },
+   "Ga": {
+    "symbol": "✅",
+    "text": "<strong>\"The recommendations in the MNP governance report — including setting up an integrity commissioner — should be addressed before a decision on Missing Middle\"</strong> (<em>Capital Daily</em>). <strong>Names the mechanism. The most explicit Integrity Commissioner advocate on council</strong>"
+   },
+   "Cs": {
+    "symbol": "⚪",
+    "text": "<em>Downgraded from ✅ in v1.8.</em> <strong>\"Accountability frame aligns\" was inference, not a source</strong>"
+   },
+   "Ro": {
+    "symbol": "🟡",
+    "text": "Names \"a lack of accountability\" and \"an erosion of public trust\" as the problem (<a href=\"http://karenrothe.ca\" target=\"_blank\" rel=\"noopener\">karenrothe.ca</a>). <strong>No Integrity Commissioner position located</strong>"
+   },
+   "Bo": {
+    "symbol": "🟡",
+    "text": "\"Strong public trust depends on clear process, meaningful engagement, and accountable leadership\"; worked on governance improvement with the Victoria Downtown Residents Association. <strong>No Commissioner position located</strong>"
+   },
+   "Mc": {
+    "symbol": "✅",
+    "text": "<strong>An independent integrity commissioner is a named plank in his published platform</strong> (<em>Vic News</em> June 25 2026), inside his \"open government and fiscal responsibility\" pillar. <strong>A direct match to M79b and the strongest single overlap between ACTW and any newcomer's platform.</strong> Former tribunal member"
+   },
+   "Le": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Sa": {
+    "symbol": "⚪",
+    "text": "No public position"
+   }
+  }
+ },
+ "M80/M80b/M80c": {
+  "head": "M80 / M80b / M80c / M82 / M82b · Neighbourhoods, language access, Local Area Plans, surveys, turnout",
+  "table": "M80 / M80b / M80c / M82 / M82b",
+  "shared": "M80 / M80b / M80c / M82 / M82b",
+  "actw": "Neighbourhood associations as <strong>delivery partner</strong> for signature-project shortlisting and survey design rather than a consultation audience (M80); <strong>civic access in both official languages with a plain-language English standard</strong> (M80b, absorbing Coun. Kim's 2022 plank); <strong>two Local Area Plans per year on a published schedule with parcel-level clarity</strong> (M80c); an annual statistically valid survey across all 12 neighbourhoods with <strong>at least one published service change attributable to a survey finding each year</strong> (M82); <strong>turnout and ballot access — at least one weekend advance voting day, voting places weighted toward the lowest-turnout neighbourhoods, campus and multi-unit voting, and election bylaws set 12 months out so no council writes the rules of its own re-election</strong> (M82b)",
+  "record": "<strong>2022 turnout was roughly 38%, down from 44.9% in 2018 — about 27,452 votes cast. All four of the 2026 advance voting days fall on weekdays. Five candidates invoke \"a city of neighbourhoods\"; none proposes a mechanism that would put more of those neighbours in the room, or measure whether they came</strong>",
+  "what": "Real budgets and a delivery role for neighbourhood associations, civic access in Canada's two official languages (plain-language English plus French for the core forms and notices, with interpretation on request), and two new Local Area Plans per year giving parcel-level certainty about what can be built where. An annual statistically valid survey across all 12 neighbourhoods, plus better ballot access: at least one weekend advance voting day, voting places weighted toward the neighbourhoods that turned out lowest, campus and care-home voting, and a published turnout target of 50% for 2030.",
+  "ev": {
+   "Al": {
+    "symbol": "🟢",
+    "text": "<strong>My Great Neighbourhood grants and the Neighbourhoods division operate under her council</strong>, and a language app for council and staff was in her 2022 platform. <strong>No survey commitment and no turnout plank</strong>"
+   },
+   "Ca": {
+    "symbol": "⚪",
+    "text": "No specific position on this cluster"
+   },
+   "De": {
+    "symbol": "⚪",
+    "text": "No specific position"
+   },
+   "Th": {
+    "symbol": "🟡",
+    "text": "<strong>\"Great neighbourhoods\" is a declared 2026 priority.</strong> No mechanism named"
+   },
+   "Ki": {
+    "symbol": "✅",
+    "text": "<strong>Non-English grant applications is her own 2022 plank, absorbed as M80b.</strong> A named accessibility mechanism with zero ideological friction, costing $80–120K. <strong>Her second ✅ in a cluster the previous version of this document did not score at all</strong>"
+   },
+   "Lo": {
+    "symbol": "🟡",
+    "text": "<strong>\"A City of Communities\"</strong> — walkable neighbourhood villages, her 2022 organising idea. No mechanism on this cluster"
+   },
+   "Co": {
+    "symbol": "⚪",
+    "text": "No specific position"
+   },
+   "Ha": {
+    "symbol": "⚪",
+    "text": "No specific position"
+   },
+   "Ga": {
+    "symbol": "⚪",
+    "text": "No specific position on this cluster"
+   },
+   "Cs": {
+    "symbol": "⚪",
+    "text": "Not yet published"
+   },
+   "Ro": {
+    "symbol": "🟡",
+    "text": "<strong>A direct M80 statement:</strong> \"Victoria is a city of neighbourhoods. Community associations have long been stewards of these neighbourhoods, and their hard-won experience is critical to the long-term health of our communities\" (<a href=\"http://karenrothe.ca\" target=\"_blank\" rel=\"noopener\">karenrothe.ca</a>). No mechanism, no survey or turnout position"
+   },
+   "Bo": {
+    "symbol": "🟡",
+    "text": "<strong>Also a direct M80 statement:</strong> \"Victoria is a city of neighbourhoods. Residents from each of our neighbourhoods deserve to feel heard, respected, and confident their local government is focused on making life better\" (<a href=\"http://wendybowkett.ca\" target=\"_blank\" rel=\"noopener\">wendybowkett.ca</a>), from a former Victoria Downtown Residents Association leader"
+   },
+   "Mc": {
+    "symbol": "🟡",
+    "text": "<strong>\"Neighbourhood planning and development accountability\" is one of his five named platform areas.</strong> No participation or survey mechanism"
+   },
+   "Le": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Sa": {
+    "symbol": "⚪",
+    "text": "No public position"
+   }
+  }
+ },
+ "M82/M82b": {
+  "head": "M80 / M80b / M80c / M82 / M82b · Neighbourhoods, language access, Local Area Plans, surveys, turnout",
+  "table": "M80 / M80b / M80c / M82 / M82b",
+  "shared": "M80 / M80b / M80c / M82 / M82b",
+  "actw": "Neighbourhood associations as <strong>delivery partner</strong> for signature-project shortlisting and survey design rather than a consultation audience (M80); <strong>civic access in both official languages with a plain-language English standard</strong> (M80b, absorbing Coun. Kim's 2022 plank); <strong>two Local Area Plans per year on a published schedule with parcel-level clarity</strong> (M80c); an annual statistically valid survey across all 12 neighbourhoods with <strong>at least one published service change attributable to a survey finding each year</strong> (M82); <strong>turnout and ballot access — at least one weekend advance voting day, voting places weighted toward the lowest-turnout neighbourhoods, campus and multi-unit voting, and election bylaws set 12 months out so no council writes the rules of its own re-election</strong> (M82b)",
+  "record": "<strong>2022 turnout was roughly 38%, down from 44.9% in 2018 — about 27,452 votes cast. All four of the 2026 advance voting days fall on weekdays. Five candidates invoke \"a city of neighbourhoods\"; none proposes a mechanism that would put more of those neighbours in the room, or measure whether they came</strong>",
+  "what": "Real budgets and a delivery role for neighbourhood associations, civic access in Canada's two official languages (plain-language English plus French for the core forms and notices, with interpretation on request), and two new Local Area Plans per year giving parcel-level certainty about what can be built where. An annual statistically valid survey across all 12 neighbourhoods, plus better ballot access: at least one weekend advance voting day, voting places weighted toward the neighbourhoods that turned out lowest, campus and care-home voting, and a published turnout target of 50% for 2030.",
+  "ev": {
+   "Al": {
+    "symbol": "🟢",
+    "text": "<strong>My Great Neighbourhood grants and the Neighbourhoods division operate under her council</strong>, and a language app for council and staff was in her 2022 platform. <strong>No survey commitment and no turnout plank</strong>"
+   },
+   "Ca": {
+    "symbol": "⚪",
+    "text": "No specific position on this cluster"
+   },
+   "De": {
+    "symbol": "⚪",
+    "text": "No specific position"
+   },
+   "Th": {
+    "symbol": "🟡",
+    "text": "<strong>\"Great neighbourhoods\" is a declared 2026 priority.</strong> No mechanism named"
+   },
+   "Ki": {
+    "symbol": "✅",
+    "text": "<strong>Non-English grant applications is her own 2022 plank, absorbed as M80b.</strong> A named accessibility mechanism with zero ideological friction, costing $80–120K. <strong>Her second ✅ in a cluster the previous version of this document did not score at all</strong>"
+   },
+   "Lo": {
+    "symbol": "🟡",
+    "text": "<strong>\"A City of Communities\"</strong> — walkable neighbourhood villages, her 2022 organising idea. No mechanism on this cluster"
+   },
+   "Co": {
+    "symbol": "⚪",
+    "text": "No specific position"
+   },
+   "Ha": {
+    "symbol": "⚪",
+    "text": "No specific position"
+   },
+   "Ga": {
+    "symbol": "⚪",
+    "text": "No specific position on this cluster"
+   },
+   "Cs": {
+    "symbol": "⚪",
+    "text": "Not yet published"
+   },
+   "Ro": {
+    "symbol": "🟡",
+    "text": "<strong>A direct M80 statement:</strong> \"Victoria is a city of neighbourhoods. Community associations have long been stewards of these neighbourhoods, and their hard-won experience is critical to the long-term health of our communities\" (<a href=\"http://karenrothe.ca\" target=\"_blank\" rel=\"noopener\">karenrothe.ca</a>). No mechanism, no survey or turnout position"
+   },
+   "Bo": {
+    "symbol": "🟡",
+    "text": "<strong>Also a direct M80 statement:</strong> \"Victoria is a city of neighbourhoods. Residents from each of our neighbourhoods deserve to feel heard, respected, and confident their local government is focused on making life better\" (<a href=\"http://wendybowkett.ca\" target=\"_blank\" rel=\"noopener\">wendybowkett.ca</a>), from a former Victoria Downtown Residents Association leader"
+   },
+   "Mc": {
+    "symbol": "🟡",
+    "text": "<strong>\"Neighbourhood planning and development accountability\" is one of his five named platform areas.</strong> No participation or survey mechanism"
+   },
+   "Le": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Sa": {
+    "symbol": "⚪",
+    "text": "No public position"
+   }
+  }
+ },
+ "M81": {
+  "head": "M81 · Saanich amalgamation",
+  "table": "M81",
+  "shared": null,
+  "actw": "<strong>Finish the file, don't restart it.</strong> Publish the October 17 ballot result against the Minister's three outstanding conditions within 90 days; commission the financial, transitional and service-impact analysis jointly with Saanich on a published timeline; begin the First Nations consultation the Minister named through the M1 working tables; return to the Province and request a binding referendum; report quarterly until the file closes. <strong>No amalgamation savings or costs are booked anywhere in the framework</strong>",
+  "record": "The Citizens' Assembly sat September 2024 to April 2025 — 48 randomly selected residents, eight full-day sessions — and <strong>recommended amalgamation on April 5 2025. The Province declined a binding referendum in April 2026 pending financial, transitional and service-impact analysis and consultation with area First Nations. Neither has been delivered in the fifteen months since the Assembly reported.</strong> Both Councils settled for a non-binding ballot question in July 2026",
+  "what": "Finish the amalgamation file rather than restart it. The Citizens' Assembly already sat and recommended a merger in April 2025, and the 17 October ballot question is non-binding. The Province will not authorise a binding vote until financial, transitional and service-impact analysis is done and First Nations are consulted, so the commitment is to deliver those and then ask again.",
+  "ev": {
+   "Al": {
+    "symbol": "🟢",
+    "text": "<strong>Co-requested provincial referendum authorization with Saanich's mayor</strong>, October 2025. The Province declined in April 2026"
+   },
+   "Ca": {
+    "symbol": "⚪",
+    "text": "No specific Citizens' Assembly position"
+   },
+   "De": {
+    "symbol": "⚪",
+    "text": "No specific Citizens' Assembly position"
+   },
+   "Th": {
+    "symbol": "⚪",
+    "text": "No specific position"
+   },
+   "Ki": {
+    "symbol": "⚪",
+    "text": "No specific position"
+   },
+   "Lo": {
+    "symbol": "⚪",
+    "text": "No specific position"
+   },
+   "Co": {
+    "symbol": "✅",
+    "text": "<strong>Chairs Victoria's Citizens' Assembly Council Committee (2025–2026)</strong> — the existing body with custody of this file. <strong>Its remaining work is implementation follow-through, not fresh deliberation, which is exactly what the rewritten M81 is scoped to</strong>"
+   },
+   "Ha": {
+    "symbol": "⚪",
+    "text": "No specific position"
+   },
+   "Ga": {
+    "symbol": "⚪",
+    "text": "No specific position"
+   },
+   "Cs": {
+    "symbol": "⚪",
+    "text": "No specific position"
+   },
+   "Ro": {
+    "symbol": "⚪",
+    "text": "No public position"
+   },
+   "Bo": {
+    "symbol": "⚪",
+    "text": "No public position"
    },
    "Mc": {
     "symbol": "⚪",

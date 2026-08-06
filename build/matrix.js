@@ -82,7 +82,11 @@ const isScored = (raw) => raw !== "." && raw !== "R";
 
 const norm = (s) => s.replace(/\s*\/\s*/g, "/").replace(/[–—]/g, "-").replace(/m/gi, "").replace(/\s+/g, "").toLowerCase();
 const evByKey = {};
-Object.keys(EV).forEach((k) => { evByKey[norm(k)] = EV[k]; });
+Object.keys(EV).forEach((k) => { if (k !== "_meta") evByKey[norm(k)] = EV[k]; });
+/* The evidence store's own version and date. The panel prints them beside the
+   sentences it borrows: the grid is reconciled to a later master, so a reader
+   looking at both needs to know which is which. */
+const EV_META = EV._meta || { version: "?", date: "unknown" };
 
 function band(mean) {
   for (const b of M.SCALE.bands) if (mean >= b.min) return b.g;
@@ -245,13 +249,28 @@ if (errs.length) { console.error("BUILD ABORTED — grid does not reconcile to t
 let evHave = 0;
 comp.forEach((x) => x.cells.forEach((cell) => { if (sentence(cell.ti, x.c.key)) evHave++; }));
 
+/* The symbols the evidence store still uses: ✅ and 🟢 for a position that
+   meets the measure, 🟡 for a partial one, ❌ for a stated opposition. ⚪ and
+   ⛔ mean the opposite — the store located nothing, and its cell text is a
+   sentence about the absence, not about a position.
+
+   That distinction is the whole filter. The store (comparison v2.0, 31 July)
+   and the grid (Grade Breakdown v3.4, 4 August) are different vintages, and in
+   45 places the grid now carries a mark where the store still records silence.
+   Printing the store's sentence under those marks would put "No public
+   position" directly beneath a Close 2.0 with the same candidate's name on it.
+   So a sentence is carried only where the store agrees a position exists; the
+   other 45 marks show their value and are explained by the master's
+   justification line for the cell instead of by a contradiction. */
 function sentence(ti, ck) {
+  const POSITIONAL = /[✅🟢🟡❌]/;
   const store = evByKey[norm(M.TOPICS[ti].id)];
   if (!store) return null;
   const e = store.ev[ck];
   if (!e) return null;
+  if (!POSITIONAL.test(e.symbol || "")) return null;
   const plain = e.text.replace(/<[^>]+>/g, "").trim();
-  if (/^(No public position|Not yet published|No information)\.?$/i.test(plain)) return null;
+  if (!plain || /^(No public position|Not yet published|No information)\.?$/i.test(plain)) return null;
   return e.text;
 }
 
@@ -407,7 +426,17 @@ let gridBody = M.TOPICS.map((t, ti) => {
 
 /* payload for the detail panel */
 const payload = {
-  topics: M.TOPICS.map((t) => ({ id: t.id, code: t.code, label: t.label, what: t.what, pillar: t.pillar, isNew: !!t.isNew })),
+  /* shared: the evidence store keeps some clusters together that the grid
+     splits (one table behind both M65 and M66). Carried so a panel can say the
+     sentence covers the group rather than implying it was written about this
+     topic alone. */
+  topics: M.TOPICS.map((t) => {
+    const store = evByKey[norm(t.id)];
+    return {
+      id: t.id, code: t.code, label: t.label, what: t.what, pillar: t.pillar, isNew: !!t.isNew,
+      shared: (store && store.shared) || null,
+    };
+  }),
   cands: C.map((c) => {
     const x = comp.find((y) => y.c.key === c.key);
     return {
@@ -435,6 +464,7 @@ const payload = {
   warns: SC5.warns,
   colGrid: colGrid,
   floor: FLOOR,
+  evmeta: EV_META,
   nmarks: M.MATRIX_META.marks,
   opposed: M.SCALE.marks.opposed.value,
   /* candidateKey|columnKey -> { ev } straight from the master's per-grade
