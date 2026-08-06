@@ -258,27 +258,17 @@ function sentence(ti, ck) {
 /* ---- render ----------------------------------------------------------- */
 const ranked = comp.slice().sort((a, b) => b.c.mean - a.c.mean);
 
-function markBar(counts) {
+/* The standalone "Overall grades" table is gone: it ranked the same fifteen
+   candidates on the same overall grade the area grid's General column already
+   carries, and it stood between the reader and the table they came for. The
+   one thing it showed that nothing else did was the spread of a candidate's
+   marks, so that moves into the General cell's detail panel rather than off
+   the page — every candidate's distribution is a click on their own row. */
+function markCounts(counts) {
   const order = ["aligned", "close", "partialPlus", "partial", "weak", "opposed"];
-  const tot = order.reduce((a, k) => a + counts[k], 0);
-  return '<span class="mkbar" role="img" aria-label="' +
-    order.filter((k) => counts[k]).map((k) => counts[k] + " " + M.SCALE.marks[k].label).join(", ") + '">' +
-    order.filter((k) => counts[k]).map((k) =>
-      '<i class="mk-' + M.SCALE.marks[k].cls + '" style="flex:' + counts[k] + '" title="' + counts[k] + " " + M.SCALE.marks[k].label + '"></i>').join("") +
-    "</span>";
+  return order.filter((k) => counts[k])
+    .map((k) => ({ label: M.SCALE.marks[k].label, cls: M.SCALE.marks[k].cls, n: counts[k] }));
 }
-
-let overall = ranked.map((x, i) => {
-  const c = x.c;
-  return '<tr class="ov-r" data-c="' + c.key + '">' +
-    '<td class="ov-rk">' + (i + 1) + "</td>" +
-    '<td class="ov-nm">' + nameLink(c.name, "cn-name") + '<span class="cn-role">' + esc(c.office) + (c.statusNote ? " · " + esc(c.statusNote) : "") + "</span></td>" +
-    '<td class="ov-g"><span class="g ' + gradeCls(c.grade) + '">' + c.grade + "</span></td>" +
-    '<td class="ov-mn">' + c.mean.toFixed(2) + "</td>" +
-    '<td class="ov-n"><strong>' + c.n + '</strong><span class="of">of 55</span></td>' +
-    "<td>" + markBar(x.counts) + "</td>" +
-    "</tr>";
-}).join("\n");
 
 function gradeCls(g) {
   if (!g) return "x";
@@ -413,7 +403,15 @@ let gridBody = M.TOPICS.map((t, ti) => {
 /* payload for the detail panel */
 const payload = {
   topics: M.TOPICS.map((t) => ({ id: t.id, code: t.code, label: t.label, what: t.what, pillar: t.pillar, isNew: !!t.isNew })),
-  cands: C.map((c) => ({ key: c.key, name: c.name, office: c.office, grade: c.grade, mean: c.mean, n: c.n, profile: profileHref(c.name) })),
+  cands: C.map((c) => {
+    const x = comp.find((y) => y.c.key === c.key);
+    return {
+      key: c.key, name: c.name, office: c.office, grade: c.grade, mean: c.mean, n: c.n,
+      profile: profileHref(c.name), note: c.statusNote || null,
+      /* the mark spread the retired overall table used to draw */
+      marks: markCounts(x.counts),
+    };
+  }),
   marks: M.SCALE.marks,
   grid: rows,
   ev: (() => {
@@ -471,7 +469,6 @@ const scaleRows = M.SCALE.q1.map((q1) =>
 
 const tpl = fs.readFileSync(path.join(__dirname, "scorecard.tpl.html"), "utf8");
 const out = tpl
-  .replace("<!--OVERALL-->", overall)
   .replace("<!--PILLAR_HEAD-->", pillarHead)
   .replace("<!--PILLAR_BODY-->", pillarBody)
   .replace("<!--GRID_HEAD-->", gridHead)
