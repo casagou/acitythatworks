@@ -115,6 +115,29 @@ const context = profiles.filter((p) => !p.id && /Manak|Andrew/.test(p.name));
 const chips = ordered.filter((p) => gradeOf[p.id]).map((p) =>
   '<a class="cchip" href="#' + p.id + '">' + p.name.split(" ").slice(-1)[0] + "</a>").join("\n");
 
+/* The profile prose below is a 31 July transcription of its own master and
+   still describes several positions that the 1 August re-verification then
+   excluded — the grades beside them are current, the sentences are not.
+   Rewriting someone else's evidence prose to match would be worse than saying
+   so, so this note names every excluded mark and which way the correction
+   ran. It disappears from the page the moment the master is re-transcribed
+   and EXCLUSIONS is dropped. */
+function exclusionNote() {
+  const X = M.EXCLUSIONS;
+  if (!X) return "";
+  return '<div class="callout gold" style="margin:16px 0">\n' +
+    '<div class="lbl">◆ Read this before the profiles</div>\n' +
+    "<p><strong>Every grade on this page is current. Some of the prose is not.</strong> These profiles were written against the 31 July evidence base. " +
+    "On " + X.date + " a full mark-by-mark re-verification applied one rule harder than before: <em>" + X.rule + "</em> " +
+    "<strong>Several profiles below still describe those positions as marks.</strong> They are listed here so nothing is quietly deleted:</p>\n" +
+    "<ul style=\"font-size:14px;line-height:1.6;margin:8px 0 0;padding-left:20px\">\n" +
+    X.items.map((i) => "<li><strong>" + i[0] + "</strong> <span style=\"font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--gold-ink)\">" +
+      i[1] + "</span> — " + i[2] + "</li>").join("\n") + "\n</ul>\n" +
+    "<p>" + X.regrade + "</p>\n" +
+    "<p>" + X.net + " Each excluded mark is <strong>restorable the moment a vote or a quotation is attached to it</strong> — write to " +
+    '<a href="mailto:info@acitythatworks.ca">info@acitythatworks.ca</a>.</p>\n</div>\n';
+}
+
 const section =
   '<h2 id="candidate-profiles">Candidate Profiles</h2>\n' +
   "<p>One profile per candidate: the evidence base each grade rests on, where they align with this framework, where they diverge, what is on the record, and what is still unscored. " +
@@ -122,6 +145,7 @@ const section =
   '<a href="scorecard.html">scorecard</a> computes, and each links back to the area breakdown behind it.</p>\n' +
   '<p style="font-size:13.5px;color:#57534e"><strong>A profile is not a verdict.</strong> The grade measures distance from this framework, not quality, and a narrow evidence base is a fact about a publication calendar rather than about a candidate. ' +
   "Most challengers publish detail in September; a re-score after nominations close 11 September is mandatory.</p>\n" +
+  exclusionNote() +
   '<div class="cand-bar">\n<div class="cand-idx" aria-label="Jump to a candidate">\n' + chips + "\n</div>\n</div>\n" +
   ordered.map(renderProfile).join("\n") + "\n" +
   (context.length
