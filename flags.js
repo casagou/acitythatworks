@@ -185,19 +185,52 @@
 
      Both buttons are plain links that reload. Toggling has to reload
      anyway: with the switch off the candidate markup is removed from the
-     document, and nothing can put back what is no longer there. */
+     document, and nothing can put back what is no longer there.
+
+     Styled inline rather than from styles.css, deliberately. This panel is
+     the control for the switch, and a control that renders from a
+     separately cached stylesheet can arrive looking like a line of plain
+     text — which is exactly how it went missing when it was first looked
+     for. flags.js already revalidates on every load, so keeping the panel's
+     appearance in here means it cannot be a version behind its own markup.
+     styles.css keeps only the print rule, which has nothing to hide if it
+     is stale. */
   if (panel) {
     ready(function () {
       var base = location.pathname;
+      var NAVY = '#1A3668';
       var b = document.createElement('div');
-      b.className = 'cand-badge' + (on ? ' is-on' : '');
-      b.innerHTML =
-        '<span class="cb-l">Candidate pages</span> ' +
-        '<strong>' + (on ? 'ON' : 'OFF') + '</strong>' +
-        '<span class="cb-s">' + (override ? 'this browser only' : 'site default') + '</span>' +
-        '<a class="cb-b" href="' + base + '?candidates=' + (on ? 'off' : 'on') + '">' +
-          'Turn ' + (on ? 'off' : 'on') + '</a>' +
-        '<a class="cb-x" href="' + base + '?candidates=clear" title="Remove this panel from this browser">×</a>';
+      b.className = 'cand-badge';
+      b.style.cssText = 'position:fixed;left:12px;bottom:12px;z-index:2147483000;' +
+        'max-width:calc(100vw - 24px);display:flex;align-items:center;gap:8px;flex-wrap:wrap;' +
+        "font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.06em;" +
+        'text-transform:uppercase;background:' + NAVY + ';color:#fff;' +
+        'padding:7px 8px 7px 12px;border-radius:3px;box-shadow:0 3px 16px rgba(0,0,0,.32)';
+
+      function el(tag, css, text) {
+        var n = document.createElement(tag);
+        n.style.cssText = css;
+        if (text != null) { n.textContent = text; }
+        return n;
+      }
+      b.appendChild(el('span', 'opacity:.72', 'Candidate pages'));
+      b.appendChild(el('strong', 'font-weight:600;color:' + (on ? '#C8A44D' : '#E86A4E'), on ? 'ON' : 'OFF'));
+      b.appendChild(el('span', 'opacity:.5;text-transform:none;letter-spacing:.02em;font-size:9px',
+        override ? 'this browser only' : 'site default'));
+
+      var btn = el('a', 'color:#fff;text-decoration:none;border:1px solid rgba(255,255,255,.45);' +
+        'padding:4px 9px;border-radius:2px;white-space:nowrap;cursor:pointer',
+        'Turn ' + (on ? 'off' : 'on'));
+      btn.href = base + '?candidates=' + (on ? 'off' : 'on');
+      btn.onmouseover = function () { btn.style.background = '#fff'; btn.style.color = NAVY; };
+      btn.onmouseout = function () { btn.style.background = ''; btn.style.color = '#fff'; };
+      b.appendChild(btn);
+
+      var x = el('a', 'color:#fff;opacity:.5;text-decoration:none;font-size:13px;line-height:1;padding:0 2px', '×');
+      x.href = base + '?candidates=clear';
+      x.title = 'Remove this panel from this browser';
+      b.appendChild(x);
+
       document.body.appendChild(b);
     });
   }
