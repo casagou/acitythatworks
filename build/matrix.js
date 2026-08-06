@@ -39,7 +39,33 @@ const EV = fs.existsSync(EV_PATH) ? JSON.parse(fs.readFileSync(EV_PATH, "utf8"))
    the page displays is recomputed from matrix-v3.js and checked against it. */
 const SC5 = JSON.parse(fs.readFileSync(path.join(__dirname, "sc5.json"), "utf8"));
 
+/* The profile anchors, read from the same master build/profiles.js builds
+   profiles.html from. A candidate's name links to their profile wherever it is
+   written out in full, and a link is only safe if the anchor is really there —
+   so the id is looked up rather than derived and trusted. A name that drifts
+   on either side fails the build instead of shipping a link to nowhere. */
+const PROF_PATH = path.join(__dirname, "profiles.md");
+const PROFILE_IDS = fs.existsSync(PROF_PATH)
+  ? new Set(Array.from(fs.readFileSync(PROF_PATH, "utf8")
+      .matchAll(/^\*\*ID[:.]\*\*\s*(cand-[a-z0-9-]+)\s*$/gm), (m) => m[1]))
+  : null;
+const profSlug = (n) => "cand-" + n.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "")
+  .replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+function profileHref(name) {
+  if (!PROFILE_IDS) return null;
+  const id = profSlug(name);
+  return PROFILE_IDS.has(id) ? "profiles.html#" + id : null;
+}
+
 const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+/* The name, linked to its profile. The master grid heads its columns with
+   two-letter keys rather than names, so it is exempt by construction. */
+function nameLink(name, cls) {
+  const href = profileHref(name);
+  if (!href) return cls ? '<span class="' + cls + '">' + esc(name) + "</span>" : esc(name);
+  return '<a class="' + (cls ? cls + " " : "") + 'plink" href="' + href +
+    '" title="' + esc(name) + " — full profile\">" + esc(name) + "</a>";
+}
 /* Content strings in matrix-v3.js already carry <strong>/<em>; keep those. */
 const rich = (s) => String(s);
 
@@ -125,6 +151,13 @@ const totalMarks = rows.reduce((a, r) => a + r.filter(isScored).length, 0);
 if (totalMarks !== M.MATRIX_META.marks) errs.push("grid holds " + totalMarks + " marks, master states " + M.MATRIX_META.marks);
 const totalRecords = rows.reduce((a, r) => a + r.filter((v) => v === "R").length, 0);
 if (totalRecords !== M.MATRIX_META.record) errs.push("grid holds " + totalRecords + " Record cells, master states " + M.MATRIX_META.record);
+if (PROFILE_IDS) {
+  C.forEach((c) => {
+    if (!profileHref(c.name)) {
+      errs.push(c.name + " has no profile in build/profiles.md — expected the anchor " + profSlug(c.name));
+    }
+  });
+}
 
 /* ---- column layer (Scorecard v5.1) ------------------------------------ */
 const idOf = M.TOPICS.map((t) => t[0]);
@@ -236,7 +269,7 @@ let overall = ranked.map((x, i) => {
   const c = x.c;
   return '<tr class="ov-r" data-c="' + c.key + '">' +
     '<td class="ov-rk">' + (i + 1) + "</td>" +
-    '<td class="ov-nm"><span class="cn-name">' + esc(c.name) + '</span><span class="cn-role">' + esc(c.office) + (c.statusNote ? " · " + esc(c.statusNote) : "") + "</span></td>" +
+    '<td class="ov-nm">' + nameLink(c.name, "cn-name") + '<span class="cn-role">' + esc(c.office) + (c.statusNote ? " · " + esc(c.statusNote) : "") + "</span></td>" +
     '<td class="ov-g"><span class="g ' + gradeCls(c.grade) + '">' + c.grade + "</span></td>" +
     '<td class="ov-mn">' + c.mean.toFixed(2) + "</td>" +
     '<td class="ov-n"><strong>' + c.n + '</strong><span class="of">of 55</span></td>' +
@@ -270,7 +303,7 @@ let pillarBody = ranked.map((x) => {
     return '<td class="pc' + (g.thin ? " thin" : "") + '"><span class="g ' + gradeCls(g.letter) + '">' + g.letter + "</span>" +
       '<span class="pn">' + num2(g.mean) + " · n=" + g.n + "</span></td>";
   }).join("");
-  return "<tr><td class=\"who\">" + esc(x.c.name) + "</td>" + tds + "</tr>";
+  return '<tr><td class="who">' + nameLink(x.c.name) + "</td>" + tds + "</tr>";
 }).join("\n");
 
 /* ---- the 15-column grid: the reader-facing surface -------------------- */
@@ -327,11 +360,18 @@ let colBody = ranked.map((x) => {
   const c = x.c;
   const tds = M.COLUMNS.map((col) => cellHtml(c.key, col, colGrid[c.key][col.key])).join("");
   const surname = c.name.split(" ").slice(-1)[0];
-  return '<tr class="cr" data-c="' + c.key + '" data-name="' + esc(c.name.toLowerCase()) +
+  /* The tick box is its own label rather than wrapping the name, because the
+     name is now a link to that candidate's profile: a label around it would
+     both navigate and toggle on one click. Row id sc-<key> is what a profile
+     links back to, so it lands on the candidate's row rather than the top of
+     the section. */
+  return '<tr id="sc-' + c.key + '" class="cr" data-c="' + c.key + '" data-name="' + esc(c.name.toLowerCase()) +
     '" data-surname="' + esc(surname.toLowerCase()) + '" data-office="' + esc(c.office.toLowerCase()) +
     '" data-mean="' + c.mean + '" data-n="' + c.n + '">' +
-    '<td class="who"><label class="pick"><input type="checkbox" class="pickbox" aria-label="Compare ' + esc(c.name) + '"><span class="whon">' +
-    esc(c.name) + '<span class="wr">' + esc(c.office) + "</span></span></label></td>" + tds + "</tr>";
+    '<td class="who"><div class="whorow">' +
+    '<label class="pick"><input type="checkbox" class="pickbox" aria-label="Compare ' + esc(c.name) + '"></label>' +
+    '<span class="whon">' + nameLink(c.name) + '<span class="wr">' + esc(c.office) + "</span></span>" +
+    "</div></td>" + tds + "</tr>";
 }).join("\n");
 
 /* Area filter options, so the reader can pull the table down to one area. */
@@ -361,7 +401,7 @@ let gridBody = M.TOPICS.map((t, ti) => {
 /* payload for the detail panel */
 const payload = {
   topics: M.TOPICS.map((t) => ({ id: t[0], label: t[1], pillar: t[2], isNew: t[3] === "NEW" })),
-  cands: C.map((c) => ({ key: c.key, name: c.name, office: c.office, grade: c.grade, mean: c.mean, n: c.n })),
+  cands: C.map((c) => ({ key: c.key, name: c.name, office: c.office, grade: c.grade, mean: c.mean, n: c.n, profile: profileHref(c.name) })),
   marks: M.SCALE.marks,
   grid: rows,
   ev: (() => {
@@ -472,3 +512,6 @@ console.log("  reconciliation  : every candidate mean, n and grade, and every pi
 console.log("  15-area grid    : verified cell by cell against published Scorecard v" + SC5.version + " — " +
   graded + " lettered, " + noLetter + " below the three-topic floor, " + recordCells + " Record-only");
 console.log("  justifications  :", Object.keys(payload.just).length, "area cells carry their marks and evidence");
+console.log("  profile links   :", PROFILE_IDS
+  ? C.filter((c) => profileHref(c.name)).length + " of " + C.length + " names link to profiles.html"
+  : "none — build/profiles.md is absent, so no name is linked");

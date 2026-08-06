@@ -32,13 +32,15 @@
     }).join('');
   }
 
-  // The two candidate documents are behind the switch in flags.js. The footer
-  // and the "More" panel are built here as strings, so they ask the switch
-  // rather than being swept afterwards — the markup is never written at all.
+  // The three candidate documents are behind the switch in flags.js. The
+  // footer and the "More" panel are built here as strings, so they ask the
+  // switch rather than being swept afterwards — the markup is never written
+  // at all.
   function candLinks() {
     if (window.ACTW && window.ACTW.candidates === false) { return ''; }
     return '<a href="comparison.html">Candidate Comparison Matrix</a>' +
-           '<a href="scorecard.html">Candidate Scorecard</a>';
+           '<a href="scorecard.html">Candidate Scorecard</a>' +
+           '<a href="profiles.html">Candidate Profiles</a>';
   }
 
   function socialLinks(cls) {
