@@ -135,22 +135,18 @@ evidenceLink() +
     if (burger) { hr.insertBefore(hs, burger); } else { hr.appendChild(hs); }
   }
 
-  // The audience pages go into the drawer too, ahead of the "Detailed
-  // documents" group, so the phone menu carries the same map as the footer.
-  // Injected rather than pasted into every page's hand-written drawer.
+  // Phone menu is the five top items (plus Home), not a dump of the site map.
+  // Audience pages, annexes, Savings, Endorse and the rest stay in the footer.
   var mmi = document.querySelector('#mn .mmi');
-  if (mmi && !mmi.querySelector('.aud-grp')) {
-    var det = [].filter.call(mmi.querySelectorAll('.grp'), function (g) {
-      return /detailed/i.test(g.textContent);
-    })[0];
-    var frag = document.createElement('div');
-    frag.innerHTML = '<div class="grp aud-grp">By Audience</div>' + audienceLinks() +
-                     '<div class="grp">The Annexes</div>' + annexLinks();
-    var nodes = [].slice.call(frag.childNodes);
-    nodes.forEach(function (n) { mmi.insertBefore(n, det || null); });
+  if (mmi) {
+    var dump = false;
+    [].slice.call(mmi.childNodes).forEach(function (n) {
+      if (n.nodeType === 1 && n.classList && n.classList.contains('grp')) dump = true;
+      if (dump) n.remove();
+    });
   }
 
-  // …and the social icons, where the header row has no space for them.
+  // Social icons, where the header row has no space for them.
   if (mmi && !mmi.querySelector('.msoc')) {
     var wrap = document.createElement('div');
     wrap.className = 'msoc';
@@ -158,11 +154,30 @@ evidenceLink() +
     mmi.appendChild(wrap);
   }
 
+  // Current page on the five-item bar and the phone list. Neighbourhood
+  // children mark Neighbourhoods; audience pages mark nothing in the bar.
+  (function markCurrent() {
+    var path = (location.pathname || '/').replace(/\.html$/, '').replace(/\/$/, '') || '/';
+    if (/^\/neighbourhood-/.test(path)) path = '/neighbourhoods';
+    function stem(href) {
+      try {
+        var u = href.indexOf('http') === 0 ? new URL(href) : new URL(href, location.origin);
+        return (u.pathname || '/').replace(/\.html$/, '').replace(/\/$/, '') || '/';
+      } catch (e) { return href; }
+    }
+    document.querySelectorAll('.nv a, .mmi a').forEach(function (a) {
+      var s = stem(a.getAttribute('href') || '');
+      if (s === path) {
+        a.classList.add('cur');
+        if (a.closest('.mmi')) a.classList.add('gd');
+      }
+    });
+  })();
+
   // The More mega-menu is retired. Five top items (Summary, Measures,
-  // Neighbourhoods, Who has answered, FAQ) are the whole desktop nav;
-  // Savings, Endorse, annexes and the evidence store stay in the footer
-  // and the phone drawer. Injecting a sixth control here would put the
-  // site map back in the first screen.
+  // Neighbourhoods, Who has answered, FAQ) are the whole desktop nav
+  // and the whole phone menu. Savings, Endorse, annexes and the
+  // evidence store stay in the footer.
 
   // Wide comparison tables scroll sideways inside .tbl-wrap, and the edge
   // shadow alone is easy to miss on a phone — so say it in words. Only for
@@ -175,7 +190,7 @@ evidenceLink() +
   var HINT_LIMIT = 2;
   function tableHints() {
     var shown = 0;
-    document.querySelectorAll('.tbl-wrap, .sc-wrap').forEach(function (w) {
+    document.querySelectorAll('.tbl-wrap, .sc-wrap, .who-card').forEach(function (w) {
       var over = w.scrollWidth > w.clientWidth + 4 && shown < HINT_LIMIT;
       if (over) { shown++; }
       var hint = w.nextElementSibling;

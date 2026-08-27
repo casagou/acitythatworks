@@ -36,7 +36,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Public+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=3">
+<link rel="stylesheet" href="styles.css?v=4">
 <style>
 /* ── grade chips ─────────────────────────────────────────────────────── */
 .g{display:inline-flex;align-items:center;justify-content:center;min-width:34px;padding:3px 7px;font-family:'Fraunces',serif;font-size:17px;font-weight:600;line-height:1.15;color:#fff}
@@ -303,12 +303,6 @@ td.bad{color:#B5341F;font-weight:600}
 <a href="/neighbourhoods">Neighbourhoods</a>
 <a href="/scorecard" data-cand class="gd">Who has answered</a>
 <a href="/faq">FAQ</a>
-<div class="grp">Documents</div>
-<a href="/savings">Savings &amp; Revenue Analysis</a>
-<a href="/city-hall">How City Hall Works</a>
-<a href="/endorse">Candidate Endorsement Pack</a>
-<a href="/profiles" data-cand>Candidate Profiles</a>
-<a href="/version-history">Version History</a>
 </div>
 </div>
 </header>
@@ -319,9 +313,10 @@ td.bad{color:#B5341F;font-weight:600}
 <a href="index.html">Framework</a><span class="sep">/</span><span class="here">Candidate Scorecard</span>
 </nav>
 <div class="hero pg-door">
-<div class="eyb"><span>The Ballot</span><span class="dot">◆</span><span>Scorecard v<!--SCVER--> · <!--SCDATE--></span><span class="dot">◆</span><span>Matrix v<!--MVER--></span><span class="dot">◆</span><span><a href="/version-history" style="color:inherit"><!--PROGRAM--></a></span></div>
+<p class="kick">Who has answered <a class="vchip" href="/version-history"><!--PROGRAM--></a></p>
 <h1 class="ph1">Who has a written answer</h1>
 <p class="lead">Five questions already on this page. Cells are said, not said, or no record — the existing mark states, not a new letter. Select a cell that said something to see the sentence it rests on.</p>
+<p class="vchip-row">Scorecard v<!--SCVER--> · Matrix v<!--MVER--></p>
 </div>
 <div id="who-card" class="who-card"></div>
 <p class="sc-door-note"><b>Said</b> is a scored mark already on the grid. <b>Not said</b> is a blank. <b>Record</b> is a documented fact about a term in office, never scored. A written program is <b>published</b> or <b>not yet</b>, as this page already distinguishes. Garcia · Gibbs · Girard · Haley remain <a href="#blank">unknown, not empty</a> — they are not a sixteenth column. <a href="#open">A re-score after 11 September is already this page’s own rule.</a></p>
@@ -559,7 +554,7 @@ td.bad{color:#B5341F;font-weight:600}
 
 <div id="footer-mount"></div>
 <script id="scdata" type="application/json"><!--SCOREDATA--></script>
-<script src="site.js?v=3"></script>
+<script src="site.js?v=4"></script>
 <script>
 (function(){
   var DATA = JSON.parse(document.getElementById('scdata').textContent);

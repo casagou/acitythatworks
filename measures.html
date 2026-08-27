@@ -48,7 +48,7 @@
    competing jump navigator, so it never needs the mutual-exclusion trick that
    index.html used when Every Measure was a section sharing the page with a
    general-purpose jump bar. See readme.md for that history. */
-.fb{position:sticky;top:var(--h);z-index:19;margin:24px -16px 0;padding:12px 16px;background:rgba(250,247,240,.95);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid rgba(26,54,104,.12)}
+.fb{position:sticky;top:var(--h);z-index:19;margin:24px -16px 0;padding:12px 16px;background:var(--paper);border-bottom:1px solid rgba(26,54,104,.12)}
 @media(min-width:640px){.fb{margin:32px -24px 0;padding:12px 24px}}
 .fr{display:flex;align-items:center;gap:12px;margin-bottom:12px}
 .sw{position:relative;flex:1;max-width:420px}
@@ -217,12 +217,6 @@ details.mi.hl{background:rgba(212,168,67,.09);box-shadow:inset 3px 0 0 var(--gol
 <a href="/neighbourhoods">Neighbourhoods</a>
 <a href="/scorecard" data-cand>Who has answered</a>
 <a href="/faq">FAQ</a>
-<div class="grp">Documents</div>
-<a href="/savings">Savings &amp; Revenue Analysis</a>
-<a href="/city-hall">How City Hall Works</a>
-<a href="/endorse">Candidate Endorsement Pack</a>
-<a href="/profiles" data-cand>Candidate Profiles</a>
-<a href="/version-history">Version History</a>
 </div>
 </div>
 </header>
@@ -233,7 +227,7 @@ details.mi.hl{background:rgba(212,168,67,.09);box-shadow:inset 3px 0 0 var(--gol
 <a href="index.html">Framework</a><span class="sep">/</span><span class="here">Every Measure</span>
 </nav>
 <div class="hero rv">
-<div class="eyb"><span>◆ The Substance</span><span class="dot">◆</span><span><a href="version-history.html" style="color:inherit;text-decoration:underline;text-decoration-color:currentColor">v1.10 · August 5, 2026</a></span></div>
+<p class="kick">Every measure <a class="vchip" href="/version-history">v1.10</a></p>
 <h1 class="ph1">Every measure, in full.</h1>
 <p class="lead" style="margin-top:18px">132 measures across six pillars for Victoria's 2026 election, each with full text and budget impact.</p>
 <p class="scale" style="max-width:640px;margin:14px 0 0;font-size:14px;line-height:1.6;color:#57534e"><strong style="color:var(--navy);font-weight:600">The public number is the <a href="index.html#scorecard" style="color:var(--navy)">12 Commitments</a> scorecard</strong>, reported quarterly — the framework carries far more than that, and deliberately no longer states a total, because three earlier versions published a count that did not survive a hand count. Filter by pillar below, or search by keyword.</p>
