@@ -217,6 +217,7 @@ evidenceLink() +
   function tableHints() {
     var shown = 0;
     document.querySelectorAll('.tbl-wrap, .sc-wrap, .who-card .who-table').forEach(function (w) {
+      if (getComputedStyle(w).display === 'none') return;
       var over = w.scrollWidth > w.clientWidth + 4 && shown < HINT_LIMIT;
       if (over) { shown++; }
       var hint = w.previousElementSibling && w.previousElementSibling.classList.contains('tbl-hint')
