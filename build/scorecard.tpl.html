@@ -36,7 +36,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Public+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=2">
+<link rel="stylesheet" href="styles.css?v=3">
 <style>
 /* ── grade chips ─────────────────────────────────────────────────────── */
 .g{display:inline-flex;align-items:center;justify-content:center;min-width:34px;padding:3px 7px;font-family:'Fraunces',serif;font-size:17px;font-weight:600;line-height:1.15;color:#fff}
@@ -287,34 +287,28 @@ td.bad{color:#B5341F;font-weight:600}
 <div class="c hr">
 <a href="index.html" class="brand"><svg class="bicn" viewBox="0 0 240 240" aria-hidden="true"><circle cx="120" cy="120" r="112" fill="#FAF7F0"/><g fill="none" stroke="#16335c" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"><path d="M52 92  q22.5 -14 45 0 t45 0 t45 0"/><path d="M52 120 q22.5 -14 45 0 t45 0 t45 0" opacity="0.88"/><path d="M52 148 q22.5 -14 45 0 t45 0 t45 0" opacity="0.76"/></g></svg><span class="nm">A City That Works</span></a>
 <nav class="nv">
-<a href="summary.html">Summary</a>
-<a href="measures.html">Measures</a>
-<a href="scorecard.html" data-cand class="nv-sc cur">Candidates</a>
-<a href="neighbourhoods.html">Neighbourhoods</a>
-<a href="faq.html">FAQ</a>
-<a href="endorse.html" class="btn-end">Endorse</a>
+<a href="/summary">Summary</a>
+<a href="/measures">Measures</a>
+<a href="/neighbourhoods">Neighbourhoods</a>
+<a href="/scorecard" data-cand class="nv-sc cur">Who has answered</a>
+<a href="/faq">FAQ</a>
 </nav>
 <button id="mt" class="mb" aria-label="Open menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
 </div>
 <div id="mn" class="mm">
 <div class="c mmi">
-<a href="index.html">Framework</a>
-<a href="summary.html">One-Page Summary</a>
-<a href="measures.html">All Measures</a>
-<a href="neighbourhoods.html">Neighbourhoods</a>
-<a href="index.html#scorecard">12 Commitments</a>
-<a href="index.html#balance">Balance Sheet</a>
-<div class="grp">Detailed documents</div>
-<a href="savings.html">Savings &amp; Revenue Analysis</a>
-<a href="city-hall.html">How City Hall Works</a>
-<a href="endorse.html">Candidate Endorsement Pack</a>
-<a href="comparison.html" data-cand>Candidate Comparison Matrix</a>
-<a href="scorecard.html" class="gd">Candidate Scorecard</a>
-<a href="profiles.html" data-cand>Candidate Profiles</a>
-<a href="faq.html">Frequently Asked Questions</a>
-<a href="version-history.html">Version History</a>
-<div class="grp"></div>
-<a href="endorse.html" class="gd">Endorse the framework →</a>
+<a href="/">Home</a>
+<a href="/summary">Summary</a>
+<a href="/measures">Measures</a>
+<a href="/neighbourhoods">Neighbourhoods</a>
+<a href="/scorecard" data-cand class="gd">Who has answered</a>
+<a href="/faq">FAQ</a>
+<div class="grp">Documents</div>
+<a href="/savings">Savings &amp; Revenue Analysis</a>
+<a href="/city-hall">How City Hall Works</a>
+<a href="/endorse">Candidate Endorsement Pack</a>
+<a href="/profiles" data-cand>Candidate Profiles</a>
+<a href="/version-history">Version History</a>
 </div>
 </div>
 </header>
@@ -324,18 +318,13 @@ td.bad{color:#B5341F;font-weight:600}
 <nav class="crumbs" aria-label="Breadcrumb">
 <a href="index.html">Framework</a><span class="sep">/</span><span class="here">Candidate Scorecard</span>
 </nav>
-<div class="hero">
-<div class="eyb"><span>📊 The Ballot</span><span class="dot">◆</span><span>Scorecard v<!--SCVER--> · <!--SCDATE--></span><span class="dot">◆</span><span>Matrix v<!--MVER--></span><span class="dot">◆</span><span><a href="version-history.html" style="color:inherit"><!--PROGRAM--></a></span></div>
-<h1 class="ph1">Where each candidate <em>stands.</em></h1>
-<p class="lead" style="margin-top:14px"><strong>55 topics · <!--MARKS--> scored marks · <!--NCAND--> candidates.</strong> Every mark answers two questions asked in order, so the same evidence produces the same mark whoever reads it. <strong>A grade is computed, not assigned</strong>, and every number here can be recomputed from the grid at the foot of the page.</p>
-<a href="#areas" class="tojump">Straight to the table ↓</a>
+<div class="hero pg-door">
+<div class="eyb"><span>The Ballot</span><span class="dot">◆</span><span>Scorecard v<!--SCVER--> · <!--SCDATE--></span><span class="dot">◆</span><span>Matrix v<!--MVER--></span><span class="dot">◆</span><span><a href="/version-history" style="color:inherit"><!--PROGRAM--></a></span></div>
+<h1 class="ph1">Who has a written answer</h1>
+<p class="lead">Five questions already on this page. Cells are said, not said, or no record — the existing mark states, not a new letter. Select a cell that said something to see the sentence it rests on.</p>
 </div>
-
-<div class="callout gold" style="margin-top:6px">
-<div class="lbl">◆ Read this before the grades</div>
-<p><strong>The scale measures distance from this framework, not quality</strong> — a low grade means a candidate proposes something different, or has not yet said how. <strong>Read n of 55 before the letter</strong>, because silence is never scored: a narrow base is a fact about a publication calendar, not about a candidate.</p>
-<p><strong>Most challengers publish detail in September</strong>, so a matrix scored in August under-reports them against incumbents with four years of votes on the record. <strong>A re-score after nominations close on 11 September is mandatory before this page informs anything.</strong> It also discloses <a href="#defects">five defects in its own scale</a> and <a href="#open">its open items</a>.</p>
-</div>
+<div id="who-card" class="who-card"></div>
+<p class="sc-door-note"><b>Said</b> is a scored mark already on the grid. <b>Not said</b> is a blank. <b>Record</b> is a documented fact about a term in office, never scored. A written program is <b>published</b> or <b>not yet</b>, as this page already distinguishes. Garcia · Gibbs · Girard · Haley remain <a href="#blank">unknown, not empty</a> — they are not a sixteenth column. <a href="#open">A re-score after 11 September is already this page’s own rule.</a></p>
 
 <!-- Collapsed by default. The sticky jump bar directly below does the same
      job and travels with the reader, so an eleven-item list expanded at the
@@ -357,21 +346,11 @@ td.bad{color:#B5341F;font-weight:600}
 </ol>
 </details>
 
-<div class="jumpbar" id="jumpbar">
-<div class="jumpin">
-<label class="jl2" for="jumpsel">Jump to</label>
-<select id="jumpsel" class="jumpsel" aria-label="Jump to a section">
-<option value="">Choose a section…</option>
-</select>
-<button type="button" class="jumpbtn" id="jumpprev" aria-label="Previous section">↑</button>
-<button type="button" class="jumpbtn" id="jumpnext" aria-label="Next section">↓</button>
-<a class="jumpbtn jumptop" href="#main" aria-label="Back to top">Top</a>
-</div>
-<div class="jumpprog" aria-hidden="true"><i id="jumpfill"></i></div>
-</div>
-
 <div class="prose">
 
+<details class="fold-block" id="areas-fold">
+<summary>The 15×15 letter grid and pillar grades</summary>
+<div class="fold-in">
 <h2 id="areas">Every candidate, every area</h2>
 <p class="lede-t"><strong>Sort it, filter it, or tick candidates to compare them side by side — and select any cell to see the marks and the sentences behind that grade.</strong> <strong>Gen</strong> is the overall grade; the other fourteen areas each take a named set of the 55 topics, all used exactly once. The figure under a grade is how many topics in that area the candidate has a scored position on.</p>
 
@@ -456,6 +435,12 @@ td.bad{color:#B5341F;font-weight:600}
 </table>
 </div>
 
+</div>
+</details>
+
+<details class="fold-block" id="grid-fold">
+<summary>The 55-topic matrix</summary>
+<div class="fold-in">
 <h2 id="grid">The full grid — 55 topics</h2>
 <p><strong>Select any number to see the mark, its value and the sentence it rests on.</strong> A dot means the mark is excluded: no public position, a Record entry, or no information. Three topics are new in v3.0, created because candidates hold published positions the previous topic set had nowhere to record.</p>
 <p><strong>Select a topic name to see what the topic actually is.</strong> Every one of the 55 now carries a plain-English definition of the measure behind it, expanding the acronyms in place — DCC, STR, STEP, GIS, LIDAR, FOI, IoT. <strong>Seven rows are deliberately empty</strong>, because the entire field is silent on them; they are printed anyway, since a topic list that quietly drops what nobody answered can produce almost any result without changing a single mark.</p>
@@ -469,6 +454,9 @@ td.bad{color:#B5341F;font-weight:600}
 <tbody><!--GRID_BODY--></tbody>
 </table>
 </div>
+
+</div>
+</details>
 
 <h2 id="scale">How a mark is decided</h2>
 <p>A mark requires a citable public source: a recorded council vote, a published platform, or a direct quotation in a named outlet. <strong>It is not a judgement about whether a candidate is good.</strong> It is the answer to two questions, asked in order.</p>
@@ -558,18 +546,91 @@ td.bad{color:#B5341F;font-weight:600}
 </ol>
 <p><strong>This document is open to correction.</strong> Spot an error in scoring, a misread of a public position, or a position that has evolved? Write to <a href="mailto:info@acitythatworks.ca">info@acitythatworks.ca</a>. <strong>Corrections are free and dated</strong> — any candidate or reader who sends a citable source that changes a mark gets the mark changed.</p>
 
-<p style="margin-top:32px"><a href="comparison.html" class="pgback">← The full comparison matrix, topic by topic</a></p>
+<div class="callout gold" style="margin-top:28px">
+<div class="lbl">◆ Read this before the grades</div>
+<p><strong>The scale measures distance from this framework, not quality</strong> — a low grade means a candidate proposes something different, or has not yet said how. <strong>Read n of 55 before the letter</strong>, because silence is never scored: a narrow base is a fact about a publication calendar, not about a candidate.</p>
+<p><strong>Most challengers publish detail in September</strong>, so a matrix scored in August under-reports them against incumbents with four years of votes on the record. <strong>A re-score after nominations close on 11 September is mandatory before this page informs anything.</strong> It also discloses <a href="#defects">five defects in its own scale</a> and <a href="#open">its open items</a>.</p>
+</div>
+
+<p style="margin-top:32px"><a href="/comparison" class="pgback">Evidence store — the comparison matrix, topic by topic</a></p>
 </div>
 </div>
 </main>
 
 <div id="footer-mount"></div>
 <script id="scdata" type="application/json"><!--SCOREDATA--></script>
-<script src="site.js?v=2"></script>
-<script src="jumpnav.js"></script>
+<script src="site.js?v=3"></script>
 <script>
 (function(){
   var DATA = JSON.parse(document.getElementById('scdata').textContent);
+
+  /* Presentation only. Reads marks already in #scdata. Does not assign grades. */
+  (function buildWhoCard(){
+    var mount = document.getElementById('who-card');
+    if(!mount || !DATA || !DATA.topics || !DATA.grid) return;
+    function idxOf(id){
+      for(var i=0;i<DATA.topics.length;i++){ if(DATA.topics[i].id===id) return i; }
+      return -1;
+    }
+    var i66 = idxOf('M66'), i26 = idxOf('M26'), i27 = idxOf('M27'), i6 = idxOf('M6'), i66d = idxOf('M66d');
+    function cell(v){
+      if(v==='R') return {cls:'norec', label:'record'};
+      if(v==='.' || v==='' || v==null) return {cls:'notsaid', label:'not said'};
+      return {cls:'said', label:'said'};
+    }
+    function combine(a,b){
+      if(a==='R' && (b==='.'||b==='R')) return cell('R');
+      if(b==='R' && (a==='.'||a==='R')) return cell('R');
+      if(a!=='.' && a!=='R') return cell(a);
+      if(b!=='.' && b!=='R') return cell(b);
+      return cell('.');
+    }
+    function progState(c){
+      return /pending/i.test(c.note || '') ? 'not yet' : 'published';
+    }
+    var rows = [
+      {label:'Tax cap (M66)', kind:'mark', ti:i66},
+      {label:'Downtown order (M26 / M27)', kind:'pair', a:i26, b:i27},
+      {label:'Housing that gets built (M6)', kind:'mark', ti:i6},
+      {label:'Household bill (M66d)', kind:'mark', ti:i66d},
+      {label:'A written program exists', kind:'prog'}
+    ];
+    var h = '<table><thead><tr><th class="q">Who has answered</th>';
+    DATA.cands.forEach(function(c){
+      h += '<th title="'+c.name+'">'+c.key+'</th>';
+    });
+    h += '</tr></thead><tbody>';
+    rows.forEach(function(r){
+      h += '<tr><td class="q">'+r.label+'</td>';
+      DATA.cands.forEach(function(c, ci){
+        if(r.kind==='prog'){
+          var st = progState(c);
+          h += '<td class="'+(st==='not yet'?'notyet':'pub')+'">'+st+'</td>';
+          return;
+        }
+        var v, st, ti;
+        if(r.kind==='pair'){
+          var va = DATA.grid[r.a][ci], vb = DATA.grid[r.b][ci];
+          st = combine(va, vb);
+          ti = (va!=='.' && va!=='R') ? r.a : r.b;
+          v = (va!=='.' && va!=='R') ? va : vb;
+        } else {
+          v = DATA.grid[r.ti][ci];
+          st = cell(v);
+          ti = r.ti;
+        }
+        if(st.cls==='said'){
+          h += '<td class="said" tabindex="0" role="button" data-t="'+ti+'" data-c="'+c.key+'">'+st.label+'</td>';
+        } else {
+          h += '<td class="'+st.cls+'">'+st.label+'</td>';
+        }
+      });
+      h += '</tr>';
+    });
+    h += '</tbody></table>';
+    mount.innerHTML = h;
+  })();
+
   var lastTrigger = null;
   /* One formatter for every mark value on the page, so a negative sign is a
      real minus in the panel exactly as it is in the grid. */
@@ -752,7 +813,7 @@ td.bad{color:#B5341F;font-weight:600}
          scroll inside their own container, so the panel has to land just
          below that container — pinning it to one fixed element put the area
          panel a full screen away from the cell that opened it. */
-      var host = td.closest('.gwrap, .tbl-wrap') || td.closest('table');
+      var host = td.closest('.who-card, .gwrap, .tbl-wrap') || td.closest('table');
       host.parentNode.insertBefore(p, host.nextSibling);
       p.scrollIntoView({block:'nearest'});
     }
@@ -762,7 +823,7 @@ td.bad{color:#B5341F;font-weight:600}
      mark in the 55-topic grid, and — since v3.4 put a definition on every
      topic — the topic name itself. All route through open(); the selector has
      to cover all three or a grid silently does nothing when clicked. */
-  var SEL = 'td.gc[data-t], td.cc[data-col], td.gt[data-topic]';
+  var SEL = 'td.gc[data-t], td.cc[data-col], td.gt[data-topic], .who-card td.said[data-t]';
   document.addEventListener('click', function(e){
     var td = e.target.closest && e.target.closest(SEL);
     if(td) open(td);

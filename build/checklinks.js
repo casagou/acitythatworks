@@ -45,8 +45,15 @@ for (const p of pages) {
     if (/^(https?:|mailto:|tel:|#|data:)/.test(href)) continue;
 
     const [rawFile, frag] = href.split('#');
-    const file = rawFile.split('?')[0];
+    let file = rawFile.split('?')[0];
     if (!file) continue;
+
+    /* Pretty URLs: /summary and summary both resolve to summary.html on
+       Netlify. Check the file that actually lives in the repo. */
+    if (file.startsWith('/')) file = file.slice(1);
+    if (file && !file.includes('.') && fs.existsSync(path.join(ROOT, file + '.html'))) {
+      file = file + '.html';
+    }
 
     if (!fs.existsSync(path.join(ROOT, file))) {
       problems.push(`${p}: link to missing file "${file}"`);

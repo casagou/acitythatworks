@@ -319,42 +319,37 @@ function page(a) {
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Public+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles.css?v=3">
 </head>
 <body>
 <a class="skip" href="#main">Skip to main content</a>
 
 <header>
 <div class="c hr">
-<a href="index.html" class="brand"><svg class="bicn" viewBox="0 0 240 240" aria-hidden="true"><circle cx="120" cy="120" r="112" fill="#FAF7F0"/><g fill="none" stroke="#16335c" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"><path d="M52 92  q22.5 -14 45 0 t45 0 t45 0"/><path d="M52 120 q22.5 -14 45 0 t45 0 t45 0" opacity="0.88"/><path d="M52 148 q22.5 -14 45 0 t45 0 t45 0" opacity="0.76"/></g></svg><span class="nm">A City That Works</span><span class="num">Victoria 2026</span></a>
+<a href="/" class="brand"><svg class="bicn" viewBox="0 0 240 240" aria-hidden="true"><circle cx="120" cy="120" r="112" fill="#FAF7F0"/><g fill="none" stroke="#16335c" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"><path d="M52 92  q22.5 -14 45 0 t45 0 t45 0"/><path d="M52 120 q22.5 -14 45 0 t45 0 t45 0" opacity="0.88"/><path d="M52 148 q22.5 -14 45 0 t45 0 t45 0" opacity="0.76"/></g></svg><span class="nm">A City That Works</span><span class="num">Victoria 2026</span></a>
 <nav class="nv">
-<a href="summary.html">Summary</a>
-<a href="measures.html">Measures</a>
-<a href="scorecard.html" data-cand class="nv-sc">Candidates</a>
-<a href="city-hall.html">City Hall</a>
-<a href="faq.html">FAQ</a>
-<a href="endorse.html" class="btn-end">Endorse</a>
+<a href="/summary">Summary</a>
+<a href="/measures">Measures</a>
+<a href="/neighbourhoods">Neighbourhoods</a>
+<a href="/scorecard" data-cand class="nv-sc">Who has answered</a>
+<a href="/faq">FAQ</a>
 </nav>
 <button id="mt" class="mb" aria-label="Open menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
 </div>
 <div id="mn" class="mm">
 <div class="c mmi">
-<a href="index.html">Framework</a>
-<a href="summary.html">One-Page Summary</a>
-<a href="measures.html">All Measures</a>
-<a href="index.html#scorecard">12 Commitments</a>
-<a href="index.html#balance">Balance Sheet</a>
-<div class="grp">Detailed documents</div>
-<a href="savings.html">Savings &amp; Revenue Analysis</a>
-<a href="city-hall.html">How City Hall Works</a>
-<a href="endorse.html">Candidate Endorsement Pack</a>
-<a href="comparison.html" data-cand>Candidate Comparison Matrix</a>
-<a href="scorecard.html" data-cand>Candidate Scorecard</a>
-<a href="profiles.html" data-cand>Candidate Profiles</a>
-<a href="faq.html">Frequently Asked Questions</a>
-<a href="version-history.html">Version History</a>
-<div class="grp"></div>
-<a href="endorse.html" class="gd">Endorse the framework →</a>
+<a href="/">Home</a>
+<a href="/summary">Summary</a>
+<a href="/measures">Measures</a>
+<a href="/neighbourhoods">Neighbourhoods</a>
+<a href="/scorecard" data-cand>Who has answered</a>
+<a href="/faq">FAQ</a>
+<div class="grp">Documents</div>
+<a href="/savings">Savings &amp; Revenue Analysis</a>
+<a href="/city-hall">How City Hall Works</a>
+<a href="/endorse">Candidate Endorsement Pack</a>
+<a href="/profiles" data-cand>Candidate Profiles</a>
+<a href="/version-history">Version History</a>
 </div>
 </div>
 </header>
@@ -400,7 +395,7 @@ ${body}
 </main>
 
 <div id="footer-mount"></div>
-<script src="site.js"></script>
+<script src="site.js?v=3"></script>
 <script src="jumpnav.js"></script>
 </body>
 </html>
