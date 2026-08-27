@@ -193,8 +193,10 @@ evidenceLink() +
     document.querySelectorAll('.tbl-wrap, .sc-wrap, .who-card').forEach(function (w) {
       var over = w.scrollWidth > w.clientWidth + 4 && shown < HINT_LIMIT;
       if (over) { shown++; }
-      var hint = w.nextElementSibling;
-      var has = hint && hint.classList.contains('tbl-hint');
+      var hint = w.previousElementSibling && w.previousElementSibling.classList.contains('tbl-hint')
+        ? w.previousElementSibling
+        : (w.nextElementSibling && w.nextElementSibling.classList.contains('tbl-hint') ? w.nextElementSibling : null);
+      var has = !!hint;
       if (over && !has) {
         var h = document.createElement('div');
         h.className = 'tbl-hint';
