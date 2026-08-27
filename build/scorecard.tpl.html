@@ -36,7 +36,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Public+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=5">
+<link rel="stylesheet" href="styles.css?v=6">
 <style>
 /* ── grade chips ─────────────────────────────────────────────────────── */
 .g{display:inline-flex;align-items:center;justify-content:center;min-width:34px;padding:3px 7px;font-family:'Fraunces',serif;font-size:17px;font-weight:600;line-height:1.15;color:#fff}
@@ -307,26 +307,23 @@ td.bad{color:#B5341F;font-weight:600}
 </div>
 </header>
 
-<main id="main">
+<main id="main" data-doc-versions="Scorecard v<!--SCVER--> · Matrix v<!--MVER-->">
 <div class="cn">
 <nav class="crumbs" aria-label="Breadcrumb">
 <a href="index.html">Framework</a><span class="sep">/</span><span class="here">Candidate Scorecard</span>
 </nav>
 <div class="hero pg-door">
-<p class="kick">Who has answered <a class="vchip" href="/version-history"><!--PROGRAM--></a></p>
 <h1 class="ph1">Who has a written answer</h1>
-<p class="lead">Five questions already on this page. Cells are said, not said, or no record — the existing mark states, not a new letter. Select a cell that said something to see the sentence it rests on.</p>
-<p class="vchip-row">Scorecard v<!--SCVER--> · Matrix v<!--MVER--></p>
 </div>
 <div id="who-card" class="who-card"></div>
-<p class="sc-door-note"><b>Said</b> is a scored mark already on the grid. <b>Not said</b> is a blank. <b>Record</b> is a documented fact about a term in office, never scored. A written program is <b>published</b> or <b>not yet</b>, as this page already distinguishes. Garcia · Gibbs · Girard · Haley remain <a href="#blank">unknown, not empty</a> — they are not a sixteenth column. <a href="#open">A re-score after 11 September is already this page’s own rule.</a></p>
+<p class="sc-door-note">Said is a scored mark already on the grid. Not said is a blank. Record is a documented fact about a term in office, never scored. A written program is published or not yet, as this page already distinguishes. Garcia, Gibbs, Girard and Haley remain <a href="#blank">unknown, not empty</a> — they are not a sixteenth column. <a href="#open">A re-score after 11 September is already this page’s own rule.</a> Select a cell that said something to see the sentence it rests on.</p>
 
 <!-- Collapsed by default. The sticky jump bar directly below does the same
      job and travels with the reader, so an eleven-item list expanded at the
      top of the page was a screen of navigation between a reader and the
      table they came for. It is still here, and still the whole list. -->
 <details class="toc toc-fold">
-<summary class="toc-h">◆ On this page — eleven sections</summary>
+<summary class="toc-h">On this page — eleven sections</summary>
 <ol>
 <li><a href="#areas">The fifteen areas — every candidate, every grade</a></li>
 <li><a href="#misread">Cells that will be misread</a></li>
@@ -554,7 +551,7 @@ td.bad{color:#B5341F;font-weight:600}
 
 <div id="footer-mount"></div>
 <script id="scdata" type="application/json"><!--SCOREDATA--></script>
-<script src="site.js?v=5"></script>
+<script src="site.js?v=6"></script>
 <script>
 (function(){
   var DATA = JSON.parse(document.getElementById('scdata').textContent);
@@ -600,7 +597,7 @@ td.bad{color:#B5341F;font-weight:600}
       DATA.cands.forEach(function(c, ci){
         if(r.kind==='prog'){
           var st = progState(c);
-          h += '<td class="'+(st==='not yet'?'notyet':'pub')+'">'+st+'</td>';
+          h += '<td class="'+(st==='not yet'?'notyet':'pub')+'" data-k="'+c.key+'">'+st+'</td>';
           return;
         }
         var v, st, ti;
@@ -615,9 +612,9 @@ td.bad{color:#B5341F;font-weight:600}
           ti = r.ti;
         }
         if(st.cls==='said'){
-          h += '<td class="said" tabindex="0" role="button" data-t="'+ti+'" data-c="'+c.key+'">'+st.label+'</td>';
+          h += '<td class="said" tabindex="0" role="button" data-t="'+ti+'" data-c="'+c.key+'" data-k="'+c.key+'">'+st.label+'</td>';
         } else {
-          h += '<td class="'+st.cls+'">'+st.label+'</td>';
+          h += '<td class="'+st.cls+'" data-k="'+c.key+'">'+st.label+'</td>';
         }
       });
       h += '</tr>';

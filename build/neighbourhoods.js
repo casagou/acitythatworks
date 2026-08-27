@@ -200,7 +200,7 @@ function head(n) {
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Public+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=5">
+<link rel="stylesheet" href="styles.css?v=6">
 </head>
 <body>
 <a class="skip" href="#main">Skip to main content</a>
@@ -256,7 +256,7 @@ function page(n, all, idx) {
      is on the page but not in its own table of contents reads as an oversight
      to anyone using the list to navigate. */
   const tocHtml = `<nav class="toc" aria-label="On this page">
-<div class="toc-h">◆ On this page</div>
+<div class="toc-h">On this page</div>
 <ol>
 ${toc.map(t => `<li><a href="#${t.id}">${esc(t.label)}</a></li>`).join('\n')}
 <li><a href="#hold">How you hold us to it</a></li>
@@ -274,7 +274,7 @@ ${toc.map(t => `<li><a href="#${t.id}">${esc(t.label)}</a></li>`).join('\n')}
 <a href="index.html">Framework</a><span class="sep">/</span><a href="neighbourhoods.html">Neighbourhoods</a><span class="sep">/</span><span class="here">${esc(n.name)}</span>
 </nav>
 <div class="hero">
-<div class="eyb"><span>${n.emoji} Neighbourhood page</span><span class="dot">◆</span><span>Victoria 2030</span><span class="dot">◆</span><span><a href="version-history.html" style="color:inherit">${VERSION}</a></span></div>
+<div class="eyb">Neighbourhood page — Victoria 2030</div>
 <h1 class="ph1">${esc(n.name)}</h1>
 <p class="lead" style="margin-top:18px">${inline(n.tagline)}</p>
 <p class="scale">The framework is city-wide. Life is local. This page translates the same costed measures you will find in <a href="measures.html">the full Program</a> into what they do on these streets — nothing new, nothing extra, just where the existing commitments land first and why. <strong>${esc(n.assoc)}</strong> speaks for this neighbourhood; this page does not.</p>
@@ -308,7 +308,7 @@ ${chips(all, n.slug)}
 </main>
 
 <div id="footer-mount"></div>
-<script src="site.js?v=5"></script>
+<script src="site.js?v=6"></script>
 <script src="jumpnav.js"></script>
 </body>
 </html>
