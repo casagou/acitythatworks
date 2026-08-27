@@ -504,16 +504,18 @@ h3.reg-gh{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:u
 
 .door-cta{display:flex;flex-wrap:wrap;gap:12px;margin:16px 0 8px}
 .door-cta .bn{padding:12px 20px;font-size:15px;min-height:44px}
+.door .cmp-r{padding:8px 0}
+.door .fig-t{font-size:18px;margin:10px 0 6px}
 @media(max-width:619px){
   .door{display:flex;flex-direction:column}
-  .door .ht{font-size:28px}
-  .door-story{font-size:17px;margin-top:10px}
+  .door .ht{order:1;font-size:26px;margin:0}
+  .door-story{order:2;font-size:17px;margin-top:10px}
+  .door .diag{order:3}
+  .door-cta{order:4;margin:14px 0 8px}
+  .door .fig{order:5;margin-top:8px}
   .diag-strip{margin-top:14px;gap:10px 12px}
   .diag-strip .dnu{font-size:24px}
-  .door .fig{order:4;margin-top:16px}
-  .door-cta{order:5;margin:12px 0 0}
   .door .cmp-r{padding:8px 0}
-  .door .fig-t{font-size:18px;margin:10px 0 4px}
 }
 .door .fig{margin:24px 0 4px;max-width:none;padding:4px 0 0;border-top:1px solid rgba(26,54,104,.16)}
 .door .fig-e,.door .fig-s,.door .fig-l,.door .fig-c{display:none}
@@ -558,7 +560,7 @@ h3.reg-gh{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:u
 .who-card table{width:100%;border-collapse:collapse;font-size:14px;min-width:1040px}
 .who-card th,.who-card td{padding:10px 8px;border-bottom:1px solid rgba(26,54,104,.12);text-align:center}
 .who-card th.q,.who-card td.q{text-align:left;position:sticky;left:0;background:var(--paper);min-width:9em;border-right:1px solid rgba(26,54,104,.14);font-family:'Fraunces',serif;color:var(--navy);padding-left:8px}
-.who-card thead th{font-family:'Public Sans',system-ui,sans-serif;font-size:12px;font-weight:600;color:var(--navy)}
+.who-card thead th{font-family:'Public Sans',system-ui,sans-serif;font-size:12px;font-weight:600;color:var(--navy);white-space:nowrap}
 .who-card td.said{color:var(--moss);font-weight:600;cursor:pointer;background:rgba(34,114,71,.07);min-height:44px}
 .who-card td.notsaid{color:#8a8580}
 .who-card td.norec{color:var(--gold-ink);font-style:italic}
@@ -570,8 +572,8 @@ h3.reg-gh{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:u
 .who-q{padding:14px 0;border-bottom:1px solid rgba(26,54,104,.16)}
 .who-q:first-child{padding-top:4px}
 .who-q h3{font-family:'Fraunces',serif;font-size:18px;font-weight:500;color:var(--navy);margin:0 0 8px}
-.who-line{margin:6px 0;font-size:16px;line-height:1.45;color:var(--ink)}
-.who-m{display:inline-block;min-width:5.5em;font-weight:600;margin-right:6px}
+.who-line{margin:8px 0;font-size:16px;line-height:1.45;color:var(--ink);display:flex;flex-wrap:wrap;gap:6px 10px;align-items:baseline}
+.who-m{flex:none;font-weight:600}
 .who-m.said{color:var(--moss)}
 .who-m.notsaid{color:#8a8580}
 .who-m.norec{color:var(--gold-ink);font-style:italic;font-weight:500}
