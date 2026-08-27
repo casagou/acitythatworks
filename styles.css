@@ -1,4 +1,4 @@
-/* A City That Works — shared styles v2.0 */
+/* A City That Works — shared styles v2.1 */
 /* --gold is the brand gold: use it on the navy header/footer (5.35:1) and for
    borders, rules and tinted fills. --gold-ink is the same family darkened for
    text on the cream/white surfaces, where --gold only reaches 2.07:1.
@@ -18,12 +18,12 @@ a{color:var(--navy)}
 /* Header — solid navy, no glass. A letterhead, not a SaaS bar. */
 header{position:sticky;top:0;z-index:40;background:var(--navy);height:var(--h);border-bottom:1px solid rgba(212,168,67,.32)}
 .hr{display:flex;align-items:center;justify-content:space-between;height:100%;gap:16px}
-.brand{display:flex;align-items:center;gap:10px;text-decoration:none;min-height:44px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;min-height:44px;min-width:0;flex-wrap:nowrap;overflow:hidden}
 .brand .bicn{width:32px;height:32px;flex-shrink:0;display:block}
 @media(min-width:640px){.brand{gap:12px}.brand .bicn{width:36px;height:36px}}
 .brand .num{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
 @media(max-width:799px){.brand .num{display:none}}
-.brand .nm{font-family:'Fraunces',serif;font-style:italic;font-size:18px;font-weight:500;color:var(--paper);line-height:1}
+.brand .nm{font-family:'Fraunces',serif;font-style:italic;font-size:17px;font-weight:500;color:var(--paper);line-height:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
 @media(min-width:640px){.brand .nm{font-size:21px}}
 .nv{display:none;align-items:center;gap:4px;font-family:'Public Sans',system-ui,sans-serif;font-size:15px;color:rgba(250,247,240,.82)}
 .nv a{display:inline-flex;align-items:center;min-height:44px;padding:0 10px;color:inherit;text-decoration:none;transition:color .15s;white-space:nowrap;border-bottom:2px solid transparent}
@@ -74,7 +74,7 @@ header{position:sticky;top:0;z-index:40;background:var(--navy);height:var(--h);b
 .msoc-l{font-size:10px;letter-spacing:.2em;color:rgba(250,247,240,.7);margin-right:6px}
 .msoc a{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid rgba(212,168,67,.4);color:rgba(250,247,240,.9);text-decoration:none;transition:all .15s}
 .msoc a:hover{color:var(--navy);background:var(--gold);border-color:var(--gold)}
-.mm{display:none;background:rgba(26,54,104,.98);border-bottom:1px solid rgba(26,54,104,.18)}
+.mm{display:none;background:#1A3668;border-bottom:1px solid rgba(212,168,67,.32)}
 /* header{height:var(--h)} is fixed, so an open drawer taller than that would
    otherwise overflow the sticky header's box uncontained — on a short phone
    (13 links + social row runs ~850px) that puts the bottom entries, including
@@ -148,7 +148,6 @@ h2.st em{font-style:italic;color:var(--gold-ink);font-weight:400}
 .prose blockquote p{margin:0;font-size:15px;color:var(--navy)}
 .prose a{color:var(--navy);text-decoration:underline;text-decoration-color:rgba(26,54,104,.35)}
 .lead{font-family:'Public Sans',system-ui,sans-serif !important;font-size:18px !important;line-height:1.5 !important;color:var(--navy) !important;font-weight:400}
-@media(min-width:640px){.lead{font-size:26px !important}}
 
 /* Callouts */
 .callout{padding:18px 20px;border-radius:2px;margin:20px 0;font-size:15px;line-height:1.6}
@@ -279,7 +278,7 @@ button,a,input,summary{outline:none}
 
    A table of contents that exists only at the top is no use from Part E of
    eight, so the control travels with the reader. */
-.jumpbar{position:sticky;top:var(--h);z-index:20;margin:18px 0 4px;padding:10px 0;background:var(--paper);border-top:1px solid rgba(26,54,104,.12);border-bottom:1px solid rgba(26,54,104,.18)}
+.jumpbar{display:none}
 .jumpin{display:flex;align-items:center;gap:8px;padding:0}
 .jl2{font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.15em;color:var(--navy);opacity:.75;white-space:nowrap}
 .jumpsel{flex:1;min-width:0;min-height:44px;padding:8px 10px;font-family:'JetBrains Mono',monospace;font-size:13px;background:#fff;border:1px solid rgba(26,54,104,.3);color:var(--navy)}
@@ -494,17 +493,28 @@ h3.reg-gh{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:u
 .door-story{font-family:'Fraunces',serif;font-size:19px;line-height:1.45;color:var(--navy);margin:12px 0 0;max-width:var(--measure);font-weight:400}
 .door-story .gnum{font-style:normal}
 
-.diag-strip{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:20px}
+.diag-strip{display:grid;grid-template-columns:1fr 1fr;gap:14px 16px;margin-top:20px}
 @media(min-width:720px){.diag-strip{grid-template-columns:repeat(3,1fr);gap:20px}}
-@media(min-width:1100px){.diag-strip{grid-template-columns:repeat(6,1fr);gap:16px 20px}}
-.diag-strip .dr2{flex-direction:column;align-items:flex-start;gap:4px;padding:0 0 10px;margin:0;border-bottom:1px solid rgba(26,54,104,.16)}
+@media(min-width:1100px){.diag-strip{grid-template-columns:repeat(6,minmax(0,1fr));gap:16px 24px}}
+.diag-strip .dr2{flex-direction:column;align-items:flex-start;gap:4px;padding:0 8px 10px 0;margin:0;border-bottom:1px solid rgba(26,54,104,.16);min-width:0}
 .diag-strip .dnu{font-family:'Fraunces',serif;font-size:26px;font-weight:500;line-height:1;color:var(--navy);white-space:nowrap}
 @media(min-width:640px){.diag-strip .dnu{font-size:28px}}
 .diag-strip .dtx{font-size:14px;line-height:1.35;color:var(--muted)}
 .diag-strip .dnu.gnum{color:var(--gold-ink)}
 
-.door-cta{display:flex;flex-wrap:wrap;gap:12px;margin:20px 0 4px}
+.door-cta{display:flex;flex-wrap:wrap;gap:12px;margin:16px 0 8px}
 .door-cta .bn{padding:12px 20px;font-size:15px;min-height:44px}
+@media(max-width:619px){
+  .door{display:flex;flex-direction:column}
+  .door .ht{font-size:28px}
+  .door-story{font-size:17px;margin-top:10px}
+  .diag-strip{margin-top:14px;gap:10px 12px}
+  .diag-strip .dnu{font-size:24px}
+  .door .fig{order:4;margin-top:16px}
+  .door-cta{order:5;margin:12px 0 0}
+  .door .cmp-r{padding:8px 0}
+  .door .fig-t{font-size:18px;margin:10px 0 4px}
+}
 .door .fig{margin:24px 0 4px;max-width:none;padding:4px 0 0;border-top:1px solid rgba(26,54,104,.16)}
 .door .fig-e,.door .fig-s,.door .fig-l,.door .fig-c{display:none}
 .door .fig-t{font-family:'Fraunces',serif;font-size:20px;margin:14px 0 8px;font-weight:500}
@@ -530,7 +540,7 @@ h3.reg-gh{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:u
 .cmrow .cmsrc{font-size:13px;color:#57534e;line-height:1.4}
 @media(max-width:799px){.cmrow .sme,.cmrow .cmsrc{margin-top:4px}}
 
-.parked{margin:64px 0 32px;border-top:1px solid rgba(26,54,104,.22);border-bottom:1px solid rgba(26,54,104,.22);background:transparent}
+.parked{margin:20px 0 32px;border-top:1px solid rgba(26,54,104,.22);border-bottom:1px solid rgba(26,54,104,.22);background:transparent}
 .parked>summary{cursor:pointer;padding:20px 0;font-family:'Fraunces',serif;font-size:20px;font-style:italic;color:var(--navy);list-style:none}
 .parked>summary::-webkit-details-marker{display:none}
 .parked>summary::after{content:" ▾";font-style:normal;font-size:16px}
@@ -543,10 +553,11 @@ h3.reg-gh{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:u
 .pg-door .lead{margin-top:10px !important;max-width:var(--measure)}
 .pg-door .kick{display:none}
 
-.who-card{margin:8px 0 16px;background:transparent;border:none;overflow:auto;-webkit-overflow-scrolling:touch}
-.who-card table{width:100%;border-collapse:collapse;font-size:15px;min-width:680px}
-.who-card th,.who-card td{padding:12px 8px;border-bottom:1px solid rgba(26,54,104,.12);text-align:center}
-.who-card th.q,.who-card td.q{text-align:left;position:sticky;left:0;background:#fff;min-width:9em;border-right:1px solid rgba(26,54,104,.14);font-family:'Fraunces',serif;color:var(--navy);padding-left:14px}
+.who-card{margin:8px 0 16px;background:transparent;border:none}
+.who-card .who-table{overflow:auto;-webkit-overflow-scrolling:touch;max-width:100%}
+.who-card table{width:100%;border-collapse:collapse;font-size:14px;min-width:1040px}
+.who-card th,.who-card td{padding:10px 8px;border-bottom:1px solid rgba(26,54,104,.12);text-align:center}
+.who-card th.q,.who-card td.q{text-align:left;position:sticky;left:0;background:var(--paper);min-width:9em;border-right:1px solid rgba(26,54,104,.14);font-family:'Fraunces',serif;color:var(--navy);padding-left:8px}
 .who-card thead th{font-family:'Public Sans',system-ui,sans-serif;font-size:12px;font-weight:600;color:var(--navy)}
 .who-card td.said{color:var(--moss);font-weight:600;cursor:pointer;background:rgba(34,114,71,.07);min-height:44px}
 .who-card td.notsaid{color:#8a8580}
@@ -555,6 +566,27 @@ h3.reg-gh{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:u
 .who-card td.said:focus{outline:2px solid var(--navy);outline-offset:-2px}
 .who-card td.pub{color:var(--navy);font-weight:600;background:rgba(26,54,104,.05)}
 .who-card td.notyet{color:var(--gold-ink);font-style:italic}
+.who-stack{display:none}
+.who-q{padding:14px 0;border-bottom:1px solid rgba(26,54,104,.16)}
+.who-q:first-child{padding-top:4px}
+.who-q h3{font-family:'Fraunces',serif;font-size:18px;font-weight:500;color:var(--navy);margin:0 0 8px}
+.who-line{margin:6px 0;font-size:16px;line-height:1.45;color:var(--ink)}
+.who-m{display:inline-block;min-width:5.5em;font-weight:600;margin-right:6px}
+.who-m.said{color:var(--moss)}
+.who-m.notsaid{color:#8a8580}
+.who-m.norec{color:var(--gold-ink);font-style:italic;font-weight:500}
+.who-m.pub{color:var(--navy)}
+.who-m.notyet{color:var(--gold-ink);font-style:italic;font-weight:500}
+.who-stack button.said{font:inherit;font-weight:600;color:var(--moss);background:none;border:0;padding:0;margin:0;text-decoration:underline;text-decoration-color:rgba(34,114,71,.35);cursor:pointer;min-height:44px}
+.who-stack button.said:focus{outline:2px solid var(--navy);outline-offset:2px}
+@media(max-width:719px){
+  .who-card .who-table{display:none}
+  .who-stack{display:block}
+}
+@media(min-width:720px){
+  .who-stack{display:none}
+  .who-card .who-table{display:block}
+}
 .who-key{margin:8px 0 0;font-size:15px;color:#57534e;line-height:1.5}
 .who-key b{color:var(--navy)}
 
@@ -588,6 +620,9 @@ h3.reg-gh{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:u
   .cmlist.cstrip .cmbody{padding-left:calc(44px + 160px + 16px)}
 }
 
+nav.toc>ol{display:none}
+h2.door-h,.prose h2.door-h{font-family:'Fraunces',serif;font-size:22px;font-weight:500;color:var(--navy);margin:22px 0 0;padding:0;border:0;letter-spacing:-.02em}
+.hero>p.scale{display:none}
 .toc.toc-fold{margin:24px 0;padding:0;background:transparent;border:none;border-top:1px solid rgba(26,54,104,.18);border-bottom:1px solid rgba(26,54,104,.18);border-left:none}
 .toc.toc-fold>summary{cursor:pointer;list-style:none;padding:16px 0;margin:0;font-family:'Fraunces',serif;font-style:italic;font-size:16px;text-transform:none;letter-spacing:0}
 .toc.toc-fold>summary::-webkit-details-marker{display:none}
@@ -607,15 +642,19 @@ h3.reg-gh{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:u
 .cmts.compact .cmt .nm{font-size:18px;margin-bottom:8px}
 .cmts.compact .cmt .pair{gap:10px}
 .cmts.compact .cmt .pair div{font-size:15px}
+.cmts.door-first{margin-top:8px}
+.cmts.door-first .cmt{padding:10px 0 10px 12px}
+.cmts.door-first .cmt .nm{font-size:17px;margin-bottom:4px}
+.cmts.door-first .cmt .bs{display:none}
+.cmts.door-first .cmt .pair{grid-template-columns:1fr}
+.cmts.door-first .cmt .k{display:none}
+.prob-nums + #commitments{margin-top:28px;padding-top:16px}
 
 .sc-door-note{font-family:'Public Sans',system-ui,sans-serif;font-size:16px;line-height:1.5;color:var(--muted);margin:12px 0 0;max-width:var(--measure)}
 .sc-door-note a{color:var(--navy)}
 .sc-door-note b{font-family:inherit;font-weight:600;color:var(--navy)}
 
-/* Phone: honest sideways scroll, cue from site.js. Do not wrap into a dump. */
-@media(max-width:619px){
-  .who-card{overflow:auto;-webkit-overflow-scrolling:touch}
-}
+.hero .scale{font-size:16px;line-height:1.45;color:var(--muted);margin-top:10px;max-width:var(--measure)}
 .problem-fold{margin:8px 0 24px;border:none;border-top:1px solid rgba(26,54,104,.16);border-bottom:1px solid rgba(26,54,104,.16);background:transparent}
 .problem-fold>summary{cursor:pointer;padding:14px 0;font-family:'Fraunces',serif;font-size:16px;font-style:italic;color:var(--navy);list-style:none}
 .problem-fold>summary::-webkit-details-marker{display:none}

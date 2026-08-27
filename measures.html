@@ -42,7 +42,7 @@
      the end-of-body <script> tag. -->
 <link rel="preload" href="measures.js" as="script">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Public+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=6">
+<link rel="stylesheet" href="styles.css?v=7">
 <style>
 /* Filter bar. Single sticky bar directly under the header — this page has no
    competing jump navigator, so it never needs the mutual-exclusion trick that
@@ -70,7 +70,9 @@
    fade, and no cue that "Well-Managed" and "Democratic" are even there.
    Wrapping to a second row keeps every pillar visible without needing a
    matching scroll affordance just for this one row. */
-@media(max-width:639px){.cr{flex-wrap:wrap;overflow-x:visible}}
+@media(max-width:639px){
+  .cr{flex-wrap:nowrap;overflow-x:auto;mask-image:linear-gradient(to right,#000 85%,transparent)}
+}
 
 /* Pillar groups and measure cards — carried over from index.html's Every
    Measure section unchanged. */
@@ -226,13 +228,9 @@ details.mi.hl{background:rgba(212,168,67,.09);box-shadow:inset 3px 0 0 var(--gol
 <nav class="crumbs" aria-label="Breadcrumb">
 <a href="index.html">Framework</a><span class="sep">/</span><span class="here">Every Measure</span>
 </nav>
-<div class="hero rv">
-<p class="kick">Every measure <a class="vchip" href="/version-history">v1.10</a></p>
+<div class="hero rv pg-door">
 <h1 class="ph1">Every measure, in full.</h1>
-<p class="lead" style="margin-top:18px">132 measures across six pillars for Victoria's 2026 election, each with full text and budget impact.</p>
-<p class="scale" style="max-width:640px;margin:14px 0 0;font-size:14px;line-height:1.6;color:#57534e"><strong style="color:var(--navy);font-weight:600">The public number is the <a href="index.html#scorecard" style="color:var(--navy)">12 Commitments</a> scorecard</strong>, reported quarterly — the framework carries far more than that, and deliberately no longer states a total, because three earlier versions published a count that did not survive a hand count. Filter by pillar below, or search by keyword.</p>
-<p class="ctahint">New here? <a href="summary.html">The one-page summary</a> is the 60-second version — this page is the whole program.</p>
-<a href="index.html" class="pgback">← Back to the framework</a>
+<p class="lead" style="margin-top:10px">The public number is the <a href="index.html#scorecard">12 Commitments</a> scorecard. Everything below is the supporting program — filter or search.</p>
 </div>
 
 <noscript><p class="jsnote">Search, filtering and expand-all need JavaScript. Every measure below is already on the page regardless — scroll or use your browser's find-in-page (Ctrl/Cmd+F).</p></noscript>
@@ -240,7 +238,7 @@ details.mi.hl{background:rgba(212,168,67,.09);box-shadow:inset 3px 0 0 var(--gol
 <div class="fr">
 <div class="sw">
 <svg class="swi" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-<input id="ms" type="search" placeholder="Search measures…" aria-label="Search measures">
+<input id="ms" type="search" placeholder="Search…" aria-label="Search measures">
 </div>
 <div id="mcount" class="mcount" role="status" aria-live="polite">All measures</div>
 <button id="mexp" class="mexp" type="button" aria-expanded="false"><span class="mexpl">Expand all</span></button>
@@ -266,7 +264,7 @@ details.mi.hl{background:rgba(212,168,67,.09);box-shadow:inset 3px 0 0 var(--gol
 </a>
 
 <div id="footer-mount"></div>
-<script src="site.js?v=6"></script>
+<script src="site.js?v=7"></script>
 <script src="measures.js"></script>
 <script>
 /* Minimal hash-open handler for #mNN permalinks, scoped to this page.

@@ -36,7 +36,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Public+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=6">
+<link rel="stylesheet" href="styles.css?v=7">
 <style>
 /* ── grade chips ─────────────────────────────────────────────────────── */
 .g{display:inline-flex;align-items:center;justify-content:center;min-width:34px;padding:3px 7px;font-family:'Fraunces',serif;font-size:17px;font-weight:600;line-height:1.15;color:#fff}
@@ -316,7 +316,7 @@ td.bad{color:#B5341F;font-weight:600}
 <h1 class="ph1">Who has a written answer</h1>
 </div>
 <div id="who-card" class="who-card"></div>
-<p class="sc-door-note">Said is a scored mark already on the grid. Not said is a blank. Record is a documented fact about a term in office, never scored. A written program is published or not yet, as this page already distinguishes. Garcia, Gibbs, Girard and Haley remain <a href="#blank">unknown, not empty</a> — they are not a sixteenth column. <a href="#open">A re-score after 11 September is already this page’s own rule.</a> Select a cell that said something to see the sentence it rests on.</p>
+<p class="sc-door-note">Said is a scored mark already on the grid. Not said is a blank. Record is a documented fact about a term in office, never scored. A written program is published or not yet. Garcia, Gibbs, Girard and Haley remain <a href="#blank">unknown, not empty</a>. Select a name that said something to see the sentence it rests on.</p>
 
 <!-- Collapsed by default. The sticky jump bar directly below does the same
      job and travels with the reader, so an eleven-item list expanded at the
@@ -551,7 +551,7 @@ td.bad{color:#B5341F;font-weight:600}
 
 <div id="footer-mount"></div>
 <script id="scdata" type="application/json"><!--SCOREDATA--></script>
-<script src="site.js?v=6"></script>
+<script src="site.js?v=7"></script>
 <script>
 (function(){
   var DATA = JSON.parse(document.getElementById('scdata').textContent);
@@ -587,39 +587,70 @@ td.bad{color:#B5341F;font-weight:600}
       {label:'Household bill (M66d)', kind:'mark', ti:i66d},
       {label:'A written program exists', kind:'prog'}
     ];
-    var h = '<table><thead><tr><th class="q">Who has answered</th>';
+    function markOf(r, c, ci){
+      if(r.kind==='prog'){
+        var ps = progState(c);
+        return {cls: ps==='not yet'?'notyet':'pub', label: ps, ti: null};
+      }
+      var st, ti;
+      if(r.kind==='pair'){
+        var va = DATA.grid[r.a][ci], vb = DATA.grid[r.b][ci];
+        st = combine(va, vb);
+        ti = (va!=='.' && va!=='R') ? r.a : r.b;
+      } else {
+        st = cell(DATA.grid[r.ti][ci]);
+        ti = r.ti;
+      }
+      return {cls: st.cls, label: st.label, ti: ti};
+    }
+    var h = '<div class="who-table"><table><thead><tr><th class="q">Who has answered</th>';
     DATA.cands.forEach(function(c){
-      h += '<th title="'+c.name+'">'+c.key+'</th>';
+      h += '<th title="'+c.name+'">'+c.name.split(' ').pop()+'</th>';
     });
     h += '</tr></thead><tbody>';
     rows.forEach(function(r){
       h += '<tr><td class="q">'+r.label+'</td>';
       DATA.cands.forEach(function(c, ci){
-        if(r.kind==='prog'){
-          var st = progState(c);
-          h += '<td class="'+(st==='not yet'?'notyet':'pub')+'" data-k="'+c.key+'">'+st+'</td>';
-          return;
-        }
-        var v, st, ti;
-        if(r.kind==='pair'){
-          var va = DATA.grid[r.a][ci], vb = DATA.grid[r.b][ci];
-          st = combine(va, vb);
-          ti = (va!=='.' && va!=='R') ? r.a : r.b;
-          v = (va!=='.' && va!=='R') ? va : vb;
-        } else {
-          v = DATA.grid[r.ti][ci];
-          st = cell(v);
-          ti = r.ti;
-        }
+        var st = markOf(r, c, ci);
         if(st.cls==='said'){
-          h += '<td class="said" tabindex="0" role="button" data-t="'+ti+'" data-c="'+c.key+'" data-k="'+c.key+'">'+st.label+'</td>';
+          h += '<td class="said" tabindex="0" role="button" data-t="'+st.ti+'" data-c="'+c.key+'" data-k="'+c.key+'">'+st.label+'</td>';
         } else {
           h += '<td class="'+st.cls+'" data-k="'+c.key+'">'+st.label+'</td>';
         }
       });
       h += '</tr>';
     });
-    h += '</tbody></table>';
+    h += '</tbody></table></div>';
+    var groups = [
+      {cls:'said', label:'Said'},
+      {cls:'notsaid', label:'Not said'},
+      {cls:'norec', label:'Record'},
+      {cls:'pub', label:'Published'},
+      {cls:'notyet', label:'Not yet'}
+    ];
+    h += '<div class="who-stack">';
+    rows.forEach(function(r){
+      var buckets = {said:[], notsaid:[], norec:[], pub:[], notyet:[]};
+      DATA.cands.forEach(function(c, ci){
+        var st = markOf(r, c, ci);
+        (buckets[st.cls] || buckets.notsaid).push({c:c, st:st});
+      });
+      h += '<div class="who-q"><h3>'+r.label+'</h3>';
+      groups.forEach(function(g){
+        var items = buckets[g.cls];
+        if(!items.length) return;
+        h += '<p class="who-line"><span class="who-m '+g.cls+'">'+g.label+'</span> ';
+        h += items.map(function(it){
+          if(it.st.cls==='said'){
+            return '<button type="button" class="said" data-t="'+it.st.ti+'" data-c="'+it.c.key+'">'+it.c.name+'</button>';
+          }
+          return it.c.name;
+        }).join(', ');
+        h += '</p>';
+      });
+      h += '</div>';
+    });
+    h += '</div>';
     mount.innerHTML = h;
   })();
 
@@ -805,7 +836,7 @@ td.bad{color:#B5341F;font-weight:600}
          scroll inside their own container, so the panel has to land just
          below that container — pinning it to one fixed element put the area
          panel a full screen away from the cell that opened it. */
-      var host = td.closest('.who-card, .gwrap, .tbl-wrap') || td.closest('table');
+      var host = td.closest('.who-card, .who-stack, .gwrap, .tbl-wrap') || td.closest('table');
       host.parentNode.insertBefore(p, host.nextSibling);
       p.scrollIntoView({block:'nearest'});
     }
@@ -815,7 +846,7 @@ td.bad{color:#B5341F;font-weight:600}
      mark in the 55-topic grid, and — since v3.4 put a definition on every
      topic — the topic name itself. All route through open(); the selector has
      to cover all three or a grid silently does nothing when clicked. */
-  var SEL = 'td.gc[data-t], td.cc[data-col], td.gt[data-topic], .who-card td.said[data-t]';
+  var SEL = 'td.gc[data-t], td.cc[data-col], td.gt[data-topic], .who-card td.said[data-t], .who-stack .said[data-t]';
   document.addEventListener('click', function(e){
     var td = e.target.closest && e.target.closest(SEL);
     if(td) open(td);
