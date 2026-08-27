@@ -91,6 +91,8 @@ body.no-scroll{overflow:hidden}
 .mmi .grp{display:none}
 
 /* Hero / page header — one type size per job, not a stack of decorations. */
+.hero .eyb{display:none}
+.nbe{display:none}
 .hero{padding-top:24px;padding-bottom:20px}
 @media(min-width:640px){.hero{padding-top:32px;padding-bottom:24px}}
 .eyb{font-family:'Fraunces',serif;font-style:italic;font-size:16px;letter-spacing:0;text-transform:none;color:var(--navy);opacity:.82;margin:0}
@@ -502,10 +504,10 @@ h3.reg-gh{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:u
 .diag-strip .dtx{font-size:14px;line-height:1.35;color:var(--muted)}
 .diag-strip .dnu.gnum{color:var(--gold-ink)}
 
-.door-cta{display:flex;flex-wrap:wrap;gap:12px;margin:16px 0 8px}
+.door-cta{display:flex;flex-wrap:wrap;gap:12px;margin:12px 0 4px}
 .door-cta .bn{padding:12px 20px;font-size:15px;min-height:44px}
-.door .cmp-r{padding:8px 0}
-.door .fig-t{font-size:18px;margin:10px 0 6px}
+.door .cmp-r{padding:6px 0}
+.door .fig-t{font-size:18px;margin:8px 0 4px}
 @media(max-width:619px){
   .door{display:flex;flex-direction:column}
   .door .ht{order:1;font-size:26px;margin:0}
@@ -517,15 +519,15 @@ h3.reg-gh{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:u
   .diag-strip .dnu{font-size:24px}
   .door .cmp-r{padding:8px 0}
 }
-.door .fig{margin:24px 0 4px;max-width:none;padding:4px 0 0;border-top:1px solid rgba(26,54,104,.16)}
+.door .fig{margin:16px 0 0;max-width:none;padding:2px 0 0;border-top:1px solid rgba(26,54,104,.16)}
 .door .fig-e,.door .fig-s,.door .fig-l,.door .fig-c{display:none}
-.door .fig-t{font-family:'Fraunces',serif;font-size:20px;margin:14px 0 8px;font-weight:500}
-.door .cmp-r{padding:12px 0}
-.door .cmp-q{font-family:'Public Sans',system-ui,sans-serif;font-size:15px;font-weight:600;text-transform:none;letter-spacing:0;opacity:1;margin-bottom:8px}
-.door .cmp-v{font-size:20px}
-.door .cmp-k{font-family:'Public Sans',system-ui,sans-serif;font-size:13px;letter-spacing:0;text-transform:none}
+.door .fig-t{font-family:'Fraunces',serif;font-size:18px;margin:10px 0 4px;font-weight:500}
+.door .cmp-r{padding:6px 0}
+.door .cmp-q{font-family:'Public Sans',system-ui,sans-serif;font-size:14px;font-weight:600;text-transform:none;letter-spacing:0;opacity:1;margin-bottom:4px}
+.door .cmp-v{font-size:18px}
+.door .cmp-k{font-family:'Public Sans',system-ui,sans-serif;font-size:12px;letter-spacing:0;text-transform:none}
 .door .cmp-x{display:none}
-.door .cmp-t{height:8px;margin-bottom:6px}
+.door .cmp-t{height:6px;margin-bottom:4px}
 .door .cmp-v.gnum{color:var(--gold-ink)}
 @media(max-width:619px){
   .door .cmp-b{grid-template-columns:1fr 1fr;gap:12px}
