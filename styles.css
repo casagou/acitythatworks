@@ -480,11 +480,11 @@ h3.reg-gh{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:u
 /* Door — first screens. Gold is for the numbers that matter, not decoration. */
 .gnum{color:var(--gold-ink);font-weight:600}
 .door{padding:20px 0 12px}
-@media(min-width:1024px){.door{padding:16px 0 10px}}
+@media(min-width:1024px){.door{padding:10px 0 6px}}
 .door .eyb{font-size:10px;letter-spacing:.14em}
 .door .ht{font-size:28px;margin:6px 0 0;letter-spacing:-.02em}
-@media(min-width:640px){.door .ht{font-size:36px}}
-@media(min-width:1024px){.door .ht{font-size:40px}}
+@media(min-width:640px){.door .ht{font-size:34px}}
+@media(min-width:1024px){.door .ht{font-size:32px;margin:4px 0 0}}
 .door .ht em{color:var(--navy);font-style:italic}
 .door-story{font-family:'Fraunces',serif;font-size:22px;line-height:1.35;color:var(--navy);margin:12px 0 0;max-width:920px;font-weight:500}
 @media(min-width:640px){.door-story{font-size:26px;margin-top:10px}}
@@ -578,11 +578,17 @@ h3.reg-gh{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:u
   .cmlist.cstrip .cmbody{padding-left:calc(44px + 160px + 12px)}
 }
 @media(min-width:1024px){
-  .door-story{font-size:22px;line-height:1.3;margin-top:8px}
-  .diag-strip{margin-top:10px}
-  .door .cmp-r{padding:5px 0}
-  .door .fig-t{font-size:14px;margin-bottom:4px}
-  .door-cta{margin:10px 0 2px}
+  .door-story{font-size:18px;line-height:1.28;margin-top:6px}
+  .diag-strip{margin-top:8px}
+  .diag-strip .dr2{padding-bottom:4px}
+  .diag-strip .dnu{font-size:18px}
+  .door .cmp-r{padding:3px 0}
+  .door .cmp-q{margin-bottom:2px;font-size:12px}
+  .door .cmp-v{font-size:15px}
+  .door .cmp-k{font-size:9px}
+  .door .fig{margin:8px 0 4px}
+  .door .fig-t{font-size:13px;margin-bottom:2px}
+  .door-cta{margin:8px 0 2px}
 }
 
 /* Folded on-this-page index — not the door. */
