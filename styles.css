@@ -487,17 +487,17 @@ h3.reg-gh{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:u
 .vchip-row{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--quiet);margin:8px 0 0;letter-spacing:.02em}
 .vchip-row a{color:inherit}
 
-.door{padding:40px 0 32px}
-@media(min-width:640px){.door{padding:56px 0 40px}}
-.door .ht{font-size:40px;margin:16px 0 0;letter-spacing:-.02em;line-height:1.05}
-@media(min-width:640px){.door .ht{font-size:56px}}
-@media(min-width:1024px){.door .ht{font-size:64px}}
+.door{padding:32px 0 24px}
+@media(min-width:640px){.door{padding:40px 0 32px}}
+.door .ht{font-size:40px;margin:12px 0 0;letter-spacing:-.02em;line-height:1.05}
+@media(min-width:640px){.door .ht{font-size:52px}}
+@media(min-width:1024px){.door .ht{font-size:56px}}
 .door .ht em{color:var(--navy);font-style:italic}
-.door-story{font-family:'Fraunces',serif;font-size:21px;line-height:1.4;color:var(--navy);margin:24px 0 0;max-width:var(--measure);font-weight:400}
-@media(min-width:640px){.door-story{font-size:24px}}
+.door-story{font-family:'Fraunces',serif;font-size:20px;line-height:1.4;color:var(--navy);margin:16px 0 0;max-width:var(--measure);font-weight:400}
+@media(min-width:640px){.door-story{font-size:22px}}
 .door-story .gnum{font-style:normal}
 
-.diag-strip{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:32px}
+.diag-strip{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:24px}
 @media(min-width:720px){.diag-strip{grid-template-columns:repeat(3,1fr);gap:24px}}
 @media(min-width:1100px){.diag-strip{grid-template-columns:repeat(6,1fr);gap:16px 20px}}
 .diag-strip .dr2{flex-direction:column;align-items:flex-start;gap:6px;padding:0 0 12px;margin:0;border-bottom:1px solid rgba(26,54,104,.16)}
@@ -506,7 +506,7 @@ h3.reg-gh{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:u
 .diag-strip .dtx{font-size:13px;line-height:1.35;color:var(--muted)}
 .diag-strip .dnu.gnum{color:var(--gold-ink)}
 
-.door-cta{display:flex;flex-wrap:wrap;gap:12px;margin:32px 0 0}
+.door-cta{display:flex;flex-wrap:wrap;gap:12px;margin:24px 0 8px}
 .door-cta .bn{padding:14px 24px;font-size:16px;min-height:48px}
 .door .fig{margin:32px 0 8px;max-width:none;padding:8px 0 0;border-top:1px solid rgba(26,54,104,.16)}
 .door .fig-e,.door .fig-s,.door .fig-l,.door .fig-c{display:none}
