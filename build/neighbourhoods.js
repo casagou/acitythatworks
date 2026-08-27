@@ -200,7 +200,7 @@ function head(n) {
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Public+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=3">
+<link rel="stylesheet" href="styles.css?v=12">
 </head>
 <body>
 <a class="skip" href="#main">Skip to main content</a>
@@ -227,12 +227,6 @@ const HEADER = `<header>
 <a href="/neighbourhoods" class="gd">Neighbourhoods</a>
 <a href="/scorecard" data-cand>Who has answered</a>
 <a href="/faq">FAQ</a>
-<div class="grp">Documents</div>
-<a href="/savings">Savings &amp; Revenue Analysis</a>
-<a href="/city-hall">How City Hall Works</a>
-<a href="/endorse">Candidate Endorsement Pack</a>
-<a href="/profiles" data-cand>Candidate Profiles</a>
-<a href="/version-history">Version History</a>
 </div>
 </div>
 </header>
@@ -262,7 +256,7 @@ function page(n, all, idx) {
      is on the page but not in its own table of contents reads as an oversight
      to anyone using the list to navigate. */
   const tocHtml = `<nav class="toc" aria-label="On this page">
-<div class="toc-h">◆ On this page</div>
+<div class="toc-h">On this page</div>
 <ol>
 ${toc.map(t => `<li><a href="#${t.id}">${esc(t.label)}</a></li>`).join('\n')}
 <li><a href="#hold">How you hold us to it</a></li>
@@ -279,15 +273,16 @@ ${toc.map(t => `<li><a href="#${t.id}">${esc(t.label)}</a></li>`).join('\n')}
 <nav class="crumbs" aria-label="Breadcrumb">
 <a href="index.html">Framework</a><span class="sep">/</span><a href="neighbourhoods.html">Neighbourhoods</a><span class="sep">/</span><span class="here">${esc(n.name)}</span>
 </nav>
-<div class="hero">
-<div class="eyb"><span>${n.emoji} Neighbourhood page</span><span class="dot">◆</span><span>Victoria 2030</span><span class="dot">◆</span><span><a href="version-history.html" style="color:inherit">${VERSION}</a></span></div>
+<div class="hero pg-door">
 <h1 class="ph1">${esc(n.name)}</h1>
-<p class="lead" style="margin-top:18px">${inline(n.tagline)}</p>
+<p class="lead" style="margin-top:10px">${inline(n.tagline)}</p>
 <p class="scale">The framework is city-wide. Life is local. This page translates the same costed measures you will find in <a href="measures.html">the full Program</a> into what they do on these streets — nothing new, nothing extra, just where the existing commitments land first and why. <strong>${esc(n.assoc)}</strong> speaks for this neighbourhood; this page does not.</p>
 ${officialNote}
-<a href="neighbourhoods.html" class="pgback">← All neighbourhoods</a>
 </div>
 
+<details class="parked">
+<summary>The rest of this page</summary>
+<div class="parked-in">
 ${tocHtml}
 
 <div class="prose">
@@ -308,13 +303,14 @@ ${html}
 <div class="nbsw-h">◆ Every neighbourhood</div>
 ${chips(all, n.slug)}
 </div>
-
+</div>
 <p style="margin-top:32px"><a href="measures.html" class="pgback">← Read the full framework</a></p>
+</details>
 </div>
 </main>
 
 <div id="footer-mount"></div>
-<script src="site.js?v=3"></script>
+<script src="site.js?v=12"></script>
 <script src="jumpnav.js"></script>
 </body>
 </html>

@@ -319,7 +319,7 @@ function page(a) {
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Public+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=3">
+<link rel="stylesheet" href="styles.css?v=12">
 </head>
 <body>
 <a class="skip" href="#main">Skip to main content</a>
@@ -344,12 +344,6 @@ function page(a) {
 <a href="/neighbourhoods">Neighbourhoods</a>
 <a href="/scorecard" data-cand>Who has answered</a>
 <a href="/faq">FAQ</a>
-<div class="grp">Documents</div>
-<a href="/savings">Savings &amp; Revenue Analysis</a>
-<a href="/city-hall">How City Hall Works</a>
-<a href="/endorse">Candidate Endorsement Pack</a>
-<a href="/profiles" data-cand>Candidate Profiles</a>
-<a href="/version-history">Version History</a>
 </div>
 </div>
 </header>
@@ -360,7 +354,7 @@ function page(a) {
 <a href="index.html">Framework</a><span class="sep">/</span><a href="index.html#audience">By Audience</a><span class="sep">/</span><span class="here">${esc(a.name).replace(/&amp;/g, "&")}</span>
 </nav>
 <div class="hero">
-<div class="eyb"><span>${a.emoji} ${esc(a.eyebrow)}</span><span class="dot">◆</span><span>Victoria 2026</span><span class="dot">◆</span><span><a href="version-history.html" style="color:inherit">v1.10</a></span></div>
+<div class="eyb">${esc(a.eyebrow)}</div>
 <h1 class="ph1">${esc(a.name).replace(/&amp;/g, "&")}</h1>
 <p class="lead" style="margin-top:18px">${linkMeasures(a.short)}</p>
 <p class="scale">This is the same framework as <a href="measures.html">the full Program</a> — same measures, same numbers, same jurisdictional caveats — ${esc(a.lens)}. Every measure named here is costed and sourced in the master, and every number links back to it.</p>
@@ -368,7 +362,7 @@ function page(a) {
 </div>
 
 <nav class="toc" aria-label="On this page">
-<div class="toc-h">◆ On this page</div>
+<div class="toc-h">On this page</div>
 <ol>
 ${toc}
 </ol>
@@ -395,7 +389,7 @@ ${body}
 </main>
 
 <div id="footer-mount"></div>
-<script src="site.js?v=3"></script>
+<script src="site.js?v=12"></script>
 <script src="jumpnav.js"></script>
 </body>
 </html>

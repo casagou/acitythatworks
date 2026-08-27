@@ -42,13 +42,13 @@
      the end-of-body <script> tag. -->
 <link rel="preload" href="measures.js" as="script">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Public+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=2">
+<link rel="stylesheet" href="styles.css?v=12">
 <style>
 /* Filter bar. Single sticky bar directly under the header — this page has no
    competing jump navigator, so it never needs the mutual-exclusion trick that
    index.html used when Every Measure was a section sharing the page with a
    general-purpose jump bar. See readme.md for that history. */
-.fb{position:sticky;top:var(--h);z-index:19;margin:24px -16px 0;padding:12px 16px;background:rgba(250,247,240,.95);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid rgba(26,54,104,.12)}
+.fb{position:sticky;top:var(--h);z-index:19;margin:24px -16px 0;padding:12px 16px;background:var(--paper);border-bottom:1px solid rgba(26,54,104,.12)}
 @media(min-width:640px){.fb{margin:32px -24px 0;padding:12px 24px}}
 .fr{display:flex;align-items:center;gap:12px;margin-bottom:12px}
 .sw{position:relative;flex:1;max-width:420px}
@@ -61,6 +61,7 @@
 .mexp:disabled{opacity:.4;cursor:default}
 .mcount{font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.13em;color:var(--navy);opacity:.7;white-space:nowrap}
 @media(min-width:640px){.mcount{font-size:11px}}
+@media(max-width:639px){.mcount{display:none}}
 .cr{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;margin:0 -4px;padding:0 4px 4px}
 .cr::-webkit-scrollbar{display:none}
 .cp{flex-shrink:0;min-height:44px;padding:6px 16px;font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.1em;background:transparent;border:1px solid rgba(26,54,104,.3);color:var(--navy);cursor:pointer;white-space:nowrap;transition:all .15s}
@@ -70,7 +71,9 @@
    fade, and no cue that "Well-Managed" and "Democratic" are even there.
    Wrapping to a second row keeps every pillar visible without needing a
    matching scroll affordance just for this one row. */
-@media(max-width:639px){.cr{flex-wrap:wrap;overflow-x:visible}}
+@media(max-width:639px){
+  .cr{flex-wrap:nowrap;overflow-x:auto;mask-image:linear-gradient(to right,#000 85%,transparent)}
+}
 
 /* Pillar groups and measure cards — carried over from index.html's Every
    Measure section unchanged. */
@@ -217,12 +220,6 @@ details.mi.hl{background:rgba(212,168,67,.09);box-shadow:inset 3px 0 0 var(--gol
 <a href="/neighbourhoods">Neighbourhoods</a>
 <a href="/scorecard" data-cand>Who has answered</a>
 <a href="/faq">FAQ</a>
-<div class="grp">Documents</div>
-<a href="/savings">Savings &amp; Revenue Analysis</a>
-<a href="/city-hall">How City Hall Works</a>
-<a href="/endorse">Candidate Endorsement Pack</a>
-<a href="/profiles" data-cand>Candidate Profiles</a>
-<a href="/version-history">Version History</a>
 </div>
 </div>
 </header>
@@ -232,13 +229,9 @@ details.mi.hl{background:rgba(212,168,67,.09);box-shadow:inset 3px 0 0 var(--gol
 <nav class="crumbs" aria-label="Breadcrumb">
 <a href="index.html">Framework</a><span class="sep">/</span><span class="here">Every Measure</span>
 </nav>
-<div class="hero rv">
-<div class="eyb"><span>◆ The Substance</span><span class="dot">◆</span><span><a href="version-history.html" style="color:inherit;text-decoration:underline;text-decoration-color:currentColor">v1.10 · August 5, 2026</a></span></div>
+<div class="hero rv pg-door">
 <h1 class="ph1">Every measure, in full.</h1>
-<p class="lead" style="margin-top:18px">132 measures across six pillars for Victoria's 2026 election, each with full text and budget impact.</p>
-<p class="scale" style="max-width:640px;margin:14px 0 0;font-size:14px;line-height:1.6;color:#57534e"><strong style="color:var(--navy);font-weight:600">The public number is the <a href="index.html#scorecard" style="color:var(--navy)">12 Commitments</a> scorecard</strong>, reported quarterly — the framework carries far more than that, and deliberately no longer states a total, because three earlier versions published a count that did not survive a hand count. Filter by pillar below, or search by keyword.</p>
-<p class="ctahint">New here? <a href="summary.html">The one-page summary</a> is the 60-second version — this page is the whole program.</p>
-<a href="index.html" class="pgback">← Back to the framework</a>
+<p class="lead" style="margin-top:10px">The public number is the <a href="index.html#scorecard">12 Commitments</a> scorecard. Everything below is the supporting program — filter or search.</p>
 </div>
 
 <noscript><p class="jsnote">Search, filtering and expand-all need JavaScript. Every measure below is already on the page regardless — scroll or use your browser's find-in-page (Ctrl/Cmd+F).</p></noscript>
@@ -246,7 +239,7 @@ details.mi.hl{background:rgba(212,168,67,.09);box-shadow:inset 3px 0 0 var(--gol
 <div class="fr">
 <div class="sw">
 <svg class="swi" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-<input id="ms" type="search" placeholder="Search measures…" aria-label="Search measures">
+<input id="ms" type="search" placeholder="Search…" aria-label="Search measures">
 </div>
 <div id="mcount" class="mcount" role="status" aria-live="polite">All measures</div>
 <button id="mexp" class="mexp" type="button" aria-expanded="false"><span class="mexpl">Expand all</span></button>
@@ -272,7 +265,7 @@ details.mi.hl{background:rgba(212,168,67,.09);box-shadow:inset 3px 0 0 var(--gol
 </a>
 
 <div id="footer-mount"></div>
-<script src="site.js?v=2"></script>
+<script src="site.js?v=12"></script>
 <script src="measures.js"></script>
 <script>
 /* Minimal hash-open handler for #mNN permalinks, scoped to this page.

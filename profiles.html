@@ -36,7 +36,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Public+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=2">
+<link rel="stylesheet" href="styles.css?v=12">
 <style>
 /* One card per candidate. These rules moved here with the profiles when they
    left the end of the comparison matrix; nothing else on the site uses them. */
@@ -156,12 +156,6 @@ h3.cand-grp .cand-n{display:inline-block;margin-left:6px;padding:1px 7px;backgro
 <a href="/neighbourhoods">Neighbourhoods</a>
 <a href="/scorecard" data-cand>Who has answered</a>
 <a href="/faq">FAQ</a>
-<div class="grp">Documents</div>
-<a href="/savings">Savings &amp; Revenue Analysis</a>
-<a href="/city-hall">How City Hall Works</a>
-<a href="/endorse">Candidate Endorsement Pack</a>
-<a href="/profiles" data-cand>Candidate Profiles</a>
-<a href="/version-history">Version History</a>
 </div>
 </div>
 </header>
@@ -171,10 +165,15 @@ h3.cand-grp .cand-n{display:inline-block;margin-left:6px;padding:1px 7px;backgro
 <nav class="crumbs" aria-label="Breadcrumb">
 <a href="index.html">Framework</a><span class="sep">/</span><a href="comparison.html">Candidate Comparison Matrix</a><span class="sep">/</span><span class="here">Candidate Profiles</span>
 </nav>
-<div class="hero">
-<div class="eyb"><span>👤 Profiles</span><span class="dot">◆</span><span><a href="version-history.html" style="color:inherit;text-decoration:underline;text-decoration-color:currentColor">v3.0 · August 3, 2026</a></span></div>
+<div class="hero pg-door">
+<div class="eyb">Profiles</div>
 <h1 class="ph1">Candidate Profiles</h1>
 <p class="lead" style="margin-top:18px">One profile per candidate: the evidence base each grade rests on, where they align with this framework, where they diverge, what is on the record, and what is still unscored. <strong>Open a profile to see the sources.</strong></p>
+</div>
+<details class="parked">
+<summary>The rest of this page</summary>
+<div class="parked-in">
+<div class="hero-rest">
 <p class="scale">18 profiles · 15 of them graded · 127 sourced field paragraphs. Every grade shown here is the same number the <strong><a href="scorecard.html" style="color:var(--navy)">scorecard</a></strong> computes, and each links back to the area breakdown behind it. The evidence tables the marks came from are on the <strong><a href="comparison.html" style="color:var(--navy)">comparison matrix</a></strong>.</p>
 <div class="callout gold" style="margin-top:18px">
 <div class="lbl">◆ Where a profile sits among the three candidate documents</div>
@@ -277,10 +276,12 @@ h3.cand-grp .cand-n{display:inline-block;margin-left:6px;padding:1px 7px;backgro
 
 </div>
 </div>
+</details>
+</div>
 </main>
 
 <div id="footer-mount"></div>
-<script src="site.js?v=2"></script>
+<script src="site.js?v=12"></script>
 <script src="jumpnav.js"></script>
 
 </body>

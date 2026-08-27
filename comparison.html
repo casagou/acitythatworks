@@ -36,7 +36,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Public+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=2">
+<link rel="stylesheet" href="styles.css?v=12">
 <style>
 .legend{display:grid;grid-template-columns:1fr;gap:10px;margin:20px 0}
 @media(min-width:640px){.legend{grid-template-columns:repeat(2,1fr)}}
@@ -193,12 +193,6 @@ table.mgrid abbr{text-decoration:none;border:0}
 <a href="/neighbourhoods">Neighbourhoods</a>
 <a href="/scorecard" data-cand>Who has answered</a>
 <a href="/faq">FAQ</a>
-<div class="grp">Documents</div>
-<a href="/savings">Savings &amp; Revenue Analysis</a>
-<a href="/city-hall">How City Hall Works</a>
-<a href="/endorse">Candidate Endorsement Pack</a>
-<a href="/profiles" data-cand>Candidate Profiles</a>
-<a href="/version-history">Version History</a>
 </div>
 </div>
 </header>
@@ -208,10 +202,16 @@ table.mgrid abbr{text-decoration:none;border:0}
 <nav class="crumbs" aria-label="Breadcrumb">
 <a href="index.html">Framework</a><span class="sep">/</span><span class="here">Candidate Comparison Matrix</span>
 </nav>
-<div class="hero">
-<div class="eyb"><span>📊 Spec Sheet</span><span class="dot">◆</span><span><a href="version-history.html" style="color:inherit;text-decoration:underline;text-decoration-color:currentColor">v2.0 · July 31, 2026</a></span></div>
+<div class="hero pg-door">
+<div class="eyb">Spec Sheet</div>
 <h1 class="ph1">Candidate Comparison Matrix</h1>
-<p class="lead" style="margin-top:18px">Where each Victoria 2026 candidate stands relative to the framework. Scan the rows, see the gaps. A snapshot — the race evolves.</p>
+<p class="lead" style="margin-top:18px">Where each Victoria 2026 candidate stands relative to the framework. Scan the rows, see the gaps.</p>
+</div>
+<details class="parked">
+<summary>The evidence store</summary>
+<div class="parked-in">
+<div class="hero-rest">
+<p class="lead" style="margin-top:0">A snapshot — the race evolves.</p>
 <p class="scale">50 evidence tables · 15 graded candidates · about two hours end to end. <strong>Grades live on the <a href="scorecard.html" style="color:var(--navy)">scorecard</a></strong> — 55 topics, 210 marks, computed on the two-question scale, and the <strong>18 <a href="profiles.html" style="color:var(--navy)">candidate profiles</a></strong> have their own page. <strong>Start with the <a href="scorecard.html#grid" style="color:var(--navy)">current grid on the scorecard</a></strong> — it is the whole thing on one screen. The grid that used to sit on this page was withdrawn on 1 August and the reason is given where it stood. The jump bar below follows you down the page.</p>
 <div class="callout gold" style="margin-top:18px">
 <div class="lbl">◆ This page is the evidence store — the grades moved</div>
@@ -253,7 +253,7 @@ table.mgrid abbr{text-decoration:none;border:0}
 </div>
 <div class="prose">
 
-<nav class="toc" aria-label="On this page"><div class="toc-h">◆ On this page</div><ol>
+<nav class="toc" aria-label="On this page"><div class="toc-h">On this page</div><ol>
 <li><a href="#what-this-is">What this is</a></li>
 <li><a href="#how-to-read-this">How to Read This</a></li>
 <li><a href="#the-field-at-a-glance">The Field at a Glance</a></li>
@@ -1534,10 +1534,12 @@ separate 📋 line.</p>
 
 </div>
 </div>
+</details>
+</div>
 </main>
 
 <div id="footer-mount"></div>
-<script src="site.js?v=2"></script>
+<script src="site.js?v=12"></script>
 <script src="jumpnav.js"></script>
 
 

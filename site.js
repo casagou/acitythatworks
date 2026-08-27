@@ -82,7 +82,9 @@
 '<p class="fdc">A Citizens\' Framework for Victoria 2026. Every measure costed. Zero ideology. Just results.</p>' +
 '<div class="fsoc">' + socialLinks('') + '</div>' +
 '<p class="fhandle">Instagram &amp; Facebook <strong>@CityThatWorksYYJ</strong> · X <strong>@YYJThatWorks</strong></p>' +
-'<p class="fvr"><a href="version-history.html" style="color:inherit;text-decoration:underline;text-decoration-color:currentColor">v1.10 · August 5, 2026</a></p>' +
+'<p class="fvr"><a href="version-history.html" style="color:inherit;text-decoration:underline;text-decoration-color:currentColor">v1.10 · August 5, 2026' +
+(document.querySelector('[data-doc-versions]') ? ' · ' + document.querySelector('[data-doc-versions]').getAttribute('data-doc-versions') : '') +
+'</a></p>' +
 '</div>' +
 '<div>' +
 '<div class="fhd">The Framework</div>' +
@@ -135,22 +137,42 @@ evidenceLink() +
     if (burger) { hr.insertBefore(hs, burger); } else { hr.appendChild(hs); }
   }
 
-  // The audience pages go into the drawer too, ahead of the "Detailed
-  // documents" group, so the phone menu carries the same map as the footer.
-  // Injected rather than pasted into every page's hand-written drawer.
+  // Long-page contents lists start closed. The first screen is the door,
+  // not a chapter index. Jump-to bars are hidden in CSS.
+  document.querySelectorAll('nav.toc').forEach(function (toc) {
+    if (toc.closest('details')) return;
+    var d = document.createElement('details');
+    d.className = 'toc toc-fold';
+    var label = toc.getAttribute('aria-label') || 'On this page';
+    d.setAttribute('aria-label', label);
+    d.innerHTML = toc.innerHTML;
+    var h = d.querySelector('.toc-h');
+    if (h) {
+      var s = document.createElement('summary');
+      s.className = 'toc-h';
+      s.textContent = h.textContent || 'On this page';
+      h.replaceWith(s);
+    } else {
+      var s2 = document.createElement('summary');
+      s2.className = 'toc-h';
+      s2.textContent = label;
+      d.insertBefore(s2, d.firstChild);
+    }
+    toc.replaceWith(d);
+  });
+
+  // Phone menu is the five top items (plus Home), not a dump of the site map.
+  // Audience pages, annexes, Savings, Endorse and the rest stay in the footer.
   var mmi = document.querySelector('#mn .mmi');
-  if (mmi && !mmi.querySelector('.aud-grp')) {
-    var det = [].filter.call(mmi.querySelectorAll('.grp'), function (g) {
-      return /detailed/i.test(g.textContent);
-    })[0];
-    var frag = document.createElement('div');
-    frag.innerHTML = '<div class="grp aud-grp">By Audience</div>' + audienceLinks() +
-                     '<div class="grp">The Annexes</div>' + annexLinks();
-    var nodes = [].slice.call(frag.childNodes);
-    nodes.forEach(function (n) { mmi.insertBefore(n, det || null); });
+  if (mmi) {
+    var dump = false;
+    [].slice.call(mmi.childNodes).forEach(function (n) {
+      if (n.nodeType === 1 && n.classList && n.classList.contains('grp')) dump = true;
+      if (dump) n.remove();
+    });
   }
 
-  // …and the social icons, where the header row has no space for them.
+  // Social icons, where the header row has no space for them.
   if (mmi && !mmi.querySelector('.msoc')) {
     var wrap = document.createElement('div');
     wrap.className = 'msoc';
@@ -158,11 +180,30 @@ evidenceLink() +
     mmi.appendChild(wrap);
   }
 
+  // Current page on the five-item bar and the phone list. Neighbourhood
+  // children mark Neighbourhoods; audience pages mark nothing in the bar.
+  (function markCurrent() {
+    var path = (location.pathname || '/').replace(/\.html$/, '').replace(/\/$/, '') || '/';
+    if (/^\/neighbourhood-/.test(path)) path = '/neighbourhoods';
+    function stem(href) {
+      try {
+        var u = href.indexOf('http') === 0 ? new URL(href) : new URL(href, location.origin);
+        return (u.pathname || '/').replace(/\.html$/, '').replace(/\/$/, '') || '/';
+      } catch (e) { return href; }
+    }
+    document.querySelectorAll('.nv a, .mmi a').forEach(function (a) {
+      var s = stem(a.getAttribute('href') || '');
+      if (s === path) {
+        a.classList.add('cur');
+        if (a.closest('.mmi')) a.classList.add('gd');
+      }
+    });
+  })();
+
   // The More mega-menu is retired. Five top items (Summary, Measures,
-  // Neighbourhoods, Who has answered, FAQ) are the whole desktop nav;
-  // Savings, Endorse, annexes and the evidence store stay in the footer
-  // and the phone drawer. Injecting a sixth control here would put the
-  // site map back in the first screen.
+  // Neighbourhoods, Who has answered, FAQ) are the whole desktop nav
+  // and the whole phone menu. Savings, Endorse, annexes and the
+  // evidence store stay in the footer.
 
   // Wide comparison tables scroll sideways inside .tbl-wrap, and the edge
   // shadow alone is easy to miss on a phone — so say it in words. Only for
@@ -175,17 +216,20 @@ evidenceLink() +
   var HINT_LIMIT = 2;
   function tableHints() {
     var shown = 0;
-    document.querySelectorAll('.tbl-wrap, .sc-wrap').forEach(function (w) {
+    document.querySelectorAll('.tbl-wrap, .sc-wrap, .who-card .who-table').forEach(function (w) {
+      if (getComputedStyle(w).display === 'none') return;
       var over = w.scrollWidth > w.clientWidth + 4 && shown < HINT_LIMIT;
       if (over) { shown++; }
-      var hint = w.nextElementSibling;
-      var has = hint && hint.classList.contains('tbl-hint');
+      var hint = w.previousElementSibling && w.previousElementSibling.classList.contains('tbl-hint')
+        ? w.previousElementSibling
+        : (w.nextElementSibling && w.nextElementSibling.classList.contains('tbl-hint') ? w.nextElementSibling : null);
+      var has = !!hint;
       if (over && !has) {
         var h = document.createElement('div');
         h.className = 'tbl-hint';
         h.setAttribute('aria-hidden', 'true');
         h.textContent = 'Scroll the table sideways →';
-        w.parentNode.insertBefore(h, w.nextSibling);
+        w.parentNode.insertBefore(h, w);
       } else if (!over && has) {
         hint.remove();
       }

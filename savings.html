@@ -36,7 +36,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Public+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=3">
+<link rel="stylesheet" href="styles.css?v=12">
 <style>
 /* The sticky section navigator now lives in styles.css, shared with every
    other long page. */
@@ -67,12 +67,6 @@
 <a href="/neighbourhoods">Neighbourhoods</a>
 <a href="/scorecard" data-cand>Who has answered</a>
 <a href="/faq">FAQ</a>
-<div class="grp">Documents</div>
-<a href="/savings">Savings &amp; Revenue Analysis</a>
-<a href="/city-hall">How City Hall Works</a>
-<a href="/endorse">Candidate Endorsement Pack</a>
-<a href="/profiles" data-cand>Candidate Profiles</a>
-<a href="/version-history">Version History</a>
 </div>
 </div>
 </header>
@@ -82,10 +76,8 @@
 <nav class="crumbs" aria-label="Breadcrumb">
 <a href="index.html">Framework</a><span class="sep">/</span><span class="here">Savings &amp; Revenue Analysis</span>
 </nav>
-<div class="hero pg-door save-door">
-<div class="eyb"><span>💰 The Math</span><span class="dot">◆</span><span><a href="version-history.html" style="color:inherit;text-decoration:underline;text-decoration-color:currentColor">v1.10 · August 5, 2026</a></span></div>
-<h1 class="ph1">Savings &amp; Revenue Analysis</h1>
-<p class="lead">The math behind the tax glide path for Victoria's 2026 election — operating savings, new revenue, and the honest reckoning of what the framework costs.</p>
+<div class="save-door">
+<h1 class="vh">Savings and Revenue Analysis</h1>
 <div class="headroom">
 <div>
 <div class="hd-l">Net fiscal headroom (steady state, central pairing)</div>
@@ -97,13 +89,12 @@
 </div>
 </div>
 <p class="scale" style="margin-top:16px">Residential rate, as levied, then the Year 1 cap, the Year 2 cap, and about CPI plus population growth. The line-by-line derivation is below.</p>
-<a href="/" class="pgback">← Back to the framework</a>
 </div>
 
 
 
 <details class="toc toc-fold">
-<summary class="toc-h">◆ On this page — eight parts, about 25 minutes</summary>
+<summary class="toc-h">On this page — eight parts, about 25 minutes</summary>
 <ol>
 <li><a href="#summary">Executive Summary</a></li>
 <li><a href="#method">Method</a></li>
@@ -117,12 +108,11 @@
 <li><a href="#part-h">Part H — Sources</a></li>
 <li><a href="#critical">How to Read This Critically</a></li>
 </ol>
-</details>
 
 <div class="prose">
 
 <div class="callout blue" id="summary">
-<div class="lbl">◆ Executive Summary</div>
+<div class="lbl">Executive Summary</div>
 <p style="margin:0 0 10px">Council opened its 2026 budget at a <strong>13.3% draft</strong> in November, cut it to 7.2% in March, and adopted <strong>7.28% aggregate</strong> on May 7 — bridging roughly $7M with one-time reductions rather than structural savings, including a cancelled $2M debt-reduction payment and a $2.8M parking-reserve contribution (<em>CHEK News; Times Colonist</em>). That followed 6.15% (2023), 7.93% (2024) and 6.99% (2025): <strong>four consecutive years above inflation plus population growth.</strong> This framework offers a credible alternative built on operational savings — not service cuts, and not deferrals.</p>
 <p style="margin:0"><strong>Which number this document benchmarks against, and why.</strong> There are three candidate numbers for 2026 and only one is what a homeowner was billed. The <strong>13.3% opening draft</strong> shows what council initially intended to spend. The <strong>7.28% adopted</strong> figure is the increase in total property tax revenue. The <strong>9.34% residential rate</strong> is what landed in the mailbox. Program v1.8.1 decided that Measure 66 caps the <strong>residential rate</strong>, not the total levy, because a cap on the total would let a council deliver a 9% bill and describe it as 6.5%. This document therefore benchmarks against <strong>9.34%</strong> — the same unit the cap is written in. Benchmarking against a number nobody was billed is measuring against nothing.</p>
 </div>
@@ -311,11 +301,12 @@ The current council grew the operating budget 31.4% in three years — $300.0M i
 <p style="margin-top:32px"><a href="index.html" class="pgback">← Back to the framework</a></p>
 
 </div>
+</details>
 </div>
 </main>
 
 <div id="footer-mount"></div>
-<script src="site.js?v=3"></script>
+<script src="site.js?v=12"></script>
 
 
 </body>
