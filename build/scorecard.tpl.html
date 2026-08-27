@@ -318,7 +318,7 @@ td.bad{color:#B5341F;font-weight:600}
 </div>
 <div class="c">
 <div id="who-card" class="who-card"></div>
-<p class="sc-door-note">Said is a scored mark already on the grid. Not said is a blank. Record is a documented fact about a term in office, never scored. A written program is published or not yet. Garcia, Gibbs, Girard and Haley remain <a href="#blank">unknown, not empty</a>. Select a name that said something to see the sentence it rests on.</p>
+<p class="sc-door-note">Said is a sourced sentence a reader can open. Record is a documented term-in-office fact, never a grade. A dash is a blank, not a mark. A missing program is unknown, not a fail.</p>
 </div>
 <div class="cn">
 
@@ -560,66 +560,41 @@ td.bad{color:#B5341F;font-weight:600}
 (function(){
   var DATA = JSON.parse(document.getElementById('scdata').textContent);
 
-  /* Presentation only. Reads marks already in #scdata. Does not assign grades. */
+  /* Presentation only. Reads DATA.door. Does not assign grades. */
   (function buildWhoCard(){
     var mount = document.getElementById('who-card');
-    if(!mount || !DATA || !DATA.topics || !DATA.grid) return;
-    function idxOf(id){
-      for(var i=0;i<DATA.topics.length;i++){ if(DATA.topics[i].id===id) return i; }
-      return -1;
-    }
-    var i66 = idxOf('M66'), i26 = idxOf('M26'), i27 = idxOf('M27'), i6 = idxOf('M6'), i66d = idxOf('M66d');
-    function cell(v){
-      if(v==='R') return {cls:'norec', label:'record'};
-      if(v==='.' || v==='' || v==null) return {cls:'notsaid', label:'not said'};
-      return {cls:'said', label:'said'};
-    }
-    function combine(a,b){
-      if(a==='R' && (b==='.'||b==='R')) return cell('R');
-      if(b==='R' && (a==='.'||a==='R')) return cell('R');
-      if(a!=='.' && a!=='R') return cell(a);
-      if(b!=='.' && b!=='R') return cell(b);
-      return cell('.');
-    }
-    function progState(c){
-      return /pending/i.test(c.note || '') ? 'not yet' : 'published';
-    }
-    var rows = [
-      {label:'Tax cap (M66)', kind:'mark', ti:i66},
-      {label:'Downtown order (M26 / M27)', kind:'pair', a:i26, b:i27},
-      {label:'Housing that gets built (M6)', kind:'mark', ti:i6},
-      {label:'Household bill (M66d)', kind:'mark', ti:i66d},
-      {label:'A written program exists', kind:'prog'}
-    ];
-    function markOf(r, c, ci){
-      if(r.kind==='prog'){
-        var ps = progState(c);
-        return {cls: ps==='not yet'?'notyet':'pub', label: ps, ti: null};
+    if(!mount || !DATA || !DATA.cands) return;
+    var rows = (DATA.door && DATA.door.rows) || [];
+    var cells = (DATA.door && DATA.door.cells) || {};
+    function doorOf(c, row){
+      var cell = (cells[c.key] || {})[row.key] || {state:'dash'};
+      var st = cell.state || 'dash';
+      if(st==='.' || st==='' || st==null || st==='not-yet' || st==='pending' || st==='notyet' || st==='not said' || st==='notsaid') st = 'dash';
+      if(st==='said+record' || (st==='said' && (cell.recordUrl || cell.record))) {
+        return {cls:'said', label:'said', row:row.key, cell:cell, dual:true};
       }
-      var st, ti;
-      if(r.kind==='pair'){
-        var va = DATA.grid[r.a][ci], vb = DATA.grid[r.b][ci];
-        st = combine(va, vb);
-        ti = (va!=='.' && va!=='R') ? r.a : r.b;
-      } else {
-        st = cell(DATA.grid[r.ti][ci]);
-        ti = r.ti;
-      }
-      return {cls: st.cls, label: st.label, ti: ti};
+      if(st==='said') return {cls:'said', label:'said', row:row.key, cell:cell};
+      if(st==='record') return {cls:'norec', label:'record', row:row.key, cell:cell};
+      if(st==='yes' || st==='published') return {cls:'pub', label:'yes', row:row.key, cell:cell};
+      return {cls:'dash', label:'—', row:row.key, cell:cell};
+    }
+    function lastName(c){
+      var p = (c.name || '').trim().split(/\s+/);
+      return p[p.length-1] || c.name;
     }
     var h = '<div class="who-table"><table><thead><tr><th class="q">Who has answered</th>';
     DATA.cands.forEach(function(c){
-      h += '<th title="'+c.name+'">'+c.name.split(' ').pop()+'</th>';
+      h += '<th title="'+c.name+'">'+lastName(c)+'</th>';
     });
     h += '</tr></thead><tbody>';
     rows.forEach(function(r){
       h += '<tr><td class="q">'+r.label+'</td>';
-      DATA.cands.forEach(function(c, ci){
-        var st = markOf(r, c, ci);
-        if(st.cls==='said'){
-          h += '<td class="said" tabindex="0" role="button" data-t="'+st.ti+'" data-c="'+c.key+'" data-k="'+c.key+'">'+st.label+'</td>';
+      DATA.cands.forEach(function(c){
+        var st = doorOf(c, r);
+        if(st.cls==='dash'){
+          h += '<td class="dash" data-k="'+c.key+'">—</td>';
         } else {
-          h += '<td class="'+st.cls+'" data-k="'+c.key+'">'+st.label+'</td>';
+          h += '<td class="'+st.cls+'" tabindex="0" role="button" data-door="'+st.row+'" data-c="'+c.key+'" data-k="'+c.key+'">'+st.label+'</td>';
         }
       });
       h += '</tr>';
@@ -627,17 +602,16 @@ td.bad{color:#B5341F;font-weight:600}
     h += '</tbody></table></div>';
     var groups = [
       {cls:'said', label:'Said'},
-      {cls:'notsaid', label:'Not said'},
       {cls:'norec', label:'Record'},
-      {cls:'pub', label:'Published'},
-      {cls:'notyet', label:'Not yet'}
+      {cls:'pub', label:'Yes'},
+      {cls:'dash', label:'—'}
     ];
     h += '<div class="who-stack">';
     rows.forEach(function(r){
-      var buckets = {said:[], notsaid:[], norec:[], pub:[], notyet:[]};
-      DATA.cands.forEach(function(c, ci){
-        var st = markOf(r, c, ci);
-        (buckets[st.cls] || buckets.notsaid).push({c:c, st:st});
+      var buckets = {said:[], norec:[], pub:[], dash:[]};
+      DATA.cands.forEach(function(c){
+        var st = doorOf(c, r);
+        (buckets[st.cls] || buckets.dash).push({c:c, st:st});
       });
       h += '<div class="who-q"><h3>'+r.label+'</h3>';
       groups.forEach(function(g){
@@ -645,10 +619,10 @@ td.bad{color:#B5341F;font-weight:600}
         if(!items.length) return;
         h += '<p class="who-line"><span class="who-m '+g.cls+'">'+g.label+'</span>';
         h += items.map(function(it){
-          if(it.st.cls==='said'){
-            return '<button type="button" class="said" data-t="'+it.st.ti+'" data-c="'+it.c.key+'">'+it.c.name+'</button>';
+          if(it.st.cls==='dash'){
+            return '<span>'+it.c.name+'</span>';
           }
-          return '<span>'+it.c.name+'</span>';
+          return '<button type="button" class="'+it.st.cls+'" data-door="'+it.st.row+'" data-c="'+it.c.key+'">'+it.c.name+'</button>';
         }).join('');
         h += '</p>';
       });
@@ -809,6 +783,45 @@ td.bad{color:#B5341F;font-weight:600}
     return h;
   }
 
+
+  function escTxt(s){
+    return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  }
+  function doorSource(url, date, note){
+    var bits = [];
+    if(url) bits.push('<a href="'+escTxt(url)+'">'+escTxt(url)+'</a>');
+    if(date) bits.push(escTxt(date));
+    var h = bits.length ? '<div class="dtext">'+bits.join(' · ')+'</div>' : '';
+    if(note) h += '<div class="dtext">'+escTxt(note)+'</div>';
+    return h;
+  }
+  function doorHtml(ck, rowKey){
+    var c = DATA.cands.filter(function(x){return x.key===ck;})[0];
+    var row = ((DATA.door && DATA.door.rows) || []).filter(function(r){return r.key===rowKey;})[0] || {label:rowKey};
+    var cell = ((DATA.door && DATA.door.cells && DATA.door.cells[ck]) || {})[rowKey] || {state:'dash'};
+    var h = '<h4>'+escTxt(c.name)+'</h4>';
+    h += '<div class="dsub">'+escTxt(row.label)+'</div>';
+    var st = cell.state || 'dash';
+    var alsoRecord = !!(cell.recordUrl || (st==='said+record'));
+    if(st==='said' || st==='said+record'){
+      h += '<div class="dmark"><b>Said</b><span class="dv">a sourced sentence a reader can open</span></div>';
+      h += '<div class="dlab">Source</div>'+doorSource(cell.url, cell.date, cell.note);
+      if(alsoRecord){
+        h += '<div class="dlab">Record — a documented term-in-office fact, never a grade</div>';
+        h += doorSource(cell.recordUrl, cell.recordDate, cell.recordNote);
+      }
+    } else if(st==='record'){
+      h += '<div class="dmark"><b>Record</b><span class="dv">a documented term-in-office fact, never a grade</span></div>';
+      h += '<div class="dlab">Source</div>'+doorSource(cell.url, cell.date, cell.note);
+    } else if(st==='yes' || st==='published'){
+      h += '<div class="dmark"><b>Yes</b><span class="dv">a written program is published</span></div>';
+      h += '<div class="dlab">Source</div>'+doorSource(cell.url, cell.date, cell.note);
+    } else {
+      h += '<div class="dmark"><b>—</b><span class="dv">a blank, not a mark</span></div>';
+    }
+    return h;
+  }
+
   function open(td){
     var same = td.classList.contains('open');
     closeAll(false);
@@ -818,7 +831,9 @@ td.bad{color:#B5341F;font-weight:600}
     lastTrigger = td;
     var p=document.createElement('div');
     p.className='sc-panel';
-    var body = td.hasAttribute('data-topic')
+    var body = td.hasAttribute('data-door')
+      ? doorHtml(td.getAttribute('data-c'), td.getAttribute('data-door'))
+      : td.hasAttribute('data-topic')
       ? topicHtml(+td.getAttribute('data-topic'))
       : td.hasAttribute('data-col')
       ? areaHtml(td.getAttribute('data-c'), td.getAttribute('data-col'))
@@ -850,7 +865,7 @@ td.bad{color:#B5341F;font-weight:600}
      mark in the 55-topic grid, and — since v3.4 put a definition on every
      topic — the topic name itself. All route through open(); the selector has
      to cover all three or a grid silently does nothing when clicked. */
-  var SEL = 'td.gc[data-t], td.cc[data-col], td.gt[data-topic], .who-card td.said[data-t], .who-stack .said[data-t]';
+  var SEL = 'td.gc[data-t], td.cc[data-col], td.gt[data-topic], .who-card td[data-door], .who-stack [data-door]';
   document.addEventListener('click', function(e){
     var td = e.target.closest && e.target.closest(SEL);
     if(td) open(td);
