@@ -200,7 +200,7 @@ function head(n) {
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Public+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=10">
+<link rel="stylesheet" href="styles.css?v=11">
 </head>
 <body>
 <a class="skip" href="#main">Skip to main content</a>
@@ -293,8 +293,6 @@ ${html}
 <p><a href="kpis.html">See the KPI library →</a> · <a href="index.html#scorecard">See the 12 Commitments scorecard →</a></p>
 <div class="callout blue"><p><strong>Residents overwrite this page.</strong> Neighbourhood empowerment (<a href="measures.html#m80">M80</a>), the annual survey (<a href="measures.html#m82">M82</a>) and the Local Area Plan schedule are the standing mechanisms for that. This is the framework's opening read of local priorities, not the last word. If something here is wrong about your street, <a href="mailto:info@acitythatworks.ca">tell us</a> and it gets corrected in the open, the same way every other correction in this framework has been.</p></div>
 </div>
-</div>
-</details>
 
 <nav class="nbnav" aria-label="Previous and next neighbourhood">
 <a class="nbprev" href="${prev.file}"><span class="nbnl">← Previous</span><span class="nbnn">${prev.emoji} ${esc(prev.name)}</span></a>
@@ -305,13 +303,15 @@ ${html}
 <div class="nbsw-h">◆ Every neighbourhood</div>
 ${chips(all, n.slug)}
 </div>
+</div>
+</details>
 
 <p style="margin-top:32px"><a href="measures.html" class="pgback">← Read the full framework</a></p>
 </div>
 </main>
 
 <div id="footer-mount"></div>
-<script src="site.js?v=10"></script>
+<script src="site.js?v=11"></script>
 <script src="jumpnav.js"></script>
 </body>
 </html>
