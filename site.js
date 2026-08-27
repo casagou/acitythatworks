@@ -200,7 +200,7 @@ evidenceLink() +
         h.className = 'tbl-hint';
         h.setAttribute('aria-hidden', 'true');
         h.textContent = 'Scroll the table sideways →';
-        w.parentNode.insertBefore(h, w.nextSibling);
+        w.parentNode.insertBefore(h, w);
       } else if (!over && has) {
         hint.remove();
       }

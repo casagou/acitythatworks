@@ -104,7 +104,7 @@ h1.ht em{font-style:italic;color:var(--navy);font-weight:400}
 @media(min-width:640px){.hsub{font-size:26px;margin-top:16px}}
 .ph1{font-family:'Fraunces',serif;font-size:36px;line-height:1.02;font-weight:500;color:var(--navy);margin:18px 0 0;letter-spacing:-.025em}
 @media(min-width:640px){.ph1{font-size:54px}}
-.ph1 em{font-style:italic;color:var(--gold-ink);font-weight:400}
+.ph1 em{font-style:italic;color:var(--navy);font-weight:400}
 
 /* CTA buttons */
 .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
@@ -185,7 +185,7 @@ h2.st em{font-style:italic;color:var(--gold-ink);font-weight:400}
   radial-gradient(farthest-side at 100% 50%,rgba(26,54,104,.18),rgba(26,54,104,0)) 100% 0/12px 100% no-repeat scroll}
 /* Inserted by site.js only where the table actually overflows its container,
    and removed again when it stops. */
-.tbl-hint{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-ink);margin:-14px 0 18px;text-align:right}
+.tbl-hint{font-family:'Public Sans',system-ui,sans-serif;font-size:13px;letter-spacing:0;text-transform:none;color:var(--quiet);margin:0 0 8px;text-align:left}
 table.dt{width:100%;border-collapse:collapse;font-size:14px;min-width:480px}
 table.dt thead tr{border-bottom:2px solid rgba(26,54,104,.3)}
 table.dt th{text-align:left;padding:10px 14px 10px 0;font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--navy);font-weight:600;vertical-align:bottom}
@@ -252,9 +252,9 @@ button,a,input,summary{outline:none}
 /* Minimum touch target (WCAG 2.5.5) for the primary button style */
 .bn{min-height:44px}
 
-/* On-this-page table of contents */
-.toc{background:#fff;border:1px solid rgba(26,54,104,.18);border-left:3px solid var(--gold);padding:18px 22px;margin:28px 0 36px;max-width:760px}
-.toc-h{font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.2em;color:var(--gold-ink);margin-bottom:10px}
+/* On-this-page table of contents — a contents list in a letter, not a boxed card. */
+.toc{background:transparent;border:none;border-top:1px solid rgba(26,54,104,.18);border-bottom:1px solid rgba(26,54,104,.18);border-left:none;padding:16px 0;margin:28px 0 36px;max-width:760px}
+.toc-h{font-family:'Fraunces',serif;font-style:italic;font-size:16px;text-transform:none;letter-spacing:0;color:var(--navy);margin-bottom:10px}
 .toc ol{list-style:none;counter-reset:tocitem;padding:0;margin:0;display:grid;grid-template-columns:1fr;gap:4px}
 @media(min-width:640px){.toc ol{grid-template-columns:1fr 1fr;column-gap:24px}}
 /* Flex row rather than an inline counter: a title long enough to wrap used to
@@ -287,7 +287,7 @@ button,a,input,summary{outline:none}
 .jumpbtn:hover{background:rgba(26,54,104,.06)}
 .jumptop{font-size:11px;text-transform:uppercase;letter-spacing:.1em}
 /* On a phone the arrows and Top are the whole point; the "Jump to" label is not. */
-@media(max-width:519px){.jl2{display:none}.jumpin{gap:6px}.jumpsel{font-size:12px;padding:8px 6px}.jumpbtn{min-width:40px;padding:0 6px}.jumptop{font-size:10px}}
+@media(max-width:519px){.jl2{display:none}.jumpin{gap:6px}.jumpsel{font-size:12px;padding:8px 6px}.jumpbtn{min-width:44px;padding:0 6px}.jumptop{font-size:10px}}
 /* iOS Safari zooms the viewport when a focused form control is under 16px,
    and doesn't zoom back out — #ms (the measure search input) already carries
    this fix; the jump select is the primary mobile navigator on 8 of the
