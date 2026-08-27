@@ -49,7 +49,7 @@
      in parallel with everything else. -->
 <link rel="preload" href="measures.js" as="script">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Public+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=2">
+<link rel="stylesheet" href="styles.css?v=3">
 <link rel="stylesheet" href="charts.css">
 <style>
 .hg{display:grid;grid-template-columns:1fr;gap:32px;margin-top:40px}
@@ -286,31 +286,28 @@ h2.adt em{font-style:italic;color:var(--gold-ink);font-weight:400}
 <div class="c hr">
 <a href="#top" class="brand"><svg class="bicn" viewBox="0 0 240 240" aria-hidden="true"><circle cx="120" cy="120" r="112" fill="#FAF7F0"/><g fill="none" stroke="#16335c" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"><path d="M52 92  q22.5 -14 45 0 t45 0 t45 0"/><path d="M52 120 q22.5 -14 45 0 t45 0 t45 0" opacity="0.88"/><path d="M52 148 q22.5 -14 45 0 t45 0 t45 0" opacity="0.76"/></g></svg><span class="nm">A City That Works</span></a>
 <nav class="nv">
-<a href="summary.html">Summary</a>
-<a href="measures.html">Measures</a>
-<a href="scorecard.html" data-cand class="nv-sc">Candidates</a>
-<a href="neighbourhoods.html">Neighbourhoods</a>
-<a href="faq.html">FAQ</a>
-<a href="endorse.html" class="btn-end">Endorse</a>
+<a href="/summary">Summary</a>
+<a href="/measures">Measures</a>
+<a href="/neighbourhoods">Neighbourhoods</a>
+<a href="/scorecard" data-cand class="nv-sc">Who has answered</a>
+<a href="/faq">FAQ</a>
 </nav>
 <button id="mt" class="mb" aria-label="Open menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
 </div>
 <div id="mn" class="mm">
 <div class="c mmi">
-<a href="summary.html">One-Page Summary</a>
-<a href="measures.html">All Measures</a>
-<a href="neighbourhoods.html">Neighbourhoods</a>
-<div class="grp">Detailed documents</div>
-<a href="savings.html">Savings &amp; Revenue Analysis</a>
-<a href="city-hall.html">How City Hall Works</a>
-<a href="endorse.html">Candidate Endorsement Pack</a>
-<a href="comparison.html" data-cand>Candidate Comparison Matrix</a>
-<a href="scorecard.html" data-cand>Candidate Scorecard</a>
-<a href="profiles.html" data-cand>Candidate Profiles</a>
-<a href="faq.html">Frequently Asked Questions</a>
-<a href="version-history.html">Version History</a>
-<div class="grp"></div>
-<a href="endorse.html" class="gd">Endorse the framework →</a>
+<a href="/">Home</a>
+<a href="/summary">Summary</a>
+<a href="/measures">Measures</a>
+<a href="/neighbourhoods">Neighbourhoods</a>
+<a href="/scorecard" data-cand>Who has answered</a>
+<a href="/faq">FAQ</a>
+<div class="grp">Documents</div>
+<a href="/savings">Savings &amp; Revenue Analysis</a>
+<a href="/city-hall">How City Hall Works</a>
+<a href="/endorse">Candidate Endorsement Pack</a>
+<a href="/profiles" data-cand>Candidate Profiles</a>
+<a href="/version-history">Version History</a>
 </div>
 </div>
 </header>
@@ -318,39 +315,18 @@ h2.adt em{font-style:italic;color:var(--gold-ink);font-weight:400}
 <main id="top">
 <div class="c">
 
-<section class="hero rv">
-<div class="eyb"><span>A Citizens' Framework</span><span class="dot">◆</span><span>Victoria, BC · 2026</span><span class="dot">◆</span><span style="opacity:.7"><a href="version-history.html" style="color:inherit;text-decoration:underline;text-decoration-color:currentColor">v1.10 · August 5, 2026</a></span></div>
+<section class="door rv" id="door">
+<div class="eyb"><span>A Citizens' Framework</span><span class="dot">◆</span><span>Victoria, BC · 2026</span><span class="dot">◆</span><span style="opacity:.7"><a href="/version-history" style="color:inherit;text-decoration:underline;text-decoration-color:currentColor">v1.10 · August 5, 2026</a></span></div>
 <h1 class="ht">A city that <em>works</em>.</h1>
-<!-- Identity first: a first-time visitor was reading a slogan, two
-     rhetorical questions and an exhortation — about 70 words — before
-     learning what this site even is. The rhetoric below still runs; it
-     just isn't the first thing in front of anyone anymore. -->
-<div class="hsub">An independent, non-partisan, fully costed policy framework for Victoria's October 2026 election — free for any candidate to adopt.</div>
-<div class="hg">
-<div class="hp">
-<p class="ld">What should we hope for our city? What do we have the right to demand — for ourselves and for our children?</p>
-<p>The time for complaining is over. The time has come to imagine a city that works, want it with everything we have, and build it together — with realism and method.</p>
-<p>Drafted by residents who want practical results from their local government, <strong>A City That Works</strong> is <strong>0% ideological, 100% pragmatic</strong> — its only loyalty is to what works elsewhere and can work here.</p>
-<p>This is not a party. There are no whips, no candidate slate, no exclusivity — just a public menu of evidence-based municipal policies, costed and sourced, open for adoption by any candidate.</p>
-<div class="cta">
-<a href="summary.html" class="bn bnp">Start with the one-page summary <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-<a href="measures.html" class="bn bns">Read every measure</a>
+<p class="door-story">The household was billed <span class="gnum">9.34%</span>. The operating budget rose 31.4% in three years — $300.0M to $394.1M — while downtown safety fell to <span class="gnum">59%</span> from 83%, more than $25M went to homelessness with no published outcomes, and the City still has no zero-based budget, no published permit times, and no dashboard.</p>
+<div class="diag diag-strip">
+<div class="dr2"><span class="dnu">31.4%</span><span class="dtx">Operating budget, 3 years ($300.0M → $394.1M)</span></div>
+<div class="dr2"><span class="dnu gnum">9.34%</span><span class="dtx">Residential tax, 2026 (13.3% opened; 7.28% adopted; 4.78% business)</span></div>
+<div class="dr2"><span class="dnu">$598</span><span class="dtx">Per-capita policing, 2023 — highest in BC</span></div>
+<div class="dr2"><span class="dnu">61</span><span class="dtx">Missing-middle permits, 2024, vs. 150 target</span></div>
+<div class="dr2"><span class="dnu gnum">59%</span><span class="dtx">Feel safe downtown by day (was 83% in 2020)</span></div>
+<div class="dr2"><span class="dnu">$25M+</span><span class="dtx">Homelessness since 2023 — no published outcomes</span></div>
 </div>
-<p class="ctahint">New here? The summary is the 60-second version. The full program below carries every measure in full, each one costed — or <a href="#adopt">endorse and subscribe</a>.</p>
-</div>
-<div class="diag">
-<div class="dh">◆ The Diagnostic</div>
-<div class="dr2"><span class="dnu">31.4%</span><span class="dtx">Operating budget growth in 3 years ($300.0M → $394.1M adopted, plus $160.1M in 2026 capital improvements)</span></div>
-<div class="dr2"><span class="dnu">9.34%</span><span class="dtx">Residential tax increase levied for 2026 — 13.3% opening draft, 7.28% adopted aggregate, split 9.34% residential / 4.78% business</span></div>
-<div class="dr2"><span class="dnu">$598</span><span class="dtx">Per-capita policing cost (2023) — highest of any police department in BC</span></div>
-<div class="dr2"><span class="dnu">61</span><span class="dtx">Missing-middle permits in 2024 vs. 150 target</span></div>
-<div class="dr2"><span class="dnu">59%</span><span class="dtx">Feel safe downtown by day (was 83% in 2020)</span></div>
-<div class="dr2"><span class="dnu">$25M+</span><span class="dtx">Spent on homelessness since 2023 — no published outcomes</span></div>
-<div class="dr2"><span class="dnu">$0</span><span class="dtx">Modern efficiency tools deployed: no ZBB, no AI, no smart infrastructure</span></div>
-<p class="dnote">Every change since May 2026 is dated and explained — including our corrections. <a href="version-history.html">See the version history →</a></p>
-</div>
-</div>
-</section>
 
 <!-- Every figure on the left below is one of the Diagnostic numbers directly
      above; every figure on the right is a commitment stated elsewhere on this
@@ -374,13 +350,13 @@ h2.adt em{font-style:italic;color:var(--gold-ink);font-weight:400}
 <div class="cmp-i now">
 <div class="cmp-k">Levied for 2026</div>
 <div class="cmp-t"><i style="width:93.4%"></i></div>
-<div class="cmp-v">9.34%</div>
+<div class="cmp-v gnum">9.34%</div>
 <div class="cmp-x">13.3% opening draft, 7.28% adopted aggregate, split 9.34% residential / 4.78% business.</div>
 </div>
 <div class="cmp-i com">
 <div class="cmp-k">Year 1 cap</div>
 <div class="cmp-t"><i style="width:65%"></i></div>
-<div class="cmp-v">≤ 6.5%</div>
+<div class="cmp-v gnum">≤ 6.5%</div>
 <div class="cmp-x">Then ≤ 5.0% in Year 2 and ~3.5% after — CPI plus population growth. Exceeding the cap takes 6 of 9 Council votes and a public explanation on the record.</div>
 </div>
 </div>
@@ -409,7 +385,7 @@ h2.adt em{font-style:italic;color:var(--gold-ink);font-weight:400}
 <div class="cmp-b">
 <div class="cmp-i now">
 <div class="cmp-k">Today</div>
-<div class="cmp-v">59%</div>
+<div class="cmp-v gnum">59%</div>
 <div class="cmp-x">Down from 83% in 2020 — a fall of 24 points in six years.</div>
 </div>
 <div class="cmp-i com">
@@ -469,57 +445,23 @@ h2.adt em{font-style:italic;color:var(--gold-ink);font-weight:400}
 </div>
 
 </div>
-<figcaption class="fig-c">Left column: the Diagnostic above. Right column: the caps in <a href="#balance">The Balance Sheet</a> and the measures in <a href="measures.html">Every Measure</a>. <strong>Bars are shown only where both sides share a unit</strong> — where they do not, the commitment is stated in words rather than drawn to a scale it does not belong on.</figcaption>
+<figcaption class="fig-c">Left column: the Diagnostic above. Right column: the caps in <a href="#balance">The tax glide path</a> and the measures in <a href="/measures">Every Measure</a>. <strong>Bars are shown only where both sides share a unit</strong> — where they do not, the commitment is stated in words rather than drawn to a scale it does not belong on.</figcaption>
 </figure>
-
-<nav class="toc" aria-label="On this page">
-<div class="toc-h">◆ On this page</div>
-<ol>
-<li><a href="#pillars">Five Pillars</a></li>
-<li><a href="#start-here">Start Here — the 13 flagship measures</a></li>
-<li><a href="#how-to-use">How to Use</a></li>
-<li data-cand><a href="#candidates">Where Candidates Stand</a></li>
-<li><a href="#method">The Method</a></li>
-<li><a href="#v2030">Victoria in 2030</a></li>
-<li><a href="#jurisdiction">What the City Controls</a></li>
-<li><a href="measures.html">Every Measure ↗</a></li>
-<li><a href="#scorecard">12 Commitments</a></li>
-<li><a href="#balance">Balance Sheet</a></li>
-<li><a href="#principles">Principles</a></li>
-<li><a href="#neighbourhoods">Neighbourhood Priorities</a></li>
-<li><a href="#faq">Q&amp;A</a></li>
-<li><a href="#adopt">Endorse / Subscribe</a></li>
-</ol>
-</nav>
-
-<!-- Sticky section navigator. This page is 43 screens on a desktop and 64 on a
-     phone, over half of it inside Every Measure, so the table of contents above
-     stops being reachable almost immediately. Same control as the savings
-     analysis and the comparison matrix. The option list is built by jumpnav.js
-     from the [data-jump-label] sections, so it cannot drift from the page. -->
-<div class="jumpbar" id="jumpbar" data-jump-targets="[data-jump-label]">
-<div class="jumpin">
-<label class="jl2" for="jumpsel">Jump to</label>
-<select id="jumpsel" class="jumpsel" aria-label="Jump to a section">
-<option value="">Choose a section…</option>
-</select>
-<button type="button" class="jumpbtn" id="jumpprev" aria-label="Previous section">↑</button>
-<button type="button" class="jumpbtn" id="jumpnext" aria-label="Next section">↓</button>
-<a class="jumpbtn jumptop" href="#top" aria-label="Back to top">Top</a>
+<div class="door-cta">
+<a href="/summary" class="bn bnp">60 seconds</a>
+<a href="/scorecard" data-cand class="bn bns">Who has a written answer</a>
 </div>
-<div class="jumpprog" aria-hidden="true"><i id="jumpfill"></i></div>
-</div>
+<p class="share-pdf"><a href="A-City-That-Works-One-Page.pdf" class="bn bns" download type="application/pdf">PDF</a></p>
+</section>
 
-<section id="pillars" data-jump-label="Five Pillars" class="sc rv">
-<div class="se">◆ Structure</div>
-<h2 class="st">Five Pillars · One Foundation</h2>
-<p class="si">Every measure belongs to one of five pillars, anchored by a foundational commitment to right relations with the host Nations. Every one costed.</p>
-<div id="pgd" class="pg"><!--PRERENDER:pgd--><a class="pc" href="measures.html?pillar=foundation" style="border-top:3px solid #7A6B3D"><div class="pch"><span class="pce">🌿</span><span class="pct" style="color:#7D6E41">5 measures</span></div><div class="pti" style="color:#7A6B3D">Honouring the Host Nations</div><div class="pd">Government-to-government tables, Indigenous procurement, place names, cultural protocols, urban Indigenous services.</div><div class="pca" style="color:#7D6E41">View measures <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></a><a class="pc" href="measures.html?pillar=liveable" style="border-top:3px solid #1A3668"><div class="pch"><span class="pce">🏠</span><span class="pct" style="color:#5A6E92">33 measures</span></div><div class="pti" style="color:#1A3668">A Liveable City</div><div class="pd">Housing, families, childcare, cleanliness, mobility, accessibility.</div><div class="pca" style="color:#5A6E92">View measures <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></a><a class="pc" href="measures.html?pillar=safe" style="border-top:3px solid #B5341F"><div class="pch"><span class="pce">🛡️</span><span class="pct" style="color:#BC4835">26 measures</span></div><div class="pti" style="color:#B5341F">A Safe City</div><div class="pd">Public safety, order, accountability, modern infrastructure, Vision Zero.</div><div class="pca" style="color:#BC4835">View measures <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></a><a class="pc" href="measures.html?pillar=beautiful" style="border-top:3px solid #227247"><div class="pch"><span class="pce">🌳</span><span class="pct" style="color:#317C54">32 measures</span></div><div class="pti" style="color:#227247">A Beautiful City</div><div class="pd">Heritage, parks, urban aesthetics, technology leadership, climate resilience.</div><div class="pca" style="color:#317C54">View measures <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></a><a class="pc" href="measures.html?pillar=managed" style="border-top:3px solid #8B6914"><div class="pch"><span class="pce">💰</span><span class="pct" style="color:#8B6914">21 measures</span></div><div class="pti" style="color:#8B6914">A Well-Managed City</div><div class="pd">Taxes, permits, performance, fiscal discipline, cost of living.</div><div class="pca" style="color:#8B6914">View measures <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></a><a class="pc" href="measures.html?pillar=democratic" style="border-top:3px solid #3D5A8C"><div class="pch"><span class="pce">🗳️</span><span class="pct" style="color:#566F9B">15 measures</span></div><div class="pti" style="color:#3D5A8C">A Democratic City</div><div class="pd">Referendums, transparency, participation, public-visualization tools.</div><div class="pca" style="color:#566F9B">View measures <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></a><!--/PRERENDER:pgd--></div>
-<div class="fnd rv">
-<div class="lbl">◆ A Foundation, Not a Pillar — Honouring the Host Nations</div>
-<p>Victoria is built on the unceded traditional territories of the lək̓ʷəŋən-speaking peoples — today represented by the <strong>Songhees Nation</strong> and the <strong>Esquimalt Nation</strong>. Any serious program for the City must recognize this and build it into how the City operates, not just how it speaks.</p>
-<p>The full program includes specific measures on government-to-government working tables, Indigenous procurement, lək̓ʷəŋən place names, cultural protocols, and urban Indigenous services. <a href="measures.html?pillar=foundation">See Foundation measures M1–M5 →</a></p>
-</div>
+<section id="scorecard" data-jump-label="12 Commitments" class="sc rv">
+<div class="se">◆ Accountability</div>
+<h2 class="st">12 commitments. Measured every quarter.</h2>
+<p class="si">Twelve numerical targets, each with a published baseline, each reported quarterly. <strong>The first two are the ones no other candidate in this race can copy</strong>, because they require the arithmetic to have been done first. The rest are what the arithmetic pays for.</p>
+<div id="ccrd" class="cmlist cstrip"><!--PRERENDER:ccrd--><details class="cmit" open><summary class="cmsum"><span class="scn">01</span><span class="cmmid"><span class="scl">Residential tax rate</span><span class="sme"><strong>Target:</strong> ≤6.5% Year 1, ≤5% Year 2, about CPI + population growth Year 3 onward. Capped on the residential rate, not the total levy</span><span class="sme"><strong>Baseline:</strong> 9.34% residential in 2026 (7.28% total levy, 4.78% business). Four straight years above inflation plus growth</span></span><svg class="cmchev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary><div class="cmbody"><div class="cmsrc"><span class="cmlbl">Source for the baseline</span>City of Victoria adopted 2026 financial plan; Victoria News</div><a class="dlink" href="measures.html#m66">Delivered by Measure 66 →</a></div></details><details class="cmit" open><summary class="cmsum"><span class="scn">02</span><span class="cmmid"><span class="scl">Verified annual savings</span><span class="sme"><strong>Target:</strong> $8–14M per year in operating savings verified and banked by Year 4, published line by line against the year they were promised</span><span class="sme"><strong>Baseline:</strong> $0 currently reported. No competitive benchmarking, no zero-based review, and no published savings register exist today</span></span><svg class="cmchev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary><div class="cmbody"><div class="cmsrc"><span class="cmlbl">Source for the baseline</span>City of Victoria budget documents — no zero-based review or savings register has been published</div><a class="dlink" href="measures.html#m65">Delivered by Measure 65 →</a></div></details><details class="cmit" open><summary class="cmsum"><span class="scn">03</span><span class="cmmid"><span class="scl">New homes (composition)</span><span class="sme"><strong>Target:</strong> 12,000+ net new units by 2030, 25% missing middle, 20% 3BR+, 15% non-market</span><span class="sme"><strong>Baseline:</strong> 2,359 net new units delivered in 2 years, against a 5-year provincial target of 4,902</span></span><svg class="cmchev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary><div class="cmbody"><div class="cmsrc"><span class="cmlbl">Source for the baseline</span>Province of BC housing targets; City of Victoria permit data</div><a class="dlink" href="measures.html#m6">Delivered by Measure 6 →</a></div></details><details class="cmit" open><summary class="cmsum"><span class="scn">04</span><span class="cmmid"><span class="scl">Rental vacancy rate</span><span class="sme"><strong>Target:</strong> 5%</span><span class="sme"><strong>Baseline:</strong> 3.3% (2025, highest since 1999)</span></span><svg class="cmchev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary><div class="cmbody"><div class="cmsrc"><span class="cmlbl">Source for the baseline</span>CMHC rental market data; Victoria News</div><a class="dlink" href="measures.html#m8">Delivered by Measure 8 →</a></div></details><details class="cmit" open><summary class="cmsum"><span class="scn">05</span><span class="cmmid"><span class="scl">Unsheltered homelessness</span><span class="sme"><strong>Target:</strong> -50%</span><span class="sme"><strong>Baseline:</strong> ~320 people</span></span><svg class="cmchev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary><div class="cmbody"><div class="cmsrc"><span class="cmlbl">Source for the baseline</span>2025 Point-in-Time Count, Greater Victoria Coalition to End Homelessness</div><a class="dlink" href="measures.html#m11">Delivered by Measure 11 →</a></div></details><details class="cmit" open><summary class="cmsum"><span class="scn">06</span><span class="cmmid"><span class="scl">Crime severity</span><span class="sme"><strong>Target:</strong> -15%</span><span class="sme"><strong>Baseline:</strong> CSI 152.65 (2024, down 11%)</span></span><svg class="cmchev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary><div class="cmbody"><div class="cmsrc"><span class="cmlbl">Source for the baseline</span>Statistics Canada Crime Severity Index; VicPD</div><a class="dlink" href="measures.html#m32">Delivered by Measure 32 →</a></div></details><details class="cmit" open><summary class="cmsum"><span class="scn">07</span><span class="cmmid"><span class="scl">Graffiti removal</span><span class="sme"><strong>Target:</strong> 90% within 48h</span><span class="sme"><strong>Baseline:</strong> No current standard</span></span><svg class="cmchev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary><div class="cmbody"><div class="cmsrc"><span class="cmlbl">Source for the baseline</span>No external source — Victoria publishes no graffiti-removal standard to cite; the DVBA Clean Team's own count (12,000+ tags/yr) is the closest public figure</div><a class="dlink" href="measures.html#m14">Delivered by Measure 14 →</a></div></details><details class="cmit" open><summary class="cmsum"><span class="scn">08</span><span class="cmmid"><span class="scl">Permit speed (by category)</span><span class="sme"><strong>Target:</strong> Simple under 6 weeks, complex under 6 months, rezoning under 9 months</span><span class="sme"><strong>Baseline:</strong> 3–18+ months by type; no benchmark currently published</span></span><svg class="cmchev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary><div class="cmbody"><div class="cmsrc"><span class="cmlbl">Source for the baseline</span>VRBA reporting on permit timelines; City of Victoria publishes no benchmark to compare against</div><a class="dlink" href="measures.html#m7">Delivered by Measure 7 →</a></div></details><details class="cmit" open><summary class="cmsum"><span class="scn">09</span><span class="cmmid"><span class="scl">Downtown vacancy</span><span class="sme"><strong>Target:</strong> 5% storefronts</span><span class="sme"><strong>Baseline:</strong> ~11% (current)</span></span><svg class="cmchev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary><div class="cmbody"><div class="cmsrc"><span class="cmlbl">Source for the baseline</span>DVBA 2025 downtown survey; CHEK News on Pandora Avenue vacancy</div><a class="dlink" href="measures.html#m71">Delivered by Measure 71 →</a></div></details><details class="cmit" open><summary class="cmsum"><span class="scn">10</span><span class="cmmid"><span class="scl">Dangerous intersections redesigned</span><span class="sme"><strong>Target:</strong> All 10 of the top 10 by collision history, redesigned or reconstructed within the term</span><span class="sme"><strong>Baseline:</strong> 0 redesigned, and no published collision inventory exists, so the top 10 has never been named</span></span><svg class="cmchev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary><div class="cmbody"><div class="cmsrc"><span class="cmlbl">Source for the baseline</span>No external source — the City has not published the collision-history inventory this baseline would be drawn from, which is itself the finding</div><a class="dlink" href="measures.html#m19">Delivered by Measure 19 →</a></div></details><details class="cmit" open><summary class="cmsum"><span class="scn">11</span><span class="cmmid"><span class="scl">Transparency delivered</span><span class="sme"><strong>Target:</strong> Lobbyist registry live, FOI application fee abolished, Integrity Commissioner appointed, and all 16 quarterly reports published within 30 days of quarter end</span><span class="sme"><strong>Baseline:</strong> 0 of 3 in place, and no quarterly performance report is published at all</span></span><svg class="cmchev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary><div class="cmbody"><div class="cmsrc"><span class="cmlbl">Source for the baseline</span>No external source — an absence of these three mechanisms, verifiable against the City's own public records</div><a class="dlink" href="measures.html#m79b">Delivered by Measure 79b →</a></div></details><details class="cmit" open><summary class="cmsum"><span class="scn">12</span><span class="cmmid"><span class="scl">Climate and canopy</span><span class="sme"><strong>Target:</strong> -50% GHG by 2030 (vs 2007); 35% tree canopy by 2035</span><span class="sme"><strong>Baseline:</strong> -31% achieved, 19 pts to go; canopy roughly 30%</span></span><svg class="cmchev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary><div class="cmbody"><div class="cmsrc"><span class="cmlbl">Source for the baseline</span>City of Victoria climate action reporting</div><a class="dlink" href="measures.html#m58">Delivered by Measure 58 →</a></div></details><!--/PRERENDER:ccrd--></div>
+<p style="margin-top:16px;font-size:13px;color:#57534e;font-style:italic"><strong style="color:var(--navy);font-style:normal">Every quarter, the scorecard is published. No excuses. No spin. Just results.</strong> Row 11 is the one that makes the other eleven checkable: a framework that demands quarterly outcome reporting from a council and does not put its own reporting record on its own scorecard is asking for a standard it has not accepted.</p>
+<p style="margin-top:12px;font-size:13px;color:#57534e;font-style:italic">The twelve are the headline set. The full instrument panel behind them — every indicator with its baseline, source, direction and cadence — is <a href="kpis.html" style="color:var(--navy)">2030, Measured: the KPI Library</a>. Where a KPI and a Commitment could be read to conflict, <strong style="color:var(--navy);font-style:normal">the Commitment governs</strong>.</p>
+<p style="margin-top:8px;font-size:13px;color:#57534e;font-style:italic">This framework holds no office and cannot publish a report on its own — the commitment is to whichever candidate adopts it. <strong style="color:var(--navy);font-style:normal">Where and when:</strong> if a candidate elected October 17, 2026 adopts this framework, the first quarterly report falls due within 30 days of the end of their first full quarter in office — Q1 2027, so by <strong style="color:var(--navy);font-style:normal">early April 2027</strong> — published on the City's own website per Measure 67, with this page updated to link it.</p>
 </section>
 
 <!-- Start Here (v1.9.6). Measure numbers are frozen identifiers through
@@ -550,170 +492,10 @@ h2.adt em{font-style:italic;color:var(--gold-ink);font-weight:400}
 <p class="fsr"><strong>If you read only one pillar, read <a href="measures.html?pillar=managed">A Well-Managed City</a>. It pays for the other four.</strong></p>
 </section>
 
-<section id="how-to-use" data-jump-label="How to Use" class="sc rv">
-<div class="se">◆ How to Engage</div>
-<h2 class="st">How to use this framework.</h2>
-<p class="si">There is <strong>no exclusivity</strong> and no campaign attached to this document. The goal is to raise the standard of debate — to make it normal for Victoria candidates to publish costed, measurable, sourced platforms with quarterly accountability.</p>
-<div class="hug">
-<div class="huc">
-<div class="hut">For Candidates</div>
-<div class="hux">If you are running for Victoria City Council or Mayor in October 2026:</div>
-<ul>
-<li><strong>Endorse</strong> the framework in whole or in part</li>
-<li><strong>Adapt</strong> individual measures to your platform</li>
-<li><strong>Challenge</strong> the cost estimates and source links — publish your own</li>
-<li>Multiple candidates can run on these ideas, and they should</li>
-</ul>
-<a href="endorse.html" class="bn bnp">Endorsement Pack →</a>
-</div>
-<div class="huc">
-<div class="hut">For Residents</div>
-<div class="hux">Hold candidates to a higher standard:</div>
-<ul>
-<li><strong>Start</strong> with the <a href="summary.html">one-page summary</a> — the 60-second version</li>
-<li><strong>Then read</strong> the measures on the issues you care about</li>
-<li><strong>Suggest</strong> improvements — every measure is open to criticism and correction</li>
-<li data-cand><strong>Ask</strong> your candidates which specific measures they support — or check the <a href="scorecard.html">candidate scorecard</a> first, to see who already has</li>
-<li><strong>Share</strong> with neighbours and community associations</li>
-</ul>
-<a href="summary.html" class="bn bnp">One-page summary →</a>
-</div>
-<div class="huc">
-<div class="hut">For Practitioners</div>
-<div class="hux">Planners, police, builders, social workers, fiscal analysts, public health workers, infrastructure engineers:</div>
-<ul>
-<li>This framework was drafted from <strong>publicly available research</strong> and reporting</li>
-<li>If you have technical expertise and want to contribute corrections or new measures, please contact us</li>
-<li>Credit attaches to the underlying idea, not the framework</li>
-</ul>
-<a href="mailto:info@acitythatworks.ca" class="bn bnp">Get in touch →</a>
-</div>
-</div>
-</section>
-
-<section id="candidates" data-cand data-jump-label="Where Candidates Stand" class="sc rv">
-<div class="se">◆ The Ballot</div>
-<h2 class="st">Where the candidates stand.</h2>
-<p class="si">Every declared Victoria candidate, graded against this framework — <strong>15 candidates, 55 topics, 225 scored marks</strong>. Since <strong>Matrix v3.0</strong> every mark is the output of two questions asked in order, so the same evidence produces the same mark regardless of who reads it. <strong>A grade is computed, not assigned</strong>, and every number can be recomputed from the published grid. Four candidates are listed but not scored: nothing locatable exists for them, which is <em>unknown</em>, not <em>empty</em>.</p>
-<p class="si" style="font-size:15px;margin-top:12px"><strong>The scorecard publishes two defects in its own scale</strong>, and withholds four letter grades because of one of them. It also states the caveat that matters most: most candidates publish platform detail in September, so a matrix scored in August <strong>systematically under-reports challengers relative to incumbents</strong>. <a href="scorecard.html#defects" style="color:var(--navy)">Read the defects first</a>.</p>
-<a href="scorecard.html" class="bn bnp" style="margin-top:20px">See the Candidate Scorecard <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-</section>
-
-<div id="audience" data-jump-label="By Audience" class="rv" style="margin-top:64px">
-<div class="se">◆ By Audience</div>
-<h2 class="st" style="font-size:28px;max-width:640px">Whoever you are, Victoria should work for you.</h2>
-<div class="ag">
-<div class="ac"><div class="act"><a href="for-families.html">For Families</a></div><div class="acx">Childcare, school safety, parks, housing, food quality in schools.</div><div class="acm"><b>Start with</b> <a href="measures.html#m12">M12</a> <a href="measures.html#m13">M13</a> <a href="measures.html#m13b">M13b</a> <a href="measures.html#m13d">M13d</a> <a href="measures.html#m40">M40</a> <a href="measures.html#m49">M49</a></div><a class="acr" href="for-families.html">Read For Families →</a></div>
-<div class="ac"><div class="act"><a href="for-renters.html">For Renters</a></div><div class="acx">Tenant protections, vacancy targets, affordability, transparent waitlists.</div><div class="acm"><b>Start with</b> <a href="measures.html#m8">M8</a> <a href="measures.html#m9">M9</a> <a href="measures.html#m9b">M9b</a> <a href="measures.html#m10">M10</a> <a href="measures.html#m64">M64</a></div><a class="acr" href="for-renters.html">Read For Renters →</a></div>
-<div class="ac"><div class="act"><a href="for-business.html">For Business Owners</a></div><div class="acx">Permits, tax base, downtown revival, free first-hour parking.</div><div class="acm"><b>Start with</b> <a href="measures.html#m7">M7</a> <a href="measures.html#m28b">M28b</a> <a href="measures.html#m71">M71</a> <a href="measures.html#m72">M72</a> <a href="measures.html#m73b">M73b</a> <a href="measures.html#m75">M75</a></div><a class="acr" href="for-business.html">Read For Business Owners →</a></div>
-<div class="ac"><div class="act"><a href="for-cyclists.html">For Cyclists &amp; Transit Users</a></div><div class="acx">Bike network, RapidBus, contactless fares, adaptive signals.</div><div class="acm"><b>Start with</b> <a href="measures.html#m19">M19</a> <a href="measures.html#m20">M20</a> <a href="measures.html#m21">M21</a> <a href="measures.html#m23">M23</a> <a href="measures.html#m41">M41</a></div><a class="acr" href="for-cyclists.html">Read For Cyclists &amp; Transit Users →</a></div>
-<div class="ac"><div class="act"><a href="for-seniors.html">For Seniors</a></div><div class="acx">Safety, accessibility, neighbourhood services, modern lighting.</div><div class="acm"><b>Start with</b> <a href="measures.html#m25b">M25b</a> <a href="measures.html#m26">M26</a> <a href="measures.html#m27">M27</a> <a href="measures.html#m37">M37</a> <a href="measures.html#m64">M64</a></div><a class="acr" href="for-seniors.html">Read For Seniors →</a></div>
-<div class="ac"><div class="act"><a href="for-homeowners.html">For Homeowners</a></div><div class="acx">Property tax restraint, heritage protection, infrastructure, homeownership pathways.</div><div class="acm"><b>Start with</b> <a href="measures.html#m25">M25</a> <a href="measures.html#m43">M43</a> <a href="measures.html#m64b">M64b</a> <a href="measures.html#m66">M66</a> <a href="measures.html#m66b">M66b</a> <a href="measures.html#m76">M76</a></div><a class="acr" href="for-homeowners.html">Read For Homeowners →</a></div>
-</div>
-</div>
-
-<section id="method" data-jump-label="The Method" class="sc rv">
-<div class="se">◆ How this framework was built</div>
-<h2 class="st">0% ideology. 100% pragmatic.</h2>
-<p class="si">We started where the truth is most visible: the budget. Politicians make promises; numbers don't lie. Victoria's operating budget grew <strong>31.4% in three years</strong>, from $300.0M in 2023 to the <strong>$394.1M adopted for 2026</strong>, alongside <strong>$160.1M in 2026 capital improvements</strong> (both figures from the 2026–2030 Financial Plan adopted May 7, 2026) — with VicPD's budget nearly doubling in a decade, from $50.6M to $86.8M requested for 2026, and no competitive benchmarking, AI, or smart infrastructure deployed. For every problem a Victorian faces daily, we applied the same six-step method.</p>
-<div class="mg">
-<div class="ms"><div class="msn">01</div><div><div class="mst">Identify the root cause</div><div class="msx">Not the symptom — the structural reason the problem exists.</div></div></div>
-<div class="ms"><div class="msn">02</div><div><div class="mst">Assess what the City can actually do</div><div class="msx">Municipalities have specific powers. Don't promise what requires provincial or federal action.</div></div></div>
-<div class="ms"><div class="msn">03</div><div><div class="mst">Study what works elsewhere</div><div class="msx">Pittsburgh's Surtrac: −25% travel time, −21% emissions. Phoenix managed competition: $25M+ saved 1978–88. Calgary SAVE: $74M targeted, $60M found. We also study what <em>doesn't</em> translate — Helsinki, Singapore and Boston built city-scale digital twins, but Victoria is 7–25× smaller, so we start with the data layers they built first.</div></div></div>
-<div class="ms"><div class="msn">04</div><div><div class="mst">Measure with technology</div><div class="msx">Use data, sensors, and digital tools to understand before deciding.</div></div></div>
-<div class="ms"><div class="msn">05</div><div><div class="mst">Build solutions with experts</div><div class="msx">Engineers, police, builders, social workers, business owners, neighbourhood associations, residents.</div></div></div>
-<div class="ms"><div class="msn">06</div><div><div class="mst">Cost every measure</div><div class="msx">Direct and indirect impacts, costs and revenues. Every single proposal has a budget impact estimate.</div></div></div>
-</div>
-<p class="si" style="margin-top:22px;font-size:15px"><strong>The method has a delivery half.</strong> Who owns each measure, what happens in the first 100 days, and what publishes every quarter are set out in <a href="implementation.html" style="color:var(--navy)">Implementation &amp; Governance</a>.</p>
-</section>
-
-<div id="process" data-jump-label="The 5-Step Process" class="rv" style="margin-top:64px">
-<div class="se">◆ The 5-Step Process</div>
-<h2 class="st" style="font-size:26px">No major new public project without these five steps.</h2>
-<p class="si" style="margin-bottom:0">The Dowler Place file proved why this matters. Under this framework, no project skips any step.</p>
-<div class="fvg">
-<div class="fvc"><div class="fvn">STEP 01</div><div class="fvt">Local consultation</div><div class="fvx">Problems, pain points, what needs to improve.</div></div>
-<div class="fvc"><div class="fvn">STEP 02</div><div class="fvt">Expert design</div><div class="fvx">Engineers, planners, affected residents.</div></div>
-<div class="fvc"><div class="fvn">STEP 03</div><div class="fvt">Visualize &amp; analyze</div><div class="fvx">AI imagery (M53b) + GIS traffic, utility and infrastructure analysis (M53). See the effects on adjacent streets and businesses before a dollar is spent.</div></div>
-<div class="fvc"><div class="fvn">STEP 04</div><div class="fvt">Referendum if &gt; $25M</div><div class="fvx">Binding public vote on new (non-lifecycle) capital, under the Community Charter — Assent Voting or the Alternative Approval Process.</div></div>
-<div class="fvc"><div class="fvn">STEP 05</div><div class="fvt">Quarterly reports</div><div class="fvx">On time, on budget, or explain why not.</div></div>
-</div>
-</div>
-
-<section id="v2030" data-jump-label="Victoria in 2030" class="sc rv">
-<div class="se">◆ What delivery looks like</div>
-<h2 class="st">Victoria in <em>2030.</em></h2>
-<p class="si" style="font-style:italic">Everything below is the result of the measures in this framework being delivered. It is written in the present tense because that is the point of a plan.</p>
-<div class="v30">
-<p><strong>Travellers already rank Victoria among the best small cities in the world. By 2030, it is also the best run.</strong> That is the change on offer. Not more money. Management.</p>
-<p>It is a Saturday morning in June 2030 and you walk Pandora from Cook Street to the harbour. Four years ago this was the street Victoria was known for, for all the wrong reasons. Today it is a linear park. Trees, benches, kids on a playground, storefronts open on both sides. <strong>Nobody was pushed to the next block to make this happen.</strong> Housing came first, the province paid its share, and the City published the count every quarter until the unsheltered number fell by half. Then Victoria voted, on a ballot, to build the park. It opened on time and on budget because every invoice was public.</p>
-<p>Where the park meets the water, you keep walking. The waterfront walkway runs further than it did, and the signs carry the lək̓ʷəŋən names first. The continuous Inner Harbour promenade, runner-up on the signature-project ballot, is next on the list. <strong>A city that delivers one project on time and on budget earns the mandate to build another.</strong></p>
-<p>None of this happened by luck. It happened because Victoria changed how it is run.</p>
-<p>In 2030, Victoria is the city that <strong>refunds you when it over-collects your taxes</strong>. The credit lands on your notice, not in a reserve. That is Measure 66b, written so a later council cannot quietly reverse it. Tax increases stepped down each year until they matched inflation plus growth, and the only new debt is debt voters approved on a ballot.</p>
-<p><strong>Your permit answer comes in writing.</strong> A date, published targets, quarterly results. Builders stopped routing around Victoria, 12,000 homes were approved, and most of them got built.</p>
-<p>Every capital project over $25 million goes to the voters. Crystal Pool proved it in 2025, and the signature ballot proved it again: <strong>residents say yes to good projects. They just want to be asked.</strong></p>
-<p>And the city works at street level. A bylaw officer answers at 9 PM. Graffiti is gone in 48 hours. The streets are lit all night. Downtown vacancy sits near 5%, and the storefronts that were dark in 2026 have tenants.</p>
-<p>Every quarter, the dashboard publishes every number, green or red, no spin. <strong>You do not have to trust anyone. You can check.</strong></p>
-<p>Victoria’s budget grew 31% in three years, from $300 million to $394 million, and the city did not get 31% better. <strong>That gap is the mandate.</strong> Close it, and everything above is paid for without a single new tax. Every line here has a measure, a cost, and a date behind it. <strong>If the numbers do not move, you will know by 2028, not at the next election.</strong></p>
-<p class="v30end"><strong>No council has ever offered Victoria that deal. This framework does.</strong> The 12 Commitments below are how you check whether we did it.</p>
-</div>
-</section>
-
-<div id="jurisdiction" data-jump-label="What the City Controls" class="rv" style="margin-top:64px">
-<div class="se">◆ Separation of Powers</div>
-<h2 class="st" style="font-size:26px">What the City actually controls.</h2>
-<p class="si">Before making promises, we must be honest about what the City of Victoria actually controls. Many of the problems residents face — healthcare, criminal sentencing, income support — fall under provincial or federal jurisdiction. We advocate aggressively to senior governments for action in their domains, but we never promise what isn't ours to deliver. <a href="city-hall.html" style="color:var(--navy)">See the full plain-language guide →</a></p>
-<div class="jg jg4">
-<div class="jc cy"><div class="jt">City of Victoria controls</div><div class="jx">Land use &amp; zoning · building permits · property taxes · bylaws &amp; enforcement · municipal policing (via VicPD Board) · parks &amp; recreation · local roads &amp; sidewalks · water &amp; sewer · garbage collection · local planning · business licences · public art &amp; heritage designation</div></div>
-<div class="jc crd"><div class="jt">Capital Regional District controls</div><div class="jx">Regional water supply &amp; treatment · regional wastewater · solid-waste disposal · regional parks · regional housing. You pay for these through utility rates and requisitions, not the property tax rate — and Victoria's CRD directors are elected on the same ballot as council. <strong>M66d reports it; M70c governs Victoria's posture toward it.</strong></div></div>
-<div class="jc ot"><div class="jt">Province of BC controls</div><div class="jx">Healthcare · K-12 education · social housing funding (BC Housing) · welfare &amp; income assistance · courts &amp; sentencing · major transit (BC Transit) · highways · building code · vacancy &amp; speculation taxes</div></div>
-<div class="jc ot"><div class="jt">Federal government controls</div><div class="jx">Immigration · criminal law · employment insurance · Old Age Security · major infrastructure grants · Indigenous affairs (Crown-Nation relationship) · ports &amp; harbours</div></div>
-</div>
-<p class="si" style="font-size:15px;margin-top:16px">A framework that discusses only the City and the senior governments leaves out a large and fast-growing share of what a household actually pays. That is why the regional level is on this diagram.</p>
-</div>
-
-<div class="rv" style="margin-top:64px">
-<div class="se">◆ The Substance</div>
-<h2 class="st" style="font-size:28px">Every measure, in full.</h2>
-<p class="si">Every measure, with its full text and budget impact, lives on its own page — <strong>the public number is the 12 Commitments scorecard below</strong>, reported quarterly; the framework carries far more than that, and deliberately no longer states a total, because three earlier versions published a count that did not survive a hand count.</p>
-<a href="measures.html" class="bn bnp" style="margin-top:20px">Read every measure <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-</div>
-
-<section id="scorecard" data-jump-label="12 Commitments" class="sc rv">
-<div class="se">◆ Accountability</div>
-<h2 class="st">12 commitments. Measured every quarter.</h2>
-<p class="si">Twelve numerical targets, each with a published baseline, each reported quarterly. <strong>The first two are the ones no other candidate in this race can copy</strong>, because they require the arithmetic to have been done first. The rest are what the arithmetic pays for.</p>
-<div id="ccrd" class="cmlist"><!--PRERENDER:ccrd--><details class="cmit"><summary class="cmsum"><span class="scn">01</span><span class="cmmid"><span class="scl">Residential tax rate</span><span class="sme"><strong>Target:</strong> ≤6.5% Year 1, ≤5% Year 2, about CPI + population growth Year 3 onward. Capped on the residential rate, not the total levy</span><span class="sme"><strong>Baseline:</strong> 9.34% residential in 2026 (7.28% total levy, 4.78% business). Four straight years above inflation plus growth</span></span><svg class="cmchev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary><div class="cmbody"><div class="cmsrc"><span class="cmlbl">Source for the baseline</span>City of Victoria adopted 2026 financial plan; Victoria News</div><a class="dlink" href="measures.html#m66">Delivered by Measure 66 →</a></div></details><details class="cmit"><summary class="cmsum"><span class="scn">02</span><span class="cmmid"><span class="scl">Verified annual savings</span><span class="sme"><strong>Target:</strong> $8–14M per year in operating savings verified and banked by Year 4, published line by line against the year they were promised</span><span class="sme"><strong>Baseline:</strong> $0 currently reported. No competitive benchmarking, no zero-based review, and no published savings register exist today</span></span><svg class="cmchev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary><div class="cmbody"><div class="cmsrc"><span class="cmlbl">Source for the baseline</span>City of Victoria budget documents — no zero-based review or savings register has been published</div><a class="dlink" href="measures.html#m65">Delivered by Measure 65 →</a></div></details><details class="cmit"><summary class="cmsum"><span class="scn">03</span><span class="cmmid"><span class="scl">New homes (composition)</span><span class="sme"><strong>Target:</strong> 12,000+ net new units by 2030, 25% missing middle, 20% 3BR+, 15% non-market</span><span class="sme"><strong>Baseline:</strong> 2,359 net new units delivered in 2 years, against a 5-year provincial target of 4,902</span></span><svg class="cmchev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary><div class="cmbody"><div class="cmsrc"><span class="cmlbl">Source for the baseline</span>Province of BC housing targets; City of Victoria permit data</div><a class="dlink" href="measures.html#m6">Delivered by Measure 6 →</a></div></details><details class="cmit"><summary class="cmsum"><span class="scn">04</span><span class="cmmid"><span class="scl">Rental vacancy rate</span><span class="sme"><strong>Target:</strong> 5%</span><span class="sme"><strong>Baseline:</strong> 3.3% (2025, highest since 1999)</span></span><svg class="cmchev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary><div class="cmbody"><div class="cmsrc"><span class="cmlbl">Source for the baseline</span>CMHC rental market data; Victoria News</div><a class="dlink" href="measures.html#m8">Delivered by Measure 8 →</a></div></details><details class="cmit"><summary class="cmsum"><span class="scn">05</span><span class="cmmid"><span class="scl">Unsheltered homelessness</span><span class="sme"><strong>Target:</strong> -50%</span><span class="sme"><strong>Baseline:</strong> ~320 people</span></span><svg class="cmchev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary><div class="cmbody"><div class="cmsrc"><span class="cmlbl">Source for the baseline</span>2025 Point-in-Time Count, Greater Victoria Coalition to End Homelessness</div><a class="dlink" href="measures.html#m11">Delivered by Measure 11 →</a></div></details><details class="cmit"><summary class="cmsum"><span class="scn">06</span><span class="cmmid"><span class="scl">Crime severity</span><span class="sme"><strong>Target:</strong> -15%</span><span class="sme"><strong>Baseline:</strong> CSI 152.65 (2024, down 11%)</span></span><svg class="cmchev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary><div class="cmbody"><div class="cmsrc"><span class="cmlbl">Source for the baseline</span>Statistics Canada Crime Severity Index; VicPD</div><a class="dlink" href="measures.html#m32">Delivered by Measure 32 →</a></div></details><details class="cmit"><summary class="cmsum"><span class="scn">07</span><span class="cmmid"><span class="scl">Graffiti removal</span><span class="sme"><strong>Target:</strong> 90% within 48h</span><span class="sme"><strong>Baseline:</strong> No current standard</span></span><svg class="cmchev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary><div class="cmbody"><div class="cmsrc"><span class="cmlbl">Source for the baseline</span>No external source — Victoria publishes no graffiti-removal standard to cite; the DVBA Clean Team's own count (12,000+ tags/yr) is the closest public figure</div><a class="dlink" href="measures.html#m14">Delivered by Measure 14 →</a></div></details><details class="cmit"><summary class="cmsum"><span class="scn">08</span><span class="cmmid"><span class="scl">Permit speed (by category)</span><span class="sme"><strong>Target:</strong> Simple under 6 weeks, complex under 6 months, rezoning under 9 months</span><span class="sme"><strong>Baseline:</strong> 3–18+ months by type; no benchmark currently published</span></span><svg class="cmchev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary><div class="cmbody"><div class="cmsrc"><span class="cmlbl">Source for the baseline</span>VRBA reporting on permit timelines; City of Victoria publishes no benchmark to compare against</div><a class="dlink" href="measures.html#m7">Delivered by Measure 7 →</a></div></details><details class="cmit"><summary class="cmsum"><span class="scn">09</span><span class="cmmid"><span class="scl">Downtown vacancy</span><span class="sme"><strong>Target:</strong> 5% storefronts</span><span class="sme"><strong>Baseline:</strong> ~11% (current)</span></span><svg class="cmchev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary><div class="cmbody"><div class="cmsrc"><span class="cmlbl">Source for the baseline</span>DVBA 2025 downtown survey; CHEK News on Pandora Avenue vacancy</div><a class="dlink" href="measures.html#m71">Delivered by Measure 71 →</a></div></details><details class="cmit"><summary class="cmsum"><span class="scn">10</span><span class="cmmid"><span class="scl">Dangerous intersections redesigned</span><span class="sme"><strong>Target:</strong> All 10 of the top 10 by collision history, redesigned or reconstructed within the term</span><span class="sme"><strong>Baseline:</strong> 0 redesigned, and no published collision inventory exists, so the top 10 has never been named</span></span><svg class="cmchev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary><div class="cmbody"><div class="cmsrc"><span class="cmlbl">Source for the baseline</span>No external source — the City has not published the collision-history inventory this baseline would be drawn from, which is itself the finding</div><a class="dlink" href="measures.html#m19">Delivered by Measure 19 →</a></div></details><details class="cmit"><summary class="cmsum"><span class="scn">11</span><span class="cmmid"><span class="scl">Transparency delivered</span><span class="sme"><strong>Target:</strong> Lobbyist registry live, FOI application fee abolished, Integrity Commissioner appointed, and all 16 quarterly reports published within 30 days of quarter end</span><span class="sme"><strong>Baseline:</strong> 0 of 3 in place, and no quarterly performance report is published at all</span></span><svg class="cmchev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary><div class="cmbody"><div class="cmsrc"><span class="cmlbl">Source for the baseline</span>No external source — an absence of these three mechanisms, verifiable against the City's own public records</div><a class="dlink" href="measures.html#m79b">Delivered by Measure 79b →</a></div></details><details class="cmit"><summary class="cmsum"><span class="scn">12</span><span class="cmmid"><span class="scl">Climate and canopy</span><span class="sme"><strong>Target:</strong> -50% GHG by 2030 (vs 2007); 35% tree canopy by 2035</span><span class="sme"><strong>Baseline:</strong> -31% achieved, 19 pts to go; canopy roughly 30%</span></span><svg class="cmchev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></summary><div class="cmbody"><div class="cmsrc"><span class="cmlbl">Source for the baseline</span>City of Victoria climate action reporting</div><a class="dlink" href="measures.html#m58">Delivered by Measure 58 →</a></div></details><!--/PRERENDER:ccrd--></div>
-<p style="margin-top:16px;font-size:13px;color:#57534e;font-style:italic"><strong style="color:var(--navy);font-style:normal">Every quarter, the scorecard is published. No excuses. No spin. Just results.</strong> Row 11 is the one that makes the other eleven checkable: a framework that demands quarterly outcome reporting from a council and does not put its own reporting record on its own scorecard is asking for a standard it has not accepted.</p>
-<p style="margin-top:12px;font-size:13px;color:#57534e;font-style:italic">The twelve are the headline set. The full instrument panel behind them — every indicator with its baseline, source, direction and cadence — is <a href="kpis.html" style="color:var(--navy)">2030, Measured: the KPI Library</a>. Where a KPI and a Commitment could be read to conflict, <strong style="color:var(--navy);font-style:normal">the Commitment governs</strong>.</p>
-<p style="margin-top:8px;font-size:13px;color:#57534e;font-style:italic">This framework holds no office and cannot publish a report on its own — the commitment is to whichever candidate adopts it. <strong style="color:var(--navy);font-style:normal">Where and when:</strong> if a candidate elected October 17, 2026 adopts this framework, the first quarterly report falls due within 30 days of the end of their first full quarter in office — Q1 2027, so by <strong style="color:var(--navy);font-style:normal">early April 2027</strong> — published on the City's own website per Measure 67, with this page updated to link it.</p>
-</section>
-
 <section id="balance" data-jump-label="Balance Sheet" class="sc rv">
 <div class="se">◆ How we pay for it</div>
 <h2 class="st">The Balance Sheet.</h2>
 <p class="si">A safer, cleaner, greener, better-managed city — with tax increases on a credible glide path back to inflation + growth. Spend smarter, not more.</p>
-<div class="bg2">
-<div>
-<div class="se" style="margin-top:0">◆ Savings &amp; New Revenue (Steady-State)</div>
-<div class="br"><span class="bl">Competitive bidding for services</span><span class="ba">$2.4M/yr</span></div>
-<div class="br"><span class="bl">Zero-based budget review</span><span class="ba">$3–6M/yr</span></div>
-<div class="br"><span class="bl">Administrative efficiency (attrition + technology)</span><span class="ba">$1.9–4M/yr</span></div>
-<div class="br"><span class="bl">New property tax from 12,000 homes (peak by 2030)</span><span class="ba">$8–15M/yr</span></div>
-<div class="br"><span class="bl">Downtown vacancy reduction (new business tax)</span><span class="ba">$0.5–1M/yr</span></div>
-<div class="br"><span class="bl">Smart streetlighting (energy savings)</span><span class="ba">$0.5–1M/yr</span></div>
-<div class="br"><span class="bl">Climate investments (avoided emergency costs)</span><span class="ba">$1–2M/yr</span></div>
-<div class="br aj"><span class="bl">Less: cumulative sub-measure net cost, v1.1–v1.9</span><span class="ba">−$4.4–6.3M/yr</span></div>
-<div class="bt"><span class="btl">Net fiscal headroom (central)</span><span class="bta">$4.3–14.0M / yr</span></div>
-<div class="br aj" style="margin-top:10px"><span class="bl">Pessimistic case (low savings, high costs)</span><span class="ba">≈ break-even</span></div>
-<p style="margin-top:20px;font-size:13px;color:#57534e;line-height:1.6;font-style:italic"><strong style="color:var(--navy);font-style:normal">Honest about timing:</strong> these are steady-state figures at the end of a four-year implementation. Year-one savings are a fraction, and the Year 1 cap is the binding constraint rather than a comfortable one. The full line-by-line math is in the <a href="savings.html" style="color:var(--navy)">Savings &amp; Revenue Analysis</a>.</p>
-<div class="callout gold" style="margin-top:18px">
-<div class="lbl">◆ Deliberately excluded from every figure above</div>
-<p style="margin:0 0 8px;font-size:14px;line-height:1.6">Two <strong>gated conditional tiers</strong> — roughly <strong>$450–700K/yr</strong> (v1.8: the M20 AAA maintenance standard, end-of-trip facilities, and the M23b frequent-network stop standard) and <strong>$500–850K/yr</strong> (v1.9: M26b civilian crisis response, M28d community paramedicine, M80c Local Area Plan capacity). Each proceeds in Year 2 only if the M15, M65 and M68 savings are verified as tracking at the end of Year 1; the two clinical measures additionally require a confirmed provincial or health-authority cost-share partner, because municipally funding a clinical service outright is the downloading M70b exists to refuse.</p>
-<p style="margin:0;font-size:14px;line-height:1.6">Two <strong>capital items</strong>: the M64b City-owned seismic retrofit, uncosted pending inventory, and the M45c signature public-space project ($40–80M), referendum-gated under M74. Neither is quietly netted into the headroom.</p>
-</div>
-<p style="margin-top:16px;font-size:13px;color:#57534e;line-height:1.6;font-style:italic">These are commitments to spend savings that arrive, not savings that are hoped for. A framework that quietly spends its own projected savings before they arrive is doing exactly what it criticizes the current council for doing.</p>
-</div>
 <div class="gb">
 <div class="gl">◆ The Tax Glide Path</div>
 <div class="gi rs"><div class="gil">2026 residential, as levied</div><div class="giv">9.34%</div></div>
@@ -721,7 +503,6 @@ h2.adt em{font-style:italic;color:var(--gold-ink);font-weight:400}
 <div class="gi"><div class="gil">Year 2 (cap)</div><div class="giv">≤ 5.0%</div></div>
 <div class="gi gd"><div class="gil">Year 3+ (target)</div><div class="giv">~3.5%</div><div class="gis">CPI + population growth</div></div>
 <p style="font-size:12px;color:#57534e;font-style:italic;line-height:1.5;margin:16px 0 0">The cap is on the <strong>residential rate</strong>, not total revenue — a cap on the total would let a council deliver a 9% homeowner bill and describe it as 6.5%. Any increase above the cap requires a supermajority of Council, <strong>6 of the 9 members</strong> (the mayor plus 8 councillors), with a public explanation on the record. The same 6-of-9 standard governs the M66b refund, the M66c debt rule, the M66d utility discipline and the M50b arts floor.</p>
-</div>
 </div>
 
 <!-- The four points on the moss line are the four figures in the Tax Glide
@@ -782,60 +563,143 @@ h2.adt em{font-style:italic;color:var(--gold-ink);font-weight:400}
 </svg>
 <figcaption class="fig-c">Source: the Tax Glide Path above. <strong>The reference line is not a forecast</strong> — it is the 2026 rate drawn flat so the committed descent can be read against something. The 2026 rate meant <strong>+$323</strong> on a median home assessed at $1,015,000, a figure published in the <a href="summary.html#math">One-Page Summary</a>. It is not carried across the later years, because what a capped rate costs then depends on assessed values nobody can responsibly predict.</figcaption>
 </figure>
-
-<!-- Top-level categories from the summary table in the Savings & Revenue
-     Analysis, not the itemised list above: those items carry qualifiers that
-     make them un-summable, and a chart that appeared to add them to the
-     published headroom would be claiming arithmetic the analysis does not.
-     These three reconcile exactly — 8.2 + 9.5 − 13.3 = 4.4, and
-     14 + 18 − 18.0 = 14.0 — and the pessimistic pairing is the same numbers
-     with low inflows against high outflows: 8.2 + 9.5 − 18.0 = −0.3. -->
-<figure class="fig rv" style="max-width:none">
-<div class="fig-e">◆ Where the headroom comes from</div>
-<h2 class="fig-t" style="border:none;padding:0">Every range published, including the one that hurts.</h2>
-<p class="fig-s">Annual figures at steady state, at the end of a four-year implementation. Bars show each published low-to-high band on a shared scale.</p>
-<div class="fig-l">
-<span><i class="k-com"></i>Savings and new revenue</span>
-<span><i class="k-now"></i>New costs and debt service</span>
-</div>
-
-<div class="rng">
-<div class="rng-scale" aria-hidden="true"><span></span><span class="sc-in"><span style="left:0%">−$20M</span><span style="left:25%">−$10M</span><span style="left:50%">0</span><span style="left:75%">+$10M</span><span style="left:100%">+$20M</span></span><span></span></div>
-
-<div class="rng-r pos">
-<div class="rng-l">Operating savings</div>
-<div class="rng-t"><span class="rng-z" style="left:50%"></span><i style="left:70.5%;width:14.5%"></i></div>
-<div class="rng-v">+$8.2–14M</div>
-</div>
-
-<div class="rng-r pos">
-<div class="rng-l">New ongoing operating revenue and avoided costs</div>
-<div class="rng-t"><span class="rng-z" style="left:50%"></span><i style="left:73.75%;width:21.25%"></i></div>
-<div class="rng-v">+$9.5–18M</div>
-</div>
-
-<div class="rng-r neg">
-<div class="rng-l">New recurring operating costs plus capital debt service</div>
-<div class="rng-t"><span class="rng-z" style="left:50%"></span><i style="left:5%;width:11.75%"></i></div>
-<div class="rng-v">−$13.3–18.0M</div>
-</div>
-
-<div class="rng-r net">
-<div class="rng-l">Net fiscal headroom — central pairing</div>
-<div class="rng-t"><span class="rng-z" style="left:50%"></span><i style="left:60.75%;width:24.25%"></i></div>
-<div class="rng-v">+$4.3–14.0M</div>
-</div>
-
-<div class="rng-r neg">
-<div class="rng-l">Net fiscal headroom — pessimistic pairing <em style="color:#57534e;font-style:italic">(low savings against high costs)</em></div>
-<div class="rng-t"><span class="rng-z" style="left:50%"></span><i style="left:49.25%;width:.75%"></i></div>
-<div class="rng-v">≈ −$0.3M</div>
-</div>
-</div>
-<figcaption class="fig-c">Source: the summary table in the <a href="savings.html">Savings &amp; Revenue Analysis</a>, which carries the line-by-line derivation. <strong>The pessimistic pairing is published on purpose</strong>: pair the low savings against the high costs and the headroom is roughly break-even. Any analysis quoting only the central range is being generous to us.</figcaption>
-</figure>
 </section>
 
+<details class="parked">
+<summary>The rest of the home document — method, 2030, neighbourhoods, FAQ, subscribe</summary>
+<div class="parked-in">
+<section id="pillars" data-jump-label="Five Pillars" class="sc rv">
+<div class="se">◆ Structure</div>
+<h2 class="st">Five Pillars · One Foundation</h2>
+<p class="si">Every measure belongs to one of five pillars, anchored by a foundational commitment to right relations with the host Nations. Every one costed.</p>
+<div id="pgd" class="pg"><!--PRERENDER:pgd--><a class="pc" href="measures.html?pillar=foundation" style="border-top:3px solid #7A6B3D"><div class="pch"><span class="pce">🌿</span><span class="pct" style="color:#7D6E41">5 measures</span></div><div class="pti" style="color:#7A6B3D">Honouring the Host Nations</div><div class="pd">Government-to-government tables, Indigenous procurement, place names, cultural protocols, urban Indigenous services.</div><div class="pca" style="color:#7D6E41">View measures <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></a><a class="pc" href="measures.html?pillar=liveable" style="border-top:3px solid #1A3668"><div class="pch"><span class="pce">🏠</span><span class="pct" style="color:#5A6E92">33 measures</span></div><div class="pti" style="color:#1A3668">A Liveable City</div><div class="pd">Housing, families, childcare, cleanliness, mobility, accessibility.</div><div class="pca" style="color:#5A6E92">View measures <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></a><a class="pc" href="measures.html?pillar=safe" style="border-top:3px solid #B5341F"><div class="pch"><span class="pce">🛡️</span><span class="pct" style="color:#BC4835">26 measures</span></div><div class="pti" style="color:#B5341F">A Safe City</div><div class="pd">Public safety, order, accountability, modern infrastructure, Vision Zero.</div><div class="pca" style="color:#BC4835">View measures <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></a><a class="pc" href="measures.html?pillar=beautiful" style="border-top:3px solid #227247"><div class="pch"><span class="pce">🌳</span><span class="pct" style="color:#317C54">32 measures</span></div><div class="pti" style="color:#227247">A Beautiful City</div><div class="pd">Heritage, parks, urban aesthetics, technology leadership, climate resilience.</div><div class="pca" style="color:#317C54">View measures <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></a><a class="pc" href="measures.html?pillar=managed" style="border-top:3px solid #8B6914"><div class="pch"><span class="pce">💰</span><span class="pct" style="color:#8B6914">21 measures</span></div><div class="pti" style="color:#8B6914">A Well-Managed City</div><div class="pd">Taxes, permits, performance, fiscal discipline, cost of living.</div><div class="pca" style="color:#8B6914">View measures <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></a><a class="pc" href="measures.html?pillar=democratic" style="border-top:3px solid #3D5A8C"><div class="pch"><span class="pce">🗳️</span><span class="pct" style="color:#566F9B">15 measures</span></div><div class="pti" style="color:#3D5A8C">A Democratic City</div><div class="pd">Referendums, transparency, participation, public-visualization tools.</div><div class="pca" style="color:#566F9B">View measures <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></a><!--/PRERENDER:pgd--></div>
+<div class="fnd rv">
+<div class="lbl">◆ A Foundation, Not a Pillar — Honouring the Host Nations</div>
+<p>Victoria is built on the unceded traditional territories of the lək̓ʷəŋən-speaking peoples — today represented by the <strong>Songhees Nation</strong> and the <strong>Esquimalt Nation</strong>. Any serious program for the City must recognize this and build it into how the City operates, not just how it speaks.</p>
+<p>The full program includes specific measures on government-to-government working tables, Indigenous procurement, lək̓ʷəŋən place names, cultural protocols, and urban Indigenous services. <a href="measures.html?pillar=foundation">See Foundation measures M1–M5 →</a></p>
+</div>
+</section>
+<section id="how-to-use" data-jump-label="How to Use" class="sc rv">
+<div class="se">◆ How to Engage</div>
+<h2 class="st">How to use this framework.</h2>
+<p class="si">There is <strong>no exclusivity</strong> and no campaign attached to this document. The goal is to raise the standard of debate — to make it normal for Victoria candidates to publish costed, measurable, sourced platforms with quarterly accountability.</p>
+<div class="hug">
+<div class="huc">
+<div class="hut">For Candidates</div>
+<div class="hux">If you are running for Victoria City Council or Mayor in October 2026:</div>
+<ul>
+<li><strong>Endorse</strong> the framework in whole or in part</li>
+<li><strong>Adapt</strong> individual measures to your platform</li>
+<li><strong>Challenge</strong> the cost estimates and source links — publish your own</li>
+<li>Multiple candidates can run on these ideas, and they should</li>
+</ul>
+<a href="endorse.html" class="bn bnp">Endorsement Pack →</a>
+</div>
+<div class="huc">
+<div class="hut">For Residents</div>
+<div class="hux">Hold candidates to a higher standard:</div>
+<ul>
+<li><strong>Start</strong> with the <a href="summary.html">one-page summary</a> — the 60-second version</li>
+<li><strong>Then read</strong> the measures on the issues you care about</li>
+<li><strong>Suggest</strong> improvements — every measure is open to criticism and correction</li>
+<li data-cand><strong>Ask</strong> your candidates which specific measures they support — or check the <a href="scorecard.html">candidate scorecard</a> first, to see who already has</li>
+<li><strong>Share</strong> with neighbours and community associations</li>
+</ul>
+<a href="summary.html" class="bn bnp">One-page summary →</a>
+</div>
+<div class="huc">
+<div class="hut">For Practitioners</div>
+<div class="hux">Planners, police, builders, social workers, fiscal analysts, public health workers, infrastructure engineers:</div>
+<ul>
+<li>This framework was drafted from <strong>publicly available research</strong> and reporting</li>
+<li>If you have technical expertise and want to contribute corrections or new measures, please contact us</li>
+<li>Credit attaches to the underlying idea, not the framework</li>
+</ul>
+<a href="mailto:info@acitythatworks.ca" class="bn bnp">Get in touch →</a>
+</div>
+</div>
+</section>
+<section id="candidates" data-cand data-jump-label="Where Candidates Stand" class="sc rv">
+<div class="se">◆ The Ballot</div>
+<h2 class="st">Where the candidates stand.</h2>
+<p class="si">Every declared Victoria candidate, graded against this framework — <strong>15 candidates, 55 topics, 225 scored marks</strong>. Since <strong>Matrix v3.0</strong> every mark is the output of two questions asked in order, so the same evidence produces the same mark regardless of who reads it. <strong>A grade is computed, not assigned</strong>, and every number can be recomputed from the published grid. Four candidates are listed but not scored: nothing locatable exists for them, which is <em>unknown</em>, not <em>empty</em>.</p>
+<p class="si" style="font-size:15px;margin-top:12px"><strong>The scorecard publishes two defects in its own scale</strong>, and withholds four letter grades because of one of them. It also states the caveat that matters most: most candidates publish platform detail in September, so a matrix scored in August <strong>systematically under-reports challengers relative to incumbents</strong>. <a href="scorecard.html#defects" style="color:var(--navy)">Read the defects first</a>.</p>
+<a href="scorecard.html" class="bn bnp" style="margin-top:20px">See the Candidate Scorecard <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+</section>
+<div id="audience" data-jump-label="By Audience" class="rv" style="margin-top:64px">
+<div class="se">◆ By Audience</div>
+<h2 class="st" style="font-size:28px;max-width:640px">Whoever you are, Victoria should work for you.</h2>
+<div class="ag">
+<div class="ac"><div class="act"><a href="for-families.html">For Families</a></div><div class="acx">Childcare, school safety, parks, housing, food quality in schools.</div><div class="acm"><b>Start with</b> <a href="measures.html#m12">M12</a> <a href="measures.html#m13">M13</a> <a href="measures.html#m13b">M13b</a> <a href="measures.html#m13d">M13d</a> <a href="measures.html#m40">M40</a> <a href="measures.html#m49">M49</a></div><a class="acr" href="for-families.html">Read For Families →</a></div>
+<div class="ac"><div class="act"><a href="for-renters.html">For Renters</a></div><div class="acx">Tenant protections, vacancy targets, affordability, transparent waitlists.</div><div class="acm"><b>Start with</b> <a href="measures.html#m8">M8</a> <a href="measures.html#m9">M9</a> <a href="measures.html#m9b">M9b</a> <a href="measures.html#m10">M10</a> <a href="measures.html#m64">M64</a></div><a class="acr" href="for-renters.html">Read For Renters →</a></div>
+<div class="ac"><div class="act"><a href="for-business.html">For Business Owners</a></div><div class="acx">Permits, tax base, downtown revival, free first-hour parking.</div><div class="acm"><b>Start with</b> <a href="measures.html#m7">M7</a> <a href="measures.html#m28b">M28b</a> <a href="measures.html#m71">M71</a> <a href="measures.html#m72">M72</a> <a href="measures.html#m73b">M73b</a> <a href="measures.html#m75">M75</a></div><a class="acr" href="for-business.html">Read For Business Owners →</a></div>
+<div class="ac"><div class="act"><a href="for-cyclists.html">For Cyclists &amp; Transit Users</a></div><div class="acx">Bike network, RapidBus, contactless fares, adaptive signals.</div><div class="acm"><b>Start with</b> <a href="measures.html#m19">M19</a> <a href="measures.html#m20">M20</a> <a href="measures.html#m21">M21</a> <a href="measures.html#m23">M23</a> <a href="measures.html#m41">M41</a></div><a class="acr" href="for-cyclists.html">Read For Cyclists &amp; Transit Users →</a></div>
+<div class="ac"><div class="act"><a href="for-seniors.html">For Seniors</a></div><div class="acx">Safety, accessibility, neighbourhood services, modern lighting.</div><div class="acm"><b>Start with</b> <a href="measures.html#m25b">M25b</a> <a href="measures.html#m26">M26</a> <a href="measures.html#m27">M27</a> <a href="measures.html#m37">M37</a> <a href="measures.html#m64">M64</a></div><a class="acr" href="for-seniors.html">Read For Seniors →</a></div>
+<div class="ac"><div class="act"><a href="for-homeowners.html">For Homeowners</a></div><div class="acx">Property tax restraint, heritage protection, infrastructure, homeownership pathways.</div><div class="acm"><b>Start with</b> <a href="measures.html#m25">M25</a> <a href="measures.html#m43">M43</a> <a href="measures.html#m64b">M64b</a> <a href="measures.html#m66">M66</a> <a href="measures.html#m66b">M66b</a> <a href="measures.html#m76">M76</a></div><a class="acr" href="for-homeowners.html">Read For Homeowners →</a></div>
+</div>
+</div>
+<section id="method" data-jump-label="The Method" class="sc rv">
+<div class="se">◆ How this framework was built</div>
+<h2 class="st">0% ideology. 100% pragmatic.</h2>
+<p class="si">We started where the truth is most visible: the budget. Politicians make promises; numbers don't lie. Victoria's operating budget grew <strong>31.4% in three years</strong>, from $300.0M in 2023 to the <strong>$394.1M adopted for 2026</strong>, alongside <strong>$160.1M in 2026 capital improvements</strong> (both figures from the 2026–2030 Financial Plan adopted May 7, 2026) — with VicPD's budget nearly doubling in a decade, from $50.6M to $86.8M requested for 2026, and no competitive benchmarking, AI, or smart infrastructure deployed. For every problem a Victorian faces daily, we applied the same six-step method.</p>
+<div class="mg">
+<div class="ms"><div class="msn">01</div><div><div class="mst">Identify the root cause</div><div class="msx">Not the symptom — the structural reason the problem exists.</div></div></div>
+<div class="ms"><div class="msn">02</div><div><div class="mst">Assess what the City can actually do</div><div class="msx">Municipalities have specific powers. Don't promise what requires provincial or federal action.</div></div></div>
+<div class="ms"><div class="msn">03</div><div><div class="mst">Study what works elsewhere</div><div class="msx">Pittsburgh's Surtrac: −25% travel time, −21% emissions. Phoenix managed competition: $25M+ saved 1978–88. Calgary SAVE: $74M targeted, $60M found. We also study what <em>doesn't</em> translate — Helsinki, Singapore and Boston built city-scale digital twins, but Victoria is 7–25× smaller, so we start with the data layers they built first.</div></div></div>
+<div class="ms"><div class="msn">04</div><div><div class="mst">Measure with technology</div><div class="msx">Use data, sensors, and digital tools to understand before deciding.</div></div></div>
+<div class="ms"><div class="msn">05</div><div><div class="mst">Build solutions with experts</div><div class="msx">Engineers, police, builders, social workers, business owners, neighbourhood associations, residents.</div></div></div>
+<div class="ms"><div class="msn">06</div><div><div class="mst">Cost every measure</div><div class="msx">Direct and indirect impacts, costs and revenues. Every single proposal has a budget impact estimate.</div></div></div>
+</div>
+<p class="si" style="margin-top:22px;font-size:15px"><strong>The method has a delivery half.</strong> Who owns each measure, what happens in the first 100 days, and what publishes every quarter are set out in <a href="implementation.html" style="color:var(--navy)">Implementation &amp; Governance</a>.</p>
+</section>
+<div id="process" data-jump-label="The 5-Step Process" class="rv" style="margin-top:64px">
+<div class="se">◆ The 5-Step Process</div>
+<h2 class="st" style="font-size:26px">No major new public project without these five steps.</h2>
+<p class="si" style="margin-bottom:0">The Dowler Place file proved why this matters. Under this framework, no project skips any step.</p>
+<div class="fvg">
+<div class="fvc"><div class="fvn">STEP 01</div><div class="fvt">Local consultation</div><div class="fvx">Problems, pain points, what needs to improve.</div></div>
+<div class="fvc"><div class="fvn">STEP 02</div><div class="fvt">Expert design</div><div class="fvx">Engineers, planners, affected residents.</div></div>
+<div class="fvc"><div class="fvn">STEP 03</div><div class="fvt">Visualize &amp; analyze</div><div class="fvx">AI imagery (M53b) + GIS traffic, utility and infrastructure analysis (M53). See the effects on adjacent streets and businesses before a dollar is spent.</div></div>
+<div class="fvc"><div class="fvn">STEP 04</div><div class="fvt">Referendum if &gt; $25M</div><div class="fvx">Binding public vote on new (non-lifecycle) capital, under the Community Charter — Assent Voting or the Alternative Approval Process.</div></div>
+<div class="fvc"><div class="fvn">STEP 05</div><div class="fvt">Quarterly reports</div><div class="fvx">On time, on budget, or explain why not.</div></div>
+</div>
+</div>
+<section id="v2030" data-jump-label="Victoria in 2030" class="sc rv">
+<div class="se">◆ What delivery looks like</div>
+<h2 class="st">Victoria in <em>2030.</em></h2>
+<p class="si" style="font-style:italic">Everything below is the result of the measures in this framework being delivered. It is written in the present tense because that is the point of a plan.</p>
+<div class="v30">
+<p><strong>Travellers already rank Victoria among the best small cities in the world. By 2030, it is also the best run.</strong> That is the change on offer. Not more money. Management.</p>
+<p>It is a Saturday morning in June 2030 and you walk Pandora from Cook Street to the harbour. Four years ago this was the street Victoria was known for, for all the wrong reasons. Today it is a linear park. Trees, benches, kids on a playground, storefronts open on both sides. <strong>Nobody was pushed to the next block to make this happen.</strong> Housing came first, the province paid its share, and the City published the count every quarter until the unsheltered number fell by half. Then Victoria voted, on a ballot, to build the park. It opened on time and on budget because every invoice was public.</p>
+<p>Where the park meets the water, you keep walking. The waterfront walkway runs further than it did, and the signs carry the lək̓ʷəŋən names first. The continuous Inner Harbour promenade, runner-up on the signature-project ballot, is next on the list. <strong>A city that delivers one project on time and on budget earns the mandate to build another.</strong></p>
+<p>None of this happened by luck. It happened because Victoria changed how it is run.</p>
+<p>In 2030, Victoria is the city that <strong>refunds you when it over-collects your taxes</strong>. The credit lands on your notice, not in a reserve. That is Measure 66b, written so a later council cannot quietly reverse it. Tax increases stepped down each year until they matched inflation plus growth, and the only new debt is debt voters approved on a ballot.</p>
+<p><strong>Your permit answer comes in writing.</strong> A date, published targets, quarterly results. Builders stopped routing around Victoria, 12,000 homes were approved, and most of them got built.</p>
+<p>Every capital project over $25 million goes to the voters. Crystal Pool proved it in 2025, and the signature ballot proved it again: <strong>residents say yes to good projects. They just want to be asked.</strong></p>
+<p>And the city works at street level. A bylaw officer answers at 9 PM. Graffiti is gone in 48 hours. The streets are lit all night. Downtown vacancy sits near 5%, and the storefronts that were dark in 2026 have tenants.</p>
+<p>Every quarter, the dashboard publishes every number, green or red, no spin. <strong>You do not have to trust anyone. You can check.</strong></p>
+<p>Victoria’s budget grew 31% in three years, from $300 million to $394 million, and the city did not get 31% better. <strong>That gap is the mandate.</strong> Close it, and everything above is paid for without a single new tax. Every line here has a measure, a cost, and a date behind it. <strong>If the numbers do not move, you will know by 2028, not at the next election.</strong></p>
+<p class="v30end"><strong>No council has ever offered Victoria that deal. This framework does.</strong> The 12 Commitments below are how you check whether we did it.</p>
+</div>
+</section>
+<div id="jurisdiction" data-jump-label="What the City Controls" class="rv" style="margin-top:64px">
+<div class="se">◆ Separation of Powers</div>
+<h2 class="st" style="font-size:26px">What the City actually controls.</h2>
+<p class="si">Before making promises, we must be honest about what the City of Victoria actually controls. Many of the problems residents face — healthcare, criminal sentencing, income support — fall under provincial or federal jurisdiction. We advocate aggressively to senior governments for action in their domains, but we never promise what isn't ours to deliver. <a href="city-hall.html" style="color:var(--navy)">See the full plain-language guide →</a></p>
+<div class="jg jg4">
+<div class="jc cy"><div class="jt">City of Victoria controls</div><div class="jx">Land use &amp; zoning · building permits · property taxes · bylaws &amp; enforcement · municipal policing (via VicPD Board) · parks &amp; recreation · local roads &amp; sidewalks · water &amp; sewer · garbage collection · local planning · business licences · public art &amp; heritage designation</div></div>
+<div class="jc crd"><div class="jt">Capital Regional District controls</div><div class="jx">Regional water supply &amp; treatment · regional wastewater · solid-waste disposal · regional parks · regional housing. You pay for these through utility rates and requisitions, not the property tax rate — and Victoria's CRD directors are elected on the same ballot as council. <strong>M66d reports it; M70c governs Victoria's posture toward it.</strong></div></div>
+<div class="jc ot"><div class="jt">Province of BC controls</div><div class="jx">Healthcare · K-12 education · social housing funding (BC Housing) · welfare &amp; income assistance · courts &amp; sentencing · major transit (BC Transit) · highways · building code · vacancy &amp; speculation taxes</div></div>
+<div class="jc ot"><div class="jt">Federal government controls</div><div class="jx">Immigration · criminal law · employment insurance · Old Age Security · major infrastructure grants · Indigenous affairs (Crown-Nation relationship) · ports &amp; harbours</div></div>
+</div>
+<p class="si" style="font-size:15px;margin-top:16px">A framework that discusses only the City and the senior governments leaves out a large and fast-growing share of what a household actually pays. That is why the regional level is on this diagram.</p>
+</div>
+<div class="rv" style="margin-top:64px">
+<div class="se">◆ The Substance</div>
+<h2 class="st" style="font-size:28px">Every measure, in full.</h2>
+<p class="si">Every measure, with its full text and budget impact, lives on its own page — <strong>the public number is the 12 Commitments scorecard below</strong>, reported quarterly; the framework carries far more than that, and deliberately no longer states a total, because three earlier versions published a count that did not survive a hand count.</p>
+<a href="measures.html" class="bn bnp" style="margin-top:20px">Read every measure <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+</div>
 <div id="principles" data-jump-label="Principles" class="rv" style="margin-top:64px">
 <div class="se">◆ Principles</div>
 <h2 class="st" style="font-size:28px">What we are — and what we're not.</h2>
@@ -890,7 +754,6 @@ h2.adt em{font-style:italic;color:var(--gold-ink);font-weight:400}
 </div>
 </div>
 </div>
-
 <section id="neighbourhoods" data-jump-label="Neighbourhood Priorities" class="sc rv">
 <div class="se">◆ Implementation</div>
 <h2 class="st">Neighbourhood priorities.</h2>
@@ -923,14 +786,12 @@ h2.adt em{font-style:italic;color:var(--gold-ink);font-weight:400}
 <!-- NB:HOME:END -->
 <a href="neighbourhoods.html" class="bn bnp" style="margin-top:22px">All neighbourhood pages <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
 </section>
-
 <section id="faq" data-jump-label="Q&amp;A" class="sc rv">
 <div class="se">◆ Responses to common criticisms</div>
 <h2 class="st">The honest answers.</h2>
 <p class="si">The questions we hear most — and the answers we stand by. More are answered on the <a href="faq.html" style="color:var(--navy)">full FAQ page</a>.</p>
 <div id="fqc" class="fql"><!--PRERENDER:fqc--><details class="fqi"><summary class="fqs"><span class="fqq">"You're too pro-business / anti-environment"</span><span class="fqp"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></summary><div class="fqa">This framework supports both business and the environment. Small businesses are the backbone of our community, and practical environmental policies work better than symbolic ones. The framework includes 50% GHG reduction by 2030, 5,000 new trees, 60% green mobility, and Climate Friendly Homes expansion, with published uptake numbers, which the current council has not provided. That is not anti-environment. It is results-oriented environmentalism.</div></details><details class="fqi"><summary class="fqs"><span class="fqq">"You're cutting services / austerity"</span><span class="fqp"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></summary><div class="fqa">We are not cutting services. We are ensuring every dollar delivers value. Good management isn't austerity, it's responsibility. Every dollar saved through zero-based budgeting and competitive bidding gets redirected to frontline services: more bylaw officers, faster permits, cleaner streets, modern infrastructure.</div></details><details class="fqi"><summary class="fqs"><span class="fqq">"You don't care about homelessness"</span><span class="fqp"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></summary><div class="fqa">Compassion without accountability helps no one. This framework commits to a 50% reduction in unsheltered homelessness through Housing-First, supportive housing, wraparound services, and relentless advocacy to the Province. But we also enforce the rules, because residents, businesses and vulnerable people themselves deserve safe, orderly public spaces. The phased implementation plan proves we understand you cannot enforce without capacity.</div></details><details class="fqi"><summary class="fqs"><span class="fqq">"You just want to privatize everything"</span><span class="fqp"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></summary><div class="fqa">We want competitive testing for the services where cost and quality can actually be measured, which means waste collection and street cleaning. The test runs in both directions against the same specification, so the cheaper competent option wins whether that turns out to be the in-house crew or a contractor. Workers are protected with mandatory re-employment clauses. The City retains oversight and audits performance. The Phoenix &quot;managed competition&quot; model even lets City workers bid against private firms to keep services public when public delivery is competitive. This is not ideology. It is the same approach used in cities across Canada and the world, by governments of every political stripe.</div></details><details class="fqi"><summary class="fqs"><span class="fqq">"Referendums slow everything down"</span><span class="fqp"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></summary><div class="fqa">Only new (non-lifecycle) capital projects over $25M go to referendum, within the BC statutory framework. Lifecycle maintenance is excluded so essential infrastructure work proceeds. That means a handful of major new-build decisions per term, not every speed bump and park bench. The Crystal Pool referendum (February 2025, 58.7% Yes) proved Victorians can make informed decisions on major spending. When the City spends big on new capital, residents should decide.</div></details><details class="fqi"><summary class="fqs"><span class="fqq">"You're going to put surveillance in our streetlights"</span><span class="fqp"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></summary><div class="fqa">No. This framework explicitly &lt;em&gt;rejects&lt;/em&gt; audio surveillance, behavioural AI, gunshot/scream detection, and any &quot;directed brightness at suspect&quot; functionality on public streetlights. The streetlight measure (Measure 30) is the Kelowna/Halifax model: LED conversion, IoT-connected platform for outage detection and brightness modulation, optional environmental sensors. The crime-reduction benefit of streetlighting itself is real and requires no surveillance: about 14% on the updated 2022 systematic-review evidence, revised down from 21% in the earlier review. We cite the lower, current number deliberately.</div></details><details class="fqi"><summary class="fqs"><span class="fqq">"How does this differ from a candidate platform?"</span><span class="fqp"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></summary><div class="fqa">This is a framework, not a campaign. It is open for adoption by any candidate, in whole or in part. Multiple candidates can run on these ideas, and they should. The goal is to raise the standard of debate, and to make costed, sourced, measurable platforms with quarterly accountability the new normal in Victoria.</div></details><!--/PRERENDER:fqc--></div>
 </section>
-
 <section id="adopt" data-jump-label="Endorse / Subscribe" class="ad">
 <div class="adh rv">
 <div class="se">◆ The Choice on October 17, 2026</div>
@@ -959,12 +820,89 @@ h2.adt em{font-style:italic;color:var(--gold-ink);font-weight:400}
 <div class="adl">
 <a href="mailto:info@acitythatworks.ca"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> info@acitythatworks.ca</a>
 <a href="endorse.html"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg> Candidate Endorsement Pack →</a>
-<a href="comparison.html" data-cand><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg> Candidate Comparison Matrix →</a>
+<a href="comparison.html" data-cand><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg> Evidence store →</a>
 <a href="faq.html"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12" y2="17"/></svg> Frequently Asked Questions →</a>
 </div>
 </div>
 </div>
 </section>
+<section id="balance-detail">
+<div class="bg2">
+<div>
+<div class="se" style="margin-top:0">◆ Savings &amp; New Revenue (Steady-State)</div>
+<div class="br"><span class="bl">Competitive bidding for services</span><span class="ba">$2.4M/yr</span></div>
+<div class="br"><span class="bl">Zero-based budget review</span><span class="ba">$3–6M/yr</span></div>
+<div class="br"><span class="bl">Administrative efficiency (attrition + technology)</span><span class="ba">$1.9–4M/yr</span></div>
+<div class="br"><span class="bl">New property tax from 12,000 homes (peak by 2030)</span><span class="ba">$8–15M/yr</span></div>
+<div class="br"><span class="bl">Downtown vacancy reduction (new business tax)</span><span class="ba">$0.5–1M/yr</span></div>
+<div class="br"><span class="bl">Smart streetlighting (energy savings)</span><span class="ba">$0.5–1M/yr</span></div>
+<div class="br"><span class="bl">Climate investments (avoided emergency costs)</span><span class="ba">$1–2M/yr</span></div>
+<div class="br aj"><span class="bl">Less: cumulative sub-measure net cost, v1.1–v1.9</span><span class="ba">−$4.4–6.3M/yr</span></div>
+<div class="bt"><span class="btl">Net fiscal headroom (central)</span><span class="bta">$4.3–14.0M / yr</span></div>
+<div class="br aj" style="margin-top:10px"><span class="bl">Pessimistic case (low savings, high costs)</span><span class="ba">≈ break-even</span></div>
+<p style="margin-top:20px;font-size:13px;color:#57534e;line-height:1.6;font-style:italic"><strong style="color:var(--navy);font-style:normal">Honest about timing:</strong> these are steady-state figures at the end of a four-year implementation. Year-one savings are a fraction, and the Year 1 cap is the binding constraint rather than a comfortable one. The full line-by-line math is in the <a href="savings.html" style="color:var(--navy)">Savings &amp; Revenue Analysis</a>.</p>
+<div class="callout gold" style="margin-top:18px">
+<div class="lbl">◆ Deliberately excluded from every figure above</div>
+<p style="margin:0 0 8px;font-size:14px;line-height:1.6">Two <strong>gated conditional tiers</strong> — roughly <strong>$450–700K/yr</strong> (v1.8: the M20 AAA maintenance standard, end-of-trip facilities, and the M23b frequent-network stop standard) and <strong>$500–850K/yr</strong> (v1.9: M26b civilian crisis response, M28d community paramedicine, M80c Local Area Plan capacity). Each proceeds in Year 2 only if the M15, M65 and M68 savings are verified as tracking at the end of Year 1; the two clinical measures additionally require a confirmed provincial or health-authority cost-share partner, because municipally funding a clinical service outright is the downloading M70b exists to refuse.</p>
+<p style="margin:0;font-size:14px;line-height:1.6">Two <strong>capital items</strong>: the M64b City-owned seismic retrofit, uncosted pending inventory, and the M45c signature public-space project ($40–80M), referendum-gated under M74. Neither is quietly netted into the headroom.</p>
+</div>
+<p style="margin-top:16px;font-size:13px;color:#57534e;line-height:1.6;font-style:italic">These are commitments to spend savings that arrive, not savings that are hoped for. A framework that quietly spends its own projected savings before they arrive is doing exactly what it criticizes the current council for doing.</p>
+</div>
+
+<!-- Top-level categories from the summary table in the Savings & Revenue
+     Analysis, not the itemised list above: those items carry qualifiers that
+     make them un-summable, and a chart that appeared to add them to the
+     published headroom would be claiming arithmetic the analysis does not.
+     These three reconcile exactly — 8.2 + 9.5 − 13.3 = 4.4, and
+     14 + 18 − 18.0 = 14.0 — and the pessimistic pairing is the same numbers
+     with low inflows against high outflows: 8.2 + 9.5 − 18.0 = −0.3. -->
+<figure class="fig rv" style="max-width:none">
+<div class="fig-e">◆ Where the headroom comes from</div>
+<h2 class="fig-t" style="border:none;padding:0">Every range published, including the one that hurts.</h2>
+<p class="fig-s">Annual figures at steady state, at the end of a four-year implementation. Bars show each published low-to-high band on a shared scale.</p>
+<div class="fig-l">
+<span><i class="k-com"></i>Savings and new revenue</span>
+<span><i class="k-now"></i>New costs and debt service</span>
+</div>
+
+<div class="rng">
+<div class="rng-scale" aria-hidden="true"><span></span><span class="sc-in"><span style="left:0%">−$20M</span><span style="left:25%">−$10M</span><span style="left:50%">0</span><span style="left:75%">+$10M</span><span style="left:100%">+$20M</span></span><span></span></div>
+
+<div class="rng-r pos">
+<div class="rng-l">Operating savings</div>
+<div class="rng-t"><span class="rng-z" style="left:50%"></span><i style="left:70.5%;width:14.5%"></i></div>
+<div class="rng-v">+$8.2–14M</div>
+</div>
+
+<div class="rng-r pos">
+<div class="rng-l">New ongoing operating revenue and avoided costs</div>
+<div class="rng-t"><span class="rng-z" style="left:50%"></span><i style="left:73.75%;width:21.25%"></i></div>
+<div class="rng-v">+$9.5–18M</div>
+</div>
+
+<div class="rng-r neg">
+<div class="rng-l">New recurring operating costs plus capital debt service</div>
+<div class="rng-t"><span class="rng-z" style="left:50%"></span><i style="left:5%;width:11.75%"></i></div>
+<div class="rng-v">−$13.3–18.0M</div>
+</div>
+
+<div class="rng-r net">
+<div class="rng-l">Net fiscal headroom — central pairing</div>
+<div class="rng-t"><span class="rng-z" style="left:50%"></span><i style="left:60.75%;width:24.25%"></i></div>
+<div class="rng-v">+$4.3–14.0M</div>
+</div>
+
+<div class="rng-r neg">
+<div class="rng-l">Net fiscal headroom — pessimistic pairing <em style="color:#57534e;font-style:italic">(low savings against high costs)</em></div>
+<div class="rng-t"><span class="rng-z" style="left:50%"></span><i style="left:49.25%;width:.75%"></i></div>
+<div class="rng-v">≈ −$0.3M</div>
+</div>
+</div>
+<figcaption class="fig-c">Source: the summary table in the <a href="savings.html">Savings &amp; Revenue Analysis</a>, which carries the line-by-line derivation. <strong>The pessimistic pairing is published on purpose</strong>: pair the low savings against the high costs and the headroom is roughly break-even. Any analysis quoting only the central range is being generous to us.</figcaption>
+</figure>
+</section>
+</div>
+</details>
 
 </div>
 </main>
@@ -975,13 +913,12 @@ h2.adt em{font-style:italic;color:var(--gold-ink);font-weight:400}
 </a>
 
 <div id="footer-mount"></div>
-<script src="site.js?v=2"></script>
+<script src="site.js?v=3"></script>
 <!-- Still loaded here (not just on measures.html): this page renders the
      pillar cards (#pgd), the 12 Commitments table (#ctbl/#ccrd) and the home
      Q&A teaser (#fqc) from the same data file. renderMeasures() itself is a
      no-op here since #mctr no longer exists on this page. -->
 <script src="measures.js"></script>
-<script src="jumpnav.js"></script>
 <script>
 /* Quarterly Digest signup — posts to Google Form (entry.533410964) via a hidden
    iframe target. A real form POST is accepted cross-origin; fetch(no-cors) is not. */

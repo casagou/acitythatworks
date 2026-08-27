@@ -19,12 +19,12 @@
   // of six that lives in three hand-maintained copies is a set of six that
   // ends up different in three places.
   var AUDIENCE = [
-    { href: 'for-families.html',   label: 'For Families' },
-    { href: 'for-renters.html',    label: 'For Renters' },
-    { href: 'for-business.html',   label: 'For Business Owners' },
-    { href: 'for-cyclists.html',   label: 'For Cyclists &amp; Transit Users' },
-    { href: 'for-seniors.html',    label: 'For Seniors' },
-    { href: 'for-homeowners.html', label: 'For Homeowners' }
+    { href: '/for-families',   label: 'For Families' },
+    { href: '/for-renters',    label: 'For Renters' },
+    { href: '/for-business',   label: 'For Business Owners' },
+    { href: '/for-cyclists',   label: 'For Cyclists &amp; Transit Users' },
+    { href: '/for-seniors',    label: 'For Seniors' },
+    { href: '/for-homeowners', label: 'For Homeowners' }
   ];
   function audienceLinks() {
     return AUDIENCE.map(function (a) {
@@ -39,11 +39,11 @@
   // three hand-written copies is a set of five that ends up different in
   // three places.
   var ANNEXES = [
-    { href: 'implementation.html', label: 'Implementation &amp; Governance' },
-    { href: 'legal.html',          label: 'Legal Defensibility Annex' },
-    { href: 'partnerships.html',   label: 'Partnership Strategy' },
-    { href: 'kpis.html',           label: '2030, Measured — KPI Library' },
-    { href: 'capital.html',        label: 'Capital Financing Structure' }
+    { href: '/implementation', label: 'Implementation &amp; Governance' },
+    { href: '/legal',          label: 'Legal Defensibility Annex' },
+    { href: '/partnerships',   label: 'Partnership Strategy' },
+    { href: '/kpis',           label: '2030, Measured — KPI Library' },
+    { href: '/capital',        label: 'Capital Financing Structure' }
   ];
   function annexLinks() {
     return ANNEXES.map(function (a) {
@@ -57,9 +57,13 @@
   // at all.
   function candLinks() {
     if (window.ACTW && window.ACTW.candidates === false) { return ''; }
-    return '<a href="comparison.html">Candidate Comparison Matrix</a>' +
-           '<a href="scorecard.html">Candidate Scorecard</a>' +
-           '<a href="profiles.html">Candidate Profiles</a>';
+    return '<a href="/scorecard">Who has answered</a>' +
+           '<a href="/profiles">Candidate Profiles</a>';
+  }
+
+  function evidenceLink() {
+    if (window.ACTW && window.ACTW.candidates === false) { return ''; }
+    return '<a href="/comparison">Evidence store</a>';
   }
 
   function socialLinks(cls) {
@@ -83,12 +87,12 @@
 '<div>' +
 '<div class="fhd">The Framework</div>' +
 '<div class="fls">' +
-'<a href="index.html">Home</a>' +
-'<a href="measures.html">All Measures</a>' +
-'<a href="neighbourhoods.html">Neighbourhoods</a>' +
-'<a href="index.html#scorecard">12 Commitments</a>' +
-'<a href="index.html#balance">Balance Sheet</a>' +
-'<a href="index.html#adopt">Endorse / Subscribe</a>' +
+'<a href="/">Home</a>' +
+'<a href="/measures">All Measures</a>' +
+'<a href="/neighbourhoods">Neighbourhoods</a>' +
+'<a href="/#scorecard">12 Commitments</a>' +
+'<a href="/#balance">The tax glide path</a>' +
+'<a href="/endorse">Endorse / Subscribe</a>' +
 '</div>' +
 '<div class="fhd" style="margin-top:24px">By Audience</div>' +
 '<div class="fls">' + audienceLinks() + '</div>' +
@@ -96,13 +100,14 @@
 '<div>' +
 '<div class="fhd">Detailed Documents</div>' +
 '<div class="fls">' +
-'<a href="summary.html">One-Page Summary</a>' +
-'<a href="savings.html">Savings &amp; Revenue Analysis</a>' +
-'<a href="city-hall.html">How City Hall Works</a>' +
-'<a href="endorse.html">Candidate Endorsement Pack</a>' +
+'<a href="/summary">One-Page Summary</a>' +
+'<a href="/savings">Savings &amp; Revenue Analysis</a>' +
+'<a href="/city-hall">How City Hall Works</a>' +
+'<a href="/endorse">Candidate Endorsement Pack</a>' +
 candLinks() +
-'<a href="faq.html">Frequently Asked Questions</a>' +
-'<a href="version-history.html">Version History</a>' +
+evidenceLink() +
+'<a href="/faq">Frequently Asked Questions</a>' +
+'<a href="/version-history">Version History</a>' +
 '</div>' +
 '<div class="fhd" style="margin-top:24px">The Annexes</div>' +
 '<div class="fls">' + annexLinks() + '</div>' +
@@ -153,50 +158,11 @@ candLinks() +
     mmi.appendChild(wrap);
   }
 
-  // "More" — a full site map in the header. The desktop nav is deliberately
-  // six items (a ninth item plus the social icons was breaking the wordmark
-  // to three lines at 1024px), but that left Savings, the Comparison Matrix
-  // and Version History reachable only from the footer or the mobile
-  // drawer — a long way down on a page that can run 30,000+ px. Same list
-  // the footer already carries, injected once here instead of hand-added to
-  // nine headers.
-  var nv = document.querySelector('header .nv');
-  if (nv && !nv.querySelector('.nvmore')) {
-    var more = document.createElement('details');
-    more.className = 'nvmore';
-    more.innerHTML =
-      '<summary>More ▾</summary>' +
-      '<div class="nvpanel">' +
-        '<div class="grp">The Framework</div>' +
-        '<a href="index.html">Home</a>' +
-        '<a href="measures.html">All Measures</a>' +
-        '<a href="neighbourhoods.html">Neighbourhoods</a>' +
-        '<a href="index.html#scorecard">12 Commitments</a>' +
-        '<a href="index.html#balance">Balance Sheet</a>' +
-        '<div class="grp">By Audience</div>' +
-        audienceLinks() +
-        '<div class="grp">The Annexes</div>' +
-        annexLinks() +
-        '<div class="grp">Detailed Documents</div>' +
-        '<a href="summary.html">One-Page Summary</a>' +
-        '<a href="savings.html">Savings &amp; Revenue Analysis</a>' +
-        '<a href="city-hall.html">How City Hall Works</a>' +
-        '<a href="endorse.html">Candidate Endorsement Pack</a>' +
-        candLinks() +
-        '<a href="faq.html">Frequently Asked Questions</a>' +
-        '<a href="version-history.html">Version History</a>' +
-      '</div>';
-    nv.appendChild(more);
-    more.querySelectorAll('a').forEach(function (a) {
-      a.addEventListener('click', function () { more.open = false; });
-    });
-    document.addEventListener('click', function (e) {
-      if (more.open && !more.contains(e.target)) more.open = false;
-    });
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && more.open) { more.open = false; more.querySelector('summary').focus(); }
-    });
-  }
+  // The More mega-menu is retired. Five top items (Summary, Measures,
+  // Neighbourhoods, Who has answered, FAQ) are the whole desktop nav;
+  // Savings, Endorse, annexes and the evidence store stay in the footer
+  // and the phone drawer. Injecting a sixth control here would put the
+  // site map back in the first screen.
 
   // Wide comparison tables scroll sideways inside .tbl-wrap, and the edge
   // shadow alone is easy to miss on a phone — so say it in words. Only for
