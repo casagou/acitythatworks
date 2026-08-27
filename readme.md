@@ -110,6 +110,27 @@ Edit the master and re-run; do not edit a `neighbourhood-*.html` or anything bet
 
 **What is deliberately not on these pages:** the master's internal pre-deployment note. It is an instruction to the editor, not content for a reader.
 
+### How to export from Notion
+
+Notion is canonical. The dumps in `build/` are what the generators actually read, and they used to be pasted by hand — which is why the site lags. `build/export.js` pulls the neighbourhood tree and writes `build/neighbourhoods.md` in the format `build/neighbourhoods.js` already parses, then runs that generator and `build/checklinks.js`.
+
+It does **not** write `measures.js`. There is no measures dump; the Program is a different document and a different decision, and this script will refuse rather than invent one. It does not pull candidate pages. It does not remap measure numbers. If Notion still says M24, the dump says M24. Draft remaps waiting on a human click are not applied here, and a pull that would change the M-ids a page already cites leaves that page as committed and names it in the diff.
+
+```
+export NOTION_TOKEN=secret_…    # or NOTION_API_KEY
+node build/export.js
+```
+
+Create an internal integration at [notion.so/my-integrations](https://www.notion.so/my-integrations) and share the neighbourhood hub with it (the 13 child pages inherit). Without a token the script names every page it would read and exits. The pages are:
+
+- Program master — [The Program](https://app.notion.com/p/36ce245ae5f3813eaafdf1a7eae2a81a) (read for context only; never written)
+- Neighbourhood hub — [Victoria 2030, Neighbourhood by Neighbourhood](https://app.notion.com/p/3b4e245ae5f38166acd4fbc2a3a45a0e)
+- Framework hub — [A City That Works](https://app.notion.com/p/36ce245ae5f381208f2cc0b918b040f7)
+
+A JSON diff of what moved — pages, cited M-numbers, figures — is written to `build/export-diff.json` against the last committed dumps. Front matter the Notion pages do not carry (`card`, `assoc`, `assocurl`, `meta`) is kept from the committed dump.
+
+`prerender.js`, `profiles.js`, `matrix.js` and `onepage.js` are not run. The first would only matter if `measures.js` had changed, and this script will not change it. The next two are candidate data. The last one rebuilds a PDF from `build/one-page.html`, which is not a Notion dump.
+
 ### The five annexes, and how they are wired in
 
 The v1.10 annexes are **canonical documents, not derivations**. The By Audience companions restate the master for one reader; the annexes govern their own subject matter and carry their own version stamp — `capital.html` is now authoritative for the M45c cost basis, and the master's own measure text is being aligned to it rather than the reverse. Keep that distinction when editing: a companion is rewritten when the master moves, an annex is reconciled with it.
