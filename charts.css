@@ -15,14 +15,14 @@
       Nothing here is derived, rounded or extrapolated. */
 
 .fig{margin:32px 0 36px;max-width:760px}
-.fig-e{font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.2em;color:var(--gold-ink);margin-bottom:6px}
+.fig-e{font-family:var(--serif);font-style:italic;font-size:15px;text-transform:none;letter-spacing:0;color:var(--gold-ink);margin-bottom:6px}
 .fig-t{font-family:'Fraunces',Georgia,serif;font-size:21px;font-weight:600;color:var(--navy);line-height:1.25;margin:0 0 4px;letter-spacing:-.01em}
 .fig-s{font-size:14px;line-height:1.6;color:#57534e;margin:0 0 18px;max-width:640px}
 figcaption.fig-c{font-size:13px;line-height:1.6;color:#57534e;margin-top:14px;padding-top:12px;border-top:1px solid rgba(26,54,104,.15)}
 figcaption.fig-c strong{color:var(--navy);font-weight:600}
 
 /* Legend — the words that keep the chart readable without the colours. */
-.fig-l{display:flex;flex-wrap:wrap;gap:8px 18px;margin-bottom:16px;font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.12em}
+.fig-l{display:flex;flex-wrap:wrap;gap:8px 18px;margin-bottom:16px;font-family:var(--sans);font-size:13px;text-transform:none;letter-spacing:0}
 .fig-l span{display:inline-flex;align-items:center;gap:7px;color:#57534e}
 .fig-l i{width:14px;height:10px;flex:none;display:block}
 .fig-l .k-now{background:var(--rust)}
@@ -34,11 +34,11 @@ figcaption.fig-c strong{color:var(--navy);font-weight:600}
 /* ---- Paired comparison rows: the record against the commitment ---- */
 .cmp{border-top:1px solid rgba(26,54,104,.18)}
 .cmp-r{padding:16px 0;border-bottom:1px solid rgba(26,54,104,.12)}
-.cmp-q{font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.15em;color:var(--navy);opacity:.8;margin-bottom:10px}
+.cmp-q{font-family:var(--sans);font-size:14px;text-transform:none;letter-spacing:0;color:var(--navy);opacity:.9;margin-bottom:10px;font-weight:600}
 .cmp-b{display:grid;grid-template-columns:1fr;gap:8px}
 @media(min-width:620px){.cmp-b{grid-template-columns:1fr 1fr;gap:20px}}
 .cmp-i{min-width:0}
-.cmp-k{font-family:'JetBrains Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:.14em;margin-bottom:4px}
+.cmp-k{font-family:var(--sans);font-size:12px;text-transform:none;letter-spacing:0;margin-bottom:4px}
 .cmp-i.now .cmp-k{color:var(--rust)}
 .cmp-i.com .cmp-k{color:var(--moss)}
 .cmp-v{font-family:'JetBrains Mono',monospace;font-size:19px;font-weight:600;line-height:1.1;margin-bottom:5px}

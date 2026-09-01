@@ -49,7 +49,7 @@
      in parallel with everything else. -->
 <link rel="preload" href="measures.js" as="script">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Public+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=12">
+<link rel="stylesheet" href="styles.css?v=15">
 <link rel="stylesheet" href="charts.css">
 <style>
 .hg{display:grid;grid-template-columns:1fr;gap:32px;margin-top:40px}
@@ -62,28 +62,28 @@
 .hp strong{color:var(--navy);font-weight:600}
 .diag{padding-left:0}
 @media(min-width:768px){.diag:not(.diag-strip){padding-left:32px;border-left:1px solid rgba(26,54,104,.18)}}
-.dh{font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.2em;color:var(--gold-ink);margin-bottom:16px}
+.dh{font-family:var(--serif);font-style:italic;font-size:15px;text-transform:none;letter-spacing:0;color:var(--gold-ink);margin-bottom:16px}
 .dr2{display:flex;align-items:baseline;gap:12px;padding-bottom:10px;border-bottom:1px solid rgba(26,54,104,.18);margin-bottom:10px}
 .dr2:last-child{border-bottom:none;margin-bottom:0}
-.dnu{font-family:'JetBrains Mono',monospace;font-size:24px;font-weight:600;color:var(--rust);white-space:nowrap}
+.dnu{font-family:var(--serif);font-size:24px;font-weight:500;color:var(--navy);white-space:nowrap}
 .dtx{font-size:14px;line-height:1.35;color:#44403c}
 .dnote{margin-top:14px;padding-top:14px;border-top:1px solid rgba(26,54,104,.15);font-size:12.5px;line-height:1.5;color:#57534e;font-style:italic}
 .dnote a{color:var(--navy);font-style:normal}
 .pg{display:grid;grid-template-columns:1fr;gap:16px;margin-top:32px}
 @media(min-width:640px){.pg{grid-template-columns:repeat(2,1fr);gap:20px}}
 @media(min-width:1024px){.pg{grid-template-columns:repeat(3,1fr)}}
-.pc{background:#fff;padding:24px;border:1px solid rgba(26,54,104,.18);text-decoration:none;transition:transform .15s;display:block;box-shadow:0 1px 0 rgba(26,54,104,.06)}
-.pc:hover{transform:translateY(-1px)}
+.pc{background:#fff;padding:24px;border:1px solid rgba(26,54,104,.16);text-decoration:none;transition:border-color .15s;display:block;box-shadow:none}
+.pc:hover{border-color:rgba(212,168,67,.55)}
 .pch{display:flex;align-items:center;gap:12px;margin-bottom:12px}
 .pce{font-size:24px}
 /* Was color:p.color at opacity .6/.7 — 2.4-3.7:1 on this white card, a fail
    at 10px. The pillar card now passes p.ink here instead (see the comment
    above PILLARS in measures.js) — same de-emphasised feel, >=5:1 either way. */
-.pct{font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.2em}
+.pct{font-family:var(--sans);font-size:12px;text-transform:none;letter-spacing:0}
 .pti{font-family:'Fraunces',serif;font-size:20px;font-weight:500;line-height:1.25;margin-bottom:8px}
 .pd{font-size:13px;color:#57534e;line-height:1.5;margin-bottom:12px}
 @media(min-width:640px){.pd{font-size:14px}}
-.pca{display:inline-flex;align-items:center;gap:6px;font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.13em}
+.pca{display:inline-flex;align-items:center;gap:6px;font-family:var(--sans);font-size:13px;text-transform:none;letter-spacing:0;border-bottom:1px solid var(--gold)}
 /* The audience/neighbourhood card grid (.ag/.ac/…) moved to styles.css when
    the neighbourhood pages started using it too — three pages sharing a
    component through one page's <style> block is a component that silently
@@ -112,8 +112,8 @@
 .fvg{display:grid;grid-template-columns:1fr;gap:12px;margin-top:24px}
 @media(min-width:640px){.fvg{grid-template-columns:repeat(2,1fr)}}
 @media(min-width:1024px){.fvg{grid-template-columns:repeat(5,1fr)}}
-.fvc{padding:16px;background:rgba(212,168,67,.08);border-top:3px solid var(--gold)}
-.fvn{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--gold-ink);margin-bottom:4px;letter-spacing:.1em}
+.fvc{padding:16px 0;background:transparent;border-top:1px solid var(--gold)}
+.fvn{font-family:var(--serif);font-style:italic;font-size:14px;color:var(--gold-ink);margin-bottom:4px;letter-spacing:0}
 .fvt{font-family:'Fraunces',serif;font-size:16px;font-weight:500;color:var(--navy)}
 .fvx{font-size:12px;color:#57534e;line-height:1.5;margin-top:4px}
 .jg{display:grid;grid-template-columns:1fr;gap:16px;margin-top:24px}
@@ -149,14 +149,14 @@
 .scn{flex-shrink:0;font-family:'Fraunces',serif;font-size:22px;color:var(--gold-ink);width:32px}
 .cmmid{display:flex;flex-direction:column;gap:4px;flex:1;min-width:0}
 .scl{font-family:'Fraunces',serif;font-size:16px;font-weight:500;color:var(--navy)}
-.sme{display:block;font-family:'JetBrains Mono',monospace;font-size:11px;color:#57534e}
+.sme{display:block;font-family:var(--sans);font-size:14px;color:#57534e}
 .sme strong{color:var(--navy);font-weight:600}
 .cmchev{flex-shrink:0;color:var(--gold-ink);transition:transform .2s}
 .cmit[open] .cmchev{transform:rotate(180deg)}
 .cmbody{padding:0 4px 16px 44px}
-.cmlbl{display:block;font-size:10px;text-transform:uppercase;letter-spacing:.13em;color:var(--navy);font-weight:500;margin-bottom:4px}
-.cmsrc{font-family:'JetBrains Mono',monospace;font-size:11px;color:#57534e;line-height:1.5}
-.dlink{display:inline-block;margin-top:10px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--gold-ink);text-decoration:none}
+.cmlbl{display:block;font-family:var(--serif);font-style:italic;font-size:14px;text-transform:none;letter-spacing:0;color:var(--navy);font-weight:500;margin-bottom:4px}
+.cmsrc{font-family:var(--sans);font-size:13px;color:#57534e;line-height:1.5}
+.dlink{display:inline-block;margin-top:10px;font-family:var(--sans);font-size:14px;color:var(--gold-ink);text-decoration:none;border-bottom:1px solid var(--gold)}
 .dlink:hover{text-decoration:underline}
 .bg2{display:grid;grid-template-columns:1fr;gap:32px;margin-top:32px}
 @media(min-width:1024px){.bg2{grid-template-columns:3fr 2fr;gap:32px}}
@@ -172,13 +172,13 @@
 .bta{font-family:'JetBrains Mono',monospace;font-size:16px;font-weight:600;color:var(--navy)}
 @media(min-width:640px){.bta{font-size:18px}}
 .gb{padding:24px;background:rgba(26,54,104,.05);border:1px solid rgba(26,54,104,.18)}
-.gl{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.2em;color:var(--gold-ink);margin-bottom:16px}
+.gl{font-family:var(--serif);font-style:italic;font-size:16px;text-transform:none;letter-spacing:0;color:var(--gold-ink);margin-bottom:16px}
 .gi{margin-bottom:16px}
 /* Was navy at opacity .6 (3.46:1 on this box's tinted background — a fail
    at 11px). Navy is dark enough on its own (10+:1 here) that it doesn't
    need dimming to read as secondary next to the bold value below it — the
    size and letter-spacing already carry that hierarchy. */
-.gil{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--navy)}
+.gil{font-family:var(--sans);font-size:13px;text-transform:none;letter-spacing:0;color:var(--navy)}
 .giv{font-family:'Fraunces',serif;font-size:26px;font-weight:600;color:var(--navy);line-height:1.2}
 @media(min-width:640px){.giv{font-size:30px}}
 .gi.rs .giv{color:var(--rust)}
@@ -190,7 +190,7 @@
 .pb{padding:24px}
 .pb.ys{background:rgba(34,114,71,.06);border:1px solid rgba(34,114,71,.3)}
 .pb.no{background:rgba(181,52,31,.06);border:1px solid rgba(181,52,31,.3)}
-.ph{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.13em;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.ph{font-family:var(--serif);font-style:italic;font-size:15px;text-transform:none;letter-spacing:0;margin-bottom:16px;display:flex;align-items:center;gap:8px}
 .pb.ys .ph{color:var(--moss)}
 .pb.no .ph{color:var(--rust)}
 .pb ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px}
@@ -217,27 +217,27 @@ h2.adt{font-family:'Fraunces',serif;font-size:40px;line-height:.95;font-weight:5
 h2.adt em{font-style:italic;color:var(--gold-ink);font-weight:400}
 .adg{display:grid;grid-template-columns:1fr;gap:40px;margin-top:48px}
 @media(min-width:768px){.adg{grid-template-columns:repeat(2,1fr)}}
-.adc h4{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.13em;color:var(--navy);margin:0 0 12px}
+.adc h4{font-family:var(--serif);font-style:italic;font-size:16px;text-transform:none;letter-spacing:0;color:var(--navy);margin:0 0 12px}
 .adc p{font-size:15px;color:#44403c;line-height:1.6;margin:0 0 24px}
 .adc.rt{padding-left:0}
 @media(min-width:768px){.adc.rt{padding-left:32px;border-left:1px solid rgba(26,54,104,.18)}}
 .adl{display:flex;flex-direction:column}
-.adl a{display:flex;align-items:center;min-height:44px;gap:8px;font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--navy);text-decoration:none;opacity:.9}
+.adl a{display:flex;align-items:center;min-height:44px;gap:8px;font-family:var(--sans);font-size:15px;color:var(--navy);text-decoration:none;opacity:.9}
 .adl a:hover{opacity:1}
 .adsoc{display:flex;gap:12px;margin-top:20px}
 .adsoc a{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid rgba(26,54,104,.3);color:var(--navy);text-decoration:none;transition:all .15s}
 .adsoc a:hover{background:var(--navy);color:var(--paper);border-color:var(--navy)}
 .nlf{display:flex;flex-direction:column;gap:8px;max-width:440px}
 @media(min-width:480px){.nlf{flex-direction:row}}
-.nlf input{flex:1;min-height:44px;padding:12px 16px;background:#fff;border:1px solid rgba(26,54,104,.3);border-radius:4px;font-family:'JetBrains Mono',monospace;font-size:16px;color:var(--navy);outline:none}
+.nlf input{flex:1;min-height:44px;padding:12px 16px;background:#fff;border:1px solid rgba(26,54,104,.3);border-radius:0;font-family:var(--sans);font-size:16px;color:var(--navy);outline:none}
 .nlf input:focus{border-color:var(--navy)}
 .nlf .bn{white-space:nowrap}
 .nlf.done{display:none}
-.nlm{margin-top:12px;font-family:'JetBrains Mono',monospace;font-size:12px;line-height:1.5;color:var(--moss);min-height:1em;max-width:440px}
+.nlm{margin-top:12px;font-family:var(--sans);font-size:14px;line-height:1.5;color:var(--moss);min-height:1em;max-width:440px}
 .nlm.err{color:var(--rust)}
 /* Single utility control. In-page navigation lives in the .toc at the top of
    the page; cross-page navigation lives in the header and mobile drawer. */
-.jb{position:fixed;bottom:20px;right:20px;z-index:30;display:flex;align-items:center;gap:8px;padding:14px;font-family:'JetBrains Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:.13em;background:var(--navy);color:var(--paper);border:none;text-decoration:none;cursor:pointer;box-shadow:0 4px 16px rgba(0,0,0,.2);transition:transform .2s,opacity .2s;padding-bottom:calc(14px + env(safe-area-inset-bottom))}
+.jb{position:fixed;bottom:20px;right:20px;z-index:30;display:flex;align-items:center;gap:8px;padding:14px;font-family:var(--sans);font-size:14px;text-transform:none;letter-spacing:0;background:var(--navy);color:var(--mark-paper);border:none;text-decoration:none;cursor:pointer;box-shadow:0 4px 16px rgba(0,0,0,.2);transition:opacity .2s;padding-bottom:calc(14px + env(safe-area-inset-bottom))}
 @media(min-width:640px){.jb{padding:14px 18px;padding-bottom:calc(14px + env(safe-area-inset-bottom))}}
 .jb:hover{background:#16335c}
 .jb.hd{transform:translateY(20px);opacity:0;pointer-events:none}
@@ -247,7 +247,7 @@ h2.adt em{font-style:italic;color:var(--gold-ink);font-weight:400}
 @keyframes fu{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
 /* Foundation callout */
 .fnd{margin-top:48px;padding:24px 28px;background:rgba(34,114,71,.06);border:1px solid rgba(34,114,71,.25);border-left:3px solid var(--moss)}
-.fnd .lbl{font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.2em;color:var(--moss);margin-bottom:10px}
+.fnd .lbl{font-family:var(--serif);font-style:italic;font-size:15px;text-transform:none;letter-spacing:0;color:var(--moss);margin-bottom:10px}
 .fnd p{font-size:15px;line-height:1.65;color:#33312e;margin:0 0 8px;max-width:780px}
 @media(min-width:640px){.fnd p{font-size:16px}}
 .fnd strong{color:var(--navy);font-weight:600}
@@ -255,7 +255,7 @@ h2.adt em{font-style:italic;color:var(--gold-ink);font-weight:400}
 /* How To Use cards */
 .hug{display:grid;grid-template-columns:1fr;gap:16px;margin-top:32px}
 @media(min-width:768px){.hug{grid-template-columns:repeat(3,1fr);gap:20px}}
-.huc{padding:24px;background:#fff;border:1px solid rgba(26,54,104,.18);border-top:3px solid var(--gold);display:flex;flex-direction:column}
+.huc{padding:24px 0;background:transparent;border:none;border-top:1px solid var(--gold);display:flex;flex-direction:column}
 .huc .hut{font-family:'Fraunces',serif;font-size:22px;font-weight:600;color:var(--navy);margin-bottom:12px}
 .huc .hux{font-size:14px;color:#57534e;font-style:italic;margin-bottom:14px;line-height:1.5}
 .huc ul{list-style:none;padding:0;margin:0 0 20px;flex-grow:1}
@@ -269,7 +269,7 @@ h2.adt em{font-style:italic;color:var(--gold-ink);font-weight:400}
 .idc{padding:20px 22px;border:1px solid rgba(26,54,104,.2)}
 .idc.is{background:rgba(34,114,71,.05);border-left:3px solid var(--moss)}
 .idc.no{background:rgba(181,52,31,.05);border-left:3px solid var(--rust)}
-.idc .idh{font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.15em;margin-bottom:10px;font-weight:600}
+.idc .idh{font-family:var(--serif);font-style:italic;font-size:15px;text-transform:none;letter-spacing:0;margin-bottom:10px;font-weight:500}
 .idc.is .idh{color:var(--moss)}
 .idc.no .idh{color:var(--rust)}
 .idc ul{list-style:none;padding:0;margin:0}
