@@ -1,36 +1,48 @@
-/* A City That Works — shared styles v2.1 */
+/* A City That Works — shared styles v2.2
+   Pleasant hub, credible alternative. Visual chrome only.
+   Locked: --navy #1A3668, --gold #D4A843, the wave mark, Fraunces italic
+   wordmark in --mark-paper on navy. JetBrains Mono is for money and version
+   stamps, not chrome labels. */
 /* --gold is the brand gold: use it on the navy header/footer (5.35:1) and for
-   borders, rules and tinted fills. --gold-ink is the same family darkened for
-   text on the cream/white surfaces, where --gold only reaches 2.07:1.
-   --gold-ink clears WCAG AA on every surface it is used on: 5.82:1 on --paper,
-   6.23:1 on white, 5.34:1 on the .05 navy tint, 5.01:1 on the .22 gold tint. */
-:root{--navy:#1A3668;--gold:#D4A843;--gold-ink:#7F5A0F;--paper:#FAF7F0;--rust:#B5341F;--moss:#227247;--olive:#7A6B3D;--managed:#8B6914;--ink:#1c1917;--muted:#3f3a36;--quiet:#57534e;--h:60px;--space:8px;--measure:66ch;--r:3px}
+   thin rules, warm links and quiet hovers — not as a thick token stripe on
+   every box. --gold-ink is the same family darkened for text on the cream
+   surfaces, where --gold only reaches 2.07:1. --gold-ink clears WCAG AA on
+   every surface it is used on: ~5.6:1 on --paper, 6.23:1 on white, 5.34:1
+   on the .05 navy tint, 5.01:1 on the .22 gold tint.
+   --mark-paper is the cream inside the locked mark (#FAF7F0). Wordmark and
+   other paper-on-navy type use it so a warmer page paper cannot recolour
+   the masthead. */
+:root{--navy:#1A3668;--gold:#D4A843;--gold-ink:#7F5A0F;--paper:#F9F3E4;--paper-rgb:249,243,228;--mark-paper:#FAF7F0;--rust:#B5341F;--moss:#227247;--olive:#7A6B3D;--managed:#8B6914;--ink:#1c1917;--muted:#3f3a36;--quiet:#57534e;--h:60px;--space:8px;--measure:66ch;--r:3px;--sans:'Public Sans',system-ui,-apple-system,sans-serif;--serif:'Fraunces',Georgia,serif;--mono:'JetBrains Mono',ui-monospace,monospace}
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html{scroll-behavior:smooth;scroll-padding-top:calc(var(--h) + 16px);-webkit-text-size-adjust:100%;max-width:100%}
-body{margin:0;font-family:'Public Sans',system-ui,-apple-system,sans-serif;background:var(--paper);color:var(--ink);min-height:100vh;-webkit-font-smoothing:antialiased;line-height:1.5;font-size:18px;max-width:100%}
+body{margin:0;font-family:var(--sans);background:var(--paper);color:var(--ink);min-height:100vh;-webkit-font-smoothing:antialiased;line-height:1.55;font-size:18px;max-width:100%}
 .c{max-width:1200px;margin:0 auto;padding:0 16px}
 .cn{max-width:880px;margin:0 auto;padding:0 16px}
 @media(min-width:640px){.c,.cn{padding:0 24px}}
-.fd{font-family:'Fraunces',Georgia,serif;font-optical-sizing:auto;letter-spacing:-.02em}
-.fm{font-family:'JetBrains Mono',ui-monospace,monospace}
-a{color:var(--navy)}
+.fd{font-family:var(--serif);font-optical-sizing:auto;letter-spacing:-.01em}
+.fm{font-family:var(--mono)}
+a{color:var(--navy);text-decoration-color:rgba(212,168,67,.55)}
+a:hover{text-decoration-color:var(--gold)}
 
-/* Header — solid navy, no glass. A letterhead, not a SaaS bar. */
-header{position:sticky;top:0;z-index:40;background:var(--navy);height:var(--h);border-bottom:1px solid rgba(212,168,67,.32)}
+/* Header — solid navy, no glass. A printed masthead, not a SaaS bar.
+   The wave under the bar is the harbour motif as a quiet rule, not a
+   second mark — the logo SVG itself is not redrawn or recoloured. */
+header{position:sticky;top:0;z-index:40;background:var(--navy);height:var(--h);border-bottom:none}
+header::after{content:"";position:absolute;left:0;right:0;bottom:0;height:7px;pointer-events:none;background:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 8' width='120' height='8' preserveAspectRatio='none'%3E%3Cpath d='M0 5 Q15 1 30 5 T60 5 T90 5 T120 5' fill='none' stroke='%23D4A843' stroke-width='1.15' stroke-linecap='round'/%3E%3C/svg%3E") repeat-x center bottom;background-size:120px 7px;opacity:.75}
 .hr{display:flex;align-items:center;justify-content:space-between;height:100%;gap:16px}
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none;min-height:44px;min-width:0;flex-wrap:nowrap;overflow:hidden}
 .brand .bicn{width:32px;height:32px;flex-shrink:0;display:block}
 @media(min-width:640px){.brand{gap:12px}.brand .bicn{width:36px;height:36px}}
 .brand .num{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
 @media(max-width:799px){.brand .num{display:none}}
-.brand .nm{font-family:'Fraunces',serif;font-style:italic;font-size:17px;font-weight:500;color:var(--paper);line-height:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.brand .nm{font-family:'Fraunces',serif;font-style:italic;font-size:17px;font-weight:500;color:var(--mark-paper);line-height:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
 @media(min-width:640px){.brand .nm{font-size:21px}}
-.nv{display:none;align-items:center;gap:4px;font-family:'Public Sans',system-ui,sans-serif;font-size:15px;color:rgba(250,247,240,.82)}
-.nv a{display:inline-flex;align-items:center;min-height:44px;padding:0 10px;color:inherit;text-decoration:none;transition:color .15s;white-space:nowrap;border-bottom:2px solid transparent}
+.nv{display:none;align-items:center;gap:6px;font-family:var(--sans);font-size:15px;color:rgba(250,247,240,.82)}
+.nv a{display:inline-flex;align-items:center;min-height:44px;padding:0 10px;color:inherit;text-decoration:none;transition:color .15s;white-space:nowrap;border-bottom:1px solid transparent}
 .nv a:hover,.nv a.cur{color:var(--gold)}
 .nv a.cur{border-bottom-color:var(--gold);font-weight:600;color:var(--gold)}
-.nv a.btn-end{padding:5px 11px;min-height:34px;border:1px solid rgba(250,247,240,.5);color:var(--paper)}
-.nv a.btn-end:hover{color:var(--paper);border-color:var(--gold)}
+.nv a.btn-end{padding:5px 11px;min-height:34px;border:1px solid rgba(250,247,240,.5);color:var(--mark-paper)}
+.nv a.btn-end:hover{color:var(--mark-paper);border-color:var(--gold)}
 .nv a.btn-end.cur{border-color:var(--gold);background:rgba(212,168,67,.15)}
 /* Candidate matrix — a secondary button, gold-outlined so it reads as distinct
    from the paper-outlined Endorse CTA without competing with it. Gold on navy
@@ -51,14 +63,14 @@ header{position:sticky;top:0;z-index:40;background:var(--navy);height:var(--h);b
 .nvmore>summary::-webkit-details-marker{display:none}
 .nvmore>summary:hover,.nvmore[open]>summary{color:var(--gold)}
 .nvpanel{position:absolute;top:calc(100% + 14px);right:0;z-index:60;min-width:250px;background:var(--navy);border:1px solid rgba(212,168,67,.3);box-shadow:0 16px 40px rgba(0,0,0,.32);padding:10px;display:flex;flex-direction:column;gap:2px}
-.nvpanel .grp{padding:10px 12px 4px;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:rgba(250,247,240,.5)}
+.nvpanel .grp{padding:10px 12px 4px;font-family:var(--serif);font-style:italic;font-size:13px;letter-spacing:0;text-transform:none;color:rgba(250,247,240,.55)}
 .nvpanel .grp:first-child{padding-top:4px}
-.nvpanel a{display:flex;align-items:center;min-height:38px;padding:4px 12px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.04em;text-transform:none;color:rgba(250,247,240,.9);text-decoration:none;border-radius:3px;white-space:nowrap}
+.nvpanel a{display:flex;align-items:center;min-height:38px;padding:4px 12px;font-family:var(--sans);font-size:14px;letter-spacing:0;text-transform:none;color:rgba(250,247,240,.9);text-decoration:none;border-radius:0;white-space:nowrap}
 .nvpanel a:hover{background:rgba(212,168,67,.14);color:var(--gold)}
 /* Base rule must precede the breakpoints below: it carries display:flex at the
    same specificity, so when it came last it beat them and the hamburger stayed
    visible on desktop alongside the full nav. */
-.mb{background:none;border:none;color:var(--paper);padding:11px;margin-right:-11px;cursor:pointer;display:flex}
+.mb{background:none;border:none;color:var(--mark-paper);padding:11px;margin-right:-11px;cursor:pointer;display:flex}
 @media(min-width:800px){.nv{display:flex}.mb{display:none}}
 /* Social links in the header. Hidden below 1250px, where the header row is
    already carrying six nav items plus the brand and has no room to spare —
@@ -85,7 +97,7 @@ header{position:sticky;top:0;z-index:40;background:var(--navy);height:var(--h);b
 /* Body scroll is locked (site.js) while the drawer is open, so this is a
    belt-and-braces backstop rather than the primary mechanism. */
 body.no-scroll{overflow:hidden}
-.mmi{display:flex;flex-direction:column;gap:0;padding:8px 16px 16px;font-family:'Public Sans',system-ui,sans-serif;font-size:18px}
+.mmi{display:flex;flex-direction:column;gap:0;padding:8px 16px 16px;font-family:var(--sans);font-size:18px}
 .mmi a{display:flex;align-items:center;min-height:48px;color:rgba(250,247,240,.92);text-decoration:none;padding:0;border-bottom:1px solid rgba(250,247,240,.1)}
 .mmi a.gd,.mmi a.cur{color:var(--gold);font-weight:600}
 .mmi .grp{display:none}
@@ -102,31 +114,36 @@ body.no-scroll{overflow:hidden}
 .hero .pgback,.pg-door .pgback,.door + .pgback{display:none}
 .parked + p:has(.pgback),.fold-block + p:has(.pgback),.toc-fold + p:has(.pgback){display:none}
 .prose .pgback,.parked-in .pgback,.fold-in .pgback{display:inline-flex}
-h1.ht{font-family:'Fraunces',serif;font-size:34px;line-height:1.1;font-weight:500;color:var(--navy);margin:8px 0 0;letter-spacing:-.02em}
+h1.ht{font-family:var(--serif);font-size:34px;line-height:1.14;font-weight:500;color:var(--navy);margin:8px 0 0;letter-spacing:-.01em}
 @media(min-width:640px){h1.ht{font-size:40px}}
 h1.ht em{font-style:italic;color:var(--navy);font-weight:400}
 .hsub{font-family:'Fraunces',serif;font-style:italic;font-size:18px;color:var(--navy);opacity:.85;margin-top:8px}
-.ph1{font-family:'Fraunces',serif;font-size:28px;line-height:1.15;font-weight:500;color:var(--navy);margin:8px 0 0;letter-spacing:-.02em}
+.ph1{font-family:var(--serif);font-size:28px;line-height:1.18;font-weight:500;color:var(--navy);margin:8px 0 0;letter-spacing:-.01em}
 @media(min-width:640px){.ph1{font-size:34px}}
 .ph1 em{font-style:italic;color:var(--navy);font-weight:400}
 
-/* CTA buttons */
-.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
-.bn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;font-family:'Public Sans',system-ui,sans-serif;font-size:15px;font-weight:600;letter-spacing:.01em;text-decoration:none;cursor:pointer;border:none;border-radius:0;transition:background .15s,color .15s}
-.bn:hover{transform:translateY(-1px)}
+/* CTA buttons — printed, not product pills. Filled navy, or a text link
+   with a gold underline. No lift-on-hover. */
+.cta{display:flex;flex-wrap:wrap;gap:14px 22px;align-items:center;margin-top:32px}
+.bn{display:inline-flex;align-items:center;gap:8px;padding:11px 18px;font-family:var(--sans);font-size:15px;font-weight:600;letter-spacing:0;text-decoration:none;cursor:pointer;border:none;border-radius:0;transition:background .15s,color .15s,border-color .15s}
 /* Container rules like `.prose a` or `.reg-empty a` (0,1,1) outrank a bare
    `.bnp` (0,1,0) and rendered buttons navy-on-navy. `a.bn.bnp` is 0,2,1, so a
    button keeps its own colours inside ANY such container — don't lower this to
    a single class, and don't re-add per-container overrides. */
-.bnp,a.bn.bnp{background:var(--navy);color:var(--paper)}
-.bns,a.bn.bns{background:transparent;color:var(--navy);border:2px solid var(--navy)}
+.bnp,a.bn.bnp{background:var(--navy);color:var(--mark-paper)}
+.bnp:hover,a.bn.bnp:hover{background:#16335c}
+.bns,a.bn.bns{background:transparent;color:var(--navy);border:none;border-bottom:1px solid var(--gold);padding-left:0;padding-right:0;border-radius:0;font-weight:500}
+.bns:hover,a.bn.bns:hover{color:var(--gold-ink);border-bottom-color:var(--gold-ink)}
 a.bn{text-decoration:none}
 
-/* Sections */
-section.sc{margin-top:64px;padding-top:48px;border-top:3px double rgba(26,54,104,.35);scroll-margin-top:calc(var(--h) + 16px)}
-@media(min-width:640px){section.sc{margin-top:88px}}
-.se{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.2em;color:var(--gold-ink);margin-bottom:12px}
-h2.st{font-family:'Fraunces',serif;font-size:34px;line-height:1.05;font-weight:500;color:var(--navy);max-width:820px;margin:0;letter-spacing:-.02em}
+/* Sections — a pamphlet rhythm, not an 8px auto-layout. Off-grid on
+   purpose so blocks feel set, not cloned. */
+section.sc{margin-top:58px;padding-top:42px;border-top:1px solid rgba(26,54,104,.2);scroll-margin-top:calc(var(--h) + 16px)}
+@media(min-width:640px){section.sc{margin-top:76px;padding-top:50px}}
+section.sc:nth-of-type(even){margin-top:66px}
+@media(min-width:640px){section.sc:nth-of-type(even){margin-top:86px;padding-top:46px}}
+.se{font-family:var(--serif);font-style:italic;font-size:16px;text-transform:none;letter-spacing:0;color:var(--gold-ink);margin-bottom:10px;font-weight:400}
+h2.st{font-family:var(--serif);font-size:34px;line-height:1.12;font-weight:500;color:var(--navy);max-width:820px;margin:0;letter-spacing:-.01em}
 @media(min-width:640px){h2.st{font-size:46px}}
 h2.st em{font-style:italic;color:var(--gold-ink);font-weight:400}
 .si{font-size:18px;line-height:1.55;max-width:var(--measure);color:var(--muted);margin-top:20px}
@@ -135,11 +152,11 @@ h2.st em{font-style:italic;color:var(--gold-ink);font-weight:400}
 
 /* Prose (for doc pages) */
 .prose{max-width:var(--measure);margin:0 auto}
-.prose h2{font-family:'Fraunces',serif;font-size:28px;font-weight:500;color:var(--navy);line-height:1.15;margin:48px 0 8px;letter-spacing:-.02em;padding-top:24px;border-top:1px solid rgba(26,54,104,.18)}
+.prose h2{font-family:var(--serif);font-size:28px;font-weight:500;color:var(--navy);line-height:1.18;margin:52px 0 10px;letter-spacing:-.01em;padding-top:26px;border-top:1px solid rgba(26,54,104,.16)}
 @media(min-width:640px){.prose h2{font-size:34px}}
-.prose h3{font-family:'Fraunces',serif;font-size:21px;font-weight:600;color:var(--navy);line-height:1.25;margin:32px 0 6px}
+.prose h3{font-family:var(--serif);font-size:21px;font-weight:600;color:var(--navy);line-height:1.28;margin:34px 0 6px}
 @media(min-width:640px){.prose h3{font-size:24px}}
-.prose h4{font-family:'JetBrains Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:.13em;color:var(--gold-ink);margin:28px 0 8px}
+.prose h4{font-family:var(--serif);font-style:italic;font-size:16px;font-weight:500;text-transform:none;letter-spacing:0;color:var(--gold-ink);margin:28px 0 8px}
 .prose p{font-size:18px;line-height:1.55;color:#33312e;margin:16px 0}
 @media(min-width:640px){.prose p{font-size:19px}}
 .prose strong{color:var(--navy);font-weight:600}
@@ -149,16 +166,17 @@ h2.st em{font-style:italic;color:var(--gold-ink);font-weight:400}
 @media(min-width:640px){.prose li{font-size:19px}}
 .prose blockquote{margin:18px 0;padding:14px 18px;background:rgba(212,168,67,.1);border-left:3px solid var(--gold);font-size:15px;line-height:1.6;color:var(--navy)}
 .prose blockquote p{margin:0;font-size:15px;color:var(--navy)}
-.prose a{color:var(--navy);text-decoration:underline;text-decoration-color:rgba(26,54,104,.35)}
-.lead{font-family:'Public Sans',system-ui,sans-serif !important;font-size:18px !important;line-height:1.5 !important;color:var(--navy) !important;font-weight:400}
+.prose a{color:var(--navy);text-decoration:underline;text-decoration-color:rgba(212,168,67,.55)}
+.prose a:hover{text-decoration-color:var(--gold-ink)}
+.lead{font-family:var(--sans) !important;font-size:18px !important;line-height:1.55 !important;color:var(--navy) !important;font-weight:400}
 
 /* Callouts */
 .callout{padding:18px 20px;border-radius:2px;margin:20px 0;font-size:15px;line-height:1.6}
 .callout.blue{background:rgba(26,54,104,.06);border:1px solid rgba(26,54,104,.2)}
-.callout.gold{background:rgba(212,168,67,.1);border-left:3px solid var(--gold)}
+.callout.gold{background:rgba(212,168,67,.1);border-left:2px solid var(--gold)}
 .callout.green{background:rgba(34,114,71,.07);border:1px solid rgba(34,114,71,.3)}
 .callout.red{background:rgba(181,52,31,.07);border:1px solid rgba(181,52,31,.3)}
-.callout .lbl{font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.15em;margin-bottom:6px}
+.callout .lbl{font-family:var(--serif);font-style:italic;font-size:14px;text-transform:none;letter-spacing:0;margin-bottom:6px}
 .callout.blue .lbl{color:var(--navy)}
 .callout.gold .lbl{color:var(--olive)}
 .callout.green .lbl{color:var(--moss)}
@@ -182,34 +200,34 @@ h2.st em{font-style:italic;color:var(--gold-ink);font-weight:400}
    two `local` gradients ride with the content and mask the shadow once that
    edge is reached, so the cue only shows while there is more to see. */
 .tbl-wrap{background:
-  linear-gradient(to right,var(--paper) 40%,rgba(250,247,240,0)) 0 0/22px 100% no-repeat local,
-  linear-gradient(to left,var(--paper) 40%,rgba(250,247,240,0)) 100% 0/22px 100% no-repeat local,
+  linear-gradient(to right,var(--paper) 40%,rgba(var(--paper-rgb),0)) 0 0/22px 100% no-repeat local,
+  linear-gradient(to left,var(--paper) 40%,rgba(var(--paper-rgb),0)) 100% 0/22px 100% no-repeat local,
   radial-gradient(farthest-side at 0 50%,rgba(26,54,104,.18),rgba(26,54,104,0)) 0 0/12px 100% no-repeat scroll,
   radial-gradient(farthest-side at 100% 50%,rgba(26,54,104,.18),rgba(26,54,104,0)) 100% 0/12px 100% no-repeat scroll}
 /* Inserted by site.js only where the table actually overflows its container,
    and removed again when it stops. */
-.tbl-hint{font-family:'Public Sans',system-ui,sans-serif;font-size:13px;letter-spacing:0;text-transform:none;color:var(--quiet);margin:0 0 8px;text-align:left}
+.tbl-hint{font-family:var(--sans);font-size:13px;letter-spacing:0;text-transform:none;color:var(--quiet);margin:0 0 8px;text-align:left}
 table.dt{width:100%;border-collapse:collapse;font-size:14px;min-width:480px}
-table.dt thead tr{border-bottom:2px solid rgba(26,54,104,.3)}
-table.dt th{text-align:left;padding:10px 14px 10px 0;font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--navy);font-weight:600;vertical-align:bottom}
+table.dt thead tr{border-bottom:1px solid rgba(26,54,104,.28)}
+table.dt th{text-align:left;padding:10px 14px 10px 0;font-family:var(--sans);font-size:12px;text-transform:none;letter-spacing:0;color:var(--navy);font-weight:600;vertical-align:bottom}
 table.dt tbody tr{border-bottom:1px solid rgba(26,54,104,.15)}
 table.dt td{padding:11px 14px 11px 0;vertical-align:top;color:#33312e;line-height:1.45}
 table.dt tr.total{border-top:2px solid rgba(26,54,104,.3);border-bottom:none}
 table.dt tr.total td{font-weight:700;color:var(--navy);padding-top:14px}
-table.dt .amt{font-family:'JetBrains Mono',monospace;white-space:nowrap;font-weight:500}
+table.dt .amt{font-family:var(--mono);white-space:nowrap;font-weight:500}
 /* Auto table layout hands every column a share of the width, so a money column
    holding "$0.27M" was taking more room than the sentence beside it — and one
    long nowrap cell was inflating the whole column. width:1% asks the browser to
    shrink these to their content and give the remainder to the text column. */
 table.dt td.amt,table.dt th.amt,table.dt td.mid,table.dt th.mid{width:1%}
 /* A qualifier belongs under the figure, not stretched along it. */
-table.dt .amt .qual{display:block;margin-top:3px;font-family:'Public Sans',system-ui,sans-serif;font-size:12px;font-weight:400;line-height:1.4;color:#57534e;white-space:normal}
+table.dt .amt .qual{display:block;margin-top:3px;font-family:var(--sans);font-size:12px;font-weight:400;line-height:1.4;color:#57534e;white-space:normal}
 /* Measure references: narrow, but allowed to wrap rather than widen the table. */
 /* 8.5em is measured, not guessed: it is where the one row carrying a long
    parenthetical stops wrapping to six lines, without taking meaningful width
    off the item column for the other forty-nine. */
 table.dt td.mid{font-family:'JetBrains Mono',monospace;font-size:12px;white-space:normal;min-width:8.5em}
-table.dt td.mid em{font-family:'Public Sans',system-ui,sans-serif;font-size:12px;color:#57534e}
+table.dt td.mid em{font-family:var(--sans);font-size:12px;color:#57534e}
 /* A five-column reference table does not have to live inside the 760px reading
    measure. Prose stays where it belongs; the table borrows the container's
    remaining width. Only above 1000px, where that slack actually exists. */
@@ -217,29 +235,30 @@ table.dt td.mid em{font-family:'Public Sans',system-ui,sans-serif;font-size:12px
   .prose .tbl-wrap.wide{margin-left:-36px;margin-right:-36px}
 }
 
-/* Footer */
-footer{background:var(--navy);padding:48px 0;margin-top:80px}
+/* Footer — a colophon under a quiet harbour rule, not a utility-app slab. */
+footer{position:relative;background:var(--navy);padding:56px 0 48px;margin-top:72px}
+footer::before{content:"";position:absolute;left:0;right:0;top:0;height:7px;pointer-events:none;background:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 8' width='120' height='8' preserveAspectRatio='none'%3E%3Cpath d='M0 5 Q15 1 30 5 T60 5 T90 5 T120 5' fill='none' stroke='%23D4A843' stroke-width='1.15' stroke-linecap='round'/%3E%3C/svg%3E") repeat-x center top;background-size:120px 7px;opacity:.75}
 .fg2{display:grid;grid-template-columns:1fr;gap:32px;margin-bottom:32px}
 @media(min-width:768px){.fg2{grid-template-columns:1.4fr 1fr 1fr}}
 .fbr{display:flex;align-items:center;gap:12px}
 .fbr .bicn{width:40px;height:40px;flex-shrink:0;display:block}
 .fbr .num{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
-.fbr .nm{font-family:'Fraunces',serif;font-style:italic;font-size:20px;font-weight:500;color:var(--paper);line-height:1}
+.fbr .nm{font-family:'Fraunces',serif;font-style:italic;font-size:20px;font-weight:500;color:var(--mark-paper);line-height:1}
 .fdc{font-size:14px;line-height:1.6;color:rgba(250,247,240,.7);margin-top:16px;max-width:340px}
-.fvr{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:rgba(250,247,240,.7);margin-top:16px}
-.fhd{font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.2em;color:var(--gold);margin-bottom:12px}
+.fvr{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:rgba(250,247,240,.7);margin-top:16px}
+.fhd{font-family:var(--serif);font-style:italic;font-size:16px;text-transform:none;letter-spacing:0;color:var(--gold);margin-bottom:12px;font-weight:400}
 .fls{display:flex;flex-direction:column;font-size:14px}
 .fls a{display:flex;align-items:center;min-height:44px;color:rgba(250,247,240,.7);text-decoration:none}
 .fls a:hover{color:var(--paper)}
-.fbo{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;padding-top:24px;border-top:1px solid rgba(212,168,67,.5);font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:rgba(250,247,240,.75)}
+.fbo{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;padding-top:24px;border-top:1px solid rgba(212,168,67,.4);font-family:var(--sans);font-size:13px;text-transform:none;letter-spacing:0;color:rgba(250,247,240,.75)}
 .fsoc{display:flex;gap:14px;margin-top:18px}
 .fsoc a{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid rgba(212,168,67,.4);color:rgba(250,247,240,.85);text-decoration:none;transition:all .15s}
 .fsoc a:hover{color:var(--navy);background:var(--gold);border-color:var(--gold)}
-.fhandle{font-family:'JetBrains Mono',monospace;font-size:11px;line-height:1.6;letter-spacing:.05em;color:rgba(250,247,240,.75);margin:12px 0 0}
+.fhandle{font-family:var(--sans);font-size:13px;line-height:1.6;letter-spacing:0;color:rgba(250,247,240,.75);margin:12px 0 0}
 .fhandle strong{color:var(--gold);font-weight:500}
 
 /* Back-to-top / page nav helpers */
-.pgback{display:inline-flex;align-items:center;min-height:44px;gap:8px;font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--navy);text-decoration:none;margin-top:8px}
+.pgback{display:inline-flex;align-items:center;min-height:44px;gap:8px;font-family:var(--sans);font-size:14px;text-transform:none;letter-spacing:0;color:var(--navy);text-decoration:none;margin-top:8px;border-bottom:1px solid var(--gold)}
 .pgback:hover{color:var(--gold-ink)}
 
 /* Focus ring: --gold-ink on the light page surfaces, brand --gold on the navy
@@ -249,7 +268,7 @@ header a:focus-visible,header button:focus-visible,footer a:focus-visible,.mm a:
 button,a,input,summary{outline:none}
 
 /* Skip link — first focusable element on every page */
-.skip{position:absolute;left:-9999px;top:0;z-index:60;display:inline-flex;align-items:center;min-height:44px;padding:12px 18px;background:var(--navy);color:var(--paper);font-family:'JetBrains Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:.12em;text-decoration:none}
+.skip{position:absolute;left:-9999px;top:0;z-index:60;display:inline-flex;align-items:center;min-height:44px;padding:12px 18px;background:var(--navy);color:var(--mark-paper);font-family:var(--sans);font-size:14px;text-transform:none;letter-spacing:0;text-decoration:none}
 .skip:focus{left:8px;top:8px}
 
 /* Minimum touch target (WCAG 2.5.5) for the primary button style */
@@ -257,13 +276,13 @@ button,a,input,summary{outline:none}
 
 /* On-this-page table of contents — a contents list in a letter, not a boxed card. */
 .toc{background:transparent;border:none;border-top:1px solid rgba(26,54,104,.18);border-bottom:1px solid rgba(26,54,104,.18);border-left:none;padding:16px 0;margin:28px 0 36px;max-width:760px}
-.toc-h{font-family:'Fraunces',serif;font-style:italic;font-size:16px;text-transform:none;letter-spacing:0;color:var(--navy);margin-bottom:10px}
+.toc-h{font-family:var(--serif);font-style:italic;font-size:16px;text-transform:none;letter-spacing:0;color:var(--navy);margin-bottom:10px}
 .toc ol{list-style:none;counter-reset:tocitem;padding:0;margin:0;display:grid;grid-template-columns:1fr;gap:4px}
 @media(min-width:640px){.toc ol{grid-template-columns:1fr 1fr;column-gap:24px}}
 /* Flex row rather than an inline counter: a title long enough to wrap used to
    drop onto the line below its own number and break the alignment. */
 .toc li{counter-increment:tocitem;font-size:14px;line-height:1.4;display:flex;align-items:baseline;gap:0}
-.toc li::before{content:counter(tocitem,decimal-leading-zero);flex:none;width:24px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--gold-ink);font-weight:600}
+.toc li::before{content:counter(tocitem,decimal-leading-zero);flex:none;width:24px;font-family:var(--serif);font-size:13px;color:var(--gold-ink);font-weight:500}
 .toc a{display:inline-block;min-width:0;min-height:28px;padding-top:2px;color:var(--navy);text-decoration:none;border-bottom:1px solid transparent;transition:border-color .15s}
 .toc a:hover{border-bottom-color:var(--gold)}
 /* 28px clears WCAG 2.5.5 AA (24px) but sits under the 44px this site holds
@@ -283,10 +302,10 @@ button,a,input,summary{outline:none}
    eight, so the control travels with the reader. */
 .jumpbar{display:none}
 .jumpin{display:flex;align-items:center;gap:8px;padding:0}
-.jl2{font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.15em;color:var(--navy);opacity:.75;white-space:nowrap}
-.jumpsel{flex:1;min-width:0;min-height:44px;padding:8px 10px;font-family:'JetBrains Mono',monospace;font-size:13px;background:#fff;border:1px solid rgba(26,54,104,.3);color:var(--navy)}
+.jl2{font-family:var(--sans);font-size:13px;text-transform:none;letter-spacing:0;color:var(--navy);opacity:.75;white-space:nowrap}
+.jumpsel{flex:1;min-width:0;min-height:44px;padding:8px 10px;font-family:var(--sans);font-size:14px;background:#fff;border:1px solid rgba(26,54,104,.3);color:var(--navy)}
 .jumpsel:focus{border-color:var(--navy);outline:2px solid var(--gold-ink);outline-offset:1px}
-.jumpbtn{display:inline-flex;align-items:center;justify-content:center;min-width:44px;min-height:44px;padding:0 10px;font-family:'JetBrains Mono',monospace;font-size:13px;background:transparent;border:1px solid rgba(26,54,104,.3);color:var(--navy);text-decoration:none;cursor:pointer;transition:background .15s}
+.jumpbtn{display:inline-flex;align-items:center;justify-content:center;min-width:44px;min-height:44px;padding:0 10px;font-family:var(--sans);font-size:14px;background:transparent;border:1px solid rgba(26,54,104,.3);color:var(--navy);text-decoration:none;cursor:pointer;transition:background .15s}
 .jumpbtn:hover{background:rgba(26,54,104,.06)}
 .jumptop{font-size:11px;text-transform:uppercase;letter-spacing:.1em}
 /* On a phone the arrows and Top are the whole point; the "Jump to" label is not. */
@@ -309,16 +328,16 @@ button,a,input,summary{outline:none}
 .jn h2[id],.jn h3[id],.jn [data-jump-label]{scroll-margin-top:calc(var(--h) + 76px)}
 
 /* Breadcrumb back-strip */
-.crumbs{display:flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.15em;color:#6b6664;padding:16px 0 0;margin-bottom:-8px}
+.crumbs{display:flex;align-items:center;gap:8px;font-family:var(--sans);font-size:13px;text-transform:none;letter-spacing:0;color:#6b6664;padding:16px 0 0;margin-bottom:-8px}
 .crumbs a{display:inline-flex;align-items:center;min-height:28px;color:#6b6664;text-decoration:none;border-bottom:1px solid transparent;transition:color .15s,border-color .15s}
 .crumbs a:hover{color:var(--navy);border-bottom-color:var(--gold)}
 .crumbs .sep{color:rgba(26,54,104,.75)}
 .crumbs .here{color:var(--navy)}
 
 /* Public Endorsement Registry */
-.reg{max-width:760px;margin:36px auto 8px;padding:24px 26px;background:#fff;border:1px solid rgba(26,54,104,.18);border-top:3px solid var(--gold)}
-.reg-eyb{font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.2em;color:var(--gold-ink);margin-bottom:8px}
-h2.reg-t{font-family:'Fraunces',serif;font-size:28px;font-weight:500;color:var(--navy);line-height:1.15;margin:0;letter-spacing:-.02em;border:none;padding:0}
+.reg{max-width:760px;margin:36px auto 8px;padding:24px 26px;background:#fff;border:1px solid rgba(26,54,104,.16);border-top:1px solid var(--gold)}
+.reg-eyb{font-family:var(--serif);font-style:italic;font-size:15px;text-transform:none;letter-spacing:0;color:var(--gold-ink);margin-bottom:8px}
+h2.reg-t{font-family:var(--serif);font-size:28px;font-weight:500;color:var(--navy);line-height:1.18;margin:0;letter-spacing:-.01em;border:none;padding:0}
 @media(min-width:640px){h2.reg-t{font-size:32px}}
 .reg-count{font-size:15px;color:#33312e;margin:14px 0 0}
 .reg-count strong{font-family:'JetBrains Mono',monospace;color:var(--navy)}
@@ -328,7 +347,7 @@ h2.reg-t{font-family:'Fraunces',serif;font-size:28px;font-weight:500;color:var(-
 .reg-empty p a{color:var(--navy)}
 .reg-empty .bn{margin-top:8px}
 .reg-grp{margin-top:26px}
-h3.reg-gh{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.15em;color:var(--navy);margin:0 0 4px;font-weight:600}
+h3.reg-gh{font-family:var(--serif);font-style:italic;font-size:16px;text-transform:none;letter-spacing:0;color:var(--navy);margin:0 0 4px;font-weight:500}
 .reg-gn{display:inline-block;font-size:10px;padding:1px 7px;margin-left:6px;background:rgba(26,54,104,.08);color:var(--navy)}
 .reg-gb{font-size:13px;color:#57534e;margin:0 0 10px;font-style:italic}
 .reg-list{list-style:none;padding:0;margin:0}
@@ -336,8 +355,8 @@ h3.reg-gh{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:u
 .reg-i:last-child{border-bottom:none}
 .reg-n{font-family:'Fraunces',serif;font-size:18px;font-weight:600;color:var(--navy);line-height:1.3}
 .reg-n a{color:var(--navy);text-decoration:underline;text-decoration-color:rgba(26,54,104,.35)}
-.reg-sub{font-family:'Public Sans',sans-serif;font-size:13px;font-weight:400;color:#57534e}
-.reg-tier{font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:var(--gold-ink);margin-top:4px}
+.reg-sub{font-family:var(--sans);font-size:13px;font-weight:400;color:#57534e}
+.reg-tier{font-family:var(--sans);font-size:12px;text-transform:none;letter-spacing:0;color:var(--gold-ink);margin-top:4px}
 .reg-scope{font-size:14px;color:#33312e;line-height:1.5;margin-top:4px}
 .reg-meta{font-family:'JetBrains Mono',monospace;font-size:11px;color:#57534e;margin-top:5px}
 .reg-note{font-size:13px;color:#57534e;font-style:italic;margin-top:5px}
@@ -411,7 +430,7 @@ h3.reg-gh{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:u
    basis — so a reader who reaches the measure is pointed at the document
    that defends it rather than having to find it in the site map. Styled as
    a footnote to the measure, not as a callout competing with it. */
-.anxlink{margin:14px 0 0;padding:9px 12px;background:rgba(26,54,104,.05);border-left:2px solid var(--gold);font-size:14px;line-height:1.55;color:#44403c}
+.anxlink{margin:14px 0 0;padding:9px 0 9px 12px;background:transparent;border-left:1px solid var(--gold);font-size:14px;line-height:1.55;color:#44403c}
 .anxlink a{color:var(--navy);font-weight:600}
 
 /* Card grid — By Audience on the home page, and the 13 neighbourhood cards on
@@ -426,13 +445,13 @@ h3.reg-gh{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:u
 .act a:hover{text-decoration:underline}
 /* Read-more affordance on each card. The card title is also a link, but a
    title that happens to be clickable is easy to miss — this states it. */
-.acr{display:inline-flex;align-items:center;min-height:44px;margin-top:2px;font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--gold-ink);text-decoration:none}
+.acr{display:inline-flex;align-items:center;min-height:44px;margin-top:2px;font-family:var(--sans);font-size:14px;text-transform:none;letter-spacing:0;color:var(--gold-ink);text-decoration:none;border-bottom:1px solid var(--gold)}
 .acr:hover{text-decoration:underline}
 .acx{font-size:14px;color:#44403c;line-height:1.5}
 /* "Start with Measures…" routing line under each audience card. Monospace and
    gold to read as an instrument rather than more prose, since it sits directly
    under a sentence it must not be mistaken for. */
-.acm{margin-top:10px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.04em;color:#57534e;line-height:1.9}
+.acm{margin-top:10px;font-family:var(--sans);font-size:13px;letter-spacing:0;color:#57534e;line-height:1.7}
 .acm b{color:var(--gold-ink);font-weight:500}
 .acm a{color:var(--navy);text-decoration:none;border-bottom:1px solid rgba(26,54,104,.3);padding:2px 1px}
 .acm a:hover{border-bottom-color:var(--navy)}
@@ -450,7 +469,7 @@ h3.reg-gh{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:u
    can run the full 880px column rather than the 760px reading measure. */
 .nbgrid{margin:8px 0 40px}
 .nbextra{margin-top:28px;padding-top:22px;border-top:1px solid rgba(26,54,104,.18)}
-.nbextra-h{font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.2em;color:var(--gold-ink);margin-bottom:4px}
+.nbextra-h{font-family:var(--serif);font-style:italic;font-size:15px;text-transform:none;letter-spacing:0;color:var(--gold-ink);margin-bottom:4px}
 .nbextra .ag{margin-top:12px}
 @media(min-width:640px){.nbextra .ag{grid-template-columns:1fr}}
 @media(min-width:1024px){.nbextra .ag{grid-template-columns:repeat(3,1fr)}}
@@ -461,10 +480,10 @@ h3.reg-gh{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:u
    know where it goes. */
 .nbnav{display:grid;grid-template-columns:1fr;gap:10px;margin:40px 0 0;max-width:760px}
 @media(min-width:560px){.nbnav{grid-template-columns:1fr 1fr}}
-.nbnav a{display:flex;flex-direction:column;gap:3px;min-height:44px;justify-content:center;padding:14px 16px;background:#fff;border:1px solid rgba(26,54,104,.18);text-decoration:none;transition:border-color .15s,transform .15s}
-.nbnav a:hover{border-color:var(--gold);transform:translateY(-1px)}
+.nbnav a{display:flex;flex-direction:column;gap:3px;min-height:44px;justify-content:center;padding:14px 0;background:transparent;border:none;border-top:1px solid rgba(26,54,104,.16);text-decoration:none;transition:border-color .15s}
+.nbnav a:hover{border-top-color:var(--gold)}
 .nbnav .nbnext{text-align:right}
-.nbnl{font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.15em;color:var(--gold-ink)}
+.nbnl{font-family:var(--serif);font-style:italic;font-size:13px;text-transform:none;letter-spacing:0;color:var(--gold-ink)}
 .nbnn{font-family:'Fraunces',serif;font-size:17px;color:var(--navy);line-height:1.25}
 
 /* The full switcher: every neighbourhood, one tap away, at the foot of every
@@ -472,14 +491,14 @@ h3.reg-gh{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:u
    site.js — it is the main route between 13 sibling pages, and a route that
    only exists once JavaScript has run is one that crawlers never follow. */
 .nbsw{margin:36px 0 0;padding:22px 0 0;border-top:1px solid rgba(26,54,104,.18);max-width:760px}
-.nbsw-h{font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.2em;color:var(--gold-ink);margin-bottom:12px}
+.nbsw-h{font-family:var(--serif);font-style:italic;font-size:15px;text-transform:none;letter-spacing:0;color:var(--gold-ink);margin-bottom:12px}
 .nbchips{display:flex;flex-wrap:wrap;gap:8px}
 .nbchip{display:inline-flex;align-items:center;gap:4px;min-height:38px;padding:8px 13px;background:#fff;border:1px solid rgba(26,54,104,.2);font-size:14px;color:var(--navy);text-decoration:none;transition:background .15s,border-color .15s}
 .nbchip:hover{background:rgba(212,168,67,.14);border-color:var(--gold)}
 .nbchip.on{background:var(--navy);border-color:var(--navy);color:#fff;font-weight:600}
 .nbchip.on:hover{background:var(--navy)}
 .nbchips-x{margin-top:12px;padding-top:12px;border-top:1px dashed rgba(26,54,104,.2);align-items:center}
-.nbxl{font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.13em;color:#57534e;align-self:center}
+.nbxl{font-family:var(--sans);font-size:12px;text-transform:none;letter-spacing:0;color:#57534e;align-self:center}
 
 /* Door — first screens. Gold is for the numbers that matter, not decoration.
    Generous type and 8px spacing. Do not shrink-to-fit a laptop fold. */
@@ -487,27 +506,32 @@ h3.reg-gh{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:u
 .kick{display:none}
 .vchip,.kick .vchip,.vchip-row{display:none}
 
-.door{padding:16px 0 12px}
-@media(min-width:640px){.door{padding:18px 0 10px}}
+.door{padding:22px 0 18px;position:relative}
+@media(min-width:640px){.door{padding:28px 0 22px}}
 .door .kick{display:none}
-.door .ht{font-size:32px;margin:0;letter-spacing:-.02em;line-height:1.12}
-@media(min-width:640px){.door .ht{font-size:36px}}
+.door .ht{font-size:32px;margin:0;letter-spacing:-.01em;line-height:1.16}
+@media(min-width:640px){.door .ht{font-size:38px}}
 .door .ht em{color:var(--navy);font-style:italic}
-.door-story{font-family:'Fraunces',serif;font-size:18px;line-height:1.4;color:var(--navy);margin:8px 0 0;max-width:var(--measure);font-weight:400}
+.door-story{font-family:var(--serif);font-size:19px;line-height:1.45;color:var(--navy);margin:12px 0 0;max-width:var(--measure);font-weight:400}
 .door-story .gnum{font-style:normal}
 
-.diag-strip{display:grid;grid-template-columns:1fr 1fr;gap:10px 16px;margin-top:14px;padding-left:0;border-left:none}
-@media(min-width:720px){.diag-strip{grid-template-columns:repeat(3,1fr);gap:12px 20px}}
-@media(min-width:1100px){.diag-strip{grid-template-columns:repeat(6,minmax(0,1fr));gap:10px 20px}}
+/* Diagnostic as a civic ledger — figure then clause — not six equal tiles. */
+.diag-strip{display:flex;flex-direction:column;gap:0;margin-top:20px;padding:12px 0 4px;border-top:1px solid rgba(212,168,67,.45);border-bottom:1px solid rgba(26,54,104,.14);max-width:72ch}
+@media(min-width:800px){.diag-strip{display:grid;grid-template-columns:1fr 1fr;column-gap:40px;max-width:none}}
 .diag.diag-strip{padding-left:0;border-left:none}
-.diag-strip .dr2{flex-direction:column;align-items:flex-start;gap:2px;padding:0 8px 8px 0;margin:0;border-bottom:1px solid rgba(26,54,104,.16);min-width:0}
-.diag-strip .dnu{font-family:'Fraunces',serif;font-size:24px;font-weight:500;line-height:1;color:var(--navy);white-space:nowrap}
-@media(min-width:640px){.diag-strip .dnu{font-size:26px}}
-.diag-strip .dtx{font-size:13px;line-height:1.3;color:var(--muted)}
+.diag-strip .dr2{display:flex;flex-direction:row;align-items:baseline;gap:14px;padding:9px 0;margin:0;border-bottom:1px solid rgba(26,54,104,.1);min-width:0}
+.diag-strip .dr2:last-child{border-bottom:none}
+@media(min-width:800px){
+  .diag-strip .dr2:nth-last-child(-n+2){border-bottom:none}
+}
+.diag-strip .dnu{font-family:var(--serif);font-size:22px;font-weight:500;line-height:1.15;color:var(--navy);white-space:nowrap;flex:0 0 5.4em;text-align:right}
+@media(min-width:640px){.diag-strip .dnu{font-size:24px}}
+.diag-strip .dtx{font-size:15px;line-height:1.4;color:var(--muted)}
 .diag-strip .dnu.gnum{color:var(--gold-ink)}
 
-.door-cta{display:flex;flex-wrap:wrap;gap:10px;margin:10px 0 2px}
+.door-cta{display:flex;flex-wrap:wrap;gap:12px 28px;align-items:center;margin:18px 0 4px}
 .door-cta .bn{padding:10px 18px;font-size:15px;min-height:44px}
+.door-cta .bns,.door-cta a.bn.bns{padding-left:0;padding-right:0}
 .door{display:flex;flex-direction:column}
 .door .ht{order:1}
 .door-story{order:2}
@@ -515,21 +539,21 @@ h3.reg-gh{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:u
 .door-cta{order:4}
 .door .fig{order:5}
 @media(max-width:619px){
-  .door .ht{font-size:26px;margin:0}
-  .door-story{font-size:17px;margin-top:10px}
-  .door-cta{margin:12px 0 6px}
-  .door .fig{margin-top:6px}
-  .diag-strip{margin-top:12px;gap:8px 12px}
-  .diag-strip .dnu{font-size:24px}
+  .door .ht{font-size:28px;margin:0}
+  .door-story{font-size:18px;margin-top:12px}
+  .door-cta{margin:16px 0 6px}
+  .door .fig{margin-top:8px}
+  .diag-strip{margin-top:16px}
+  .diag-strip .dnu{font-size:21px;flex-basis:4.8em}
   .door .cmp-r{padding:8px 0}
 }
 .door .fig{margin:8px 0 0;max-width:none;padding:0;border-top:1px solid rgba(26,54,104,.16)}
 .door .fig-e,.door .fig-s,.door .fig-l,.door .fig-c{display:none}
-.door .fig-t{font-family:'Fraunces',serif;font-size:16px;margin:8px 0 2px;font-weight:500}
-.door .cmp-r{padding:5px 0}
-.door .cmp-q{font-family:'Public Sans',system-ui,sans-serif;font-size:13px;font-weight:600;text-transform:none;letter-spacing:0;opacity:1;margin-bottom:2px}
-.door .cmp-v{font-family:'Fraunces',serif;font-size:17px;font-weight:500;margin-bottom:0}
-.door .cmp-k{font-family:'Public Sans',system-ui,sans-serif;font-size:12px;letter-spacing:0;text-transform:none;margin-bottom:2px}
+.door .fig-t{font-family:var(--serif);font-size:18px;margin:12px 0 4px;font-weight:500;letter-spacing:-.01em}
+.door .cmp-r{padding:8px 0}
+.door .cmp-q{font-family:var(--sans);font-size:14px;font-weight:600;text-transform:none;letter-spacing:0;opacity:1;margin-bottom:3px}
+.door .cmp-v{font-family:var(--serif);font-size:18px;font-weight:500;margin-bottom:0}
+.door .cmp-k{font-family:var(--sans);font-size:13px;letter-spacing:0;text-transform:none;margin-bottom:2px}
 .door .cmp-x{display:none}
 .door .cmp-t{height:5px;margin-bottom:3px}
 .door .cmp-v.gnum{color:var(--gold-ink)}
@@ -570,17 +594,17 @@ h3.reg-gh{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:u
 .who-card table{width:100%;border-collapse:collapse;font-size:12px;table-layout:fixed}
 .who-card th,.who-card td{padding:8px 2px;border-bottom:1px solid rgba(26,54,104,.12);text-align:center;overflow:hidden;hyphens:auto}
 .who-card th.q,.who-card td.q{text-align:left;position:sticky;left:0;z-index:1;background:var(--paper);width:8.6em;border-right:1px solid rgba(26,54,104,.14);font-family:'Fraunces',serif;color:var(--navy);padding:8px 8px 8px 0;overflow:visible;hyphens:manual}
-.who-card thead th{font-family:'Public Sans',system-ui,sans-serif;font-size:11px;font-weight:600;color:var(--navy);white-space:nowrap;text-overflow:ellipsis}
+.who-card thead th{font-family:var(--sans);font-size:12px;font-weight:600;color:var(--navy);white-space:nowrap;text-overflow:ellipsis}
 @media(min-width:720px) and (max-width:1099px){
   .who-card table{min-width:1440px;table-layout:auto;font-size:13px}
   .who-card th,.who-card td{padding:10px 6px}
 }
-.who-card td.said{color:var(--moss);font-weight:600;cursor:pointer;background:rgba(34,114,71,.07);min-height:44px}
-.who-card td.notsaid{color:#8a8580}
+.who-card td.said{color:var(--navy);font-weight:500;cursor:pointer;background:transparent;min-height:44px;text-decoration:underline;text-decoration-color:rgba(212,168,67,.55)}
+.who-card td.notsaid{color:var(--quiet)}
 .who-card td.norec{color:var(--gold-ink);font-style:italic}
-.who-card td.said:hover{background:rgba(212,168,67,.16)}
+.who-card td.said:hover{background:rgba(212,168,67,.12)}
 .who-card td.said:focus{outline:2px solid var(--navy);outline-offset:-2px}
-.who-card td.pub{color:var(--navy);font-weight:600;background:rgba(26,54,104,.05)}
+.who-card td.pub{color:var(--navy);font-weight:600;background:transparent}
 .who-card td.notyet{color:var(--gold-ink);font-style:italic}
 .who-card td.dash{color:#8a8580;font-weight:400;background:transparent;font-style:normal}
 .who-card td.norec[data-door],.who-card td.pub[data-door]{cursor:pointer;min-height:44px}
@@ -597,12 +621,12 @@ h3.reg-gh{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:u
 .who-q h3{font-family:'Fraunces',serif;font-size:18px;font-weight:500;color:var(--navy);margin:0 0 8px}
 .who-line{margin:8px 0;font-size:16px;line-height:1.45;color:var(--ink);display:flex;flex-wrap:wrap;gap:6px 10px;align-items:baseline}
 .who-m{flex:none;font-weight:600}
-.who-m.said{color:var(--moss)}
-.who-m.notsaid{color:#8a8580}
+.who-m.said{color:var(--navy)}
+.who-m.notsaid{color:var(--quiet)}
 .who-m.norec{color:var(--gold-ink);font-style:italic;font-weight:500}
 .who-m.pub{color:var(--navy)}
 .who-m.notyet{color:var(--gold-ink);font-style:italic;font-weight:500}
-.who-stack button.said{font:inherit;font-weight:600;color:var(--moss);background:none;border:0;padding:0;margin:0;text-decoration:underline;text-decoration-color:rgba(34,114,71,.35);cursor:pointer;min-height:44px}
+.who-stack button.said{font:inherit;font-weight:500;color:var(--navy);background:none;border:0;padding:0;margin:0;text-decoration:underline;text-decoration-color:rgba(212,168,67,.55);cursor:pointer;min-height:44px}
 .who-stack button.said:focus{outline:2px solid var(--navy);outline-offset:2px}
 @media(max-width:719px){
   .who-card .who-table{display:none}
@@ -624,13 +648,13 @@ h3.reg-gh{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:u
 
 .tier-door{margin:16px 0 8px;padding:0;list-style:none;border-top:1px solid rgba(26,54,104,.18)}
 .tier-door li{padding:12px 0;border-bottom:1px solid rgba(26,54,104,.12);font-size:17px;color:var(--navy);display:flex;gap:12px;align-items:baseline}
-.tier-door strong{flex:none;font-family:'Public Sans',system-ui,sans-serif;font-size:14px;color:var(--gold-ink)}
+.tier-door strong{flex:none;font-family:var(--sans);font-size:14px;color:var(--gold-ink)}
 
-.save-door{padding:24px 0 8px}
-.save-door .headroom{display:grid;grid-template-columns:1fr;gap:24px;margin-top:0}
-@media(min-width:720px){.save-door .headroom{grid-template-columns:1fr 1fr;gap:32px}}
-.save-door .hd-n{font-family:'Fraunces',serif;font-size:36px;font-weight:500;color:var(--gold-ink);line-height:1.1}
-.save-door .hd-l{font-family:'Public Sans',system-ui,sans-serif;font-size:13px;color:var(--navy);margin-bottom:8px}
+.save-door{padding:28px 0 12px}
+.save-door .headroom{display:grid;grid-template-columns:1fr;gap:28px;margin-top:0}
+@media(min-width:720px){.save-door .headroom{grid-template-columns:1fr 1fr;gap:48px}}
+.save-door .hd-n{font-family:var(--serif);font-size:36px;font-weight:500;color:var(--gold-ink);line-height:1.12}
+.save-door .hd-l{font-family:var(--serif);font-style:italic;font-size:16px;color:var(--navy);margin-bottom:8px}
 .save-door .glide{display:flex;flex-wrap:wrap;gap:8px 0;align-items:baseline;margin-top:8px}
 .save-door .glide span{font-family:'Fraunces',serif;font-weight:500;color:var(--navy);font-size:24px}
 .save-door .glide .gnum{color:var(--gold-ink)}
@@ -650,7 +674,7 @@ h3.reg-gh{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:u
 }
 
 nav.toc>ol{display:none}
-h2.door-h,.prose h2.door-h{font-family:'Fraunces',serif;font-size:22px;font-weight:500;color:var(--navy);margin:22px 0 0;padding:0;border:0;letter-spacing:-.02em}
+h2.door-h,.prose h2.door-h{font-family:var(--serif);font-size:22px;font-weight:500;color:var(--navy);margin:22px 0 0;padding:0;border:0;letter-spacing:-.01em}
 .hero>p.scale{display:none}
 .toc.toc-fold{margin:24px 0;padding:0;background:transparent;border:none;border-top:1px solid rgba(26,54,104,.18);border-bottom:1px solid rgba(26,54,104,.18);border-left:none}
 .toc.toc-fold>summary{cursor:pointer;list-style:none;padding:16px 0;margin:0;font-family:'Fraunces',serif;font-style:italic;font-size:16px;text-transform:none;letter-spacing:0}
@@ -659,13 +683,14 @@ h2.door-h,.prose h2.door-h{font-family:'Fraunces',serif;font-size:22px;font-weig
 .toc.toc-fold[open]>summary::after{content:" ▴"}
 .toc.toc-fold ol{padding:0 0 16px}
 
-.prob-nums{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:24px 0 8px}
-@media(min-width:720px){.prob-nums{grid-template-columns:repeat(3,1fr);gap:24px}}
-@media(min-width:1100px){.prob-nums{grid-template-columns:repeat(6,1fr)}}
-.prob-nums .pn{border-bottom:1px solid rgba(26,54,104,.16);padding-bottom:12px}
-.prob-nums .pn-n{font-family:'Fraunces',serif;font-size:32px;font-weight:500;color:var(--navy);line-height:1}
+.prob-nums{display:flex;flex-direction:column;gap:0;margin:22px 0 10px;padding:10px 0 2px;border-top:1px solid rgba(212,168,67,.45);border-bottom:1px solid rgba(26,54,104,.14);max-width:72ch}
+@media(min-width:800px){.prob-nums{display:grid;grid-template-columns:1fr 1fr;column-gap:40px;max-width:none}}
+.prob-nums .pn{display:flex;align-items:baseline;gap:14px;border-bottom:1px solid rgba(26,54,104,.1);padding:9px 0}
+.prob-nums .pn:last-child{border-bottom:none}
+@media(min-width:800px){.prob-nums .pn:nth-last-child(-n+2){border-bottom:none}}
+.prob-nums .pn-n{font-family:var(--serif);font-size:24px;font-weight:500;color:var(--navy);line-height:1.15;flex:0 0 5.2em;text-align:right;white-space:nowrap}
 .prob-nums .pn-n.gnum{color:var(--gold-ink)}
-.prob-nums .pn-l{font-size:13px;line-height:1.35;color:var(--muted);margin-top:6px}
+.prob-nums .pn-l{font-size:15px;line-height:1.4;color:var(--muted);margin-top:0}
 
 .cmts.compact .cmt{padding:16px 0 16px 12px}
 .cmts.compact .cmt .nm{font-size:18px;margin-bottom:8px}
@@ -679,7 +704,7 @@ h2.door-h,.prose h2.door-h{font-family:'Fraunces',serif;font-size:22px;font-weig
 .cmts.door-first .cmt .k{display:none}
 .prob-nums + #commitments{margin-top:28px;padding-top:16px}
 
-.sc-door-note{font-family:'Public Sans',system-ui,sans-serif;font-size:16px;line-height:1.5;color:var(--muted);margin:12px 0 0;max-width:var(--measure)}
+.sc-door-note{font-family:var(--sans);font-size:16px;line-height:1.55;color:var(--muted);margin:12px 0 0;max-width:var(--measure)}
 .sc-door-note a{color:var(--navy)}
 .sc-door-note b{font-family:inherit;font-weight:600;color:var(--navy)}
 
