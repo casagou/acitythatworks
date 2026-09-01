@@ -62,11 +62,11 @@ header::after{content:"";position:absolute;left:0;right:0;bottom:0;height:7px;po
 .nvmore>summary{display:inline-flex;align-items:center;gap:5px;min-height:44px;list-style:none;cursor:pointer;color:inherit}
 .nvmore>summary::-webkit-details-marker{display:none}
 .nvmore>summary:hover,.nvmore[open]>summary{color:var(--gold)}
-.nvpanel{position:absolute;top:calc(100% + 14px);right:0;z-index:60;min-width:250px;background:var(--navy);border:1px solid rgba(212,168,67,.3);box-shadow:0 16px 40px rgba(0,0,0,.32);padding:10px;display:flex;flex-direction:column;gap:2px}
+.nvpanel{position:absolute;top:calc(100% + 14px);right:0;z-index:60;min-width:250px;max-height:min(70vh, calc(100dvh - var(--h) - 24px));overflow-y:auto;-webkit-overflow-scrolling:touch;background:var(--navy);border:1px solid rgba(212,168,67,.3);box-shadow:0 16px 40px rgba(0,0,0,.32);padding:10px;display:flex;flex-direction:column;gap:2px}
 .nvpanel .grp{padding:10px 12px 4px;font-family:var(--serif);font-style:italic;font-size:13px;letter-spacing:0;text-transform:none;color:rgba(250,247,240,.55)}
 .nvpanel .grp:first-child{padding-top:4px}
 .nvpanel a{display:flex;align-items:center;min-height:38px;padding:4px 12px;font-family:var(--sans);font-size:14px;letter-spacing:0;text-transform:none;color:rgba(250,247,240,.9);text-decoration:none;border-radius:0;white-space:nowrap}
-.nvpanel a:hover{background:rgba(212,168,67,.14);color:var(--gold)}
+.nvpanel a:hover,.nvpanel a.cur{background:rgba(212,168,67,.14);color:var(--gold)}
 /* Base rule must precede the breakpoints below: it carries display:flex at the
    same specificity, so when it came last it beat them and the hamburger stayed
    visible on desktop alongside the full nav. */
@@ -89,8 +89,8 @@ header::after{content:"";position:absolute;left:0;right:0;bottom:0;height:7px;po
 .mm{display:none;background:#1A3668;border-bottom:1px solid rgba(212,168,67,.32)}
 /* header{height:var(--h)} is fixed, so an open drawer taller than that would
    otherwise overflow the sticky header's box uncontained — on a short phone
-   (13 links + social row runs ~850px) that puts the bottom entries, including
-   the Endorse CTA, past the viewport with no way to reach them, since page
+   (grouped site map + social row) that puts the bottom entries, including
+   Evidence store, past the viewport with no way to reach them, since page
    scroll doesn't move a sticky header. Capping the drawer's own height and
    giving it its own scrollbar fixes that regardless of how long it gets. */
 .mm.o{display:block;max-height:calc(100dvh - var(--h));overflow-y:auto;-webkit-overflow-scrolling:touch;padding-bottom:env(safe-area-inset-bottom)}
@@ -100,7 +100,8 @@ body.no-scroll{overflow:hidden}
 .mmi{display:flex;flex-direction:column;gap:0;padding:8px 16px 16px;font-family:var(--sans);font-size:18px}
 .mmi a{display:flex;align-items:center;min-height:48px;color:rgba(250,247,240,.92);text-decoration:none;padding:0;border-bottom:1px solid rgba(250,247,240,.1)}
 .mmi a.gd,.mmi a.cur{color:var(--gold);font-weight:600}
-.mmi .grp{display:none}
+.mmi .grp{display:block;padding:16px 0 4px;font-family:var(--serif);font-style:italic;font-size:15px;letter-spacing:0;text-transform:none;color:rgba(250,247,240,.55)}
+.mmi .grp:first-child{padding-top:8px}
 
 /* Hero / page header — one type size per job, not a stack of decorations. */
 .hero .eyb{display:none}
@@ -703,6 +704,41 @@ h2.door-h,.prose h2.door-h{font-family:var(--serif);font-size:22px;font-weight:5
 .sc-door-note{font-family:var(--sans);font-size:16px;line-height:1.55;color:var(--muted);margin:12px 0 0;max-width:var(--measure)}
 .sc-door-note a{color:var(--navy)}
 .sc-door-note b{font-family:inherit;font-weight:600;color:var(--navy)}
+.sc-hub{font-family:var(--sans);font-size:16px;line-height:1.55;color:var(--navy);margin:14px 0 0;max-width:var(--measure)}
+.sc-hub a{color:var(--navy);font-weight:600;text-decoration:underline;text-decoration-color:rgba(212,168,67,.55)}
+.sc-legend{font-family:var(--sans);font-size:15px;line-height:1.45;color:var(--muted);margin:10px 0 0;max-width:var(--measure)}
+
+/* Candidates hub — one person per row, five doors as short marks.
+   Scan order is how much they have answered, not a grade. */
+.who-hub{margin:4px 0 20px}
+.who-off{font-family:var(--serif);font-style:italic;font-size:18px;font-weight:500;color:var(--navy);margin:18px 0 4px;letter-spacing:-.01em}
+.who-off:first-of-type{margin-top:8px}
+.who-head{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:4px;padding:0 0 6px;border-bottom:1px solid rgba(26,54,104,.2);font-family:var(--sans);font-size:11px;line-height:1.25;color:var(--gold-ink)}
+.who-head-n{display:none}
+.who-p{padding:8px 0 10px;border-bottom:1px solid rgba(26,54,104,.12)}
+.who-p-h{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:6px}
+.who-p-h .plink{font-family:var(--serif);font-size:17px;font-weight:500;color:var(--navy);text-decoration:underline;text-decoration-color:rgba(212,168,67,.55)}
+.who-off-l{font-family:var(--sans);font-size:12px;color:var(--quiet);flex:none}
+.who-p-m{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:4px;align-items:center}
+.who-mk{display:flex;align-items:center;justify-content:center;min-height:40px;padding:0 2px;font-family:var(--sans);font-size:13px;line-height:1.2;background:none;border:0;margin:0;text-align:center}
+button.who-mk{cursor:pointer;min-height:44px}
+.who-mk.said{color:var(--navy);font-weight:500;text-decoration:underline;text-decoration-color:rgba(212,168,67,.55)}
+.who-mk.norec{color:var(--gold-ink);font-style:italic}
+.who-mk.pub{color:var(--navy);font-weight:600}
+.who-mk.dash{color:var(--quiet)}
+button.who-mk:hover{background:rgba(212,168,67,.1)}
+button.who-mk:focus{outline:2px solid var(--navy);outline-offset:2px}
+@media(min-width:720px){
+  .who-head,.who-p{display:grid;grid-template-columns:minmax(12em,1.3fr) repeat(5,minmax(4em,1fr));gap:8px 10px;align-items:center}
+  .who-head{font-size:12px;padding:0 0 8px}
+  .who-head-n{display:block;color:var(--navy);font-weight:600}
+  .who-p{padding:10px 0}
+  .who-p-h{margin:0;display:flex;flex-direction:column;align-items:flex-start;gap:2px}
+  .who-p-m{display:contents}
+  .who-mk{min-height:44px;font-size:14px}
+}
+#who-wide .who-table{display:block}
+#who-wide .who-stack{display:none}
 
 .hero .scale{font-size:16px;line-height:1.45;color:var(--muted);margin-top:10px;max-width:var(--measure)}
 .problem-fold{margin:8px 0 24px;border:none;border-top:1px solid rgba(26,54,104,.16);border-bottom:1px solid rgba(26,54,104,.16);background:transparent}
