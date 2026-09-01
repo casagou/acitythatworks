@@ -36,7 +36,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Public+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=15">
+<link rel="stylesheet" href="styles.css?v=17">
 <style>
 /* ── grade chips ─────────────────────────────────────────────────────── */
 .g{display:inline-flex;align-items:center;justify-content:center;min-width:34px;padding:3px 7px;font-family:'Fraunces',serif;font-size:17px;font-weight:600;line-height:1.15;color:#fff}
@@ -74,6 +74,7 @@ a.plink:focus-visible{outline:2px solid var(--gold-ink);outline-offset:2px}
    grid, so the masthead is tightened and the intro is one paragraph at body
    size. The words are unchanged — only the room they take. */
 .hero{padding-top:40px;padding-bottom:22px}
+.hero.pg-door{padding-top:16px;padding-bottom:8px}
 /* styles.css sets .lead with !important, twice, so overriding it here needs
    the same weapon rather than a specificity trick that a later edit there
    would silently undo. */
@@ -314,11 +315,11 @@ td.bad{color:#B5341F;font-weight:600}
 </nav>
 <div class="hero pg-door">
 <h1 class="ph1">Who has a written answer</h1>
+<p class="sc-legend">Said is a sourced sentence you can open. A dash is unknown, not a fail. This is not an endorsement.</p>
 </div>
 </div>
 <div class="c">
-<div id="who-card" class="who-card"></div>
-<p class="sc-door-note">Said is a sourced sentence a reader can open. Record is a documented term-in-office fact, never a grade. A dash is a blank, not a mark. A missing program is unknown, not a fail.</p>
+<div id="who-card" class="who-hub"></div>
 </div>
 <div class="cn">
 
@@ -343,6 +344,14 @@ td.bad{color:#B5341F;font-weight:600}
 </details>
 
 <div class="prose">
+
+<details class="fold-block" id="who-wide-fold">
+<summary>The five questions, every candidate</summary>
+<div class="fold-in">
+<p class="sc-door-note">The same five doors as the list above, read across the field. A wide table — not the first screen.</p>
+<div id="who-wide" class="who-card"></div>
+</div>
+</details>
 
 <details class="fold-block" id="areas-fold">
 <summary>The 15×15 letter grid and pillar grades</summary>
@@ -454,6 +463,9 @@ td.bad{color:#B5341F;font-weight:600}
 </div>
 </details>
 
+<details class="fold-block" id="method-fold">
+<summary>How a mark is decided, and what a blank means</summary>
+<div class="fold-in">
 <h2 id="scale">How a mark is decided</h2>
 <p>A mark requires a citable public source: a recorded council vote, a published platform, or a direct quotation in a named outlet. <strong>It is not a judgement about whether a candidate is good.</strong> It is the answer to two questions, asked in order.</p>
 <p><strong>Question 1 — does the candidate share the goal?</strong> <em>Commits</em> states an action they will take · <em>Agrees</em> names it as a goal or priority but states no action · <em>Mentions</em> raises the topic, states no goal · <em>Disagrees</em> a recorded vote against, or an explicit statement of opposition.</p>
@@ -550,20 +562,26 @@ td.bad{color:#B5341F;font-weight:600}
 
 <p style="margin-top:32px"><a href="/comparison" class="pgback">Evidence store — the comparison matrix, topic by topic</a></p>
 </div>
+</details>
+</div>
 </div>
 </main>
 
 <div id="footer-mount"></div>
 <script id="scdata" type="application/json"><!--SCOREDATA--></script>
-<script src="site.js?v=12"></script>
+<script src="site.js?v=13"></script>
 <script>
 (function(){
   var DATA = JSON.parse(document.getElementById('scdata').textContent);
 
-  /* Presentation only. Reads DATA.door. Does not assign grades. */
+  /* Presentation only. Reads DATA.door. Does not assign grades.
+     First screen is one row per person, Mayor then Council, sorted by
+     how many doors they have answered. That is a scan order — not a
+     grade and not an endorsement. Letter grades stay in the fold. */
   (function buildWhoCard(){
     var mount = document.getElementById('who-card');
-    if(!mount || !DATA || !DATA.cands) return;
+    var wide = document.getElementById('who-wide');
+    if(!DATA || !DATA.cands) return;
     var rows = (DATA.door && DATA.door.rows) || [];
     var cells = (DATA.door && DATA.door.cells) || {};
     function doorOf(c, row){
@@ -578,58 +596,96 @@ td.bad{color:#B5341F;font-weight:600}
       if(st==='yes' || st==='published') return {cls:'pub', label:'yes', row:row.key, cell:cell};
       return {cls:'dash', label:'—', row:row.key, cell:cell};
     }
-    function lastName(c){
-      var p = (c.name || '').trim().split(/\s+/);
-      return p[p.length-1] || c.name;
+    function answered(c){
+      var n = 0;
+      rows.forEach(function(r){ if(doorOf(c, r).cls !== 'dash') n++; });
+      return n;
     }
-    var h = '<div class="who-table"><table><thead><tr><th class="q">Who has answered</th>';
-    DATA.cands.forEach(function(c){
-      h += '<th title="'+c.name+'">'+lastName(c)+'</th>';
-    });
-    h += '</tr></thead><tbody>';
-    rows.forEach(function(r){
-      h += '<tr><td class="q">'+r.label+'</td>';
-      DATA.cands.forEach(function(c){
-        var st = doorOf(c, r);
-        if(st.cls==='dash'){
-          h += '<td class="dash" data-k="'+c.key+'">—</td>';
-        } else {
-          h += '<td class="'+st.cls+'" tabindex="0" role="button" data-door="'+st.row+'" data-c="'+c.key+'" data-k="'+c.key+'">'+st.label+'</td>';
-        }
+    function shortLabel(r){
+      var s = r.label || r.key;
+      s = s.replace(/\s*\([^)]*\)\s*$/, '');
+      if(/^A written program/i.test(s)) return 'Program';
+      if(/^Downtown/i.test(s)) return 'Downtown';
+      if(/^Housing/i.test(s)) return 'Housing';
+      if(/^Household/i.test(s)) return 'Household';
+      return s;
+    }
+    function profileHref(c){
+      if(!c.profile) return '/profiles';
+      return String(c.profile).replace(/^profiles\.html/, '/profiles');
+    }
+    function esc(s){
+      return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+    }
+    function byOffice(office){
+      return DATA.cands.filter(function(c){
+        return String(c.office || '').toLowerCase() === office;
+      }).sort(function(a, b){
+        var da = answered(a), db = answered(b);
+        if(da !== db) return db - da;
+        return String(a.name || '').localeCompare(String(b.name || ''));
       });
-      h += '</tr>';
-    });
-    h += '</tbody></table></div>';
-    var groups = [
-      {cls:'said', label:'Said'},
-      {cls:'norec', label:'Record'},
-      {cls:'pub', label:'Yes'},
-      {cls:'dash', label:'—'}
-    ];
-    h += '<div class="who-stack">';
-    rows.forEach(function(r){
-      var buckets = {said:[], norec:[], pub:[], dash:[]};
-      DATA.cands.forEach(function(c){
-        var st = doorOf(c, r);
-        (buckets[st.cls] || buckets.dash).push({c:c, st:st});
+    }
+    function markCell(c, r){
+      var st = doorOf(c, r);
+      var label = st.label;
+      var aria = esc(r.label) + ': ' + label;
+      if(st.cls === 'dash'){
+        return '<span class="who-mk dash" aria-label="'+aria+'">—</span>';
+      }
+      return '<button type="button" class="who-mk '+st.cls+'" data-door="'+st.row+'" data-c="'+esc(c.key)+'" aria-label="'+aria+'">'+label+'</button>';
+    }
+    function headRow(){
+      var h = '<div class="who-head" aria-hidden="true"><span class="who-head-n">Candidate</span>';
+      rows.forEach(function(r){ h += '<span title="'+esc(r.label)+'">'+esc(shortLabel(r))+'</span>'; });
+      return h + '</div>';
+    }
+    function personRow(c){
+      var href = profileHref(c);
+      var h = '<div class="who-p">';
+      h += '<div class="who-p-h"><a class="plink" href="'+esc(href)+'">'+esc(c.name)+'</a>';
+      h += '<span class="who-off-l">'+esc(c.office || '')+'</span></div>';
+      h += '<div class="who-p-m">';
+      rows.forEach(function(r){ h += markCell(c, r); });
+      h += '</div></div>';
+      return h;
+    }
+    if(mount){
+      var html = '';
+      [['mayor','Mayor'],['council','Council']].forEach(function(pair){
+        var list = byOffice(pair[0]);
+        if(!list.length) return;
+        html += '<h2 class="who-off">'+pair[1]+'</h2>';
+        html += headRow();
+        list.forEach(function(c){ html += personRow(c); });
       });
-      h += '<div class="who-q"><h3>'+r.label+'</h3>';
-      groups.forEach(function(g){
-        var items = buckets[g.cls];
-        if(!items.length) return;
-        h += '<p class="who-line"><span class="who-m '+g.cls+'">'+g.label+'</span>';
-        h += items.map(function(it){
-          if(it.st.cls==='dash'){
-            return '<span>'+it.c.name+'</span>';
+      mount.innerHTML = html;
+    }
+    if(wide){
+      function lastName(c){
+        var p = (c.name || '').trim().split(/\s+/);
+        return p[p.length-1] || c.name;
+      }
+      var h = '<div class="who-table"><table><thead><tr><th class="q">Who has answered</th>';
+      DATA.cands.forEach(function(c){
+        h += '<th title="'+esc(c.name)+'">'+esc(lastName(c))+'</th>';
+      });
+      h += '</tr></thead><tbody>';
+      rows.forEach(function(r){
+        h += '<tr><td class="q">'+esc(r.label)+'</td>';
+        DATA.cands.forEach(function(c){
+          var st = doorOf(c, r);
+          if(st.cls==='dash'){
+            h += '<td class="dash" data-k="'+esc(c.key)+'">—</td>';
+          } else {
+            h += '<td class="'+st.cls+'" tabindex="0" role="button" data-door="'+st.row+'" data-c="'+esc(c.key)+'" data-k="'+esc(c.key)+'">'+st.label+'</td>';
           }
-          return '<button type="button" class="'+it.st.cls+'" data-door="'+it.st.row+'" data-c="'+it.c.key+'">'+it.c.name+'</button>';
-        }).join('');
-        h += '</p>';
+        });
+        h += '</tr>';
       });
-      h += '</div>';
-    });
-    h += '</div>';
-    mount.innerHTML = h;
+      h += '</tbody></table></div>';
+      wide.innerHTML = h;
+    }
   })();
 
   var lastTrigger = null;
@@ -855,7 +911,7 @@ td.bad{color:#B5341F;font-weight:600}
          scroll inside their own container, so the panel has to land just
          below that container — pinning it to one fixed element put the area
          panel a full screen away from the cell that opened it. */
-      var host = td.closest('.who-card, .who-stack, .gwrap, .tbl-wrap') || td.closest('table');
+      var host = td.closest('.who-hub, .who-card, .who-stack, .gwrap, .tbl-wrap') || td.closest('table');
       host.parentNode.insertBefore(p, host.nextSibling);
       p.scrollIntoView({block:'nearest'});
     }
@@ -865,7 +921,7 @@ td.bad{color:#B5341F;font-weight:600}
      mark in the 55-topic grid, and — since v3.4 put a definition on every
      topic — the topic name itself. All route through open(); the selector has
      to cover all three or a grid silently does nothing when clicked. */
-  var SEL = 'td.gc[data-t], td.cc[data-col], td.gt[data-topic], .who-card td[data-door], .who-stack [data-door]';
+  var SEL = 'td.gc[data-t], td.cc[data-col], td.gt[data-topic], .who-card td[data-door], .who-stack [data-door], .who-hub [data-door]';
   document.addEventListener('click', function(e){
     var td = e.target.closest && e.target.closest(SEL);
     if(td) open(td);

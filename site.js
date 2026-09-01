@@ -66,6 +66,30 @@
     return '<a href="/comparison">Evidence store</a>';
   }
 
+  // One grouped map for the phone drawer and the desktop More panel.
+  // Footer keeps its fuller columns (annexes, city hall, version history)
+  // but pulls candidate, audience and evidence links from the same helpers
+  // above — three hand-written copies is how the drawer went stale.
+  // Groups, not a 30-link dump. Comparison is Evidence store, in More.
+  function siteMapHtml() {
+    var cand = candLinks();
+    return '' +
+      '<div class="grp">The framework</div>' +
+      '<a href="/">Home</a>' +
+      '<a href="/summary">Summary</a>' +
+      '<a href="/measures">Measures</a>' +
+      '<a href="/neighbourhoods">Neighbourhoods</a>' +
+      '<a href="/#scorecard">12 Commitments</a>' +
+      '<a href="/#balance">Tax glide path</a>' +
+      '<a href="/savings">Savings</a>' +
+      '<a href="/endorse">Endorse</a>' +
+      (cand ? '<div class="grp">Candidates</div>' + cand : '') +
+      '<div class="grp">More</div>' +
+      '<a href="/faq">FAQ</a>' +
+      audienceLinks() +
+      evidenceLink();
+  }
+
   function socialLinks(cls) {
     return SOCIAL.map(function (s) {
       var label = s.name + ' — ' + s.handle;
@@ -161,15 +185,12 @@ evidenceLink() +
     toc.replaceWith(d);
   });
 
-  // Phone menu is the five top items (plus Home), not a dump of the site map.
-  // Audience pages, annexes, Savings, Endorse and the rest stay in the footer.
+  // Phone drawer is the grouped site map, not the five-item top bar.
+  // The static #mn .mmi in each page is the no-JS short list; once
+  // this script runs, the same map the More panel uses replaces it.
   var mmi = document.querySelector('#mn .mmi');
   if (mmi) {
-    var dump = false;
-    [].slice.call(mmi.childNodes).forEach(function (n) {
-      if (n.nodeType === 1 && n.classList && n.classList.contains('grp')) dump = true;
-      if (dump) n.remove();
-    });
+    mmi.innerHTML = siteMapHtml();
   }
 
   // Social icons, where the header row has no space for them.
@@ -180,30 +201,58 @@ evidenceLink() +
     mmi.appendChild(wrap);
   }
 
-  // Current page on the five-item bar and the phone list. Neighbourhood
-  // children mark Neighbourhoods; audience pages mark nothing in the bar.
+  // Desktop More — the same grouped map as the phone drawer. The top
+  // bar stays five items (Summary, Measures, Neighbourhoods, Who has
+  // answered, FAQ). More is how a wide screen reaches Profiles,
+  // Evidence store, Savings and the audience pages without the footer.
+  var nv = document.querySelector('header .nv');
+  if (nv && !nv.querySelector('.nvmore')) {
+    var more = document.createElement('details');
+    more.className = 'nvmore';
+    more.innerHTML =
+      '<summary>More</summary>' +
+      '<div class="nvpanel">' + siteMapHtml() + '</div>';
+    nv.appendChild(more);
+    more.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () { more.open = false; });
+    });
+    document.addEventListener('click', function (e) {
+      if (more.open && !more.contains(e.target)) more.open = false;
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && more.open) {
+        more.open = false;
+        more.querySelector('summary').focus();
+      }
+    });
+  }
+
+  // Current page on the five-item bar, the phone list and More.
+  // Neighbourhood children mark Neighbourhoods; audience pages mark
+  // themselves in the map, not in the short bar. Hash links only
+  // light up when that section is the one on the address bar, so
+  // Home, 12 Commitments and Tax glide path are not all gold on /.
   (function markCurrent() {
     var path = (location.pathname || '/').replace(/\.html$/, '').replace(/\/$/, '') || '/';
     if (/^\/neighbourhood-/.test(path)) path = '/neighbourhoods';
-    function stem(href) {
+    var hereHash = (location.hash || '').replace(/^#/, '');
+    function parts(href) {
       try {
         var u = href.indexOf('http') === 0 ? new URL(href) : new URL(href, location.origin);
-        return (u.pathname || '/').replace(/\.html$/, '').replace(/\/$/, '') || '/';
-      } catch (e) { return href; }
+        return {
+          path: (u.pathname || '/').replace(/\.html$/, '').replace(/\/$/, '') || '/',
+          hash: (u.hash || '').replace(/^#/, '')
+        };
+      } catch (e) { return { path: href, hash: '' }; }
     }
-    document.querySelectorAll('.nv a, .mmi a').forEach(function (a) {
-      var s = stem(a.getAttribute('href') || '');
-      if (s === path) {
+    document.querySelectorAll('.nv a, .mmi a, .nvpanel a').forEach(function (a) {
+      var p = parts(a.getAttribute('href') || '');
+      if (p.path === path && (!p.hash || p.hash === hereHash)) {
         a.classList.add('cur');
         if (a.closest('.mmi')) a.classList.add('gd');
       }
     });
   })();
-
-  // The More mega-menu is retired. Five top items (Summary, Measures,
-  // Neighbourhoods, Who has answered, FAQ) are the whole desktop nav
-  // and the whole phone menu. Savings, Endorse, annexes and the
-  // evidence store stay in the footer.
 
   // Wide comparison tables scroll sideways inside .tbl-wrap, and the edge
   // shadow alone is easy to miss on a phone — so say it in words. Only for
