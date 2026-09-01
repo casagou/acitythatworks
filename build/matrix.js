@@ -456,9 +456,9 @@ const payload = {
   })(),
 };
 
-/* Equal dash columns (Garcia, Girard, Gibbs, Dion, Harris) live in
+/* Equal dash columns (Garcia, Girard, Gibbs, Dion, Harris, McGuigan) live in
    scorecard-data.json, not in matrix-v3.js. Merge them into the payload so a
-   later rebuild cannot drop the door columns. Letters stay empty. Do not run
+   later rebase cannot drop the door columns. Letters stay empty. Do not run
    this file as a ship step while matrix-v3.js still lists Coleman. */
 (function mergeEqualColumns(payload) {
   const p = path.join(ROOT, "scorecard-data.json");
@@ -466,6 +466,7 @@ const payload = {
   const scd = JSON.parse(fs.readFileSync(p, "utf8"));
   const keyOf = {
     "Mike Harris": { key: "Hr", office: "Mayor" },
+    "Bruce McGuigan": { key: "Mg", office: "Mayor" },
     "Jerry Garcia": { key: "Gg", office: "Council" },
     "Martin Girard": { key: "Gi", office: "Council" },
     "Peter Gibbs": { key: "Gb", office: "Council" },
@@ -485,8 +486,10 @@ const payload = {
       key: meta.key, name, office: meta.office, grade: null, mean: null, n: 0,
       profile: null, note: null, marks: [],
     };
-    if (name === "Mike Harris") {
-      const i = payload.cands.findIndex((c) => c.key === "Al");
+    if (name === "Mike Harris" || name === "Bruce McGuigan") {
+      const after = (name === "Bruce McGuigan" && payload.cands.some((c) => c.key === "Hr"))
+        ? "Hr" : "Al";
+      const i = payload.cands.findIndex((c) => c.key === after);
       const at = i === -1 ? payload.cands.length : i + 1;
       payload.cands.splice(at, 0, cand);
       payload.grid.forEach((row) => row.splice(at, 0, "."));
