@@ -572,7 +572,7 @@ h3.reg-gh{font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:u
 .who-card th.q,.who-card td.q{text-align:left;position:sticky;left:0;z-index:1;background:var(--paper);width:8.6em;border-right:1px solid rgba(26,54,104,.14);font-family:'Fraunces',serif;color:var(--navy);padding:8px 8px 8px 0;overflow:visible;hyphens:manual}
 .who-card thead th{font-family:'Public Sans',system-ui,sans-serif;font-size:11px;font-weight:600;color:var(--navy);white-space:nowrap;text-overflow:ellipsis}
 @media(min-width:720px) and (max-width:1099px){
-  .who-card table{min-width:1280px;table-layout:auto;font-size:13px}
+  .who-card table{min-width:1360px;table-layout:auto;font-size:13px}
   .who-card th,.who-card td{padding:10px 6px}
 }
 .who-card td.said{color:var(--moss);font-weight:600;cursor:pointer;background:rgba(34,114,71,.07);min-height:44px}

@@ -456,6 +456,48 @@ const payload = {
   })(),
 };
 
+/* Equal dash columns (Garcia, Girard, Gibbs, Dion, Harris) live in
+   scorecard-data.json, not in matrix-v3.js. Merge them into the payload so a
+   later rebuild cannot drop the door columns. Letters stay empty. Do not run
+   this file as a ship step while matrix-v3.js still lists Coleman. */
+(function mergeEqualColumns(payload) {
+  const p = path.join(ROOT, "scorecard-data.json");
+  if (!fs.existsSync(p)) return;
+  const scd = JSON.parse(fs.readFileSync(p, "utf8"));
+  const keyOf = {
+    "Mike Harris": { key: "Hr", office: "Mayor" },
+    "Jerry Garcia": { key: "Gg", office: "Council" },
+    "Martin Girard": { key: "Gi", office: "Council" },
+    "Peter Gibbs": { key: "Gb", office: "Council" },
+    "Shona Dion": { key: "Di", office: "Council" },
+  };
+  const emptyCol = {};
+  M.COLUMNS.forEach((col) => {
+    emptyCol[col.key] = {
+      state: "empty", n: 0, record: 0,
+      total: col.all ? M.TOPICS.length : col.topics.length,
+    };
+  });
+  Object.keys(scd.prov || {}).forEach((name) => {
+    const meta = keyOf[name];
+    if (!meta || payload.cands.some((c) => c.key === meta.key)) return;
+    const cand = {
+      key: meta.key, name, office: meta.office, grade: null, mean: null, n: 0,
+      profile: null, note: null, marks: [],
+    };
+    if (name === "Mike Harris") {
+      const i = payload.cands.findIndex((c) => c.key === "Al");
+      const at = i === -1 ? payload.cands.length : i + 1;
+      payload.cands.splice(at, 0, cand);
+      payload.grid.forEach((row) => row.splice(at, 0, "."));
+    } else {
+      payload.cands.push(cand);
+      payload.grid.forEach((row) => row.push("."));
+    }
+    payload.colGrid[meta.key] = JSON.parse(JSON.stringify(emptyCol));
+  });
+})(payload);
+
 /* Defect 1's table is the four weightings costed on the real data before one
    was chosen. Column 2 is the option that was adopted, so it is marked as
    such rather than left for the reader to infer from the prose. */
