@@ -440,6 +440,12 @@ const payload = {
   /* candidateKey|columnKey -> { ev } straight from the master's per-grade
      justification tables. The grade itself is never carried here — it is
      computed above, and two copies of a number is one too many. */
+  door: (function(){
+    const p = path.join(ROOT, "scorecard-data.json");
+    if (!fs.existsSync(p)) return undefined;
+    const scd = JSON.parse(fs.readFileSync(p, "utf8"));
+    return scd.door || undefined;
+  })(),
   just: (() => {
     const o = {};
     C.forEach((c) => M.COLUMNS.forEach((col) => {
