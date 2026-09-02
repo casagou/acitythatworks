@@ -84,6 +84,9 @@ const TONE = [
 const toneFor = (l) => (TONE.find(([re]) => re.test(l)) || [null, ""])[1];
 
 const SKIP = /^(ID)$/i;
+/* August score buckets are not current grades. Hub cards omit them; the
+   live-door pages already carry the Notion transfer minus these lists. */
+const SKIP_BUCKET = /^(?:✅|🟢|🟡|❌)|^(?:Aligned|Close|Partial|Opposed)\b/;
 
 function renderProfile(p) {
   const c = p.id ? gradeOf[p.id] : null;
@@ -102,7 +105,7 @@ function renderProfile(p) {
       '<a href="scorecard.html#sc-' + c.key + '">See every area grade and the evidence behind it →</a></p>';
   }
   p.fields.forEach((f) => {
-    if (SKIP.test(f.label)) return;
+    if (SKIP.test(f.label) || SKIP_BUCKET.test(f.label)) return;
     const t = toneFor(f.label);
     body += '<p class="pf ' + t + '"><strong class="pfl">' + rich(f.label) + ".</strong> " + rich(f.body) + "</p>";
   });
