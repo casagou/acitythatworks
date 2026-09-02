@@ -1179,8 +1179,8 @@ body.has-shortbar .jb{bottom:78px}
 .sum-hero{display:grid;grid-template-columns:1fr;gap:22px 44px;align-items:start;padding-bottom:8px}
 @media(min-width:960px){.sum-hero{grid-template-columns:minmax(0,1.35fr) minmax(0,1fr)}}
 .sum-hero .ph1{margin-top:6px}
-.sum-hero .promise{color:var(--gold);margin-top:14px}
-.sum-hero .promise em{color:#fff;font-style:italic}
+.sum-hero .promise{color:rgba(250,247,240,.94);margin-top:14px}
+.sum-hero .promise em{color:var(--gold);font-style:italic}
 .sum-hero .lead{margin-top:14px}
 /* The PDF card, on the night band. */
 .hub-band .dl{border-top:1px solid rgba(212,168,67,.55);border-bottom:1px solid rgba(250,247,240,.2);padding:16px 0;margin:0;flex-wrap:wrap}

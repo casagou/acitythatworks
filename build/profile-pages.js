@@ -138,7 +138,7 @@ function pageHtml(c) {
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Public+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/styles.css?v=18">
+<link rel="stylesheet" href="/styles.css?v=19">
 <style>
 ${PAGE_CSS}
 </style>
@@ -197,9 +197,9 @@ ${bodies[c.slug]}
 
 <div id="footer-mount"></div>
 ${cardJson}
-<script src="/icons.js?v=1"></script>
+<script src="/icons.js?v=2"></script>
 <script src="/site.js?v=14"></script>
-<script src="/civic.js?v=1"></script>
+<script src="/civic.js?v=2"></script>
 <script src="/evidence.js?v=1"></script>
 </body>
 </html>
