@@ -1109,3 +1109,64 @@ body.has-shortbar .jb{bottom:78px}
 .archive-note a{color:var(--navy);font-weight:600}
 .corr-fold>summary{color:var(--rust)}
 .corr-fold{border-left-color:var(--rust)}
+
+/* -- v2.3.1: the gaps closed after the first deploy. ---------------------------- */
+/* Hub bands on the Neighbourhoods and Measures pages; a larger title on all. */
+.hub-band .ph1{font-size:36px;line-height:1.1}
+@media(min-width:640px){.hub-band .ph1{font-size:46px}}
+.hub-band .nbmap-c{color:rgba(250,247,240,.72)}
+.hub-band .nbmap .land{fill:#f3ecd8}
+.hub-band .lead a,.hub-band .scale a{color:var(--gold)}
+/* The glide path chart on the first screen. */
+.door .door-gp{border-top:none;margin:14px 0 0;padding:12px 14px 10px;background:var(--glass);border-left:3px solid var(--water);max-width:none}
+.door .door-gp .fig-l{margin-bottom:6px;font-size:12.5px}
+.door .door-gp .gp{max-width:none;margin-top:4px}
+.door .door-gp .fig-c{display:block;font-size:13px;color:var(--glass-ink);border-top:none;padding-top:6px;margin-top:6px}
+.door .door-gp .fig-c a{color:var(--navy);font-weight:600}
+/* The old comparison marks as drawn chips, each with a spoken name. */
+.sym{display:inline-block;width:14px;height:14px;border-radius:50%;vertical-align:-2px;border:1.5px solid transparent;position:relative;box-sizing:border-box}
+.sym-a{background:#227247}
+.sym-c{background:#6FA07C}
+.sym-p{background:#D9B45B}
+.sym-o{background:#B5341F}
+.sym-n{background:transparent;border-color:rgba(26,54,104,.4)}
+.sym-r{background:transparent;border-color:var(--navy)}
+.sym-r::after{content:"";position:absolute;left:3px;top:3px;right:3px;bottom:3px;background:var(--navy)}
+.sym-x{background:repeating-linear-gradient(45deg,#c9c4bf 0 2px,transparent 2px 4px);border-color:#c9c4bf}
+.lg7 .s .sym{width:16px;height:16px}
+/* The record mark in the scorecard cells. */
+.picon.rec-ic{width:16px;height:16px;color:var(--navy);vertical-align:-3px}
+.gc.grec .picon.rec-ic{width:15px;height:15px}
+.ckr .picon.rec-ic{width:18px;height:18px}
+/* Version history as a timeline. */
+.rel{position:relative;padding-left:24px;border-left:2px solid rgba(26,54,104,.22);margin:0 0 24px}
+.rel::before{content:"";position:absolute;left:-8px;top:8px;width:12px;height:12px;border-radius:50%;background:var(--gold);border:2px solid var(--paper);box-sizing:border-box}
+.rel.old::before{background:var(--paper);border-color:rgba(26,54,104,.45)}
+.rel .relh{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 12px}
+.rel .relv{font-family:var(--serif);font-size:22px;font-weight:600;color:var(--navy)}
+.rel .reld{font-family:var(--sans);font-size:13px;color:var(--quiet)}
+/* Start-with chips on the audience pages. */
+.startwith{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:14px 0 6px;font-size:14px}
+.startwith b{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--gold-ink);margin-right:4px}
+.startwith a{display:inline-flex;align-items:center;min-height:36px;padding:4px 12px;background:#fff;border:1px solid rgba(26,54,104,.25);color:var(--navy);text-decoration:none;font-weight:600}
+.startwith a:hover{border-color:var(--water);background:var(--glass)}
+/* KPI controls. */
+.kpi-ctl{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;margin:0 0 22px;padding:12px 14px;background:var(--glass);border-left:3px solid var(--water)}
+.kpi-ctl .lbl2{font-family:var(--sans);font-size:12.5px;font-weight:600;color:var(--glass-ink)}
+.kpi-ctl select{font-family:var(--sans);font-size:14px;min-height:38px;padding:5px 9px;border:1px solid rgba(26,54,104,.3);background:#fff;color:var(--ink)}
+.kpi-n{font-size:13px;color:var(--glass-ink);margin-left:auto}
+/* Read-more and FAQ group icons; the flagship star; package icons. */
+.rmore .ic .picon{width:20px;height:20px;color:var(--navy)}
+.gh .ic .picon{width:22px;height:22px;color:var(--gold-ink)}
+.mfl .picon{width:.95em;height:.95em;color:var(--gold-ink);vertical-align:-2px}
+.pkgi .picon{width:18px;height:18px;color:var(--gold-ink)}
+.fst .ic .picon{width:16px;height:16px;color:var(--gold-ink);vertical-align:-3px}
+/* The headroom figure on the Savings page. */
+.save-fig{margin:8px 0 28px}
+/* Phone: the office is in the group heading already. */
+@media(max-width:719px){.who-hub .who-off-l{display:none}}
+/* Desktop: a cell lifts under the pointer, so the grid reads as touchable. */
+@media(hover:hover){
+  .colt td.cc:not(.none) .g,.colt td.cc:not(.none) .few-m{transition:transform .12s,box-shadow .12s}
+  .colt td.cc:not(.none):hover .g,.colt td.cc:not(.none):hover .few-m{transform:translateY(-1px);box-shadow:0 2px 6px rgba(26,54,104,.28)}
+}

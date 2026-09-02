@@ -31,6 +31,7 @@ const ROOT = path.join(__dirname, "..");
 const M = require(path.join(ROOT, "matrix-v3.js"));
 /* The drawn pillar icons; the emoji in matrix-v3.js remain the plain-text form. */
 const ICONS = require(path.join(ROOT, "icons.js"));
+const REC = ICONS.record.replace('class="picon"', 'class="picon rec-ic"');
 const pillarIcon = (p) => ICONS[p.key] ? ICONS[p.key] : ("<span aria-hidden=\"true\">" + p.emoji + "</span>");
 
 const EV_PATH = path.join(__dirname, "evidence.json");
@@ -334,7 +335,7 @@ function cellHtml(ck, col, g) {
   const base = ' data-col="' + col.key + '" data-n="' + g.n + '" data-mean="' + (g.n ? g.mean : "") + '"';
   if (g.state === "record") {
     return '<td class="cc rec" tabindex="0" role="button" aria-expanded="false" data-c="' + ck + '"' + base +
-      ' title="Record only — a documented term in office, never scored">📋<span class="cn">0/' + g.total + "</span></td>";
+      ' title="Record only — a documented term in office, never scored">' + REC + '<span class="cn">0/' + g.total + "</span></td>";
   }
   if (g.state === "empty") return '<td class="cc none"' + base + ">—</td>";
   if (g.state === "marks") {
@@ -391,7 +392,7 @@ let gridBody = M.TOPICS.map((t, ti) => {
     if (raw === ".") return '<td class="gc gx" title="No public position located">·</td>';
     /* Record is excluded from every mean but it is not silence, and showing
        the two the same way would hide a four-year record behind a dot. */
-    if (raw === "R") return '<td class="gc grec" title="Record — a documented fact about the term in office, never scored">📋</td>';
+    if (raw === "R") return '<td class="gc grec" title="Record — a documented fact about the term in office, never scored">' + REC + '</td>';
     const v = parseFloat(raw); const mk = markOf(v);
     return '<td class="gc mk-' + mk.cls + '" tabindex="0" role="button" aria-expanded="false" data-t="' + ti + '" data-c="' + c.key + '" data-v="' + v + '">' +
       (v < 0 ? "−" : "") + Math.abs(v).toFixed(1) + "</td>";

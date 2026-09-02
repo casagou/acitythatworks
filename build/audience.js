@@ -247,6 +247,16 @@ function slugId(h) {
     .replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 40);
 }
 
+function startWith(slug) {
+  /* The "Start with M12 M13 …" line each audience card carries on the home
+     page, repeated on the companion page itself so a reader who arrived here
+     first gets the same door. Read from index.html so the two cannot drift. */
+  const idx = fs.readFileSync(path.join(ROOT, "index.html"), "utf8");
+  const re = new RegExp('<a href="' + slug + '.html">[^<]*</a></div><div class="acx">[^<]*</div><div class="acm"><b>Start with</b>([\\s\\S]*?)</div>');
+  const m = idx.match(re);
+  return m ? '<div class="startwith"><b>Start with</b>' + m[1] + "</div>" : "";
+}
+
 function page(a) {
   const url = "https://acitythatworks.ca/" + a.slug + ".html";
   const title = a.name + " — A City That Works, Victoria 2026";
@@ -358,6 +368,7 @@ function page(a) {
 <h1 class="ph1">${esc(a.name).replace(/&amp;/g, "&")}</h1>
 <p class="lead" style="margin-top:18px">${linkMeasures(a.short)}</p>
 <p class="scale">This is the same framework as <a href="measures.html">the full Program</a> — same measures, same numbers, same jurisdictional caveats — ${esc(a.lens)}. Every measure named here is costed and sourced in the master, and every number links back to it.</p>
+${startWith(a.slug)}
 <a href="index.html" class="pgback">← Back to the framework</a>
 </div>
 

@@ -30,7 +30,13 @@
     map:     '<svg class="picon" ' + A + '><path d="m3 6 6-2 6 2 6-2v14l-6 2-6-2-6 2z"/><path d="M9 4v14"/><path d="M15 6v14"/></svg>',
     compare: '<svg class="picon" ' + A + '><path d="M4 5h7v14H4z"/><path d="M13 5h7v14h-7z"/><path d="M7.5 9v6"/><path d="M16.5 9v6"/></svg>',
     ask:     '<svg class="picon" ' + A + '><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9h8"/><path d="M8 12.5h5"/></svg>',
-    bill:    '<svg class="picon" ' + A + '><path d="M5 4h14v16l-2.3-1.5L14.3 20 12 18.5 9.7 20 7.3 18.5 5 20z"/><path d="M9 9h6"/><path d="M9 13h6"/></svg>'
+    bill:    '<svg class="picon" ' + A + '><path d="M5 4h14v16l-2.3-1.5L14.3 20 12 18.5 9.7 20 7.3 18.5 5 20z"/><path d="M9 9h6"/><path d="M9 13h6"/></svg>',
+    /* the record mark: a documented term-in-office fact, never a grade */
+    record:  '<svg class="picon" ' + A + '><path d="M9 3.5h6v3H9z"/><path d="M6.5 6h11v14.5h-11z"/><path d="M9.5 12h5"/><path d="M9.5 15.5h3.5"/></svg>',
+    scales:  '<svg class="picon" ' + A + '><path d="M12 3.5v17"/><path d="M5 7h14"/><path d="m5 7-3 7h6z"/><path d="m19 7-3 7h6z"/><path d="M8.5 20.5h7"/></svg>',
+    pledge:  '<svg class="picon" ' + A + '><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4"/><path d="m9 14 2 2 4-4"/></svg>',
+    history: '<svg class="picon" ' + A + '><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>',
+    chart:   '<svg class="picon" ' + A + '><path d="M4 20V10"/><path d="M10 20V4.5"/><path d="M16 20v-7"/><path d="M2 20h20"/></svg>'
   };
   root.ACTW_ICONS = ICONS;
   if (typeof module !== 'undefined' && module.exports) module.exports = ICONS;
