@@ -61,17 +61,20 @@
   var cols = DATA.cols || [];
   var areaCols = cols.filter(function (k) { return k.topics; });
 
-  /* Weighted ordering for "what matters to me": the mean of the marks in
-     the chosen areas, which is Σ(mean × n) / Σn over the area cells the
-     payload already holds. Shown as a number with its n, never as a
-     letter, because a letter would read as a grade this page invented. */
+  /* "What matters to me" counts answers in the chosen topics — it does not
+     average their marks. Decision 14 gives a topic no letter and publishes no
+     mean, so a weighted average would be a grade this page invented. The count
+     is a fact the cards already carry: how much of what you picked they have
+     answered, out of how many measures sit in it. */
   function weighted(c, keys) {
-    var sum = 0, n = 0;
+    var n = 0, total = 0;
     keys.forEach(function (k) {
       var g = (DATA.colGrid[c.key] || {})[k];
-      if (g && g.n) { sum += g.mean * g.n; n += g.n; }
+      if (!g) return;
+      n += g.n || 0;
+      total += g.total || 0;
     });
-    return n ? { mean: sum / n, n: n } : null;
+    return total ? { n: n, total: total } : null;
   }
 
   var host = $('#hub');
@@ -102,7 +105,7 @@
     h += '<div class="cc-grade">' + (c.grade
       ? '<span class="gchip g-' + gradeCls(c.grade) + '" title="Overall letter">' + esc(c.grade) + '</span>' + (c.n ? '<small>' + c.n + ' of ' + DATA.topics.length + ' topics</small>' : '')
       : '<span class="gchip g-x" title="No scored position located">—</span><small>not yet scored</small>') + '</div></div>';
-    if (w) h += '<div class="cc-wm">On what you chose: <b>' + fmt2(w.mean) + '</b> over ' + w.n + ' scored topic' + (w.n > 1 ? 's' : '') + '</div>';
+    if (w) h += '<div class="cc-wm">On what you chose: <b>' + w.n + '</b> of ' + w.total + ' measure' + (w.total > 1 ? 's' : '') + ' answered</div>';
     h += '<div class="cc-ans"><b>' + a + ' of ' + rows.length + '</b> questions answered in writing</div>';
     h += '<div class="meter"><i data-w="' + Math.round(a / rows.length * 100) + '"></i></div>';
     h += '<div class="cc-doors">';
@@ -129,19 +132,30 @@
     return h;
   }
 
+  /* Rank the applied letter. Under Decision 14 the letter is applied by hand
+     and no mean is published, so `mean` is null on every candidate — sorting
+     on it, as this did, silently compared nothing and left the cards in
+     answered-count order under a control that said "Overall grade". A letter
+     outside the five in use sorts as unlettered rather than guessing. */
+  var LETTER_RANK = { 'B+': 4, 'B': 3, 'C': 2, 'D': 1 };
+  function rank(c) { return LETTER_RANK[c.grade] || 0; }
+  function scored(c) { return c.n || 0; }
   function ordered() {
     var list = DATA.cands.slice();
     var byName = function (a, b) { return a.name.localeCompare(b.name); };
+    /* Ties inside a letter go to the wider evidence base, then to the name. */
+    var byLetter = function (a, b) { return (rank(b) - rank(a)) || (scored(b) - scored(a)) || byName(a, b); };
     if (sortKey === 'name') return list.sort(byName);
-    if (sortKey === 'answered') return list.sort(function (a, b) { var d = answered(b) - answered(a); return d || ((b.mean || -9) - (a.mean || -9)) || byName(a, b); });
-    if (sortKey === 'office') return list.sort(function (a, b) { var d = (isMayor(b) ? 1 : 0) - (isMayor(a) ? 1 : 0); return d || ((b.mean || -9) - (a.mean || -9)) || byName(a, b); });
+    if (sortKey === 'answered') return list.sort(function (a, b) { return (answered(b) - answered(a)) || (scored(b) - scored(a)) || byName(a, b); });
+    if (sortKey === 'scored') return list.sort(function (a, b) { return (scored(b) - scored(a)) || byLetter(a, b); });
+    if (sortKey === 'office') return list.sort(function (a, b) { return ((isMayor(b) ? 1 : 0) - (isMayor(a) ? 1 : 0)) || byLetter(a, b); });
     if (wm.length) return list.sort(function (a, b) {
       var wa = weighted(a, wm), wb = weighted(b, wm);
-      if (!wa && !wb) return ((b.mean || -9) - (a.mean || -9)) || byName(a, b);
+      if (!wa && !wb) return byLetter(a, b);
       if (!wa) return 1; if (!wb) return -1;
-      return (wb.mean - wa.mean) || (wb.n - wa.n) || byName(a, b);
+      return (wb.n - wa.n) || byLetter(a, b);
     });
-    return list.sort(function (a, b) { return ((b.mean == null ? -9 : b.mean) - (a.mean == null ? -9 : a.mean)) || (answered(b) - answered(a)) || byName(a, b); });
+    return list.sort(byLetter);
   }
 
   function render() {
@@ -152,10 +166,18 @@
     var note = $('#hub-order');
     if (wm.length) {
       var labels = wm.map(function (k) { var c = cols.filter(function (x) { return x.key === k; })[0]; return c ? c.label : k; });
-      note.innerHTML = '<strong>Ordered by what you chose:</strong> ' + esc(labels.join(', ')) + '. The figure on each card is the mean of the marks in those areas, with the number of scored topics it rests on. It is your weighting, not a grade; candidates with no scored mark in those areas sit at the bottom.';
+      note.innerHTML = '<strong>Ordered by what you chose:</strong> ' + esc(labels.join(', ')) +
+        '. The figure on each card is how many measures inside those topics carry a sourced answer. It is a count of evidence, not a grade, and candidates with none sit at the bottom.';
     } else {
-      var names = { grade: 'overall grade, then how much has been answered', name: 'name', answered: 'how many of the five questions have a written answer', office: 'office, then grade' };
-      note.innerHTML = 'Ordered by ' + names[sortKey] + '. Every grade is the scorecard\'s, computed on the published scale; a dash is unknown, not a fail. This is not an endorsement.';
+      var names = {
+        grade: 'the applied letter, then how many measures are answered',
+        scored: 'how many of the 55 measures carry a sourced answer',
+        name: 'candidate name',
+        answered: 'how many of the five questions have a written answer',
+        office: 'office, then the applied letter'
+      };
+      note.innerHTML = 'Ordered by ' + names[sortKey] +
+        '. A letter is applied by hand and only once five measures are answered; it is never computed here. A dash is unknown, not a fail. This is not an endorsement.';
     }
     renderCompare();
   }
@@ -170,12 +192,12 @@
     var a = DATA.cands.filter(function (c) { return c.key === picks[0]; })[0];
     var b = DATA.cands.filter(function (c) { return c.key === picks[1]; })[0];
     if (!a || !b) { box.innerHTML = ''; return; }
+    /* A topic cell compares how much each has answered, never a letter. */
     function cell(c, col) {
-      var g = (DATA.colGrid[c.key] || {})[col.key] || { state: 'empty', n: 0 };
-      if (g.state === 'graded') return '<span class="cpc"><span class="gchip g-' + gradeCls(g.grade) + '">' + esc(g.grade) + '</span>' + (g.n ? '<span class="n">' + g.n + '</span>' : '') + '</span>';
-      if (g.state === 'marks') return '<span class="cpc"><span class="n">—</span></span>';
+      var g = (DATA.colGrid[c.key] || {})[col.key] || { state: 'empty', n: 0, total: 0 };
       if (g.state === 'record') return '<span class="cpc"><span class="n">record only</span></span>';
-      return '<span class="cpc"><span class="n">—</span></span>';
+      if (!g.n) return '<span class="cpc"><span class="n">—</span></span>';
+      return '<span class="cpc"><b class="cpn">' + g.n + '</b><span class="n">of ' + g.total + ' answered</span></span>';
     }
     var h = '<div class="cp-h"><h3>' + esc(a.name) + ' and ' + esc(b.name) + ', side by side</h3><button type="button" class="cp-x" id="cp-clear">Clear</button></div>';
     h += '<p class="hub-sub">Overall: ' + esc(a.name) + ' ' + (a.grade ? esc(a.grade) : '—') + ' · ' + esc(b.name) + ' ' + (b.grade ? esc(b.grade) : '—') + '. This is not an endorsement.</p>';
@@ -247,8 +269,12 @@
   /* ---- controls ---------------------------------------------------------- */
   function controlsHtml() {
     var h = '<div class="hub-ctl"><div class="f"><label for="hub-sort">Order the cards by</label><select id="hub-sort">' +
-      '<option value="grade">Overall grade</option><option value="answered">How much they have answered</option><option value="name">Name</option><option value="office">Office</option></select></div>';
-    h += '<div class="f"><span class="lbl2">What matters to me — tick areas to reorder by them</span><div class="wm-chips">';
+      '<option value="grade">Applied letter, best first</option>' +
+      '<option value="scored">Measures answered, most first</option>' +
+      '<option value="answered">The five questions, most answered first</option>' +
+      '<option value="name">Candidate name, A to Z</option>' +
+      '<option value="office">Mayor first, then council</option></select></div>';
+    h += '<div class="f"><span class="lbl2">What matters to me — tick topics to reorder by how much of them is answered</span><div class="wm-chips">';
     areaCols.forEach(function (k) { h += '<button type="button" class="chip" data-wm="' + esc(k.key) + '" aria-pressed="false">' + esc(k.label) + '</button>'; });
     h += '</div></div><p class="hint" id="hub-order"></p></div>';
     return h;

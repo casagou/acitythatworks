@@ -1,0 +1,30 @@
+{
+  "_source": "Notion · Alignment compute · https://app.notion.com/p/3ade245ae5f38128b340f55bc7df17f5",
+  "_applied": "1 Sep 2026 6:12 p.m. PT",
+  "_transcribed": "2026-09-02",
+  "_rule": "Decision 14. The letter is APPLIED by hand, never computed, and appears only at 5 scored answers. Letters in use: B+, B, C, D, or —. n is the number of the 55 measures with a scored answer, copied from the live-door table. Area columns carry no letter.",
+  "_note": "This file is the site's copy of the live-door table. build/apply-rating-cards-to-scorecard.js writes grade and n from here and fails if scorecard.html disagrees. The per-candidate rating cards in data/rating-cards/ may be scored further than what is applied here; the applied table wins.",
+  "out": ["Coleman", "Haley", "Atkinson", "Manak", "Andrew"],
+  "candidates": [
+    { "key": "Al", "name": "Marianne Alto",    "office": "Mayor",   "kind": "inc",  "letter": null, "n": 3 },
+    { "key": "Hr", "name": "Mike Harris",      "office": "Mayor",   "kind": "chal", "letter": null, "n": 2 },
+    { "key": "Mg", "name": "Bruce McGuigan",   "office": "Mayor",   "kind": "chal", "letter": null, "n": 15 },
+    { "key": "Mc", "name": "Arthur McInnis",   "office": "Council", "kind": "chal", "letter": "B+", "n": 17 },
+    { "key": "Gg", "name": "Jerry Garcia",     "office": "Council", "kind": "chal", "letter": "C",  "n": 10 },
+    { "key": "Ga", "name": "Marg Gardiner",    "office": "Council", "kind": "inc",  "letter": "D",  "n": 6 },
+    { "key": "Ha", "name": "Stephen Hammond",  "office": "Council", "kind": "inc",  "letter": null, "n": 4 },
+    { "key": "Ca", "name": "Jeremy Caradonna", "office": "Council", "kind": "inc",  "letter": null, "n": 3 },
+    { "key": "De", "name": "Matt Dell",        "office": "Council", "kind": "inc",  "letter": "D",  "n": 5 },
+    { "key": "Th", "name": "Dave Thompson",    "office": "Council", "kind": "inc",  "letter": null, "n": 3 },
+    { "key": "Ki", "name": "Susan Kim",        "office": "Council", "kind": "inc",  "letter": null, "n": 4 },
+    { "key": "Lo", "name": "Krista Loughton",  "office": "Council", "kind": "inc",  "letter": "D",  "n": 6 },
+    { "key": "Cs", "name": "Melissa Cseszko",  "office": "Council", "kind": "chal", "letter": null, "n": 0 },
+    { "key": "Ro", "name": "Karen Rothe",      "office": "Council", "kind": "chal", "letter": null, "n": 0 },
+    { "key": "Bo", "name": "Wendy Bowkett",    "office": "Council", "kind": "chal", "letter": "C",  "n": 5 },
+    { "key": "Le", "name": "Bella Lee",        "office": "Council", "kind": "chal", "letter": "B",  "n": 9 },
+    { "key": "Sa", "name": "Jack Sandor",      "office": "Council", "kind": "chal", "letter": "B",  "n": 16 },
+    { "key": "Gi", "name": "Martin Girard",    "office": "Council", "kind": "chal", "letter": "D",  "n": 7 },
+    { "key": "Gb", "name": "Peter Gibbs",      "office": "Council", "kind": "chal", "letter": null, "n": 0 },
+    { "key": "Di", "name": "Shona Dion",       "office": "Council", "kind": "chal", "letter": null, "n": 2 }
+  ]
+}

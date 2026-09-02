@@ -1,8 +1,3 @@
-# /build is exporter source (needed in git for `node build/*.js`). It is not a
-# public path. Force (!) so these 404 even if a file is present in the deploy.
-/build    /404.html  404!
-/build/*  /404.html  404!
-
 # Pretty paths for live-door profile pages. /profiles itself stays the hub
 # (profiles.html). 200 rewrites so /profiles/harris is a real page, not a 404.
 /profiles /profiles.html 200

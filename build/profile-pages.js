@@ -34,6 +34,19 @@ const LIVE = [
   { slug: "dion",      id: "cand-shona-dion",      name: "Shona Dion",      office: "Council", key: "Di", letter: "—",  n: 0,  campaign: { href: "https://www.shonadion4victoria.ca/", label: "shonadion4victoria.ca" } },
 ];
 
+/* The letter and the answered count come from the applied table, not from the
+   list above: it hardcoded n: 0 for every candidate without a letter, so
+   McGuigan's page said nothing was answered while his card holds fifteen. */
+const APPLIED = JSON.parse(fs.readFileSync(path.join(ROOT, "data", "applied-letters.json"), "utf8"));
+const appliedBy = Object.fromEntries(APPLIED.candidates.map((c) => [c.key, c]));
+for (const c of LIVE) {
+  const a = appliedBy[c.key];
+  if (!a) { console.error("no applied row for " + c.name); process.exit(1); }
+  if (a.name !== c.name) { console.error("name drift: " + c.name + " vs " + a.name); process.exit(1); }
+  c.letter = a.letter || "—";
+  c.n = a.n;
+}
+
 function gradeCls(letter) {
   if (!letter || letter === "—") return "x";
   const c = letter[0].toLowerCase();
@@ -77,12 +90,17 @@ ${ev.evidenceCss()}`;
 
 function pageHtml(c) {
   const officeLabel = c.office === "Mayor" ? "Mayor" : "Council";
+  /* A letter is applied by hand and needs five answered measures, so "no
+     letter" and "nothing answered" are different states and the page says
+     which one this is. */
   const gradeBadge = c.letter === "—"
-    ? '<span class="g x">—</span>'
-    : '<span class="g ' + gradeCls(c.letter) + '">' + c.letter + '</span><span class="cs-n">' + c.n + " scored answers</span>";
+    ? '<span class="g x">—</span><span class="cs-n">' + c.n + " of 55 answered</span>"
+    : '<span class="g ' + gradeCls(c.letter) + '">' + c.letter + '</span><span class="cs-n">' + c.n + " of 55 answered</span>";
   const gradeText = c.letter === "—"
-    ? "No letter yet — fewer than five scored answers"
-    : "Grade " + c.letter + " · " + c.n + " scored answers";
+    ? (c.n >= 5
+      ? "No letter applied yet · " + c.n + " of 55 measures answered"
+      : "No letter yet · " + c.n + " of 55 measures answered, and a letter needs five")
+    : "Letter " + c.letter + " · " + c.n + " of 55 measures answered";
   let campaign;
   if (!c.campaign) {
     campaign = '<p class="pf "><strong class="pfl">Campaign.</strong> No personal campaign site located.</p>';
