@@ -319,7 +319,7 @@ function page(a) {
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Public+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=17">
+<link rel="stylesheet" href="styles.css?v=18">
 </head>
 <body>
 <a class="skip" href="#main">Skip to main content</a>
@@ -331,7 +331,7 @@ function page(a) {
 <a href="/summary">Summary</a>
 <a href="/measures">Measures</a>
 <a href="/neighbourhoods">Neighbourhoods</a>
-<a href="/scorecard" data-cand class="nv-sc">Who has answered</a>
+<a href="/scorecard" data-cand class="nv-sc">Candidates</a>
 <a href="/faq">FAQ</a>
 </nav>
 <button id="mt" class="mb" aria-label="Open menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
@@ -342,7 +342,7 @@ function page(a) {
 <a href="/summary">Summary</a>
 <a href="/measures">Measures</a>
 <a href="/neighbourhoods">Neighbourhoods</a>
-<a href="/scorecard" data-cand>Who has answered</a>
+<a href="/scorecard" data-cand>Candidates</a>
 <a href="/faq">FAQ</a>
 </div>
 </div>
@@ -389,7 +389,9 @@ ${body}
 </main>
 
 <div id="footer-mount"></div>
-<script src="site.js?v=13"></script>
+<script src="icons.js?v=1"></script>
+<script src="site.js?v=14"></script>
+<script src="civic.js?v=1"></script>
 <script src="jumpnav.js"></script>
 </body>
 </html>

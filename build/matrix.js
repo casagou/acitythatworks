@@ -29,6 +29,9 @@ const fs = require("fs");
 const path = require("path");
 const ROOT = path.join(__dirname, "..");
 const M = require(path.join(ROOT, "matrix-v3.js"));
+/* The drawn pillar icons; the emoji in matrix-v3.js remain the plain-text form. */
+const ICONS = require(path.join(ROOT, "icons.js"));
+const pillarIcon = (p) => ICONS[p.key] ? ICONS[p.key] : ("<span aria-hidden=\"true\">" + p.emoji + "</span>");
 
 const EV_PATH = path.join(__dirname, "evidence.json");
 const EV = fs.existsSync(EV_PATH) ? JSON.parse(fs.readFileSync(EV_PATH, "utf8")) : {};
@@ -278,7 +281,7 @@ function gradeCls(g) {
 }
 
 /* pillar table */
-let pillarHead = M.PILLARS.map((p) => '<th><span class="pe">' + p.emoji + '</span><span class="pl">' + esc(p.label) + "</span></th>").join("");
+let pillarHead = M.PILLARS.map((p) => '<th><span class="pe">' + pillarIcon(p) + '</span><span class="pl">' + esc(p.label) + "</span></th>").join("");
 let pillarBody = ranked.map((x) => {
   const tds = M.PILLARS.map((p) => {
     const g = x.pillars[p.key];
@@ -401,7 +404,7 @@ let gridBody = M.TOPICS.map((t, ti) => {
   return '<tr><td class="gt" tabindex="0" role="button" aria-expanded="false" data-topic="' + ti +
     '" title="' + esc(t.code + " · " + stripTags(t.what)) + '">' +
     '<span class="gm">' + esc(t.id) + '</span><span class="gd">' + esc(t.label) +
-    '</span><span class="gp" style="color:var(--navy)">' + pil.emoji +
+    '</span><span class="gp" style="color:var(--navy)">' + pillarIcon(pil) +
     (t.isNew ? ' <b class="newt">NEW</b>' : "") + "</span></td>" + tds + "</tr>";
 }).join("\n");
 

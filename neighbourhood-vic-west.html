@@ -31,7 +31,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Public+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=17">
+<link rel="stylesheet" href="styles.css?v=18">
 </head>
 <body>
 <a class="skip" href="#main">Skip to main content</a>
@@ -42,7 +42,7 @@
 <a href="/summary">Summary</a>
 <a href="/measures">Measures</a>
 <a href="/neighbourhoods" class="cur">Neighbourhoods</a>
-<a href="/scorecard" data-cand class="nv-sc">Who has answered</a>
+<a href="/scorecard" data-cand class="nv-sc">Candidates</a>
 <a href="/faq">FAQ</a>
 </nav>
 <button id="mt" class="mb" aria-label="Open menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
@@ -53,7 +53,7 @@
 <a href="/summary">Summary</a>
 <a href="/measures">Measures</a>
 <a href="/neighbourhoods" class="gd">Neighbourhoods</a>
-<a href="/scorecard" data-cand>Who has answered</a>
+<a href="/scorecard" data-cand>Candidates</a>
 <a href="/faq">FAQ</a>
 </div>
 </div>
@@ -64,17 +64,17 @@
 <nav class="crumbs" aria-label="Breadcrumb">
 <a href="index.html">Framework</a><span class="sep">/</span><a href="neighbourhoods.html">Neighbourhoods</a><span class="sep">/</span><span class="here">Vic West</span>
 </nav>
+<div class="nb-hero">
 <div class="hero pg-door">
 <h1 class="ph1">Vic West</h1>
-<p class="lead" style="margin-top:18px">The Goose trailhead, the harbour's far shore, and the fastest-changing ground in the city.</p>
+<p class="lead" style="margin-top:10px">The Goose trailhead, the harbour's far shore, and the fastest-changing ground in the city.</p>
 <p class="scale">The framework is city-wide. Life is local. This page translates the same costed measures you will find in <a href="measures.html">the full Program</a> into what they do on these streets — nothing new, nothing extra, just where the existing commitments land first and why. <strong>Vic West Community Association</strong> speaks for this neighbourhood; this page does not.</p>
 
-<a href="neighbourhoods.html" class="pgback">← All neighbourhoods</a>
+</div>
+<div class="nbmap mini" data-current="vic-west" aria-label="Where Vic West sits among the thirteen neighbourhood pages"></div>
 </div>
 
-<details class="parked">
-<summary>The rest of this page</summary>
-<div class="parked-in">
+<div class="parked-open">
 <nav class="toc" aria-label="On this page">
 <div class="toc-h">On this page</div>
 <ol>
@@ -89,7 +89,7 @@
 
 <div class="prose">
 <h2 id="where-things-stand-2026">Where things stand (2026)</h2>
-<ul><li>The Roundhouse lands were promised a generation ago. They're still mostly waiting.</li><li>Growth has run ahead of what supports it: childcare, crossings, park capacity.</li><li>The E&amp;N corridor sits idle while the region argues about it.</li><li>City-wide, Missing Middle produced <strong>61 permits in 2024 against a target of 150</strong>. The bottleneck isn't zoning anymore. It's cost and delay, and Vic West's development pipeline feels it more than anywhere.</li></ul>
+<ul class="facts"><li>The Roundhouse lands were promised a generation ago. They're still mostly waiting.</li><li>Growth has run ahead of what supports it: childcare, crossings, park capacity.</li><li>The E&amp;N corridor sits idle while the region argues about it.</li><li>City-wide, Missing Middle produced <strong>61 permits in 2024 against a target of 150</strong>. The bottleneck isn't zoning anymore. It's cost and delay, and Vic West's development pipeline feels it more than anywhere.</li></ul>
 <div class="callout voice"><p><strong>A naming note, and who speaks here.</strong> Victoria West is the official City name; Vic West is what everyone calls it. The city-wide numbers on this page are sourced in the full program. The local observations are this framework's read, not a survey of residents. The <a href="https://www.victoriawest.ca/" target="_blank" rel="noopener">Vic West Community Association</a> speaks for this neighbourhood; this page does not. Corrections welcome and published.</p></div>
 <h2 id="victoria-2030">Victoria 2030: the bridge, 8:40 AM</h2>
 <p>You cross on the Goose with your kid on the tag-along and you're downtown in less time than parking would have taken. The crossings where the trail meets streets got fixed years ago, in order of their injury record, and it shows.</p>
@@ -128,12 +128,13 @@
 </div>
 </div>
 <p style="margin-top:32px"><a href="measures.html" class="pgback">← Read the full framework</a></p>
-</details>
 </div>
 </main>
 
 <div id="footer-mount"></div>
-<script src="site.js?v=13"></script>
+<script src="icons.js?v=1"></script>
+<script src="site.js?v=14"></script>
+<script src="civic.js?v=1"></script>
 <script src="jumpnav.js"></script>
 </body>
 </html>

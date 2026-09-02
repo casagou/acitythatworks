@@ -36,7 +36,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Public+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=17">
+<link rel="stylesheet" href="styles.css?v=18">
 <link rel="stylesheet" href="charts.css">
 <style>
 /* Victoria in 2030 — the one section on this page that is prose rather than
@@ -126,7 +126,7 @@
 <a href="/summary" class="cur">Summary</a>
 <a href="/measures">Measures</a>
 <a href="/neighbourhoods">Neighbourhoods</a>
-<a href="/scorecard" data-cand class="nv-sc">Who has answered</a>
+<a href="/scorecard" data-cand class="nv-sc">Candidates</a>
 <a href="/faq">FAQ</a>
 </nav>
 <button id="mt" class="mb" aria-label="Open menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
@@ -137,7 +137,7 @@
 <a href="/summary" class="gd">Summary</a>
 <a href="/measures">Measures</a>
 <a href="/neighbourhoods">Neighbourhoods</a>
-<a href="/scorecard" data-cand>Who has answered</a>
+<a href="/scorecard" data-cand>Candidates</a>
 <a href="/faq">FAQ</a>
 </div>
 </div>
@@ -149,6 +149,8 @@
 <a href="index.html">Framework</a><span class="sep">/</span><span class="here">One-Page Summary</span>
 </nav>
 <h1 class="vh">One-page summary</h1>
+<div class="sixty" id="sixty">
+<p class="sixty-h">The 60-second version · the record, then the twelve commitments</p>
 <div class="prob-nums" id="problem" aria-label="The problem in numbers">
 <div class="pn"><div class="pn-n">31%</div><div class="pn-l">Operating budget, three years</div></div>
 <div class="pn"><div class="pn-n gnum">9.34%</div><div class="pn-l">Residential tax, 2026</div></div>
@@ -287,6 +289,13 @@
 
 <p style="margin-top:20px"><strong>Row 11 is the one that makes the other eleven checkable.</strong> A framework that demands quarterly outcome reporting from a council, and does not put its own reporting record on its own scorecard, is asking for a standard it has not accepted.</p>
 <p style="font-size:14px;color:#57534e"><a href="index.html#scorecard">Every commitment with its source and the measure that delivers it →</a></p>
+</div>
+<p class="sixty-done">That is the 60 seconds. Three places to go next:</p>
+<div class="doors3">
+<a href="scorecard.html" data-cand><span class="d-t">See where the candidates stand</span><span class="d-x">Who has a written answer, and the grades behind it</span></a>
+<a href="measures.html"><span class="d-t">Read every measure</span><span class="d-x">Costed, sourced, filterable by pillar</span></a>
+<a href="neighbourhoods.html"><span class="d-t">Find my neighbourhood</span><span class="d-x">What lands on your streets, measure by measure</span></a>
+</div>
 
 
 
@@ -300,8 +309,8 @@
 </div>
 
 
-<details class="toc toc-fold">
-<summary class="toc-h">On this page</summary>
+<nav class="toc" aria-label="On this page">
+<div class="toc-h">On this page</div>
 <ol>
 <li><a href="#problem">The Problem in 30 Seconds</a></li>
 <li><a href="#v2030">Victoria in 2030</a></li>
@@ -313,7 +322,7 @@
 <li><a href="#ballot">What Is Actually on Your Ballot</a></li>
 <li><a href="#involved">Read More, and Get Involved</a></li>
 </ol>
-</details>
+</nav>
 
 <h2 id="v2030">Victoria in 2030</h2>
 <div class="vision">
@@ -327,11 +336,11 @@
 <p>Fifteen flagship measures out of more than a hundred costed ones. Every measure carries a number, a cost, and a named source in <a href="measures.html">the full Program</a>.</p>
 
 <div class="found">
-🌿 <strong>Foundation — the host Nations.</strong> Standing government-to-government working tables with the <strong>Songhees Nation</strong> and the <strong>Esquimalt Nation</strong> on a quarterly cadence, an Indigenous procurement standard, and lək̓ʷəŋən place names (<a href="measures.html#m1">M1</a>–<a href="measures.html#m5">M5</a>). Relationship precedes every other commitment, so it is a foundation and not a pillar.
+<span class="ic" data-icon="foundation" aria-hidden="true"></span> <strong>Foundation — the host Nations.</strong> Standing government-to-government working tables with the <strong>Songhees Nation</strong> and the <strong>Esquimalt Nation</strong> on a quarterly cadence, an Indigenous procurement standard, and lək̓ʷəŋən place names (<a href="measures.html#m1">M1</a>–<a href="measures.html#m5">M5</a>). Relationship precedes every other commitment, so it is a foundation and not a pillar.
 </div>
 
 <div class="flag-block">
-<h3><span class="em">🏠</span> A Liveable City</h3>
+<h3><span class="ic" data-icon="liveable" aria-hidden="true"></span> A Liveable City</h3>
 <ul>
 <li><strong>Published permit times, by category (<a href="measures.html#m7">M7</a>)</strong> — simple under 6 weeks, complex under 6 months, rezoning under 9 months. Your permit answer in writing, with AI pre-screening and a published quarterly variance report</li>
 <li><strong>12,000+ net new homes by 2030, and the right ones (<a href="measures.html#m6">M6</a>, <a href="measures.html#m7b">M7b</a>, <a href="measures.html#m8b">M8b</a>)</strong> — 25% missing middle, 20% three-bedroom or larger, 15% non-market, 30% purpose-built rental, delivered through a pre-approved pattern book with an automatic fast lane and a 24-month life-safety amnesty that legalizes the suites Victoria already has. <strong>Composition is the problem, not volume</strong></li>
@@ -340,7 +349,7 @@
 </div>
 
 <div class="flag-block">
-<h3><span class="em">🛡️</span> A Safe City</h3>
+<h3><span class="ic" data-icon="safe" aria-hidden="true"></span> A Safe City</h3>
 <ul>
 <li><strong>Downtown Public Order Team (<a href="measures.html#m26">M26</a>)</strong> — VicPD, bylaw, sanitation and outreach under one daily briefing, for the blocks that need it most</li>
 <li><strong>Bylaw enforcement 6 AM to 10 PM, seven days (<a href="measures.html#m27">M27</a>)</strong> — against today's 7 AM to 4 PM. Disorder does not keep office hours, and enforcement should not either. Every action published quarterly, including how much of it survived adjudication</li>
@@ -349,7 +358,7 @@
 </div>
 
 <div class="flag-block">
-<h3><span class="em">🌳</span> A Beautiful City</h3>
+<h3><span class="ic" data-icon="beautiful" aria-hidden="true"></span> A Beautiful City</h3>
 <ul>
 <li><strong>One signature public-space project, chosen by residents (<a href="measures.html#m45c">M45c</a>)</strong> — three costed concepts shortlisted (a Pandora linear park, a continuous Inner Harbour promenade, a full Centennial Square renewal), all three visualized before the vote, decided by referendum, with a senior-government cost-share secured first. <strong>Sequenced after the safety and capacity work, not instead of it</strong></li>
 <li><strong>5,000 new trees by 2030, and a canopy target of 35% by 2035 (<a href="measures.html#m61">M61</a>)</strong> — from roughly 30% today, with free seedlings for homeowners because <strong>75% of Victoria's canopy sits on private land.</strong> A planting count measures effort; a canopy percentage measures result</li>
@@ -358,7 +367,7 @@
 </div>
 
 <div class="flag-block">
-<h3><span class="em">💰</span> A Well-Managed City</h3>
+<h3><span class="ic" data-icon="managed" aria-hidden="true"></span> A Well-Managed City</h3>
 <ul>
 <li><strong>Zero-based review of all 200+ programmes (<a href="measures.html#m65">M65</a>)</strong> — every programme justified from zero on a rotating cycle. This is the engine that pays for everything else on this page</li>
 <li><strong>The Taxpayer Guarantee (<a href="measures.html#m66">M66</a>–<a href="measures.html#m66d">M66d</a>)</strong> — a glide path <strong>capped on the residential rate</strong> (≤6.5%, then ≤5%, then CPI plus growth), <strong>over-collection refunded as a credit on your next tax notice</strong> rather than swept into reserves, a <strong>debt rule</strong> that stops a scheduled debt payment being used as a shock absorber, and <strong>one published Household Bill</strong> covering property tax plus water, sewer, solid waste and stormwater with a five-year forward view</li>
@@ -367,7 +376,7 @@
 </div>
 
 <div class="flag-block">
-<h3><span class="em">🗳️</span> A Democratic City</h3>
+<h3><span class="ic" data-icon="democratic" aria-hidden="true"></span> A Democratic City</h3>
 <ul>
 <li><strong>You vote on the big spends (<a href="measures.html#m77">M77</a>, <a href="measures.html#m78">M78</a>)</strong> — a binding referendum on every new, non-lifecycle capital project over $25M, under BC's existing Assent Voting framework, plus the 5-step process for every major project</li>
 <li><strong>The Integrity Package (<a href="measures.html#m79b">M79b</a>–<a href="measures.html#m79f">M79f</a>)</strong> — an Integrity Commissioner, a <strong>public lobbyist registry for development files</strong> with no exemption for the mayor, the <strong>$10 FOI application fee abolished</strong>, published mandate letters, and <strong>council pay changes that take effect only after the next election</strong></li>
@@ -507,7 +516,9 @@
 </main>
 
 <div id="footer-mount"></div>
-<script src="site.js?v=13"></script>
+<script src="icons.js?v=1"></script>
+<script src="site.js?v=14"></script>
+<script src="civic.js?v=1"></script>
 
 </body>
 </html>

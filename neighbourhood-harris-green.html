@@ -31,7 +31,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Public+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=17">
+<link rel="stylesheet" href="styles.css?v=18">
 </head>
 <body>
 <a class="skip" href="#main">Skip to main content</a>
@@ -42,7 +42,7 @@
 <a href="/summary">Summary</a>
 <a href="/measures">Measures</a>
 <a href="/neighbourhoods" class="cur">Neighbourhoods</a>
-<a href="/scorecard" data-cand class="nv-sc">Who has answered</a>
+<a href="/scorecard" data-cand class="nv-sc">Candidates</a>
 <a href="/faq">FAQ</a>
 </nav>
 <button id="mt" class="mb" aria-label="Open menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
@@ -53,7 +53,7 @@
 <a href="/summary">Summary</a>
 <a href="/measures">Measures</a>
 <a href="/neighbourhoods" class="gd">Neighbourhoods</a>
-<a href="/scorecard" data-cand>Who has answered</a>
+<a href="/scorecard" data-cand>Candidates</a>
 <a href="/faq">FAQ</a>
 </div>
 </div>
@@ -64,17 +64,17 @@
 <nav class="crumbs" aria-label="Breadcrumb">
 <a href="index.html">Framework</a><span class="sep">/</span><a href="neighbourhoods.html">Neighbourhoods</a><span class="sep">/</span><span class="here">Harris Green</span>
 </nav>
+<div class="nb-hero">
 <div class="hero pg-door">
 <h1 class="ph1">Harris Green</h1>
-<p class="lead" style="margin-top:18px">The Yates corridor: the renter-densest blocks in Victoria, where the city's housing future is already under construction.</p>
+<p class="lead" style="margin-top:10px">The Yates corridor: the renter-densest blocks in Victoria, where the city's housing future is already under construction.</p>
 <p class="scale">The framework is city-wide. Life is local. This page translates the same costed measures you will find in <a href="measures.html">the full Program</a> into what they do on these streets — nothing new, nothing extra, just where the existing commitments land first and why. <strong>Victoria Downtown Residents Association</strong> speaks for this neighbourhood; this page does not.</p>
 <p class="scale">Harris Green is not one of the City's 12 official neighbourhoods — it sits inside Downtown, and this page says so at the top and links you to the <a href="neighbourhood-downtown.html">Downtown page</a> as well.</p>
-<a href="neighbourhoods.html" class="pgback">← All neighbourhoods</a>
+</div>
+<div class="nbmap mini" data-current="harris-green" aria-label="Where Harris Green sits among the thirteen neighbourhood pages"></div>
 </div>
 
-<details class="parked">
-<summary>The rest of this page</summary>
-<div class="parked-in">
+<div class="parked-open">
 <nav class="toc" aria-label="On this page">
 <div class="toc-h">On this page</div>
 <ol>
@@ -90,7 +90,7 @@
 <div class="prose">
 <p><strong>Harris Green is not one of Victoria's 12 official neighbourhoods; it sits inside Downtown.</strong> It gets its own page because the Yates corridor is the renter-densest ground in the city, and the housing measures land differently here than they do three blocks west. For association and Council liaison purposes, this is Downtown: the <a href="https://www.victoriadra.ca/" target="_blank" rel="noopener">Victoria Downtown Residents Association</a>.</p>
 <h2 id="where-things-stand-2026">Where things stand (2026)</h2>
-<ul><li>Almost everyone here rents, and almost no block has canopy. No neighbourhood tests the framework's renter measures harder.</li><li>The cranes are up and thousands of homes are coming to Yates. Whether the street between the towers keeps pace, in trees, frontages and light, is the open question this page is about.</li><li>The corridor sits directly between the 900-block's disorder and thousands of front doors.</li><li>Heat events cook the old walk-ups and the new glass alike, and until now renters have had no rule to lean on.</li></ul>
+<ul class="facts"><li>Almost everyone here rents, and almost no block has canopy. No neighbourhood tests the framework's renter measures harder.</li><li>The cranes are up and thousands of homes are coming to Yates. Whether the street between the towers keeps pace, in trees, frontages and light, is the open question this page is about.</li><li>The corridor sits directly between the 900-block's disorder and thousands of front doors.</li><li>Heat events cook the old walk-ups and the new glass alike, and until now renters have had no rule to lean on.</li></ul>
 <h2 id="victoria-2030">Victoria 2030: renting here on purpose</h2>
 <p>Your building's cool room got you through August without a hotel night at your sister's. The big Yates blocks opened with real composition: rental that stays rental, a below-market share allocated through a published, points-based list anyone can audit, not a mystery queue.</p>
 <p>At street level, the corridor finally got its trees, its benches and its light, and walking home at 11 PM is just walking home. And last election, you voted in your lobby, because the ballot box came to the buildings where most of the neighbourhood actually lives.</p>
@@ -127,12 +127,13 @@
 </div>
 </div>
 <p style="margin-top:32px"><a href="measures.html" class="pgback">← Read the full framework</a></p>
-</details>
 </div>
 </main>
 
 <div id="footer-mount"></div>
-<script src="site.js?v=13"></script>
+<script src="icons.js?v=1"></script>
+<script src="site.js?v=14"></script>
+<script src="civic.js?v=1"></script>
 <script src="jumpnav.js"></script>
 </body>
 </html>

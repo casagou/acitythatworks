@@ -200,7 +200,7 @@ function head(n) {
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Public+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=17">
+<link rel="stylesheet" href="styles.css?v=18">
 </head>
 <body>
 <a class="skip" href="#main">Skip to main content</a>
@@ -214,7 +214,7 @@ const HEADER = `<header>
 <a href="/summary">Summary</a>
 <a href="/measures">Measures</a>
 <a href="/neighbourhoods" class="cur">Neighbourhoods</a>
-<a href="/scorecard" data-cand class="nv-sc">Who has answered</a>
+<a href="/scorecard" data-cand class="nv-sc">Candidates</a>
 <a href="/faq">FAQ</a>
 </nav>
 <button id="mt" class="mb" aria-label="Open menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
@@ -225,7 +225,7 @@ const HEADER = `<header>
 <a href="/summary">Summary</a>
 <a href="/measures">Measures</a>
 <a href="/neighbourhoods" class="gd">Neighbourhoods</a>
-<a href="/scorecard" data-cand>Who has answered</a>
+<a href="/scorecard" data-cand>Candidates</a>
 <a href="/faq">FAQ</a>
 </div>
 </div>
@@ -247,7 +247,11 @@ function chips(all, current) {
 }
 
 function page(n, all, idx) {
-  const { html, toc } = renderBody(n.body, n.slug);
+  let { html, toc } = renderBody(n.body, n.slug);
+  /* The first list on the page — where things stand in 2026 — is the page's
+     headline facts, so it is set as tiles rather than as bullets. The words
+     are the master's; only the class is added. */
+  html = html.replace(/(<h2 id="where-things-stand[^"]*">[^<]*<\/h2>\s*)<ul>/, '$1<ul class="facts">');
   const prev = all[(idx - 1 + all.length) % all.length];
   const next = all[(idx + 1) % all.length];
 
@@ -273,16 +277,17 @@ ${toc.map(t => `<li><a href="#${t.id}">${esc(t.label)}</a></li>`).join('\n')}
 <nav class="crumbs" aria-label="Breadcrumb">
 <a href="index.html">Framework</a><span class="sep">/</span><a href="neighbourhoods.html">Neighbourhoods</a><span class="sep">/</span><span class="here">${esc(n.name)}</span>
 </nav>
+<div class="nb-hero">
 <div class="hero pg-door">
 <h1 class="ph1">${esc(n.name)}</h1>
 <p class="lead" style="margin-top:10px">${inline(n.tagline)}</p>
 <p class="scale">The framework is city-wide. Life is local. This page translates the same costed measures you will find in <a href="measures.html">the full Program</a> into what they do on these streets — nothing new, nothing extra, just where the existing commitments land first and why. <strong>${esc(n.assoc)}</strong> speaks for this neighbourhood; this page does not.</p>
 ${officialNote}
 </div>
+<div class="nbmap mini" data-current="${n.slug}" aria-label="Where ${esc(n.name)} sits among the thirteen neighbourhood pages"></div>
+</div>
 
-<details class="parked">
-<summary>The rest of this page</summary>
-<div class="parked-in">
+<div class="parked-open">
 ${tocHtml}
 
 <div class="prose">
@@ -305,12 +310,13 @@ ${chips(all, n.slug)}
 </div>
 </div>
 <p style="margin-top:32px"><a href="measures.html" class="pgback">← Read the full framework</a></p>
-</details>
 </div>
 </main>
 
 <div id="footer-mount"></div>
-<script src="site.js?v=13"></script>
+<script src="icons.js?v=1"></script>
+<script src="site.js?v=14"></script>
+<script src="civic.js?v=1"></script>
 <script src="jumpnav.js"></script>
 </body>
 </html>
