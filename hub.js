@@ -95,7 +95,7 @@
     h += '<div class="cc-b"><div class="cc-h"><div><div class="cc-name">' + (href ? '<a href="' + esc(href) + '">' + esc(c.name) + '</a>' : esc(c.name)) + '</div>';
     h += '<div class="cc-off">' + esc(c.office || '') + '</div></div>';
     h += '<div class="cc-grade">' + (c.grade
-      ? '<span class="gchip g-' + gradeCls(c.grade) + '" title="Overall grade, mean ' + fmt2(c.mean) + ' on ' + c.n + ' of ' + DATA.topics.length + ' topics">' + esc(c.grade) + '</span><small>' + c.n + ' of ' + DATA.topics.length + ' topics</small>'
+      ? '<span class="gchip g-' + gradeCls(c.grade) + '" title="Decision 14 overall letter">' + esc(c.grade) + '</span>' + (c.n ? '<small>' + c.n + ' of ' + DATA.topics.length + ' topics</small>' : '')
       : '<span class="gchip g-x" title="No scored position located">—</span><small>not yet scored</small>') + '</div></div>';
     if (w) h += '<div class="cc-wm">On what you chose: <b>' + fmt2(w.mean) + '</b> over ' + w.n + ' scored topic' + (w.n > 1 ? 's' : '') + '</div>';
     h += '<div class="cc-ans"><b>' + a + ' of ' + rows.length + '</b> questions answered in writing</div>';
@@ -117,7 +117,7 @@
     }
     h += '<div class="cc-acts">';
     if (href) h += '<a href="' + esc(href) + '">' + icon('program') + 'Profile</a>';
-    if (c.grade) h += '<a href="#sc-' + esc(c.key) + '">' + icon('compare') + 'Every area grade</a>';
+    if (c.grade) h += '<a href="#sc-' + esc(c.key) + '">' + icon('compare') + 'Scorecard</a>';
     if (WEB[c.key]) h += '<a href="' + esc(WEB[c.key]) + '" target="_blank" rel="noopener" title="' + esc(c.name) + '\'s campaign site">' + icon('map') + esc(siteLabel(WEB[c.key])) + '</a>';
     h += '<label class="cc-pick"><input type="checkbox" data-pick="' + esc(c.key) + '"' + (picks.indexOf(c.key) > -1 ? ' checked' : '') + '> Compare</label>';
     h += '</div></div></article>';
@@ -167,13 +167,13 @@
     if (!a || !b) { box.innerHTML = ''; return; }
     function cell(c, col) {
       var g = (DATA.colGrid[c.key] || {})[col.key] || { state: 'empty', n: 0 };
-      if (g.state === 'graded') return '<span class="cpc"><span class="gchip g-' + gradeCls(g.grade) + '">' + esc(g.grade) + '</span><span class="n">' + fmt2(g.mean) + ' · ' + g.n + '/' + g.total + '</span></span>';
-      if (g.state === 'marks') return '<span class="cpc"><span class="few-m" title="Below the three-topic floor: the mean of the marks, not a grade">' + fmt2(g.mean) + '</span><span class="n">' + g.n + '/' + g.total + ' · below the floor</span></span>';
+      if (g.state === 'graded') return '<span class="cpc"><span class="gchip g-' + gradeCls(g.grade) + '">' + esc(g.grade) + '</span>' + (g.n ? '<span class="n">' + g.n + '</span>' : '') + '</span>';
+      if (g.state === 'marks') return '<span class="cpc"><span class="n">—</span></span>';
       if (g.state === 'record') return '<span class="cpc"><span class="n">record only</span></span>';
       return '<span class="cpc"><span class="n">—</span></span>';
     }
     var h = '<div class="cp-h"><h3>' + esc(a.name) + ' and ' + esc(b.name) + ', side by side</h3><button type="button" class="cp-x" id="cp-clear">Clear</button></div>';
-    h += '<p class="hub-sub">Overall: ' + esc(a.name) + ' ' + (a.grade ? esc(a.grade) + ' (mean ' + fmt2(a.mean) + ' on ' + a.n + ' topics)' : 'not yet scored') + ' · ' + esc(b.name) + ' ' + (b.grade ? esc(b.grade) + ' (mean ' + fmt2(b.mean) + ' on ' + b.n + ' topics)' : 'not yet scored') + '. Highlighted rows are areas where the two hold different grades.</p>';
+    h += '<p class="hub-sub">Overall: ' + esc(a.name) + ' ' + (a.grade ? esc(a.grade) : '—') + ' · ' + esc(b.name) + ' ' + (b.grade ? esc(b.grade) : '—') + '. This is not an endorsement.</p>';
     h += '<div class="tbl-wrap"><table><thead><tr><th>Area</th><th class="c">' + esc(a.name) + '</th><th class="c">' + esc(b.name) + '</th></tr></thead><tbody>';
     cols.forEach(function (col) {
       var ga = (DATA.colGrid[a.key] || {})[col.key] || {}, gb = (DATA.colGrid[b.key] || {})[col.key] || {};
