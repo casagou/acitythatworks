@@ -48,7 +48,13 @@
     return (u.split('/').pop() || '').toLowerCase().replace(/\.html$/, '');
   }
   var STEMS = GATED.map(stem);
-  function gated(u) { return STEMS.indexOf(stem(u)) > -1; }
+  function gated(u) {
+    var path = String(u || '').split('#')[0].split('?')[0];
+    /* Individual live-door pages live at /profiles/<slug>. The hub itself
+       (/profiles, profiles.html) is already in STEMS. */
+    if (/\/profiles\/[a-z0-9-]+/i.test(path)) return true;
+    return STEMS.indexOf(stem(u)) > -1;
+  }
 
   var KEY = 'actw.candidates';   // 'on' | 'off' — this browser's override
   var PANEL = 'actw.panel';      // '1' — this browser gets the toggle panel
@@ -93,7 +99,7 @@
      page that renders for half a second has not been hidden. replace() keeps
      it out of the back-button history too, so "back" from the home page goes
      where the reader actually came from. */
-  if (!on && onGatedPage) { location.replace('index.html'); return; }
+  if (!on && onGatedPage) { location.replace('/'); return; }
 
   /* The gated pages carry a static noindex and a <noscript> redirect, so a
      crawler or a reader with scripting off is held back too. Both are wrong
