@@ -7,6 +7,7 @@
 const fs = require("fs");
 const path = require("path");
 const ROOT = path.join(__dirname, "..");
+const CAMPAIGN_BODIES = require("./profile-bodies-campaign");
 
 const LIVE = [
   { slug: "alto",      id: "cand-marianne-alto",   name: "Marianne Alto",   office: "Mayor",   key: "Al", letter: "—",  n: 0,  campaign: { href: "https://altomayor.ca", label: "altomayor.ca" } },
@@ -46,16 +47,24 @@ for (const c of LIVE) {
     console.error("missing hub card for", c.id);
     process.exit(1);
   }
-  let body = m[1];
-  /* The hub lead repeats the D14 letter; the page header already shows it.
-     The hub Campaign line is replaced by the pinned 1 Sep URL below. */
-  body = body.replace(/<p class="cs-lead">[\s\S]*?<\/p>/, "");
-  body = body.replace(/<p class="pf "><strong class="pfl">Campaign\.<\/strong>[\s\S]*?<\/p>/, "");
-  body = body.replace(/ ---<\/p>/g, "</p>");
-  /* Hub-relative scorecard links become root-absolute from /profiles/<slug>. */
-  body = body.replace(/href="scorecard\.html/g, 'href="/scorecard.html');
-  body = body.replace(/href="comparison\.html/g, 'href="/comparison.html');
-  body = body.replace(/href="measures\.html/g, 'href="/measures.html');
+  let body;
+  if (CAMPAIGN_BODIES[c.slug]) {
+    /* Hub + Notion are still stubs for these six. Use campaign-URL fields only. */
+    body = CAMPAIGN_BODIES[c.slug];
+  } else {
+    body = m[1];
+    /* The hub lead repeats the D14 letter; the page header already shows it.
+       The hub Campaign line is replaced by the pinned 1 Sep URL below. */
+    body = body.replace(/<p class="cs-lead">[\s\S]*?<\/p>/, "");
+    body = body.replace(/<p class="pf "><strong class="pfl">Campaign\.<\/strong>[\s\S]*?<\/p>/, "");
+    /* July Aligned / Close / Partial / Opposed buckets are not current grades. */
+    body = body.replace(/<p class="pf[^"]*">\s*<strong class="pfl">(?:✅ Aligned|🟢 Close|🟡 Partial|❌ Opposed)[^<]*<\/strong>[\s\S]*?<\/p>/g, "");
+    body = body.replace(/ ---<\/p>/g, "</p>");
+    /* Hub-relative scorecard links become root-absolute from /profiles/<slug>. */
+    body = body.replace(/href="scorecard\.html/g, 'href="/scorecard.html');
+    body = body.replace(/href="comparison\.html/g, 'href="/comparison.html');
+    body = body.replace(/href="measures\.html/g, 'href="/measures.html');
+  }
   bodies[c.slug] = body.trim();
 }
 
@@ -215,6 +224,9 @@ let wrote = 0;
 for (const c of LIVE) {
   fs.writeFileSync(path.join(dir, c.slug + ".html"), pageHtml(c));
   wrote++;
+  const n = bodies[c.slug].length;
+  const src = CAMPAIGN_BODIES[c.slug] ? "campaign-url" : "hub";
+  console.log(" ", c.slug.padEnd(12), String(n).padStart(5), src);
 }
 
 const redirects = [
