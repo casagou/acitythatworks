@@ -382,6 +382,72 @@
     }).catch(function () {});
   })();
 
+  /* 12. The KPI library: filter and order the indicators -----------------------
+     Every indicator stays on the page; the controls hide none of the text a
+     reader has not asked to hide, and "as listed" restores the master's
+     order. Cadence is read from the source line ("City · quarterly"). */
+  (function kpiControls() {
+    var lists = $$('ul.kpis');
+    if (!lists.length) return;
+    var prose = lists[0].closest('.prose') || lists[0].parentElement;
+    var firstH2 = prose.querySelector('h2');
+    if (!firstH2) return;
+    var items = $$('ul.kpis > li');
+    items.forEach(function (li, i) { li.setAttribute('data-i', i); });
+    var bar = document.createElement('div');
+    bar.className = 'kpi-ctl';
+    bar.innerHTML = '<span class="lbl2">Show</span>' +
+      '<button type="button" class="chip" data-kf="all" aria-pressed="true">All indicators</button>' +
+      '<button type="button" class="chip" data-kf="base" aria-pressed="false">A baseline exists today</button>' +
+      '<button type="button" class="chip" data-kf="first" aria-pressed="false">First report sets the baseline</button>' +
+      '<label class="lbl2" for="kpi-sort" style="margin-left:8px">Order within each section</label>' +
+      '<select id="kpi-sort"><option value="list">As listed</option><option value="cadence">By cadence, most frequent first</option><option value="name">By name</option></select>' +
+      '<span class="kpi-n" id="kpi-n"></span>';
+    firstH2.parentNode.insertBefore(bar, firstH2);
+    var filter = 'all';
+    function cadenceRank(li) {
+      var t = ((li.querySelector('.ks') || {}).textContent || '').toLowerCase();
+      if (/daily|weekly/.test(t)) return 0;
+      if (/monthly/.test(t)) return 1;
+      if (/quarter/.test(t)) return 2;
+      if (/annual|year/.test(t)) return 3;
+      return 4;
+    }
+    function apply() {
+      var shown = 0;
+      var mode = $('#kpi-sort').value;
+      lists.forEach(function (ul) {
+        var lis = $$(':scope > li', ul);
+        lis.sort(function (a, b) {
+          if (mode === 'cadence') { var d = cadenceRank(a) - cadenceRank(b); if (d) return d; }
+          if (mode === 'name') { var na = (a.querySelector('.kn') || a).textContent.trim(), nb = (b.querySelector('.kn') || b).textContent.trim(); var c = na.localeCompare(nb); if (c) return c; }
+          return (+a.getAttribute('data-i')) - (+b.getAttribute('data-i'));
+        });
+        lis.forEach(function (li) {
+          var first = !!li.querySelector('.kb .fr');
+          var ok = filter === 'all' || (filter === 'first' ? first : !first);
+          li.hidden = !ok;
+          if (ok) shown++;
+          ul.appendChild(li);
+        });
+        var sec = ul.closest('section') || ul.parentElement;
+        var h = ul.previousElementSibling;
+        while (h && !/^H[23]$/.test(h.tagName)) h = h.previousElementSibling;
+        if (h && sec) h.hidden = !ul.querySelector('li:not([hidden])');
+      });
+      $('#kpi-n').textContent = shown + ' of ' + items.length + ' indicators';
+    }
+    bar.addEventListener('click', function (e) {
+      var b = e.target.closest('[data-kf]');
+      if (!b) return;
+      filter = b.getAttribute('data-kf');
+      $$('[data-kf]', bar).forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+      apply();
+    });
+    $('#kpi-sort').addEventListener('change', apply);
+    apply();
+  })();
+
   /* 11. Icons ---------------------------------------------------------------- */
   $$('[data-icon]').forEach(function (el) {
     var svg = ICONS[el.getAttribute('data-icon')];

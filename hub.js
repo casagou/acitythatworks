@@ -74,6 +74,18 @@
   var picks = [];
   var wm = [];
   var sortKey = 'grade';
+  /* Campaign sites, from candidates-lite.json (build/candidates-lite.js reads
+     them out of the profiles master). Arrives after the first render; the
+     cards are drawn again once it does. */
+  var WEB = {};
+  if (window.fetch) {
+    fetch('candidates-lite.json', { cache: 'no-cache' }).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
+      if (!d || !d.cands) return;
+      d.cands.forEach(function (c) { if (c.web) WEB[c.key] = c.web; });
+      if (Object.keys(WEB).length) render();
+    }).catch(function () {});
+  }
+  function siteLabel(url) { return url.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, ''); }
 
   function cardHtml(c) {
     var a = answered(c), said = bestSaid(c), href = profileHref(c);
@@ -106,6 +118,7 @@
     h += '<div class="cc-acts">';
     if (href) h += '<a href="' + esc(href) + '">' + icon('program') + 'Profile</a>';
     if (c.grade) h += '<a href="#sc-' + esc(c.key) + '">' + icon('compare') + 'Every area grade</a>';
+    if (WEB[c.key]) h += '<a href="' + esc(WEB[c.key]) + '" target="_blank" rel="noopener" title="' + esc(c.name) + '\'s campaign site">' + icon('map') + esc(siteLabel(WEB[c.key])) + '</a>';
     h += '<label class="cc-pick"><input type="checkbox" data-pick="' + esc(c.key) + '"' + (picks.indexOf(c.key) > -1 ? ' checked' : '') + '> Compare</label>';
     h += '</div></div></article>';
     return h;
@@ -203,7 +216,8 @@
     pop.setAttribute('role', 'dialog');
     pop.setAttribute('aria-label', 'Ask ' + c.name + ' for a written answer');
     var text = askText(c, r);
-    var web = c.web ? '<a href="' + esc(c.web) + '" target="_blank" rel="noopener">Open ' + esc(c.web.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '')) + '</a>' : '';
+    var site = WEB[c.key] || c.web || null;
+    var web = site ? '<a href="' + esc(site) + '" target="_blank" rel="noopener">Open ' + esc(siteLabel(site)) + '</a>' : '';
     var x = 'https://x.com/intent/post?text=' + encodeURIComponent('@YYJThatWorks asks: where does ' + c.name + ' stand, in writing, on ' + (r.label || '') + '? https://acitythatworks.ca/scorecard');
     pop.innerHTML = '<button type="button" class="ax" aria-label="Close">Close</button><h4>Ask ' + esc(c.name) + ' for a written answer</h4>' +
       '<div class="hub-sub">' + esc(r.label || '') + ' is a blank on the scorecard. Blanks fill in as answers arrive; a dash is unknown, not a fail.</div>' +

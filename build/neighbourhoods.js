@@ -239,7 +239,7 @@ const HEADER = `<header>
 function chips(all, current) {
   const one = n => `<a class="nbchip${n.slug === current ? ' on' : ''}" href="${n.file}"` +
     (n.slug === current ? ' aria-current="page"' : '') +
-    `><span class="nbe" aria-hidden="true">${n.emoji}</span>${esc(n.name)}</a>`;
+    `>${esc(n.name)}</a>`;
   const official = all.filter(n => n.official).map(one).join('');
   const extra = all.filter(n => !n.official).map(one).join('');
   return `<div class="nbchips">${official}</div>` +
@@ -300,8 +300,8 @@ ${html}
 </div>
 
 <nav class="nbnav" aria-label="Previous and next neighbourhood">
-<a class="nbprev" href="${prev.file}"><span class="nbnl">← Previous</span><span class="nbnn">${prev.emoji} ${esc(prev.name)}</span></a>
-<a class="nbnext" href="${next.file}"><span class="nbnl">Next →</span><span class="nbnn">${next.emoji} ${esc(next.name)}</span></a>
+<a class="nbprev" href="${prev.file}"><span class="nbnl">← Previous</span><span class="nbnn">${esc(prev.name)}</span></a>
+<a class="nbnext" href="${next.file}"><span class="nbnl">Next →</span><span class="nbnn">${esc(next.name)}</span></a>
 </nav>
 
 <div class="nbsw">
@@ -326,7 +326,7 @@ ${chips(all, n.slug)}
 /* ---------------------------------------------------------------- cards */
 
 function card(n) {
-  return `<div class="ac"><div class="act"><a href="${n.file}"><span class="nbe" aria-hidden="true">${n.emoji}</span> ${esc(n.name)}</a></div>` +
+  return `<div class="ac"><div class="act"><a href="${n.file}">${esc(n.name)}</a></div>` +
     `<div class="acx">${inline(n.card)}</div>` +
     `<a class="acr" href="${n.file}">Read ${esc(n.name)} →</a></div>`;
 }

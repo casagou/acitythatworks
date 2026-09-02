@@ -438,7 +438,7 @@ td.bad{color:#B5341F;font-weight:600}
 <ul class="cklist">
 <li><span class="g b">B</span><span>A <strong>grade</strong>, on three or more scored topics.</span></li>
 <li><span class="few-m">2.50</span><span>The <strong>mean of one or two marks</strong>, printed instead of a letter — <a href="#defects">below the three-topic floor</a>, and not a verdict on the area.</span></li>
-<li><b class="ckr">📋</b><span><strong>Record only</strong>: documented facts about a term in office, which are never scored.</span></li>
+<li><b class="ckr"><svg class="picon rec-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 3.5h6v3H9z"/><path d="M6.5 6h11v14.5h-11z"/><path d="M9.5 12h5"/><path d="M9.5 15.5h3.5"/></svg></b><span><strong>Record only</strong>: documented facts about a term in office, which are never scored.</span></li>
 <li><b class="ckn">—</b><span><strong>No scored position</strong> and no record in that area.</span></li>
 </ul>
 <p class="ckn2">Six of the fifteen areas can never reach the three-topic floor: Homelessness, Walking &amp; Transit, Cleanliness and Reconciliation hold one topic each; Mobility and Business hold two. Hover an area heading to see which measures feed it. <strong>Every name links to that candidate's <a href="profiles.html">profile</a></strong> — the evidence base the grade rests on, and the reason behind the number.</p>
@@ -790,7 +790,7 @@ td.bad{color:#B5341F;font-weight:600}
            ' and their mean. <strong>It is not a grade for '+col.label+'</strong>, and it should not be quoted as one. '+
            '<a href="#defects">Defect 3 explains the rule.</a></div>';
     } else if(g.state==='record'){
-      h += '<div class="dmark"><b>📋</b><span class="dv">Record only — nothing scored</span></div>';
+      h += '<div class="dmark"><b><svg class="picon rec-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 3.5h6v3H9z"/><path d="M6.5 6h11v14.5h-11z"/><path d="M9.5 12h5"/><path d="M9.5 15.5h3.5"/></svg></b><span class="dv">Record only — nothing scored</span></div>';
       h += '<div class="dtext">Every topic in this area is a documented fact about the 2022–2026 term rather than a stated position. '+
            '<strong>Record is never scored</strong>, in either direction. Stating a position on any of these measures would turn this cell into a real grade.</div>';
     } else {
