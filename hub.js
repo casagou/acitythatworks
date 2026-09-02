@@ -167,8 +167,8 @@
     if (!a || !b) { box.innerHTML = ''; return; }
     function cell(c, col) {
       var g = (DATA.colGrid[c.key] || {})[col.key] || { state: 'empty', n: 0 };
-      if (g.state === 'graded') return '<span class="cpc"><span class="gchip g-' + gradeCls(g.grade) + '">' + esc(g.grade) + '</span>' + (g.n && g.mean != null ? '<span class="n">' + fmt2(g.mean) + ' · ' + g.n + '/' + g.total + '</span>' : '') + '</span>';
-      if (g.state === 'marks') return '<span class="cpc"><span class="few-m" title="Below the three-topic floor: the mean of the marks, not a grade">' + fmt2(g.mean) + '</span><span class="n">' + g.n + '/' + g.total + ' · below the floor</span></span>';
+      if (g.state === 'graded') return '<span class="cpc"><span class="gchip g-' + gradeCls(g.grade) + '">' + esc(g.grade) + '</span>' + (g.n ? '<span class="n">' + g.n + '</span>' : '') + '</span>';
+      if (g.state === 'marks') return '<span class="cpc"><span class="n">—</span></span>';
       if (g.state === 'record') return '<span class="cpc"><span class="n">record only</span></span>';
       return '<span class="cpc"><span class="n">—</span></span>';
     }
