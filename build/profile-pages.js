@@ -1,13 +1,14 @@
 #!/usr/bin/env node
 /* Write one real page per live-door candidate at profiles/<slug>.html.
-   Bodies are transferred from the hub cards in profiles.html. Campaign URLs
-   for the 1 Sep Notion set are pinned here. D14 letters match /scorecard.
-   Do not invent biography. Haley and Coleman are not live-door pages. */
+   Bodies are transferred from the 1 Sep Notion Candidate Profiles toggles
+   (build/notion-toggles/<slug>.md). July Aligned/Close/Partial/Opposed
+   buckets are stripped. D14 letters match /scorecard. Do not invent.
+   Haley and Coleman are not live-door pages. */
 "use strict";
 const fs = require("fs");
 const path = require("path");
 const ROOT = path.join(__dirname, "..");
-const CAMPAIGN_BODIES = require("./profile-bodies-campaign");
+const { notionToHtml } = require("./notion-to-html");
 
 const LIVE = [
   { slug: "alto",      id: "cand-marianne-alto",   name: "Marianne Alto",   office: "Mayor",   key: "Al", letter: "—",  n: 0,  campaign: { href: "https://altomayor.ca", label: "altomayor.ca" } },
@@ -38,34 +39,14 @@ function gradeCls(letter) {
   return "abcdf".indexOf(c) > -1 ? c : "x";
 }
 
-const hub = fs.readFileSync(path.join(ROOT, "profiles.html"), "utf8");
 const bodies = {};
 for (const c of LIVE) {
-  const re = new RegExp('<details class="cand" id="' + c.id + '"[^>]*>[\\s\\S]*?<div class="body">([\\s\\S]*?)</div></details>');
-  const m = hub.match(re);
-  if (!m) {
-    console.error("missing hub card for", c.id);
+  const mdPath = path.join(ROOT, "build", "notion-toggles", c.slug + ".md");
+  if (!fs.existsSync(mdPath)) {
+    console.error("missing Notion toggle for", c.slug);
     process.exit(1);
   }
-  let body;
-  if (CAMPAIGN_BODIES[c.slug]) {
-    /* Hub + Notion are still stubs for these six. Use campaign-URL fields only. */
-    body = CAMPAIGN_BODIES[c.slug];
-  } else {
-    body = m[1];
-    /* The hub lead repeats the D14 letter; the page header already shows it.
-       The hub Campaign line is replaced by the pinned 1 Sep URL below. */
-    body = body.replace(/<p class="cs-lead">[\s\S]*?<\/p>/, "");
-    body = body.replace(/<p class="pf "><strong class="pfl">Campaign\.<\/strong>[\s\S]*?<\/p>/, "");
-    /* July Aligned / Close / Partial / Opposed buckets are not current grades. */
-    body = body.replace(/<p class="pf[^"]*">\s*<strong class="pfl">(?:✅ Aligned|🟢 Close|🟡 Partial|❌ Opposed)[^<]*<\/strong>[\s\S]*?<\/p>/g, "");
-    body = body.replace(/ ---<\/p>/g, "</p>");
-    /* Hub-relative scorecard links become root-absolute from /profiles/<slug>. */
-    body = body.replace(/href="scorecard\.html/g, 'href="/scorecard.html');
-    body = body.replace(/href="comparison\.html/g, 'href="/comparison.html');
-    body = body.replace(/href="measures\.html/g, 'href="/measures.html');
-  }
-  bodies[c.slug] = body.trim();
+  bodies[c.slug] = notionToHtml(fs.readFileSync(mdPath, "utf8"), c.slug);
 }
 
 const PAGE_CSS = `/* Field tints copied from the hub cards so transferred prose reads the same.
@@ -225,8 +206,7 @@ for (const c of LIVE) {
   fs.writeFileSync(path.join(dir, c.slug + ".html"), pageHtml(c));
   wrote++;
   const n = bodies[c.slug].length;
-  const src = CAMPAIGN_BODIES[c.slug] ? "campaign-url" : "hub";
-  console.log(" ", c.slug.padEnd(12), String(n).padStart(5), src);
+  console.log(" ", c.slug.padEnd(12), String(n).padStart(5), "notion");
 }
 
 const redirects = [
