@@ -1,0 +1,22 @@
+# Repo root is the publish directory (static site).
+# /build stays in git for local exporters; it must not be a public URL.
+# The build command drops it from the published tree on Netlify deploys
+# only (CONTEXT is production / deploy-preview / branch-deploy). `netlify
+# dev` sets CONTEXT=dev and leaves the directory alone.
+
+[build]
+  publish = "."
+  command = 'if [ -n "$CONTEXT" ] && [ "$CONTEXT" != "dev" ]; then rm -rf build; fi'
+
+# Belt-and-suspenders with `_redirects`: 404 /build even if a file is present.
+[[redirects]]
+  from = "/build"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/build/*"
+  to = "/404.html"
+  status = 404
+  force = true

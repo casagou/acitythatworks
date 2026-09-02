@@ -38,7 +38,7 @@ Mirrors the Notion master copy (the working document). Version History **is** pu
 
 ## How it deploys
 
-The Netlify site is connected to this GitHub repo. Push to `main` → Netlify auto-builds (static; no build command) → live in ~30 seconds.
+The Netlify site is connected to this GitHub repo. Push to `main` → Netlify publishes the repo root (static; the only build step is dropping `/build` from the published tree) → live in ~30 seconds. `/build` stays in git so local exporters (`node build/*.js`) still run; it is not a public URL — `/build` and `/build/*` are forced 404. `profiles/` and `data/rating-cards/` stay published.
 
 **For local edits:** open any file, save, `git add` + commit + push. Netlify takes over.
 
