@@ -6,7 +6,7 @@ Exported 2 Sep 2026 from the 12-topic Notion cards. Rendered as written. Not fil
 
 | Candidate | Scored | Record | Notion id (last 16) | Notes |
 |---|---:|---:|---|---|
-| Matt Dell | 14 | 7 | `fba1a9e2b5e3856be6` | Dense leftover page. Live letter stays **D / n=5**. |
+| Matt Dell | 14 | 7 | `fba1a9e2b5e3856be6` | Dense fill. IGNORE thin leftover `…db8bede3e9221140c5`. INTERNAL PROPOSE C is not printed. Live letter stays **D / n=5**. |
 | Dave Thompson | 5 | 2 | `5b88c5f74a937fda34` | Unchanged URL. Live letter stays **—**. |
 | Arthur McInnis | 22 | 0 | `f8a4dffad6c29154d0` | Same URL. Live letter stays **B+ / n=17**. |
 | Jack Sandor | 23 | 0 | `4aaae0f9a22a49eb19` | Live letter stays **B / n=16**. |

@@ -66,4 +66,4 @@ Locked Decision 14 letters are applied later by the build — do **not** copy a 
 - 55 cells, topic numbers 1–12 matching the template.
 - `flags` (optional): card FLAG notes or `thin verbatim`. Render the cell as written. Do not fill a gap.
 - Never include INTERNAL PROPOSE letters, working notes, or banned names.
-- Dell dense card is `3cfe245ae5f381fba1a9e2b5e3856be6`. Do not substitute the thinner duplicate.
+- Dell canonical is the dense fill `3cfe245ae5f381fba1a9e2b5e3856be6` (n=14/55). IGNORE `3cfe245ae5f381db8bede3e9221140c5` (thin leftover; treats budget YES as Record). Do not print INTERNAL PROPOSE C. Live Decision 14 stays D / 5.

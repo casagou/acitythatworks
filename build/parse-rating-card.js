@@ -532,7 +532,7 @@ const CANONICAL = {
   gardiner: { id: "3cfe245ae5f381b6ae40e666d4e0beea" },
   hammond: { id: "3cfe245ae5f3815ab5b6cf00e712f8ff" },
   caradonna: { id: "3cfe245ae5f381fcad84cc3889ee3d3b" },
-  // Joa 2 Sep: Dell dense page is the leftover URL, not …db8bede3e9221140c5.
+  // Dense fill (n=14). IGNORE thin leftover …db8bede3e9221140c5.
   dell: { id: "3cfe245ae5f381fba1a9e2b5e3856be6" },
   thompson: { id: "3cfe245ae5f3815b88c5f74a937fda34" },
   kim: { id: "3cfe245ae5f3818bbdb4ce3dded96e5f" },
