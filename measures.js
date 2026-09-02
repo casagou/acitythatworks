@@ -144,6 +144,12 @@ const MEASURES = [
    same hue pre-darkened to clear >=5:1 on white at full opacity, so the
    dimming is baked into the colour instead of applied as opacity on top of
    it. managed's own colour already clears 5:1 undimmed, so ink === color. */
+/* The drawn pillar icons (icons.js). In the browser the file is loaded
+   before this one; under Node the build requires it. The emoji stay in the
+   data as the fallback and the plain-text form. */
+const ICONS = (typeof ACTW_ICONS !== "undefined") ? ACTW_ICONS
+  : (typeof require === "function" ? require("./icons.js") : {});
+function pillarIcon(k, p){ return ICONS[k] ? ICONS[k] : ("<span aria-hidden=\"true\">" + p.emoji + "</span>"); }
 const PILLARS = {
   foundation:{label:"Honouring the Host Nations",color:"#7A6B3D",ink:"#7D6E41",emoji:"🌿",desc:"Government-to-government tables, Indigenous procurement, place names, cultural protocols, urban Indigenous services.",tagline:"A city that works begins with right relations",takeaway:"This framework treats the relationship with the Songhees and Esquimalt Nations as ongoing operational work, not symbolic gesture.",intro:"<p>Victoria is built on the unceded traditional territories of the lək̓ʷəŋən-speaking peoples, today represented by the <strong>Songhees Nation</strong> and the <strong>Esquimalt Nation.</strong> This is a foundation, not a pillar, because relationship with the host Nations precedes and underlies every other commitment. The federal Crown holds the formal relationship with First Nations. But the City of Victoria sits inside this geography every day, makes decisions that affect this geography every day, and depends on functional working relationships to deliver on land use, infrastructure, policing, and economic development. This framework treats those relationships as ongoing operational work, not symbolic gesture. We will not promise outcomes that require the Nations' agreement to deliver. What we will promise is that the relationship operates at the level of a government-to-government working partnership, not consultative tokenism.</p>"},
   liveable:{label:"A Liveable City",color:"#1A3668",ink:"#5A6E92",emoji:"🏠",desc:"Housing, families, childcare, cleanliness, mobility, accessibility.",tagline:"A city that works is a city where we're happy to live",takeaway:"Victoria's population is growing, but liveability is declining — this pillar is about making Victoria a city people want to stay in.",intro:"<p>Victoria must be liveable for families, renters, workers, and seniors. We will make it possible to find housing, access childcare, keep the city clean, and ensure quality of life in every neighbourhood. Victoria's population is growing but liveability is declining. We will make Victoria a city where people want to stay, not a city they're forced to leave.</p>"},
@@ -287,7 +293,7 @@ function buildPillarsHTML(){
        pre-filtered rather than jumping to an in-page anchor. measures.html
        reads ?pillar= on load and applies the filter itself; see below. */
     h+='<a class="pc" href="measures.html?pillar='+k+'" style="border-top:3px solid '+p.color+'">'+
-       '<div class="pch"><span class="pce">'+p.emoji+'</span><span class="pct" style="color:'+p.ink+'">'+n+' measures</span></div>'+
+       '<div class="pch"><span class="pce" style="color:'+p.color+'">'+pillarIcon(k,p)+'</span><span class="pct" style="color:'+p.ink+'">'+n+' measures</span></div>'+
        '<div class="pti" style="color:'+p.color+'">'+esc(p.label)+'</div>'+
        '<div class="pd">'+esc(p.desc)+'</div>'+
        '<div class="pca" style="color:'+p.ink+'">View measures <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>'+
@@ -337,8 +343,8 @@ function buildMeasuresHTML(){
     /* The em-dash prefix reads as one level of indent inside the jump list,
        which is a flat <select> on this page — the sections and the pillar
        groups inside Every Measure are not the same kind of destination. */
-    h+='<div class="pgr" id="pg-'+pk+'" data-jump-label="— '+esc(p.emoji+' '+p.label)+'" data-pg="'+pk+'" style="border-top-color:'+p.color+'40">'+
-       '<div class="pgh"><h2 class="pgt" style="color:'+p.color+'"><span style="font-size:1.1em">'+p.emoji+'</span> '+esc(p.label)+'</h2>'+
+    h+='<div class="pgr" id="pg-'+pk+'" data-jump-label="— '+esc(p.label)+'" data-pg="'+pk+'" style="border-top-color:'+p.color+'40">'+
+       '<div class="pgh"><h2 class="pgt" style="color:'+p.color+'">'+pillarIcon(pk,p)+' '+esc(p.label)+'</h2>'+
        '<span class="pgg" style="color:'+p.ink+'">'+items.length+' measures · M'+f+'–M'+l+'</span></div>';
     if(p.tagline) h+='<p class="pgtag">'+esc(p.tagline)+'</p>';
     h+=diagBlock(p.takeaway,p.intro,"pgintro");

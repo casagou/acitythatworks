@@ -36,7 +36,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Public+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=17">
+<link rel="stylesheet" href="styles.css?v=18">
 <style>
 .legend{display:grid;grid-template-columns:1fr;gap:10px;margin:20px 0}
 @media(min-width:640px){.legend{grid-template-columns:repeat(2,1fr)}}
@@ -180,7 +180,7 @@ table.mgrid abbr{text-decoration:none;border:0}
 <a href="/summary">Summary</a>
 <a href="/measures">Measures</a>
 <a href="/neighbourhoods">Neighbourhoods</a>
-<a href="/scorecard" data-cand class="nv-sc">Who has answered</a>
+<a href="/scorecard" data-cand class="nv-sc">Candidates</a>
 <a href="/faq">FAQ</a>
 </nav>
 <button id="mt" class="mb" aria-label="Open menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
@@ -191,7 +191,7 @@ table.mgrid abbr{text-decoration:none;border:0}
 <a href="/summary">Summary</a>
 <a href="/measures">Measures</a>
 <a href="/neighbourhoods">Neighbourhoods</a>
-<a href="/scorecard" data-cand>Who has answered</a>
+<a href="/scorecard" data-cand>Candidates</a>
 <a href="/faq">FAQ</a>
 </div>
 </div>
@@ -207,9 +207,8 @@ table.mgrid abbr{text-decoration:none;border:0}
 <h1 class="ph1">Candidate Comparison Matrix</h1>
 <p class="lead" style="margin-top:18px">Where each Victoria 2026 candidate stands relative to the framework. Scan the rows, see the gaps.</p>
 </div>
-<details class="parked">
-<summary>The evidence store</summary>
-<div class="parked-in">
+<div class="archive-note"><strong>This page is the evidence behind every grade.</strong> Looking for the grades themselves? <a href="scorecard.html">They are on the candidates page</a>, computed on the two-question scale; the topic tables below are the record of what each candidate said and where it was published.</div>
+<div class="parked-open">
 <div class="hero-rest">
 <p class="lead" style="margin-top:0">A snapshot — the race evolves.</p>
 <p class="scale">50 evidence tables · 15 graded candidates · about two hours end to end. <strong>Grades live on the <a href="scorecard.html" style="color:var(--navy)">scorecard</a></strong> — 55 topics, 210 marks, computed on the two-question scale, and the <strong>18 <a href="profiles.html" style="color:var(--navy)">candidate profiles</a></strong> have their own page. <strong>Start with the <a href="scorecard.html#grid" style="color:var(--navy)">current grid on the scorecard</a></strong> — it is the whole thing on one screen. The grid that used to sit on this page was withdrawn on 1 August and the reason is given where it stood. The jump bar below follows you down the page.</p>
@@ -1534,12 +1533,14 @@ separate 📋 line.</p>
 
 </div>
 </div>
-</details>
+
 </div>
 </main>
 
 <div id="footer-mount"></div>
-<script src="site.js?v=13"></script>
+<script src="icons.js?v=1"></script>
+<script src="site.js?v=14"></script>
+<script src="civic.js?v=1"></script>
 <script src="jumpnav.js"></script>
 
 

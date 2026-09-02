@@ -1,4 +1,4 @@
-# A City That Works — Website (v1.9.1)
+# A City That Works — Website (v1.10 · look and feel v2.3)
 
 A complete, multi-page static website for the citizens' framework. No build step, no dependencies. Lives at **[acitythatworks.ca](https://acitythatworks.ca)**, auto-deployed from this repo via Netlify on every push to `main`.
 
@@ -232,3 +232,18 @@ Every measure is individually addressable — `measures.html#m48` opens that mea
 - Print stylesheet hides chrome, expands every `<details>`, and uses printer-safe borders. Try **⌘P** on any page.
 - iOS safe-area insets respected.
 - `sitemap.xml` + `robots.txt` included for SEO.
+
+## v2.3 — the September 2026 restack (look and feel)
+
+The site's content did not change in this pass; how it is shown did. The [September 2026 review](https://claude.ai/code/artifact/15852593-2232-40a5-bd23-c9296d8f6a73) found that the August "two speeds" fold had left almost every page opening on a title and an italic *The rest of this page ▾*, that there was nothing to look at on 36 pages, and that the candidates grid was drawn phone-width on a desktop. What changed:
+
+- **Every page-level fold is open.** `details.parked` and the `toc-fold` wrappers are gone from the hand-written pages and from the generators (`build/neighbourhoods.js`, `build/audience.js`, `build/scorecard.tpl.html`). Folds remain only *inside* sections (measures, FAQ answers, profiles, the endorse pack's dated correction) and are styled as controls, not captions. The on-page contents list is visible again; `site.js` no longer folds it.
+- **A visual layer, on the locked palette.** `styles.css` gained three surfaces (`--night`, `--water`, `--glass`), a hub band for the first screen of hub pages, full-bleed section grounds on the home page, stat tiles with bars only where the page publishes the scale, candidate cards, meters, a schematic neighbourhood map and a drawn icon set. Navy, gold, paper and the wave mark are untouched.
+- **New files.** `icons.js` (the pillar and door icons; the browser reads the global, the build scripts `require()` it), `civic.js` (shared behaviours: header eyebrow and Endorse call to action, hash links that open collapsed ancestors, count-up figures and meters, the election countdown, the neighbourhood map, FAQ search, the measures shortlist, the compact filter bar on phones, the household-bill calculator, the home candidates strip), `hub.js` (the candidates hub on the scorecard: cards, ordering, what-matters-to-me weighting, compare two, ask your candidate), `candidates-lite.json` (written by `build/candidates-lite.js` from the payload inside `scorecard.html`; the home strip reads it).
+- **The candidates page** opens on the hub: a meter of who has a written answer, one card per candidate with grade chip, questions answered, the doors as tappable chips (a dash opens "ask your candidate"), the strongest sourced sentence, Profile and Every-area-grade links and a Compare tick. The five-question table, the 15-area grid, the pillar table, the 55-topic heatmap and the methodology follow, all open; the grid, the pillar table and the heatmap break out of the reading column on desktop.
+- **Header.** "Who has answered" is now "Candidates" in the bar and the drawer; the "Victoria 2026" eyebrow appears wherever the bar has room; an Endorse call to action sits at the end of the bar (injected by `civic.js`).
+- **Cache breaks.** `styles.css?v=18`, `site.js?v=14`; the three new scripts are `?v=1`.
+
+Run after edits, as before: `node build/prerender.js` (measures data), `node build/neighbourhoods.js`, `node build/audience.js`, `node build/profiles.js`, then `node build/candidates-lite.js` whenever `scorecard.html` changes, then `node build/checklinks.js`.
+
+**`scorecard.html` is hand-maintained until `matrix-v3.js` is reconciled.** The live page carries six dash-only columns (Harris, McGuigan, Garcia, Girard, Gibbs, Dion) and no longer lists Chris Coleman; `node build/matrix.js` still lists Coleman and does not write the six dash rows, so a rebuild from the template would change who is on the page (the note at the top of `build/matrix.js` says so). The v2.3 presentation edits were applied to both `scorecard.html` and `build/scorecard.tpl.html`, so the template carries the design for the day the data side is reconciled. One pre-existing broken anchor remains for the same reason: `profiles.html` links Coleman's profile to `scorecard.html#sc-Co`, which no longer exists.

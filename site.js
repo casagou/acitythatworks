@@ -161,29 +161,8 @@ evidenceLink() +
     if (burger) { hr.insertBefore(hs, burger); } else { hr.appendChild(hs); }
   }
 
-  // Long-page contents lists start closed. The first screen is the door,
-  // not a chapter index. Jump-to bars are hidden in CSS.
-  document.querySelectorAll('nav.toc').forEach(function (toc) {
-    if (toc.closest('details')) return;
-    var d = document.createElement('details');
-    d.className = 'toc toc-fold';
-    var label = toc.getAttribute('aria-label') || 'On this page';
-    d.setAttribute('aria-label', label);
-    d.innerHTML = toc.innerHTML;
-    var h = d.querySelector('.toc-h');
-    if (h) {
-      var s = document.createElement('summary');
-      s.className = 'toc-h';
-      s.textContent = h.textContent || 'On this page';
-      h.replaceWith(s);
-    } else {
-      var s2 = document.createElement('summary');
-      s2.className = 'toc-h';
-      s2.textContent = label;
-      d.insertBefore(s2, d.firstChild);
-    }
-    toc.replaceWith(d);
-  });
+  // The contents list on a document stays visible: a page says what is in
+  // it before asking to be read. (v2.2 folded it; v2.3 opened it again.)
 
   // Phone drawer is the grouped site map, not the five-item top bar.
   // The static #mn .mmi in each page is the no-JS short list; once
@@ -202,8 +181,8 @@ evidenceLink() +
   }
 
   // Desktop More — the same grouped map as the phone drawer. The top
-  // bar stays five items (Summary, Measures, Neighbourhoods, Who has
-  // answered, FAQ). More is how a wide screen reaches Profiles,
+  // bar stays five items (Summary, Measures, Neighbourhoods, Candidates,
+  // FAQ) plus the Endorse call to action civic.js appends. More is how a wide screen reaches Profiles,
   // Evidence store, Savings and the audience pages without the footer.
   var nv = document.querySelector('header .nv');
   if (nv && !nv.querySelector('.nvmore')) {

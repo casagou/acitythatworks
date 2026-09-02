@@ -36,7 +36,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Public+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=17">
+<link rel="stylesheet" href="styles.css?v=18">
 <style>
 .faqgrp{margin-top:40px}
 .faqgrp > .gh{font-family:'Fraunces',serif;font-size:18px;font-weight:500;text-transform:none;letter-spacing:0;color:var(--navy);margin:0 0 8px;padding-top:24px;border-top:1px solid rgba(26,54,104,.18)}
@@ -72,7 +72,7 @@ details.q .qa a{color:var(--navy)}
 <a href="/summary">Summary</a>
 <a href="/measures">Measures</a>
 <a href="/neighbourhoods">Neighbourhoods</a>
-<a href="/scorecard" data-cand class="nv-sc">Who has answered</a>
+<a href="/scorecard" data-cand class="nv-sc">Candidates</a>
 <a href="/faq" class="cur">FAQ</a>
 </nav>
 <button id="mt" class="mb" aria-label="Open menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
@@ -83,7 +83,7 @@ details.q .qa a{color:var(--navy)}
 <a href="/summary">Summary</a>
 <a href="/measures">Measures</a>
 <a href="/neighbourhoods">Neighbourhoods</a>
-<a href="/scorecard" data-cand>Who has answered</a>
+<a href="/scorecard" data-cand>Candidates</a>
 <a href="/faq" class="gd">FAQ</a>
 </div>
 </div>
@@ -99,6 +99,8 @@ details.q .qa a{color:var(--navy)}
 <p class="lead" style="margin-top:10px">A non-partisan, costed, sourced policy framework, open for any candidate to adopt. Not a party, not a slate, and not for sale.</p>
 </div>
 
+<div class="faq-search"><label for="faqsearch" class="vh">Search the questions</label><input id="faqsearch" type="search" placeholder="Search the questions…" autocomplete="off"></div>
+<p class="faq-count" id="faqcount" role="status" aria-live="polite"></p>
 <nav class="toc" aria-label="On this page">
 <div class="toc-h">On this page</div>
 <ol>
@@ -141,11 +143,11 @@ details.q .qa a{color:var(--navy)}
 <details class="q" id="q4"><summary><span class="qq">What does "0% ideological, 100% pragmatic" actually mean?</span><span class="qp"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></summary><div class="qa"><p>It means the test for every measure is <em>"does this work elsewhere and can it work here?"</em> — not <em>"does this fit a left or right label?"</em> The framework deliberately absorbs strong ideas from across the spectrum: a progressive councillor's supportive-housing throughput program sits beside a fiscal-restraint councillor's enforcement-of-existing-rules approach, because both are evidence-backed and within municipal power. No measure is included or excluded on ideological grounds; it is included if it is costed, sourced, and deliverable, and excluded if it isn't.</p><a class="mlink faqlink" href="#q4">Link to this question</a></div></details>
 <details class="q" id="q5"><summary><span class="qq">What are the five pillars?</span><span class="qp"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></summary><div class="qa">
 <ul>
-<li>🏠 <strong>A Liveable City</strong> — housing, families, childcare, cleanliness, mobility</li>
-<li>🛡️ <strong>A Safe City</strong> — public safety, order, accountability, modern infrastructure</li>
-<li>🌳 <strong>A Beautiful City</strong> — heritage, parks, urban aesthetics, climate resilience</li>
-<li>💰 <strong>A Well-Managed City</strong> — taxes, permits, performance, fiscal discipline</li>
-<li>🗳️ <strong>A Democratic City</strong> — referendums, transparency, participation, public-visualization tools</li>
+<li><span class="ic" data-icon="liveable" aria-hidden="true"></span> <strong>A Liveable City</strong> — housing, families, childcare, cleanliness, mobility</li>
+<li><span class="ic" data-icon="safe" aria-hidden="true"></span> <strong>A Safe City</strong> — public safety, order, accountability, modern infrastructure</li>
+<li><span class="ic" data-icon="beautiful" aria-hidden="true"></span> <strong>A Beautiful City</strong> — heritage, parks, urban aesthetics, climate resilience</li>
+<li><span class="ic" data-icon="managed" aria-hidden="true"></span> <strong>A Well-Managed City</strong> — taxes, permits, performance, fiscal discipline</li>
+<li><span class="ic" data-icon="democratic" aria-hidden="true"></span> <strong>A Democratic City</strong> — referendums, transparency, participation, public-visualization tools</li>
 </ul>
 <p>Plus a <strong>Foundation, not a pillar</strong> — honouring the host Nations (Songhees and Esquimalt), built into how the City operates rather than how it speaks.</p><a class="mlink faqlink" href="#q5">Link to this question</a></div></details>
 </div>
@@ -236,7 +238,9 @@ Send it to <a href="mailto:info@acitythatworks.ca">info@acitythatworks.ca</a> an
 </main>
 
 <div id="footer-mount"></div>
-<script src="site.js?v=13"></script>
+<script src="icons.js?v=1"></script>
+<script src="site.js?v=14"></script>
+<script src="civic.js?v=1"></script>
 <script src="jumpnav.js"></script>
 </body>
 </html>

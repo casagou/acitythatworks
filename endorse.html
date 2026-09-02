@@ -36,7 +36,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Public+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=17">
+<link rel="stylesheet" href="styles.css?v=18">
 <style>
 .tier{padding:24px;border:1px solid rgba(26,54,104,.2);margin:16px 0;background:#fff}
 .tier h3{margin-top:0}
@@ -63,7 +63,7 @@
 <a href="/summary">Summary</a>
 <a href="/measures">Measures</a>
 <a href="/neighbourhoods">Neighbourhoods</a>
-<a href="/scorecard" data-cand class="nv-sc">Who has answered</a>
+<a href="/scorecard" data-cand class="nv-sc">Candidates</a>
 <a href="/faq">FAQ</a>
 </nav>
 <button id="mt" class="mb" aria-label="Open menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
@@ -74,7 +74,7 @@
 <a href="/summary">Summary</a>
 <a href="/measures">Measures</a>
 <a href="/neighbourhoods">Neighbourhoods</a>
-<a href="/scorecard" data-cand>Who has answered</a>
+<a href="/scorecard" data-cand>Candidates</a>
 <a href="/faq">FAQ</a>
 </div>
 </div>
@@ -95,11 +95,9 @@
 </ol>
 </div>
 
-<details class="parked">
-<summary>The endorsement pack</summary>
-<div class="parked-in">
-<details class="toc toc-fold">
-<summary class="toc-h">On this page</summary>
+<div class="parked-open">
+<nav class="toc" aria-label="On this page">
+<div class="toc-h">On this page</div>
 <ol>
 <li><a href="#sec-1">The Pitch — Why Endorse?</a></li>
 <li><a href="#sec-2">What You Are Endorsing</a></li>
@@ -116,7 +114,7 @@
 <li><a href="#section-13">Measure-by-Measure Checklist</a></li>
 <li><a href="#sec-14">The Endorsement Form</a></li>
 </ol>
-</details>
+</nav>
 <!-- Sticky section navigator. The table of contents above stops being
      reachable a screen or two in; this control travels with the reader. The
      option list is built by jumpnav.js from the page's own headings, so it
@@ -139,6 +137,9 @@
 
 <div class="prose">
 
+<details class="fold-block corr-fold" id="correction">
+<summary>A correction, if you took an earlier version of this pack to a debate <span class="fold-n">· dated note</span></summary>
+<div class="fold-in">
 <div class="callout red">
 <div class="lbl">◆ If you took an earlier version of this pack to a debate</div>
 <p style="margin:0 0 8px"><strong>One correction matters more than the rest, and you should read it before you tick anything.</strong> Earlier versions of this pack offered <em>"M40: Automated speed cameras at schools"</em> as an endorsable commitment. <strong>British Columbia municipalities cannot install, operate, or collect fines from speed cameras.</strong> The Intersection Safety Camera programme is a Province, ICBC and RCMP partnership which, per UBCM, is not operated by or delegated to municipalities — and Victoria council’s own unanimous 2023 motion asked the Province either to install them or to <em>allow</em> municipalities to. If you signed an earlier version of this pack, <strong>you pledged a power the City does not hold</strong>, and an opponent who reads the statute will say so. Measure 40 is now nominate, prepare and advocate. <strong>Re-file if you endorsed it.</strong></p>
@@ -150,6 +151,8 @@
 </ul>
 <p style="margin:0"><strong>Use this version.</strong> An opponent who checks will correct you on any of them.</p>
 </div>
+</div>
+</details>
 
 <h2 id="sec-1">1. The Pitch — Why Endorse?</h2>
 <p>You are a serious candidate running for Mayor or Council in October 2026. You need a platform that is <strong>costed, sourced, defensible under attack, and measurable in office.</strong> Building one from scratch takes hundreds of hours and a research team. Most candidates do not have those resources. The result, every cycle, is platforms full of slogans and zero numbers. This framework solves that problem.</p>
@@ -210,12 +213,12 @@
 
 <h2 id="sec-7">7. The Five Pillars at a Glance</h2>
 <div class="pillarmini">
-<div class="pmc" style="background:rgba(26,54,104,.07)"><strong>🏠 A Liveable City</strong>Housing (12,000 homes with composition targets), permit reform, mobility, Westshore RT, childcare</div>
-<div class="pmc" style="background:rgba(181,52,31,.07)"><strong>🛡️ A Safe City</strong>Downtown Public Order Team, extended bylaw hours, smart LED (no surveillance), Esquimalt funding fix</div>
-<div class="pmc" style="background:rgba(34,114,71,.07)"><strong>🌳 A Beautiful City</strong>Heritage, parks, GIS modernization + LIDAR, climate (−50% GHG by 2030)</div>
+<div class="pmc" style="background:rgba(26,54,104,.07)"><strong><span class="ic" data-icon="liveable" aria-hidden="true"></span>A Liveable City</strong>Housing (12,000 homes with composition targets), permit reform, mobility, Westshore RT, childcare</div>
+<div class="pmc" style="background:rgba(181,52,31,.07)"><strong><span class="ic" data-icon="safe" aria-hidden="true"></span>A Safe City</strong>Downtown Public Order Team, extended bylaw hours, smart LED (no surveillance), Esquimalt funding fix</div>
+<div class="pmc" style="background:rgba(34,114,71,.07)"><strong><span class="ic" data-icon="beautiful" aria-hidden="true"></span>A Beautiful City</strong>Heritage, parks, GIS modernization + LIDAR, climate (−50% GHG by 2030)</div>
 <div class="pmc" style="background:rgba(139,105,20,.09)"><strong>A Well-Managed City</strong>Managed competition, ZBB, tax glide path Y1 6.5% → Y3+ 3.5%</div>
 </div>
-<div class="callout blue"><strong>🗳️ A Democratic City</strong> — $25M referendum threshold, Saanich Citizens' Assembly, quarterly dashboards. <em>Foundation: standing government-to-government working tables with the Songhees Nation and the Esquimalt Nation.</em></div>
+<div class="callout blue"><strong><span class="ic" data-icon="democratic" aria-hidden="true"></span>A Democratic City</strong> — $25M referendum threshold, Saanich Citizens' Assembly, quarterly dashboards. <em>Foundation: standing government-to-government working tables with the Songhees Nation and the Esquimalt Nation.</em></div>
 
 <h2 id="sec-8">8. Pillar-Level Endorsement Reference</h2>
 <p>If you are endorsing at the pillar level (Tier 2), here are the flagship commitments per pillar. To endorse a pillar means accepting these specific measures as your core platform commitments under that heading. For the full list — every measure with a checkbox — see <a href="#section-13">Section 13</a>. For full text and budget detail, see the <a href="measures.html">Measures section of the framework</a>.</p>
@@ -690,12 +693,14 @@ Write to <a href="mailto:info@acitythatworks.ca">info@acitythatworks.ca</a>. Res
 
 </div>
 </div>
-</details>
+
 </div>
 </main>
 
 <div id="footer-mount"></div>
-<script src="site.js?v=13"></script>
+<script src="icons.js?v=1"></script>
+<script src="site.js?v=14"></script>
+<script src="civic.js?v=1"></script>
 <script src="jumpnav.js"></script>
 <script src="endorsers.js"></script>
 </body>
