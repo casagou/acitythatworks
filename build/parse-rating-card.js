@@ -527,6 +527,7 @@ const CANONICAL = {
   alto: { id: "3cfe245ae5f3818aac9bc5905e1ee9ec" },
   harris: { id: "3cfe245ae5f3811fb9cde71b3f61803b" },
   mcguigan: { id: "3cfe245ae5f381d1844ad1cf7e4c3053" },
+  // Dense n=22. Do not print 22 as live n. Live D14 stays B+ / 17.
   mcinnis: { id: "3cfe245ae5f381f8a4dffad6c29154d0" },
   garcia: { id: "3cfe245ae5f381f5a261caa547e93d66" },
   gardiner: { id: "3cfe245ae5f381b6ae40e666d4e0beea" },
@@ -534,6 +535,7 @@ const CANONICAL = {
   caradonna: { id: "3cfe245ae5f381fcad84cc3889ee3d3b" },
   // Dense fill (n=14). IGNORE thin leftover …db8bede3e9221140c5.
   dell: { id: "3cfe245ae5f381fba1a9e2b5e3856be6" },
+  // n=5. IGNORE thin leftover …1892cae9a19db8df7e.
   thompson: { id: "3cfe245ae5f3815b88c5f74a937fda34" },
   kim: { id: "3cfe245ae5f3818bbdb4ce3dded96e5f" },
   loughton: { id: "3cfe245ae5f381b8bb37c681783c5118" },

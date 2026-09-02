@@ -47,8 +47,7 @@ function howMadeHtml(c, card) {
     : "The letter next to the name is the Decision 14 lock. The number next to it is how many answers that lock rests on.";
   const cardN = card ? card.cardScoredCount : 0;
   const cardNote = card && cardN !== c.n
-    ? '<p class="how-note">The 12-topic card below has <strong>' + cardN +
-      "</strong> sourced cells. That is the evidence you can tap. It is not a second letter, and it does not change the number printed next to Decision 14.</p>"
+    ? '<p class="how-note">The 12-topic card below is the evidence you can tap. It is not a second letter, and it does not change the number printed next to Decision 14.</p>'
     : "";
   const legend = Object.keys(MARK_RULES).map((k) => {
     const cls = k === "Dash" ? "x" : (MARK_CLS[k] || "x");
