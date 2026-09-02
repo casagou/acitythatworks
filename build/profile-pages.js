@@ -22,7 +22,7 @@ const LIVE = [
   { slug: "dell",      id: "cand-matt-dell",       name: "Matt Dell",       office: "Council", key: "De", letter: "D",  n: 5,  campaign: { href: "https://www.mattdell.ca/", label: "mattdell.ca" } },
   { slug: "thompson",  id: "cand-dave-thompson",   name: "Dave Thompson",   office: "Council", key: "Th", letter: "—",  n: 0,  campaign: { href: "https://davethompsonvictoria.ca/", label: "davethompsonvictoria.ca" } },
   { slug: "kim",       id: "cand-susan-kim",       name: "Susan Kim",       office: "Council", key: "Ki", letter: "—",  n: 0,  campaign: { href: "https://www.susankim.ca/", label: "susankim.ca" } },
-  { slug: "loughton",  id: "cand-krista-loughton", name: "Krista Loughton", office: "Council", key: "Lo", letter: "D",  n: 6,  campaign: null },
+  { slug: "loughton",  id: "cand-krista-loughton", name: "Krista Loughton", office: "Council", key: "Lo", letter: "D",  n: 6,  campaign: { href: "https://www.kristaloughton.ca/", label: "kristaloughton.ca" } },
   { slug: "cseszko",   id: "cand-melissa-cseszko", name: "Melissa Cseszko", office: "Council", key: "Cs", letter: "—",  n: 0,  campaign: { href: "https://www.melissacseszko.ca/", label: "melissacseszko.ca" } },
   { slug: "rothe",     id: "cand-karen-rothe",     name: "Karen Rothe",     office: "Council", key: "Ro", letter: "—",  n: 0,  campaign: { href: "http://karenrothe.ca", label: "karenrothe.ca" } },
   { slug: "bowkett",   id: "cand-wendy-bowkett",   name: "Wendy Bowkett",   office: "Council", key: "Bo", letter: "C",  n: 5,  campaign: { href: "http://wendybowkett.ca", label: "wendybowkett.ca" } },
