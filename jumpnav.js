@@ -66,23 +66,22 @@ function init(){
     sel.appendChild(frag);
   }
 
-  /* A candidate profile is a closed <details>. Landing on one without opening
-     it drops the reader on a collapsed card with nothing to read, so any jump
-     that resolves inside a profile opens it and marks which one it hit. */
+  /* A live-door hub card is an always-open article. Context entries and older
+     pages still use <details>. Landing on either marks the card that was hit. */
   function reveal(el){
     var d=el.closest?el.closest('details'):null;
+    var card=el.classList&&(el.classList.contains('cand')||el.classList.contains('cand-ctx'))
+      ?el:(el.closest?el.closest('.cand, .cand-ctx'):null);
     var here=el.tagName==='DETAILS'?el:d;
     var p=el.parentElement;
     while(p){ if(p.tagName==='DETAILS'){ p.open=true; } p=p.parentElement; }
-    if(here){
-      here.open=true;
-      /* Any highlighted card, not just a candidate profile — the homepage
-         highlights measures the same way, and a selector that only cleared
-         .cand would let old highlights pile up there. */
-      [].forEach.call(document.querySelectorAll('details.hl'),function(x){x.classList.remove('hl')});
-      here.classList.add('hl');
+    var mark=card||here;
+    if(mark){
+      if(here) here.open=true;
+      [].forEach.call(document.querySelectorAll('.cand.hl, .cand-ctx.hl, details.hl'),function(x){x.classList.remove('hl')});
+      mark.classList.add('hl');
     }
-    return here||el;
+    return mark||el;
   }
   function goto(id){
     var el=document.getElementById(id);
@@ -161,7 +160,7 @@ function init(){
   [].forEach.call(document.querySelectorAll('[data-cand-all]'),function(b){
     b.addEventListener('click',function(){
       var open=b.getAttribute('data-cand-all')==='open';
-      [].forEach.call(document.querySelectorAll('details.cand'),function(d){ d.open=open; });
+      [].forEach.call(document.querySelectorAll('details.cand, details.cand-ctx'),function(d){ d.open=open; });
     });
   });
 

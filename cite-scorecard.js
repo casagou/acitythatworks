@@ -1,5 +1,5 @@
 /* Overlay Notion-card citations on the 55-topic scorecard grid.
-   Does not change Decision 14 letters or the n printed next to them.
+   Does not change overall letters or the n printed next to them.
    A filled cell tap jumps to that citation on the profile. */
 (function () {
   if (!document.getElementById("cite-jump-css")) {

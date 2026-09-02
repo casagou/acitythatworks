@@ -43,11 +43,11 @@ function markChip(mark, kind) {
 
 function howMadeHtml(c, card) {
   const letterLine = c.letter === "—"
-    ? "No letter yet — fewer than five scored answers sit on the Decision 14 lock, or the lock is a dash."
-    : "The letter next to the name is the Decision 14 lock. The number next to it is how many answers that lock rests on.";
+    ? "No letter yet — a letter appears only after five scored answers. A dash is silence, not a fail."
+    : "The letter next to the name is the overall grade. The number next to it is how many scored answers that grade rests on.";
   const cardN = card ? card.cardScoredCount : 0;
   const cardNote = card && cardN !== c.n
-    ? '<p class="how-note">The 12-topic card below is the evidence you can tap. It is not a second letter, and it does not change the number printed next to Decision 14.</p>'
+    ? '<p class="how-note">The 12-topic card below is the evidence you can tap. It is not a second letter, and it does not change the number printed next to the grade.</p>'
     : "";
   const legend = Object.keys(MARK_RULES).map((k) => {
     const cls = k === "Dash" ? "x" : (MARK_CLS[k] || "x");
@@ -58,6 +58,7 @@ function howMadeHtml(c, card) {
 <section class="how" id="how">
 <h2>How this grade was made</h2>
 <ol class="how-rules">
+<li>The same <strong>55 topics</strong> for every candidate.</li>
 <li><strong>Actions beat words beat silence.</strong></li>
 <li>A mark needs a <strong>URL and a date</strong>. Without both, the cell is a dash — unknown, not a fail.</li>
 <li>If they sat on Council this term, a sourced 2022–26 vote or decision beats a 2026 promise.</li>
@@ -142,7 +143,7 @@ function topicsHtml(card) {
   return `
 <section class="ev" id="evidence">
 <h2>The 12 topics</h2>
-<p>Fifty-five cells. A dash is unknown, not a fail. Record lines are shown and do not add to the Decision 14 count.</p>
+<p>Fifty-five cells. A dash is unknown, not a fail. Record lines are shown and do not add to the scored-answer count.</p>
 ${topics}
 </section>`;
 }

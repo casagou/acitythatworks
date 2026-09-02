@@ -100,7 +100,7 @@
     h += '<div class="cc-b"><div class="cc-h"><div><div class="cc-name">' + (href ? '<a href="' + esc(href) + '">' + esc(c.name) + '</a>' : esc(c.name)) + '</div>';
     h += '<div class="cc-off">' + esc(c.office || '') + '</div></div>';
     h += '<div class="cc-grade">' + (c.grade
-      ? '<span class="gchip g-' + gradeCls(c.grade) + '" title="Decision 14 overall letter">' + esc(c.grade) + '</span>' + (c.n ? '<small>' + c.n + ' of ' + DATA.topics.length + ' topics</small>' : '')
+      ? '<span class="gchip g-' + gradeCls(c.grade) + '" title="Overall letter">' + esc(c.grade) + '</span>' + (c.n ? '<small>' + c.n + ' of ' + DATA.topics.length + ' topics</small>' : '')
       : '<span class="gchip g-x" title="No scored position located">—</span><small>not yet scored</small>') + '</div></div>';
     if (w) h += '<div class="cc-wm">On what you chose: <b>' + fmt2(w.mean) + '</b> over ' + w.n + ' scored topic' + (w.n > 1 ? 's' : '') + '</div>';
     h += '<div class="cc-ans"><b>' + a + ' of ' + rows.length + '</b> questions answered in writing</div>';
