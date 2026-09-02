@@ -14,9 +14,19 @@
    PROFILES:END markers in profiles.html is replaced, so the page's shell —
    head, header, hero, footer — is hand-maintained and untouched.
 
-   Usage: node build/profiles.js */
+   Usage: node build/profiles.js
+
+   Do not run this against the live hub. The /profiles cards are now
+   link-only (name, office, Decision 14 letter, link to /profiles/<slug>).
+   Regenerating from the July master would restore August Aligned/Close/
+   Partial/Opposed buckets and full Notion bios onto the hub. */ 
 
 const fs = require("fs");
+if (process.env.ACTW_REGEN_HUB !== "1") {
+  console.error("refusing to rebuild profiles.html; hub cards are link-only.");
+  console.error("set ACTW_REGEN_HUB=1 only if you intend to overwrite the hub.");
+  process.exit(1);
+}
 const path = require("path");
 const ROOT = path.join(__dirname, "..");
 const M = require(path.join(ROOT, "matrix-v3.js"));
