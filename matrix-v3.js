@@ -205,27 +205,27 @@ const TOPICS = [
   { id: "M8/M8b", code: "L5", pillar: "liveable",
     label: "5% vacancy target, DCC cuts, suite amnesty",
     what: "M8 targets a 5% rental vacancy rate, using targeted Development Cost Charge reductions (the per-unit fees a builder pays the city) for purpose-built rental. M8b is a 24-month amnesty letting owners legalise existing unpermitted suites against a life-safety standard, with no retroactive penalty and no rent reset for the tenant." },
-  { id: "M9/M9b/M9c/M64", code: "L6", pillar: "liveable",
-    label: "Tenant protections, STR, heat bylaw",
-    what: "Demoviction protection (12-month notice, moving-cost compensation, right of return, replacement units), a Renters' Hub for tenant rights, tighter short-term rental licensing, advocacy for vacancy control between tenancies, and a bylaw requiring landlords to keep one room of every rental at or below 26°C during heat warnings." },
+  { id: "M9/M9b/M64", code: "L6", pillar: "liveable",
+    label: "Tenant protections, STR, indoor heat (M9c struck; 26°C gated)",
+    what: "Demoviction protection (12-month notice, moving-cost compensation, right of return, replacement units), a Renters' Hub for tenant rights, and tighter short-term rental licensing. Vacancy control between tenancies is struck. Indoor heat (M64) is gated: ban unreasonable landlord bans on portable cooling first; a 26°C performance rule only if the City solicitor confirms a non-Building Act hook." },
   { id: "M10", code: "L7", pillar: "liveable",
     label: "Transparent algorithmic waitlist allocation",
     what: "One digital portal for City-affiliated and partner non-profit housing waitlists, with the point weights published, your position in the queue visible, and no way to jump it. BC Housing remains the social-housing operator." },
   { id: "M11", code: "L8", pillar: "liveable",
     label: "Homelessness — Housing First + STEP throughput",
     what: "Cut unsheltered homelessness by half, from about 320 to under 160, through Housing First, plus a STEP-style programme (Supporting Tenants, Enabling Pathways) that moves stabilised residents out of supportive housing so the unit behind them frees up. Reported as cost per successful placement, not dollars spent." },
-  { id: "M12/M13/M13b/M13c", code: "L9", pillar: "liveable",
-    label: "Families, childcare, doctors, youth",
-    what: "Municipal levers for families: advocacy for 500 new childcare spaces with childcare permits issued in 60 days, school food quality, low-rent clinic space and tax exemptions to recruit family doctors, and programming for 18 to 25 year olds." },
+  { id: "M12/M13b/M13c", code: "L9", pillar: "liveable",
+    label: "Childcare, doctors, youth (M13 school food is $0 → M13d)",
+    what: "Municipal levers for families: advocacy for 500 new childcare spaces with childcare permits issued in 60 days, low-rent clinic space and tax exemptions to recruit family doctors, and programming for 18 to 25 year olds. School food (M13) is $0 and sits on the standing School District 61 agreement (M13d)." },
   { id: "M13d", code: "L10", pillar: "liveable",
     label: "Standing School District 61 agreement",
     what: "One standing agreement with School District 61: a published annual work plan, a joint council-and-board meeting held in public once a year, school gyms, fields and playgrounds open to residents outside school hours, and safe walking routes to every school run as a programme rather than a complaint queue." },
   { id: "M14/M16/M17/M18", code: "L11", pillar: "liveable",
     label: "Cleanliness and the public realm",
     what: "A published cleanliness standard: 90% of graffiti removed within 48 hours with the share reported quarterly, an anti-rat and pest plan, street sweeping in the evenings and on weekends downtown, and murals on the surfaces that get tagged repeatedly." },
-  { id: "M19/M22/M38–M42b", code: "L12", pillar: "liveable",
-    label: "Mobility + Vision Zero",
-    what: "Adaptive traffic signals starting with 10 intersections on Douglas Street, advocacy for rapid transit on the E&N corridor to the Westshore, and Vision Zero: the road-safety approach that treats zero traffic deaths as the target rather than an acceptable rate." },
+  { id: "M19/M22/M38/M40–M42b", code: "L12", pillar: "liveable",
+    label: "Mobility + Vision Zero (M39 30 km/h struck; calming is M38)",
+    what: "Adaptive traffic signals starting with 10 intersections on Douglas Street, advocacy for rapid transit on the E&N corridor to the Westshore, and Vision Zero: the road-safety approach that treats zero traffic deaths as the target rather than an acceptable rate. Traffic calming is M38. A citywide residential speed-limit cut is struck." },
   { id: "M20b/M23b", code: "L13", pillar: "liveable",
     label: "Walking, and transit — what the City controls",
     what: "A published sidewalk gap inventory and crossing standard, and a named capital line for bus lanes, signal priority and stops. Routes, fares and frequency belong to BC Transit, so the City publishes its annual position and how its Commission representatives voted rather than promising what it cannot deliver." },
@@ -254,8 +254,8 @@ const TOPICS = [
     label: "Community paramedicine",
     what: "Paramedics working proactively with the high-frequency callers who generate the most emergency calls, so the call is never placed. BC Emergency Health Services delivers it; the City funds a partnership share, provides space and advocates." },
   { id: "M29/M29b", code: "S7", pillar: "safe",
-    label: "VicPD funding + regional policing review",
-    what: "Renegotiate the VicPD cost split with Esquimalt, which Victoria currently funds at 86.33%, with binding mediation if the two cannot agree. Then co-sponsor an 18-month review of whether policing across Greater Victoria should be delivered regionally." },
+    label: "VicPD funding + regional review (convene-and-publish; no binding other force)",
+    what: "Renegotiate the VicPD cost split with Esquimalt, which Victoria currently funds at 86.33%. Then convene a time-boxed regional policing review with whoever will sit, and publish the offer or the refusal. No binding mediation of another municipality's police force." },
   { id: "M30", code: "S8", pillar: "safe",
     label: "Smart LED + IoT streetlights, no surveillance",
     what: "Convert Victoria's roughly 7,000 to 10,000 streetlights to connected LEDs that report their own outages, dim adaptively and cut energy cost, with an explicit rule against cameras, facial recognition, audio detection and behavioural AI on that network." },
@@ -266,8 +266,8 @@ const TOPICS = [
     label: "Enforce existing bylaws (daytime sheltering)",
     what: "The rules already exist, including overnight sheltering in designated parks down by 7 a.m. and sidewalk obstruction. The gap is enforcement capacity, not missing law. This adds no rules and no staff; it commits to applying them consistently and publishing whether we did." },
   { id: "M33b", code: "S11", pillar: "safe",
-    label: "Drug-use buffer zones",
-    what: "Illicit drug use and possession prohibited within 30 metres of schools, playgrounds, sports fields, libraries and other child-focused spaces, enforced by verbal direction first, then seizure, then referral to treatment, with arrest only where public safety requires it." },
+    label: "Drug-use buffer (City: list + bylaw/DPOT + VicPD/CDSA; not City seizure)",
+    what: "Around child-focused spaces — schools, playgrounds, sports fields, libraries and community centres — the City posts the protected list, puts bylaw and DPOT presence on those sites, and coordinates with VicPD on the CDSA. The City does not seize drugs and does not write drug law. Verbal direction first, then referral to treatment; arrest only where public safety requires it, as a police matter." },
   { id: "M34–M37", code: "S12", pillar: "safe",
     label: "Encampment response, reclaiming spaces, night lighting",
     what: "Same-day removal of structures blocking sidewalks and doorways with belongings stored for retrieval, a 5 p.m. daily publication of available shelter spaces so enforcement only follows capacity, named priority areas (Inner Harbour, Centennial Square and Pandora, Beacon Hill Park), and streetlights dimmed rather than switched off at midnight." },
@@ -329,11 +329,11 @@ const TOPICS = [
     label: "The regional bill, CRD cost and the Goldstream plant",
     what: "A published annual City position on regional cost and a published record of how Victoria's CRD representatives voted, so the part of the bill decided at the region stops being invisible. On the Goldstream filtration plant, ACTW takes no position on whether it should be built, only on the standard of evidence required before a billion-dollar commitment is locked in." },
   { id: "M71–M73d", code: "W11", pillar: "managed",
-    label: "Business, downtown, economic development",
-    what: "Cut downtown storefront vacancy from 11% to 5%, reduce small-business red tape, protect the last of the industrial and marine-industrial land from residential conversion, and fold tourism and economic development into one small office that owns that one number." },
+    label: "Business, downtown, one mandate not a new office",
+    what: "Cut downtown storefront vacancy from 11% to 5%, reduce small-business red tape, protect the last of the industrial and marine-industrial land from residential conversion, and put tourism and economic development under one mandate — a single existing staff lead who owns that one number, not a new office." },
   { id: "M74/M75/M76", code: "W12", pillar: "managed",
-    label: "Capital threshold, first-hour parking, permit fees",
-    what: "Voter approval for any new capital project over $25 million, though not for lifecycle replacement of existing infrastructure, a free first hour of downtown parking, and reduced or waived permit fees on renovations under $50,000 that add a suite, improve accessibility or cut energy use." },
+    label: "Capital threshold, short-stay parking (15-minute grace; first-hour gated Year 2), permit fees",
+    what: "Voter approval for any new capital project over $25 million, though not for lifecycle replacement of existing infrastructure; short-stay parking with a 15-minute grace then ordinary rates (a first-hour-free experiment is gated to Year 2); and reduced or waived permit fees on renovations under $50,000 that add a suite, improve accessibility or cut energy use." },
   { id: "M77/M78/M78b", code: "D1", pillar: "democratic",
     label: "$25M referendum threshold, 5-step process, material change rule",
     what: "Any new capital project over $25 million goes to a binding public vote, every major project follows the same five steps (consult, design, publish the visualisation and impact analysis, vote, report quarterly during construction), and a private development amended by more than 10% after the public hearing has closed goes back to the people who spoke to it." },
@@ -372,13 +372,13 @@ const GRID = [
   "   .    .  0.5    .    .    .    .  0.5  0.5    .    .    .  0.5    .    .",  // M7
   "   .    .    .    .    .    .    .    .    .    .    .    .  3.0    .    .",  // M7b
   "   .    .    .    .    .    .    .    .    .    .    .    .    .    .  2.0",  // M8/M8b
-  " 2.0  3.0  3.0  3.0  3.0  3.0    .    .    .    .    .    .    .  2.0  2.0",  // M9/M9b/M9c/M64
+  " 2.0  3.0  3.0  3.0  3.0  3.0    .    .    .    .    .    .    .  2.0  2.0",  // M9/M9b/M64
   "   .    .    .    .    .    .    .    .    .    .    .    .    .    .    .",  // M10
   " 2.0  2.0  1.0  3.0  1.0  3.0  1.0  3.0  2.0    .    .    .    .  2.0  2.0",  // M11
-  " 3.0    .    .    .    .    .    .    .    .    .    .    .    .  2.0  2.0",  // M12/M13/M13b/M13c
+  " 3.0    .    .    .    .    .    .    .    .    .    .    .    .  2.0  2.0",  // M12/M13b/M13c
   " 1.0    .    .    .    .    .    .    .    .    .    .    .    .    .  2.0",  // M13d
   " 2.0    .  2.0    .    .    .    .    .  0.5    .    .  0.5    .  2.0    .",  // M14/M16/M17/M18
-  " 0.5    .    .  3.0  2.0    .    .    .    .  0.5    .    .  0.5  2.0  2.0",  // M19/M22/M38–M42b
+  " 0.5    .    .  3.0  2.0    .    .    .    .  0.5    .    .  0.5  2.0  2.0",  // M19/M22/M38/M40–M42b
   " 0.5  2.0    .  2.0  2.0    .    .    .    .    .  0.5    .  0.5  2.0  3.0",  // M20b/M23b
   "   .    .    .    .  3.0    .    .    .    .    .    .    .    .    .  2.0",  // M24b/M25b
   "   .    .    .    .    .    .    .    .    .    .    .  0.5    .  0.5    .",  // M25
@@ -436,13 +436,13 @@ const GRID = [
    Method as asset-and-overhead instruments. M70/M70b stays in Governance. */
 const COLUMNS = [
   { key: "general",   label: "General",             short: "Gen",            all: true },
-  { key: "housing",   label: "Housing",             short: "Housing",        topics: ["M6", "M6b", "M7b", "M8/M8b", "M9/M9b/M9c/M64", "M10"] },
+  { key: "housing",   label: "Housing",             short: "Housing",        topics: ["M6", "M6b", "M7b", "M8/M8b", "M9/M9b/M64", "M10"] },
   { key: "homeless",  label: "Homelessness",        short: "Homeless",       topics: ["M11"] },
-  { key: "mobility",  label: "Mobility & Streets",  short: "Mobility",       topics: ["M19/M22/M38–M42b", "M25"] },
+  { key: "mobility",  label: "Mobility & Streets",  short: "Mobility",       topics: ["M19/M22/M38/M40–M42b", "M25"] },
   { key: "walk",      label: "Walking & Transit",   short: "Walk/Transit",   topics: ["M20b/M23b"] },
   { key: "climate",   label: "Climate & Energy",    short: "Climate",        topics: ["M54–M57", "M58/M58b/M64b", "M59–M63"] },
   { key: "arts",      label: "Arts & Heritage",     short: "Arts/Herit",     topics: ["M43–M46b", "M45b/M45c", "M47–M49", "M50/M50b/M51/M52"] },
-  { key: "family",    label: "Families & Access",   short: "Fam/Access",     topics: ["M12/M13/M13b/M13c", "M13d", "M24b/M25b"] },
+  { key: "family",    label: "Families & Access",   short: "Fam/Access",     topics: ["M12/M13b/M13c", "M13d", "M24b/M25b"] },
   { key: "clean",     label: "Cleanliness",         short: "Clean",          topics: ["M14/M16/M17/M18"] },
   { key: "safety",    label: "Safety",              short: "Safety",         topics: ["M26", "M26b", "M27", "M28", "M28b", "M28d", "M29/M29b", "M30", "M31/M31b/M31c/M32", "M33", "M33b", "M34–M37"] },
   { key: "fiscal",    label: "Fiscal Method",       short: "Fiscal",         topics: ["M15", "M65", "M66", "M67", "M68", "M69"] },
@@ -489,7 +489,7 @@ const EXCLUSIONS = {
   rule: "A characterisation is not a citable sentence. Fifteen marks rested on tone or posture rather than on something a candidate said or voted for, and were excluded.",
   items: [
     ["Pro-reconciliation", "M1–M5", "Caradonna · Dell · Thompson · Kim · Loughton"],
-    ["Pro-transit / pro-bike", "M19/M22/M38–M42b", "Caradonna · Dell"],
+    ["Pro-transit / pro-bike", "M19/M22/M38/M40–M42b", "Caradonna · Dell"],
     ["Province-blaming present in framing", "M70/M70b", "Dell · Thompson · Loughton"],
     ["Climate leadership stated", "M58/M58b/M64b", "Caradonna · Dell · Kim — the cooling bylaw is already scored once at M9"],
     ["Pro-heritage tone", "M43–M46b", "Gardiner"],
