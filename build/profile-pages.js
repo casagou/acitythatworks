@@ -9,6 +9,7 @@ const fs = require("fs");
 const path = require("path");
 const ROOT = path.join(__dirname, "..");
 const { notionToHtml } = require("./notion-to-html");
+const ev = require("./evidence-html");
 
 const LIVE = [
   { slug: "alto",      id: "cand-marianne-alto",   name: "Marianne Alto",   office: "Mayor",   key: "Al", letter: "—",  n: 0,  campaign: { href: "https://altomayor.ca", label: "altomayor.ca" } },
@@ -71,7 +72,8 @@ const PAGE_CSS = `/* Field tints copied from the hub cards so transferred prose 
 .pfpage ul{margin:8px 0;padding-left:20px}
 .pfpage li{margin:5px 0;font-size:14px;line-height:1.55}
 .d14row{display:flex;align-items:center;gap:8px;margin-top:14px;flex-wrap:wrap}
-.d14lbl{font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:#6b6664}`;
+.d14lbl{font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:#6b6664}
+${ev.evidenceCss()}`;
 
 function pageHtml(c) {
   const officeLabel = c.office === "Mayor" ? "Mayor" : "Council";
@@ -92,6 +94,13 @@ function pageHtml(c) {
       '" target="_blank" rel="noopener">' + c.campaign.label + "</a>" +
       (c.campaign.checked ? " (" + c.campaign.checked + ")" : "") + "</p>";
   }
+  const cardPath = path.join(ROOT, "data", "rating-cards", c.slug + ".json");
+  const card = fs.existsSync(cardPath) ? JSON.parse(fs.readFileSync(cardPath, "utf8")) : null;
+  const evidence = ev.howMadeHtml(c, card) + ev.doorsHtml(card) + ev.topicsHtml(card) + ev.panelHtml();
+  const cardJson = card
+    ? '<script id="rating-card" type="application/json">' +
+      JSON.stringify(card).replace(/</g, "\\u003c") + "</script>"
+    : "";
   const desc = c.name + " — " + officeLabel + " candidate, Victoria 2026. " + d14text + ".";
   const canon = "https://acitythatworks.ca/profiles/" + c.slug;
   return `<!DOCTYPE html>
@@ -175,7 +184,11 @@ ${PAGE_CSS}
 <div class="parked-open">
 <div class="prose pfpage">
 ${campaign}
+${evidence}
+<details class="vintage">
+<summary>Background</summary>
 ${bodies[c.slug]}
+</details>
 <p style="margin-top:28px"><a href="/profiles" class="pgback">← All candidate profiles</a> · <a href="/scorecard#sc-${c.key}">Scorecard</a></p>
 </div>
 </div>
@@ -183,9 +196,11 @@ ${bodies[c.slug]}
 </main>
 
 <div id="footer-mount"></div>
+${cardJson}
 <script src="/icons.js?v=1"></script>
 <script src="/site.js?v=14"></script>
 <script src="/civic.js?v=1"></script>
+<script src="/evidence.js?v=1"></script>
 </body>
 </html>
 `;

@@ -58,6 +58,60 @@
 .pfpage li{margin:5px 0;font-size:14px;line-height:1.55}
 .d14row{display:flex;align-items:center;gap:8px;margin-top:14px;flex-wrap:wrap}
 .d14lbl{font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:#6b6664}
+
+.how,.doors,.ev{margin:28px 0}
+.how h2,.doors h2,.ev h2{font-family:'Fraunces',serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+.how-rules{margin:0 0 12px;padding-left:20px}
+.how-rules li{margin:6px 0;font-size:15px;line-height:1.5}
+.how-note{font-size:13.5px;color:#4a4643;background:rgba(26,54,104,.05);border-left:3px solid var(--gold);padding:10px 12px}
+.how-tap{font-size:14px;color:#4a4643}
+.legend-row{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 6px}
+.leg-rule{min-height:1.4em;font-size:14px;color:var(--navy);margin:4px 0 0}
+.mk{display:inline-flex;align-items:center;justify-content:center;min-height:44px;min-width:44px;padding:8px 12px;border:0;border-radius:4px;font-family:'Public Sans',sans-serif;font-size:13px;font-weight:600;line-height:1.1;color:#fff;cursor:pointer;text-align:center}
+.mk-a{background:#227247}.mk-b{background:#3D6E4E}
+.mk-pp{background:#6B7A2A}.mk-c{background:#8B6914}
+.mk-d{background:#B5651F}.mk-f{background:#B5341F}
+.mk-rec{background:var(--navy)}.mk-x{background:#8a8580;color:#fff}
+.mk:focus-visible,.leg:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.door-grid{display:grid;grid-template-columns:1fr;gap:10px}
+@media(min-width:720px){.door-grid{grid-template-columns:1fr 1fr}}
+.door{border:1px solid rgba(26,54,104,.14);border-left:4px solid var(--navy);padding:12px 14px;background:#fff;border-radius:2px}
+.door-said{border-left-color:#3D6E4E}.door-record{border-left-color:var(--navy)}
+.door-yes{border-left-color:var(--gold)}.door-dash{border-left-color:#c9c4bf}
+.door-k{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#6b6664}
+.door-st{font-weight:700;color:var(--navy);margin:2px 0 6px}
+.door p{margin:0 0 6px;font-size:13.5px;line-height:1.5}
+.door-src{font-size:13px}
+.ev-topic{border-bottom:1px solid rgba(26,54,104,.1);padding:4px 0}
+.ev-topic summary{display:flex;justify-content:space-between;align-items:center;gap:12px;min-height:48px;cursor:pointer;list-style:none;font-weight:600;color:var(--navy)}
+.ev-topic summary::-webkit-details-marker{display:none}
+.ev-tc{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;color:#6b6664;white-space:nowrap}
+.ev-list{list-style:none;margin:0 0 10px;padding:0}
+.ev-row{display:grid;grid-template-columns:auto minmax(4.5rem,auto) 1fr auto;gap:8px 10px;align-items:center;padding:6px 0;border-top:1px solid rgba(26,54,104,.06)}
+.ev-m{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--navy)}
+.ev-w{font-size:13.5px;color:#33312e}
+.ev-flag{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#8B6914}
+.cite-back{position:fixed;inset:0;background:rgba(22,51,92,.42);z-index:40}
+.cite{position:fixed;left:0;right:0;bottom:0;z-index:41;background:#FAF7F0;border-top:3px solid var(--gold);padding:18px 18px calc(18px + env(safe-area-inset-bottom));max-height:86vh;overflow:auto;box-shadow:0 -12px 40px rgba(22,51,92,.18)}
+@media(min-width:720px){
+  .cite{left:auto;right:18px;bottom:18px;width:min(440px,calc(100vw - 36px));max-height:80vh;border:1px solid rgba(26,54,104,.14);border-top:3px solid var(--gold);border-radius:6px}
+}
+.cite-x{min-height:44px;min-width:72px;padding:8px 14px;border:1px solid var(--navy);background:#fff;color:var(--navy);font-weight:600;cursor:pointer;float:right}
+.cite-kicker{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#6b6664;margin:8px 0 0}
+.cite-title{font-family:'Fraunces',serif;font-size:26px;color:var(--navy);margin:4px 0 6px}
+.cite-rule,.cite-measure,.cite-why,.cite-src,.cite-dates,.cite-fix{font-size:14px;line-height:1.5;margin:8px 0}
+.cite-q{margin:12px 0;padding:10px 12px;border-left:3px solid var(--gold);background:#fff;font-size:15.5px;line-height:1.55;color:#1a1a18}
+.cite-flag{font-size:13px;color:#8B6914}
+.vintage{margin:32px 0 12px;border-top:1px solid rgba(26,54,104,.12);padding-top:12px}
+.vintage summary{min-height:44px;cursor:pointer;font-weight:600;color:var(--navy)}
+@media(max-width:719px){
+  .ev-row{grid-template-columns:auto 1fr;grid-template-areas:"mk m" "mk w" "mk f"}
+  .ev-row .mk{grid-area:mk}
+  .ev-m{grid-area:m}
+  .ev-w{grid-area:w}
+  .ev-flag{grid-area:f}
+}
+
 </style>
 </head>
 <body>
@@ -101,7 +155,385 @@
 <div class="parked-open">
 <div class="prose pfpage">
 <p class="pf "><strong class="pfl">Campaign.</strong> No personal campaign site; named on Victoria for All. <a href="https://www.victoriaforall.ca/about" target="_blank" rel="noopener">victoriaforall.ca/about</a>.</p>
+
+<section class="how" id="how">
+<h2>How this grade was made</h2>
+<ol class="how-rules">
+<li><strong>Actions beat words beat silence.</strong></li>
+<li>A mark needs a <strong>URL and a date</strong>. Without both, the cell is a dash — unknown, not a fail.</li>
+<li>If they sat on Council this term, a sourced 2022–26 vote or decision beats a 2026 promise.</li>
+<li>A letter appears only after <strong>five scored answers</strong>.</li>
+</ol>
+<p>No letter yet — fewer than five scored answers sit on the Decision 14 lock, or the lock is a dash.</p>
+<p class="how-note">The 12-topic card below is the evidence you can tap. It is not a second letter, and it does not change the number printed next to Decision 14.</p>
+<p class="how-tap">Tap a mark to read the sentence it rests on. Tap a label in the legend for the one-line rule.</p>
+<div class="legend-row" role="group" aria-label="Mark legend"><button type="button" class="leg mk mk-a" data-legend="Aligned" aria-expanded="false">Aligned</button><button type="button" class="leg mk mk-b" data-legend="Close" aria-expanded="false">Close</button><button type="button" class="leg mk mk-pp" data-legend="Partial+" aria-expanded="false">Partial+</button><button type="button" class="leg mk mk-c" data-legend="Partial" aria-expanded="false">Partial</button><button type="button" class="leg mk mk-d" data-legend="Weak" aria-expanded="false">Weak</button><button type="button" class="leg mk mk-f" data-legend="Opposed" aria-expanded="false">Opposed</button><button type="button" class="leg mk mk-rec" data-legend="Record" aria-expanded="false">Record</button><button type="button" class="leg mk mk-x" data-legend="Dash" aria-expanded="false">—</button></div>
+<p class="leg-rule" id="leg-rule" hidden></p>
+</section>
+<section class="doors" id="doors">
+<h2>The five doors</h2>
+<p>A sourced sentence or a fact. Never a second grade.</p>
+<div class="door-grid"><div class="door door-dash">
+<div class="door-k">Tax cap</div>
+<div class="door-st">—</div>
+<p>No sourced sentence on this door. Silence, not a fail.</p>
+
+</div><div class="door door-dash">
+<div class="door-k">Downtown order</div>
+<div class="door-st">—</div>
+<p>No sourced sentence on this door. Silence, not a fail.</p>
+
+</div><div class="door door-dash">
+<div class="door-k">Housing</div>
+<div class="door-st">—</div>
+<p>No sourced sentence on this door. Silence, not a fail.</p>
+
+</div><div class="door door-dash">
+<div class="door-k">Household bill</div>
+<div class="door-st">—</div>
+<p>No sourced sentence on this door. Silence, not a fail.</p>
+
+</div><div class="door door-dash">
+<div class="door-k">Written program</div>
+<div class="door-st">—</div>
+<p>No sourced sentence on this door. Silence, not a fail.</p>
+
+</div></div>
+</section>
+<section class="ev" id="evidence">
+<h2>The 12 topics</h2>
+<p>Fifty-five cells. A dash is unknown, not a fail. Record lines are shown and do not add to the Decision 14 count.</p>
+<details class="ev-topic" id="topic-1">
+<summary><span class="ev-tn">1. Housing that gets built</span><span class="ev-tc">silence</span></summary>
+<ol class="ev-list"><li class="ev-row" id="c1">
+<button type="button" class="mk mk-x ev-open" data-n="1" aria-expanded="false">—</button>
+<span class="ev-m">M6</span>
+<span class="ev-w">housing supply + composition</span>
+
+</li><li class="ev-row" id="c2">
+<button type="button" class="mk mk-x ev-open" data-n="2" aria-expanded="false">—</button>
+<span class="ev-m">M6b</span>
+<span class="ev-w">land bank + co-ops</span>
+
+</li><li class="ev-row" id="c3">
+<button type="button" class="mk mk-x ev-open" data-n="3" aria-expanded="false">—</button>
+<span class="ev-m">M7</span>
+<span class="ev-w">permits + AI pre-screening</span>
+
+</li><li class="ev-row" id="c4">
+<button type="button" class="mk mk-x ev-open" data-n="4" aria-expanded="false">—</button>
+<span class="ev-m">M7b</span>
+<span class="ev-w">pattern-book housing</span>
+
+</li><li class="ev-row" id="c5">
+<button type="button" class="mk mk-x ev-open" data-n="5" aria-expanded="false">—</button>
+<span class="ev-m">M8/M8b</span>
+<span class="ev-w">5% vacancy, DCC cuts, suite amnesty</span>
+
+</li></ol>
+</details><details class="ev-topic" id="topic-2">
+<summary><span class="ev-tn">2. Downtown order</span><span class="ev-tc">silence</span></summary>
+<ol class="ev-list"><li class="ev-row" id="c6">
+<button type="button" class="mk mk-x ev-open" data-n="6" aria-expanded="false">—</button>
+<span class="ev-m">M26</span>
+<span class="ev-w">Public Order Team</span>
+
+</li><li class="ev-row" id="c7">
+<button type="button" class="mk mk-x ev-open" data-n="7" aria-expanded="false">—</button>
+<span class="ev-m">M26b</span>
+<span class="ev-w">civilian crisis response</span>
+
+</li><li class="ev-row" id="c8">
+<button type="button" class="mk mk-x ev-open" data-n="8" aria-expanded="false">—</button>
+<span class="ev-m">M27</span>
+<span class="ev-w">bylaw hours 6am–10pm</span>
+
+</li><li class="ev-row" id="c9">
+<button type="button" class="mk mk-x ev-open" data-n="9" aria-expanded="false">—</button>
+<span class="ev-m">M28</span>
+<span class="ev-w">data-targeted enforcement</span>
+
+</li><li class="ev-row" id="c10">
+<button type="button" class="mk mk-x ev-open" data-n="10" aria-expanded="false">—</button>
+<span class="ev-m">M33</span>
+<span class="ev-w">daytime sheltering bylaws</span>
+
+</li><li class="ev-row" id="c11">
+<button type="button" class="mk mk-x ev-open" data-n="11" aria-expanded="false">—</button>
+<span class="ev-m">M33b</span>
+<span class="ev-w">drug-use buffer (City: list + bylaw/DPOT + VicPD/CDSA; not City seizure)</span>
+
+</li><li class="ev-row" id="c12">
+<button type="button" class="mk mk-x ev-open" data-n="12" aria-expanded="false">—</button>
+<span class="ev-m">M34–M37</span>
+<span class="ev-w">encampments, reclaiming spaces, night lighting</span>
+
+</li></ol>
+</details><details class="ev-topic" id="topic-3">
+<summary><span class="ev-tn">3. Household bill</span><span class="ev-tc">silence</span></summary>
+<ol class="ev-list"><li class="ev-row" id="c13">
+<button type="button" class="mk mk-x ev-open" data-n="13" aria-expanded="false">—</button>
+<span class="ev-m">M66</span>
+<span class="ev-w">tax glide path (capped on the residential rate)</span>
+
+</li><li class="ev-row" id="c14">
+<button type="button" class="mk mk-x ev-open" data-n="14" aria-expanded="false">—</button>
+<span class="ev-m">M66b/c</span>
+<span class="ev-w">over-collection refund + debt rule</span>
+
+</li><li class="ev-row" id="c15">
+<button type="button" class="mk mk-x ev-open" data-n="15" aria-expanded="false">—</button>
+<span class="ev-m">M66d</span>
+<span class="ev-w">the Household Bill</span>
+
+</li><li class="ev-row" id="c16">
+<button type="button" class="mk mk-x ev-open" data-n="16" aria-expanded="false">—</button>
+<span class="ev-m">M70/M70b</span>
+<span class="ev-w">provincial downloading ledger</span>
+
+</li><li class="ev-row" id="c17">
+<button type="button" class="mk mk-x ev-open" data-n="17" aria-expanded="false">—</button>
+<span class="ev-m">M70c</span>
+<span class="ev-w">CRD cost and the Goldstream plant</span>
+
+</li><li class="ev-row" id="c18">
+<button type="button" class="mk mk-x ev-open" data-n="18" aria-expanded="false">—</button>
+<span class="ev-m">M71–M73d</span>
+<span class="ev-w">business, downtown, one mandate not a new office</span>
+
+</li><li class="ev-row" id="c19">
+<button type="button" class="mk mk-x ev-open" data-n="19" aria-expanded="false">—</button>
+<span class="ev-m">M74/M75/M76</span>
+<span class="ev-w">capital threshold, short-stay parking (15-min grace; first-hour gated Year 2), permit fees</span>
+
+</li></ol>
+</details><details class="ev-topic" id="topic-4">
+<summary><span class="ev-tn">4. Host Nations</span><span class="ev-tc">silence</span></summary>
+<ol class="ev-list"><li class="ev-row" id="c20">
+<button type="button" class="mk mk-x ev-open" data-n="20" aria-expanded="false">—</button>
+<span class="ev-m">M1–M5</span>
+<span class="ev-w">Host Nations Foundation. Topic never drops out of the 12. A dash is still allowed on M1–M5.</span>
+
+</li></ol>
+</details><details class="ev-topic" id="topic-5" open>
+<summary><span class="ev-tn">5. Homelessness and waitlists</span><span class="ev-tc">1 scored</span></summary>
+<ol class="ev-list"><li class="ev-row" id="c21">
+<button type="button" class="mk mk-b ev-open" data-n="21" aria-expanded="false">Close</button>
+<span class="ev-m">M9/M9b/M64</span>
+<span class="ev-w">tenant protections, STR, indoor heat (M9c struck; 26°C gated)</span>
+
+</li><li class="ev-row" id="c22">
+<button type="button" class="mk mk-x ev-open" data-n="22" aria-expanded="false">—</button>
+<span class="ev-m">M10</span>
+<span class="ev-w">transparent algorithmic waitlists</span>
+
+</li><li class="ev-row" id="c23">
+<button type="button" class="mk mk-x ev-open" data-n="23" aria-expanded="false">—</button>
+<span class="ev-m">M11</span>
+<span class="ev-w">Housing First + STEP throughput</span>
+
+</li></ol>
+</details><details class="ev-topic" id="topic-6">
+<summary><span class="ev-tn">6. Families</span><span class="ev-tc">silence</span></summary>
+<ol class="ev-list"><li class="ev-row" id="c24">
+<button type="button" class="mk mk-x ev-open" data-n="24" aria-expanded="false">—</button>
+<span class="ev-m">M12/M13b/M13c</span>
+<span class="ev-w">childcare, doctors, youth (M13 school food is $0 → M13d)</span>
+
+</li><li class="ev-row" id="c25">
+<button type="button" class="mk mk-x ev-open" data-n="25" aria-expanded="false">—</button>
+<span class="ev-m">M13d</span>
+<span class="ev-w">standing School District 61 agreement</span>
+
+</li></ol>
+</details><details class="ev-topic" id="topic-7">
+<summary><span class="ev-tn">7. Streets and mobility</span><span class="ev-tc">silence</span></summary>
+<ol class="ev-list"><li class="ev-row" id="c26">
+<button type="button" class="mk mk-x ev-open" data-n="26" aria-expanded="false">—</button>
+<span class="ev-m">M14/M16/M17/M18</span>
+<span class="ev-w">cleanliness and the public realm</span>
+
+</li><li class="ev-row" id="c27">
+<button type="button" class="mk mk-x ev-open" data-n="27" aria-expanded="false">—</button>
+<span class="ev-m">M19/M22/M38/M40–M42b</span>
+<span class="ev-w">mobility + Vision Zero (M39 30 km/h struck; calming is M38)</span>
+
+</li><li class="ev-row" id="c28">
+<button type="button" class="mk mk-x ev-open" data-n="28" aria-expanded="false">—</button>
+<span class="ev-m">M20b/M23b</span>
+<span class="ev-w">walking and transit the City controls</span>
+
+</li><li class="ev-row" id="c29">
+<button type="button" class="mk mk-x ev-open" data-n="29" aria-expanded="false">—</button>
+<span class="ev-m">M24b/M25b</span>
+<span class="ev-w">accessibility and public washrooms</span>
+
+</li><li class="ev-row" id="c30">
+<button type="button" class="mk mk-x ev-open" data-n="30" aria-expanded="false">—</button>
+<span class="ev-m">M25</span>
+<span class="ev-w">fix roads first</span>
+
+</li></ol>
+</details><details class="ev-topic" id="topic-8">
+<summary><span class="ev-tn">8. Policing and published safety</span><span class="ev-tc">silence</span></summary>
+<ol class="ev-list"><li class="ev-row" id="c31">
+<button type="button" class="mk mk-x ev-open" data-n="31" aria-expanded="false">—</button>
+<span class="ev-m">M28b</span>
+<span class="ev-w">business security cost-spreading</span>
+
+</li><li class="ev-row" id="c32">
+<button type="button" class="mk mk-x ev-open" data-n="32" aria-expanded="false">—</button>
+<span class="ev-m">M28d</span>
+<span class="ev-w">community paramedicine</span>
+
+</li><li class="ev-row" id="c33">
+<button type="button" class="mk mk-x ev-open" data-n="33" aria-expanded="false">—</button>
+<span class="ev-m">M29/M29b</span>
+<span class="ev-w">VicPD funding + regional review (convene-and-publish; no binding other force)</span>
+
+</li><li class="ev-row" id="c34">
+<button type="button" class="mk mk-x ev-open" data-n="34" aria-expanded="false">—</button>
+<span class="ev-m">M30</span>
+<span class="ev-w">smart LED lights, no surveillance</span>
+
+</li><li class="ev-row" id="c35">
+<button type="button" class="mk mk-x ev-open" data-n="35" aria-expanded="false">—</button>
+<span class="ev-m">M31/M31b/M31c/M32</span>
+<span class="ev-w">safety dashboard, published enforcement record, crime target</span>
+
+</li></ol>
+</details><details class="ev-topic" id="topic-9">
+<summary><span class="ev-tn">9. Beauty as a public good</span><span class="ev-tc">silence</span></summary>
+<ol class="ev-list"><li class="ev-row" id="c36">
+<button type="button" class="mk mk-x ev-open" data-n="36" aria-expanded="false">—</button>
+<span class="ev-m">M43–M46b</span>
+<span class="ev-w">heritage and cultural venues</span>
+
+</li><li class="ev-row" id="c37">
+<button type="button" class="mk mk-x ev-open" data-n="37" aria-expanded="false">—</button>
+<span class="ev-m">M45b/c</span>
+<span class="ev-w">pedestrianisation and the signature project</span>
+
+</li><li class="ev-row" id="c38">
+<button type="button" class="mk mk-x ev-open" data-n="38" aria-expanded="false">—</button>
+<span class="ev-m">M47–M49</span>
+<span class="ev-w">heritage incentives, lighting, parks</span>
+
+</li><li class="ev-row" id="c39">
+<button type="button" class="mk mk-x ev-open" data-n="39" aria-expanded="false">—</button>
+<span class="ev-m">M50/M50b/M51/M52</span>
+<span class="ev-w">culture, sport, and the arts funding floor</span>
+
+</li></ol>
+</details><details class="ev-topic" id="topic-10">
+<summary><span class="ev-tn">10. A smaller scored Hall</span><span class="ev-tc">silence</span></summary>
+<ol class="ev-list"><li class="ev-row" id="c40">
+<button type="button" class="mk mk-x ev-open" data-n="40" aria-expanded="false">—</button>
+<span class="ev-m">M15</span>
+<span class="ev-w">managed competition</span>
+
+</li><li class="ev-row" id="c41">
+<button type="button" class="mk mk-x ev-open" data-n="41" aria-expanded="false">—</button>
+<span class="ev-m">M65</span>
+<span class="ev-w">rotating zero-based reviews</span>
+
+</li><li class="ev-row" id="c42">
+<button type="button" class="mk mk-x ev-open" data-n="42" aria-expanded="false">—</button>
+<span class="ev-m">M67</span>
+<span class="ev-w">quarterly performance dashboard</span>
+
+</li><li class="ev-row" id="c43">
+<button type="button" class="mk mk-x ev-open" data-n="43" aria-expanded="false">—</button>
+<span class="ev-m">M68</span>
+<span class="ev-w">overhead reduction by attrition</span>
+
+</li><li class="ev-row" id="c44">
+<button type="button" class="mk mk-x ev-open" data-n="44" aria-expanded="false">—</button>
+<span class="ev-m">M69</span>
+<span class="ev-w">real-estate rationalisation</span>
+
+</li><li class="ev-row" id="c45">
+<button type="button" class="mk mk-x ev-open" data-n="45" aria-expanded="false">—</button>
+<span class="ev-m">M53/M53b/M53c</span>
+<span class="ev-w">GIS, AI consultation imagery, LIDAR</span>
+
+</li><li class="ev-row" id="c46">
+<button type="button" class="mk mk-x ev-open" data-n="46" aria-expanded="false">—</button>
+<span class="ev-m">M53d</span>
+<span class="ev-w">published municipal AI standard</span>
+
+</li><li class="ev-row" id="c47">
+<button type="button" class="mk mk-x ev-open" data-n="47" aria-expanded="false">—</button>
+<span class="ev-m">M54–M57</span>
+<span class="ev-w">local-tech procurement, open data, Wi-Fi, EV charging</span>
+
+</li></ol>
+</details><details class="ev-topic" id="topic-11">
+<summary><span class="ev-tn">11. Climate and trees as operations</span><span class="ev-tc">silence</span></summary>
+<ol class="ev-list"><li class="ev-row" id="c48">
+<button type="button" class="mk mk-x ev-open" data-n="48" aria-expanded="false">—</button>
+<span class="ev-m">M58/M58b/M64b</span>
+<span class="ev-w">climate, district energy, seismic</span>
+
+</li><li class="ev-row" id="c49">
+<button type="button" class="mk mk-x ev-open" data-n="49" aria-expanded="false">—</button>
+<span class="ev-m">M59–M63</span>
+<span class="ev-w">trees, mode share, ecosystems, emergency preparedness</span>
+
+</li></ol>
+</details><details class="ev-topic" id="topic-12">
+<summary><span class="ev-tn">12. Neighbourhoods and integrity</span><span class="ev-tc">silence</span></summary>
+<ol class="ev-list"><li class="ev-row" id="c50">
+<button type="button" class="mk mk-x ev-open" data-n="50" aria-expanded="false">—</button>
+<span class="ev-m">M77/M78/M78b</span>
+<span class="ev-w">$25M referendum threshold, 5-step process, material-change rule</span>
+
+</li><li class="ev-row" id="c51">
+<button type="button" class="mk mk-x ev-open" data-n="51" aria-expanded="false">—</button>
+<span class="ev-m">M79/M79b</span>
+<span class="ev-w">Integrity Commissioner + 60-day consultation response</span>
+
+</li><li class="ev-row" id="c52">
+<button type="button" class="mk mk-x ev-open" data-n="52" aria-expanded="false">—</button>
+<span class="ev-m">M79c–f</span>
+<span class="ev-w">lobbyist registry, FOI fee, remuneration</span>
+
+</li><li class="ev-row" id="c53">
+<button type="button" class="mk mk-x ev-open" data-n="53" aria-expanded="false">—</button>
+<span class="ev-m">M80/M80b/M80c</span>
+<span class="ev-w">neighbourhoods, language access, Local Area Plans</span>
+
+</li><li class="ev-row" id="c54">
+<button type="button" class="mk mk-x ev-open" data-n="54" aria-expanded="false">—</button>
+<span class="ev-m">M82/M82b</span>
+<span class="ev-w">community surveys, turnout and ballot access</span>
+
+</li><li class="ev-row" id="c55">
+<button type="button" class="mk mk-x ev-open" data-n="55" aria-expanded="false">—</button>
+<span class="ev-m">M81</span>
+<span class="ev-w">Saanich amalgamation (one line, not the whole topic)</span>
+
+</li></ol>
+</details>
+</section>
+<div id="cite-back" class="cite-back" hidden></div>
+<aside id="cite" class="cite" hidden role="dialog" aria-modal="true" aria-labelledby="cite-title">
+<button type="button" class="cite-x" id="cite-x" aria-label="Close citation">Close</button>
+<p class="cite-kicker" id="cite-kicker"></p>
+<h3 class="cite-title" id="cite-title"></h3>
+<p class="cite-rule" id="cite-rule"></p>
+<p class="cite-measure" id="cite-measure"></p>
+<blockquote class="cite-q" id="cite-q"></blockquote>
+<p class="cite-why" id="cite-why"></p>
+<p class="cite-src" id="cite-src"></p>
+<p class="cite-dates" id="cite-dates"></p>
+<p class="cite-flag" id="cite-flag" hidden></p>
+<p class="cite-fix">See a mistake? Write <a href="mailto:info@acitythatworks.ca">info@acitythatworks.ca</a>. The URL above opens the source.</p>
+</aside>
+<details class="vintage">
+<summary>Background</summary>
 <p class="pf "><strong class="pfl">Evidence vintage (summary).</strong> Verified 1 Sep 2026 against the Victoria For All platform and candidate page, 15–17 Aug launch coverage, current personal Instagram, public professional profile and slate social channels. No separate personal campaign website or candidate-specific detailed platform was located.</p><p class="pf "><strong class="pfl">Web, campaign &amp; socials (checked 1 Sep 2026).</strong> <a href="https://www.victoriaforall.ca/" target="_blank" rel="noopener">Victoria For All</a> · <a href="https://www.victoriaforall.ca/about" target="_blank" rel="noopener">Candidate/slate page</a> · <a href="https://www.instagram.com/peterrose_gibbs/" target="_blank" rel="noopener">Personal Instagram</a> · <a href="https://ca.linkedin.com/in/peter-gibbs-a9481476" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://www.facebook.com/victoriaforall.ca" target="_blank" rel="noopener">Slate Facebook</a> · <a href="https://www.instagram.com/victoriaforall.ca" target="_blank" rel="noopener">Slate Instagram</a> · <a href="https://www.tiktok.com/@victoriaforall.ca" target="_blank" rel="noopener">Slate TikTok</a> · <a href="https://www.threads.net/@victoriaforall.ca" target="_blank" rel="noopener">Slate Threads</a> · <a href="https://bsky.app/profile/victoriaforall.ca" target="_blank" rel="noopener">Slate Bluesky</a></p><p class="pf "><strong class="pfl">Profile.</strong> Peter Rose Gibbs is a parent, lifelong Victorian and community organizer with nearly two decades of experience pressing governments and institutions for change. His current professional profile identifies him as an organizing manager, and his campaign launch emphasizes relationship-building and collective action rather than prior elected experience. For voters, Gibbs offers a labour- and movement-organizing perspective and is running as part of Victoria For All, an openly working-class, democratic-socialist electoral organization; that shared slate identity is central to understanding both his policy programme and likely council alliances.</p><p class="pf "><strong class="pfl">2026 campaign and social verification.</strong> Victoria For All formally launched Gibbs for City Council on 15 Aug alongside incumbent Susan Kim and school-board candidate Maiya Beech. Its four shared pillars are <strong>Housing for All</strong>, including doubled City spending on public, non-profit and co-operative housing and protection of affordable rentals; <strong>Care for All</strong>, including a 24-hour mental-health crisis response and expanded outreach and harm reduction; <strong>Safe Climate for All</strong>, including expanded free transit, heat pumps, green roofs and urban trees; and <strong>Community for All</strong>, including gathering places and arts, recreation and cultural events. Gibbs’s Instagram is current and explicitly identifies him as a parent and council candidate with Victoria For All. The slate’s Facebook, Instagram, TikTok, Threads and Bluesky accounts are linked from its site. No personal Facebook, X, YouTube, Bluesky, Threads or TikTok account was independently verified.</p><p class="pf "><strong class="pfl">Sources.</strong> <a href="https://www.victoriaforall.ca/" target="_blank" rel="noopener">Victoria For All</a>, <a href="https://www.victoriaforall.ca/about" target="_blank" rel="noopener">candidate/slate page</a>, <a href="https://www.timescolonist.com/local-news/first-slate-announced-in-victoria-two-months-ahead-of-municipal-election-12670068" target="_blank" rel="noopener">Times Colonist launch coverage</a>, <a href="https://cheknews.ca/victoria-for-all-launches-political-slate-ahead-of-october-municipal-election-1342211/" target="_blank" rel="noopener">CHEK launch coverage</a>, <a href="https://vicnews.com/2026/08/17/victoria-for-all-endorses-trio-including-incumbent-councillor-for-fall-election/" target="_blank" rel="noopener">Victoria News coverage</a>, personal Instagram and public professional profile.</p><p class="pf "><strong class="pfl">Current evidence requiring first full score.</strong> The slate programme creates direct evidence around M6/M6b, M9, M11, M20b/M23b, M26b, M50, M58, M64 and M80. Missing are candidate-specific priorities, costs, housing and service baselines, transit jurisdiction, staffing, CRD funding, implementation dates, fiscal methods, permit standards, a performance dashboard and governance commitments. Shared slate promises should be scored as Gibbs’s current programme, while clearly identified as organizational rather than individually authored.</p><p class="pf "><strong class="pfl">Updates / notes.</strong> </p><ul><li>2026-09-01 — Launch, background, slate platform and personal/slate social channels verified.</li></ul>
+</details>
 <p style="margin-top:28px"><a href="/profiles" class="pgback">← All candidate profiles</a> · <a href="/scorecard#sc-Gb">Scorecard</a></p>
 </div>
 </div>
@@ -109,8 +541,10 @@
 </main>
 
 <div id="footer-mount"></div>
+<script id="rating-card" type="application/json">{"slug":"gibbs","name":"Peter Gibbs","office":"Council","kind":"chal","notionUrl":"https://app.notion.com/p/3cfe245ae5f381e4979bcb05f7a900f9","notionTitle":"Peter Gibbs · Council · chal","platformUrl":"https://www.victoriaforall.ca/about","platformLastmod":null,"retrieved":"2026-09-02","cardScoredCount":1,"cardRecordCount":0,"doors":[{"id":"tax","label":"Tax cap","measure":"M66","state":"dash","sentence":null,"url":null,"date":null},{"id":"downtown","label":"Downtown order","measure":"M26 / M27","state":"dash","sentence":null,"url":null,"date":null},{"id":"housing","label":"Housing","measure":"M6","state":"dash","sentence":null,"url":null,"date":null},{"id":"bill","label":"Household bill","measure":"M66d","state":"dash","sentence":null,"url":null,"date":null},{"id":"program","label":"Written program","measure":null,"state":"dash","sentence":null,"url":null,"date":null}],"cells":[{"n":1,"topic":1,"topicName":"Housing that gets built","measure":"M6","what":"housing supply + composition","kind":"dash","mark":null,"value":null,"quote":null,"why":null,"url":null,"source":null,"lastmod":null,"retrieved":null},{"n":2,"topic":1,"topicName":"Housing that gets built","measure":"M6b","what":"land bank + co-ops","kind":"dash","mark":null,"value":null,"quote":null,"why":null,"url":null,"source":null,"lastmod":null,"retrieved":null},{"n":3,"topic":1,"topicName":"Housing that gets built","measure":"M7","what":"permits + AI pre-screening","kind":"dash","mark":null,"value":null,"quote":null,"why":null,"url":null,"source":null,"lastmod":null,"retrieved":null},{"n":4,"topic":1,"topicName":"Housing that gets built","measure":"M7b","what":"pattern-book housing","kind":"dash","mark":null,"value":null,"quote":null,"why":null,"url":null,"source":null,"lastmod":null,"retrieved":null},{"n":5,"topic":1,"topicName":"Housing that gets built","measure":"M8/M8b","what":"5% vacancy, DCC cuts, suite amnesty","kind":"dash","mark":null,"value":null,"quote":null,"why":null,"url":null,"source":null,"lastmod":null,"retrieved":null},{"n":6,"topic":2,"topicName":"Downtown order","measure":"M26","what":"Public Order Team","kind":"dash","mark":null,"value":null,"quote":null,"why":null,"url":null,"source":null,"lastmod":null,"retrieved":null},{"n":7,"topic":2,"topicName":"Downtown order","measure":"M26b","what":"civilian crisis response","kind":"dash","mark":null,"value":null,"quote":null,"why":null,"url":null,"source":null,"lastmod":null,"retrieved":null},{"n":8,"topic":2,"topicName":"Downtown order","measure":"M27","what":"bylaw hours 6am–10pm","kind":"dash","mark":null,"value":null,"quote":null,"why":null,"url":null,"source":null,"lastmod":null,"retrieved":null},{"n":9,"topic":2,"topicName":"Downtown order","measure":"M28","what":"data-targeted enforcement","kind":"dash","mark":null,"value":null,"quote":null,"why":null,"url":null,"source":null,"lastmod":null,"retrieved":null},{"n":10,"topic":2,"topicName":"Downtown order","measure":"M33","what":"daytime sheltering bylaws","kind":"dash","mark":null,"value":null,"quote":null,"why":null,"url":null,"source":null,"lastmod":null,"retrieved":null},{"n":11,"topic":2,"topicName":"Downtown order","measure":"M33b","what":"drug-use buffer (City: list + bylaw/DPOT + VicPD/CDSA; not City seizure)","kind":"dash","mark":null,"value":null,"quote":null,"why":null,"url":null,"source":null,"lastmod":null,"retrieved":null},{"n":12,"topic":2,"topicName":"Downtown order","measure":"M34–M37","what":"encampments, reclaiming spaces, night lighting","kind":"dash","mark":null,"value":null,"quote":null,"why":null,"url":null,"source":null,"lastmod":null,"retrieved":null},{"n":13,"topic":3,"topicName":"Household bill","measure":"M66","what":"tax glide path (capped on the residential rate)","kind":"dash","mark":null,"value":null,"quote":null,"why":null,"url":null,"source":null,"lastmod":null,"retrieved":null},{"n":14,"topic":3,"topicName":"Household bill","measure":"M66b/c","what":"over-collection refund + debt rule","kind":"dash","mark":null,"value":null,"quote":null,"why":null,"url":null,"source":null,"lastmod":null,"retrieved":null},{"n":15,"topic":3,"topicName":"Household bill","measure":"M66d","what":"the Household Bill","kind":"dash","mark":null,"value":null,"quote":null,"why":null,"url":null,"source":null,"lastmod":null,"retrieved":null},{"n":16,"topic":3,"topicName":"Household bill","measure":"M70/M70b","what":"provincial downloading ledger","kind":"dash","mark":null,"value":null,"quote":null,"why":null,"url":null,"source":null,"lastmod":null,"retrieved":null},{"n":17,"topic":3,"topicName":"Household bill","measure":"M70c","what":"CRD cost and the Goldstream plant","kind":"dash","mark":null,"value":null,"quote":null,"why":null,"url":null,"source":null,"lastmod":null,"retrieved":null},{"n":18,"topic":3,"topicName":"Household bill","measure":"M71–M73d","what":"business, downtown, one mandate not a new office","kind":"dash","mark":null,"value":null,"quote":null,"why":null,"url":null,"source":null,"lastmod":null,"retrieved":null},{"n":19,"topic":3,"topicName":"Household bill","measure":"M74/M75/M76","what":"capital threshold, short-stay parking (15-min grace; first-hour gated Year 2), permit fees","kind":"dash","mark":null,"value":null,"quote":null,"why":null,"url":null,"source":null,"lastmod":null,"retrieved":null},{"n":20,"topic":4,"topicName":"Host Nations","measure":"M1–M5","what":"Host Nations Foundation. Topic never drops out of the 12. A dash is still allowed on M1–M5.","kind":"dash","mark":null,"value":null,"quote":null,"why":null,"url":null,"source":null,"lastmod":null,"retrieved":null},{"n":21,"topic":5,"topicName":"Homelessness and waitlists","measure":"M9/M9b/M64","what":"tenant protections, STR, indoor heat (M9c struck; 26°C gated)","kind":"scored","mark":"Close","value":2,"quote":"As City Councillor, I'll fight to end no-pets restrictions and require new developments to allow pets.","why":"Commits to a municipal tenant-protection instrument (rental pet clauses). Comparable to M9's tenant-protection half, not the same as demoviction notice/replacement, STR licensing, or the 26°C indoor-heat rule. Context, same post, not scored separately: \"Too many Victoria rentals ban pets, meaning a move could force people to lose their furry family members.\" Slate \"restrictive pet policies\" is we and is not the source; this sentence is Gibbs-owned. M25c (parks pets) is not a cell in this 55.","url":"https://bsky.app/profile/peterrosegibbs.bsky.social/post/3mq64jcsbkc2a","source":"bsky.app","lastmod":"2026-07-08","retrieved":"2026-09-02"},{"n":22,"topic":5,"topicName":"Homelessness and waitlists","measure":"M10","what":"transparent algorithmic waitlists","kind":"dash","mark":null,"value":null,"quote":null,"why":null,"url":null,"source":null,"lastmod":null,"retrieved":null},{"n":23,"topic":5,"topicName":"Homelessness and waitlists","measure":"M11","what":"Housing First + STEP throughput","kind":"dash","mark":null,"value":null,"quote":null,"why":null,"url":null,"source":null,"lastmod":null,"retrieved":null},{"n":24,"topic":6,"topicName":"Families","measure":"M12/M13b/M13c","what":"childcare, doctors, youth (M13 school food is $0 → M13d)","kind":"dash","mark":null,"value":null,"quote":null,"why":null,"url":null,"source":null,"lastmod":null,"retrieved":null},{"n":25,"topic":6,"topicName":"Families","measure":"M13d","what":"standing School District 61 agreement","kind":"dash","mark":null,"value":null,"quote":null,"why":null,"url":null,"source":null,"lastmod":null,"retrieved":null},{"n":26,"topic":7,"topicName":"Streets and mobility","measure":"M14/M16/M17/M18","what":"cleanliness and the public realm","kind":"dash","mark":null,"value":null,"quote":null,"why":null,"url":null,"source":null,"lastmod":null,"retrieved":null},{"n":27,"topic":7,"topicName":"Streets and mobility","measure":"M19/M22/M38/M40–M42b","what":"mobility + Vision Zero (M39 30 km/h struck; calming is M38)","kind":"dash","mark":null,"value":null,"quote":null,"why":null,"url":null,"source":null,"lastmod":null,"retrieved":null},{"n":28,"topic":7,"topicName":"Streets and mobility","measure":"M20b/M23b","what":"walking and transit the City controls","kind":"dash","mark":null,"value":null,"quote":null,"why":null,"url":null,"source":null,"lastmod":null,"retrieved":null},{"n":29,"topic":7,"topicName":"Streets and mobility","measure":"M24b/M25b","what":"accessibility and public washrooms","kind":"dash","mark":null,"value":null,"quote":null,"why":null,"url":null,"source":null,"lastmod":null,"retrieved":null},{"n":30,"topic":7,"topicName":"Streets and mobility","measure":"M25","what":"fix roads first","kind":"dash","mark":null,"value":null,"quote":null,"why":null,"url":null,"source":null,"lastmod":null,"retrieved":null},{"n":31,"topic":8,"topicName":"Policing and published safety","measure":"M28b","what":"business security cost-spreading","kind":"dash","mark":null,"value":null,"quote":null,"why":null,"url":null,"source":null,"lastmod":null,"retrieved":null},{"n":32,"topic":8,"topicName":"Policing and published safety","measure":"M28d","what":"community paramedicine","kind":"dash","mark":null,"value":null,"quote":null,"why":null,"url":null,"source":null,"lastmod":null,"retrieved":null},{"n":33,"topic":8,"topicName":"Policing and published safety","measure":"M29/M29b","what":"VicPD funding + regional review (convene-and-publish; no binding other force)","kind":"dash","mark":null,"value":null,"quote":null,"why":null,"url":null,"source":null,"lastmod":null,"retrieved":null},{"n":34,"topic":8,"topicName":"Policing and published safety","measure":"M30","what":"smart LED lights, no surveillance","kind":"dash","mark":null,"value":null,"quote":null,"why":null,"url":null,"source":null,"lastmod":null,"retrieved":null},{"n":35,"topic":8,"topicName":"Policing and published safety","measure":"M31/M31b/M31c/M32","what":"safety dashboard, published enforcement record, crime target","kind":"dash","mark":null,"value":null,"quote":null,"why":null,"url":null,"source":null,"lastmod":null,"retrieved":null},{"n":36,"topic":9,"topicName":"Beauty as a public good","measure":"M43–M46b","what":"heritage and cultural venues","kind":"dash","mark":null,"value":null,"quote":null,"why":null,"url":null,"source":null,"lastmod":null,"retrieved":null},{"n":37,"topic":9,"topicName":"Beauty as a public good","measure":"M45b/c","what":"pedestrianisation and the signature project","kind":"dash","mark":null,"value":null,"quote":null,"why":null,"url":null,"source":null,"lastmod":null,"retrieved":null},{"n":38,"topic":9,"topicName":"Beauty as a public good","measure":"M47–M49","what":"heritage incentives, lighting, parks","kind":"dash","mark":null,"value":null,"quote":null,"why":null,"url":null,"source":null,"lastmod":null,"retrieved":null},{"n":39,"topic":9,"topicName":"Beauty as a public good","measure":"M50/M50b/M51/M52","what":"culture, sport, and the arts funding floor","kind":"dash","mark":null,"value":null,"quote":null,"why":null,"url":null,"source":null,"lastmod":null,"retrieved":null},{"n":40,"topic":10,"topicName":"A smaller scored Hall","measure":"M15","what":"managed competition","kind":"dash","mark":null,"value":null,"quote":null,"why":null,"url":null,"source":null,"lastmod":null,"retrieved":null},{"n":41,"topic":10,"topicName":"A smaller scored Hall","measure":"M65","what":"rotating zero-based reviews","kind":"dash","mark":null,"value":null,"quote":null,"why":null,"url":null,"source":null,"lastmod":null,"retrieved":null},{"n":42,"topic":10,"topicName":"A smaller scored Hall","measure":"M67","what":"quarterly performance dashboard","kind":"dash","mark":null,"value":null,"quote":null,"why":null,"url":null,"source":null,"lastmod":null,"retrieved":null},{"n":43,"topic":10,"topicName":"A smaller scored Hall","measure":"M68","what":"overhead reduction by attrition","kind":"dash","mark":null,"value":null,"quote":null,"why":null,"url":null,"source":null,"lastmod":null,"retrieved":null},{"n":44,"topic":10,"topicName":"A smaller scored Hall","measure":"M69","what":"real-estate rationalisation","kind":"dash","mark":null,"value":null,"quote":null,"why":null,"url":null,"source":null,"lastmod":null,"retrieved":null},{"n":45,"topic":10,"topicName":"A smaller scored Hall","measure":"M53/M53b/M53c","what":"GIS, AI consultation imagery, LIDAR","kind":"dash","mark":null,"value":null,"quote":null,"why":null,"url":null,"source":null,"lastmod":null,"retrieved":null},{"n":46,"topic":10,"topicName":"A smaller scored Hall","measure":"M53d","what":"published municipal AI standard","kind":"dash","mark":null,"value":null,"quote":null,"why":null,"url":null,"source":null,"lastmod":null,"retrieved":null},{"n":47,"topic":10,"topicName":"A smaller scored Hall","measure":"M54–M57","what":"local-tech procurement, open data, Wi-Fi, EV charging","kind":"dash","mark":null,"value":null,"quote":null,"why":null,"url":null,"source":null,"lastmod":null,"retrieved":null},{"n":48,"topic":11,"topicName":"Climate and trees as operations","measure":"M58/M58b/M64b","what":"climate, district energy, seismic","kind":"dash","mark":null,"value":null,"quote":null,"why":null,"url":null,"source":null,"lastmod":null,"retrieved":null},{"n":49,"topic":11,"topicName":"Climate and trees as operations","measure":"M59–M63","what":"trees, mode share, ecosystems, emergency preparedness","kind":"dash","mark":null,"value":null,"quote":null,"why":null,"url":null,"source":null,"lastmod":null,"retrieved":null},{"n":50,"topic":12,"topicName":"Neighbourhoods and integrity","measure":"M77/M78/M78b","what":"$25M referendum threshold, 5-step process, material-change rule","kind":"dash","mark":null,"value":null,"quote":null,"why":null,"url":null,"source":null,"lastmod":null,"retrieved":null},{"n":51,"topic":12,"topicName":"Neighbourhoods and integrity","measure":"M79/M79b","what":"Integrity Commissioner + 60-day consultation response","kind":"dash","mark":null,"value":null,"quote":null,"why":null,"url":null,"source":null,"lastmod":null,"retrieved":null},{"n":52,"topic":12,"topicName":"Neighbourhoods and integrity","measure":"M79c–f","what":"lobbyist registry, FOI fee, remuneration","kind":"dash","mark":null,"value":null,"quote":null,"why":null,"url":null,"source":null,"lastmod":null,"retrieved":null},{"n":53,"topic":12,"topicName":"Neighbourhoods and integrity","measure":"M80/M80b/M80c","what":"neighbourhoods, language access, Local Area Plans","kind":"dash","mark":null,"value":null,"quote":null,"why":null,"url":null,"source":null,"lastmod":null,"retrieved":null},{"n":54,"topic":12,"topicName":"Neighbourhoods and integrity","measure":"M82/M82b","what":"community surveys, turnout and ballot access","kind":"dash","mark":null,"value":null,"quote":null,"why":null,"url":null,"source":null,"lastmod":null,"retrieved":null},{"n":55,"topic":12,"topicName":"Neighbourhoods and integrity","measure":"M81","what":"Saanich amalgamation (one line, not the whole topic)","kind":"dash","mark":null,"value":null,"quote":null,"why":null,"url":null,"source":null,"lastmod":null,"retrieved":null}]}</script>
 <script src="/icons.js?v=1"></script>
 <script src="/site.js?v=14"></script>
 <script src="/civic.js?v=1"></script>
+<script src="/evidence.js?v=1"></script>
 </body>
 </html>
