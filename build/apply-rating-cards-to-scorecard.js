@@ -266,6 +266,10 @@ html = html.replace(
   /<caption class="vh">[\s\S]*?<\/caption>/,
   '<caption class="vh">Every candidate. Gen is the overall letter. The other columns are the same 55 topics grouped by area, sourced on the profile.</caption>'
 );
+html = html.replace(
+  /Area columns are blank on purpose\./g,
+  "Unknown, not a fail."
+);
 
 html = html.replace(
   /<script src="cite-scorecard\.js\?v=\d+" defer><\/script>/,
