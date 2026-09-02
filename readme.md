@@ -20,7 +20,7 @@ A complete, multi-page static website for the citizens' framework. No build step
 | `neighbourhood-*.html` | One page per neighbourhood — 12 official, plus Harris Green. **Generated** by `build/neighbourhoods.js` from `build/neighbourhoods.md`; edit the master, not the pages |
 | `city-hall.html` | How City Hall Actually Works — plain-language guide to municipal power |
 | `endorse.html` | Candidate Endorsement Pack — three tiers, campaign language, full measure checklist, endorsement form |
-| `comparison.html` | Candidate Comparison Matrix — every 2026 candidate scored against the framework |
+| `comparison.html` | Pointer — this address is no longer the grade book; grades live on the scorecard |
 | `faq.html` | Frequently Asked Questions — the full skeptic's Q&A |
 | `styles.css` | Shared stylesheet for every page (includes the sticky section navigator and print rules) |
 | `charts.css` | Chart styles — CSS bars and the glide-path SVG. Linked from `index.html` and `summary.html` |
