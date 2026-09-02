@@ -1168,3 +1168,86 @@ body.has-shortbar .jb{bottom:78px}
   .colt td.cc:not(.none) .g,.colt td.cc:not(.none) .few-m{transition:transform .12s,box-shadow .12s}
   .colt td.cc:not(.none):hover .g,.colt td.cc:not(.none):hover .few-m{transform:translateY(-1px);box-shadow:0 2px 6px rgba(26,54,104,.28)}
 }
+
+/* -- v2.3.2: the summary page gets a job of its own. ---------------------------
+   It is the page people send to a neighbour, so it opens with its own name and
+   its own promise, and the minute that follows carries what only this page has
+   — one flagship per pillar, the arithmetic in one line, and the ballot — with
+   the six figures compressed to a strip rather than a stacked list. The twelve
+   commitments keep their place on the page, below the minute, with their
+   baselines showing again. */
+.sum-hero{display:grid;grid-template-columns:1fr;gap:22px 44px;align-items:start;padding-bottom:8px}
+@media(min-width:960px){.sum-hero{grid-template-columns:minmax(0,1.35fr) minmax(0,1fr)}}
+.sum-hero .ph1{margin-top:6px}
+.sum-hero .promise{color:var(--gold);margin-top:14px}
+.sum-hero .promise em{color:#fff;font-style:italic}
+.sum-hero .lead{margin-top:14px}
+/* The PDF card, on the night band. */
+.hub-band .dl{border-top:1px solid rgba(212,168,67,.55);border-bottom:1px solid rgba(250,247,240,.2);padding:16px 0;margin:0;flex-wrap:wrap}
+.hub-band .dl-ic{background:var(--gold);color:var(--night)}
+.hub-band .dl-ic:before{border-color:transparent transparent var(--night) transparent}
+.hub-band .dl-t{color:#fff}
+.hub-band .dl-d{color:rgba(250,247,240,.75)}
+.hub-band .dl-a{flex:1 1 100%;margin-top:12px}
+.hub-band .dl-a .bn{width:100%;justify-content:center}
+@media(min-width:520px) and (max-width:959px){.hub-band .dl-a{flex:0 0 auto;margin-top:0}.hub-band .dl-a .bn{width:auto}}
+
+/* The minute: four numbered parts. */
+.sixty .min-h{display:flex;align-items:baseline;gap:10px;font-family:var(--serif);font-size:21px;font-weight:500;color:var(--navy);letter-spacing:-.01em;margin:26px 0 6px;padding:0;border:0}
+@media(min-width:640px){.sixty .min-h{font-size:24px}}
+.sixty .min-h:first-of-type{margin-top:16px}
+.min-n{font-family:var(--sans);font-size:12px;font-weight:600;color:var(--water-ink);background:#fff;border:1px solid rgba(31,122,140,.35);padding:3px 7px;flex:none;letter-spacing:.04em}
+.sixty .min-s{font-size:15px;line-height:1.6;color:var(--muted);margin:0 0 12px;max-width:72ch}
+.sixty .min-s a{color:var(--navy)}
+/* The record, as a strip rather than a column. */
+.prob-nums.tight{display:grid;grid-template-columns:1fr;gap:0 24px;border-top:none;padding:0;margin:10px 0 4px;max-width:none}
+@media(min-width:560px){.prob-nums.tight{grid-template-columns:1fr 1fr}}
+@media(min-width:1000px){.prob-nums.tight{grid-template-columns:repeat(3,1fr)}}
+.prob-nums.tight .pn{padding:9px 0 10px}
+@media(min-width:560px){.prob-nums.tight .pn:nth-last-child(-n+2){border-bottom:none}}
+@media(min-width:1000px){.prob-nums.tight .pn:nth-last-child(-n+3){border-bottom:none}}
+.prob-nums.tight .pn-n{font-size:26px}
+.prob-nums.tight .pn-l{font-size:15px}
+/* One flagship per pillar. */
+ol.leads{list-style:none;counter-reset:none;padding:0;margin:6px 0 4px;display:grid;grid-template-columns:1fr;gap:0}
+ol.leads li{display:grid;grid-template-columns:26px minmax(0,1fr);gap:10px;align-items:start;margin:0;padding:11px 0;border-bottom:1px solid rgba(26,54,104,.12);font-size:15.5px;line-height:1.5;color:var(--ink);max-width:none}
+ol.leads li:last-child{border-bottom:none}
+ol.leads .ic{margin:0}
+ol.leads .ic .picon{width:22px;height:22px;color:var(--water-ink)}
+ol.leads b{color:var(--navy);font-weight:600}
+ol.leads a{color:var(--navy);font-family:var(--mono);font-size:.85em;padding:1px 5px;background:rgba(26,54,104,.06);text-decoration:none;border-bottom:1px solid rgba(26,54,104,.25)}
+ol.leads a:hover{background:rgba(212,168,67,.2)}
+/* The arithmetic in one line. */
+.mathline{display:grid;grid-template-columns:1fr;gap:0;margin:8px 0 0}
+@media(min-width:720px){.mathline{grid-template-columns:repeat(3,1fr);gap:20px}}
+.ml-i{padding:10px 0;border-bottom:1px solid rgba(26,54,104,.12)}
+@media(min-width:720px){.ml-i{border-bottom:none;border-top:2px solid var(--water);padding:10px 0 0}}
+.ml-n{display:block;font-family:var(--serif);font-size:24px;font-weight:500;color:var(--navy);line-height:1.1;font-variant-numeric:tabular-nums}
+.ml-l{display:block;font-size:14px;line-height:1.45;color:var(--muted);margin-top:4px}
+.glidesent{font-size:15.5px;line-height:1.6;color:var(--ink);margin:14px 0 0;max-width:78ch}
+.glidesent b{color:var(--navy)}
+.glidesent a{color:var(--navy)}
+/* The commitments below the minute keep their baselines. */
+.cmts.door-first.full .cmt .bs{display:block}
+.cmts.door-first.full .cmt .k{display:block}
+.cmts.door-first.full .cmt{padding:14px 0 14px 12px}
+@media(min-width:720px){.cmts.door-first.full .cmt .pair{grid-template-columns:1fr 1fr}}
+.sixty .cmts.door-first .cmt{background:#fff}
+/* The 30-second fold, in the v2.3 control style. */
+.problem-fold{margin:20px 0;border:1px solid rgba(26,54,104,.22);border-left:3px solid var(--gold);background:#fff}
+.problem-fold>summary{display:flex;align-items:center;gap:12px;min-height:52px;padding:12px 18px;font-family:var(--sans);font-style:normal;font-size:16px;font-weight:600;color:var(--navy);cursor:pointer;list-style:none}
+.problem-fold>summary::after{content:"";width:9px;height:9px;margin-left:auto;border-right:2px solid var(--gold-ink);border-bottom:2px solid var(--gold-ink);transform:rotate(45deg);transition:transform .15s;font-style:normal}
+.problem-fold[open]>summary::after{content:"";transform:rotate(-135deg)}
+.problem-fold>summary:hover{background:rgba(212,168,67,.12)}
+.problem-fold .callout{margin:0 18px 18px;border:none}
+.sum-jump{margin-top:22px;padding-top:16px;border-top:1px solid rgba(250,247,240,.2)}
+.sum-jump .sj-h{display:block;font-family:var(--sans);font-size:12.5px;font-weight:600;color:var(--gold);margin-bottom:6px}
+.sum-jump ol{list-style:none;counter-reset:sj;padding:0;margin:0}
+.sum-jump li{counter-increment:sj;margin:0}
+.sum-jump li a{display:flex;align-items:baseline;gap:9px;min-height:38px;padding:5px 0;color:rgba(250,247,240,.85);text-decoration:none;font-size:15px;line-height:1.35;border-bottom:1px solid rgba(250,247,240,.12)}
+.sum-jump li:last-child a{border-bottom:none}
+.sum-jump li a::before{content:counter(sj,decimal-leading-zero);font-family:var(--sans);font-size:11.5px;color:var(--gold);flex:none}
+.sum-jump li a:hover{color:#fff}
+/* The commitment labels follow the v2.3 rule: sans for words, mono for
+   figures and stamps only. */
+.cmts.full .cmt .k{font-family:var(--sans);font-size:12px;font-weight:600;text-transform:none;letter-spacing:0;margin-bottom:2px}
