@@ -214,6 +214,7 @@ evidenceLink() +
   (function markCurrent() {
     var path = (location.pathname || '/').replace(/\.html$/, '').replace(/\/$/, '') || '/';
     if (/^\/neighbourhood-/.test(path)) path = '/neighbourhoods';
+    if (/^\/profiles(\/|$)/.test(path)) path = '/scorecard';
     var hereHash = (location.hash || '').replace(/^#/, '');
     function parts(href) {
       try {

@@ -34,6 +34,34 @@ md.split(/\r?\n/).forEach((line) => {
   }
 });
 
+const SLUG_TO_ID = {
+  alto: "cand-marianne-alto", harris: "cand-mike-harris", mcguigan: "cand-bruce-mcguigan",
+  mcinnis: "cand-arthur-mcinnis", garcia: "cand-jerry-garcia", gardiner: "cand-marg-gardiner",
+  hammond: "cand-stephen-hammond", caradonna: "cand-jeremy-caradonna", dell: "cand-matt-dell",
+  thompson: "cand-dave-thompson", kim: "cand-susan-kim", loughton: "cand-krista-loughton",
+  cseszko: "cand-melissa-cseszko", rothe: "cand-karen-rothe", bowkett: "cand-wendy-bowkett",
+  lee: "cand-bella-lee", sandor: "cand-jack-sandor", girard: "cand-martin-girard",
+  gibbs: "cand-peter-gibbs", dion: "cand-shona-dion",
+};
+/* Notion 1 Sep 2026 campaign URLs — pin over the July master when they differ. */
+const WEB_PIN = {
+  Al: "https://altomayor.ca",
+  Hr: "https://www.mike4victoria.ca/",
+  Mg: "https://bruceformayor.ca/",
+  Gg: "https://jerryforvictoria.ca/",
+  Gi: "https://martingirardforvictoriacouncil.ca/",
+  Di: "https://www.shonadion4victoria.ca/",
+  Gb: "https://www.victoriaforall.ca/about",
+};
+function profileId(p) {
+  if (!p) return null;
+  const s = String(p);
+  const hash = s.replace(/^.*#/, "");
+  if (hash.indexOf("cand-") === 0) return hash;
+  const slug = s.replace(/^.*\/profiles\//, "").replace(/\.html$/, "");
+  return SLUG_TO_ID[slug] || null;
+}
+
 function answered(c) {
   let n = 0;
   rows.forEach((r) => {
@@ -53,7 +81,7 @@ const out = {
     grade: c.grade || null, gradeCls: gradeCls(c.grade), mean: c.mean == null ? null : c.mean, n: c.n || 0,
     answered: answered(c),
     profile: c.profile || null,
-    web: c.profile ? (web[String(c.profile).replace(/^.*#/, "")] || null) : null,
+    web: WEB_PIN[c.key] || (profileId(c.profile) ? (web[profileId(c.profile)] || null) : null),
   })),
 };
 fs.writeFileSync(path.join(ROOT, "candidates-lite.json"), JSON.stringify(out));

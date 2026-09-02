@@ -55,7 +55,17 @@ const PROFILE_IDS = fs.existsSync(PROF_PATH)
   : null;
 const profSlug = (n) => "cand-" + n.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "")
   .replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+const LIVE_SLUG = {
+  "Marianne Alto": "alto", "Mike Harris": "harris", "Bruce McGuigan": "mcguigan",
+  "Arthur McInnis": "mcinnis", "Jerry Garcia": "garcia", "Marg Gardiner": "gardiner",
+  "Stephen Hammond": "hammond", "Jeremy Caradonna": "caradonna", "Matt Dell": "dell",
+  "Dave Thompson": "thompson", "Susan Kim": "kim", "Krista Loughton": "loughton",
+  "Melissa Cseszko": "cseszko", "Karen Rothe": "rothe", "Wendy Bowkett": "bowkett",
+  "Bella Lee": "lee", "Jack Sandor": "sandor", "Martin Girard": "girard",
+  "Peter Gibbs": "gibbs", "Shona Dion": "dion",
+};
 function profileHref(name) {
+  if (LIVE_SLUG[name]) return "/profiles/" + LIVE_SLUG[name];
   if (!PROFILE_IDS) return null;
   const id = profSlug(name);
   return PROFILE_IDS.has(id) ? "profiles.html#" + id : null;

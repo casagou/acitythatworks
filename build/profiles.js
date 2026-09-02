@@ -14,9 +14,19 @@
    PROFILES:END markers in profiles.html is replaced, so the page's shell —
    head, header, hero, footer — is hand-maintained and untouched.
 
-   Usage: node build/profiles.js */
+   Usage: node build/profiles.js
+
+   Do not run this against the live hub. The /profiles cards are now
+   link-only (name, office, Decision 14 letter, link to /profiles/<slug>).
+   Regenerating from the July master would restore August Aligned/Close/
+   Partial/Opposed buckets and full Notion bios onto the hub. */ 
 
 const fs = require("fs");
+if (process.env.ACTW_REGEN_HUB !== "1") {
+  console.error("refusing to rebuild profiles.html; hub cards are link-only.");
+  console.error("set ACTW_REGEN_HUB=1 only if you intend to overwrite the hub.");
+  process.exit(1);
+}
 const path = require("path");
 const ROOT = path.join(__dirname, "..");
 const M = require(path.join(ROOT, "matrix-v3.js"));
@@ -84,6 +94,9 @@ const TONE = [
 const toneFor = (l) => (TONE.find(([re]) => re.test(l)) || [null, ""])[1];
 
 const SKIP = /^(ID)$/i;
+/* August score buckets are not current grades. Hub cards omit them; the
+   live-door pages already carry the Notion transfer minus these lists. */
+const SKIP_BUCKET = /^(?:✅|🟢|🟡|❌)|^(?:Aligned|Close|Partial|Opposed)\b/;
 
 function renderProfile(p) {
   const c = p.id ? gradeOf[p.id] : null;
@@ -102,7 +115,7 @@ function renderProfile(p) {
       '<a href="scorecard.html#sc-' + c.key + '">See every area grade and the evidence behind it →</a></p>';
   }
   p.fields.forEach((f) => {
-    if (SKIP.test(f.label)) return;
+    if (SKIP.test(f.label) || SKIP_BUCKET.test(f.label)) return;
     const t = toneFor(f.label);
     body += '<p class="pf ' + t + '"><strong class="pfl">' + rich(f.label) + ".</strong> " + rich(f.body) + "</p>";
   });

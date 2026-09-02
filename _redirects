@@ -1,0 +1,23 @@
+# Pretty paths for live-door profile pages. /profiles itself stays the hub
+# (profiles.html). 200 rewrites so /profiles/harris is a real page, not a 404.
+/profiles /profiles.html 200
+/profiles/alto /profiles/alto.html 200
+/profiles/harris /profiles/harris.html 200
+/profiles/mcguigan /profiles/mcguigan.html 200
+/profiles/mcinnis /profiles/mcinnis.html 200
+/profiles/garcia /profiles/garcia.html 200
+/profiles/gardiner /profiles/gardiner.html 200
+/profiles/hammond /profiles/hammond.html 200
+/profiles/caradonna /profiles/caradonna.html 200
+/profiles/dell /profiles/dell.html 200
+/profiles/thompson /profiles/thompson.html 200
+/profiles/kim /profiles/kim.html 200
+/profiles/loughton /profiles/loughton.html 200
+/profiles/cseszko /profiles/cseszko.html 200
+/profiles/rothe /profiles/rothe.html 200
+/profiles/bowkett /profiles/bowkett.html 200
+/profiles/lee /profiles/lee.html 200
+/profiles/sandor /profiles/sandor.html 200
+/profiles/girard /profiles/girard.html 200
+/profiles/gibbs /profiles/gibbs.html 200
+/profiles/dion /profiles/dion.html 200

@@ -21,7 +21,12 @@
   function gradeCls(g) { if (!g) return 'x'; var c = g[0].toLowerCase(); return 'abcdf'.indexOf(c) > -1 ? c : 'x'; }
   function initials(name) { return name.split(/\s+/).map(function (w) { return w[0]; }).join('').slice(0, 2).toUpperCase(); }
   function isMayor(c) { return String(c.office || '').toLowerCase() === 'mayor'; }
-  function profileHref(c) { return c.profile ? String(c.profile).replace(/^profiles\.html/, '/profiles') : null; }
+  function profileHref(c) {
+    if (!c.profile) return null;
+    var p = String(c.profile);
+    if (/^\/profiles\//.test(p)) return p.split('#')[0];
+    return p.replace(/^profiles\.html/, '/profiles');
+  }
   function fmt2(x) { return (x < 0 ? '−' : '') + Math.abs(x).toFixed(2); }
 
   var rows = (DATA.door && DATA.door.rows) || [];

@@ -26,7 +26,12 @@ const ROOT = path.join(__dirname, '..');
 const measures = require(path.join(ROOT, 'measures.js'));
 const MEASURE_IDS = new Set(measures.MEASURES.map(m => 'm' + m.id));
 
-const pages = fs.readdirSync(ROOT).filter(f => f.endsWith('.html'));
+const pages = [
+  ...fs.readdirSync(ROOT).filter(f => f.endsWith('.html')),
+  ...fs.readdirSync(path.join(ROOT, 'profiles'))
+    .filter(f => f.endsWith('.html'))
+    .map(f => 'profiles/' + f),
+];
 
 /* id="…" collected per page, so cross-page fragments can be resolved. */
 const idsByPage = {};
