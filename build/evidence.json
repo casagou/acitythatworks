@@ -329,8 +329,8 @@
    }
   }
  },
- "M9 / M9b / M9c / M64": {
-  "head": "M9 / M9b / M9c / M64 · Tenant protections, STR licensing, heat bylaw",
+ "M9 / M9b / M64": {
+  "head": "M9 / M9b / M64 · Tenant protections, STR, indoor heat (M9c struck; 26°C gated)",
   "actw": "ACTW: STR licensing tightening (M9b); vacancy-control-between-tenancies advocacy (M9c); 26°C maximum-temperature rental bylaw (M64)",
   "ev": {
    "Al": {
@@ -527,8 +527,8 @@
    }
   }
  },
- "M12 / M13 / M13b / M13c": {
-  "head": "M12 / M13 / M13b / M13c · Families, childcare, doctors, youth",
+ "M12 / M13b / M13c": {
+  "head": "M12 / M13b / M13c · Childcare, doctors, youth (M13 school food is $0 → M13d)",
   "actw": "ACTW: Advocate 500 new childcare spaces (M12); school food quality with SD61 (M13); family-doctor recruitment via low or no-rent clinic space plus permissive tax exemption (M13b); reach young adults 18–25 (M13c)",
   "ev": {
    "Al": {
@@ -725,8 +725,8 @@
    }
   }
  },
- "M19 / M22 / M38–42b": {
-  "head": "M19 / M22 / M38–42b · Mobility + Vision Zero",
+ "M19 / M22 / M38 / M40–42b": {
+  "head": "M19 / M22 / M38 / M40–42b · Mobility + Vision Zero (M39 30 km/h struck; calming is M38)",
   "actw": "ACTW: Adaptive traffic signals on major corridors (Pittsburgh SURTRAC model); Vision Zero 50% reduction by 2030 (Hoboken benchmark); first-hour free parking; Westshore E&amp;N advocacy; federal hood-height advocacy (M42b)",
   "ev": {
    "Al": {
