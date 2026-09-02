@@ -17,7 +17,7 @@
    Usage: node build/profiles.js
 
    Do not run this against the live hub. The /profiles cards are now
-   link-only (name, office, Decision 14 letter, link to /profiles/<slug>).
+   link-only (name, office, overall letter, link to /profiles/<slug>).
    Regenerating from the July master would restore August Aligned/Close/
    Partial/Opposed buckets and full Notion bios onto the hub. */ 
 

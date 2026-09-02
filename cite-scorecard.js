@@ -1,11 +1,14 @@
-/* Overlay Notion-card citations on the 55-topic scorecard grid.
-   Does not change Decision 14 letters or the n printed next to them.
-   A filled cell tap jumps to that citation on the profile. */
+/* Overlay Notion-card citations on the scorecard.
+   Does not change overall letters or the n printed next to them.
+   A filled cell tap jumps to that citation on the profile
+   (same-page panel if the reader is already there). */
 (function () {
   if (!document.getElementById("cite-jump-css")) {
     var st = document.createElement("style");
     st.id = "cite-jump-css";
-    st.textContent = "td.gc.cite-jump{cursor:pointer;color:#fff;background:var(--navy);font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600}td.gc.cite-jump:focus-visible{outline:2px solid var(--gold);outline-offset:-2px}";
+    st.textContent =
+      "td.gc.cite-jump,td.cc.cite-jump{cursor:pointer}" +
+      "td.gc.cite-jump:focus-visible,td.cc.cite-jump:focus-visible{outline:2px solid var(--gold);outline-offset:-2px}";
     document.head.appendChild(st);
   }
 
@@ -18,7 +21,7 @@
       .toLowerCase();
   }
 
-  function apply(idx) {
+  function applyGrid(idx) {
     if (!idx || !idx.slugs) return;
     var keys = [];
     var head = document.querySelector("table.mg thead tr");
@@ -42,6 +45,7 @@
         if (!hit || !slug) continue;
         if (hit.kind !== "scored" && hit.kind !== "record") continue;
         var td = cells[c];
+        if (td.getAttribute("data-cite")) continue;
         td.classList.remove("gx");
         td.classList.add("cite-jump");
         td.setAttribute("data-cite", "/profiles/" + slug + "#c" + hit.n);
@@ -55,31 +59,44 @@
 
   function go(td) {
     var href = td && td.getAttribute("data-cite");
-    if (href) location.href = href;
-  }
-  document.addEventListener("click", function (e) {
-    var td = e.target.closest && e.target.closest("td.gc.cite-jump");
-    if (td) {
-      e.preventDefault();
-      e.stopPropagation();
-      go(td);
+    if (!href) return;
+    var here = location.pathname.replace(/\/$/, "");
+    var dest = href.split("#")[0].replace(/\/$/, "");
+    var hash = href.indexOf("#") >= 0 ? href.slice(href.indexOf("#")) : "";
+    if (here === dest || here === dest + ".html") {
+      if (hash) {
+        if (location.hash === hash) {
+          window.dispatchEvent(new HashChangeEvent("hashchange"));
+        } else {
+          location.hash = hash;
+        }
+      }
+      return;
     }
+    location.href = href;
+  }
+
+  document.addEventListener("click", function (e) {
+    var td = e.target.closest && e.target.closest("[data-cite]");
+    if (!td) return;
+    e.preventDefault();
+    e.stopPropagation();
+    go(td);
   }, true);
   document.addEventListener("keydown", function (e) {
     if (e.key !== "Enter" && e.key !== " ") return;
-    var td = e.target.closest && e.target.closest("td.gc.cite-jump");
-    if (td) {
-      e.preventDefault();
-      go(td);
-    }
+    var td = e.target.closest && e.target.closest("[data-cite]");
+    if (!td) return;
+    e.preventDefault();
+    go(td);
   });
 
   var inline = document.getElementById("cite-index");
   if (inline) {
-    try { apply(JSON.parse(inline.textContent)); } catch (e) { /* leave dots */ }
+    try { applyGrid(JSON.parse(inline.textContent)); } catch (e) { /* baked cells stay */ }
     return;
   }
   fetch("/cite-index.json", { cache: "no-cache" }).then(function (r) {
     return r.ok ? r.json() : null;
-  }).then(apply).catch(function () { /* leave dots */ });
+  }).then(applyGrid).catch(function () { /* baked cells stay */ });
 })();

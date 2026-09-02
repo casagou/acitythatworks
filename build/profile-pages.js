@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 /* Write one real page per live-door candidate at profiles/<slug>.html.
    Bodies are transferred from the 1 Sep Notion Candidate Profiles toggles
-   (build/notion-toggles/<slug>.md). July Aligned/Close/Partial/Opposed
-   buckets are stripped. D14 letters match /scorecard. Do not invent.
+   (build/notion-toggles/<slug>.md).    July Aligned/Close/Partial/Opposed
+   buckets are stripped. Overall letters match /scorecard. Do not invent.
    Haley and Coleman are not live-door pages. */
 "use strict";
 const fs = require("fs");
@@ -71,18 +71,18 @@ const PAGE_CSS = `/* Field tints copied from the hub cards so transferred prose 
 .pfpage p{margin:10px 0;font-size:14px;line-height:1.6}
 .pfpage ul{margin:8px 0;padding-left:20px}
 .pfpage li{margin:5px 0;font-size:14px;line-height:1.55}
-.d14row{display:flex;align-items:center;gap:8px;margin-top:14px;flex-wrap:wrap}
-.d14lbl{font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:#6b6664}
+.graderow{display:flex;align-items:center;gap:8px;margin-top:14px;flex-wrap:wrap}
+.gradelbl{font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:#6b6664}
 ${ev.evidenceCss()}`;
 
 function pageHtml(c) {
   const officeLabel = c.office === "Mayor" ? "Mayor" : "Council";
-  const d14 = c.letter === "—"
+  const gradeBadge = c.letter === "—"
     ? '<span class="g x">—</span>'
-    : '<span class="g ' + gradeCls(c.letter) + '">' + c.letter + '</span><span class="cs-n">' + c.n + "</span>";
-  const d14text = c.letter === "—"
-    ? "Decision 14 overall letter —"
-    : "Decision 14 overall letter " + c.letter + " · " + c.n + " scored answers";
+    : '<span class="g ' + gradeCls(c.letter) + '">' + c.letter + '</span><span class="cs-n">' + c.n + " scored answers</span>";
+  const gradeText = c.letter === "—"
+    ? "No letter yet — fewer than five scored answers"
+    : "Grade " + c.letter + " · " + c.n + " scored answers";
   let campaign;
   if (!c.campaign) {
     campaign = '<p class="pf "><strong class="pfl">Campaign.</strong> No personal campaign site located.</p>';
@@ -101,7 +101,7 @@ function pageHtml(c) {
     ? '<script id="rating-card" type="application/json">' +
       JSON.stringify(card).replace(/</g, "\\u003c") + "</script>"
     : "";
-  const desc = c.name + " — " + officeLabel + " candidate, Victoria 2026. " + d14text + ".";
+  const desc = c.name + " — " + officeLabel + " candidate, Victoria 2026. " + gradeText + ".";
   const canon = "https://acitythatworks.ca/profiles/" + c.slug;
   return `<!DOCTYPE html>
 <html lang="en">
@@ -179,7 +179,7 @@ ${PAGE_CSS}
 <div class="eyb">Profile</div>
 <h1 class="ph1">${c.name}</h1>
 <p class="lead" style="margin-top:18px">${officeLabel} candidate · Victoria 2026</p>
-<div class="d14row"><span class="d14lbl">Decision 14</span>${d14}</div>
+<div class="graderow"><span class="gradelbl">Grade</span>${gradeBadge}</div>
 </div>
 <div class="parked-open">
 <div class="prose pfpage">
