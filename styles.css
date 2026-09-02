@@ -1107,8 +1107,6 @@ body.has-shortbar .jb{bottom:78px}
 .faq-count{font-size:13px;color:var(--muted);min-height:1em;margin:0 0 8px}
 .archive-note{margin:0 0 18px;padding:14px 18px;background:var(--glass);border-left:3px solid var(--water);font-size:15px;line-height:1.55;color:var(--ink)}
 .archive-note a{color:var(--navy);font-weight:600}
-.corr-fold>summary{color:var(--rust)}
-.corr-fold{border-left-color:var(--rust)}
 
 /* -- v2.3.1: the gaps closed after the first deploy. ---------------------------- */
 /* Hub bands on the Neighbourhoods and Measures pages; a larger title on all. */
