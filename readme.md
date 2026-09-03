@@ -20,6 +20,9 @@ A complete, multi-page static website for the citizens' framework. No build step
 | `neighbourhood-*.html` | One page per neighbourhood — 12 official, plus Harris Green. **Generated** by `build/neighbourhoods.js` from `build/neighbourhoods.md`; edit the master, not the pages |
 | `city-hall.html` | How City Hall Actually Works — plain-language guide to municipal power |
 | `endorse.html` | Candidate Endorsement Pack — three tiers, campaign language, full measure checklist, endorsement form |
+| `questionnaire.html` | Candidate Questionnaire — the same 46 questions sent to every candidate for Mayor and Council, published in full and fillable in the browser. The questions are **generated** by `build/questionnaire.js`; the shell around them is hand-maintained |
+| `questionnaire.js` | The questionnaire's behaviour: autosave to `localStorage`, the progress meter, the two budget totals, and the three ways to send answers back. No server, and nothing leaves the candidate's browser until they send it |
+| `ACTW-Candidate-Questionnaire-2026.pdf` | The same questionnaire as a fillable PDF, emailed to candidates and linked from `questionnaire.html`. Exported from the master document — if a question changes, this has to be re-exported or the two disagree in public |
 | `comparison.html` | Pointer — this address is no longer the grade book; grades live on the scorecard |
 | `faq.html` | Frequently Asked Questions — the full skeptic's Q&A |
 | `styles.css` | Shared stylesheet for every page (includes the sticky section navigator and print rules) |
@@ -109,6 +112,24 @@ Edit the master and re-run; do not edit a `neighbourhood-*.html` or anything bet
 **Adding a neighbourhood** means a new `=== slug` block in the master, a re-run, and a new `<url>` in `sitemap.xml` — that last list is hand-maintained.
 
 **What is deliberately not on these pages:** the master's internal pre-deployment note. It is an instruction to the editor, not content for a reader.
+
+### The fifth exception: the questionnaire's questions are generated
+
+`build/questionnaire.js` holds all 46 questions — the master — and writes them into `questionnaire.html` between `<!-- Q:NAV:… -->` and `<!-- Q:BODY:… -->`.
+
+```
+node build/questionnaire.js
+```
+
+Edit the questions in the script, never in the page; the next run overwrites everything between the markers. The script also rewrites every `<span class="q-count">` and the `data-total-questions` attribute in the hand-written prose, so a question added or removed can never leave a stale "46 questions" behind. It reports the count and is idempotent.
+
+**Why generated:** 46 questions come to roughly 250 form fields. Every field's `name` is derived from the question id and its position, so two questions cannot collide and quietly overwrite each other's saved answers — which is exactly what hand-typed duplicates do.
+
+**Why static HTML rather than client-side rendering:** the same reason `prerender.js` exists. The questions are published so voters and journalists can read what every candidate was asked, and that has to hold with JavaScript off. `questionnaire.js` only adds behaviour on top.
+
+**There is no server.** Answers are saved in the candidate's own browser (`localStorage`, one key) and go nowhere until the candidate copies, downloads or emails them — the page says so, and that has to stay true. If a one-click submission is ever wanted, it would go the same way the newsletter box does (a Google Form endpoint posted into a hidden iframe, see `index.html`), and the page's promise would have to be rewritten to match.
+
+**The PDF is the same questionnaire.** `ACTW-Candidate-Questionnaire-2026.pdf` in the repo root is what candidates get by email, and it points back at `acitythatworks.ca/questionnaire`. Change a question here and the PDF has to be re-exported.
 
 ### The five annexes, and how they are wired in
 
