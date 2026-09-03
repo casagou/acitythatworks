@@ -394,7 +394,7 @@ ${stepNav(c)}
 <div id="footer-mount"></div>
 ${cardJson}
 <script src="/icons.js?v=2"></script>
-<script src="/site.js?v=15"></script>
+<script src="/site.js?v=16"></script>
 <script src="/civic.js?v=4"></script>
 <script src="/evidence.js?v=2"></script>
 </body>
