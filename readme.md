@@ -9,7 +9,7 @@ A complete, multi-page static website for the citizens' framework. No build step
 | `index.html` | Home — hero, diagnostic, five pillars (linking into Every Measure pre-filtered), method, 12-commitment scorecard, balance sheet, principles, criticisms Q&A, subscribe/endorse |
 | `measures.html` | Every Measure — all 131 measures, filterable by pillar and searchable by keyword, full text and budget impact inline, each one individually linkable as `#m48`. Reached from every page's nav as "Measures" |
 | `summary.html` | One-Page Summary — the 60-second version (problem → pillars → flagship measures → math → method), plus the printable PDF download |
-| `A-City-That-Works-One-Page.pdf` | The printable one-pager, linked from `summary.html`. **Generated** from `build/one-page.html` — see below. Do not edit the PDF |
+| `A-City-That-Works-One-Page.pdf` | The printable summary, linked from `summary.html`. **Two pages as of v1.11**, and no longer produced by `build/onepage.js` — see below before running that script |
 | `savings.html` | Savings & Revenue Analysis — the full math, every table, with sources and honest caveats |
 | `implementation.html` | **Annex** — Implementation & Governance: portfolio ownership, the first 100 days, the quarterly cadence |
 | `legal.html` | **Annex** — Legal Defensibility: the *Police Act* command structure, the accessible-shelter cases, the post-2026 CDSA position, bylaw fine ceilings, the OIPC camera order |
@@ -135,20 +135,24 @@ node build/checklinks.js
 
 Fails, names every offender, and exits non-zero if any page links to a file that is not in the repo, to an `#anchor` that does not exist on the target page, or to a `measures.html#mNN` measure number that is not in `measures.js`. The annexes and the One-Page Summary cite measures by number in hand-written prose — a renamed or removed measure leaves those links pointing at nothing, and a broken fragment is invisible in a browser: the page just opens at the top and the reader assumes they misread. Run it before any deploy that touched measure numbers or added a page.
 
-### The third exception: the one-page PDF is generated
+### The third exception: the printable PDF, and why the generator is parked
 
-`A-City-That-Works-One-Page.pdf` used to be drawn by hand and dropped in at that path. It is now built from `build/one-page.html`, which is a plain print-styled page, by a script that drives headless Chrome:
+`A-City-That-Works-One-Page.pdf` was drawn by hand, then generated, and as of **v1.11 (2 September 2026) it is hand-produced again** — two pages rather than one, page 1 the case and page 2 the fifteen measures and twelve commitments. The filename keeps the `One-Page` spelling on purpose: it is printed on paper that is already in circulation and linked from outside this site, so renaming it would break more than it would tidy.
+
+**`build/onepage.js` and `build/one-page.html` are stale.** They still hold v1.10, and the script's first guard is a hard refusal to write anything longer than one page. So it cannot reproduce v1.11, and running it as documented below would regenerate the old single-page v1.10 and overwrite the shipped file — the same class of silent regression the `$750` figure caused, which is why the script now refuses to overwrite a PDF it did not write (see `--force` below).
+
+Either retire the generator, or port the two-page layout into `build/one-page.html` and relax the page guard to 2, before trusting it again:
 
 ```
-node build/onepage.js
+node build/onepage.js          # refuses while the checked-in PDF is hand-placed
+node build/onepage.js --force  # overwrite anyway, only if you mean it
 ```
 
-Edit the HTML, re-run, commit both. **Never edit the PDF**, and never hand-place a replacement — the next build overwrites it.
-
-The script refuses to write in two cases, and both are there because both already happened:
+The script refuses to write in three cases, and the first two are there because both already happened:
 
 1. **More than one page.** The whole artifact is the claim that the framework fits on a sheet. `.sheet` is `min-height:11in`, never `height` — a fixed height lets overflowing content spill over the footer *inside* one page, which is how a broken layout walks straight past a page count. Growing past 11in paginates instead, and the build fails and leaves the existing PDF alone.
 2. **A retracted figure.** `RETRACTED` in the script lists numbers this framework has struck. The `$750`-per-resident policing figure, removed everywhere else by v1.9.3, went on printing on this sheet for four releases because nothing checked. Add a number to that list the moment a release retracts it.
+3. **A hand-placed PDF in the way.** If the checked-in PDF was not produced by this script — Chrome stamps `Skia/PDF` as the `/Producer` and a hand-made file does not, so it can tell — the build stops rather than silently replacing someone's work. `--force` overrides it.
 
 The type is deliberately sized to fill the page rather than fit it — this is read at a door and pinned to noticeboards. If a change stops it fitting, shrink the type or drop a bullet; do not raise the page limit. Fonts are a system stack on purpose, so the artifact does not depend on whether the build machine could reach Google Fonts.
 
