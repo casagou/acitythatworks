@@ -4,11 +4,12 @@
    scorecard grid is built from (window.ACTW_SC, written by build/matrix.js).
    Nothing here computes a grade. The overall grade, its mean and its n are
    copied from the payload; the five doors are read from the door data; the
-   "what matters to me" ordering is an arithmetic mean of area means the
-   payload already carries, and the page says so beside every reordered
-   card. Compare shows two candidates' existing cells side by side and the
-   topics where their recorded marks differ, each with the sentence the
-   scorecard already holds for it. */
+   "what matters to me" ordering counts answered measures in the chosen
+   topics — Decision 14 publishes no mean, so there is none to average, and
+   the page says beside every reordered card that the figure is a count of
+   evidence rather than a grade. Compare shows two candidates' existing
+   cells side by side and the topics where their recorded marks differ,
+   each with the sentence the scorecard already holds for it. */
 (function () {
   'use strict';
   var DATA = window.ACTW_SC;
@@ -102,9 +103,12 @@
     h += '<span class="avatar' + (isMayor(c) ? ' mayor' : '') + '" aria-hidden="true">' + esc(initials(c.name)) + '</span>';
     h += '<div class="cc-b"><div class="cc-h"><div><div class="cc-name">' + (href ? '<a href="' + esc(href) + '">' + esc(c.name) + '</a>' : esc(c.name)) + '</div>';
     h += '<div class="cc-off">' + esc(c.office || '') + '</div></div>';
+    /* The letter never travels without its coverage, and the mean never
+       travels without both: an unweighted mean rewards a thin card. */
+    var cov = c.n + ' of ' + DATA.topics.length + ' answered' + (c.mean != null ? ' · mean ' + c.mean.toFixed(2) : '');
     h += '<div class="cc-grade">' + (c.grade
-      ? '<span class="gchip g-' + gradeCls(c.grade) + '" title="Overall letter">' + esc(c.grade) + '</span>' + (c.n ? '<small>' + c.n + ' of ' + DATA.topics.length + ' topics</small>' : '')
-      : '<span class="gchip g-x" title="No scored position located">—</span><small>not yet scored</small>') + '</div></div>';
+      ? '<span class="gchip g-' + gradeCls(c.grade) + '" title="Letter ' + esc(c.grade) + ', ruled by hand on ' + cov + '">' + esc(c.grade) + '</span><small>' + esc(cov) + '</small>'
+      : '<span class="gchip g-x" title="No letter ruled yet">—</span><small>' + (c.n ? esc(cov) : 'nothing located yet') + '</small>') + '</div></div>';
     if (w) h += '<div class="cc-wm">On what you chose: <b>' + w.n + '</b> of ' + w.total + ' measure' + (w.total > 1 ? 's' : '') + ' answered</div>';
     h += '<div class="cc-ans"><b>' + a + ' of ' + rows.length + '</b> questions answered in writing</div>';
     h += '<div class="meter"><i data-w="' + Math.round(a / rows.length * 100) + '"></i></div>';
@@ -118,6 +122,10 @@
       }
     });
     h += '</div>';
+    /* One plain sentence saying what the card actually shows — written on the
+       compute table beside the letter, so the reader gets the reasoning and
+       not only the grade. */
+    if (c.summary) h += '<div class="cc-sum">' + esc(c.summary) + '</div>';
     if (said) {
       h += '<div class="cc-said"><q>' + esc(said.note) + '</q><span class="src">' + esc(shortLabel(said.row)) + (said.date ? ' · ' + esc(said.date) : '') + '</span></div>';
     } else if (a === 0) {
@@ -137,7 +145,7 @@
      on it, as this did, silently compared nothing and left the cards in
      answered-count order under a control that said "Overall grade". A letter
      outside the five in use sorts as unlettered rather than guessing. */
-  var LETTER_RANK = { 'B+': 4, 'B': 3, 'C': 2, 'D': 1 };
+  var LETTER_RANK = { 'B': 6, 'B−': 5, 'C+': 4, 'C': 3, 'C−': 2, 'D': 1 };
   function rank(c) { return LETTER_RANK[c.grade] || 0; }
   function scored(c) { return c.n || 0; }
   function ordered() {

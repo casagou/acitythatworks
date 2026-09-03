@@ -52,6 +52,7 @@ const WEB_PIN = {
   Gi: "https://martingirardforvictoriacouncil.ca/",
   Di: "https://www.shonadion4victoria.ca/",
   Gb: "https://www.victoriaforall.ca/about",
+  Lo: "https://www.kristaloughton.ca/",
 };
 function profileId(p) {
   if (!p) return null;

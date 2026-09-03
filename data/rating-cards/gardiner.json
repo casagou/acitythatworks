@@ -6,10 +6,10 @@
   "notionUrl": "https://app.notion.com/p/3cfe245ae5f381b6ae40e666d4e0beea",
   "notionTitle": "Marg Gardiner · Council · inc",
   "platformUrl": "https://marggardiner.ca/priorities/",
-  "platformLastmod": null,
+  "platformLastmod": "2026-04-20",
   "retrieved": "2026-09-02",
-  "cardScoredCount": 13,
-  "cardRecordCount": 0,
+  "cardScoredCount": 15,
+  "cardRecordCount": 2,
   "doors": [
     {
       "id": "tax",
@@ -71,7 +71,7 @@
       "why": "Disagrees with M6 supply: the 2026 ask is to cut City housing bylaws down to the provincial floor. Record matches, not a miss: named NO with Coleman and Hammond, 26 Jan 2023. Context, same article, not a second mark: she tried to refer the motion and called it \"a flawed concept.\" Context, same Plan page, not scored separately: \"set housing targets more in line with current projected population increases.\"",
       "url": "https://marggardiner.ca/priorities/",
       "source": "marggardiner.ca",
-      "lastmod": "vote 26 Jan 2023",
+      "lastmod": "2026-04-20",
       "retrieved": "2026-09-02"
     },
     {
@@ -215,7 +215,7 @@
       "why": "Commits to enforcing existing bylaws. Comparable, not Same: daytime sheltering is not named. 18 Jul 2024 motion passed 8–1 with Kim the lone named NO; Gardiner is not named in that article. Do not invent a YES. No sourced miss, so no incumbent cap.",
       "url": "https://marggardiner.ca/priorities/",
       "source": "marggardiner.ca",
-      "lastmod": null,
+      "lastmod": "2026-04-20",
       "retrieved": "2026-09-02"
     },
     {
@@ -231,7 +231,7 @@
       "why": "Commits to open-use enforcement. Neither the buffer list nor child-focused geography is named. The Harbour closure motion is the SCS sentence already on row 23, not a second mark here.",
       "url": "https://marggardiner.ca/priorities/",
       "source": "marggardiner.ca",
-      "lastmod": null,
+      "lastmod": "2026-04-20",
       "retrieved": "2026-09-02"
     },
     {
@@ -247,7 +247,7 @@
       "why": "Commits to keeping encampments out of neighbourhood parks. No named-space protocol, no night-lighting programme, no removal sequence.",
       "url": "https://marggardiner.ca/priorities/",
       "source": "marggardiner.ca",
-      "lastmod": null,
+      "lastmod": "2026-04-20",
       "retrieved": "2026-09-02"
     },
     {
@@ -263,7 +263,7 @@
       "why": "Commits to a COLA cap on tax increases. Comparable to M66's residential-rate glide path, not Same (no year-path, no override rule). ZBB in this sentence is already scored from the homepage on row 41 and is not a second mark. Record is a hit, not a miss: named NO on 7 May 2026 with Kim and Hammond. Do not copy Kim's \"the tax hike was simply not enough\" onto her. Her named reason: \"Gardiner called the entire process flawed\" and \"We are digging ourselves into a hole while deceiving the public with soothing words about making Victoria a wonderful place to live.\" Adopted bill is 7.28 overall / 9.34 residential / 4.78 business. Do not stamp campaign 9.24 or 13.43 as ACTW figures.",
       "url": "https://marggardiner.ca/priorities/",
       "source": "marggardiner.ca",
-      "lastmod": "vote 7 May 2026",
+      "lastmod": "2026-04-20",
       "retrieved": "2026-09-02"
     },
     {
@@ -304,15 +304,18 @@
       "topicName": "Household bill",
       "measure": "M70/M70b",
       "what": "provincial downloading ledger",
-      "kind": "dash",
-      "mark": null,
-      "value": null,
-      "quote": null,
-      "why": null,
-      "url": null,
-      "source": null,
-      "lastmod": null,
-      "retrieved": null
+      "kind": "scored",
+      "mark": "Close",
+      "value": 2,
+      "quote": "The City must inform the Provincial government that we will henceforth accept only supportive housing that leads to rehabilitation and a pathway to a better life.",
+      "why": "Commits to a stated refusal threshold on what the City will accept from the Province — M70b's third named instrument. Comparable, not Same: the test is therapeutic model, not indexed funding, and there is no quarterly downloading ledger and no twice-yearly UBCM/FCM resolution. Distinct sentence: row 23 scores the SCS / low-barrier opposition, and \"the Provincial government fulfils its responsibilities of health care and housing\" is context there. Record matches, not a miss: consistent four-year opposition to the City absorbing Island Health and BC Housing roles. Added 2 Sep 2026 — this cell was a dash on the first pass; the refusal-threshold sentence was never carrying a mark anywhere. FLAG: Close is the high reading; Partial+ 1.5 if one-of-three instruments reads as a target.",
+      "url": "https://marggardiner.ca/priorities/",
+      "source": "marggardiner.ca",
+      "lastmod": "2026-04-20",
+      "retrieved": "2026-09-02",
+      "flags": [
+        "card FLAG"
+      ]
     },
     {
       "n": 17,
@@ -420,10 +423,10 @@
       "mark": "Opposed",
       "value": -1,
       "quote": "I am opposed to the spread of “safe” illicit drug consumption sites and low-barrier supportive housing that permits illicit drug use throughout Victoria.",
-      "why": "M11 is Housing First (low-barrier supportive housing + STEP throughput). Explicit disagreement. Context, same Plan, not scored separately: phase out supportive housing that allows illicit drugs; convert to sober / drug-free treatment; accept only housing that leads to rehabilitation. Record matches: she moved to ask Island Health to cease The Harbour \"at the earliest opportunity,\" lone YES, 2 Jul 2026. That is the SCS half of the same sentence, not a second mark.",
+      "why": "M11 is Housing First (low-barrier supportive housing + STEP throughput). Explicit disagreement. Context, same Plan, not scored separately: phase out supportive housing that allows illicit drugs; convert to sober / drug-free treatment; accept only housing that leads to rehabilitation. Record matches: she moved to ask Island Health to cease The Harbour \"at the earliest opportunity,\" lone YES in a 7–1 defeat, 2 Jul 2026 (Kim absent). Verbatim from that meeting: \"The Harbour has become a magnet for those addicted to drugs and for drug dealers who prey on the weak and defenceless.\" Second corroborating Record, same direction, 5 Sep 2025: her motion to press the Province to end decriminalization was defeated with her as the only supporter — \"'Harm reduction' is an obscene phrase that obscures the harm done by illicit drug use.\" Both are the SCS / low-barrier sentence-family, not second marks.",
       "url": "https://marggardiner.ca/priorities/",
       "source": "marggardiner.ca",
-      "lastmod": "vote 2 Jul 2026",
+      "lastmod": "2026-04-20",
       "retrieved": "2026-09-02"
     },
     {
@@ -448,15 +451,15 @@
       "topicName": "Families",
       "measure": "M13d",
       "what": "standing School District 61 agreement",
-      "kind": "dash",
-      "mark": null,
+      "kind": "record",
+      "mark": "Record",
       "value": null,
-      "quote": null,
-      "why": null,
-      "url": null,
-      "source": null,
-      "lastmod": null,
-      "retrieved": null
+      "quote": "I was successful in my motion to support the re-introduction of the Police School Liaison Officer program into schools.",
+      "why": "Her own campaign page, attributed as a campaign claim — no independent press URL+date opened this pass, so no roll-call is asserted. A City–SD61 joint programme is not M13d's standing agreement, annual published work plan, joint public council-and-board meeting or single named contact, so it is neither a hit nor a miss. Shown, not scored; does not add to n.",
+      "url": "https://marggardiner.ca/voting-record/",
+      "source": "marggardiner.ca",
+      "lastmod": "2026-03-29",
+      "retrieved": "2026-09-02"
     },
     {
       "n": 26,
@@ -583,7 +586,7 @@
       "why": "Commits to continued VicPD funding and hiring. No Esquimalt formula, no convene-and-publish regional review, no staffing number. Record is a hit, not a miss: named opposed to the 3 Mar 2026 4→2 cut, 5–4. \"I support the police budget now and again this sleight of hand of ‘let's do two, as opposed to four,’ is a defund the police effort and I cannot support it at all.\" Context, same Plan, not scored separately: \"I have opposed ‘defund the police’ motions.\"",
       "url": "https://marggardiner.ca/priorities/",
       "source": "marggardiner.ca",
-      "lastmod": "vote 3 Mar 2026",
+      "lastmod": "2026-04-20",
       "retrieved": "2026-09-02"
     },
     {
@@ -608,15 +611,15 @@
       "topicName": "Policing and published safety",
       "measure": "M31/M31b/M31c/M32",
       "what": "safety dashboard, published enforcement record, crime target",
-      "kind": "dash",
-      "mark": null,
+      "kind": "record",
+      "mark": "Record",
       "value": null,
-      "quote": null,
-      "why": null,
-      "url": null,
-      "source": null,
-      "lastmod": null,
-      "retrieved": null
+      "quote": "In spite of the many supportive items in the Mayor's Community Safety and Well-Being Plan, I voted in opposition for two reasons: the creation of new city shelters, and the implicit support of illicit drugs.",
+      "why": "M31c is the measure that would turn that same CSWB plan into a performance contract (legal authority, lead body, timeline, target and cost against every commitment). Her NO was to shelters and drug policy inside the plan, not to publishing outcomes — so it is not Opposed on M31c, and it is not a hit either. No safety dashboard, no published enforcement record, no crime-reduction number anywhere in the 2026 text. Shown, not scored; does not add to n. \"Measurable results\" is inside the ZBB sentence already scored on row 41.",
+      "url": "https://marggardiner.ca/voting-record/",
+      "source": "marggardiner.ca",
+      "lastmod": "2026-03-29",
+      "retrieved": "2026-09-02"
     },
     {
       "n": 36,
@@ -663,7 +666,7 @@
       "why": "Commits to a green-space / amenities review tied to density. No heritage-incentive schedule, no ornamental lighting, no parks acreage number. Distinct sentence from the urban-forest bullet on row 49.",
       "url": "https://marggardiner.ca/priorities/",
       "source": "marggardiner.ca",
-      "lastmod": null,
+      "lastmod": "2026-04-20",
       "retrieved": "2026-09-02"
     },
     {
@@ -711,7 +714,7 @@
       "why": "Commits to zero-based budgeting. Comparable, not Same: all-items ZBB, not rotating 3–4 areas, no three-part test. \"Measurable results\" in the same sentence is not a dashboard and is not scored on M67. Record matches: at the 7 May 2026 vote she \"called for zero-based budgeting lens.\" No sourced miss (she voted NO on the non-ZBB bill), so no cap.",
       "url": "https://marggardiner.ca/",
       "source": "marggardiner.ca",
-      "lastmod": "vote 7 May 2026",
+      "lastmod": "2026-04-21",
       "retrieved": "2026-09-02"
     },
     {
@@ -839,7 +842,7 @@
       "why": "Commits to a canopy-increase review via plantings. Comparable to the trees half of M59–M63, not Same (no 5,000-tree number, no 35% canopy, no emergency-preparedness position). Record matches, not a second mark: she moved the 3 Apr 2025 canopy motion; Saanich News 4 Apr 2025: \"In a pitch from Coun. Marg Gardiner, staff will add five-year tree canopy (growth) targets in the draft OCP supporting a 40 per cent, city-wide 2050 tree canopy goal.\" Campaign table restates that hit. OCP adoption NO (with Hammond and Coleman) is a density vote, not a trees miss. No sourced miss, so no cap. FLAG: Close is the high reading of \"review with the objective of.\"",
       "url": "https://marggardiner.ca/priorities/",
       "source": "marggardiner.ca",
-      "lastmod": "vote 3 Apr 2025",
+      "lastmod": "2026-04-20",
       "retrieved": "2026-09-02",
       "flags": [
         "card FLAG"
@@ -867,15 +870,18 @@
       "topicName": "Neighbourhoods and integrity",
       "measure": "M79/M79b",
       "what": "Integrity Commissioner + 60-day consultation response",
-      "kind": "dash",
-      "mark": null,
-      "value": null,
-      "quote": null,
-      "why": null,
-      "url": null,
-      "source": null,
-      "lastmod": null,
-      "retrieved": null
+      "kind": "scored",
+      "mark": "Partial",
+      "value": 1,
+      "quote": "Expand the right of residents to be informed about, and to appeal, decisions made by City staff or City Council.",
+      "why": "Commits to a notification-and-appeal right. Neither instrument in the cluster is named: no Integrity Commissioner, no 60-day published response to every consultation, no what-we-heard-and-what-we-did reconciliation 30 days before the adoption vote. Corroborated on the home page, \"I will restore residents' right to appeal decisions and re-introduce meaningful community consultation\" (lastmod 2026-04-21) — the consultation half of that sentence is row 53's IAP2 mark and is not scored twice; the appeal right carries this cell. Added 2 Sep 2026. FLAG, contested: a dash is also legal if an appeal right reads as adjacency rather than a feedback-loop instrument. FLAG, evidence gap: her strongest Integrity-Commissioner line — the MNP recommendations being addressed before further major decisions — has no 2026-dated URL; the campaign Resources page only lists the 2022 MNP governance review, which is adjacency, not advocacy.",
+      "url": "https://marggardiner.ca/priorities/",
+      "source": "marggardiner.ca",
+      "lastmod": "2026-04-20",
+      "retrieved": "2026-09-02",
+      "flags": [
+        "card FLAG"
+      ]
     },
     {
       "n": 52,
@@ -890,7 +896,7 @@
       "why": "Commits to COLA-limited remuneration. No lobbyist registry, no FOI-fee position. Record matches: named opposed to the 1 Aug 2024 remuneration package with Hammond; on 13 Nov 2025 she moved to cap the mayor's salary to inflation, named YES in a 6–3 fail with Hammond and Coleman. Verbatim from that meeting: \"We need to cut the budget and as council we need to lead by cutting the purse strings on ourselves.\" CPI-only is the motion, not a second quote. Cluster mark is Partial because two of three instruments are absent.",
       "url": "https://marggardiner.ca/priorities/",
       "source": "marggardiner.ca",
-      "lastmod": "vote 1 Aug 2024",
+      "lastmod": "2026-04-20",
       "retrieved": "2026-09-02"
     },
     {
@@ -903,10 +909,10 @@
       "mark": "Close",
       "value": 2,
       "quote": "Re-introduce the IAP2 consultation process — involve people in decision-making rather than informing the public after decisions are made.",
-      "why": "Commits to IAP2 as the neighbourhood-consultation instrument. Comparable, not Same: not official-languages access and not two Local Area Plans per year. Context, same Plan, not scored separately: \"Give residents a greater say in the densification of their neighbourhoods\"; \"Review and amend the Delegation Bylaw\"; expand residents' right to be informed and to appeal. Campaign table \"Only Councillor to vote against\" the Delegation Bylaw is her claim; no independent press URL opened this pass. FLAG, not a roll-call. No sourced miss, so no cap.",
+      "why": "Commits to IAP2 as the neighbourhood-consultation instrument. Comparable, not Same: not official-languages access and not two Local Area Plans per year. Context, same Plan, not scored separately: \"Give residents a greater say in the densification of their neighbourhoods\"; \"Review and amend the Delegation Bylaw\"; expand residents' right to be informed and to appeal. Campaign table \"Only Councillor to vote against\" the Delegation Bylaw is her claim; no independent press URL opened this pass. FLAG, not a roll-call — but partly corroborated on her own councillor-site OCP note: \"Delegation Bylaw (no. 24-045) which received final adoption by City Council in July, 2024, by a vote of 8 to 1,\" which is consistent with a lone NO without naming who cast it. No sourced miss, so no cap.",
       "url": "https://marggardiner.ca/priorities/",
       "source": "marggardiner.ca",
-      "lastmod": null,
+      "lastmod": "2026-04-20",
       "retrieved": "2026-09-02",
       "flags": [
         "card FLAG"

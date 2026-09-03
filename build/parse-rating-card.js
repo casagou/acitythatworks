@@ -13,6 +13,7 @@
 
 const fs = require("fs");
 const path = require("path");
+const { depersonalize } = require("./redact-workflow");
 
 const ROOT = path.join(__dirname, "..");
 const OUT_DIR = path.join(ROOT, "data", "rating-cards");
@@ -442,11 +443,24 @@ function parseCard(raw, slug, notionUrl) {
     }
   }
 
-  // Topic tables: header row starts with # (or n).
+  // Topic tables: header row starts with # (or n) AND carries the topic
+  // columns. The "#" test alone is not enough: the second pass added a
+  // "## What changed in this pass" changelog whose header is also "#", and
+  // because the row loop below is first-wins its rows 1–6 claimed those slots
+  // and shadowed three genuinely scored cells on Susan Kim's card (n=1, 3 and
+  // 5), dropping her from 17 to 14 and printing changelog text where the
+  // measure should be. A topic table has seven columns, the second of which
+  // names the measure.
+  const isTopicTable = (t) => {
+    const head = t[0].map((c) => stripMd(c).toLowerCase().trim());
+    const h0 = head[0];
+    if (h0 !== "#" && h0 !== "n") return false;
+    if (t[0].length < 6) return false;
+    return head[1] === "measure" && /what it is/.test(head[2] || "");
+  };
   const scoredByN = {};
   for (const t of tables) {
-    const h0 = stripMd(t[0][0]).toLowerCase();
-    if (h0 !== "#" && h0 !== "n") continue;
+    if (!isTopicTable(t)) continue;
     for (const r of t.slice(1)) {
       const cols = r.slice(0, 7);
       const n = parseInt(stripMd(cols[0] || ""), 10);
@@ -497,6 +511,10 @@ function parseCard(raw, slug, notionUrl) {
 }
 
 function writeCard(card) {
+  /* A few Notion "why" notes are addressed to the reviewer by name. The
+     caveat is published; the addressee is not. Throws if a new phrasing
+     appears, so a card can never ship naming them. */
+  depersonalize(card);
   fs.mkdirSync(OUT_DIR, { recursive: true });
   const dest = path.join(OUT_DIR, `${card.slug}.json`);
   fs.writeFileSync(dest, JSON.stringify(card, null, 2) + "\n");
@@ -535,8 +553,10 @@ const CANONICAL = {
   caradonna: { id: "3cfe245ae5f381fcad84cc3889ee3d3b" },
   // Dense fill (n=14). IGNORE thin leftover …db8bede3e9221140c5.
   dell: { id: "3cfe245ae5f381fba1a9e2b5e3856be6" },
-  // n=5. IGNORE thin leftover …1892cae9a19db8df7e.
-  thompson: { id: "3cfe245ae5f3815b88c5f74a937fda34" },
+  // Second pass, 2 Sep 2026 22:41Z: n=10, the count the compute table
+  // publishes. The older …5b88c5f74a937fda34 page is the thin first pass
+  // (n=5) and must not be used — the two disagree on marks, not just totals.
+  thompson: { id: "3cfe245ae5f3811892cae9a19db8df7e" },
   kim: { id: "3cfe245ae5f3818bbdb4ce3dded96e5f" },
   loughton: { id: "3cfe245ae5f381b8bb37c681783c5118" },
   cseszko: { id: "3cfe245ae5f38128abdafe16a820650c" },

@@ -8,7 +8,7 @@
   "platformUrl": "https://www.arthurmcinnis.ca/platform",
   "platformLastmod": null,
   "retrieved": "2026-09-02",
-  "cardScoredCount": 22,
+  "cardScoredCount": 25,
   "cardRecordCount": 0,
   "doors": [
     {
@@ -16,7 +16,7 @@
       "label": "Tax cap",
       "measure": "M66",
       "state": "said",
-      "sentence": "\"Any proposed property tax increase above the rate of inflation will require a mandatory 90-day public consultation period before Council may adopt it.\" A consultation gate, not a cap, formula, or year-path.",
+      "sentence": "\"Any proposed property tax increase above the rate of inflation will require a mandatory 90-day public consultation period before Council may adopt it.\" A consultation gate, not a cap, a formula, or a year-path. Names no residential-rate number.",
       "url": "https://www.arthurmcinnis.ca/platform",
       "date": "2026-09-02"
     },
@@ -52,7 +52,7 @@
       "label": "Written program",
       "measure": null,
       "state": "yes",
-      "sentence": "An authorized campaign site with a five-plank long-form platform (open government and fiscal discipline; neighbourhood planning; housing and tenant protection; transportation; public safety), ten article hubs, biography, donations and volunteer forms. Written and current. No costed city-wide budget, no residential-rate formula, no unit-volume target.",
+      "sentence": "An authorized campaign site with a five-plank long-form platform (open government and fiscal responsibility; neighbourhood planning and responsible growth; housing affordability and tenant protection; transportation; public safety and order), ten article hubs, biography, donations and volunteer forms. Written and current. No costed city-wide budget, no residential-rate formula, no unit-volume target.",
       "url": "https://www.arthurmcinnis.ca/platform",
       "date": "2026-09-02"
     }
@@ -68,10 +68,10 @@
       "mark": "Close",
       "value": 2,
       "quote": "Any development receiving a rezoning, density bonus, or access to public land must meet minimum unit-mix requirements: a defined percentage of two-bedroom and three-bedroom suites, and a defined percentage of ground-oriented units.",
-      "why": "Commits × Comparable. Family mix named; thresholds \"will be set in an amended OCP,\" so not 25/20/15 and not Aligned. Context, same plank, not a second mark: missing middle (duplexes, triplexes, courtyard housing, townhomes, laneway homes, small apartments) as the preferred growth form.",
+      "why": "Commits × Comparable. Family mix named; thresholds \"will be set in an amended OCP,\" so not 25/20/15/30 and not Aligned. No 12,000-home volume target. Context, same plank, not a second mark: missing middle (duplexes, triplexes, courtyard housing, townhomes, laneway homes, small apartments) as the preferred growth form.",
       "url": "https://www.arthurmcinnis.ca/platform",
       "source": "arthurmcinnis.ca",
-      "lastmod": null,
+      "lastmod": "2026-07-17",
       "retrieved": "2026-09-02"
     },
     {
@@ -87,7 +87,7 @@
       "why": "Commits × Comparable. 99-year-style leasehold to co-ops/non-profits is the land-bank half, not a named acquisition fund. Civic overbuild (housing feasibility on civic rebuilds) is the same land-for-housing cluster, not a second mark. The civic-land map is scored on row 44.",
       "url": "https://www.arthurmcinnis.ca/platform",
       "source": "arthurmcinnis.ca",
-      "lastmod": null,
+      "lastmod": "2026-07-17",
       "retrieved": "2026-09-02"
     },
     {
@@ -119,7 +119,7 @@
       "why": "Commits × Same instrument. Designs prioritise family-appropriate unit sizes. Template example sentence, re-sourced from the live `/platform` on this retrieve, not copied from the template card.",
       "url": "https://www.arthurmcinnis.ca/platform",
       "source": "arthurmcinnis.ca",
-      "lastmod": null,
+      "lastmod": "2026-07-17",
       "retrieved": "2026-09-02"
     },
     {
@@ -132,10 +132,10 @@
       "mark": "Close",
       "value": 2,
       "quote": "The city will establish a time-limited permit amnesty for suites meeting basic safety standards, paired with a standardised approval package and concierge permitting service.",
-      "why": "Commits × Comparable. M8b amnesty is named. Context, same plank, not a second mark: reduced DCC and permit-fee schedule for missing-middle and family-oriented infill. No 5% vacancy target, so not Aligned.",
+      "why": "Commits × Comparable. M8b amnesty and concierge both named; no 24-month window and no life-safety-only test, and no 5% vacancy target, so not Aligned. Context, same plank, not a second mark: \"The city will establish a reduced DCC and permit fee schedule for missing middle and family-oriented infill, with priority processing for owner-occupied and long-term rental forms\" — this is the sentence the template's \"DCC cuts\" wording assigns here, which is why row 3 and row 19 cannot take a mark off it.",
       "url": "https://www.arthurmcinnis.ca/platform",
       "source": "arthurmcinnis.ca",
-      "lastmod": null,
+      "lastmod": "2026-07-17",
       "retrieved": "2026-09-02"
     },
     {
@@ -260,10 +260,10 @@
       "mark": "Close",
       "value": 2,
       "quote": "Any proposed property tax increase above the rate of inflation will require a mandatory 90-day public consultation period before Council may adopt it.",
-      "why": "Commits × Comparable. Inflation gate with a public-covenant consultation, not a 6.5/5.0/6-of-9 cap. Do not stamp 10.44 as the current ACTW lock (residential lock is 9.34). Context, same plank, not a second mark: \"This is a policy commitment to fiscal discipline not a legal straitjacket.\"",
+      "why": "Commits × Comparable. An inflation gate with a public-covenant consultation, not a 6.5 / 5.0 / CPI-plus-growth path and not a 6-of-9 override. Do not stamp 10.44 as the current ACTW lock (the residential lock is 9.34). Context, same plank, not a second mark: \"This is a policy commitment to fiscal discipline not a legal straitjacket, but a public covenant with residents.\"",
       "url": "https://www.arthurmcinnis.ca/platform",
       "source": "arthurmcinnis.ca",
-      "lastmod": null,
+      "lastmod": "2026-07-17",
       "retrieved": "2026-09-02"
     },
     {
@@ -292,10 +292,10 @@
       "mark": "Close",
       "value": 2,
       "quote": "When Council approves a budget, the public communication should include an honest estimate of what a typical homeowner, accounting for school tax, regional levies, policing, and debt will likely see on their actual notice.",
-      "why": "Commits × Comparable. All-in residential communication is the Household Bill's purpose; water, sewer and stormwater are not named as a combined number. FLAG: the hub frames this as what \"residents should demand from the next Council\" while he is running for that Council — ambiguity up to Commits, not a dash.",
+      "why": "Commits × Comparable. All-in residential communication is the Household Bill's purpose; water, sewer, solid waste and stormwater are not named as a combined number and there is no five-year forward trajectory. FLAG: the hub frames this as what residents should get from Council while he is running for that Council — ambiguity up to Commits, not a dash.",
       "url": "https://www.arthurmcinnis.ca/hub-4-budget",
       "source": "arthurmcinnis.ca",
-      "lastmod": null,
+      "lastmod": "2026-08-12",
       "retrieved": "2026-09-02",
       "flags": [
         "card FLAG"
@@ -311,10 +311,10 @@
       "mark": "Close",
       "value": 2,
       "quote": "Formally advocate to the Province for a legislative framework requiring it to fully fund and operate mental health, addictions, and complex care services.",
-      "why": "Commits × Comparable. Refusal to keep absorbing provincial care onto the municipal tax base is the downloading goal; no published ledger and no dollar-threshold table, so not Aligned. Context, hub 4, not a second mark: the downloading argument against treating discretionary well-being spend as a legal obligation.",
+      "why": "Commits × Comparable. A refusal to keep absorbing provincial care onto the municipal tax base is the downloading goal; no quarterly published ledger, no per-file cost estimate, no named refusal threshold, so not Aligned. Context, hub 6, not a second mark: \"Stop asking VicPD to do the province's job.\"",
       "url": "https://www.arthurmcinnis.ca/platform",
       "source": "arthurmcinnis.ca",
-      "lastmod": null,
+      "lastmod": "2026-07-17",
       "retrieved": "2026-09-02"
     },
     {
@@ -391,10 +391,10 @@
       "mark": "Close",
       "value": 2,
       "quote": "Any redevelopment that demolishes purpose-built rental housing must replace every demolished unit with a new rental unit on the same site. No net loss of rental inventory.",
-      "why": "Commits × Comparable. One-for-one replacement is a demoviction-protection instrument. Context, same plank, not a second mark: lesser-of right of return; tenure-based relocation coordinator. No STR licensing and no indoor-heat standard on the live `/platform` (June internal notes of a 3% STR trigger are not on this retrieve and are not used). M9c struck.",
+      "why": "Commits × Comparable. One-for-one replacement is a demoviction-protection instrument. Context, same plank, not a second mark: the lesser-of right of return; the independent Tenant Relocation Coordinator reporting to the city; rent top-up for tenants of 10+ years. No 12-month notice period, no STR licensing or cap, and no indoor-heat standard on the live `/platform` this retrieve (June internal notes of a 3% STR trigger are not on the site and are not used). M9c struck.",
       "url": "https://www.arthurmcinnis.ca/platform",
       "source": "arthurmcinnis.ca",
-      "lastmod": null,
+      "lastmod": "2026-07-17",
       "retrieved": "2026-09-02"
     },
     {
@@ -487,10 +487,10 @@
       "mark": "Close",
       "value": 2,
       "quote": "Require a published, ranked, dated list of the city's highest-collision locations, updated annually with the city's own data, so residents, not just staff, can see which intersections are next and when.",
-      "why": "Commits × Comparable. Ranked injury-severity capital sequence is a Vision Zero operations instrument, not a named Vision Zero audit and not adaptive signals. M39 struck. Context, `/platform` same cluster, not a second mark: emergency-response audit of corridor redesigns and an OCP Emergency Access Overlay. Option F / parking-replacement sentences are not this mark.",
+      "why": "Commits × Comparable. A ranked collision-evidence capital sequence is M38's prioritisation rule delivered through a published list, not adaptive signals and not an automated-enforcement site list. M39 struck. Context, same cluster, not a second mark: \"Tie capital prioritisation to injury severity, not just project readiness\"; the emergency-response audit of corridor redesigns and the OCP Emergency Access Overlay; and hub 5's Option F commitment. The Island Rail Corridor line is a Mention of M22, not a mode endorsement or a right-of-way protection, and carries no mark.",
       "url": "https://www.arthurmcinnis.ca/hub-6-safety",
       "source": "arthurmcinnis.ca",
-      "lastmod": null,
+      "lastmod": "2026-08-12",
       "retrieved": "2026-09-02"
     },
     {
@@ -499,15 +499,15 @@
       "topicName": "Streets and mobility",
       "measure": "M20b/M23b",
       "what": "walking and transit the City controls",
-      "kind": "dash",
-      "mark": null,
-      "value": null,
-      "quote": null,
-      "why": null,
-      "url": null,
-      "source": null,
-      "lastmod": null,
-      "retrieved": null
+      "kind": "scored",
+      "mark": "Close",
+      "value": 2,
+      "quote": "Concretely, within the first term I would direct city staff to prepare a feasibility report on inner harbour water transit integration, including: an assessment of potential routes and ridership; a financial model for a public service agreement versus continued private operation; a review of the SeaBus integration process and its applicability to Victoria's context; and a preliminary framework for negotiations with Victoria Harbour Ferry and BC Transit.",
+      "why": "Commits × Comparable. Converted from a dash this pass. M23b's instrument is a City-side transit position that is produced, published and carried to the transit authority; this is a dated, first-term, City-directed and published transit analysis used as the basis for formal advocacy — a comparable instrument, not the annual Council-adopted position and not a transit-priority capital line. Most contestable mark on the card (see Fragility). Pressing the Province on the BC Transit funding gap remains a Mention and carries nothing. Walking and the M20b sidewalk-gap standard do not appear at all.",
+      "url": "https://www.arthurmcinnis.ca/hub-5-transit",
+      "source": "arthurmcinnis.ca",
+      "lastmod": "2026-08-12",
+      "retrieved": "2026-09-02"
     },
     {
       "n": 29,
@@ -551,10 +551,10 @@
       "mark": "Partial",
       "value": 1,
       "quote": "Establish a dedicated city liaison for downtown businesses facing the direct costs of theft, vandalism, and reduced foot traffic.",
-      "why": "Commits × Neither. A liaison is an action, not an exposure-based cost-spreading pilot. Face-test Partial, not Close.",
+      "why": "Commits × Neither. A liaison is an action, not an exposure-based, capped, sunsetted cost-spreading pilot. Face-test Partial, not Close.",
       "url": "https://www.arthurmcinnis.ca/platform",
       "source": "arthurmcinnis.ca",
-      "lastmod": null,
+      "lastmod": "2026-07-17",
       "retrieved": "2026-09-02"
     },
     {
@@ -567,10 +567,10 @@
       "mark": "Aligned",
       "value": 3,
       "quote": "I will fund a City partnership contribution and formally advocate to the Province to bring community paramedicine to Victoria as a permanent urban program, not another pilot that disappears.",
-      "why": "Commits × Same instrument. Jurisdiction note on the same page: BCEHS delivers; the City funds a partnership and advocates. Not double-counted as M26b.",
+      "why": "Commits × Same instrument, including M28d's own \"permanent urban\" wording. Jurisdiction note on the same page: BCEHS delivers; the City funds a partnership and advocates. Not double-counted as M26b.",
       "url": "https://www.arthurmcinnis.ca/platform",
       "source": "arthurmcinnis.ca",
-      "lastmod": null,
+      "lastmod": "2026-07-17",
       "retrieved": "2026-09-02"
     },
     {
@@ -583,10 +583,10 @@
       "mark": "Close",
       "value": 2,
       "quote": "Pursue the regional and Esquimalt-style integration model seriously, rather than as a talking point sharing specialised units and back-office functions across municipalities frees sworn officers for the front line without waiting on a hiring pipeline that the whole province is competing for.",
-      "why": "Commits × Comparable. Regional integration / shared units is the M29b goal with a harder instrument than convene-and-publish; pack forbids binding another force, so not Aligned. Context, `/platform`, not a second mark: \"Restore the two cut VicPD positions as an immediate step toward meeting identified staffing pressures.\" FLAG vs 1 Sep pack Partial 1.0 that used only the restore-two sentence.",
+      "why": "Commits × Comparable. Regional integration and shared units is the M29b goal with a harder instrument than convene-and-publish; the Program forbids binding another force, so not Aligned. Context, same hub and plank, not a second mark: \"Compress the staffing timeline... and require staff to report publicly, every quarter, on progress against that compressed target\"; \"Restore the two cut VicPD positions as an immediate step.\" FLAG vs the 1 Sep pack's Partial 1.0, which used only the restore-two sentence.",
       "url": "https://www.arthurmcinnis.ca/hub-6-safety",
       "source": "arthurmcinnis.ca",
-      "lastmod": null,
+      "lastmod": "2026-08-12",
       "retrieved": "2026-09-02",
       "flags": [
         "card FLAG"
@@ -618,10 +618,10 @@
       "mark": "Aligned",
       "value": 3,
       "quote": "Convert the həlisət plan from a narrative document into a performance contract. Every major commitment must identify: legal authority, responsible lead body, implementation timeline, measurable target, and projected cost.",
-      "why": "Commits × Same as M31c. Context, same plank, not a second mark: real-time public safety dashboard modelled on Hamilton/Toronto; quarterly reporting on crime trends, street disorder, response times, shelter placements. Distinct from the taxpayer capital portal on row 42. No 15% crime-reduction number, so M32 is context only.",
+      "why": "Commits × Same instrument — M31c's five mandatory fields, named one for one. Context, same cluster, not a second mark: a real-time public safety dashboard modelled on Hamilton and Toronto; quarterly reporting on crime trends, street disorder, response times and shelter placements; and hub 6's \"Require that any future Community Safety and Wellbeing reporting explicitly track hate-motivated incidents as a distinct category, with public, comparable, year-over-year numbers.\" Distinct from the taxpayer capital portal on row 42. No 15% crime-reduction number, so M32 is context only.",
       "url": "https://www.arthurmcinnis.ca/platform",
       "source": "arthurmcinnis.ca",
-      "lastmod": null,
+      "lastmod": "2026-07-17",
       "retrieved": "2026-09-02"
     },
     {
@@ -634,10 +634,10 @@
       "mark": "Close",
       "value": 2,
       "quote": "Any rezoning or development permit application affecting a designated or registered heritage property will require an independent Heritage Impact Assessment prepared by a qualified heritage professional at the applicant's cost published as part of the public record before the hearing.",
-      "why": "Commits × Comparable. Mandatory HIA is a heritage-standards instrument, not facade grants or a venue lease-bridge. Not Aligned.",
+      "why": "Commits × Comparable. A mandatory HIA is a heritage-standards instrument, not a design code, a facade-restoration fund, or a cultural-venue right of first refusal. Context, hub 10, not a second mark: the argument that heritage assets are treated as leverage for density rather than public goods requiring dedicated stewardship plans. Not Aligned.",
       "url": "https://www.arthurmcinnis.ca/platform",
       "source": "arthurmcinnis.ca",
-      "lastmod": null,
+      "lastmod": "2026-07-17",
       "retrieved": "2026-09-02"
     },
     {
@@ -714,10 +714,10 @@
       "mark": "Aligned",
       "value": 3,
       "quote": "End automatic annual departmental increases. Every department justifies its baseline spending each year against core service priorities: fire, police, water, sewers, and roads come before discretionary programs.",
-      "why": "Commits × Same instrument in substance (zero-based baseline, annually, all departments). Rotating 3–4 areas is not named; annual-all-departments is ZBB, not a weaker cousin. Roads-first language in this sentence is not given a second mark on row 30.",
+      "why": "Commits × Same instrument in substance — zero-based baselines, annually, across all departments. The rotating 3–4 service areas per cycle and the published three-part grant test are not named; annual-all-departments is ZBB, not a weaker cousin. The roads-first language in this sentence is not given a second mark on row 30.",
       "url": "https://www.arthurmcinnis.ca/platform",
       "source": "arthurmcinnis.ca",
-      "lastmod": null,
+      "lastmod": "2026-07-17",
       "retrieved": "2026-09-02"
     },
     {
@@ -730,10 +730,10 @@
       "mark": "Close",
       "value": 2,
       "quote": "Launch a publicly accessible digital portal tracking all major capital projects: e.g. Crystal Pool, the Community Safety Plan, street redesigns with budget vs. actual spending updated in real time.",
-      "why": "Commits × Comparable. Real-time capital portal, not a quarterly KPI dashboard. Distinct from the safety dashboard on row 35. The $10 FOI-fee abolition in the same numbered action is scored as context on row 52, not here.",
+      "why": "Commits × Comparable. A real-time capital portal is faster in cadence but far narrower than M67's 20+ named series. Distinct from the safety dashboard on row 35. The $10 FOI-fee abolition in the same numbered action is context on row 52, not here.",
       "url": "https://www.arthurmcinnis.ca/platform",
       "source": "arthurmcinnis.ca",
-      "lastmod": null,
+      "lastmod": "2026-07-17",
       "retrieved": "2026-09-02"
     },
     {
@@ -762,10 +762,10 @@
       "mark": "Close",
       "value": 2,
       "quote": "Publish a full public map of every city-owned parcel, including surface parking lots, works yards, air rights, and surplus buildings. Report annually on what each parcel produces in public benefit and whether it meets OCP housing targets before adjacent private land is up-zoned.",
-      "why": "Commits × Comparable. Inventory plus a utilization / public-benefit audit is the first half of M69. Missing the sell-or-lease rule for parcels that do not serve an essential public function, so not Aligned. 99-year housing leases are already scored on row 2 and are not a second mark here.",
+      "why": "Commits × Comparable. Inventory plus a utilization and public-benefit audit is the first half of M69. He explicitly declines the sell half (\"The city will not sell municipally owned land for housing\"), so not Aligned. The 99-year leases are scored on row 2 and are not a second mark here.",
       "url": "https://www.arthurmcinnis.ca/platform",
       "source": "arthurmcinnis.ca",
-      "lastmod": null,
+      "lastmod": "2026-07-17",
       "retrieved": "2026-09-02"
     },
     {
@@ -822,15 +822,15 @@
       "topicName": "Climate and trees as operations",
       "measure": "M58/M58b/M64b",
       "what": "climate, district energy, seismic",
-      "kind": "dash",
-      "mark": null,
-      "value": null,
-      "quote": null,
-      "why": null,
-      "url": null,
-      "source": null,
-      "lastmod": null,
-      "retrieved": null
+      "kind": "scored",
+      "mark": "Partial+",
+      "value": 1.5,
+      "quote": "...a district energy feasibility assessment tied to rezoning approval, accompanied by binding low-carbon infrastructure obligations reflecting the assessment's conclusions; and the establishment of both construction and operational emissions baselines together with mandatory monitoring and reporting obligations at defined intervals.",
+      "why": "Agrees × Comparable. Converted from a dash this pass. Written as what a compliant Bayview agreement should have required rather than \"I will,\" so Agrees, not Commits. Feasibility-first district energy then binding obligations is comparable to M58b's study-then-utility rule, applied developer-side at rezoning rather than City-side downtown. Context, same passage, not a second mark: \"a minimum finished floor elevation calibrated to Victoria's projected sea-level rise conditions for both the 2050 and 2100 planning horizons,\" which is M64b's coastal half. No 50%-by-2030 GHG target and no seismic inventory of City-owned buildings, so not higher.",
+      "url": "https://www.arthurmcinnis.ca/hub-9-environment",
+      "source": "arthurmcinnis.ca",
+      "lastmod": "2026-08-12",
+      "retrieved": "2026-09-02"
     },
     {
       "n": 49,
@@ -839,13 +839,13 @@
       "measure": "M59–M63",
       "what": "trees, mode share, ecosystems, emergency preparedness",
       "kind": "scored",
-      "mark": "Close",
-      "value": 2,
-      "quote": "A verified pre-development baseline will support a net-positive canopy requirement for new developments.",
-      "why": "Commits × Comparable. Canopy instrument named; no 5,000-tree target, no 35% canopy. Context, same numbered action, not a second mark: Garry Oak inventory on public land; mature-tree removal evidence; homeowner stewardship credit. Hub 6 earthquake / emergency-management capacity is the preparedness half of this cluster and is not given a second mark. Mode share is not a separate cell (provincial transit advocacy is dashed on row 28).",
-      "url": "https://www.arthurmcinnis.ca/platform",
+      "mark": "Aligned",
+      "value": 3,
+      "quote": "Therefore I would raise cash-in-lieu fees when a development does not meet the Tree Protection Bylaw tree minimum on private property from this $2000 to $5000 per tree to go into the Tree Reserve Fund, to help Victoria reach 40% tree canopy by 2050.",
+      "why": "Commits × Same instrument. Upgraded from Close 2.0 this pass. M61's defining instrument is a published canopy target that governs, reported on a repeatable methodology; he adopts a dated canopy target (40% by 2050) and attaches a named funding mechanism to it. Context, same hub, not a second mark: \"mandatory recurring canopy assessments using current mapping technology; neighbourhood-level canopy reporting so deficits cannot be concealed within city-wide averages\"; natural-asset accounting inside the Asset Management Strategy; a mapping obligation for Garry oak habitat; and `/platform`'s net-positive canopy requirement and homeowner stewardship credit. Hub 6's emergency-management capacity items are the preparedness half of this cluster and carry no second mark. Mode share is not a separate cell.",
+      "url": "https://www.arthurmcinnis.ca/hub-9-environment",
       "source": "arthurmcinnis.ca",
-      "lastmod": null,
+      "lastmod": "2026-08-12",
       "retrieved": "2026-09-02"
     },
     {
@@ -858,10 +858,10 @@
       "mark": "Aligned",
       "value": 3,
       "quote": "Any amendment to a development application, changes of more than ten per cent to height, density, or permitted uses; removal of community amenity commitments; changes to heritage conditions made after the public hearing has closed will require a pause, staff report, and re-notification before any vote proceeds.",
-      "why": "Commits × Same as M78b's 10% material-change rule. No $25M referendum threshold and no 5-step capital sequence; cluster still Aligned on the named Same instrument. Crystal Pool critique is hub diagnosis, not this rule.",
+      "why": "Commits × Same as M78b's 10% material-change rule, including the pause-report-renotify consequence. No $25M referendum threshold and no 5-step capital sequence; the cluster is still Aligned on the named Same instrument, the same rule applied on row 3 in reverse.",
       "url": "https://www.arthurmcinnis.ca/platform",
       "source": "arthurmcinnis.ca",
-      "lastmod": null,
+      "lastmod": "2026-07-17",
       "retrieved": "2026-09-02"
     },
     {
@@ -874,10 +874,10 @@
       "mark": "Aligned",
       "value": 3,
       "quote": "Establish an independent Integrity Commissioner appointed by Council but reporting independently with the authority to receive complaints from any person about breaches of the Code of Conduct by elected officials.",
-      "why": "Commits × Same office. Findings published and tabled. No 60-day consultation-response standard (M79b remainder is context, not a second mark). Free-vote covenant and single-meeting model are process sentences, not this cell.",
+      "why": "Commits × Same office, with the complaint-from-any-person gap named and findings published and tabled. No 60-day consultation-response standard and no MNP implementation tracker (M79b remainder is context, not a second mark). The free-vote covenant and single-meeting model are process sentences, not this cell.",
       "url": "https://www.arthurmcinnis.ca/platform",
       "source": "arthurmcinnis.ca",
-      "lastmod": null,
+      "lastmod": "2026-07-17",
       "retrieved": "2026-09-02"
     },
     {
@@ -890,10 +890,10 @@
       "mark": "Aligned",
       "value": 3,
       "quote": "Establish a searchable public registry of all meetings between city staff, Council, and development proponents.",
-      "why": "Commits × Same as the lobbyist-registry instrument. Context, distinct numbered actions in the same cluster, not extra marks: \"The $10 FOI fee will be abolished\"; \"Any change to Council remuneration will take effect only after the subsequent election.\" Three Same instruments in one cluster, one mark.",
+      "why": "Commits × Same as M79d. Context, distinct numbered actions in the same cluster, not extra marks: \"The $10 FOI fee will be abolished\" (M79e); \"Any change to Council remuneration will take effect only after the subsequent election\" (M79f), proposed in the first term before the next pay discussion. Three Same instruments in one cluster, one mark.",
       "url": "https://www.arthurmcinnis.ca/platform",
       "source": "arthurmcinnis.ca",
-      "lastmod": null,
+      "lastmod": "2026-07-17",
       "retrieved": "2026-09-02"
     },
     {
@@ -906,10 +906,10 @@
       "mark": "Close",
       "value": 2,
       "quote": "Re-empower Community Association Land Use Committees (CALUCs) as a mandatory early-stage step for all significant land-use changes.",
-      "why": "Commits × Comparable. Binding early CALUC is a neighbourhood-voice instrument, not official-languages and not two LAPs per year. Context, same plank, not a second mark: neighbourhood-based OCP reform; local DCC reinvestment to that neighbourhood's parks, sidewalks, and infrastructure.",
+      "why": "Commits × Comparable. Binding early CALUC consultation is a neighbourhood-voice instrument, not official-languages access and not two Local Area Plans per year. Note the direct conflict with M80c: he advocates \"repeal and replacement of the current broad, discretionary OCP,\" which the Program explicitly declines. Context, same plank, not a second mark: neighbourhood-based planning with parcel-level clarity and infrastructure-linked density; local DCC reinvestment to that neighbourhood's parks, sidewalks and infrastructure.",
       "url": "https://www.arthurmcinnis.ca/platform",
       "source": "arthurmcinnis.ca",
-      "lastmod": null,
+      "lastmod": "2026-07-17",
       "retrieved": "2026-09-02"
     },
     {
@@ -918,15 +918,18 @@
       "topicName": "Neighbourhoods and integrity",
       "measure": "M82/M82b",
       "what": "community surveys, turnout and ballot access",
-      "kind": "dash",
-      "mark": null,
-      "value": null,
-      "quote": null,
-      "why": null,
-      "url": null,
-      "source": null,
+      "kind": "scored",
+      "mark": "Weak",
+      "value": 0.5,
+      "quote": "If an 80% turnout is possible when people realize national direction matters, there is zero reason Victoria should settle for 38%.",
+      "why": "Agrees × Neither. Converted from a dash this pass on a signed 2026 Victoria News letter under his own byline. Turnout is named as a goal with the 2022 figure cited (37.98%), and no instrument at all: no advance-voting days, no voting-place weighting, no mail-ballot access, no community survey. FLAG: published 18 Apr 2026, two months before he declared on 25 Jun — 2026 text under his name, not 2018/2022 campaign text, so it scores.",
+      "url": "https://vicnews.com/2026/04/18/letter-what-victoria-can-learn-from-hungarys-80-voter-turnout/",
+      "source": "vicnews.com",
       "lastmod": null,
-      "retrieved": null
+      "retrieved": "2026-09-02",
+      "flags": [
+        "card FLAG"
+      ]
     },
     {
       "n": 55,

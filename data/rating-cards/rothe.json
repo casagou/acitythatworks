@@ -5,8 +5,8 @@
   "kind": "chal",
   "notionUrl": "https://app.notion.com/p/3cfe245ae5f38188ac1bf7ebc9ee3a26",
   "notionTitle": "Karen Rothe · Council · chal",
-  "platformUrl": "https://www.karenrothe.ca/",
-  "platformLastmod": null,
+  "platformUrl": "https://www.karenrothe.ca/priorities",
+  "platformLastmod": "2026-05-26",
   "retrieved": "2026-09-02",
   "cardScoredCount": 7,
   "cardRecordCount": 0,
@@ -52,8 +52,8 @@
       "label": "Written program",
       "measure": null,
       "state": "yes",
-      "sentence": "An authorized campaign site with three named themes — \"Creating Trust Through Better Leadership\", \"Restoring Downtown, Protecting our Neighbourhoods\", \"Better Planning for Better Outcomes\". Written, current, and signed. No targets, no costings, no named instruments, no dates.",
-      "url": "https://www.karenrothe.ca/",
+      "sentence": "Written, authorized, four named themes on a dedicated /priorities page: \"Creating Trust Through Better Leadership\", \"Restoring Downtown, Protecting Our Neighbourhoods\", \"Better Planning for Better Outcomes\", \"Responsible Stewardship\". No targets, no costings, no instruments, no dates, and no line changed since 26 May 2026.",
+      "url": "https://www.karenrothe.ca/priorities",
       "date": "2026-09-02"
     }
   ],
@@ -275,11 +275,11 @@
       "kind": "scored",
       "mark": "Partial",
       "value": 1,
-      "quote": "The tendency is to kick the can down the road and leave the the bill for others to pay later. I won't do that.",
-      "why": "Commits against intergenerational deferral, which is the argument M66c is built on, with no instrument behind it: no debt rule, no supermajority override, no published debt set, and nothing at all on the over-collection refund. Context, same block: \"I know how much pain and financial hardship can be avoided by planning ahead.\"",
-      "url": "https://www.karenrothe.ca/",
+      "quote": "The tendency is to kick the can down the road and leave the bill for others to pay later. I won't do that.",
+      "why": "Commits against intergenerational deferral, the argument M66c is built on, with nothing behind it: no debt rule, no supermajority override, no published debt set, nothing on the over-collection refund. Context: \"I know how much pain and financial hardship can be avoided by planning ahead,\" and \"We have a hard time seeing and paying for something that will happen in the future, even if it's a certainty.\"",
+      "url": "https://www.karenrothe.ca/priorities",
       "source": "karenrothe.ca",
-      "lastmod": null,
+      "lastmod": "2026-05-26",
       "retrieved": "2026-09-02"
     },
     {
@@ -340,10 +340,10 @@
       "mark": "Partial",
       "value": 1,
       "quote": "I want to remove the barriers stopping people from coming downtown and restore the vibrant downtown that has been lost.",
-      "why": "Commits to a downtown outcome with no instrument and no number: no vacancy target, no levers named, no mandate, no flagship event, no economic plan. Which barriers is never stated. Context: \"Without people in the economic and cultural heart of the city, we don't have a downtown,\" and, at launch, \"When local businesses are healthy, people have jobs.\"",
-      "url": "https://www.karenrothe.ca/",
+      "why": "Commits to a downtown outcome with no instrument and no number: no vacancy target, no lever named, no mandate, no flagship event, no economic plan. Which barriers is never stated. Context: \"Without people in the economic and cultural heart of the city, we don't have a downtown\"; \"we have businesses that are leaving the City\"; and at launch, \"When local businesses are healthy, people have jobs.\"",
+      "url": "https://www.karenrothe.ca/priorities",
       "source": "karenrothe.ca",
-      "lastmod": null,
+      "lastmod": "2026-05-26",
       "retrieved": "2026-09-02"
     },
     {
@@ -705,13 +705,13 @@
       "measure": "M65",
       "what": "rotating zero-based reviews",
       "kind": "scored",
-      "mark": "Weak",
-      "value": 0.5,
+      "mark": "Partial",
+      "value": 1,
       "quote": "I will be a responsible steward of our limited resources and will focus on the core responsibilities of local government: infrastructure, transportation, public safety, affordability, and public transportation systems that work for all.",
-      "why": "Agrees with M65's jurisdiction test — is this the City's job — as a goal, with no instrument: no zero-based cycle, no grant threshold, no three-part test, no savings number. Note the tension: M23b's position is that transit is not a municipal decision, and she lists it as a core local responsibility. Not opposition, but flagged.",
-      "url": "https://www.karenrothe.ca/",
+      "why": "Commits — \"I will be\", \"will focus on\" — to M65's jurisdiction test, is this the City's job, with no instrument: no zero-based cycle, no $50K grant threshold, no three-part test, no savings figure. On /priorities this is its own theme, \"Responsible Stewardship\". Upgraded from Weak 0.5 in v1 under ambiguity-resolves-upward: a stated \"I will\" is Commits, not Agrees.",
+      "url": "https://www.karenrothe.ca/priorities",
       "source": "karenrothe.ca",
-      "lastmod": null,
+      "lastmod": "2026-05-26",
       "retrieved": "2026-09-02"
     },
     {
@@ -724,10 +724,10 @@
       "mark": "Weak",
       "value": 0.5,
       "quote": "Council has delegated its responsibilities to staff. This has created a lack of transparency, a lack of accountability, and an erosion of public trust.",
-      "why": "Agrees with the goal M67 exists to serve — residents able to hold council to account between elections — with no instrument: no dashboard, no KPI set, no publication cadence. Context: \"Perspectives and feelings matter and they need to be backed up by facts and data.\"",
-      "url": "https://www.karenrothe.ca/",
+      "why": "Agrees with the goal M67 exists to serve — residents able to hold council to account between elections — with no instrument: no dashboard, no KPI set, no cadence. Context: \"Perspectives and feelings matter and they need to be backed up by facts and data,\" and \"We need to make decisions today that are informed by experience and data.\"",
+      "url": "https://www.karenrothe.ca/priorities",
       "source": "karenrothe.ca",
-      "lastmod": null,
+      "lastmod": "2026-05-26",
       "retrieved": "2026-09-02"
     },
     {
@@ -851,11 +851,11 @@
       "kind": "scored",
       "mark": "Weak",
       "value": 0.5,
-      "quote": "It shouldn't have taken a public outcry to stop the redevelopment of Centennial Square; a Council that listens and is engaged would have quickly realized it wasn't the right plan nor the right time.",
-      "why": "Agrees with M78 step 1 — consultation before commitment — as a goal. A commitment to listen is not a named process: no 5-step sequence, no $25M threshold, no material-change rule, and the sentence describes what a council would have done, not what she will do.",
-      "url": "https://www.karenrothe.ca/",
+      "quote": "It shouldn't have taken a public outcry to stop the redevelopment of Centennial Square; a council that listens and is engaged would have quickly realized it wasn't the right plan nor the right time.",
+      "why": "Agrees with M78 step 1, consultation before commitment, as a goal. A commitment to listen is not a named process: no 5-step sequence, no $25M threshold, no material-change rule, and the sentence describes what a council would have done, not what she will do.",
+      "url": "https://www.karenrothe.ca/priorities",
       "source": "karenrothe.ca",
-      "lastmod": null,
+      "lastmod": "2026-05-26",
       "retrieved": "2026-09-02"
     },
     {
@@ -869,9 +869,9 @@
       "value": 1,
       "quote": "I commit to listening, communicating, and ensuring as much transparency as possible.",
       "why": "Commits, with no instrument: no Integrity Commissioner, no MNP implementation tracker, no 60-day response standard, no draft-before-adoption rule. \"as much transparency as possible\" is a discretionary standard, not a service standard. Context: her diagnosis that council has delegated its responsibilities to staff is the council-staff boundary problem the MNP report addresses.",
-      "url": "https://www.karenrothe.ca/",
+      "url": "https://www.karenrothe.ca/priorities",
       "source": "karenrothe.ca",
-      "lastmod": null,
+      "lastmod": "2026-05-26",
       "retrieved": "2026-09-02"
     },
     {
@@ -901,9 +901,9 @@
       "value": 0.5,
       "quote": "Community associations have long been stewards of these neighbourhoods, and their hard-won experience is critical to the long-term health of our communities.",
       "why": "Agrees that neighbourhood associations should carry weight, with no instrument: no grant line, no delivery-partner role, no Local Area Plan programme, no schedule, nothing on language access. Context: \"Victoria is a city of neighbourhoods.\"",
-      "url": "https://www.karenrothe.ca/",
+      "url": "https://www.karenrothe.ca/priorities",
       "source": "karenrothe.ca",
-      "lastmod": null,
+      "lastmod": "2026-05-26",
       "retrieved": "2026-09-02"
     },
     {

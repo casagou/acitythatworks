@@ -5,8 +5,8 @@
   "kind": "chal",
   "notionUrl": "https://app.notion.com/p/3cfe245ae5f381b28024ebb65e37701b",
   "notionTitle": "Wendy Bowkett · Council · chal",
-  "platformUrl": "https://www.wendybowkett.ca/",
-  "platformLastmod": null,
+  "platformUrl": "http://wendybowkett.ca/priorities",
+  "platformLastmod": "2026-05-14",
   "retrieved": "2026-09-02",
   "cardScoredCount": 10,
   "cardRecordCount": 0,
@@ -26,7 +26,7 @@
       "measure": "M26 / M27",
       "state": "said",
       "sentence": "\"Activate public spaces and ensure the City leads where it should, and advocates where it must.\" No public order team and no bylaw hours published.",
-      "url": "https://www.wendybowkett.ca/",
+      "url": "http://wendybowkett.ca/priorities",
       "date": "2026-09-02"
     },
     {
@@ -35,7 +35,7 @@
       "measure": "M6",
       "state": "said",
       "sentence": "\"Prioritize and accelerate approvals for non-market and co-op housing.\" No unit target and no composition share published.",
-      "url": "https://www.wendybowkett.ca/",
+      "url": "http://wendybowkett.ca/priorities",
       "date": "2026-09-02"
     },
     {
@@ -52,8 +52,8 @@
       "label": "Written program",
       "measure": null,
       "state": "yes",
-      "sentence": "Three published pillars with ten commitment bullets on the campaign site. No costs, no targets, no timelines, no dates.",
-      "url": "https://www.wendybowkett.ca/",
+      "sentence": "Three published pillars, ten commitment bullets, on a dedicated Priorities page. No costs, no targets, no timelines, no dates. Unchanged since 14 May 2026.",
+      "url": "http://wendybowkett.ca/priorities",
       "date": "2026-09-02"
     }
   ],
@@ -68,7 +68,7 @@
       "mark": "Weak",
       "value": 0.5,
       "quote": "They want safe streets, reliable services, well-maintained parks and roads, and housing that fits into complete communities. I agree with them",
-      "why": "Agrees the goal, names no unit target, no composition share, no instrument. Launch coverage, not the platform.",
+      "why": "Agrees the goal explicitly. Names no unit target, no composition share, no instrument. From her campaign news release, quoted in the launch story.",
       "url": "https://vicnews.com/2026/05/15/community-leader-set-to-run-for-victoria-council-to-refocus-on-the-basics/",
       "source": "vicnews.com",
       "lastmod": null,
@@ -100,10 +100,10 @@
       "mark": "Aligned",
       "value": 3,
       "quote": "Prioritize and accelerate approvals for non-market and co-op housing.",
-      "why": "M7's tenure-based priority queue processes non-market, co-operative and supportive applications ahead of the general queue. Same instrument, named. No service standard, no published times, nothing on AI pre-screening.",
-      "url": "https://www.wendybowkett.ca/",
+      "why": "M7's tenure-based priority queue processes non-market, co-operative and supportive applications ahead of the general queue within each permit category. Two of her three named tenures match verbatim. Same instrument. No service standard, no published times, nothing on AI pre-screening.",
+      "url": "https://www.wendybowkett.ca/priorities",
       "source": "wendybowkett.ca",
-      "lastmod": "n",
+      "lastmod": "2026-05-14",
       "retrieved": "2026-09-02"
     },
     {
@@ -164,10 +164,10 @@
       "mark": "Aligned",
       "value": 3,
       "quote": "Support non-police crisis response teams where they can respond appropriately and reduce pressure on police.",
-      "why": "M26b is a civilian crisis response capacity dispatched so the wrong responder stops absorbing officer time. Same instrument and same stated rationale. No dispatch criteria, no funding, no published diversion figure.",
-      "url": "https://www.wendybowkett.ca/",
+      "why": "M26b is a civilian crisis response capacity dispatched so the wrong responder stops absorbing officer time. Same instrument and same stated rationale, including the pressure-on-police argument. No dispatch criteria, no funding, no published diversion figure.",
+      "url": "https://www.wendybowkett.ca/priorities",
       "source": "wendybowkett.ca",
-      "lastmod": "n",
+      "lastmod": "2026-05-14",
       "retrieved": "2026-09-02"
     },
     {
@@ -244,10 +244,10 @@
       "mark": "Close",
       "value": 2,
       "quote": "Activate public spaces and ensure the City leads where it should, and advocates where it must.",
-      "why": "Published under her public-safety pillar. M36 reclaims named priority spaces through sustained visible presence; activation is a comparable instrument to the same end. No areas named, no protocol, nothing on encampments or night lighting.",
-      "url": "https://www.wendybowkett.ca/",
+      "why": "Published under her public-safety pillar, so the intent is order, not programming. M36 reclaims named priority spaces through sustained visible presence; activation is a comparable instrument to the same end. No areas named, no protocol, nothing on encampments or night lighting. The clause about leading and advocating is a stated lane and carries no weight.",
+      "url": "https://www.wendybowkett.ca/priorities",
       "source": "wendybowkett.ca",
-      "lastmod": "n",
+      "lastmod": "2026-05-14",
       "retrieved": "2026-09-02"
     },
     {
@@ -340,10 +340,10 @@
       "mark": "Aligned",
       "value": 3,
       "quote": "Create a Strategic Economic Plan to support local businesses, attract sustainable industries, and create stable, well-paying jobs.",
-      "why": "M73d is a published Strategic Economic Plan naming sectors and employment quality; \"stable, well-paying jobs\" is M73d's own median-wage-and-full-time test. Same instrument. No vacancy number, no adoption deadline, nothing on one mandate rather than a new office.",
-      "url": "https://www.wendybowkett.ca/",
+      "why": "M73d is a published Strategic Economic Plan naming sectors and employment quality; \"stable, well-paying jobs\" is M73d's own median-wage-and-full-time test. Same instrument, named. No vacancy number, no adoption deadline, nothing on one mandate rather than a new office.",
+      "url": "https://www.wendybowkett.ca/priorities",
       "source": "wendybowkett.ca",
-      "lastmod": "n",
+      "lastmod": "2026-05-14",
       "retrieved": "2026-09-02"
     },
     {
@@ -580,10 +580,10 @@
       "mark": "Partial",
       "value": 1,
       "quote": "Make sure Victoria's public safety system is properly resourced and working effectively.",
-      "why": "Commits to resourcing. Names neither the Esquimalt formula, binding mediation, a published consumption split, nor a regional review. No staffing number.",
-      "url": "https://www.wendybowkett.ca/",
+      "why": "Commits to resourcing. Names neither the Esquimalt formula, binding mediation, a published consumption split, nor a regional review. No staffing number and no budget position.",
+      "url": "https://www.wendybowkett.ca/priorities",
       "source": "wendybowkett.ca",
-      "lastmod": "n",
+      "lastmod": "2026-05-14",
       "retrieved": "2026-09-02"
     },
     {
@@ -725,9 +725,9 @@
       "value": 1,
       "quote": "Ensure accountability through reporting, evaluation, and responsible use of taxpayer dollars.",
       "why": "Commits to reporting. No cadence, no KPI set, no dashboard, no published metric named.",
-      "url": "https://www.wendybowkett.ca/",
+      "url": "https://www.wendybowkett.ca/priorities",
       "source": "wendybowkett.ca",
-      "lastmod": "n",
+      "lastmod": "2026-05-14",
       "retrieved": "2026-09-02"
     },
     {
@@ -836,10 +836,10 @@
       "mark": "Partial",
       "value": 1,
       "quote": "Protect and expand Victoria's tree canopy while improving access to parks and natural areas.",
-      "why": "M61 is 5,000 trees by 2030 and a published 35% canopy target by 2035. She commits to expansion with no target, no methodology, and no instrument. Nothing on mode share, ecosystems, or emergency preparedness.",
-      "url": "https://www.wendybowkett.ca/",
+      "why": "M61 is 5,000 trees by 2030 and a published 35% canopy target by 2035 on a repeatable methodology. She commits to expansion with no target, no methodology, and no instrument. Nothing on mode share, ecosystems, or emergency preparedness.",
+      "url": "https://www.wendybowkett.ca/priorities",
       "source": "wendybowkett.ca",
-      "lastmod": "n",
+      "lastmod": "2026-05-14",
       "retrieved": "2026-09-02"
     },
     {
@@ -868,10 +868,10 @@
       "mark": "Partial",
       "value": 1,
       "quote": "Make public engagement ongoing, transparent, and meaningful.",
-      "why": "M79 is a published response to every consultation within 60 days plus the draft back before adoption. She commits to the goal with no deadline, no reconciliation, and nothing on an Integrity Commissioner.",
-      "url": "https://www.wendybowkett.ca/",
+      "why": "M79 is a published response to every consultation within 60 days plus the draft and a what-we-heard reconciliation 30 days before adoption. She commits to the goal with no deadline, no reconciliation, and nothing on an Integrity Commissioner.",
+      "url": "https://www.wendybowkett.ca/priorities",
       "source": "wendybowkett.ca",
-      "lastmod": "n",
+      "lastmod": "2026-05-14",
       "retrieved": "2026-09-02"
     },
     {
@@ -901,9 +901,9 @@
       "value": 3,
       "quote": "Respect neighbourhood character by bringing back Local Area Plans.",
       "why": "M80c is titled \"Bring back Local Area Plans.\" Same instrument, named. No schedule of two plans a year, no parcel-level deliverable, no infrastructure-capacity link, nothing on language access.",
-      "url": "https://www.wendybowkett.ca/",
+      "url": "https://www.wendybowkett.ca/priorities",
       "source": "wendybowkett.ca",
-      "lastmod": "n",
+      "lastmod": "2026-05-14",
       "retrieved": "2026-09-02"
     },
     {

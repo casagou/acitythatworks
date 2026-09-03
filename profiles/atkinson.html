@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<!-- The candidate switch: one boolean in flags.js hides every candidate page
+     and every link to one. Loaded first and synchronously so a gated page
+     leaves before it paints. Root-absolute asset paths: this file lives in
+     /profiles/, not next to flags.js. -->
+<script src="/flags.js?v=2"></script>
+<meta name="description" content="Lyall Atkinson — Mayor candidate, Victoria 2026. No letter yet · 0 of 55 measures answered, and a letter needs five.">
+<meta name="theme-color" content="#1A3668">
+<title>Lyall Atkinson — Candidate Profile — A City That Works, Victoria 2026</title>
+<meta property="og:title" content="Lyall Atkinson — A City That Works">
+<meta property="og:description" content="Lyall Atkinson — Mayor candidate, Victoria 2026. No letter yet · 0 of 55 measures answered, and a letter needs five.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://acitythatworks.ca/profiles/atkinson">
+<meta property="og:site_name" content="A City That Works">
+<meta property="og:locale" content="en_CA">
+<meta property="og:image" content="https://acitythatworks.ca/og-card-scorecard.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Victoria 2026 Candidate Scorecard">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://acitythatworks.ca/og-card-scorecard.png">
+<link rel="canonical" href="https://acitythatworks.ca/profiles/atkinson">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Public+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css?v=20">
+<style>
+/* Field tints copied from the hub cards so transferred prose reads the same.
+   Not a site restyle — these rules already live on profiles.html. */
+.cs-lead{padding:11px 13px;background:rgba(26,54,104,.05);border-left:3px solid var(--gold);margin:12px 0 14px !important}
+.pf{padding-left:13px;border-left:3px solid rgba(26,54,104,.14)}
+.pfl{color:var(--navy)}
+.pf.tone-a{border-left-color:#227247}
+.pf.tone-b{border-left-color:#6FA07C}
+.pf.tone-c{border-left-color:#D9B45B}
+.pf.tone-f{border-left-color:#B5341F}
+.pf.tone-rec{border-left-color:var(--navy);background:rgba(26,54,104,.04);padding:11px 13px}
+.pf.tone-none{border-left-color:#c9c4bf;color:#57534e}
+.pf.tone-move{border-left-color:var(--gold);background:rgba(212,168,67,.09);padding:11px 13px}
+.g{display:inline-flex;align-items:center;justify-content:center;min-width:32px;padding:2px 6px;font-family:'Fraunces',serif;font-size:15px;font-weight:600;color:#fff;line-height:1.15}
+/* Namespaced. The bare letter classes collided with the site container
+   utility .c, which is margin:0 auto — so every C-band badge was being
+   pushed to the middle of its own row on six profile pages. */
+.g.g-a{background:#227247}.g.g-b{background:#3D6E4E}
+.g.g-c{background:#8B6914}.g.g-d{background:#B5651F}
+.g.g-f{background:#B5341F}.g.g-x{background:#8a8580}
+.cs-n{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;color:#6b6664;white-space:nowrap;margin-left:6px}
+.pfpage{font-size:14px;line-height:1.6;color:#33312e}
+.pfpage p{margin:10px 0;font-size:14px;line-height:1.6}
+.pfpage ul{margin:8px 0;padding-left:20px}
+.pfpage li{margin:5px 0;font-size:14px;line-height:1.55}
+.graderow{display:flex;align-items:center;gap:8px;margin-top:14px;flex-wrap:wrap}
+.gradelbl{font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:#6b6664}
+.gsum{margin:12px 0 0;max-width:62ch;font-size:14.5px;line-height:1.55;color:#33312e;
+  border-left:3px solid #1A3668;padding:2px 0 2px 13px}
+.gsum-m{display:block;margin-top:6px;font-family:'JetBrains Mono',monospace;font-size:10px;
+  letter-spacing:.06em;color:#6b6664;text-transform:uppercase}
+/* The name of an internal working document, printed without a link because
+   the link goes somewhere a reader cannot follow. Set apart so it reads as a
+   reference label rather than as prose that lost a word. */
+.src-int{font-family:'JetBrains Mono',monospace;font-size:.88em;color:#5a5652}
+
+.how,.doors,.ev{margin:28px 0}
+.how h2,.doors h2,.ev h2{font-family:'Fraunces',serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+.how-rules{margin:0 0 12px;padding-left:20px}
+.how-rules li{margin:6px 0;font-size:15px;line-height:1.5}
+.how-note{font-size:13.5px;color:#4a4643;background:rgba(26,54,104,.05);border-left:3px solid var(--gold);padding:10px 12px}
+.how-tap{font-size:14px;color:#4a4643}
+.legend-row{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 6px}
+.leg-rule{min-height:1.4em;font-size:14px;color:var(--navy);margin:4px 0 0}
+.mk{display:inline-flex;align-items:center;justify-content:center;min-height:44px;min-width:44px;padding:8px 12px;border:0;border-radius:4px;font-family:'Public Sans',sans-serif;font-size:13px;font-weight:600;line-height:1.1;color:#fff;cursor:pointer;text-align:center}
+.mk-a{background:#227247}.mk-b{background:#3D6E4E}
+.mk-pp{background:#6B7A2A}.mk-c{background:#8B6914}
+.mk-d{background:#B5651F}.mk-f{background:#B5341F}
+.mk-rec{background:var(--navy)}.mk-x{background:#8a8580;color:#fff}
+.mk:focus-visible,.leg:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.door-grid{display:grid;grid-template-columns:1fr;gap:10px}
+@media(min-width:720px){.door-grid{grid-template-columns:1fr 1fr}}
+.door{border:1px solid rgba(26,54,104,.14);border-left:4px solid var(--navy);padding:12px 14px;background:#fff;border-radius:2px}
+.door-said{border-left-color:#3D6E4E}.door-record{border-left-color:var(--navy)}
+.door-yes{border-left-color:var(--gold)}.door-dash{border-left-color:#c9c4bf}
+.door-k{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#6b6664}
+.door-st{font-weight:700;color:var(--navy);margin:2px 0 6px}
+.door p{margin:0 0 6px;font-size:13.5px;line-height:1.5}
+.door-src{font-size:13px}
+.ev-topic{border-bottom:1px solid rgba(26,54,104,.1);padding:4px 0}
+.ev-topic summary{display:flex;justify-content:space-between;align-items:center;gap:12px;min-height:48px;cursor:pointer;list-style:none;font-weight:600;color:var(--navy)}
+.ev-topic summary::-webkit-details-marker{display:none}
+.ev-tc{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;color:#6b6664;white-space:nowrap}
+.ev-list{list-style:none;margin:0 0 10px;padding:0}
+.ev-row{display:grid;grid-template-columns:auto minmax(4.5rem,auto) 1fr auto;gap:8px 10px;align-items:center;padding:6px 0;border-top:1px solid rgba(26,54,104,.06)}
+.ev-m{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--navy)}
+.ev-w{font-size:13.5px;color:#33312e}
+.ev-flag{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#8B6914}
+.cite-back{position:fixed;inset:0;background:rgba(22,51,92,.42);z-index:40}
+.cite{position:fixed;left:0;right:0;bottom:0;z-index:41;background:#FAF7F0;border-top:3px solid var(--gold);padding:18px 18px calc(18px + env(safe-area-inset-bottom));max-height:86vh;overflow:auto;box-shadow:0 -12px 40px rgba(22,51,92,.18)}
+@media(min-width:720px){
+  .cite{left:auto;right:18px;bottom:18px;width:min(440px,calc(100vw - 36px));max-height:80vh;border:1px solid rgba(26,54,104,.14);border-top:3px solid var(--gold);border-radius:6px}
+}
+.cite-x{min-height:44px;min-width:72px;padding:8px 14px;border:1px solid var(--navy);background:#fff;color:var(--navy);font-weight:600;cursor:pointer;float:right}
+.cite-kicker{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#6b6664;margin:8px 0 0}
+.cite-title{font-family:'Fraunces',serif;font-size:26px;color:var(--navy);margin:4px 0 6px}
+.cite-rule,.cite-measure,.cite-why,.cite-src,.cite-dates,.cite-fix{font-size:14px;line-height:1.5;margin:8px 0}
+.cite-q{margin:12px 0;padding:10px 12px;border-left:3px solid var(--gold);background:#fff;font-size:15.5px;line-height:1.55;color:#1a1a18}
+.cite-flag{font-size:13px;color:#8B6914}
+.vintage{margin:32px 0 12px;border-top:1px solid rgba(26,54,104,.12);padding-top:12px}
+.vintage summary{min-height:44px;cursor:pointer;font-weight:600;color:var(--navy)}
+@media(max-width:719px){
+  .ev-row{grid-template-columns:auto 1fr;grid-template-areas:"mk m" "mk w" "mk f"}
+  .ev-row .mk{grid-area:mk}
+  .ev-m{grid-area:m}
+  .ev-w{grid-area:w}
+  .ev-flag{grid-area:f}
+}
+
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+
+<header>
+<div class="c hr">
+<a href="/" class="brand"><svg class="bicn" viewBox="0 0 240 240" aria-hidden="true"><circle cx="120" cy="120" r="112" fill="#FAF7F0"/><g fill="none" stroke="#16335c" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"><path d="M52 92  q22.5 -14 45 0 t45 0 t45 0"/><path d="M52 120 q22.5 -14 45 0 t45 0 t45 0" opacity="0.88"/><path d="M52 148 q22.5 -14 45 0 t45 0 t45 0" opacity="0.76"/></g></svg><span class="nm">A City That Works</span></a>
+<nav class="nv">
+<a href="/summary">Summary</a>
+<a href="/measures">Measures</a>
+<a href="/neighbourhoods">Neighbourhoods</a>
+<a href="/scorecard" data-cand class="nv-sc">Candidates</a>
+<a href="/faq">FAQ</a>
+</nav>
+<button id="mt" class="mb" aria-label="Open menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+</div>
+<div id="mn" class="mm">
+<div class="c mmi">
+<a href="/">Home</a>
+<a href="/summary">Summary</a>
+<a href="/measures">Measures</a>
+<a href="/neighbourhoods">Neighbourhoods</a>
+<a href="/scorecard" data-cand>Candidates</a>
+<a href="/faq">FAQ</a>
+</div>
+</div>
+</header>
+
+<main id="main">
+<div class="cn">
+<nav class="crumbs" aria-label="Breadcrumb">
+<a href="/">Framework</a><span class="sep">/</span><a href="/profiles">Candidate Profiles</a><span class="sep">/</span><span class="here">Lyall Atkinson</span>
+</nav>
+<div class="hero pg-door">
+<div class="eyb">Profile</div>
+<h1 class="ph1">Lyall Atkinson</h1>
+<p class="lead" style="margin-top:18px">Mayor candidate · Victoria 2026</p>
+<div class="graderow"><span class="gradelbl">Grade</span><span class="g g-x">—</span><span class="cs-n">0 of 55 answered</span></div>
+
+</div>
+<div class="parked-open">
+<div class="prose pfpage">
+<p class="pf "><strong class="pfl">Campaign.</strong> No personal campaign site located.</p>
+
+<section class="how unscored" id="how">
+<h2>Why there is no grade here</h2>
+<p>Nomination accepted by the City on 2 Sep 2026 — one of only two accepted mayoral nominations. No 2026 campaign website, platform, social account or coverage has been located, so there is nothing published to score against the framework.</p>
+<p>He is not a column on the scorecard for the same reason. His 2022 material is on this page as vintage evidence and must not be read as a 2026 position.</p>
+<p class="how-tap"><strong>A dash is unknown, not a fail.</strong> It is not a judgement about the candidate and it is not opposition. If a 2026 platform, campaign site or substantive interview appears, this page becomes scorable and the framework will score it on the same 55 measures as everyone else.</p>
+<p class="how-tap">Spotted something we have missed? <a href="mailto:info@acitythatworks.ca">info@acitythatworks.ca</a> — corrections are free and dated.</p>
+</section>
+<section class="vintage-open"><h2>What is on the record</h2><p class="pf "><strong class="pfl">Evidence vintage (summary).</strong> Verified 2 Sep 2026 against the City of Victoria's live nominations-received list, the official 2022 Declaration of Official Election Results, and 2022 candidate material. <strong>No 2026 campaign website, platform document, campaign social account, endorsement or news coverage was located.</strong> Everything substantive below is <strong>2022 vintage</strong> and must not be published or quoted as a current 2026 position.</p><p class="pf "><strong class="pfl">Web, campaign &amp; socials (checked 2 Sep 2026).</strong> No campaign website located · no verified campaign social account located · <a href="https://www.victoria.ca/city-government/elections" target="_blank" rel="noopener">City nominations-received list</a> · <a href="https://votemate.org/local2022/candidates/7606" target="_blank" rel="noopener">2022 VoteMate profile</a> · <a href="https://www.timescolonist.com/2022-civic-election/lyall-atkinson-victoria-mayor-candidate-2022-5898781" target="_blank" rel="noopener">2022 Times Colonist candidate questionnaire</a> · <a href="https://ca.linkedin.com/in/lyall-atkinson-14465a44" target="_blank" rel="noopener">business LinkedIn</a></p><p class="pf "><strong class="pfl">Profile.</strong> Lyall Atkinson is a Victoria-born small-business owner and second-time mayoral candidate. His 2022 candidate material states he was born in 1963 at Victoria General Hospital into a large pioneer family, worked in the health and food industries, and then founded <strong>Your Friend with a Truck Ltd.</strong>, a moving and hauling business he has operated for roughly two decades. He is married, lives in Victoria, volunteers in the community and builds classic and hot-rod cars. He has <strong>no elected municipal record</strong>, so there is no accountability block for him.</p><p class="pf "><strong class="pfl">Nomination status — why this profile exists.</strong> As of 2 Sep 2026 the City's elections page lists exactly <strong>two accepted mayoral nominations: ALTO, Marianne and ATKINSON, Lyall</strong> (plus GARDINER, Marg for Council). On the City's own record Atkinson is therefore a <strong>filed</strong> mayoral candidate, while Harris and McGuigan have announced publicly but neither appeared on the accepted-nominations list at the 2 Sep 2026 check. Nominations close <strong>11 Sep 2026 at 4 PM</strong>; the official Declaration of Candidates follows shortly after. Treat the accepted-nomination fact as hard, and re-verify the full field on 11 Sep.</p><p class="pf "><strong class="pfl">Electoral history.</strong> Ran for Mayor of Victoria as an independent in 2022, finishing <strong>fifth of eight with 175 votes — 0.6% of the 27,182 votes cast for mayor</strong> (Alto 15,090; Andrew 9,775; Marshall 1,513; Fuentes 206; Atkinson 175). No other campaigns located. A filed nomination is not a competitive campaign, and the 2022 result is the only performance evidence on file.</p><p class="pf "><strong class="pfl">2022 positions — vintage, not current, not scored.</strong> Recorded verbatim in substance from his 2022 candidate material so the file is complete. Do not treat any of it as a 2026 commitment:</p><ul><li><strong>Core functions.</strong> Council should concentrate on local issues; his 2022 material argued that "drug addiction and homeless are a blight on the city, it is not the sole responsibility of local government to solve these societal issues."</li><li><strong>Public safety.</strong> Reduce crime; let the police chief and bylaw officers do their jobs without political interference (framed in 2022 against the then-mayor).</li><li><strong>Homelessness.</strong> Enforce park camping restrictions on a 7 PM–7 AM basis, close provincially-owned hotels used for sheltering, relocate unhoused people to their city or province of origin, and convert one hotel into a locked recovery facility.</li><li><strong>Downtown and economy.</strong> Revitalize the core by making it more business-friendly, growing tourism and restoring hotel capacity to pre-crisis levels.</li><li><strong>Taxes and spending.</strong> Opposed specific council spending decisions, including Indigenous-fund taxation and grants to board members he characterized as improper.</li></ul><p class="pf "><strong class="pfl">No letter grades.</strong> Consistent with the page rule that a dash is unknown rather than a fail, <strong>no ACTW measure is marked for Atkinson.</strong> (McGuigan was treated the same way on first entry; he now has a filled 12-topic card at 15/55, and his live letter is still —.) The 2022 positions are four years old, were never costed, and predate the current budget, policing and housing baselines this framework scores against. Scoring them would misrepresent both the candidate and the method. The relocation-of-unhoused-persons position in particular raises Charter and inter-jurisdictional questions that a 2026 campaign would have to restate before it could be assessed.</p><p class="pf tone-none"><strong class="pfl">⚪ Still.</strong> Everything. No 2026 fiscal baseline, tax path, debt rule, permit standard, housing target, tenant position, police or bylaw staffing plan, homelessness pathway, transit or active-transport commitment, climate or seismic position, reconciliation position, CRD position, accessibility commitment, amalgamation position, governance or reporting mechanism, or implementation cost and funding source has been published.</p><p class="pf tone-move"><strong class="pfl">What would move it.</strong> An authorized 2026 campaign presence of any kind — website, social account, printed platform or a single substantive interview — would convert this from a nomination record into a scorable candidacy. Until then the honest public presentation is: <strong>filed, ungraded, no published 2026 platform located.</strong></p><p class="pf "><strong class="pfl">Verification tasks before publish.</strong> </p><ul><li>Confirm the nomination on the official <strong>Declaration of Candidates</strong> after 11 Sep and capture the PDF.</li><li>Re-run a campaign-presence sweep (site, Facebook, Instagram, X) the week of 14 Sep, once the formal campaign period opens on 19 Sep.</li><li>Check whether the business identity <strong>Your Friend with a Truck</strong> is being used as a campaign channel; if so, log it as campaign-linked rather than personal.</li></ul><p class="pf "><strong class="pfl">Updates / notes.</strong> </p><ul><li>2026-09-02 — Profile created. Trigger: the City's nominations-received list showed an accepted mayoral nomination for ATKINSON, Lyall, contradicting this page's earlier "Atkinson off" roster line, which has been corrected. 2022 biography, platform and official result added as vintage evidence. No 2026 campaign material located; entered ungraded.</li></ul></section>
+<p style="margin-top:28px"><a href="/profiles" class="pgback">← All candidate profiles</a> · <a href="/scorecard#roster">Why this name is not on the scorecard</a></p>
+</div>
+</div>
+</div>
+</main>
+
+<div id="footer-mount"></div>
+
+<script src="/icons.js?v=2"></script>
+<script src="/site.js?v=14"></script>
+<script src="/civic.js?v=3"></script>
+<script src="/evidence.js?v=1"></script>
+</body>
+</html>
