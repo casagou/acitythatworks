@@ -90,6 +90,7 @@
       (cand ? '<div class="grp">Candidates</div>' + cand : '') +
       '<div class="grp">More</div>' +
       '<a href="/faq">FAQ</a>' +
+      '<a href="/questionnaire">Candidate Questionnaire</a>' +
       audienceLinks() +
       evidenceLink();
   }
@@ -134,6 +135,7 @@
 '<a href="/savings">Savings &amp; Revenue Analysis</a>' +
 '<a href="/city-hall">How City Hall Works</a>' +
 '<a href="/endorse">Candidate Endorsement Pack</a>' +
+'<a href="/questionnaire">Candidate Questionnaire</a>' +
 candLinks() +
 evidenceLink() +
 '<a href="/faq">Frequently Asked Questions</a>' +
