@@ -60,7 +60,7 @@ const rows = cands.map((c) => {
   const standing = c.kind === "inc" ? "Incumbent" : "New";
   const letter = c.grade
     ? '<span class="g ' + gradeCls(c.grade) + '">' + esc(c.grade) + "</span>"
-    : '<span class="g x" title="No letter yet — a letter needs five answered measures and is applied by hand">—</span>';
+    : '<span class="g x" title="No letter yet — a letter is applied from the published rules once five measures are answered">—</span>';
   /* Seat, standing and lean ride under the name rather than holding three
      columns of their own. They were costing 169px of a 343px phone, which
      is what pushed the letter — the one number a reader came for — off the
@@ -163,7 +163,7 @@ ${rows}
 </div>
 <p class="gl-key"><span class="gl-spark gl-key-s" aria-hidden="true"><i class="gl-sq gl-sq0"></i><i class="gl-sq gl-sq1"></i><i class="gl-sq gl-sq2"></i><i class="gl-sq gl-sq3"></i></span> The twelve squares under a name are the twelve topics, in the order of the list above, filled by how much of each carries a sourced answer — nothing, a little, some, most. A topic never gets a letter or an average. Select a name for the topic behind every square, the five questions, and the sources.</p>
 <div id="hub-compare"></div>
-<p class="gl-foot">The letter is applied by hand from the published rules, only once five measures are answered, and it is never computed on this page. <a href="#areas">See every candidate against all twelve topics</a>.</p>
+<p class="gl-foot">A letter is applied from the published rules once five measures are answered, and is never an average: an unweighted mean lets a thin card with one strong mark outrank a wide card with an honest spread, which is why the number of answered measures is printed beside every letter. <a href="#areas">See every candidate against all twelve topics</a>.</p>
 </section>
 <!-- GLANCE:END -->`;
 

@@ -395,7 +395,7 @@ ${stepNav(c)}
 ${cardJson}
 <script src="/icons.js?v=2"></script>
 <script src="/site.js?v=16"></script>
-<script src="/civic.js?v=5"></script>
+<script src="/civic.js?v=6"></script>
 <script src="/evidence.js?v=2"></script>
 </body>
 </html>
