@@ -12,14 +12,23 @@
       "name": "Lyall Atkinson",
       "slug": "atkinson",
       "office": "Mayor",
-      "status": "Nomination accepted by the City, 2 Sep 2026",
-      "why": "One of only two accepted mayoral nominations. No 2026 campaign website, platform, social account or coverage located, so there is nothing published to score.",
+      "status": "Nomination accepted by the City (elections page opened 3 Sep 2026)",
+      "why": "City elections page (opened 3 Sep) lists ATKINSON, Lyall among accepted mayor nominations, with ALTO, Marianne and JOHNSTON, David. A 3 Sep Times Colonist interview is on the record. No 2026 campaign website or detailed written program has been located, so there is not yet a scored column.",
       "profile": true
+    },
+    {
+      "name": "David Johnston",
+      "slug": "johnston",
+      "office": "Mayor",
+      "status": "Nomination accepted by the City (elections page opened 3 Sep 2026)",
+      "why": "City elections page (opened 3 Sep) lists JOHNSTON, David among accepted mayor nominations. He is absent from the 3 Sep Times Colonist field interview. No sourced 2026 campaign website, platform, or interview sentences have been located. Accepted nomination; nothing scored until sourced 2026 sentences exist. This site does not invent a bio, platform, grade, or campaign site.",
+      "profile": false
     }
   ],
   "out": [
     { "name": "Chris Coleman", "office": "Council", "status": "Candidacy unconfirmed", "why": "Sitting councillor. His own stated decision window closed with no announcement, and no 2026 campaign or nomination was located. The site carries no profile for him.", "profile": false },
-    { "name": "Owen Haley", "office": "Council", "status": "Candidacy unconfirmed", "why": "Named only on a third-party candidate list. No declaration, campaign site, platform or social account located, so candidacy itself is unconfirmed.", "profile": false },
+    { "name": "Peter Rose Gillis", "office": "Council", "status": "Times Colonist reported indication · expression of intent only", "why": "The Times Colonist (Andrew A. Duffy, 3 Sep 2026) named Peter Rose Gillis among people who had indicated they are running for council, as of 2 Sep. City elections page (opened 3 Sep) lists accepted councillor nominations as Bowkett, Garcia, Gardiner and Hammond only. Gillis is not on that list. This is a newspaper-reported indication, not an official filing. Expression of intent only, until the City list or the 11 Sep Declaration. This site already carries a separate profile for Peter Rose Gibbs of Victoria For All; the two names are not treated as the same person here.", "profile": false },
+    { "name": "Owen Haley", "office": "Council", "status": "Times Colonist reported indication · expression of intent only", "why": "The Times Colonist (Andrew A. Duffy, 3 Sep 2026) named Owen Haley among people who had indicated they are running for council, as of 2 Sep. City elections page (opened 3 Sep) lists accepted councillor nominations as Bowkett, Garcia, Gardiner and Hammond only. Haley is not on that list. This is a newspaper-reported indication, not an official filing — not merely a third-party candidate-list appearance. Expression of intent only, until the City list or the 11 Sep Declaration.", "profile": false },
     { "name": "Del Manak", "office": "Mayor", "status": "Confirmed not running", "why": "Confirmed not running, 15 April 2026.", "profile": false },
     { "name": "Stephen Andrew", "office": "Council", "status": "No 2026 campaign located", "why": "No 2026 campaign or signal located.", "profile": false }
   ],

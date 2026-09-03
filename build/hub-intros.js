@@ -92,38 +92,60 @@ function links(m) {
 function card(c) {
   const m = meta.get(c.slug);
   const paras = c.bio.map((p) => "<p>" + p + "</p>").join("");
+  /* A City-accepted name with no sourced 2026 sentences gets a field-status
+     card, not an invented profile. The roster is the record. */
+  const door = c.fieldStatusOnly
+    ? '<p class="pf"><a href="/scorecard#roster">Field status on the roster →</a></p>'
+    : '<p class="pf"><a href="/profiles/' + c.slug + '">Full profile →</a></p>';
   return '<article class="cand" id="' + c.id + '" data-jump-label="' + c.name + '">' +
     '<div class="cand-top"><span class="cs-t"><strong>' + c.name + "</strong> — " + c.role +
     '</span><span class="cs-g">' + badge(c.letter, c.n) + "</span></div>" +
     identity(m) +
-    '<div class="cand-intro">' + paras + links(m) +
-    '<p class="pf"><a href="/profiles/' + c.slug + '">Full profile →</a></p>' +
+    '<div class="cand-intro">' + paras + links(m) + door +
     "</div></article>";
 }
 
 const MAYOR = [
   {
     slug: "alto", id: "cand-marianne-alto", name: "Marianne Alto",
-    role: "Mayor, declared May 20 2026",
+    role: "Mayor, declared May 20 2026 · nomination accepted",
     bio: [
       "Marianne Alto is Victoria’s incumbent mayor, seeking a second term. A facilitator with degrees in law and science, she owns Azimuth Research &amp; Consulting and lives in Burnside Gorge. First elected to council in 2010, she served twelve years as a councillor before winning the mayoralty in 2022.",
-      "She launched her 2026 campaign on 20 May under “Experience that delivers,” naming more homes, community safety, and community wellbeing. The campaign site still serves the 2022 platform; no detailed 2026 programme was located as of 1 September."
+      "She launched her 2026 campaign on 20 May under “Experience that delivers,” naming more homes, community safety, and community wellbeing. The campaign site still serves the 2022 platform; no detailed 2026 programme was located as of 1 September. In a 3 Sep 2026 <a href=\"https://www.timescolonist.com/local-news/three-candidates-take-on-alto-for-victorias-mayor-chair-12735274\" target=\"_blank\" rel=\"noopener\">Times Colonist interview</a> (Andrew A. Duffy), she said that if voters grant a second term her priorities will be housing affordability and protecting renters, and investing in wellbeing while “responsibly managing the city’s budget with an understanding of residents’ ability to pay.” She described herself as the candidate “with experience and a record of results.” Evidence note, 3 Sep 2026: that TC report attributed to her 93 new shelter spaces; <a href=\"https://victoriabuzz.com/2026/05/victoria-mayor-marianne-alto-launches-re-election-campaign/\" target=\"_blank\" rel=\"noopener\">Victoria Buzz (20 May 2026)</a> attributed 97 new living spaces. Those are different labels, each held as attributed. This site does not infer a 4-space difference, does not sum City bullets, and does not print 93 or 97 as its own fact."
+    ]
+  },
+  {
+    slug: "atkinson", id: "cand-lyall-atkinson", name: "Lyall Atkinson",
+    role: "Mayor, nomination accepted",
+    unscored: true,
+    bio: [
+      "Lyall Atkinson is a Victoria-born small-business owner and second-time mayoral candidate. The Times Colonist (Andrew A. Duffy, 3 Sep 2026) says he founded the hauling company Your Friend with a Truck in 2003; he ran for mayor in 2022.",
+      "On 3 Sep 2026 the <a href=\"https://www.timescolonist.com/local-news/three-candidates-take-on-alto-for-victorias-mayor-chair-12735274\" target=\"_blank\" rel=\"noopener\">Times Colonist</a> reported Lyall Atkinson is in the mayoral race. <a href=\"https://www.victoria.ca/city-government/elections\" target=\"_blank\" rel=\"noopener\">City elections page</a> (opened 3 Sep) lists ATKINSON, Lyall among accepted mayor nominations. In that TC report he said the CSWB plan “does not seem to have worked” despite a two-year budget of $17 million — that $17M is Atkinson/TC, not a City total. He said bring all parties together for a new addiction/mental-health plan and was quoted: “I’m willing to work with all parties to get this problem solved.” Separately City primary: Council approved $10.35M for initial CSWB actions (<a href=\"https://www.victoria.ca/media/file/city-acts-community-safety\" target=\"_blank\" rel=\"noopener\">City news 2 Jul 2025</a>); same release: ~$13.612M needed for the listed actions; $10.35M “do not total to the amount needed overall.” Those City figures ≠ each other ≠ $17M. CHEK (20 Aug 2026) already quoted him, so the 3 Sep TC piece is not described here as a first 2026 interview. No 2026 campaign website or detailed written program has been located, and he is not a scored column."
+    ]
+  },
+  {
+    slug: "johnston", id: "cand-david-johnston", name: "David Johnston",
+    role: "Mayor, nomination accepted",
+    unscored: true,
+    fieldStatusOnly: true,
+    bio: [
+      "City elections page (opened 3 Sep 2026) lists JOHNSTON, David among accepted mayor nominations. He is not named in the 3 Sep Times Colonist field interview. No sourced 2026 campaign website, platform, or interview sentences have been located. Accepted nomination; nothing scored until sourced 2026 sentences exist. This site does not invent a bio, platform, grade, or campaign site."
     ]
   },
   {
     slug: "harris", id: "cand-mike-harris", name: "Mike Harris",
-    role: "Mayor",
+    role: "Mayor, announced · expression of intent — not on the City’s accepted-mayor list (opened 3 Sep)",
     bio: [
       "Mike Harris is a Vancouver Island businessman, housing and real-estate professional, and former journeyman carpenter. His mayoral campaign describes more than thirty years in real estate, housing, construction and business; Harris Auto Group lists him as an owner.",
-      "mike4victoria.ca organizes the campaign around six priorities: safe streets, respect for taxpayers, housing that works, downtown, a review at City Hall, and conversations in twelve neighbourhoods. The site does not yet publish numerical targets or costings."
+      "mike4victoria.ca organizes the campaign around six priorities: safe streets, respect for taxpayers, housing that works, downtown, a review at City Hall, and conversations in twelve neighbourhoods. The site does not yet publish numerical targets or costings. In the 3 Sep 2026 <a href=\"https://www.timescolonist.com/local-news/three-candidates-take-on-alto-for-victorias-mayor-chair-12735274\" target=\"_blank\" rel=\"noopener\">Times Colonist interview</a> (Andrew A. Duffy), Harris said the city is ready for a fresh start, citing fiscal responsibility, safer streets and stronger communities, along with greater transparency at City Hall. He said: “People should be able to understand where their money is going, why decisions are being made and what results City Hall is achieving,” and: “I’ve spent my career in business, where you have to listen to people, manage resources responsibly and ultimately be accountable for results. I think we need more of that approach at City Hall.” He has announced. That is expression of intent until the City list or the 11 Sep Declaration."
     ]
   },
   {
     slug: "mcguigan", id: "cand-bruce-mcguigan", name: "Bruce McGuigan",
-    role: "Mayor",
+    role: "Mayor, announced · expression of intent — not on the City’s accepted-mayor list (opened 3 Sep)",
     bio: [
       "Bruce McGuigan is a sociologist, former Vancouver Island University professor, and former executive director of Family Services of Greater Victoria. He lives in Fernwood and is making a second run for mayor after placing fourth in 2018.",
-      "bruceformayor.ca publishes ten priority areas — among them homelessness, housing, safe streets, local business, climate preparedness, and a citizens-first City Hall — plus three governing principles: listen carefully, manage competently, and use public resources responsibly. Numerical targets and costings were not located."
+      "bruceformayor.ca publishes ten priority areas — among them homelessness, housing, safe streets, local business, climate preparedness, and a citizens-first City Hall — plus three governing principles: listen carefully, manage competently, and use public resources responsibly. Numerical targets and costings were not located. In the 3 Sep 2026 <a href=\"https://www.timescolonist.com/local-news/three-candidates-take-on-alto-for-victorias-mayor-chair-12735274\" target=\"_blank\" rel=\"noopener\">Times Colonist interview</a> (Andrew A. Duffy), McGuigan said his biggest concern is that City Hall is “opaque,” which he blamed in part on Alto. He said budget propositions in detail had stopped and citizen communication portals had been shut down, and that he plans to emphasize “citizen-involved, competent administration.” Duffy reports he called council’s approach to homelessness and street disorder “chaotic and unsuccessful.” He has announced. That is expression of intent until the City list or the 11 Sep Declaration."
     ]
   }
 ];
@@ -171,7 +193,7 @@ const SITTING = [
   },
   {
     slug: "hammond", id: "cand-stephen-hammond", name: "Stephen Hammond",
-    role: "Councillor, declared July 6 2026",
+    role: "Councillor, declared July 6 2026 · nomination accepted",
     bio: [
       "Stephen Hammond is a first-term councillor, a lawyer by training, and an author on workplace human rights. He has lived in Victoria since 2005 and has served on the boards of Our Place Society, Gorge View Society and the Tenant Resource and Advisory Centre.",
       "votestephenhammond.ca organizes a 2026 programme around three commitments: a safer city, taxes people can afford, and housing that works for Victoria, including a spending review, neighbourhood input on densification, and stronger compensation when redevelopment displaces long-term tenants."
@@ -179,7 +201,7 @@ const SITTING = [
   },
   {
     slug: "gardiner", id: "cand-marg-gardiner", name: "Marg Gardiner",
-    role: "Councillor, declared January 2026",
+    role: "Councillor, declared January 2026 · nomination accepted",
     bio: [
       "Marg Gardiner is a first-term councillor with a chemistry degree and an MBA in public management. She served sixteen years on the James Bay Neighbourhood Association board before election.",
       "marggardiner.ca organizes the 2026 campaign around safe streets, liveable neighbourhoods, respect for the taxpayer and transparent governance. The site includes a zero-based-budget commitment and a published voting-record page."
@@ -206,7 +228,7 @@ const CHALLENGERS = [
   },
   {
     slug: "bowkett", id: "cand-wendy-bowkett", name: "Wendy Bowkett",
-    role: "Council candidate, declared approximately May 15 2026",
+    role: "Council candidate, declared approximately May 15 2026 · nomination accepted",
     bio: [
       "Wendy Bowkett is a business strategist with an MBA who lived downtown for more than twenty years and served over a decade on the Victoria Downtown Residents’ Association board. She also serves on the board of The Soup Kitchen.",
       "wendybowkett.ca publishes three pillars: restore public trust; improve public safety, including support for non-police crisis teams; and make Victoria more liveable and affordable, including faster approvals for non-market and co-operative housing."
@@ -238,7 +260,7 @@ const CHALLENGERS = [
   },
   {
     slug: "garcia", id: "cand-jerry-garcia", name: "Jerry Garcia",
-    role: "Council candidate",
+    role: "Council candidate · nomination accepted",
     bio: [
       "Jerry Garcia is a retired professional engineer and executive who has lived downtown with his spouse for eight years.",
       "jerryforvictoria.ca names five aims: grow the economy; restore safe public spaces; end chronic homelessness through housing, treatment and recovery; build complete neighbourhoods; and deliver faster, more transparent government. The site also commits to cutting permit times and publishing performance dashboards."
@@ -281,6 +303,13 @@ const LIVE = MAYOR.concat(SITTING, CHALLENGERS);
    data/applied-letters.json, the same file the roster block below them reads,
    so the hub cannot drift from the scorecard again. */
 for (const c of LIVE) {
+  if (c.unscored) {
+    /* Filed, not a scorecard column. Letter and n stay dashes so the hub
+       cannot invent a grade the applied table does not carry. */
+    c.letter = "—";
+    c.n = 0;
+    continue;
+  }
   const canon = CANON[c.slug];
   if (!canon) {
     console.error("no applied letter for " + c.slug + " — is the name spelled the same in data/applied-letters.json?");
@@ -306,8 +335,10 @@ function group(id, title, jump, note, members) {
     members.map(card).join("\n");
 }
 
+const PROFILED = LIVE.filter((c) => !c.fieldStatusOnly);
 const chips = LIVE.map((c) =>
-  '<a class="cchip" href="/profiles/' + c.slug + '">' + c.name.split(" ").slice(-1)[0] + "</a>"
+  '<a class="cchip" href="' + (c.fieldStatusOnly ? "/scorecard#roster" : "/profiles/" + c.slug) + '">' +
+  c.name.split(" ").slice(-1)[0] + "</a>"
 ).join("\n");
 
 const section =
@@ -331,7 +362,7 @@ const section =
 </div>
 </details>
 </div>
-<p class="hub-note pr-who">Twenty-one people have a profile here. Who is on the scorecard, who has filed but published nothing to score, and who is not on the site at all — with the reason beside every name — is kept in one place: <a href="/scorecard#roster">who is on the scorecard, and who is not</a>.</p>
+<p class="hub-note pr-who">Twenty-one people have a profile here. Johnston is a City-accepted mayor (elections page opened 3 Sep) with no sourced 2026 sentences, so he is named on the field-status roster rather than given an invented profile. Who is on the scorecard, who has filed but published nothing to score, and who is not on the site at all — with the reason beside every name — is kept in one place: <a href="/scorecard#roster">who is on the scorecard, and who is not</a>.</p>
 <div class="cand-bar" id="candidate-index">
 <div class="cand-lbl" id="cand-idx-lbl">Jump to a candidate</div>
 <div class="cand-idx" role="group" aria-labelledby="cand-idx-lbl">
@@ -339,9 +370,9 @@ ${chips}
 </div>
 
 </div>
-${group("grp-mayor", "Mayor", "Mayor", "Three declared mayoral candidates.", MAYOR)}
-${group("grp-councillors", "Sitting councillors", "Sitting councillors", "Four years of recorded votes, which is why their evidence base is the widest in the field — and why a re-score in September will narrow the gap rather than widen it.", SITTING)}
-${group("grp-challengers", "Declared challengers", "Declared challengers", "Scored from published material only. Most publish platform detail in September, so these grades are the ones most likely to move.", CHALLENGERS)}
+${group("grp-mayor", "Mayor", "Mayor", "An accepted City nomination is not the same as a public announcement. Do not treat the Times Colonist “three candidates” frame as the City list. City elections page (opened 3 Sep 2026) lists accepted mayor nominations as ALTO, Marianne; ATKINSON, Lyall; and JOHNSTON, David. Harris and McGuigan have announced and were quoted in the 3 Sep Times Colonist field interview; neither is on that accepted-mayor list. Treat their City status as expression of intent until the City list or the 11 Sep Declaration. Johnston is City-accepted and absent from that TC report.", MAYOR)}
+${group("grp-councillors", "Sitting councillors", "Sitting councillors", "Four years of recorded votes, which is why their evidence base is the widest in the field — and why a re-score in September will narrow the gap rather than widen it. City elections page (opened 3 Sep): among sitting members, only Gardiner and Hammond appear on the accepted councillor list.", SITTING)}
+${group("grp-challengers", "Declared challengers", "Declared challengers", "Scored from published material only. Most publish platform detail in September, so these grades are the ones most likely to move. City elections page (opened 3 Sep): accepted councillor nominations are Bowkett, Garcia, Gardiner and Hammond only. A newspaper-reported indication is not an official filing.", CHALLENGERS)}
 <h3 class="cand-grp" id="context-entries" data-jump-label="Context entries">Context entries — not candidates<span class="cand-n">3</span></h3>
 <p class="grp-note">Retained because each explains something about the shape of the field. Not live 2026 candidates, and not given invented biographies.</p>
 <details class="cand-ctx" id="cand-chris-coleman" data-jump-label="Chris Coleman"><summary><span class="cs-t"><strong>Chris Coleman</strong> — not a live 2026 candidate</span></summary><div class="body"><p class="pf">Not a live 2026 candidate. His stated decision window closed with no announcement. First elected 1986.</p></div></details>
@@ -365,5 +396,5 @@ if (start === -1 || end === -1 || end < start) {
 html = html.slice(0, start + OPEN.length) + "\n" + section + html.slice(end);
 fs.writeFileSync(file, html, "utf8");
 
-console.log("wrote hub cards:", LIVE.length, "live-door + 3 context");
+console.log("wrote hub cards:", PROFILED.length, "profiles +", LIVE.length - PROFILED.length, "field-status + 3 context");
 console.log("slugs:", LIVE.map((c) => c.slug).join(" "));
