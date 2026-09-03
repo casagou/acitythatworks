@@ -157,6 +157,12 @@ function init(){
 
   /* Expand / collapse every profile at once. Reading eighteen cards one click
      at a time — or printing the section — needs the bulk control. */
+  /* Expand all / Collapse all. No page ships collapsible candidate cards any
+     more — the profiles hub renders each one as an always-open <article>, and
+     says so in its own callout — so the buttons were removed there rather than
+     left to toggle three context entries at the foot of the page while the
+     reader watched twenty cards not move. This still works for any
+     details.cand that returns. */
   [].forEach.call(document.querySelectorAll('[data-cand-all]'),function(b){
     b.addEventListener('click',function(){
       var open=b.getAttribute('data-cand-all')==='open';

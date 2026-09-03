@@ -369,7 +369,7 @@ function genTd(key) {
   const base = ' data-col="general" data-n="' + a.n + '" data-total="55" data-rank="' + (RANK[a.letter] || 0) + '"';
   if (!a.letter) {
     return '<td class="cc none"' + base + ' title="' + esc(a.name) +
-      " — no letter yet. A letter is ruled by hand and needs five answered measures; " +
+      " — no letter yet. A letter is ruled from the published rules and needs five answered measures; " +
       a.n + " of 55 answered" + mean + '.">' +
       '<span class="gdash">—</span><span class="cn">' + a.n + "/55</span></td>";
   }

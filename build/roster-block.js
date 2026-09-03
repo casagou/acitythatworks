@@ -39,7 +39,7 @@ function onPageFor(SC) {
   return '<div class="rb-grp">' +
     '<h3 class="rb-h">On the scorecard · ' + scored + " names</h3>" +
     '<p class="rb-x">Every candidate with a live door. <strong>' + lettered + "</strong> carry a letter; <strong>" +
-    (scored - lettered) + "</strong> do not yet — a letter needs five answered measures and is ruled by hand. <strong>" +
+    (scored - lettered) + "</strong> do not yet — a letter needs five answered measures and is ruled, not computed. <strong>" +
     answered + "</strong> have at least one measure answered. The figure after a name is its letter, or how many measures are answered.</p>" +
     '<div class="rb-chips">' + chips + "</div></div>";
 }

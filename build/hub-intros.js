@@ -337,7 +337,7 @@ const section =
 <div class="cand-idx" role="group" aria-labelledby="cand-idx-lbl">
 ${chips}
 </div>
-<div class="cand-acts"><button type="button" class="cbtn" data-cand-all="open">Expand all</button><button type="button" class="cbtn" data-cand-all="close">Collapse all</button></div>
+
 </div>
 ${group("grp-mayor", "Mayor", "Mayor", "Three declared mayoral candidates.", MAYOR)}
 ${group("grp-councillors", "Sitting councillors", "Sitting councillors", "Four years of recorded votes, which is why their evidence base is the widest in the field — and why a re-score in September will narrow the gap rather than widen it.", SITTING)}
@@ -348,7 +348,7 @@ ${group("grp-challengers", "Declared challengers", "Declared challengers", "Scor
 <details class="cand-ctx" id="cand-del-manak" data-jump-label="Del Manak"><summary><span class="cs-t"><strong>Del Manak</strong> — NOT running, confirmed April 15 2026</span></summary><div class="body"><p class="pf">Not running — confirmed 15 April 2026. Retired VicPD Chief. Not a live 2026 candidate.</p></div></details>
 <details class="cand-ctx" id="cand-stephen-andrew" data-jump-label="Stephen Andrew"><summary><span class="cs-t"><strong>Stephen Andrew</strong> — no 2026 signal</span></summary><div class="body"><p class="pf">No public 2026 municipal signal located as of 31 July 2026. Not a live 2026 candidate.</p></div></details>
 <div class="cand-bar cand-bar-end">
-<div class="cand-acts"><button type="button" class="cbtn" data-cand-all="open">Expand all</button><button type="button" class="cbtn" data-cand-all="close">Collapse all</button><a class="cbtn cbtn-up" href="#candidate-index">↑ Back to the index</a></div>
+<div class="cand-acts"><a class="cbtn cbtn-up" href="#candidate-index">↑ Back to the index</a></div>
 </div>
 `;
 
