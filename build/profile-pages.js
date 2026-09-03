@@ -294,7 +294,7 @@ ${cardJson}
 <script src="/icons.js?v=2"></script>
 <script src="/site.js?v=14"></script>
 <script src="/civic.js?v=3"></script>
-<script src="/evidence.js?v=1"></script>
+<script src="/evidence.js?v=2"></script>
 </body>
 </html>
 `;

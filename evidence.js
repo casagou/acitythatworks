@@ -1,6 +1,9 @@
 /* Citation panel + interactive mark legend on /profiles/<slug>.
    Thumb-first: tap, not hover. Reads #rating-card JSON written from the Notion card. */
 (function () {
+  /* Hosts a reader cannot reach. Their citations render as provenance, not links. */
+  var INTERNAL = /^https?:\/\/(?:[a-z0-9-]+\.)*notion\.(?:so|com|site)\//i;
+
   var RULES = {
     Aligned: "They commit to the same instrument the Program names.",
     Close: "They commit to something comparable, not the same tool.",
@@ -72,7 +75,12 @@
     } else {
       $("cite-q").textContent = cell.quote || "The card names this mark. The verbatim sentence was not filled on this cell.";
       setText("cite-why", cell.why || "");
-      if (cell.url) {
+      if (cell.url && INTERNAL.test(cell.url)) {
+        /* Points into the private working workspace. A reader following it
+           gets a login wall, so name the provenance instead of pretending
+           there is a source to open. */
+        $("cite-src").innerHTML = '<span class="src-int">This rests on the framework\'s own profile note, not an outside source.</span>';
+      } else if (cell.url) {
         $("cite-src").innerHTML = '<a href="' + cell.url.replace(/"/g, "%22") + '" target="_blank" rel="noopener">' +
           (cell.source || cell.url) + "</a>";
       } else {
