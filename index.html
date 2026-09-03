@@ -49,7 +49,7 @@
      in parallel with everything else. -->
 <link rel="preload" href="measures.js" as="script">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Public+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=21">
+<link rel="stylesheet" href="styles.css?v=22">
 <link rel="stylesheet" href="charts.css">
 <style>
 .hg{display:grid;grid-template-columns:1fr;gap:32px;margin-top:40px}
@@ -320,6 +320,12 @@ h2.adt em{font-style:italic;color:var(--gold-ink);font-weight:400}
 <a href="/summary" class="bn bns">Read it in 60 seconds</a>
 <a href="/neighbourhoods" class="bn bns">Find my neighbourhood</a>
 </div>
+<!-- The left column ran 353px shorter than the six figures beside it, and
+     the chart below spans both, so the hero held 570 x 353 pixels of nothing
+     directly under its primary button. This is what goes in it: the ballot,
+     in the fewest facts that are useful, filled from candidates-lite.json —
+     the same numbers the scorecard prints. -->
+<aside id="door-ballot" class="dbal" aria-label="Where the candidates stand"></aside>
 </div>
 <div class="door-r">
 <p class="sg-h">Why it needs to — the record, in six figures</p>
@@ -884,7 +890,7 @@ h2.adt em{font-style:italic;color:var(--gold-ink);font-weight:400}
 <div class="adl">
 <a href="mailto:info@acitythatworks.ca"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> info@acitythatworks.ca</a>
 <a href="endorse.html"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg> Candidate Endorsement Pack →</a>
-<a href="comparison.html" data-cand><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg> Evidence store →</a>
+
 <a href="faq.html"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12" y2="17"/></svg> Frequently Asked Questions →</a>
 </div>
 </div>
@@ -979,8 +985,8 @@ h2.adt em{font-style:italic;color:var(--gold-ink);font-weight:400}
 
 <div id="footer-mount"></div>
 <script src="icons.js?v=2"></script>
-<script src="site.js?v=14"></script>
-<script src="civic.js?v=3"></script>
+<script src="site.js?v=15"></script>
+<script src="civic.js?v=4"></script>
 <script src="jumpnav.js"></script>
 <!-- Still loaded here (not just on measures.html): this page renders the
      pillar cards (#pgd), the 12 Commitments table (#ctbl/#ccrd) and the home

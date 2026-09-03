@@ -345,6 +345,45 @@
     run();
   })();
 
+  /* 9b. The ballot panel in the hero ----------------------------------------
+     The hero is a two-column grid whose left column ends 353px above the
+     right, with a full-width chart beneath — so it held a 570x353 hole
+     directly under the primary call to action. This fills it with the
+     shortest useful answer to the question a visitor arrives with, and
+     sends them to the page that answers it properly. Same source as the
+     strip further down; a summary of it, not a second copy. */
+  (function doorBallot() {
+    var host = $('#door-ballot');
+    if (!host || !window.fetch) return;
+    fetch('candidates-lite.json', { cache: 'no-cache' }).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
+      if (!d || !d.cands) return;
+      var all = d.cands;
+      var answered = all.filter(function (c) { return c.answered > 0; }).length;
+      var lettered = all.filter(function (c) { return c.grade; }).length;
+      var RANK = { 'B': 6, 'B−': 5, 'C+': 4, 'C': 3, 'C−': 2, 'D': 1 };
+      var top = all.filter(function (c) { return c.grade; })
+        .sort(function (a, b) {
+          return (RANK[b.grade] || 0) - (RANK[a.grade] || 0) || b.n - a.n || a.name.localeCompare(b.name);
+        }).slice(0, 4);
+      var h = '<p class="dbal-h">The ballot, so far</p>' +
+        '<p class="dbal-l"><b data-count>' + answered + '</b> of ' + all.length +
+        ' candidates have a written answer on at least one of the five questions. <b>' +
+        lettered + '</b> carry a letter.</p>' +
+        '<ul class="dbal-list">';
+      top.forEach(function (c) {
+        h += '<li><a href="/scorecard#gl-' + esc(c.key) + '">' +
+          '<span class="dbal-g gchip g-' + esc(c.gradeCls) + '">' + esc(c.grade) + '</span>' +
+          '<span class="dbal-n">' + esc(c.name) + '</span>' +
+          '<span class="dbal-a">' + c.n + '/55</span></a></li>';
+      });
+      h += '</ul><a class="dbal-more" href="/scorecard" data-cand>All ' + all.length +
+        ' candidates, side by side →</a>' +
+        '<p class="dbal-x">A letter is applied by hand, only at five answered measures, and never computed here. A dash is unknown, not a fail. This is not an endorsement.</p>';
+      host.innerHTML = h;
+      $$('[data-count]', host).forEach(countUp);
+    }).catch(function () {});
+  })();
+
   /* 10. Where the candidates stand — the home strip -------------------------
      Reads candidates-lite.json, which build/matrix.js writes from the same
      grid the scorecard is built from. Grades are copied, never computed

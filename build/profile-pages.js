@@ -327,7 +327,7 @@ function pageHtml(c) {
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Public+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/styles.css?v=21">
+<link rel="stylesheet" href="/styles.css?v=22">
 <style>
 ${PAGE_CSS}
 </style>
@@ -384,6 +384,7 @@ ${c.unscored
      content — folding it would leave the page empty. */
   ? '<section class="vintage-open"><h2>What is on the record</h2>' + bodies[c.slug] + "</section>"
   : '<details class="vintage">\n<summary>Background</summary>\n' + bodies[c.slug] + "\n</details>"}
+${stepNav(c)}
 <p style="margin-top:28px"><a href="/profiles" class="pgback">← All candidate profiles</a> · <a href="${c.unscored ? "/scorecard#roster" : "/scorecard#sc-" + c.key}">${c.unscored ? "Why this name is not on the scorecard" : "Scorecard"}</a></p>
 </div>
 </div>
@@ -393,12 +394,33 @@ ${c.unscored
 <div id="footer-mount"></div>
 ${cardJson}
 <script src="/icons.js?v=2"></script>
-<script src="/site.js?v=14"></script>
-<script src="/civic.js?v=3"></script>
+<script src="/site.js?v=15"></script>
+<script src="/civic.js?v=4"></script>
 <script src="/evidence.js?v=2"></script>
 </body>
 </html>
 `;
+}
+
+/* Prev/next, in the order the scorecard puts the field in. A profile used to
+   end with one link back to a 16,573px hub, so reading three candidates in a
+   row meant three trips through it and three hunts for a name. */
+const RANK = { B: 6, "B−": 5, "C+": 4, C: 3, "C−": 2, D: 1 };
+const READING_ORDER = LIVE.filter((c) => !c.unscored).slice().sort((a, b) =>
+  (RANK[b.letter] || 0) - (RANK[a.letter] || 0) || b.n - a.n || a.name.localeCompare(b.name));
+const POS = Object.fromEntries(READING_ORDER.map((c, i) => [c.slug, i]));
+function stepNav(c) {
+  const i = POS[c.slug];
+  if (i === undefined) return "";
+  const prev = READING_ORDER[i - 1], next = READING_ORDER[i + 1];
+  if (!prev && !next) return "";
+  const side = (x, dir) => x
+    ? '<a class="cnav-i cnav-' + dir + '" href="/profiles/' + x.slug + '">' +
+      '<span class="cnav-d">' + (dir === "prev" ? "← Previous" : "Next →") + '</span>' +
+      '<span class="cnav-nm">' + esc(x.name) + '</span>' +
+      '<span class="cnav-g">' + (x.letter && x.letter !== "—" ? esc(x.letter) + " · " : "") + x.n + ' of 55 answered</span></a>'
+    : '<span class="cnav-i cnav-void"></span>';
+  return '<nav class="cnav" aria-label="Other candidates">' + side(prev, "prev") + side(next, "next") + "</nav>";
 }
 
 const dir = path.join(ROOT, "profiles");
@@ -431,6 +453,17 @@ const redirects = [
 for (const c of LIVE) {
   redirects.push("/profiles/" + c.slug + " /profiles/" + c.slug + ".html 200");
 }
+/* This file owns _redirects, so anything else that has to live in it belongs
+   here too — writing it by hand once meant the next run of this script threw
+   it away. */
+redirects.push(
+  "",
+  "# /comparison held no evidence — it was a signpost saying the grade book had",
+  "# moved, and its own only link sent the reader back to the scorecard. The page",
+  "# is gone; the address keeps working for anything already linking to it.",
+  "/comparison       /scorecard  301!",
+  "/comparison.html  /scorecard  301!"
+);
 fs.writeFileSync(path.join(ROOT, "_redirects"), redirects.join("\n") + "\n");
 
 console.log("wrote", wrote, "pages in profiles/ and _redirects");

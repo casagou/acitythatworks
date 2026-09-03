@@ -1,33 +1,32 @@
-/* A City That Works — hub.js (v2.3)
+/* A City That Works — hub.js (v3)
    -----------------------------------------------------------------------
-   The candidates hub: one card per person, built from the same payload the
-   scorecard grid is built from (window.ACTW_SC, written by build/matrix.js).
-   Nothing here computes a grade. The overall grade, its mean and its n are
-   copied from the payload; the five doors are read from the door data; the
-   "what matters to me" ordering counts answered measures in the chosen
-   topics — Decision 14 publishes no mean, so there is none to average, and
-   the page says beside every reordered card that the figure is a count of
-   evidence rather than a grade. Compare shows two candidates' existing
-   cells side by side and the topics where their recorded marks differ,
-   each with the sentence the scorecard already holds for it. */
+   What the field table calls, plus the hero meter. Built from the same
+   payload the scorecard grid is built from (window.ACTW_SC, written by
+   build/matrix.js). Nothing here computes a grade.
+
+   Until v3 this file also rendered twenty always-open cards under the
+   table. Every fact on a card — the letter and its coverage, the five
+   doors with their sentences and dates, the summary, the channels — is
+   already in the panel that opens under a row, so the grid was a second
+   copy of the same list and cost half the page on a phone. Two things
+   only existed on a card, so those two stayed and the table drives them:
+
+     compare — two candidates' existing cells side by side, and the topics
+       where their recorded marks differ, each with the sentence the
+       scorecard already holds for it.
+     ask — the ready-written question for a door that is still blank.
+
+   "What matters to me" also lives here, because it is a rule and not a
+   widget: it counts answered measures in the chosen topics and never
+   averages their marks. glance.js reads it through window.ACTW_HUB so
+   there is one definition of it on the page. */
 (function () {
   'use strict';
   var DATA = window.ACTW_SC;
   if (!DATA || !DATA.cands) return;
-  var ICONS = window.ACTW_ICONS || {};
   var $ = function (s, r) { return (r || document).querySelector(s); };
   var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
   function esc(s) { return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
-  function icon(name, cls) { var svg = ICONS[name] || ''; return cls ? svg.replace('class="picon"', 'class="picon ' + cls + '"') : svg; }
-  function gradeCls(g) { if (!g) return 'x'; var c = g[0].toLowerCase(); return 'abcdf'.indexOf(c) > -1 ? c : 'x'; }
-  function initials(name) { return name.split(/\s+/).map(function (w) { return w[0]; }).join('').slice(0, 2).toUpperCase(); }
-  function isMayor(c) { return String(c.office || '').toLowerCase() === 'mayor'; }
-  function profileHref(c) {
-    if (!c.profile) return null;
-    var p = String(c.profile);
-    if (/^\/profiles\//.test(p)) return p.split('#')[0];
-    return p.replace(/^profiles\.html/, '/profiles');
-  }
   function fmt2(x) { return (x < 0 ? '−' : '') + Math.abs(x).toFixed(2); }
 
   var rows = (DATA.door && DATA.door.rows) || [];
@@ -51,14 +50,6 @@
   }
   function measureOf(r) { var m = (r.label || '').match(/\(([^)]+)\)/); return m ? m[1] : ''; }
   function answered(c) { var n = 0; rows.forEach(function (r) { if (doorState(c, r).cls !== 'dash') n++; }); return n; }
-  /* The strongest sentence: the first door that carries a sourced note. */
-  function bestSaid(c) {
-    for (var i = 0; i < rows.length; i++) {
-      var d = doorState(c, rows[i]);
-      if (d.cls === 'said' && d.cell.note) return { note: d.cell.note, url: d.cell.url, date: d.cell.date, row: rows[i] };
-    }
-    return null;
-  }
   var cols = DATA.cols || [];
   var areaCols = cols.filter(function (k) { return k.topics; });
 
@@ -78,11 +69,7 @@
     return total ? { n: n, total: total } : null;
   }
 
-  var host = $('#hub');
-  if (!host) return;
   var picks = [];
-  var wm = [];
-  var sortKey = 'grade';
   /* Campaign sites, from candidates-lite.json (build/candidates-lite.js reads
      them out of the profiles master). Arrives after the first render; the
      cards are drawn again once it does. */
@@ -91,115 +78,14 @@
     fetch('candidates-lite.json', { cache: 'no-cache' }).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
       if (!d || !d.cands) return;
       d.cands.forEach(function (c) { if (c.web) WEB[c.key] = c.web; });
-      if (Object.keys(WEB).length) render();
     }).catch(function () {});
   }
   function siteLabel(url) { return url.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, ''); }
 
-  function cardHtml(c) {
-    var a = answered(c), said = bestSaid(c), href = profileHref(c);
-    var w = wm.length ? weighted(c, wm) : null;
-    var h = '<article class="ccard' + (isMayor(c) ? ' mayor' : '') + (picks.indexOf(c.key) > -1 ? ' picked' : '') + '" id="cand-' + esc(c.key) + '" data-key="' + esc(c.key) + '">';
-    h += '<span class="avatar' + (isMayor(c) ? ' mayor' : '') + '" aria-hidden="true">' + esc(initials(c.name)) + '</span>';
-    h += '<div class="cc-b"><div class="cc-h"><div><div class="cc-name">' + (href ? '<a href="' + esc(href) + '">' + esc(c.name) + '</a>' : esc(c.name)) + '</div>';
-    /* Seat, whether they hold it now, and where the framework reads them as
-       sitting. The lean is the framework's own reading of published positions,
-       not a party registration, and it keeps the source's question mark when
-       that reading is uncertain. */
-    var lean = c.lean ? c.lean + (c.leanTags && c.leanTags.length ? ' · ' + c.leanTags.join(' · ') : '') : '';
-    h += '<div class="cc-off">' + esc(c.office || '') + '<span class="cc-seat cc-' + (c.kind === 'inc' ? 'inc' : 'new') + '">' + (c.kind === 'inc' ? 'Incumbent' : 'New') + '</span></div>';
-    if (lean) h += '<div class="cc-lean">' + esc(lean) + '</div>';
-    h += '</div>';
-    /* The letter never travels without its coverage, and the mean never
-       travels without both: an unweighted mean rewards a thin card. */
-    var cov = c.n + ' of ' + DATA.topics.length + ' answered' + (c.mean != null ? ' · mean ' + c.mean.toFixed(2) : '');
-    h += '<div class="cc-grade">' + (c.grade
-      ? '<span class="gchip g-' + gradeCls(c.grade) + '" title="Letter ' + esc(c.grade) + ', ruled by hand on ' + cov + '">' + esc(c.grade) + '</span><small>' + esc(cov) + '</small>'
-      : '<span class="gchip g-x" title="No letter ruled yet">—</span><small>' + (c.n ? esc(cov) : 'nothing located yet') + '</small>') + '</div></div>';
-    if (w) h += '<div class="cc-wm">On what you chose: <b>' + w.n + '</b> of ' + w.total + ' measure' + (w.total > 1 ? 's' : '') + ' answered</div>';
-    h += '<div class="cc-ans"><b>' + a + ' of ' + rows.length + '</b> questions answered in writing</div>';
-    h += '<div class="meter"><i data-w="' + Math.round(a / rows.length * 100) + '"></i></div>';
-    h += '<div class="cc-doors">';
-    rows.forEach(function (r) {
-      var d = doorState(c, r), lab = shortLabel(r);
-      if (d.cls === 'dash') {
-        h += '<button type="button" class="dr dash" data-ask="' + esc(c.key) + '" data-row="' + esc(r.key) + '" title="No written answer yet — ask">' + icon(r.key) + esc(lab) + ' · —</button>';
-      } else {
-        h += '<button type="button" class="dr ' + esc(d.cls) + '" data-door="' + esc(r.key) + '" data-c="' + esc(c.key) + '" title="' + esc(r.label) + ': ' + esc(d.label) + ' — open the source">' + icon(r.key) + esc(lab) + ' · ' + esc(d.label) + '</button>';
-      }
-    });
-    h += '</div>';
-    /* One plain sentence saying what the card actually shows — written on the
-       compute table beside the letter, so the reader gets the reasoning and
-       not only the grade. */
-    if (c.summary) h += '<div class="cc-sum">' + esc(c.summary) + '</div>';
-    if (said) {
-      h += '<div class="cc-said"><q>' + esc(said.note) + '</q><span class="src">' + esc(shortLabel(said.row)) + (said.date ? ' · ' + esc(said.date) : '') + '</span></div>';
-    } else if (a === 0) {
-      h += '<div class="cc-said"><span class="src">Nothing located yet on the five questions. Unknown, not a fail.</span></div>';
-    }
-    h += '<div class="cc-acts">';
-    if (href) h += '<a href="' + esc(href) + '">' + icon('program') + 'Profile</a>';
-    if (c.grade) h += '<a href="#sc-' + esc(c.key) + '">' + icon('compare') + 'Scorecard</a>';
-    if (WEB[c.key]) h += '<a href="' + esc(WEB[c.key]) + '" target="_blank" rel="noopener" title="' + esc(c.name) + '\'s campaign site">' + icon('map') + esc(siteLabel(WEB[c.key])) + '</a>';
-    h += '<label class="cc-pick"><input type="checkbox" data-pick="' + esc(c.key) + '"' + (picks.indexOf(c.key) > -1 ? ' checked' : '') + '> Compare</label>';
-    h += '</div></div></article>';
-    return h;
-  }
-
-  /* Rank the applied letter. Under Decision 14 the letter is applied by hand
-     and no mean is published, so `mean` is null on every candidate — sorting
-     on it, as this did, silently compared nothing and left the cards in
-     answered-count order under a control that said "Overall grade". A letter
-     outside the five in use sorts as unlettered rather than guessing. */
-  var LETTER_RANK = { 'B': 6, 'B−': 5, 'C+': 4, 'C': 3, 'C−': 2, 'D': 1 };
-  function rank(c) { return LETTER_RANK[c.grade] || 0; }
-  function scored(c) { return c.n || 0; }
-  function ordered() {
-    var list = DATA.cands.slice();
-    var byName = function (a, b) { return a.name.localeCompare(b.name); };
-    /* Ties inside a letter go to the wider evidence base, then to the name. */
-    var byLetter = function (a, b) { return (rank(b) - rank(a)) || (scored(b) - scored(a)) || byName(a, b); };
-    if (sortKey === 'name') return list.sort(byName);
-    if (sortKey === 'answered') return list.sort(function (a, b) { return (answered(b) - answered(a)) || (scored(b) - scored(a)) || byName(a, b); });
-    if (sortKey === 'scored') return list.sort(function (a, b) { return (scored(b) - scored(a)) || byLetter(a, b); });
-    if (sortKey === 'office') return list.sort(function (a, b) { return ((isMayor(b) ? 1 : 0) - (isMayor(a) ? 1 : 0)) || byLetter(a, b); });
-    if (wm.length) return list.sort(function (a, b) {
-      var wa = weighted(a, wm), wb = weighted(b, wm);
-      if (!wa && !wb) return byLetter(a, b);
-      if (!wa) return 1; if (!wb) return -1;
-      return (wb.n - wa.n) || byLetter(a, b);
-    });
-    return list.sort(byLetter);
-  }
-
-  function render() {
-    var list = ordered();
-    var grid = $('#hub-cards');
-    grid.innerHTML = list.map(cardHtml).join('');
-    $$('.meter i[data-w]', grid).forEach(function (i) { requestAnimationFrame(function () { i.style.width = i.getAttribute('data-w') + '%'; }); });
-    var note = $('#hub-order');
-    if (wm.length) {
-      var labels = wm.map(function (k) { var c = cols.filter(function (x) { return x.key === k; })[0]; return c ? c.label : k; });
-      note.innerHTML = '<strong>Ordered by what you chose:</strong> ' + esc(labels.join(', ')) +
-        '. The figure on each card is how many measures inside those topics carry a sourced answer. It is a count of evidence, not a grade, and candidates with none sit at the bottom.';
-    } else {
-      var names = {
-        grade: 'the applied letter, then how many measures are answered',
-        scored: 'how many of the 55 measures carry a sourced answer',
-        name: 'candidate name',
-        answered: 'how many of the five questions have a written answer',
-        office: 'office, then the applied letter'
-      };
-      note.innerHTML = 'Ordered by ' + names[sortKey] +
-        '. A letter is applied by hand and only once five measures are answered; it is never computed here. A dash is unknown, not a fail. This is not an endorsement.';
-    }
-    renderCompare();
-  }
-
   /* ---- compare two ------------------------------------------------------- */
   function renderCompare() {
     var box = $('#hub-compare');
+    if (!box) return;
     if (picks.length < 2) {
       box.innerHTML = picks.length === 1 ? '<p class="cp-empty">Tick one more candidate to compare them side by side.</p>' : '';
       return;
@@ -239,9 +125,13 @@
         '<span class="m">' + esc(a.name.split(' ').slice(-1)[0]) + ' ' + esc(markName(d.va)) + ' ' + fmt2(d.va) + '</span>' + (d.ea ? '<span class="ev">' + d.ea + '</span>' : '') +
         '<span class="m" style="margin-top:6px">' + esc(b.name.split(' ').slice(-1)[0]) + ' ' + esc(markName(d.vb)) + ' ' + fmt2(d.vb) + '</span>' + (d.eb ? '<span class="ev">' + d.eb + '</span>' : '') + '</div>';
     });
-    h += '<p class="hub-note">Only topics where <em>both</em> candidates hold a scored mark are listed: silence is never scored, so a topic one of them has not addressed is not a difference, it is a blank. <a href="#scale">How a mark is decided.</a></p></div>';
+    h += '<p class="hub-note">Only topics where <em>both</em> candidates hold a scored mark are listed: silence is never scored, so a topic one of them has not addressed is not a difference, it is a blank. <a href="#how-we-grade">How a mark is decided.</a></p></div>';
     box.innerHTML = '<div class="cmp-panel">' + h + '</div>';
-    $('#cp-clear').addEventListener('click', function () { picks = []; render(); });
+    $('#cp-clear').addEventListener('click', function () {
+      picks = [];
+      renderCompare();
+      document.dispatchEvent(new CustomEvent('actw:picks', { detail: [] }));
+    });
     box.scrollIntoView({ block: 'nearest' });
   }
 
@@ -281,51 +171,49 @@
   function closeAsk() { var p = $('.ask-pop'); if (p) p.remove(); }
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeAsk(); });
 
-  /* ---- controls ---------------------------------------------------------- */
-  function controlsHtml() {
-    var h = '<div class="hub-ctl"><div class="f"><label for="hub-sort">Order the cards by</label><select id="hub-sort">' +
-      '<option value="grade">Applied letter, best first</option>' +
-      '<option value="scored">Measures answered, most first</option>' +
-      '<option value="answered">The five questions, most answered first</option>' +
-      '<option value="name">Candidate name, A to Z</option>' +
-      '<option value="office">Mayor first, then council</option></select></div>';
-    h += '<div class="f"><span class="lbl2">What matters to me — tick topics to reorder by how much of them is answered</span><div class="wm-chips">';
-    areaCols.forEach(function (k) { h += '<button type="button" class="chip" data-wm="' + esc(k.key) + '" aria-pressed="false">' + esc(k.label) + '</button>'; });
-    h += '</div></div><p class="hint" id="hub-order"></p></div>';
-    return h;
-  }
-
+  /* ---- the hero meter ---------------------------------------------------- */
   var all = DATA.cands.length, ans = DATA.cands.filter(function (c) { return answered(c) > 0; }).length;
   var meterHost = $('#hub-meter');
   if (meterHost) {
     meterHost.innerHTML = '<div class="hc-l"><b data-count>' + ans + '</b> of ' + all + ' candidates have a written answer on at least one of the five questions</div><div class="meter big"><i data-w="' + Math.round(ans / all * 100) + '"></i></div>';
   }
-  host.innerHTML = controlsHtml() + '<div class="ccards" id="hub-cards"></div><div id="hub-compare"></div>';
-  render();
 
-  $('#hub-sort').addEventListener('change', function () { sortKey = this.value; render(); });
-  host.addEventListener('click', function (e) {
-    var chip = e.target.closest('.chip[data-wm]');
-    if (chip) {
-      var k = chip.getAttribute('data-wm');
-      if (wm.indexOf(k) > -1) wm = wm.filter(function (x) { return x !== k; }); else wm.push(k);
-      $$('.chip[data-wm]', host).forEach(function (c) { c.setAttribute('aria-pressed', wm.indexOf(c.getAttribute('data-wm')) > -1 ? 'true' : 'false'); });
-      render();
-      return;
-    }
-    var ask = e.target.closest('[data-ask]');
-    if (ask) {
-      var c = DATA.cands.filter(function (x) { return x.key === ask.getAttribute('data-ask'); })[0];
-      var r = rows.filter(function (x) { return x.key === ask.getAttribute('data-row'); })[0];
+  /* ---- the API the field table drives ------------------------------------
+     This file used to render twenty always-open cards below the table. Every
+     fact on a card — the letter, its coverage, the five doors with their
+     sentences and dates, the summary, the channels — is already in the panel
+     that opens under a row, so the cards were a second copy of the list:
+     13,897px of one on a phone, about half the page. What only lived on a
+     card was compare and ask, so those two stay here and the table calls
+     them. Nothing about how a grade is read has changed. */
+  function byKey(k) { return DATA.cands.filter(function (c) { return c.key === k; })[0]; }
+
+  window.ACTW_HUB = {
+    /* Tick a candidate for the side-by-side. Two at a time: a third pushes
+       the oldest out, which is what the panel can actually show. */
+    togglePick: function (key) {
+      if (picks.indexOf(key) > -1) picks = picks.filter(function (x) { return x !== key; });
+      else { picks.push(key); if (picks.length > 2) picks = picks.slice(-2); }
+      renderCompare();
+      return picks.slice();
+    },
+    picks: function () { return picks.slice(); },
+    clearPicks: function () { picks = []; renderCompare(); },
+    /* A blank door is an invitation, not a verdict — this opens the
+       ready-written question for it. */
+    ask: function (candKey, rowKey) {
+      var c = byKey(candKey);
+      var r = rows.filter(function (x) { return x.key === rowKey; })[0];
       if (c && r) openAsk(c, r);
-    }
-  });
-  host.addEventListener('change', function (e) {
-    var p = e.target.closest('input[data-pick]');
-    if (!p) return;
-    var k = p.getAttribute('data-pick');
-    if (p.checked) { picks = picks.filter(function (x) { return x !== k; }); picks.push(k); if (picks.length > 2) picks = picks.slice(-2); }
-    else picks = picks.filter(function (x) { return x !== k; });
-    render();
-  });
+    },
+    /* "What matters to me" — one definition of the rule, used by the table.
+       It counts answered measures inside the chosen topics; it does not
+       average their marks, because Decision 14 gives a topic no letter and
+       no mean, and a weighted average would be a grade the page invented. */
+    topics: function () { return areaCols.map(function (k) { return { key: k.key, label: k.label }; }); },
+    weighted: weighted,
+    web: function (key) { return WEB[key] || null; },
+    siteLabel: siteLabel
+  };
+  document.dispatchEvent(new CustomEvent('actw:hub-ready'));
 })();
