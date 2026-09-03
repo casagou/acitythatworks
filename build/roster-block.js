@@ -48,7 +48,7 @@ const notScored = (A.notScored || []).length
   ? '<div class="rb-grp">' +
     '<h3 class="rb-h">Filed, but nothing published to score · ' + A.notScored.length +
     (A.notScored.length === 1 ? " name" : " names") + "</h3>" +
-    '<p class="rb-x">A profile, no column, no letter. This is a statement about what has been published, not about the candidate.</p>' +
+    '<p class="rb-x">Accepted nomination, no scored column. A profile is linked when this site has one; a name without a profile is still on the record. This is a statement about what has been published, not about the candidate.</p>' +
     '<ul class="rb-list">' + A.notScored.map((c) =>
       row(c.name, c.office, c.status, c.why, c.profile ? "/profiles/" + c.slug : null)).join("") +
     "</ul></div>"
@@ -57,7 +57,7 @@ const notScored = (A.notScored || []).length
 const out = (A.out || []).length
   ? '<div class="rb-grp">' +
     '<h3 class="rb-h">Not on the site · ' + A.out.length + " names</h3>" +
-    '<p class="rb-x">No accepted nomination and no located 2026 campaign, or confirmed not running. Named here so their absence is on the record rather than silent.</p>' +
+    '<p class="rb-x">No accepted nomination, or confirmed not running. A newspaper-reported indication that someone is running is labelled as such and is not treated as an official filing. The City\'s accepted list remains the source of truth until 11 September. Named here so an absence is on the record rather than silent.</p>' +
     '<ul class="rb-list">' + A.out.map((c) => row(c.name, c.office, c.status || "", c.why, null)).join("") +
     "</ul></div>"
   : "";

@@ -34,14 +34,15 @@ const LIVE = [
   { slug: "girard",    id: "cand-martin-girard",   name: "Martin Girard",   office: "Council", key: "Gi", letter: "D",  n: 7,  campaign: { href: "https://martingirardforvictoriacouncil.ca/", label: "martingirardforvictoriacouncil.ca" } },
   { slug: "gibbs",     id: "cand-peter-gibbs",     name: "Peter Gibbs",     office: "Council", key: "Gb", letter: "—",  n: 0,  campaign: { href: "https://www.victoriaforall.ca/about", label: "victoriaforall.ca/about", note: "No personal campaign site; named on Victoria for All." } },
   { slug: "dion",      id: "cand-shona-dion",      name: "Shona Dion",      office: "Council", key: "Di", letter: "—",  n: 0,  campaign: { href: "https://www.shonadion4victoria.ca/", label: "shonadion4victoria.ca" } },
-  /* Filed with the City, deliberately unscored. He holds one of only two
-     accepted mayoral nominations, so a voter needs the page; he has no 2026
-     campaign material, so there is nothing to score and no rating card. He is
-     therefore a profile without a scorecard column, and the page says so.
-     See data/applied-letters.json → notScored. */
+  /* Filed with the City, deliberately unscored. City elections page (opened
+     3 Sep) lists him among accepted mayor nominations with Alto and Johnston.
+     A 3 Sep Times Colonist interview is on the record; there is still no
+     campaign website or detailed written program, so there is no rating card.
+     See data/applied-letters.json → notScored. Johnston is the other
+     filed-but-unpublished mayor: field-status only, no invented profile. */
   { slug: "atkinson",  id: "cand-lyall-atkinson",  name: "Lyall Atkinson",  office: "Mayor",   key: null, letter: "—",  n: 0,  unscored: {
-      why: "Nomination accepted by the City on 2 Sep 2026 — one of only two accepted mayoral nominations. No 2026 campaign website, platform, social account or coverage has been located, so there is nothing published to score against the framework.",
-      note: "He is not a column on the scorecard for the same reason. His 2022 material is on this page as vintage evidence and must not be read as a 2026 position.",
+      why: "On 3 Sep 2026 the <a href=\"https://www.timescolonist.com/local-news/three-candidates-take-on-alto-for-victorias-mayor-chair-12735274\" target=\"_blank\" rel=\"noopener\">Times Colonist</a> reported Lyall Atkinson is in the mayoral race. <a href=\"https://www.victoria.ca/city-government/elections\" target=\"_blank\" rel=\"noopener\">City elections page</a> (opened 3 Sep) lists ATKINSON, Lyall among accepted mayor nominations. In that TC report he said the CSWB plan “does not seem to have worked” despite a two-year budget of $17 million — that $17M is Atkinson/TC, not a City total. He said bring all parties together for a new addiction/mental-health plan and was quoted: “I’m willing to work with all parties to get this problem solved.” Separately City primary: Council approved $10.35M for initial CSWB actions (<a href=\"https://www.victoria.ca/media/file/city-acts-community-safety\" target=\"_blank\" rel=\"noopener\">City news 2 Jul 2025</a>); same release: ~$13.612M needed for the listed actions; $10.35M “do not total to the amount needed overall.” Those City figures ≠ each other ≠ $17M.",
+      note: "He is not a column on the scorecard. His 2022 material is on this page as vintage evidence and must not be read as a 2026 position. The 3 Sep interview is attributed 2026 evidence and is not scored. CHEK (20 Aug 2026) already quoted him, so this page does not call the TC interview the first 2026 interview. No 2026 campaign website or detailed written program has been located.",
     }, campaign: null },
 ];
 
@@ -282,7 +283,7 @@ function pageHtml(c) {
 <h2>Why there is no grade here</h2>
 <p>${c.unscored.why}</p>
 <p>${c.unscored.note}</p>
-<p class="how-tap"><strong>A dash is unknown, not a fail.</strong> It is not a judgement about the candidate and it is not opposition. If a 2026 platform, campaign site or substantive interview appears, this page becomes scorable and the framework will score it on the same 55 measures as everyone else.</p>
+<p class="how-tap"><strong>A dash is unknown, not a fail.</strong> It is not a judgement about the candidate and it is not opposition. If a 2026 campaign website or detailed written program appears, this page becomes scorable and the framework will score it on the same 55 measures as everyone else.</p>
 <p class="how-tap">Spotted something we have missed? <a href="mailto:info@acitythatworks.ca">info@acitythatworks.ca</a> — corrections are free and dated.</p>
 </section>`
     : ev.howMadeHtml(c, card) + ev.doorsHtml(card) + ev.topicsHtml(card) + ev.panelHtml();
