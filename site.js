@@ -61,9 +61,13 @@
            '<a href="/profiles">Candidate Profiles</a>';
   }
 
+  /* Was "Evidence store" pointing at /comparison, on every page of the site.
+     That page held no evidence: it was a signpost saying the grade book had
+     moved, and its only link sent the reader to the scorecard. The menu now
+     goes where the evidence actually is. */
   function evidenceLink() {
     if (window.ACTW && window.ACTW.candidates === false) { return ''; }
-    return '<a href="/comparison">Evidence store</a>';
+    return '<a href="/measures">Every measure, costed</a>';
   }
 
   // One grouped map for the phone drawer and the desktop More panel.

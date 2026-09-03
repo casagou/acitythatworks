@@ -34,7 +34,7 @@
 
   /* The pages the switch governs. Add a filename here and it is gated on the
      same terms — redirected when off, and every link to it swept. */
-  var GATED = ['scorecard.html', 'comparison.html', 'profiles.html'];
+  var GATED = ['scorecard.html', 'profiles.html'];
 
   /* Netlify serves this site with pretty URLs on: scorecard.html is also
      reachable as /scorecard, and every in-page href is rewritten to the

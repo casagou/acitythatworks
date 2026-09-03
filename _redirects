@@ -22,3 +22,9 @@
 /profiles/gibbs /profiles/gibbs.html 200
 /profiles/dion /profiles/dion.html 200
 /profiles/atkinson /profiles/atkinson.html 200
+
+# /comparison held no evidence — it was a signpost saying the grade book had
+# moved, and its own only link sent the reader back to the scorecard. The page
+# is gone; the address keeps working for anything already linking to it.
+/comparison       /scorecard  301!
+/comparison.html  /scorecard  301!

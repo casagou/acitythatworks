@@ -1368,8 +1368,15 @@ ul.rb-list li:first-child{border-top:none}
   border:1px solid rgba(26,54,104,.22);border-radius:2px;color:var(--ink)}
 .gl-count{margin:0 0 2px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted)}
 
+.gl-f-q input{font:inherit;font-size:14px;padding:9px 10px;min-height:44px;width:100%;max-width:220px;
+  background:#fff;border:1px solid rgba(26,54,104,.22);border-radius:2px;color:var(--ink)}
+.gl-f-q input:focus-visible{outline:3px solid var(--gold);outline-offset:-1px}
+
 .gl-wrap{overflow-x:auto;border:1px solid rgba(26,54,104,.16);border-radius:2px;background:#fff}
-.glt{width:100%;border-collapse:collapse;font-size:14px;min-width:660px}
+/* Four columns, not six: at 375px the old min-width of 660px pushed the
+   letter, the measure count and the five-question count off the screen
+   behind a scroll the page gave no hint of. */
+.glt{width:100%;border-collapse:collapse;font-size:14px;min-width:0}
 .glt thead th{position:sticky;top:0;z-index:2;background:#f4f1ea;border-bottom:2px solid rgba(26,54,104,.24);
   padding:0;text-align:left;vertical-align:bottom}
 .glh{display:flex;align-items:center;gap:5px;width:100%;padding:11px 12px;min-height:44px;background:none;
@@ -1397,7 +1404,12 @@ ul.rb-list li:first-child{border-top:none}
   border-right:5px solid transparent;border-top:6px solid rgba(26,54,104,.4)}
 .gl-x{position:relative}
 .glr.is-open .gl-car{transform:rotate(180deg);border-top-color:var(--navy)}
-.gl-seat{font-size:13.5px;color:var(--ink);white-space:nowrap}
+/* Seat, standing and lean on one line under the name. Three columns became
+   one identity line so the letter and the two counts fit inside a 343px
+   phone; the wrap is deliberate, because a long lean ("Left · BC Greens ·
+   Victoria For All") should drop below the chip rather than widen the table. */
+.gl-sub{display:flex;align-items:center;flex-wrap:wrap;gap:3px 6px;margin-top:2px}
+.gl-subt{font-size:12px;color:var(--muted);line-height:1.3}
 .gl-tag{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.07em;
   text-transform:uppercase;padding:3px 7px;border-radius:2px;white-space:nowrap}
 .gl-inc{background:rgba(34,114,71,.13);color:#1b5c39}
@@ -1407,7 +1419,90 @@ ul.rb-list li:first-child{border-top:none}
 .gl-num i{font-style:normal;color:var(--muted);font-size:11px}
 .gl-bar{display:block;width:74px;height:4px;margin-top:4px;background:rgba(26,54,104,.12);border-radius:2px;overflow:hidden}
 .gl-bar i{display:block;height:100%;background:var(--navy)}
+/* Twelve squares, one per topic, in the order of the list above. A count of
+   evidence, never a grade: Decision 14 gives a topic no letter and no mean. */
+.gl-spark{display:flex;gap:2px;margin-top:5px}
+.gl-sq{width:9px;height:9px;border-radius:1px;background:rgba(26,54,104,.09);flex:none}
+.gl-sq1{background:rgba(34,114,71,.28)}
+.gl-sq2{background:rgba(34,114,71,.55)}
+.gl-sq3{background:#227247}
+.gl-wmn{display:block;margin-top:5px;font-family:'JetBrains Mono',monospace;font-size:10.5px;
+  letter-spacing:.04em;color:var(--gold-ink)}
+.gl-key{display:flex;align-items:flex-start;gap:8px;margin:10px 0 0;font-size:12.5px;
+  color:var(--muted);line-height:1.5}
+.gl-key-s{margin-top:3px;flex:none}
+
+/* What matters to me — the nearest thing the site has to a voter-advice
+   tool, moved up here from below twenty cards almost nobody scrolled past. */
+.gl-wm{margin:14px 0 12px;padding:12px 14px;background:rgba(26,54,104,.04);
+  border:1px solid rgba(26,54,104,.1);border-radius:2px}
+.gl-wm-l{display:block;font-size:12.5px;color:var(--muted);line-height:1.5;margin-bottom:9px}
+.gl-wm-chips{display:flex;flex-wrap:wrap;gap:6px}
+.gl-chip{font:inherit;font-size:12.5px;padding:7px 11px;min-height:38px;background:#fff;
+  border:1px solid rgba(26,54,104,.22);border-radius:2px;color:var(--ink);cursor:pointer}
+.gl-chip:hover{border-color:var(--gold)}
+.gl-chip:focus-visible{outline:3px solid var(--gold);outline-offset:1px}
+.gl-chip[aria-pressed="true"]{background:var(--navy);border-color:var(--navy);color:#fff}
+.gl-wm-note{margin:10px 0 0;font-size:12.5px;color:var(--ink);line-height:1.55}
+
 .gl-foot{margin:12px 0 0;font-size:13px;color:var(--muted);line-height:1.55}
+
+/* A real ending. The page used to close on a link to /comparison, which said
+   the grade book had moved and sent the reader back to this page. */
+.sc-next{margin-top:40px}
+.nx{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px;margin-top:16px}
+.nx-i{display:flex;flex-direction:column;gap:5px;padding:15px 17px;background:#fff;
+  border:1px solid rgba(26,54,104,.16);border-radius:2px;text-decoration:none}
+.nx-i:hover{border-color:var(--gold);background:rgba(212,168,67,.05)}
+.nx-i:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.nx-i b{font-family:'Fraunces',serif;font-size:16px;font-weight:600;color:var(--navy);line-height:1.3}
+.nx-i span{font-size:13px;color:var(--muted);line-height:1.5}
+.mono{font-family:'JetBrains Mono',monospace;font-size:.9em;word-spacing:.15em}
+
+/* Prev/next on a profile, in the order the scorecard puts the field in.
+   Named cnav-* rather than pn-* because .pn and .pn-n already belong to
+   .prob-nums, and an unscoped rule here would have leaked into it. */
+/* The ballot panel that fills the hero's left column. Sized to the hole it
+   was built for — about 350px — so the two columns of the hero end together. */
+.dbal{margin-top:30px;padding:16px 18px 15px;background:#fff;
+  border:1px solid rgba(26,54,104,.16);border-left:3px solid var(--navy);border-radius:2px}
+.dbal:empty{display:none}
+.dbal-h{margin:0 0 7px;font-family:'JetBrains Mono',monospace;font-size:10px;
+  letter-spacing:.13em;text-transform:uppercase;color:var(--gold-ink)}
+.dbal-l{margin:0 0 12px;font-size:13.5px;line-height:1.5;color:var(--ink)}
+.dbal-l b{font-family:'Fraunces',serif;font-size:17px;color:var(--navy)}
+.dbal-list{list-style:none;margin:0 0 12px;padding:0;display:grid;gap:3px}
+.dbal-list a{display:flex;align-items:center;gap:9px;padding:6px 7px;min-height:36px;
+  border-radius:2px;text-decoration:none;color:var(--ink)}
+.dbal-list a:hover{background:rgba(26,54,104,.05)}
+.dbal-list a:focus-visible{outline:2px solid var(--gold);outline-offset:-1px}
+.dbal-n{flex:1;min-width:0;font-size:14px;color:var(--navy);font-weight:500;
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.dbal-a{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--muted);flex:none}
+.dbal-more{display:inline-block;font-size:13.5px;color:var(--navy);font-weight:600;min-height:32px}
+.dbal-x{margin:9px 0 0;font-size:11.5px;line-height:1.5;color:var(--muted)}
+@media(max-width:719px){
+  /* The columns stack on a phone, so there is no hole to fill and the strip
+     further down says this properly. */
+  .dbal{display:none}
+}
+
+.cnav{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:36px}
+.cnav-i{display:flex;flex-direction:column;gap:3px;padding:14px 16px;background:#fff;
+  border:1px solid rgba(26,54,104,.16);border-radius:2px;text-decoration:none;min-height:44px}
+a.cnav-i:hover{border-color:var(--gold);background:rgba(212,168,67,.05)}
+a.cnav-i:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.cnav-next{text-align:right}
+.cnav-void{background:none;border:0}
+.cnav-d{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--muted)}
+.cnav-nm{font-family:'Fraunces',serif;font-size:16px;font-weight:600;color:var(--navy);line-height:1.25}
+.cnav-g{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted)}
+@media(max-width:520px){
+  .cnav{grid-template-columns:1fr}
+  .cnav-next{text-align:left}
+  .cnav-void{display:none}
+}
 
 /* the detail that opens under a row, so reading one candidate does not cost
    the reader their place on the page */
@@ -1458,11 +1553,31 @@ ul.rb-list li:first-child{border-top:none}
 .gd-lk-city{border-left-color:#3D6E4E}
 .gd-lkp{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.11em;text-transform:uppercase;color:#8a8580}
 .gd-lkn{font-size:13px;color:var(--navy);line-height:1.3;word-break:break-word}
+/* Ask, and compare — the two things that only existed on the card grid. */
+.gd-ask{margin-top:7px;font:inherit;font-size:12.5px;padding:7px 11px;min-height:38px;
+  background:#fff;border:1px solid var(--gold);border-radius:2px;color:var(--gold-ink);cursor:pointer}
+.gd-ask:hover{background:rgba(212,168,67,.12)}
+.gd-ask:focus-visible{outline:3px solid var(--gold);outline-offset:1px}
+.gd-foot{margin-top:16px;padding-top:13px;border-top:1px solid rgba(26,54,104,.12)}
+.gd-pick{display:inline-flex;align-items:center;gap:8px;min-height:44px;font-size:13.5px;
+  color:var(--ink);cursor:pointer}
+.gd-pick input{width:17px;height:17px;accent-color:var(--navy);cursor:pointer}
 
 @media(max-width:560px){
-  .gl-bar{width:52px}
+  /* Four columns have to fit 343px of visible wrapper. The header labels are
+     the widest thing in the table, so they lose their second word and the
+     cells lose four pixels of side padding — nothing else changes. */
+  .gl-bar{width:44px}
   .glt{font-size:13px}
   .gld-in{padding:14px 11px 17px}
+  .gl-hl{display:none}
+  .glh{padding:10px 6px;gap:3px;letter-spacing:.04em}
+  .glr>td{padding:9px 6px}
+  .gl-x{padding:10px 18px 10px 7px}
+  .gl-num{font-size:12px}
+  /* twelve squares set the floor for the name column, so they shrink too */
+  .gl-sq{width:7px;height:7px}
+  .gl-spark{gap:1.5px}
 }
 
 /* the hub card now carries the same three identity facts as the glance row */

@@ -20,3 +20,7 @@
 *.svg   text eol=lf
 *.txt   text eol=lf
 *.webmanifest text eol=lf
+
+# Netlify config files have no extension, so they need naming.
+_redirects text eol=lf
+_headers   text eol=lf

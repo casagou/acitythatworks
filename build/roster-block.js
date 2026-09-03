@@ -62,9 +62,12 @@ const out = (A.out || []).length
     "</ul></div>"
   : "";
 
-/* The block is written into two pages, so a chip cannot use a bare
-   fragment: the sc-* ids exist only on the scorecard. Each page gets its
-   own base — empty on the scorecard, absolute from profiles.html. */
+/* One page, not two. This block was written into profiles.html as well,
+   word for word — 1,801px of it on a phone, saying the same thing twice on
+   two pages a reader reaches from the same menu. Worse, on profiles.html it
+   sat inside the span build/hub-intros.js rewrites, so every run of that
+   script deleted it and the next run of this one put it back. The scorecard
+   is the list; the hub links to it. */
 function blockFor(SC) {
 return '' +
   '<section class="roster" id="roster">' +
@@ -81,7 +84,7 @@ return '' +
 }
 
 let wrote = 0;
-for (const file of ["scorecard.html", "profiles.html"]) {
+for (const file of ["scorecard.html"]) {
   const p = path.join(ROOT, file);
   let s = fs.readFileSync(p, "utf8");
   const re = /(<!-- ROSTER:START -->)[\s\S]*?(<!-- ROSTER:END -->)/;
