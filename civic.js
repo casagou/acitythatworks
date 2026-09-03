@@ -378,7 +378,7 @@
       });
       h += '</ul><a class="dbal-more" href="/scorecard" data-cand>All ' + all.length +
         ' candidates, side by side →</a>' +
-        '<p class="dbal-x">A letter is applied by hand, only at five answered measures, and never computed here. A dash is unknown, not a fail. This is not an endorsement.</p>';
+        '<p class="dbal-x">A letter is applied only at five answered measures, and never computed here. A dash is unknown, not a fail. This is not an endorsement.</p>';
       host.innerHTML = h;
       $$('[data-count]', host).forEach(countUp);
     }).catch(function () {});

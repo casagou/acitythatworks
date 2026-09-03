@@ -316,7 +316,7 @@ ${chips(all, n.slug)}
 <div id="footer-mount"></div>
 <script src="icons.js?v=2"></script>
 <script src="site.js?v=16"></script>
-<script src="civic.js?v=4"></script>
+<script src="civic.js?v=5"></script>
 <script src="jumpnav.js"></script>
 </body>
 </html>
