@@ -172,8 +172,8 @@ const PAGE_CSS = `/* Field tints copied from the hub cards so transferred prose 
    utility .c, which is margin:0 auto — so every C-band badge was being
    pushed to the middle of its own row on six profile pages. */
 .g.g-a{background:#227247}.g.g-b{background:#3D6E4E}
-.g.g-c{background:#8B6914}.g.g-d{background:#B5651F}
-.g.g-f{background:#B5341F}.g.g-x{background:#8a8580}
+.g.g-c{background:#8B6914}.g.g-d{background:#A55A18}
+.g.g-f{background:#B5341F}.g.g-x{background:#706B66}
 .cs-n{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;color:#6b6664;white-space:nowrap;margin-left:6px}
 .pfpage{font-size:14px;line-height:1.6;color:#33312e}
 .pfpage p{margin:10px 0;font-size:14px;line-height:1.6}
@@ -221,7 +221,7 @@ const PAGE_CSS = `/* Field tints copied from the hub cards so transferred prose 
   border-left:3px solid var(--navy);border-radius:2px;text-decoration:none;min-height:44px;justify-content:center}
 .clink:hover{border-color:var(--gold);border-left-color:var(--gold);background:#fffdf7}
 .clink:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
-.clink-p{font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.11em;text-transform:uppercase;color:#8a8580}
+.clink-p{font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.11em;text-transform:uppercase;color:#706B66}
 .clink-l{font-size:13.5px;color:var(--navy);line-height:1.35;word-break:break-word}
 .clink-site{border-left-color:var(--gold)}
 .clink-city{border-left-color:#3D6E4E}
@@ -327,7 +327,7 @@ function pageHtml(c) {
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Public+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/styles.css?v=22">
+<link rel="stylesheet" href="/styles.css?v=23">
 <style>
 ${PAGE_CSS}
 </style>

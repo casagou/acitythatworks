@@ -91,7 +91,7 @@
       '<div class="gd-hl">' +
         (c.grade
           ? '<span class="gd-badge g ' + gcls(c.grade) + '">' + esc(c.grade) + "</span>"
-          : '<span class="gd-badge g g-x">—</span>') +
+          : '<span class="gd-badge g x">—</span>') +
         '<span class="gd-hn">' + c.n + " of 55 measures answered" +
         (c.mean != null ? ' · mean ' + Number(c.mean).toFixed(2) : "") + "</span>" +
       "</div>" +
@@ -111,10 +111,12 @@
       bio + linksHtml(c) + foot;
   }
 
+  /* Bare letter class: the page styles .g.b, not .g.g-b. See the note in
+     build/glance-table.js — the prefixed form rendered white on white. */
   function gcls(g) {
-    if (!g) return "g-x";
+    if (!g) return "x";
     var c = g[0].toLowerCase();
-    return "abcdf".indexOf(c) > -1 ? "g-" + c : "g-x";
+    return "abcdf".indexOf(c) > -1 ? c : "x";
   }
 
   /* ---- open / close ------------------------------------------------ */
@@ -171,7 +173,17 @@
     var btn = e.target.closest(".gl-x");
     if (btn && root.contains(btn)) { toggle(btn); return; }
     var h = e.target.closest(".glh");
-    if (h && root.contains(h)) sortBy(h.getAttribute("data-sort"), h);
+    if (h && root.contains(h)) {
+      /* The header and the Order-by select are two ways to do one thing, so
+         one has to answer for the other: a header click used to leave the
+         select showing whatever it said before, and leave a "what matters to
+         me" ordering silently in force underneath the new sort. */
+      var what = h.getAttribute("data-sort");
+      clearWeighting();
+      sortBy(what, h);
+      var sel = document.getElementById("gl-sort");
+      if (sel) sel.value = [].some.call(sel.options, function (o) { return o.value === what; }) ? what : "";
+    }
   });
 
   root.addEventListener("change", function (e) {
@@ -187,8 +199,52 @@
     root.querySelectorAll("input[data-pick]").forEach(function (b) {
       b.checked = list.indexOf(b.getAttribute("data-pick")) > -1;
     });
+    renderTray(list);
   }
   document.addEventListener("actw:picks", function (e) { syncPicks(e.detail || []); });
+
+  /* ---- the compare tray -------------------------------------------- */
+  /* Ticking a box built the comparison thousands of pixels further down the
+     page, with nothing to say it had happened — on a phone the panel landed
+     8,331px below the row that opened it. The tray follows the reader
+     instead: it says who is picked, what is still needed, and takes them to
+     the result. It only exists while something is picked. */
+
+  var tray;
+  function renderTray(list) {
+    if (!list || !list.length) {
+      if (tray) { tray.remove(); tray = null; document.body.classList.remove("has-tray"); }
+      return;
+    }
+    if (!tray) {
+      tray = document.createElement("div");
+      tray.className = "cmp-tray";
+      tray.setAttribute("role", "region");
+      tray.setAttribute("aria-label", "Candidates picked to compare");
+      document.body.appendChild(tray);
+      document.body.classList.add("has-tray");
+    }
+    var names = list.map(function (k) {
+      var c = byKey[k];
+      return '<span class="ct-n">' + esc(c ? c.name : k) + "</span>";
+    }).join("");
+    tray.innerHTML =
+      '<div class="ct-in"><span class="ct-l">Comparing</span>' + names +
+      (list.length < 2
+        ? '<span class="ct-h">Pick one more</span>'
+        : '<button type="button" class="ct-go">See them side by side →</button>') +
+      '<button type="button" class="ct-x" aria-label="Clear the comparison">Clear</button></div>';
+
+    var go = tray.querySelector(".ct-go");
+    if (go) go.addEventListener("click", function () {
+      var box = document.getElementById("hub-compare");
+      if (box) box.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+    tray.querySelector(".ct-x").addEventListener("click", function () {
+      if (window.ACTW_HUB) window.ACTW_HUB.clearPicks();
+      syncPicks([]);
+    });
+  }
 
   /* ---- sorting ----------------------------------------------------- */
 
