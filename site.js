@@ -61,20 +61,18 @@
            '<a href="/profiles">Candidate Profiles</a>';
   }
 
-  /* Was "Evidence store" pointing at /comparison, on every page of the site.
-     That page held no evidence: it was a signpost saying the grade book had
-     moved, and its only link sent the reader to the scorecard. The menu now
-     goes where the evidence actually is. */
-  function evidenceLink() {
-    if (window.ACTW && window.ACTW.candidates === false) { return ''; }
-    return '<a href="/measures">Every measure, costed</a>';
-  }
+  /* There was an "Evidence store" link here, in the menu and the footer of
+     every page, pointing at /comparison — a page that held no evidence and
+     whose only link sent the reader back to the scorecard. Repointing it at
+     /measures just made a second link to a page both surfaces already list,
+     so it is gone rather than duplicated. */
 
   // One grouped map for the phone drawer and the desktop More panel.
-  // Footer keeps its fuller columns (annexes, city hall, version history)
-  // but pulls candidate, audience and evidence links from the same helpers
-  // above — three hand-written copies is how the drawer went stale.
-  // Groups, not a 30-link dump. Comparison is Evidence store, in More.
+  // Groups, not a 30-link dump. It shares AUDIENCE, ANNEXES and candLinks
+  // with the footer, because three hand-written copies is how the drawer
+  // went stale. The annexes and How City Hall Works used to be footer-only,
+  // which on a phone meant the drawer could not reach six of the site's
+  // canonical documents at all.
   function siteMapHtml() {
     var cand = candLinks();
     return '' +
@@ -91,8 +89,15 @@
       '<div class="grp">More</div>' +
       '<a href="/faq">FAQ</a>' +
       '<a href="/questionnaire">Candidate Questionnaire</a>' +
+      '<a href="/city-hall">How City Hall Works</a>' +
       audienceLinks() +
-      evidenceLink();
+      /* The five annexes were in the footer and nowhere else, so on a phone —
+         where this list is the whole menu — the only way to reach Legal
+         Defensibility or the KPI library was to scroll to the bottom of
+         whatever page you happened to be on. They are canonical documents,
+         not derivations, so they get a group of their own here too. */
+      '<div class="grp">The annexes</div>' +
+      annexLinks();
   }
 
   function socialLinks(cls) {
@@ -137,7 +142,6 @@
 '<a href="/endorse">Candidate Endorsement Pack</a>' +
 '<a href="/questionnaire">Candidate Questionnaire</a>' +
 candLinks() +
-evidenceLink() +
 '<a href="/faq">Frequently Asked Questions</a>' +
 '<a href="/version-history">Version History</a>' +
 '</div>' +
