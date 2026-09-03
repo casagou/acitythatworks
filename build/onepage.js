@@ -7,8 +7,8 @@
  * can check this site in a browser, and adding a Node PDF library to a repo
  * with no package.json to hold it would cost more than it buys.
  *
- * Two things this script refuses to do, because both have shipped before as
- * silent defects rather than loud ones:
+ * Three things this script refuses to do, because each has shipped before as
+ * a silent defect rather than a loud one:
  *
  *   1. Write a PDF with more than one page. The whole artifact is the claim
  *      that the framework fits on one sheet. A second page is a failure,
@@ -19,6 +19,10 @@
  *      one, the build fails and names it. The $750-per-resident policing
  *      figure survived in this PDF for three releases after v1.9.3 removed
  *      it everywhere else, precisely because nothing checked.
+ *   3. Overwrite a PDF it did not write. Since v1.11 the shipped file is a
+ *      hand-produced two-page artifact, and one-page.html still holds the
+ *      old v1.10 layout: running this script unthinkingly would quietly put
+ *      the superseded sheet back on the site. Pass --force to mean it.
  */
 'use strict';
 const { execFileSync } = require('child_process');
@@ -49,6 +53,25 @@ const CHROME = [
 if (!CHROME) {
   console.error('No Chrome or Edge found. Install one, or add its path to CHROME in this script.');
   process.exit(1);
+}
+
+/* Guard 3, before Chrome runs rather than after, so an unintended build costs
+   nothing and says why. Chrome stamps every PDF it prints with a Skia/PDF
+   /Producer; a file made anywhere else does not carry it, which is enough to
+   tell "this script wrote it" from "somebody put it here". */
+const FORCE = process.argv.includes('--force');
+
+if (!FORCE && fs.existsSync(OUT)) {
+  const existing = fs.readFileSync(OUT).toString('latin1');
+  const producer = (existing.match(/\/Producer\s*\(([^)]*)\)/) || [])[1] || '';
+  if (!/Skia\/PDF/.test(producer)) {
+    console.error(`Refusing to write: ${path.relative(ROOT, OUT)} was not produced by this script.`);
+    console.error(`Its /Producer is ${producer ? '"' + producer + '"' : 'unset'}; this script writes Chrome's "Skia/PDF ...".`);
+    console.error('The shipped PDF is hand-made (v1.11 is two pages); build/one-page.html is still v1.10,');
+    console.error('so building would silently replace it with the superseded one-page layout.');
+    console.error('Port the layout into build/one-page.html first, or re-run with --force if you mean it.');
+    process.exit(1);
+  }
 }
 
 const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'actw-onepage-'));
