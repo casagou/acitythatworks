@@ -33,7 +33,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Public+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/styles.css?v=20">
+<link rel="stylesheet" href="/styles.css?v=21">
 <style>
 /* Field tints copied from the hub cards so transferred prose reads the same.
    Not a site restyle — these rules already live on profiles.html. */
@@ -70,6 +70,53 @@
    reference label rather than as prose that lost a word. */
 .src-int{font-family:'JetBrains Mono',monospace;font-size:.88em;color:#5a5652}
 
+/* ---- Identity: what they are running for, whether they hold the seat,
+   and where the framework reads them as sitting. Three chips rather than a
+   sentence, because a reader scans this before they read anything. ---- */
+.idrow{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px}
+.idc{display:inline-flex;align-items:center;font-family:'JetBrains Mono',monospace;font-size:10.5px;
+  letter-spacing:.07em;text-transform:uppercase;padding:5px 9px;border-radius:2px;line-height:1.25}
+.idc-off{background:rgba(26,54,104,.09);color:var(--navy)}
+.idc-inc{background:rgba(34,114,71,.12);color:#1b5c39}
+.idc-new{background:rgba(139,105,20,.13);color:#7a5c11}
+.idc-lean{background:#fff;color:#5a5652;border:1px solid rgba(26,54,104,.18);cursor:help;text-transform:none;
+  font-family:inherit;font-size:12.5px;letter-spacing:0}
+.idstatus{margin:9px 0 0;font-size:13px;color:#6b6664;line-height:1.5;max-width:62ch}
+
+/* ---- Who they are. This was folded inside Background, which is the last
+   place a reader looks, and it is the first thing most of them want. ---- */
+.cbio{margin:26px 0}
+.cbio h2{font-family:'Fraunces',serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+.cbio p{margin:0;font-size:15px;line-height:1.66;color:#33312e;max-width:66ch}
+
+/* ---- Every channel the framework read, so the reader can go and check
+   rather than take the page's word for it. ---- */
+.clinks{margin:26px 0}
+.clinks h2{font-family:'Fraunces',serif;font-size:22px;color:var(--navy);margin:0 0 6px}
+.clinks-x{margin:0 0 12px;font-size:13.5px;color:#6b6664;line-height:1.55;max-width:66ch}
+.clink-row{display:grid;grid-template-columns:1fr;gap:8px}
+@media(min-width:620px){.clink-row{grid-template-columns:1fr 1fr}}
+@media(min-width:1000px){.clink-row{grid-template-columns:1fr 1fr 1fr}}
+.clink{display:flex;flex-direction:column;gap:2px;padding:9px 11px;background:#fff;border:1px solid rgba(26,54,104,.14);
+  border-left:3px solid var(--navy);border-radius:2px;text-decoration:none;min-height:44px;justify-content:center}
+.clink:hover{border-color:var(--gold);border-left-color:var(--gold);background:#fffdf7}
+.clink:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.clink-p{font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.11em;text-transform:uppercase;color:#8a8580}
+.clink-l{font-size:13.5px;color:var(--navy);line-height:1.35;word-break:break-word}
+.clink-site{border-left-color:var(--gold)}
+.clink-city{border-left-color:#3D6E4E}
+.clink-facebook,.clink-instagram,.clink-x,.clink-linkedin,.clink-bluesky,
+.clink-reddit,.clink-youtube,.clink-tiktok,.clink-threads{border-left-color:#6b7fa8}
+
+/* ---- Desktop readability. The profile column was sized for prose, but the
+   page now carries a 12-topic card, a five-door grid and a link row, and
+   those want room. Prose blocks keep their own measure via max-width. ---- */
+@media(min-width:1080px){
+  .pfpage,.parked-open{max-width:none}
+  .cn:has(.pg-door){max-width:1080px}
+}
+
+
 .how,.doors,.ev{margin:28px 0}
 .how h2,.doors h2,.ev h2{font-family:'Fraunces',serif;font-size:22px;color:var(--navy);margin:0 0 10px}
 .how-rules{margin:0 0 12px;padding-left:20px}
@@ -84,15 +131,15 @@
 .mk-d{background:#B5651F}.mk-f{background:#B5341F}
 .mk-rec{background:var(--navy)}.mk-x{background:#8a8580;color:#fff}
 .mk:focus-visible,.leg:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
-.door-grid{display:grid;grid-template-columns:1fr;gap:10px}
-@media(min-width:720px){.door-grid{grid-template-columns:1fr 1fr}}
-.door{border:1px solid rgba(26,54,104,.14);border-left:4px solid var(--navy);padding:12px 14px;background:#fff;border-radius:2px}
-.door-said{border-left-color:#3D6E4E}.door-record{border-left-color:var(--navy)}
-.door-yes{border-left-color:var(--gold)}.door-dash{border-left-color:#c9c4bf}
-.door-k{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#6b6664}
-.door-st{font-weight:700;color:var(--navy);margin:2px 0 6px}
-.door p{margin:0 0 6px;font-size:13.5px;line-height:1.5}
-.door-src{font-size:13px}
+.pdoor-grid{display:grid;grid-template-columns:1fr;gap:10px}
+@media(min-width:720px){.pdoor-grid{grid-template-columns:1fr 1fr}}
+.pdoor{border:1px solid rgba(26,54,104,.14);border-left:4px solid var(--navy);padding:12px 14px;background:#fff;border-radius:2px}
+.pdoor-said{border-left-color:#3D6E4E}.pdoor-record{border-left-color:var(--navy)}
+.pdoor-yes{border-left-color:var(--gold)}.pdoor-dash{border-left-color:#c9c4bf}
+.pdoor-k{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#6b6664}
+.pdoor-st{font-weight:700;color:var(--navy);margin:2px 0 6px}
+.pdoor p{margin:0 0 6px;font-size:13.5px;line-height:1.5}
+.pdoor-src{font-size:13px}
 .ev-topic{border-bottom:1px solid rgba(26,54,104,.1);padding:4px 0}
 .ev-topic summary{display:flex;justify-content:space-between;align-items:center;gap:12px;min-height:48px;cursor:pointer;list-style:none;font-weight:600;color:var(--navy)}
 .ev-topic summary::-webkit-details-marker{display:none}
@@ -160,13 +207,16 @@
 <div class="hero pg-door">
 <div class="eyb">Profile</div>
 <h1 class="ph1">Matt Dell</h1>
-<p class="lead" style="margin-top:18px">Council candidate · Victoria 2026</p>
+<p class="lead" style="margin-top:14px">Victoria municipal election · 17 October 2026</p>
+<div class="idrow"><span class="idc idc-off">Council</span><span class="idc idc-inc" title="Sat on this Council in the 2022-26 term, so there is a voting record to read beside the promises.">Incumbent</span><span class="idc idc-lean" title="The framework's reading of published positions, not a party registration.">Centre-Left · NDP-aligned</span></div><p class="idstatus">Councillor, declared Dec 31 2025</p>
 <div class="graderow"><span class="gradelbl">Grade</span><span class="g g-d">D</span><span class="cs-n">14 of 55 answered</span></div>
 <p class="gsum">One exact instrument match (rental cooling), otherwise directional. Voted the 9.34% residential increase; publishes no tax, permit or bill instrument.<span class="gsum-m">mean 1.21 · 14/55 answered</span></p>
 </div>
 <div class="parked-open">
 <div class="prose pfpage">
-<p class="pf "><strong class="pfl">Campaign.</strong> <a href="https://www.mattdell.ca/" target="_blank" rel="noopener">mattdell.ca</a></p>
+
+<section class="cbio" id="who"><h2>Who they are</h2><p>Matt Dell is a first-term Victoria councillor, provincial-government policy professional, former neighbourhood-association leader and longtime musician and arts organizer. He served five years as president of the South Jubilee Neighbourhood Association and has volunteered with National Little League and the Oaklands Parent Advisory Council. He holds a master’s degree in political science from the University of Victoria and lives in South Jubilee with his spouse and two children. First elected in 2022 with 13,899 votes—the third-highest total in a 37-candidate field—he has emphasized housing supply, public spaces, arts and culture, climate action and walkable neighbourhoods. For voters, the central assessment is delivery: his current campaign foregrounds projects and approvals from the term, while his voting record includes support for every annual budget and for the majority’s growth strategy.</p></section>
+<section class="clinks" id="links"><h2>Where to check them</h2><p class="clinks-x">Every channel the framework read, in the candidate's own words, checked 1 Sep 2026. Opening one leaves this site.</p><div class="clink-row"><a class="clink clink-site" href="https://www.mattdell.ca/" target="_blank" rel="noopener"><span class="clink-p">Site</span><span class="clink-l">Campaign site</span></a><a class="clink clink-page" href="https://www.mattdell.ca/policies" target="_blank" rel="noopener"><span class="clink-p">Page</span><span class="clink-l">Policies</span></a><a class="clink clink-x" href="https://x.com/mattdellok" target="_blank" rel="noopener"><span class="clink-p">X</span><span class="clink-l">X</span></a><a class="clink clink-facebook" href="https://www.facebook.com/MattDellVictoria/" target="_blank" rel="noopener"><span class="clink-p">Facebook</span><span class="clink-l">Facebook</span></a><a class="clink clink-facebook" href="https://www.facebook.com/matt.dell.917681/" target="_blank" rel="noopener"><span class="clink-p">Facebook</span><span class="clink-l">Facebook</span></a><a class="clink clink-instagram" href="https://www.instagram.com/mattdellvictoria/" target="_blank" rel="noopener"><span class="clink-p">Instagram</span><span class="clink-l">Instagram</span></a><a class="clink clink-city" href="https://www.victoria.ca/city-government/mayor-and-council/councillor-matt-dell" target="_blank" rel="noopener"><span class="clink-p">Official</span><span class="clink-l">City of Victoria</span></a></div></section>
 
 <section class="how" id="how">
 <h2>How this grade was made</h2>
@@ -186,31 +236,31 @@
 <section class="doors" id="doors">
 <h2>The five doors</h2>
 <p>A sourced sentence or a fact. Never a second grade.</p>
-<div class="door-grid"><div class="door door-record">
-<div class="door-k">Tax cap</div>
-<div class="door-st">record</div>
+<div class="pdoor-grid"><div class="pdoor pdoor-record">
+<div class="pdoor-k">Tax cap</div>
+<div class="pdoor-st">record</div>
 <p>Named YES on the 7 May 2026 budget (7.28 overall / 9.34 residential). &quot;They want to protect the things that we love in the city.&quot; No cap, formula or glide path. Against interest, added pass 2: on 24 Nov 2025 he moved to reduce the infrastructure allocation from 5.5M to 4M dollars to help hold the rate, carried 7–2 — a restraint action, but on capital renewal, not a rule on the residential rate.</p>
-<p class="door-src"><a href="https://www.timescolonist.com/local-news/victoria-passes-budget-in-debate-that-hints-at-start-of-election-campaign-12259094" target="_blank" rel="noopener">timescolonist.com</a> · vote 7 May 2026</p>
-</div><div class="door door-record">
-<div class="door-k">Downtown order</div>
-<div class="door-st">record</div>
+<p class="pdoor-src"><a href="https://www.timescolonist.com/local-news/victoria-passes-budget-in-debate-that-hints-at-start-of-election-campaign-12259094" target="_blank" rel="noopener">timescolonist.com</a> · vote 7 May 2026</p>
+</div><div class="pdoor pdoor-record">
+<div class="pdoor-k">Downtown order</div>
+<div class="pdoor-st">record</div>
 <p>Started OUR DWTN and supported the Community Safety and Wellbeing Plan. No Public Order Team, no 6am–10pm bylaw hours. Added pass 2: moved with Coun. Thompson the derelict-and-neglected-buildings motion carried unanimously 23 Jul 2026 — &quot;This is especially important in the downtown core, where we've seen some prominent buildings sit empty for many years.&quot; That is a property-condition instrument, not a public-order one.</p>
-<p class="door-src"><a href="https://www.mattdell.ca/record" target="_blank" rel="noopener">mattdell.ca</a> · 2026-09-02</p>
-</div><div class="door door-said">
-<div class="door-k">Housing</div>
-<div class="door-st">said</div>
+<p class="pdoor-src"><a href="https://www.mattdell.ca/record" target="_blank" rel="noopener">mattdell.ca</a> · 2026-09-02</p>
+</div><div class="pdoor pdoor-said">
+<div class="pdoor-k">Housing</div>
+<div class="pdoor-st">said</div>
 <p>&quot;We need to get back on track and speed up new rental, affordable, social and market housing. I commit to making that happen as soon as possible.&quot; No unit target and no 25/20/15/30 composition mix. Record: named YES on Missing Middle, 26 Jan 2023.</p>
-<p class="door-src"><a href="https://www.mattdell.ca/housing" target="_blank" rel="noopener">mattdell.ca</a> · 2026-09-02</p>
-</div><div class="door door-dash">
-<div class="door-k">Household bill</div>
-<div class="door-st">—</div>
+<p class="pdoor-src"><a href="https://www.mattdell.ca/housing" target="_blank" rel="noopener">mattdell.ca</a> · 2026-09-02</p>
+</div><div class="pdoor pdoor-dash">
+<div class="pdoor-k">Household bill</div>
+<div class="pdoor-st">—</div>
 <p>No sourced sentence on this door. Silence, not a fail.</p>
 
-</div><div class="door door-yes">
-<div class="door-k">Written program</div>
-<div class="door-st">yes</div>
+</div><div class="pdoor pdoor-yes">
+<div class="pdoor-k">Written program</div>
+<div class="pdoor-st">yes</div>
 <p>Authorized 2026 re-election site with a policies page (eight themes) plus a Record page, both with published lastmod dates. Directional, not costed: no tax formula, no permit benchmark, no dashboard, no 25M-dollar threshold. /endorsements says only &quot;More coming soon…&quot; and /yourvision is a contact form, not a platform.</p>
-<p class="door-src"><a href="https://www.mattdell.ca/" target="_blank" rel="noopener">mattdell.ca</a> · 2026-09-02</p>
+<p class="pdoor-src"><a href="https://www.mattdell.ca/" target="_blank" rel="noopener">mattdell.ca</a> · 2026-09-02</p>
 </div></div>
 </section>
 <section class="ev" id="evidence">

@@ -83,13 +83,13 @@ function doorsHtml(card) {
         ? "<p>" + esc(d.sentence) + "</p>"
         : "<p>Sourced door. Open the URL.</p>");
     const link = d.url
-      ? '<p class="door-src"><a href="' + esc(d.url) + '" target="_blank" rel="noopener">' +
+      ? '<p class="pdoor-src"><a href="' + esc(d.url) + '" target="_blank" rel="noopener">' +
         esc(d.url.replace(/^https?:\/\/(www\.)?/, "").split("/")[0]) + "</a>" +
         (d.date ? " · " + esc(d.date) : "") + "</p>"
       : "";
-    return `<div class="door door-${cls}">
-<div class="door-k">${esc(d.label)}</div>
-<div class="door-st">${esc(st)}</div>
+    return `<div class="pdoor pdoor-${cls}">
+<div class="pdoor-k">${esc(d.label)}</div>
+<div class="pdoor-st">${esc(st)}</div>
 ${body}
 ${link}
 </div>`;
@@ -98,7 +98,7 @@ ${link}
 <section class="doors" id="doors">
 <h2>The five doors</h2>
 <p>A sourced sentence or a fact. Never a second grade.</p>
-<div class="door-grid">${items}</div>
+<div class="pdoor-grid">${items}</div>
 </section>`;
 }
 
@@ -182,15 +182,15 @@ function evidenceCss() {
 .mk-d{background:#B5651F}.mk-f{background:#B5341F}
 .mk-rec{background:var(--navy)}.mk-x{background:#8a8580;color:#fff}
 .mk:focus-visible,.leg:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
-.door-grid{display:grid;grid-template-columns:1fr;gap:10px}
-@media(min-width:720px){.door-grid{grid-template-columns:1fr 1fr}}
-.door{border:1px solid rgba(26,54,104,.14);border-left:4px solid var(--navy);padding:12px 14px;background:#fff;border-radius:2px}
-.door-said{border-left-color:#3D6E4E}.door-record{border-left-color:var(--navy)}
-.door-yes{border-left-color:var(--gold)}.door-dash{border-left-color:#c9c4bf}
-.door-k{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#6b6664}
-.door-st{font-weight:700;color:var(--navy);margin:2px 0 6px}
-.door p{margin:0 0 6px;font-size:13.5px;line-height:1.5}
-.door-src{font-size:13px}
+.pdoor-grid{display:grid;grid-template-columns:1fr;gap:10px}
+@media(min-width:720px){.pdoor-grid{grid-template-columns:1fr 1fr}}
+.pdoor{border:1px solid rgba(26,54,104,.14);border-left:4px solid var(--navy);padding:12px 14px;background:#fff;border-radius:2px}
+.pdoor-said{border-left-color:#3D6E4E}.pdoor-record{border-left-color:var(--navy)}
+.pdoor-yes{border-left-color:var(--gold)}.pdoor-dash{border-left-color:#c9c4bf}
+.pdoor-k{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#6b6664}
+.pdoor-st{font-weight:700;color:var(--navy);margin:2px 0 6px}
+.pdoor p{margin:0 0 6px;font-size:13.5px;line-height:1.5}
+.pdoor-src{font-size:13px}
 .ev-topic{border-bottom:1px solid rgba(26,54,104,.1);padding:4px 0}
 .ev-topic summary{display:flex;justify-content:space-between;align-items:center;gap:12px;min-height:48px;cursor:pointer;list-style:none;font-weight:600;color:var(--navy)}
 .ev-topic summary::-webkit-details-marker{display:none}
