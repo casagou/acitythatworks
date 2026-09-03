@@ -26,10 +26,15 @@ if (!m) { console.error("scdata not found — run apply-rating-cards-to-scorecar
 const D = JSON.parse(m[1]);
 
 const RANK = { B: 6, "B−": 5, "C+": 4, C: 3, "C−": 2, D: 1 };
+/* The letter chip on this page is styled by scorecard.html's own block as
+   .g.a / .g.b / .g.c / .g.d / .g.f / .g.x — the bare letter, not a g- prefix.
+   This returned "g-b", which matched .g (white text) and no background rule
+   at all, so every letter was white on white. It went unseen because the
+   column it sits in was off the right-hand edge of a phone. */
 const gradeCls = (g) => {
-  if (!g) return "g-x";
+  if (!g) return "x";
   const c = g[0].toLowerCase();
-  return "abcdf".indexOf(c) > -1 ? "g-" + c : "g-x";
+  return "abcdf".indexOf(c) > -1 ? c : "x";
 };
 
 /* how many of the five doors carry something other than a dash */
@@ -55,7 +60,7 @@ const rows = cands.map((c) => {
   const standing = c.kind === "inc" ? "Incumbent" : "New";
   const letter = c.grade
     ? '<span class="g ' + gradeCls(c.grade) + '">' + esc(c.grade) + "</span>"
-    : '<span class="g g-x" title="No letter yet — a letter needs five answered measures and is applied by hand">—</span>';
+    : '<span class="g x" title="No letter yet — a letter needs five answered measures and is applied by hand">—</span>';
   /* Seat, standing and lean ride under the name rather than holding three
      columns of their own. They were costing 169px of a 343px phone, which
      is what pushed the letter — the one number a reader came for — off the

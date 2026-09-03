@@ -179,8 +179,8 @@ function evidenceCss() {
 .mk{display:inline-flex;align-items:center;justify-content:center;min-height:44px;min-width:44px;padding:8px 12px;border:0;border-radius:4px;font-family:'Public Sans',sans-serif;font-size:13px;font-weight:600;line-height:1.1;color:#fff;cursor:pointer;text-align:center}
 .mk-a{background:#227247}.mk-b{background:#3D6E4E}
 .mk-pp{background:#6B7A2A}.mk-c{background:#8B6914}
-.mk-d{background:#B5651F}.mk-f{background:#B5341F}
-.mk-rec{background:var(--navy)}.mk-x{background:#8a8580;color:#fff}
+.mk-d{background:#A55A18}.mk-f{background:#B5341F}
+.mk-rec{background:var(--navy)}.mk-x{background:#706B66;color:#fff}
 .mk:focus-visible,.leg:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
 .pdoor-grid{display:grid;grid-template-columns:1fr;gap:10px}
 @media(min-width:720px){.pdoor-grid{grid-template-columns:1fr 1fr}}
