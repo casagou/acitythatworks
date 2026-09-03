@@ -9,6 +9,7 @@ const fs = require("fs");
 const path = require("path");
 const ROOT = path.join(__dirname, "..");
 const { notionToHtml } = require("./notion-to-html");
+const { redact } = require("./redact-workflow");
 const ev = require("./evidence-html");
 
 const LIVE = [
@@ -32,6 +33,15 @@ const LIVE = [
   { slug: "girard",    id: "cand-martin-girard",   name: "Martin Girard",   office: "Council", key: "Gi", letter: "D",  n: 7,  campaign: { href: "https://martingirardforvictoriacouncil.ca/", label: "martingirardforvictoriacouncil.ca" } },
   { slug: "gibbs",     id: "cand-peter-gibbs",     name: "Peter Gibbs",     office: "Council", key: "Gb", letter: "—",  n: 0,  campaign: { href: "https://www.victoriaforall.ca/about", label: "victoriaforall.ca/about", note: "No personal campaign site; named on Victoria for All." } },
   { slug: "dion",      id: "cand-shona-dion",      name: "Shona Dion",      office: "Council", key: "Di", letter: "—",  n: 0,  campaign: { href: "https://www.shonadion4victoria.ca/", label: "shonadion4victoria.ca" } },
+  /* Filed with the City, deliberately unscored. He holds one of only two
+     accepted mayoral nominations, so a voter needs the page; he has no 2026
+     campaign material, so there is nothing to score and no rating card. He is
+     therefore a profile without a scorecard column, and the page says so.
+     See data/applied-letters.json → notScored. */
+  { slug: "atkinson",  id: "cand-lyall-atkinson",  name: "Lyall Atkinson",  office: "Mayor",   key: null, letter: "—",  n: 0,  unscored: {
+      why: "Nomination accepted by the City on 2 Sep 2026 — one of only two accepted mayoral nominations. No 2026 campaign website, platform, social account or coverage has been located, so there is nothing published to score against the framework.",
+      note: "He is not a column on the scorecard for the same reason. His 2022 material is on this page as vintage evidence and must not be read as a 2026 position.",
+    }, campaign: null },
 ];
 
 /* The letter and the answered count come from the applied table, not from the
@@ -40,27 +50,59 @@ const LIVE = [
 const APPLIED = JSON.parse(fs.readFileSync(path.join(ROOT, "data", "applied-letters.json"), "utf8"));
 const appliedBy = Object.fromEntries(APPLIED.candidates.map((c) => [c.key, c]));
 for (const c of LIVE) {
+  if (c.unscored) continue; /* not on the applied table by design */
   const a = appliedBy[c.key];
   if (!a) { console.error("no applied row for " + c.name); process.exit(1); }
   if (a.name !== c.name) { console.error("name drift: " + c.name + " vs " + a.name); process.exit(1); }
   c.letter = a.letter || "—";
   c.n = a.n;
+  c.mean = a.mean;
+  /* The one-line reading of the card, written by hand next to the letter in
+     Notion. It is the plainest answer to "why this letter", so it belongs
+     under the badge rather than only on the scorecard row. */
+  c.summary = a.summary || null;
+}
+/* An unscored profile must be named as such in the data file too, so the two
+   surfaces cannot drift into disagreeing about who is on the scorecard. */
+for (const c of LIVE.filter((x) => x.unscored)) {
+  if (!(APPLIED.notScored || []).some((n) => n.name === c.name)) {
+    console.error(c.name + " is built as unscored but is not in applied-letters.json → notScored");
+    process.exit(1);
+  }
 }
 
+/* Summary text comes out of Notion, so it can carry & < > and typographic
+   quotes. Escape before it reaches the markup. */
+const esc = (s) => String(s)
+  .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+
 function gradeCls(letter) {
-  if (!letter || letter === "—") return "x";
+  if (!letter || letter === "—") return "g-x";
   const c = letter[0].toLowerCase();
-  return "abcdf".indexOf(c) > -1 ? c : "x";
+  return "abcdf".indexOf(c) > -1 ? "g-" + c : "g-x";
 }
 
 const bodies = {};
+let redacted = 0;
 for (const c of LIVE) {
   const mdPath = path.join(ROOT, "build", "notion-toggles", c.slug + ".md");
   if (!fs.existsSync(mdPath)) {
     console.error("missing Notion toggle for", c.slug);
     process.exit(1);
   }
-  bodies[c.slug] = notionToHtml(fs.readFileSync(mdPath, "utf8"), c.slug);
+  /* The Notion master is a working page: its bodies narrate the editorial
+     queue and quote letters the rescore has since overtaken. Strip that
+     before publishing, and fail loudly if the text moved. */
+  let md;
+  try {
+    const r = redact(c.slug, fs.readFileSync(mdPath, "utf8"));
+    md = r.text;
+    redacted += r.fired;
+  } catch (e) {
+    console.error(e.message);
+    process.exit(1);
+  }
+  bodies[c.slug] = notionToHtml(md, c.slug);
 }
 
 const PAGE_CSS = `/* Field tints copied from the hub cards so transferred prose reads the same.
@@ -76,9 +118,12 @@ const PAGE_CSS = `/* Field tints copied from the hub cards so transferred prose 
 .pf.tone-none{border-left-color:#c9c4bf;color:#57534e}
 .pf.tone-move{border-left-color:var(--gold);background:rgba(212,168,67,.09);padding:11px 13px}
 .g{display:inline-flex;align-items:center;justify-content:center;min-width:32px;padding:2px 6px;font-family:'Fraunces',serif;font-size:15px;font-weight:600;color:#fff;line-height:1.15}
-.g.a{background:#227247}.g.b{background:#3D6E4E}
-.g.c{background:#8B6914}.g.d{background:#B5651F}
-.g.f{background:#B5341F}.g.x{background:#8a8580}
+/* Namespaced. The bare letter classes collided with the site container
+   utility .c, which is margin:0 auto — so every C-band badge was being
+   pushed to the middle of its own row on six profile pages. */
+.g.g-a{background:#227247}.g.g-b{background:#3D6E4E}
+.g.g-c{background:#8B6914}.g.g-d{background:#B5651F}
+.g.g-f{background:#B5341F}.g.g-x{background:#8a8580}
 .cs-n{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;color:#6b6664;white-space:nowrap;margin-left:6px}
 .pfpage{font-size:14px;line-height:1.6;color:#33312e}
 .pfpage p{margin:10px 0;font-size:14px;line-height:1.6}
@@ -86,6 +131,14 @@ const PAGE_CSS = `/* Field tints copied from the hub cards so transferred prose 
 .pfpage li{margin:5px 0;font-size:14px;line-height:1.55}
 .graderow{display:flex;align-items:center;gap:8px;margin-top:14px;flex-wrap:wrap}
 .gradelbl{font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:#6b6664}
+.gsum{margin:12px 0 0;max-width:62ch;font-size:14.5px;line-height:1.55;color:#33312e;
+  border-left:3px solid #1A3668;padding:2px 0 2px 13px}
+.gsum-m{display:block;margin-top:6px;font-family:'JetBrains Mono',monospace;font-size:10px;
+  letter-spacing:.06em;color:#6b6664;text-transform:uppercase}
+/* The name of an internal working document, printed without a link because
+   the link goes somewhere a reader cannot follow. Set apart so it reads as a
+   reference label rather than as prose that lost a word. */
+.src-int{font-family:'JetBrains Mono',monospace;font-size:.88em;color:#5a5652}
 ${ev.evidenceCss()}`;
 
 function pageHtml(c) {
@@ -94,13 +147,21 @@ function pageHtml(c) {
      letter" and "nothing answered" are different states and the page says
      which one this is. */
   const gradeBadge = c.letter === "—"
-    ? '<span class="g x">—</span><span class="cs-n">' + c.n + " of 55 answered</span>"
+    ? '<span class="g g-x">—</span><span class="cs-n">' + c.n + " of 55 answered</span>"
     : '<span class="g ' + gradeCls(c.letter) + '">' + c.letter + '</span><span class="cs-n">' + c.n + " of 55 answered</span>";
   const gradeText = c.letter === "—"
     ? (c.n >= 5
       ? "No letter applied yet · " + c.n + " of 55 measures answered"
       : "No letter yet · " + c.n + " of 55 measures answered, and a letter needs five")
     : "Letter " + c.letter + " · " + c.n + " of 55 measures answered";
+  /* The hand-written reading of the card, verbatim from the applied table.
+     Mean is shown beside it because a thin card with one lucky mark
+     outranks a wide card with an honest spread, and the reader is entitled
+     to see the coverage the letter rests on. */
+  const summaryBlock = c.summary
+    ? '<p class="gsum">' + esc(c.summary) + '<span class="gsum-m">' +
+      (c.mean == null ? "" : "mean " + c.mean.toFixed(2) + " · ") + c.n + "/55 answered</span></p>"
+    : "";
   let campaign;
   if (!c.campaign) {
     campaign = '<p class="pf "><strong class="pfl">Campaign.</strong> No personal campaign site located.</p>';
@@ -114,7 +175,19 @@ function pageHtml(c) {
   }
   const cardPath = path.join(ROOT, "data", "rating-cards", c.slug + ".json");
   const card = fs.existsSync(cardPath) ? JSON.parse(fs.readFileSync(cardPath, "utf8")) : null;
-  const evidence = ev.howMadeHtml(c, card) + ev.doorsHtml(card) + ev.topicsHtml(card) + ev.panelHtml();
+  /* An unscored candidate gets the reason instead of the grading apparatus.
+     Printing "how this grade was made" over a page with no grade would be
+     the opposite of clear. */
+  const evidence = c.unscored
+    ? `
+<section class="how unscored" id="how">
+<h2>Why there is no grade here</h2>
+<p>${c.unscored.why}</p>
+<p>${c.unscored.note}</p>
+<p class="how-tap"><strong>A dash is unknown, not a fail.</strong> It is not a judgement about the candidate and it is not opposition. If a 2026 platform, campaign site or substantive interview appears, this page becomes scorable and the framework will score it on the same 55 measures as everyone else.</p>
+<p class="how-tap">Spotted something we have missed? <a href="mailto:info@acitythatworks.ca">info@acitythatworks.ca</a> — corrections are free and dated.</p>
+</section>`
+    : ev.howMadeHtml(c, card) + ev.doorsHtml(card) + ev.topicsHtml(card) + ev.panelHtml();
   const cardJson = card
     ? '<script id="rating-card" type="application/json">' +
       JSON.stringify(card).replace(/</g, "\\u003c") + "</script>"
@@ -156,7 +229,7 @@ function pageHtml(c) {
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Public+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/styles.css?v=19">
+<link rel="stylesheet" href="/styles.css?v=20">
 <style>
 ${PAGE_CSS}
 </style>
@@ -198,16 +271,19 @@ ${PAGE_CSS}
 <h1 class="ph1">${c.name}</h1>
 <p class="lead" style="margin-top:18px">${officeLabel} candidate · Victoria 2026</p>
 <div class="graderow"><span class="gradelbl">Grade</span>${gradeBadge}</div>
+${summaryBlock}
 </div>
 <div class="parked-open">
 <div class="prose pfpage">
 ${campaign}
 ${evidence}
-<details class="vintage">
-<summary>Background</summary>
-${bodies[c.slug]}
-</details>
-<p style="margin-top:28px"><a href="/profiles" class="pgback">← All candidate profiles</a> · <a href="/scorecard#sc-${c.key}">Scorecard</a></p>
+${c.unscored
+  /* On a graded page the marks are the content and the narrative is
+     background, so it folds. On an unscored page the narrative IS the
+     content — folding it would leave the page empty. */
+  ? '<section class="vintage-open"><h2>What is on the record</h2>' + bodies[c.slug] + "</section>"
+  : '<details class="vintage">\n<summary>Background</summary>\n' + bodies[c.slug] + "\n</details>"}
+<p style="margin-top:28px"><a href="/profiles" class="pgback">← All candidate profiles</a> · <a href="${c.unscored ? "/scorecard#roster" : "/scorecard#sc-" + c.key}">${c.unscored ? "Why this name is not on the scorecard" : "Scorecard"}</a></p>
 </div>
 </div>
 </div>
@@ -217,7 +293,7 @@ ${bodies[c.slug]}
 ${cardJson}
 <script src="/icons.js?v=2"></script>
 <script src="/site.js?v=14"></script>
-<script src="/civic.js?v=2"></script>
+<script src="/civic.js?v=3"></script>
 <script src="/evidence.js?v=1"></script>
 </body>
 </html>
@@ -226,7 +302,10 @@ ${cardJson}
 
 const dir = path.join(ROOT, "profiles");
 fs.mkdirSync(dir, { recursive: true });
-const forbidden = ["haley", "coleman", "atkinson", "manak", "andrew"];
+/* Atkinson has an accepted nomination and a published profile, so he is no
+   longer refused here. The rest have no accepted nomination and no 2026
+   campaign, and stay off the site. */
+const forbidden = ["haley", "coleman", "manak", "andrew"];
 for (const slug of forbidden) {
   const p = path.join(dir, slug + ".html");
   if (fs.existsSync(p)) {
@@ -255,4 +334,5 @@ fs.writeFileSync(path.join(ROOT, "_redirects"), redirects.join("\n") + "\n");
 
 console.log("wrote", wrote, "pages in profiles/ and _redirects");
 console.log("slugs:", LIVE.map((c) => c.slug).join(" "));
-console.log("not written: haley coleman atkinson manak andrew");
+console.log("not written:", forbidden.join(" "));
+console.log("unscored profiles:", LIVE.filter((c) => c.unscored).map((c) => c.name).join(", ") || "none");

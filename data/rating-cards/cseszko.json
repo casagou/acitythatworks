@@ -6,7 +6,7 @@
   "notionUrl": "https://app.notion.com/p/3cfe245ae5f38128abdafe16a820650c",
   "notionTitle": "Melissa Cseszko · Council · chal",
   "platformUrl": "https://www.melissacseszko.ca/",
-  "platformLastmod": null,
+  "platformLastmod": "2026-05-06",
   "retrieved": "2026-09-02",
   "cardScoredCount": 5,
   "cardRecordCount": 0,
@@ -25,8 +25,8 @@
       "label": "Downtown order",
       "measure": "M26 / M27",
       "state": "said",
-      "sentence": "\"Safety is not just about enforcement. It is about predictability, order, and trust.\" No Public Order Team, no bylaw-hours position.",
-      "url": "https://www.melissacseszko.ca/",
+      "sentence": "\"Safety is not just about enforcement. It is about predictability, order, and trust.\" No Public Order Team, no bylaw-hours position, no complement, no funding source.",
+      "url": "https://www.melissacseszko.ca/priorities",
       "date": "2026-09-02"
     },
     {
@@ -52,8 +52,8 @@
       "label": "Written program",
       "measure": null,
       "state": "yes",
-      "sentence": "An authorized campaign site with three named pillars — Rebuild Safety, Restore Accountability, Revive Victoria. Written, current, and signed. No targets, no costings, no named instruments, no dates.",
-      "url": "https://www.melissacseszko.ca/",
+      "sentence": "An authorized campaign site with three named pillars — Rebuild Safety, Restore Accountability, Revive Victoria — written, current and signed by a financial agent. It names no target, no costing, no instrument and no date, and it has not changed since 6 May 2026.",
+      "url": "https://www.melissacseszko.ca/priorities",
       "date": "2026-09-02"
     }
   ],
@@ -148,10 +148,10 @@
       "mark": "Weak",
       "value": 0.5,
       "quote": "Safety is not just about enforcement. It is about predictability, order, and trust.",
-      "why": "Agrees with downtown order as a goal — predictability, order, and standards \"clear and applied consistently\" — with no instrument: no Public Order Team, no unified command, no co-location, no hours. Context, same block: \"People should want to come downtown, and they should feel safe when they do.\"",
-      "url": "https://www.melissacseszko.ca/",
+      "why": "Agrees with downtown order as a goal, with no instrument: no Public Order Team, no unified command, no co-location, no hours, no complement. Context, same block: \"People should want to come downtown, and they should feel safe when they do.\" The consistency sentence from the same block is scored separately, on row 10.",
+      "url": "https://www.melissacseszko.ca/priorities",
       "source": "melissacseszko.ca",
-      "lastmod": null,
+      "lastmod": "2026-05-06",
       "retrieved": "2026-09-02"
     },
     {
@@ -207,16 +207,16 @@
       "topic": 2,
       "topicName": "Downtown order",
       "measure": "M33",
-      "what": "daytime sheltering bylaws",
-      "kind": "dash",
-      "mark": null,
-      "value": null,
-      "quote": null,
-      "why": null,
-      "url": null,
-      "source": null,
-      "lastmod": null,
-      "retrieved": null
+      "what": "daytime sheltering bylaws — Program instrument is consistent enforcement of existing bylaws, no new rules and no new staff",
+      "kind": "scored",
+      "mark": "Close",
+      "value": 2,
+      "quote": "Residents should trust that standards are clear and applied consistently.",
+      "why": "Agrees, and the thing she names is the instrument itself: M33 is a discipline measure whose whole mechanism is consistent application of rules that already exist. No sheltering bylaw is named, no hours, no daytime rule. Most contestable mark on this card — see working notes.",
+      "url": "https://www.melissacseszko.ca/priorities",
+      "source": "melissacseszko.ca",
+      "lastmod": "2026-05-06",
+      "retrieved": "2026-09-02"
     },
     {
       "n": 11,
@@ -336,15 +336,15 @@
       "topicName": "Household bill",
       "measure": "M71–M73d",
       "what": "business, downtown, one mandate not a new office",
-      "kind": "scored",
-      "mark": "Weak",
-      "value": 0.5,
-      "quote": "Victoria needs a renewed focus on creating a downtown that is safe, welcoming, vibrant and economically strong.",
-      "why": "Agrees with a downtown-economy outcome, with no instrument and no number: no vacancy target, no Buy Local, no mandate, no flagship. Context: \"When people don't feel comfortable coming to the heart of the city, local businesses suffer.\" The site's heritage-and-business sentence is scored once, on row 36.",
-      "url": "https://vicnews.com/2026/05/12/business-owner-and-lifelong-victoria-resident-stepping-up-for-city-council/",
-      "source": "vicnews.com",
-      "lastmod": "2026-05-12",
-      "retrieved": "2026-09-02"
+      "kind": "dash",
+      "mark": null,
+      "value": null,
+      "quote": null,
+      "why": null,
+      "url": null,
+      "source": null,
+      "lastmod": null,
+      "retrieved": null
     },
     {
       "n": 19,
@@ -628,10 +628,10 @@
       "mark": "Weak",
       "value": 0.5,
       "quote": "It means protecting what makes the city unique: heritage, charm, historic buildings, and local businesses, while making the city function responsibly and efficiently.",
-      "why": "Agrees with heritage protection as a goal, with no instrument. Local businesses in this sentence are not given a second mark; downtown economy is scored once, on row 18.",
-      "url": "https://www.melissacseszko.ca/",
+      "why": "Agrees with heritage protection as a goal, with no instrument: no design standard, no restoration incentive, no designation or right-of-first-refusal tool. This is the clearest published heritage sentence in the council field and it is still a Weak, because naming no tool is what Weak means. Local businesses in this sentence take no second mark.",
+      "url": "https://www.melissacseszko.ca/priorities",
       "source": "melissacseszko.ca",
-      "lastmod": null,
+      "lastmod": "2026-05-06",
       "retrieved": "2026-09-02"
     },
     {
@@ -708,10 +708,10 @@
       "mark": "Partial",
       "value": 1,
       "quote": "If a program is working, Melissa will support it. If it is not delivering results, she will push for it to be reviewed and adjusted.",
-      "why": "Commits to review and adjust programmes that do not deliver, with no instrument: no zero-based cycle, no rotating set, no savings number.",
-      "url": "https://www.melissacseszko.ca/",
+      "why": "Commits — the verb is an action she will take — with no instrument: no zero-based cycle, no rotating set of service areas, no published grant test, no savings number.",
+      "url": "https://www.melissacseszko.ca/priorities",
       "source": "melissacseszko.ca",
-      "lastmod": null,
+      "lastmod": "2026-05-06",
       "retrieved": "2026-09-02"
     },
     {
@@ -725,9 +725,9 @@
       "value": 0.5,
       "quote": "When public money is spent, there should be oversight, transparency, and performance.",
       "why": "Agrees with the goal a dashboard exists to serve, with no instrument: no dashboard, no KPI set, no publication cadence.",
-      "url": "https://www.melissacseszko.ca/",
+      "url": "https://www.melissacseszko.ca/priorities",
       "source": "melissacseszko.ca",
-      "lastmod": null,
+      "lastmod": "2026-05-06",
       "retrieved": "2026-09-02"
     },
     {

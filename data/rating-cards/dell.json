@@ -6,17 +6,17 @@
   "notionUrl": "https://app.notion.com/p/3cfe245ae5f381fba1a9e2b5e3856be6",
   "notionTitle": "Matt Dell · Council · inc",
   "platformUrl": "https://www.mattdell.ca/",
-  "platformLastmod": null,
+  "platformLastmod": "2026-09-02",
   "retrieved": "2026-09-02",
   "cardScoredCount": 14,
-  "cardRecordCount": 7,
+  "cardRecordCount": 10,
   "doors": [
     {
       "id": "tax",
       "label": "Tax cap",
       "measure": "M66",
       "state": "record",
-      "sentence": "Named YES on the 7 May 2026 budget (7.28 overall / 9.34 residential). \"They want to protect the things that we love in the city.\" No cap, formula or glide path. The 2023–25 \"lowest of most surrounding cities\" line is a comparative frame, not a restraint rule.",
+      "sentence": "Named YES on the 7 May 2026 budget (7.28 overall / 9.34 residential). \"They want to protect the things that we love in the city.\" No cap, formula or glide path. Against interest, added pass 2: on 24 Nov 2025 he moved to reduce the infrastructure allocation from 5.5M to 4M dollars to help hold the rate, carried 7–2 — a restraint action, but on capital renewal, not a rule on the residential rate.",
       "url": "https://www.timescolonist.com/local-news/victoria-passes-budget-in-debate-that-hints-at-start-of-election-campaign-12259094",
       "date": "vote 7 May 2026"
     },
@@ -25,7 +25,7 @@
       "label": "Downtown order",
       "measure": "M26 / M27",
       "state": "record",
-      "sentence": "Campaign Record page: started OUR DWTN (cleanliness, safety, events) and supported the Community Safety and Wellbeing Plan. No Public Order Team and no 6am–10pm bylaw hours. 2026 \"keep investing in community safety and wellbeing\" is scored nowhere as M26/M27.",
+      "sentence": "Started OUR DWTN and supported the Community Safety and Wellbeing Plan. No Public Order Team, no 6am–10pm bylaw hours. Added pass 2: moved with Coun. Thompson the derelict-and-neglected-buildings motion carried unanimously 23 Jul 2026 — \"This is especially important in the downtown core, where we've seen some prominent buildings sit empty for many years.\" That is a property-condition instrument, not a public-order one.",
       "url": "https://www.mattdell.ca/record",
       "date": "2026-09-02"
     },
@@ -34,8 +34,8 @@
       "label": "Housing",
       "measure": "M6",
       "state": "said",
-      "sentence": "\"We need to get back on track and speed up new rental, affordable, social and market housing. I commit to making that happen as soon as possible.\" No unit target and no 25/20/15 mix. Record: named YES on Missing Middle, 26 Jan 2023.",
-      "url": "https://www.mattdell.ca/policies",
+      "sentence": "\"We need to get back on track and speed up new rental, affordable, social and market housing. I commit to making that happen as soon as possible.\" No unit target and no 25/20/15/30 composition mix. Record: named YES on Missing Middle, 26 Jan 2023.",
+      "url": "https://www.mattdell.ca/housing",
       "date": "2026-09-02"
     },
     {
@@ -52,7 +52,7 @@
       "label": "Written program",
       "measure": null,
       "state": "yes",
-      "sentence": "Authorized 2026 re-election site with a policies page (eight themes) plus a Record page. Directional, not costed, no tax formula, no permit benchmark, no dashboard, no $25M threshold.",
+      "sentence": "Authorized 2026 re-election site with a policies page (eight themes) plus a Record page, both with published lastmod dates. Directional, not costed: no tax formula, no permit benchmark, no dashboard, no 25M-dollar threshold. /endorsements says only \"More coming soon…\" and /yourvision is a contact form, not a platform.",
       "url": "https://www.mattdell.ca/",
       "date": "2026-09-02"
     }
@@ -68,10 +68,10 @@
       "mark": "Partial",
       "value": 1,
       "quote": "We need to get back on track and speed up new rental, affordable, social and market housing. I commit to making that happen as soon as possible.",
-      "why": "Commits to a supply mix with no unit target and no composition share. Record, matching, not a second mark: named YES on Missing Middle 26 Jan 2023 (\"Council members in favour of the program — Jeremy Caradonna, Dave Thompson, Susan Kim, Krista Loughton, Matt Dell and Mayor Marianne Alto\"). Family Housing Policy / 3-bedroom incentive on the Record page is the same supply cell, not a second mark. Not a sourced miss, so no Close cap. The 9,000-units figure is campaign-attributed, not an ACTW number, and is not stamped.",
-      "url": "https://www.mattdell.ca/policies",
+      "why": "Commits to a supply mix with no unit target and no composition share. M6 asks for 12,000+ net new homes and stacked shares of 25% missing middle / 20% three-bedroom / 15% non-market / 30% purpose-built rental; none of the four appears. Record, matching, not a second mark: named YES on Missing Middle 26 Jan 2023; Family Housing Policy (3-bedroom incentive) on the Record page. Added pass 2, Record context: his 6 Dec 2025 open letter to View Royal — \"Build housing, stop complaining!\" — states Victoria \"has approved over 7,000 housing units this term and is ahead of provincial targets.\" That is a volume claim from before his 31 Dec 2025 declaration, so it is Record, not a 2026 campaign sentence, and it still carries no composition share. The 9,000-units figure is campaign-attributed and is not stamped.",
+      "url": "https://www.mattdell.ca/housing",
       "source": "mattdell.ca",
-      "lastmod": "vote 26 Jan 2023",
+      "lastmod": "2026-08-04",
       "retrieved": "2026-09-02"
     },
     {
@@ -132,10 +132,10 @@
       "mark": "Record",
       "value": null,
       "quote": "Campaign Record page: \"Reduced development cost charges for affordable housing by 100%.\" No named Dell yes/no opened this pass.",
-      "why": "No 2026 vacancy target or suite amnesty. Shown, not scored. Do not invent a roll-call.",
+      "why": "No 2026 vacancy target and no suite amnesty. Shown, not scored. Do not invent a roll-call.",
       "url": "https://www.mattdell.ca/record",
       "source": "mattdell.ca",
-      "lastmod": null,
+      "lastmod": "2026-08-13",
       "retrieved": "2026-09-02"
     },
     {
@@ -244,10 +244,10 @@
       "mark": "Record",
       "value": null,
       "quote": "Campaign Record page: \"Ended sheltering in Topaz, Stadacona, Vic West, Irving, Central, Hollywood and Beacon Hill park by hiring a Housing Relocation Coordinator to work with people to find suitable homes.",
-      "why": "No 2026 continue-sentence and no named Dell yes/no opened this pass. Shown, not scored. Night lighting is not named.",
+      "why": "No 2026 continue-sentence, no named Dell yes/no opened this pass, no night lighting. Shown, not scored. Note pass 2: the 23 Jul 2026 derelict-buildings motion is scored on row 18, not here — derelict private buildings are not M36 public spaces.",
       "url": "https://www.mattdell.ca/record",
       "source": "mattdell.ca",
-      "lastmod": null,
+      "lastmod": "2026-08-13",
       "retrieved": "2026-09-02"
     },
     {
@@ -260,7 +260,7 @@
       "mark": "Opposed",
       "value": -1,
       "quote": "Voting for the budget were councillors Matt Dell, Jeremy Caradonna, Chris Coleman, Dave Thompson, Krista Loughton and Mayor Marianne Alto.",
-      "why": "Adopted 7.28 overall / 9.34 residential. Disagrees with a residential-rate cap. Context, same debate, not a second mark: \"They want to protect the things that we love in the city.\" / \"If you want to cut the budget, put forward programs people love.\" 2026 policies are silent on a cap. The 2023–25 \"lowest municipal tax increase of most surrounding major cities\" claim is a comparative frame, not a restraint instrument, and is not scored here.",
+      "why": "Adopted 7.28 overall / 9.34 residential. Disagrees with a capped residential glide path. Context, same debate, not a second mark: \"They want to protect the things that we love in the city.\" / \"If you want to cut the budget, put forward programs people love.\" Added pass 2, against interest: on 24 Nov 2025 Dell moved to cut the infrastructure allocation from 5.5M to 4M dollars, with add-back if non-market-change tax revenue exceeded 1M, carried 7–2 — he did move a restraint measure, but on capital renewal rather than a rule on the residential rate, and the residential rate still landed at 9.34%. That motion is scored as Record on row 30 and as the sourced miss on row 28. The 2023–25 \"lowest municipal tax increase of most surrounding major cities\" line is a comparative frame, not a restraint instrument, and is not scored.",
       "url": "https://www.timescolonist.com/local-news/victoria-passes-budget-in-debate-that-hints-at-start-of-election-campaign-12259094",
       "source": "timescolonist.com",
       "lastmod": "vote 7 May 2026",
@@ -337,13 +337,13 @@
       "measure": "M71–M73d",
       "what": "business, downtown, one mandate not a new office",
       "kind": "scored",
-      "mark": "Partial",
-      "value": 1,
-      "quote": "More supports for local business and tourism.",
-      "why": "Commits to downtown-business support with no vacancy target and no one-mandate-not-a-new-office. Record page downtown tax-reduction / facade / Douglas funds are matching context, not a second mark. OUR DWTN cleanliness is row 26.",
-      "url": "https://www.mattdell.ca/",
-      "source": "mattdell.ca",
-      "lastmod": null,
+      "mark": "Close",
+      "value": 2,
+      "quote": "Victorians work hard to make this a great place to live, so it's not acceptable for property owners to let their buildings remain empty or fall into disrepair… This is especially important in the downtown core, where we've seen some prominent buildings sit empty for many years.",
+      "why": "Commits: he moved the motion with Coun. Thompson and it carried unanimously 23 Jul 2026, directing staff to report back on strengthening bylaws and enforcement tools for derelict and neglected properties, to scan comparable municipalities, and to assess whether provincial legislative change is needed. Comparable instrument to M71's existing levers (vacant property licensing, conditions on business-licence renewal) and to M71's advocacy for provincial enabling legislation to surcharge persistent commercial vacancies. Not Aligned: no 11%-to-5% vacancy target, no quarterly vacancy report by block and sector, no employment-lands no-net-loss rule, and the motion is a report-back rather than the lever itself. Context, not a second mark: home-page \"More supports for local business and tourism\"; Record-page downtown tax-reduction, facade and Douglas Street funds. OUR DWTN cleanliness is row 26. No sourced miss on this cluster, so Close is allowed.",
+      "url": "https://victoriabuzz.com/2026/07/victoria-passes-motions-on-derelict-buildings-and-air-conditioners-in-rental-units/",
+      "source": "victoriabuzz.com",
+      "lastmod": "2026-07-23",
       "retrieved": "2026-09-02"
     },
     {
@@ -372,10 +372,10 @@
       "mark": "Partial",
       "value": 1,
       "quote": "I support the City's commitment to Reconciliation with the Esquimalt and Songhees Nation, and will work collaboratively with local First Nations to implement the Truth and Reconciliation Commission's Calls to Action.",
-      "why": "Commits to a City TRC-implementation action. No standing government-to-government table, no procurement target, no place-name programme, no urban Indigenous liaison. The homepage lək̓ʷəŋan acknowledgement is not a second mark. Professional / volunteer background is not a source. Record-page PEERS Indigenous-led return programme is not this Foundation package and is not scored here.",
-      "url": "https://www.mattdell.ca/policies",
+      "why": "Commits to a City TRC-implementation action. Neither: no standing government-to-government table (M1), no Indigenous procurement standard (M2), no place-names-and-signage programme (M3), no cultural protocols (M4), no urban Indigenous services liaison (M5). The footer lək̓ʷəŋən acknowledgement is not a second mark. Record-page PEERS Indigenous-led return programme is not this Foundation package and is not scored here.",
+      "url": "https://www.mattdell.ca/reconciliation",
       "source": "mattdell.ca",
-      "lastmod": null,
+      "lastmod": "2026-08-04",
       "retrieved": "2026-09-02"
     },
     {
@@ -385,14 +385,17 @@
       "measure": "M9/M9b/M64",
       "what": "tenant protections, STR, indoor heat (M9c struck; 26°C gated)",
       "kind": "scored",
-      "mark": "Partial",
-      "value": 1,
-      "quote": "To do this, we must accelerate construction of non-market housing, build thousands of new rental units, and strengthen policies to protect renters.",
-      "why": "Commits to renter-protection policy. Neither: no demoviction bylaw named, no STR licensing, no indoor-heat standard in the 2026 sentence. Housing-supply clauses in the same sentence are not a second M6 mark. Record, matching, not a second mark: Tenant Protection Bylaw on the Record page; 30 Jul 2026 council unanimously enhanced compensation (press 31 Jul 2026) and Dell is quoted that \"continuing to approve rental developments will have a bigger impact on helping renters.\" M9c is struck; 26°C is gated — a May 2026 heat motion is not scored in this cluster.",
-      "url": "https://www.mattdell.ca/policies",
-      "source": "mattdell.ca",
-      "lastmod": "vote 30 Jul 2026",
-      "retrieved": "2026-09-02"
+      "mark": "Aligned",
+      "value": 3,
+      "quote": "Commits, same instrument, on the M64 indoor-heat limb.",
+      "why": "Dell moved the motion with Couns. Thompson and Caradonna in May 2026; the resulting staff direction was approved unanimously 23 Jul 2026 and directs staff to report back on amendments to the City's Rental Property Standards of Maintenance Bylaw ensuring no prohibition of cooling devices in rental units, including passive cooling. The Program names that instrument in the same words: M64's first ordered step is to \"ban unreasonable landlord prohibition of portable cooling, if the Standards of Maintenance Bylaw or the business-licence power can carry it.\" Same bylaw, same prohibition-on-the-prohibition, and the Program's 26°C performance rule is itself gated to a solicitor's hook — so a legal-feasibility direction is the Program's own step at this stage, not a substitute for it. 2026 campaign sentence, context, not a second mark: \"we must accelerate construction of non-market housing, build thousands of new rental units, and strengthen policies to protect renters.\" Record, matching: Tenant Protection Bylaw; 30 Jul 2026 council unanimously enhanced displacement compensation. FLAG 1 — cluster: M9b short-term-rental licensing is entirely absent and M9's demoviction package is Record rather than a 2026 promise; a reader who scores the cluster rather than the instrument holds this at Close 2.0. FLAG 2 — accuracy, and it is the cap question: in his 30 Jul 2026 Facebook post Dell wrote that council gave renters \"the strongest protections in the Province\" and that \"the City also hired a Tenant Protection Coordinator.\" The vote was unanimous, the largest enhancement was Hammond's amendment, and the City's own Tenant Relocation Guide has the coordinator appointed and paid by the applicant. That is an overstatement of his own role, not a vote contradicting a promise, so the incumbent cap is not applied here. If it is ruled a sourced miss, this cell caps at Partial+ 1.5.",
+      "url": "https://victoriabuzz.com/2026/07/victoria-passes-motions-on-derelict-buildings-and-air-conditioners-in-rental-units/",
+      "source": "victoriabuzz.com",
+      "lastmod": "2026-08-04",
+      "retrieved": "2026-09-02",
+      "flags": [
+        "card FLAG"
+      ]
     },
     {
       "n": 22,
@@ -419,11 +422,11 @@
       "kind": "record",
       "mark": "Record",
       "value": null,
-      "quote": "Campaign Record page: \"Approved 517 units of shelter and supportive housing for individuals experiencing homelessness.\" No Housing First target, no STEP throughput, no quarterly count.",
-      "why": "No 2026 Dell-owned Housing First sentence. Shown, not scored.",
+      "quote": "Campaign Record page: \"Approved 517 units of shelter and supportive housing for individuals experiencing homelessness.\" No Housing First target, no STEP throughput, no quarterly count, no 2026 Dell-owned Housing First sentence.",
+      "why": "Shown, not scored.",
       "url": "https://www.mattdell.ca/record",
       "source": "mattdell.ca",
-      "lastmod": null,
+      "lastmod": "2026-08-13",
       "retrieved": "2026-09-02"
     },
     {
@@ -467,11 +470,11 @@
       "kind": "record",
       "mark": "Record",
       "value": null,
-      "quote": "Campaign Record page: \"Started the OUR DWTN program, which invests nearly $900,000 annually into downtown cleanliness, safety and cultural events.",
-      "why": "No 2026 \"continue OUR DWTN\" sentence (unlike Loughton). No 90% graffiti standard, no sanitation hours. Shown, not scored. Arts/events in the same Record bullet are not a second M50 mark.",
+      "quote": "Campaign Record page: \"Started the OUR DWTN program, which invests nearly 900,000 dollars annually into downtown cleanliness, safety and cultural events.\" His 2023 Citified answer gives the founding figure as a \"new 980,000-dollar annual Downtown Revitalization Program.",
+      "why": "No 2026 continue-sentence, no 90% graffiti-in-48-hours standard, no sanitation hours, no pest plan. Shown, not scored. Arts and events in the same bullet are not a second M50 mark.",
       "url": "https://www.mattdell.ca/record",
       "source": "mattdell.ca",
-      "lastmod": null,
+      "lastmod": "2026-08-13",
       "retrieved": "2026-09-02"
     },
     {
@@ -484,10 +487,10 @@
       "mark": "Partial",
       "value": 1,
       "quote": "Expand clean and active transportation options and public transit - so everyone can get around Victoria easily and at reasonable cost.",
-      "why": "Commits to active transportation. Neither: no adaptive-signal programme, no Vision Zero audit, no named corridor. Transit in the same sentence is not a second M20b/M23b mark. Record AAA cycling / bike share / bike valet is matching context, not a second mark. M39 is struck — not scored. A 2023 speed-camera motion Dell seconded is Record context on this cluster, not a 2026 instrument and not scored again.",
-      "url": "https://www.mattdell.ca/policies",
+      "why": "Commits to active transportation. Neither: no adaptive-signal programme (M19), no collision-ranked intersection inventory (M38), no school-zone automated speed enforcement (M40), no named corridor. Transit in the same sentence is not a second M20b/M23b mark. Record AAA cycling, bike share and bike valet are matching context, not a second mark. M39 is struck and is not scored. A 2023 speed-camera motion he seconded is Record context on this cluster, not a 2026 instrument.",
+      "url": "https://www.mattdell.ca/climatechange",
       "source": "mattdell.ca",
-      "lastmod": null,
+      "lastmod": "2026-08-04",
       "retrieved": "2026-09-02"
     },
     {
@@ -500,11 +503,14 @@
       "mark": "Partial",
       "value": 1,
       "quote": "Invest in streets, sidewalks & infrastructure.",
-      "why": "Commits to sidewalk and street investment. Neither: no sidewalk-gap standard and no City-controlled transit-lever list. Distinct home-page bullet from the active-transportation sentence on row 27. \"Fix roads first\" sequencing is row 30, not here. \"Walkable\" on other bullets is branding and is not scored again.",
+      "why": "Commits to sidewalk and street investment. Neither: no sidewalk-gap inventory, no km-of-gap-closed figure, no crossing standard, no City-controlled transit-lever list. Sourced miss, added pass 2 — actions over words. On 24 Nov 2025 Dell moved to reduce the City's infrastructure allocation from 5.5M to 4M dollars, carried 7–2; Victoria Buzz reports the reduction could affect \"roadwork, the city's fleet, parks' infrastructure, and playgrounds.\" M20b states that sidewalk and crossing construction is \"a named allocation inside M25… not new capital\" — that is, inside the very envelope he moved to cut. The 2026 promise sits under the action as context. Cap applied: this cell cannot exceed Partial+ 1.5; it scores Partial 1.0 on its own terms, so the cap does not bite. FLAG: a reader could hold the action to be a Disagrees and mark Weak 0.5 or Opposed −1.0; the add-back condition (restore if non-market-change revenue exceeded 1M dollars) and the budget-balancing context are why this pass does not.",
       "url": "https://www.mattdell.ca/",
       "source": "mattdell.ca",
-      "lastmod": null,
-      "retrieved": "2026-09-02"
+      "lastmod": "2025-11-24",
+      "retrieved": "2026-09-02",
+      "flags": [
+        "card FLAG"
+      ]
     },
     {
       "n": 29,
@@ -515,11 +521,11 @@
       "kind": "record",
       "mark": "Record",
       "value": null,
-      "quote": "Campaign Record page: \"Committed $14 million dollars to rebuild every public washroom in Victoria.",
-      "why": "No 2026 washroom-count or accessibility-audit sentence. No named Dell yes/no opened this pass. Shown, not scored.",
+      "quote": "Campaign Record page: \"Committed 14 million dollars to rebuild every public washroom in Victoria.",
+      "why": "No 2026 washroom-count or universal-accessibility-audit sentence, no named Dell yes/no opened this pass. Shown, not scored.",
       "url": "https://www.mattdell.ca/record",
       "source": "mattdell.ca",
-      "lastmod": null,
+      "lastmod": "2026-08-13",
       "retrieved": "2026-09-02"
     },
     {
@@ -528,15 +534,15 @@
       "topicName": "Streets and mobility",
       "measure": "M25",
       "what": "fix roads first",
-      "kind": "dash",
-      "mark": null,
+      "kind": "record",
+      "mark": "Record",
       "value": null,
-      "quote": null,
+      "quote": "Added pass 2. \"Councillor Matt Dell put forth a motion to reduce the City's infrastructure funding from 5.5 million to 4 million dollars,\" with add-back \"if any Non-Market Change (NMC) tax revenue comes in, in excess of 1 million, that it be added back into the infrastructure budget.\" Carried 7–2, 24 Nov 2025, during deliberations that were trying to bring the 2026 increase down toward 4%. M25 is a zero-net-new sequencing rule inside the existing envelope (11.5M major plus 3.5M local street rehabilitation in 2026), so a reduction of the envelope is a decision about M25's money without being a vote against M25's sequencing rule. Recorded here, scored as the sourced miss on row 28. No pothole report-to-fix standard and no published quarterly road-condition ranking. Adjacency rule applied: Record, not Opposed.",
       "why": null,
-      "url": null,
-      "source": null,
-      "lastmod": null,
-      "retrieved": null
+      "url": "https://victoriabuzz.com/2025/11/victoria-saves-more-services-from-cuts-in-2026-financial-plan/",
+      "source": "victoriabuzz.com",
+      "lastmod": "2025-11-24",
+      "retrieved": "2026-09-02"
     },
     {
       "n": 31,
@@ -547,11 +553,11 @@
       "kind": "record",
       "mark": "Record",
       "value": null,
-      "quote": "Campaign Record page: \"Supported funding for a business-security fund, a facade improvement fund, and a Douglas street revitalization fund.\" No named Dell yes/no opened this pass.",
-      "why": "Downtown-business 2026 sentence is scored on row 18. Shown, not scored.",
+      "quote": "Campaign Record page: \"Supported funding for a business-security fund, a facade improvement fund, and a Douglas street revitalization fund.\" No named Dell yes/no opened this pass, and no exposure-based cost-spreading design.",
+      "why": "The downtown-business 2026 material is scored on row 18. Shown, not scored.",
       "url": "https://www.mattdell.ca/record",
       "source": "mattdell.ca",
-      "lastmod": null,
+      "lastmod": "2026-08-13",
       "retrieved": "2026-09-02"
     },
     {
@@ -628,10 +634,10 @@
       "mark": "Close",
       "value": 2,
       "quote": "To do this, we must implement strategies in cooperation with the arts community, preserve important venues and provide grant funding for diverse artists to create work for the public.",
-      "why": "Commits to cultural-venue preservation. Comparable, not Same: heritage standards and a street-furniture programme are not named. Grant funding in the same sentence is not a second M50 mark. Record, matching, not a second mark: \"purchased Hermann's Jazz Club to ensure there's a place for arts and music downtown\" (VicNews launch 31 Dec 2025 / Victoria Buzz 5 Jan 2026). Royal and McPherson board seat is a seat held, not a source. Not a sourced miss, so no Close cap. FLAG: a reader could argue Partial 1.0 because heritage standards are absent; ambiguity resolves upward.",
-      "url": "https://www.mattdell.ca/policies",
+      "why": "Commits to cultural-venue preservation (M46b). Comparable, not Same: strict heritage design standards (M43) and the street-furniture restoration programme (M44) are not named. The grant-funding clause in the same sentence is not a second M50b mark. Record, matching, not a second mark: acquired Hermann's Jazz Club and built the Ship Point outdoor venue. Royal and McPherson board seat is a seat held, not a source. No sourced miss on this cluster, so Close is allowed. FLAG: a reader could argue Partial 1.0 because heritage standards are absent; ambiguity resolves upward.",
+      "url": "https://www.mattdell.ca/artsculture",
       "source": "mattdell.ca",
-      "lastmod": "2025-12-31",
+      "lastmod": "2026-08-04",
       "retrieved": "2026-09-02",
       "flags": [
         "card FLAG"
@@ -647,10 +653,10 @@
       "mark": "Record",
       "value": null,
       "quote": "Campaign Record page: \"Supported pedestrianized areas across the city, including lower Government Street and other neighbourhood led spaces.",
-      "why": "No 2026 pedestrian-priority or signature-project sentence. \"Walkable neighbourhoods\" on the home page is branding, not pedestrianisation. Shown, not scored.",
+      "why": "No 2026 pedestrianisation-pilot sentence and no resident-chosen, referendum-approved signature project. \"Walkable neighbourhoods\" on the home page is branding, not pedestrianisation. His 2023 Citified answer names Centennial Square revitalisation as a goal, which is 2023 words and not a 2026 instrument. Shown, not scored.",
       "url": "https://www.mattdell.ca/record",
       "source": "mattdell.ca",
-      "lastmod": null,
+      "lastmod": "2026-08-13",
       "retrieved": "2026-09-02"
     },
     {
@@ -663,10 +669,10 @@
       "mark": "Partial",
       "value": 1,
       "quote": "We need to preserve green space and invest in new parks with inclusive amenities, and we must invest in recreation facilities for everyone – such as a new Crystal Pool and Central Library.",
-      "why": "Commits to new parks investment. Neither: no heritage-incentive schedule, no ornamental-lighting programme. Crystal Pool in this sentence is context; the dated 2030 completion is scored on row 39. FLAG: home-page \"more parks & trees\" is a different sentence, scored on row 49.",
-      "url": "https://www.mattdell.ca/policies",
+      "why": "Commits to new parks investment (M49). Neither: no heritage-incentive schedule (M47), no extended ornamental-lighting hours (M48), no waterfront-walkway expansion. Crystal Pool in this sentence is context; the dated 2030 completion is scored on row 39. FLAG: home-page \"Climate-smart city with more parks & trees\" is a different sentence, scored on row 49.",
+      "url": "https://www.mattdell.ca/parksamenities",
       "source": "mattdell.ca",
-      "lastmod": null,
+      "lastmod": "2026-08-04",
       "retrieved": "2026-09-02",
       "flags": [
         "card FLAG"
@@ -682,7 +688,7 @@
       "mark": "Partial",
       "value": 1,
       "quote": "Finish Crystal Pool by 2030.",
-      "why": "Commits to a recreation-facility completion date. Neither: no arts-funding-floor percentage. Context, not a second mark: home-page \"More events like Symphony Splash and Fernfest\" / \"Champion arts and culture\"; grant-funding clause already used on row 36. City referendum 8 Feb 2025 is a voter result, not a named Dell vote. Unanimous site-endorsement press does not name Dell this pass — do not invent a roll-call.",
+      "why": "Commits to a recreation-facility completion date. Neither: no arts-and-culture funding floor as a published percentage (M50b), no extended civic-cultural-space hours (M50), no Royal Athletic Park utilisation plan (M52). Context, not a second mark: home-page \"More events like Symphony Splash and Fernfest\" and \"Champion arts and culture\"; the grant-funding clause is already used on row 36; the YMCA bridging-pool takeover on the Record page. The 8 Feb 2025 Crystal Pool referendum is a voter result, not a named Dell vote. Added pass 2, Record context: on 7 Apr 2026 Dell moved, with Coun. Loughton, a 175,000-dollar grant to the Victoria Curling Club's ice plant, conditional on the club raising 75,000 — a sport-facility funding decision, recorded against M65 on row 41, not a second mark here.",
       "url": "https://www.mattdell.ca/",
       "source": "mattdell.ca",
       "lastmod": "2025-02-08",
@@ -710,15 +716,15 @@
       "topicName": "A smaller scored Hall",
       "measure": "M65",
       "what": "rotating zero-based reviews",
-      "kind": "dash",
-      "mark": null,
+      "kind": "record",
+      "mark": "Record",
       "value": null,
-      "quote": null,
+      "quote": "Added pass 2. On 7 Apr 2026 Dell moved, with Coun. Loughton, a 175,000-dollar grant to the Victoria Curling Club for a new ice plant, conditional on the club raising a further 75,000: \"This money will help build community, keep seniors active, and ensure newcomers can learn to curl.\" Carried. M65 requires a line-by-line review of every grant and subsidy over 50,000 dollars a year against a published three-part test of jurisdiction, outcomes and duplication; this grant is three and a half times that threshold and no such test is cited, in a cycle whose draft plan required 8.38M dollars of cuts. Recorded, not scored: moving one grant is not a vote against the review process, and M65 is a process measure. No zero-based cycle, no grant test and no service-area rotation appears anywhere in his 2026 material. Budget-vote sentences are scored on row 13.",
       "why": null,
-      "url": null,
-      "source": null,
-      "lastmod": null,
-      "retrieved": null
+      "url": "https://victoriabuzz.com/2026/04/we-are-deeply-grateful-victoria-council-approves-175k-grant-for-curling-club/",
+      "source": "victoriabuzz.com",
+      "lastmod": "vote 7 Apr 2026",
+      "retrieved": "2026-09-02"
     },
     {
       "n": 42,
@@ -826,10 +832,10 @@
       "mark": "Partial",
       "value": 1,
       "quote": "Advocate for policies that promote green building technologies, reduce waste and move towards a circular economy.",
-      "why": "Commits to a municipal climate/building instrument. Neither: not the 50% / 2030 target set, not district energy, not seismic. Context, same policies section, not scored separately: \"I am committed to doing everything possible to reduce emissions in Victoria.\" Record Climate Leadership Plan update / Zero Carbon Step-code is matching context, not a second mark. \"Climate leadership stated\" as a characterisation is not a source.",
-      "url": "https://www.mattdell.ca/policies",
+      "why": "Commits to a municipal climate and building instrument. Neither: not the reaffirmed target set (M58), not district energy financed as a utility (M58b), not seismic and coastal resilience (M64b). Context, same page, not a second mark: \"I am committed to doing everything possible to reduce emissions in Victoria.\" Record Climate Leadership Plan update and first-in-BC Zero Carbon Step-code adoption are matching context, not a second mark. The 23 Jul 2026 cooling direction is scored on row 21 and is not counted again here.",
+      "url": "https://www.mattdell.ca/climatechange",
       "source": "mattdell.ca",
-      "lastmod": null,
+      "lastmod": "2026-08-04",
       "retrieved": "2026-09-02"
     },
     {
@@ -842,7 +848,7 @@
       "mark": "Partial",
       "value": 1,
       "quote": "Climate-smart city with more parks & trees.",
-      "why": "Commits to more trees. Neither: no 5,000-tree target, no 35% canopy in the 2026 bullet, no emergency-preparedness position. Record page \"Committed to a 40% Urban Tree canopy by 2050 (up from 30%)\" is matching context, not a second mark. Mode share sits inside the sentence already scored on row 27. FLAG: parks also appear on row 38 from a different sentence.",
+      "why": "Commits to more trees. Neither: no 5,000-trees-by-2030 target in the 2026 bullet, no 60%-mode-share target, no ecosystem or emergency-preparedness position. Record page \"Committed to a 40% Urban Tree canopy by 2050 (up from 30%)\" is matching context, not a second mark. Mode share sits inside the sentence already scored on row 27. Cooling centres are part of M64 and are scored on row 21. FLAG: parks also appear on row 38 from a different sentence.",
       "url": "https://www.mattdell.ca/",
       "source": "mattdell.ca",
       "lastmod": null,
@@ -889,15 +895,15 @@
       "topicName": "Neighbourhoods and integrity",
       "measure": "M79c–f",
       "what": "lobbyist registry, FOI fee, remuneration",
-      "kind": "dash",
-      "mark": null,
+      "kind": "record",
+      "mark": "Record",
       "value": null,
-      "quote": null,
+      "quote": "Added pass 2. On 3 Mar 2026 council voted 8–1 to discontinue the City's Urban Development Institute membership, on a motion arising from Coun. Hammond during budget deliberations; Dell was the single vote against ending it. Membership had risen 75% that year; ending it saved 2,625 dollars. In earlier September 2025 deliberations Dell said the City is \"in the pocket of trying to build more housing in the city.\" Adjacency rule applied: this is Record, not Opposed. M79d's instrument is a searchable public registry of proponent meetings filed by the City side within 10 business days; a vote about the City's own membership dues in a development-industry association is not a vote against that registry, and marking it as one could not be defended to the candidate's face. No lobbyist registry, no FOI-fee abolition and no next-term-only remuneration rule appears in his 2026 material. Also recorded: he recused himself on 7 Dec 2023 (boulevard tax) and 11 Dec 2025 (letter to a provincial legislative committee) — recusals are process facts, not marks.",
       "why": null,
-      "url": null,
-      "source": null,
-      "lastmod": null,
-      "retrieved": null
+      "url": "https://crdwatch.ca/2026/03/05/the-city-of-victoria-withdraws-its-udi-lobby-membership/",
+      "source": "crdwatch.ca",
+      "lastmod": "vote 3 Mar 2026",
+      "retrieved": "2026-09-02"
     },
     {
       "n": 53,
@@ -909,10 +915,10 @@
       "mark": "Close",
       "value": 2,
       "quote": "We can do this by creating innovative local plans, in consultation with communities, to ensure each neighbourhood is unique, walkable and vibrant.",
-      "why": "Commits to local plans with community consultation. Comparable, not Same: language-access and a neighbourhood-grant line are not named. \"Walkable\" in the same sentence is not a second M20b/M45b mark. Fernwood / James Bay liaison on the City biography is a seat held, not a source. Not a sourced miss, so no Close cap. FLAG: a reader could argue Partial 1.0 (local plans ≠ the Local Area Plan programme) or Aligned 3.0 (same instrument); ambiguity between Partial and Close resolves upward to Close, not to Aligned, because the rest of the cluster is absent.",
-      "url": "https://www.mattdell.ca/policies",
+      "why": "Commits to local plans made with community consultation (M80c). Comparable, not Same: no neighbourhood-empowerment grant line (M80) and no civic access in both official languages (M80b), and \"innovative local plans\" is not named as the Local Area Plan programme. \"Walkable\" in the same sentence is not a second M20b/M45b mark. Neighbourhood-association liaison roles on the City biography are seats held, not a source. No sourced miss on this cluster, so Close is allowed. FLAG: a reader could argue Partial 1.0; ambiguity between Partial and Close resolves upward to Close, not to Aligned, because two of the three limbs are absent.",
+      "url": "https://www.mattdell.ca/livableneighbourhoods",
       "source": "mattdell.ca",
-      "lastmod": null,
+      "lastmod": "2026-08-04",
       "retrieved": "2026-09-02",
       "flags": [
         "card FLAG"
@@ -944,7 +950,7 @@
       "mark": "Partial",
       "value": 1,
       "quote": "Councillors Chris Coleman, Matt Dell, Krista Loughton and Susan Kim sided with the mayor",
-      "why": "to put \"Do you support Saanich and Victoria becoming one municipality?\" on the ballot, 5–4. Record-only hit vs M81. No 2026 Dell-owned execute-amalgamation sentence (unlike Loughton's \"structural framework to execute it\"). Not Close/Aligned. Policies page is silent on amalgamation.",
+      "why": "to put \"Do you support Saanich and Victoria becoming one municipality?\" on the ballot, 5–4. Commits by recorded vote, but on the question rather than the file: M81 asks the City to finish the existing citizens' assembly file rather than restart it, and no 2026 Dell-owned sentence names a completion path. Policies pages are silent on amalgamation. Not Close or Aligned.",
       "url": "https://www.timescolonist.com/local-news/victoria-to-go-ahead-with-non-binding-amalgamation-question-12476505",
       "source": "timescolonist.com",
       "lastmod": "vote 25 Jun 2026",

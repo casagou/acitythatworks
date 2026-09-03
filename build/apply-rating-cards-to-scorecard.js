@@ -303,8 +303,20 @@ for (const c of DATA.cands) {
   c.grade = a.letter;
   c.n = a.n;
   c.kind = a.kind;
-  c.mean = null; /* never computed — see Decision 14 */
+  /* The mean is read off the card and published beside n, never on its own and
+     never turned into a letter here: an unweighted mean lets a thin card with
+     one lucky Aligned mark outrank a wide card with an honest spread, which is
+     exactly why coverage is printed next to it. */
+  c.mean = a.mean == null ? null : a.mean;
+  c.proposed = a.proposed || null;
+  c.applied = a.applied || null;
+  c.correction = a.correction || null;
+  c.summary = a.summary || null;
 }
+DATA.letterRule = APPLIED._rule;
+DATA.meanRule = APPLIED._meanRule;
+DATA.letters = APPLIED._letters;
+DATA.caveats = APPLIED.caveats || [];
 const missing = APPLIED.candidates.filter((a) => !DATA.cands.some((c) => c.key === a.key));
 if (missing.length) {
   console.error("applied table has candidates the scorecard does not: " + missing.map((m) => m.name).join(", "));
@@ -334,16 +346,21 @@ html = html.replace(/(<select id="fsort">)[\s\S]*?(<\/select>)/, (all, a, b) =>
   DATA.cols.filter((c) => c.topics).map((c) => '<option value="' + c.key + '">' + esc(c.label) + "</option>").join("") + b);
 
 /* ---- rewrite area-table rows, keeping the Gen cell verbatim ---- */
+/* Best first. Ordering the letters is presentation, not scoring — the letters
+   themselves are ruled by hand on the Notion table. */
+const RANK = { B: 6, "B−": 5, "C+": 4, C: 3, "C−": 2, D: 1 };
 function genTd(key) {
   const a = appliedBy[key];
-  const base = ' data-col="general" data-n="' + a.n + '" data-total="55"';
+  const mean = a.mean == null ? "" : ", card mean " + a.mean.toFixed(2);
+  const base = ' data-col="general" data-n="' + a.n + '" data-total="55" data-rank="' + (RANK[a.letter] || 0) + '"';
   if (!a.letter) {
     return '<td class="cc none"' + base + ' title="' + esc(a.name) +
-      ' — no letter yet. A letter is applied only at five scored answers; ' + a.n + ' of 55 so far.">' +
+      " — no letter yet. A letter is ruled by hand and needs five answered measures; " +
+      a.n + " of 55 answered" + mean + '.">' +
       '<span class="gdash">—</span><span class="cn">' + a.n + "/55</span></td>";
   }
-  return '<td class="cc"' + base + ' title="' + esc(a.name) + " — applied letter " + a.letter +
-    ", on " + a.n + ' of 55 answered measures">' +
+  return '<td class="cc"' + base + ' title="' + esc(a.name) + " — letter " + a.letter +
+    ", on " + a.n + " of 55 answered measures" + mean + '">' +
     '<span class="g ' + gradeCls(a.letter) + '">' + esc(a.letter) + "</span>" +
     '<span class="cn">' + a.n + "/55</span></td>";
 }
@@ -354,7 +371,6 @@ html = html.replace(/<tr id="sc-(\w+)" class="cr"[\s\S]*?<\/tr>/g, (row, key) =>
   /* The row carries the applied letter's rank and the answered count, because
      the table sorts on these. It used to carry data-mean, and a mean is
      exactly what Decision 14 does not publish. */
-  const RANK = { "B+": 4, B: 3, C: 2, D: 1 };
   const head = '<tr id="sc-' + key + '" class="cr" data-c="' + key +
     '" data-name="' + esc(a.name.toLowerCase()) +
     '" data-surname="' + esc(a.name.split(" ").slice(-1)[0].toLowerCase()) +
@@ -416,7 +432,7 @@ for (const col of DATA.cols) {
 }
 /* Every letter and count on the page must equal the applied table, and no
    letter may exist outside the five Decision 14 allows. */
-const ALLOWED = new Set(["B+", "B", "C", "D"]);
+const ALLOWED = new Set(APPLIED._letters || []);
 for (const c of DATA.cands) {
   const a = appliedBy[c.key];
   if (c.grade !== a.letter || c.n !== a.n) {

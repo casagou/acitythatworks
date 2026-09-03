@@ -375,7 +375,7 @@
           '<span class="hc-a">' + c.answered + '/' + d.doors + ' answered</span></a>';
       });
       h += '<a class="hc-chip more" href="scorecard.html">All ' + all.length + ' candidates →</a></div>';
-      h += '<p class="hc-note">Grades are the scorecard\'s, computed on the published two-question scale · updated ' + esc(d.date || '') + ' · <a href="scorecard.html#scale">how a grade is decided</a> · this is not an endorsement.</p>';
+      h += '<p class="hc-note">The letter is applied by hand from the published rules, never computed here, and only once a candidate has five answered measures · updated ' + esc(d.date || '') + ' · <a href="scorecard.html#scale">how a mark is decided</a> · a dash is unknown, not a fail · this is not an endorsement.</p>';
       host.innerHTML = h;
       $$('[data-count]', host).forEach(countUp);
       $$('[data-w]', host).forEach(fillMeter);

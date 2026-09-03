@@ -4,6 +4,9 @@
    Do not invent: only the toggle text is transferred. */
 "use strict";
 
+/* Hosts a site visitor cannot reach. Their labels stay, their links go. */
+const PRIVATE_HOST = /^https?:\/\/(?:[a-z0-9-]+\.)*notion\.(?:so|com|site)\//i;
+
 const JULY_BUCKET = /^(?:✅\s*Aligned|🟢\s*Close|🟡\s*Partial|❌\s*Opposed)\b/;
 
 function esc(s) {
@@ -15,9 +18,16 @@ function inline(md) {
   const links = [];
   s = s.replace(/\[([^\]]+)\]\((https?:[^)]+)\)/g, (_, text, href) => {
     const i = links.length;
+    /* Notion links point into a private workspace. A reader who follows one
+       gets a login wall, which is the opposite of what a page promising
+       traceable evidence should do — and the rating card they name is already
+       rendered in full further down this same page. Keep the label, drop the
+       dead link. */
     links.push(
-      '<a href="' + href.replace(/"/g, "&quot;") + '" target="_blank" rel="noopener">' +
-      inlineNoLinks(text) + "</a>"
+      PRIVATE_HOST.test(href)
+        ? '<span class="src-int">' + inlineNoLinks(text) + "</span>"
+        : '<a href="' + href.replace(/"/g, "&quot;") + '" target="_blank" rel="noopener">' +
+          inlineNoLinks(text) + "</a>"
     );
     return "\u0000L" + i + "\u0000";
   });
@@ -28,14 +38,20 @@ function inline(md) {
 
 function inlineNoLinks(s) {
   const parts = [];
-  s = s.replace(/\*\*([^*]+)\*\*/g, (_, t) => {
-    parts.push("<strong>" + esc(t) + "</strong>");
+  const stash = (html) => {
+    parts.push(html);
     return "\u0000B" + (parts.length - 1) + "\u0000";
-  });
-  s = s.replace(/\*([^*]+)\*/g, (_, t) => {
-    parts.push("<em>" + esc(t) + "</em>");
-    return "\u0000B" + (parts.length - 1) + "\u0000";
-  });
+  };
+  /* Bold first, and non-greedy over any character, because a bold span may
+     contain an italic one — "**a *b* c**". The old pattern was [^*]+, which
+     stops at the nested asterisk, so the italic inside was matched on its own
+     and its placeholder was never substituted back. That wrote a literal NUL
+     into the page (profiles/cseszko.html carried two, committed). Italics
+     inside a bold span are resolved on already-escaped text, so the result
+     carries no placeholder of its own. */
+  const emEsc = (t) => esc(t).replace(/\*([^*]+)\*/g, (_, x) => "<em>" + x + "</em>");
+  s = s.replace(/\*\*([\s\S]+?)\*\*/g, (_, t) => stash("<strong>" + emEsc(t) + "</strong>"));
+  s = s.replace(/\*([^*]+)\*/g, (_, t) => stash("<em>" + esc(t) + "</em>"));
   s = esc(s);
   return s.replace(/\u0000B(\d+)\u0000/g, (_, n) => parts[+n]);
 }
