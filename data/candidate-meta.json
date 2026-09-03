@@ -1,0 +1,246 @@
+{
+  "_source": "Notion · Candidate Profiles · https://app.notion.com/p/3ade245ae5f381e495cafd4c31616fdd",
+  "_transcribed": "2026-09-03",
+  "_leanRule": "The lean tag is the site's own reading of published positions, not a party registration and not a self-description. A trailing '?' in the source means the reading is uncertain, and the site must say so rather than round it off.",
+  "_kindRule": "inc = sat on this council 2022-26. chal = has not.",
+  "candidates": {
+    "alto": {
+      "name": "Marianne Alto",
+      "lean": "Left · NDP",
+      "status": "Mayor, declared May 20 2026",
+      "axis": "Left",
+      "uncertain": false,
+      "tags": [
+        "NDP"
+      ],
+      "office": "Mayor",
+      "kind": "inc"
+    },
+    "atkinson": {
+      "name": "Lyall Atkinson",
+      "lean": "Centre-Right? · populist",
+      "status": "Mayor candidate, nomination accepted by the City (filed in the 1–11 Sep 2026 window)",
+      "axis": "Centre-Right",
+      "uncertain": true,
+      "tags": [
+        "populist"
+      ],
+      "office": "Mayor",
+      "kind": "chal"
+    },
+    "harris": {
+      "name": "Mike Harris",
+      "lean": "Centre-Right · BC Conservative",
+      "status": "Mayor candidate, announced 1 Sep 2026 (nomination filing not yet verified)",
+      "axis": "Centre-Right",
+      "uncertain": false,
+      "tags": [
+        "BC Conservative"
+      ],
+      "office": "Mayor",
+      "kind": "chal"
+    },
+    "mcguigan": {
+      "name": "Bruce McGuigan",
+      "lean": "Centre-Left · progressive/labour",
+      "status": "Mayor candidate, publicly announced 20 Aug 2026 (nomination NOT yet accepted by the City as at 2 Sep 2026)",
+      "axis": "Centre-Left",
+      "uncertain": false,
+      "tags": [
+        "progressive/labour"
+      ],
+      "office": "Mayor",
+      "kind": "chal"
+    },
+    "caradonna": {
+      "name": "Jeremy Caradonna",
+      "lean": "Left · BC Greens",
+      "status": "Councillor, declared Dec 21 2025",
+      "axis": "Left",
+      "uncertain": false,
+      "tags": [
+        "BC Greens"
+      ],
+      "office": "Council",
+      "kind": "inc"
+    },
+    "dell": {
+      "name": "Matt Dell",
+      "lean": "Centre-Left · NDP-aligned",
+      "status": "Councillor, declared Dec 31 2025",
+      "axis": "Centre-Left",
+      "uncertain": false,
+      "tags": [
+        "NDP-aligned"
+      ],
+      "office": "Council",
+      "kind": "inc"
+    },
+    "thompson": {
+      "name": "Dave Thompson",
+      "lean": "Left · NDP",
+      "status": "Councillor, re-election confirmed 2 Jun 2026; also seeking CRD director",
+      "axis": "Left",
+      "uncertain": false,
+      "tags": [
+        "NDP"
+      ],
+      "office": "Council",
+      "kind": "inc"
+    },
+    "kim": {
+      "name": "Susan Kim",
+      "lean": "Left · BC Greens · Victoria For All",
+      "status": "Councillor, re-election announced 15 Aug 2026; also seeking CRD director",
+      "axis": "Left",
+      "uncertain": false,
+      "tags": [
+        "BC Greens",
+        "Victoria For All"
+      ],
+      "office": "Council",
+      "kind": "inc"
+    },
+    "loughton": {
+      "name": "Krista Loughton",
+      "lean": "Centre-Left · NDP-aligned",
+      "status": "Councillor, re-election announced 3 Jun 2026; also seeking CRD director",
+      "axis": "Centre-Left",
+      "uncertain": false,
+      "tags": [
+        "NDP-aligned"
+      ],
+      "office": "Council",
+      "kind": "inc"
+    },
+    "hammond": {
+      "name": "Stephen Hammond",
+      "lean": "Centre-Right",
+      "status": "Councillor, declared July 6 2026",
+      "axis": "Centre-Right",
+      "uncertain": false,
+      "tags": [],
+      "office": "Council",
+      "kind": "inc"
+    },
+    "gardiner": {
+      "name": "Marg Gardiner",
+      "lean": "Centre-Right",
+      "status": "Councillor, re-election confirmed 29 Apr 2026; also seeking CRD director",
+      "axis": "Centre-Right",
+      "uncertain": false,
+      "tags": [],
+      "office": "Council",
+      "kind": "inc"
+    },
+    "cseszko": {
+      "name": "Melissa Cseszko",
+      "lean": "Centre-Right",
+      "status": "Council candidate, declared May 12 2026",
+      "axis": "Centre-Right",
+      "uncertain": false,
+      "tags": [],
+      "office": "Council",
+      "kind": "chal"
+    },
+    "rothe": {
+      "name": "Karen Rothe",
+      "lean": "Centre-Right?",
+      "status": "Council candidate, declared May 27 2026",
+      "axis": "Centre-Right",
+      "uncertain": true,
+      "tags": [],
+      "office": "Council",
+      "kind": "chal"
+    },
+    "bowkett": {
+      "name": "Wendy Bowkett",
+      "lean": "Centre-Right",
+      "status": "Council candidate, publicly announced 15 May 2026",
+      "axis": "Centre-Right",
+      "uncertain": false,
+      "tags": [],
+      "office": "Council",
+      "kind": "chal"
+    },
+    "mcinnis": {
+      "name": "Arthur McInnis",
+      "lean": "Centre-Right",
+      "status": "Council candidate, declared June 25 2026",
+      "axis": "Centre-Right",
+      "uncertain": false,
+      "tags": [],
+      "office": "Council",
+      "kind": "chal"
+    },
+    "sandor": {
+      "name": "Jack Sandor",
+      "lean": "Centre-Left · urbanist",
+      "status": "Council candidate, publicly announced 12 Mar 2026",
+      "axis": "Centre-Left",
+      "uncertain": false,
+      "tags": [
+        "urbanist"
+      ],
+      "office": "Council",
+      "kind": "chal"
+    },
+    "lee": {
+      "name": "Bella Lee",
+      "lean": "Centre-Left?",
+      "status": "Council candidate, publicly launched 30 Mar 2026",
+      "axis": "Centre-Left",
+      "uncertain": true,
+      "tags": [],
+      "office": "Council",
+      "kind": "chal"
+    },
+    "garcia": {
+      "name": "Jerry Garcia",
+      "lean": "Centre-Right",
+      "status": "Council and CRD candidate, publicly launched 30 Jul 2026",
+      "axis": "Centre-Right",
+      "uncertain": false,
+      "tags": [],
+      "office": "Council",
+      "kind": "chal"
+    },
+    "gibbs": {
+      "name": "Peter Gibbs",
+      "lean": "Left · Victoria For All",
+      "status": "Council candidate, Victoria For All launch 15 Aug 2026",
+      "axis": "Left",
+      "uncertain": false,
+      "tags": [
+        "Victoria For All"
+      ],
+      "nameOnProfilesPage": "Peter Rose Gibbs",
+      "office": "Council",
+      "kind": "chal"
+    },
+    "girard": {
+      "name": "Martin Girard",
+      "lean": "Left · activist independent",
+      "status": "Council candidate, active campaign verified 1 Sep 2026",
+      "axis": "Left",
+      "uncertain": false,
+      "tags": [
+        "activist independent"
+      ],
+      "office": "Council",
+      "kind": "chal"
+    },
+    "dion": {
+      "name": "Shona Dion",
+      "lean": "Left · labour",
+      "status": "Council candidate, active campaign verified 1 Sep 2026",
+      "axis": "Left",
+      "uncertain": false,
+      "tags": [
+        "labour"
+      ],
+      "office": "Council",
+      "kind": "chal"
+    }
+  }
+}

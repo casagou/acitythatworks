@@ -102,7 +102,14 @@
     var h = '<article class="ccard' + (isMayor(c) ? ' mayor' : '') + (picks.indexOf(c.key) > -1 ? ' picked' : '') + '" id="cand-' + esc(c.key) + '" data-key="' + esc(c.key) + '">';
     h += '<span class="avatar' + (isMayor(c) ? ' mayor' : '') + '" aria-hidden="true">' + esc(initials(c.name)) + '</span>';
     h += '<div class="cc-b"><div class="cc-h"><div><div class="cc-name">' + (href ? '<a href="' + esc(href) + '">' + esc(c.name) + '</a>' : esc(c.name)) + '</div>';
-    h += '<div class="cc-off">' + esc(c.office || '') + '</div></div>';
+    /* Seat, whether they hold it now, and where the framework reads them as
+       sitting. The lean is the framework's own reading of published positions,
+       not a party registration, and it keeps the source's question mark when
+       that reading is uncertain. */
+    var lean = c.lean ? c.lean + (c.leanTags && c.leanTags.length ? ' · ' + c.leanTags.join(' · ') : '') : '';
+    h += '<div class="cc-off">' + esc(c.office || '') + '<span class="cc-seat cc-' + (c.kind === 'inc' ? 'inc' : 'new') + '">' + (c.kind === 'inc' ? 'Incumbent' : 'New') + '</span></div>';
+    if (lean) h += '<div class="cc-lean">' + esc(lean) + '</div>';
+    h += '</div>';
     /* The letter never travels without its coverage, and the mean never
        travels without both: an unweighted mean rewards a thin card. */
     var cov = c.n + ' of ' + DATA.topics.length + ' answered' + (c.mean != null ? ' · mean ' + c.mean.toFixed(2) : '');

@@ -296,6 +296,8 @@ function gridTd(key, t, ti) {
    fifteen answers and the page said none. */
 const APPLIED = JSON.parse(fs.readFileSync(path.join(ROOT, "data", "applied-letters.json"), "utf8"));
 const appliedBy = Object.fromEntries(APPLIED.candidates.map((c) => [c.key, c]));
+const cmeta = require("./candidate-meta");
+const metaBySlug = Object.fromEntries(cmeta.all().map((m) => [m.slug, m]));
 for (const c of DATA.cands) {
   const a = appliedBy[c.key];
   if (!a) { console.error("no applied row for " + c.key + " (" + c.name + ")"); process.exit(1); }
@@ -312,6 +314,18 @@ for (const c of DATA.cands) {
   c.applied = a.applied || null;
   c.correction = a.correction || null;
   c.summary = a.summary || null;
+  /* Identity, so the table can say who this is without a second request:
+     where the framework reads them as sitting, and every channel it read
+     them in. The lean is the framework's reading, not a party card. */
+  const m = metaBySlug[c.profile ? c.profile.split("/").pop() : ""];
+  if (m) {
+    c.lean = m.lean;
+    c.leanTags = m.tags;
+    c.leanUncertain = !!m.uncertain;
+    c.status = m.status;
+    c.bio = m.bio;
+    c.links = m.links.map((l) => ({ p: l.platform, n: l.name, h: l.href }));
+  }
 }
 DATA.letterRule = APPLIED._rule;
 DATA.meanRule = APPLIED._meanRule;

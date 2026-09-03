@@ -33,7 +33,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Public+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/styles.css?v=20">
+<link rel="stylesheet" href="/styles.css?v=21">
 <style>
 /* Field tints copied from the hub cards so transferred prose reads the same.
    Not a site restyle — these rules already live on profiles.html. */
@@ -70,6 +70,53 @@
    reference label rather than as prose that lost a word. */
 .src-int{font-family:'JetBrains Mono',monospace;font-size:.88em;color:#5a5652}
 
+/* ---- Identity: what they are running for, whether they hold the seat,
+   and where the framework reads them as sitting. Three chips rather than a
+   sentence, because a reader scans this before they read anything. ---- */
+.idrow{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px}
+.idc{display:inline-flex;align-items:center;font-family:'JetBrains Mono',monospace;font-size:10.5px;
+  letter-spacing:.07em;text-transform:uppercase;padding:5px 9px;border-radius:2px;line-height:1.25}
+.idc-off{background:rgba(26,54,104,.09);color:var(--navy)}
+.idc-inc{background:rgba(34,114,71,.12);color:#1b5c39}
+.idc-new{background:rgba(139,105,20,.13);color:#7a5c11}
+.idc-lean{background:#fff;color:#5a5652;border:1px solid rgba(26,54,104,.18);cursor:help;text-transform:none;
+  font-family:inherit;font-size:12.5px;letter-spacing:0}
+.idstatus{margin:9px 0 0;font-size:13px;color:#6b6664;line-height:1.5;max-width:62ch}
+
+/* ---- Who they are. This was folded inside Background, which is the last
+   place a reader looks, and it is the first thing most of them want. ---- */
+.cbio{margin:26px 0}
+.cbio h2{font-family:'Fraunces',serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+.cbio p{margin:0;font-size:15px;line-height:1.66;color:#33312e;max-width:66ch}
+
+/* ---- Every channel the framework read, so the reader can go and check
+   rather than take the page's word for it. ---- */
+.clinks{margin:26px 0}
+.clinks h2{font-family:'Fraunces',serif;font-size:22px;color:var(--navy);margin:0 0 6px}
+.clinks-x{margin:0 0 12px;font-size:13.5px;color:#6b6664;line-height:1.55;max-width:66ch}
+.clink-row{display:grid;grid-template-columns:1fr;gap:8px}
+@media(min-width:620px){.clink-row{grid-template-columns:1fr 1fr}}
+@media(min-width:1000px){.clink-row{grid-template-columns:1fr 1fr 1fr}}
+.clink{display:flex;flex-direction:column;gap:2px;padding:9px 11px;background:#fff;border:1px solid rgba(26,54,104,.14);
+  border-left:3px solid var(--navy);border-radius:2px;text-decoration:none;min-height:44px;justify-content:center}
+.clink:hover{border-color:var(--gold);border-left-color:var(--gold);background:#fffdf7}
+.clink:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.clink-p{font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.11em;text-transform:uppercase;color:#8a8580}
+.clink-l{font-size:13.5px;color:var(--navy);line-height:1.35;word-break:break-word}
+.clink-site{border-left-color:var(--gold)}
+.clink-city{border-left-color:#3D6E4E}
+.clink-facebook,.clink-instagram,.clink-x,.clink-linkedin,.clink-bluesky,
+.clink-reddit,.clink-youtube,.clink-tiktok,.clink-threads{border-left-color:#6b7fa8}
+
+/* ---- Desktop readability. The profile column was sized for prose, but the
+   page now carries a 12-topic card, a five-door grid and a link row, and
+   those want room. Prose blocks keep their own measure via max-width. ---- */
+@media(min-width:1080px){
+  .pfpage,.parked-open{max-width:none}
+  .cn:has(.pg-door){max-width:1080px}
+}
+
+
 .how,.doors,.ev{margin:28px 0}
 .how h2,.doors h2,.ev h2{font-family:'Fraunces',serif;font-size:22px;color:var(--navy);margin:0 0 10px}
 .how-rules{margin:0 0 12px;padding-left:20px}
@@ -84,15 +131,15 @@
 .mk-d{background:#B5651F}.mk-f{background:#B5341F}
 .mk-rec{background:var(--navy)}.mk-x{background:#8a8580;color:#fff}
 .mk:focus-visible,.leg:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
-.door-grid{display:grid;grid-template-columns:1fr;gap:10px}
-@media(min-width:720px){.door-grid{grid-template-columns:1fr 1fr}}
-.door{border:1px solid rgba(26,54,104,.14);border-left:4px solid var(--navy);padding:12px 14px;background:#fff;border-radius:2px}
-.door-said{border-left-color:#3D6E4E}.door-record{border-left-color:var(--navy)}
-.door-yes{border-left-color:var(--gold)}.door-dash{border-left-color:#c9c4bf}
-.door-k{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#6b6664}
-.door-st{font-weight:700;color:var(--navy);margin:2px 0 6px}
-.door p{margin:0 0 6px;font-size:13.5px;line-height:1.5}
-.door-src{font-size:13px}
+.pdoor-grid{display:grid;grid-template-columns:1fr;gap:10px}
+@media(min-width:720px){.pdoor-grid{grid-template-columns:1fr 1fr}}
+.pdoor{border:1px solid rgba(26,54,104,.14);border-left:4px solid var(--navy);padding:12px 14px;background:#fff;border-radius:2px}
+.pdoor-said{border-left-color:#3D6E4E}.pdoor-record{border-left-color:var(--navy)}
+.pdoor-yes{border-left-color:var(--gold)}.pdoor-dash{border-left-color:#c9c4bf}
+.pdoor-k{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#6b6664}
+.pdoor-st{font-weight:700;color:var(--navy);margin:2px 0 6px}
+.pdoor p{margin:0 0 6px;font-size:13.5px;line-height:1.5}
+.pdoor-src{font-size:13px}
 .ev-topic{border-bottom:1px solid rgba(26,54,104,.1);padding:4px 0}
 .ev-topic summary{display:flex;justify-content:space-between;align-items:center;gap:12px;min-height:48px;cursor:pointer;list-style:none;font-weight:600;color:var(--navy)}
 .ev-topic summary::-webkit-details-marker{display:none}
@@ -160,13 +207,16 @@
 <div class="hero pg-door">
 <div class="eyb">Profile</div>
 <h1 class="ph1">Jerry Garcia</h1>
-<p class="lead" style="margin-top:18px">Council candidate · Victoria 2026</p>
+<p class="lead" style="margin-top:14px">Victoria municipal election · 17 October 2026</p>
+<div class="idrow"><span class="idc idc-off">Council</span><span class="idc idc-new" title="Did not sit on this Council, so the card rests on published positions rather than votes.">New candidate</span><span class="idc idc-lean" title="The framework's reading of published positions, not a party registration.">Centre-Right</span></div><p class="idstatus">Council and CRD candidate, publicly launched 30 Jul 2026</p>
 <div class="graderow"><span class="gradelbl">Grade</span><span class="g g-c">C</span><span class="cs-n">14 of 55 answered</span></div>
 <p class="gsum">Hard targets, no instruments. Close on tenant cooling, homelessness and dashboards. Downtown order entirely unaddressed.<span class="gsum-m">mean 1.43 · 14/55 answered</span></p>
 </div>
 <div class="parked-open">
 <div class="prose pfpage">
-<p class="pf "><strong class="pfl">Campaign.</strong> <a href="https://jerryforvictoria.ca/" target="_blank" rel="noopener">jerryforvictoria.ca</a></p>
+
+<section class="cbio" id="who"><h2>Who they are</h2><p>Jerry Garcia is a retired professional engineer, executive, entrepreneur and community volunteer with more than four decades of experience leading organizations and complex projects. His campaign biography describes work in Toronto, Montreal, Tokyo, Miami and elsewhere with global companies, governments, health-care organizations and small businesses, as well as teaching entrepreneurs. Garcia and his spouse chose downtown Victoria as their home eight years ago. For voters, his strongest case is engineering and executive delivery experience; the key scrutiny points are whether his ambitious performance targets use verifiable baselines and whether City and CRD authorities can deliver them.</p></section>
+<section class="clinks" id="links"><h2>Where to check them</h2><p class="clinks-x">Every channel the framework read, in the candidate's own words, checked 1 Sep 2026. Opening one leaves this site.</p><div class="clink-row"><a class="clink clink-site" href="https://jerryforvictoria.ca/" target="_blank" rel="noopener"><span class="clink-p">Site</span><span class="clink-l">Campaign site</span></a><a class="clink clink-facebook" href="https://www.facebook.com/jerryforvictoria" target="_blank" rel="noopener"><span class="clink-p">Facebook</span><span class="clink-l">Facebook</span></a><a class="clink clink-instagram" href="https://www.instagram.com/jerryforvictoria" target="_blank" rel="noopener"><span class="clink-p">Instagram</span><span class="clink-l">Instagram</span></a></div></section>
 
 <section class="how" id="how">
 <h2>How this grade was made</h2>
@@ -186,31 +236,31 @@
 <section class="doors" id="doors">
 <h2>The five doors</h2>
 <p>A sourced sentence or a fact. Never a second grade.</p>
-<div class="door-grid"><div class="door door-said">
-<div class="door-k">Tax cap</div>
-<div class="door-st">said</div>
+<div class="pdoor-grid"><div class="pdoor pdoor-said">
+<div class="pdoor-k">Tax cap</div>
+<div class="pdoor-st">said</div>
 <p>&quot;Property tax increases / Variable / ≤ Inflation&quot; on the recommended 2035 affordability dashboard. A target, not a cap formula, not a glide path, not a covenant. &quot;I would recommend&quot; is not a commit to lock the residential rate.</p>
-<p class="door-src"><a href="https://jerryforvictoria.ca/articles/affordability-in-victoria/" target="_blank" rel="noopener">jerryforvictoria.ca</a> · 2026-09-02</p>
-</div><div class="door door-said">
-<div class="door-k">Downtown order</div>
-<div class="door-st">said</div>
+<p class="pdoor-src"><a href="https://jerryforvictoria.ca/articles/affordability-in-victoria/" target="_blank" rel="noopener">jerryforvictoria.ca</a> · 2026-09-02</p>
+</div><div class="pdoor pdoor-said">
+<div class="pdoor-k">Downtown order</div>
+<div class="pdoor-st">said</div>
 <p>&quot;Visible foot patrols and community safety teams.&quot; Not a Public Order Team and not bylaw hours. The 17 Aug Crime Watch article specifies a volunteer observe-and-report Community Safety Patrol under VicPD, still not unified command and still not 6am–10pm bylaw. Door is said, not a grade.</p>
-<p class="door-src"><a href="https://jerryforvictoria.ca/" target="_blank" rel="noopener">jerryforvictoria.ca</a> · 2026-09-02</p>
-</div><div class="door door-said">
-<div class="door-k">Housing</div>
-<div class="door-st">said</div>
+<p class="pdoor-src"><a href="https://jerryforvictoria.ca/" target="_blank" rel="noopener">jerryforvictoria.ca</a> · 2026-09-02</p>
+</div><div class="pdoor pdoor-said">
+<div class="pdoor-k">Housing</div>
+<div class="pdoor-st">said</div>
 <p>&quot;The objective is to increase supply across every housing type.&quot; No unit volume, no 25/20/15 composition, no tenure-share target.</p>
-<p class="door-src"><a href="https://jerryforvictoria.ca/articles/affordability-in-victoria/" target="_blank" rel="noopener">jerryforvictoria.ca</a> · 2026-09-02</p>
-</div><div class="door door-dash">
-<div class="door-k">Household bill</div>
-<div class="door-st">—</div>
+<p class="pdoor-src"><a href="https://jerryforvictoria.ca/articles/affordability-in-victoria/" target="_blank" rel="noopener">jerryforvictoria.ca</a> · 2026-09-02</p>
+</div><div class="pdoor pdoor-dash">
+<div class="pdoor-k">Household bill</div>
+<div class="pdoor-st">—</div>
 <p>No sourced sentence on this door. Silence, not a fail.</p>
 
-</div><div class="door door-yes">
-<div class="door-k">Written program</div>
-<div class="door-st">yes</div>
+</div><div class="pdoor pdoor-yes">
+<div class="pdoor-k">Written program</div>
+<div class="pdoor-st">yes</div>
 <p>An authorized campaign site with five named outcomes, an about page, ten dated articles through 31 Aug 2026, and a 19 Jul launch release. Written and current. Hard targets without published baselines, agencies, funding or a year-path. VoteMate profile is empty (no promises, no biography). Site described on the ACTW profile as &quot;Jerry 1.0&quot; with a second version promised.</p>
-<p class="door-src"><a href="https://jerryforvictoria.ca/" target="_blank" rel="noopener">jerryforvictoria.ca</a> · 2026-09-02</p>
+<p class="pdoor-src"><a href="https://jerryforvictoria.ca/" target="_blank" rel="noopener">jerryforvictoria.ca</a> · 2026-09-02</p>
 </div></div>
 </section>
 <section class="ev" id="evidence">

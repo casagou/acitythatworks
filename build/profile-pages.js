@@ -10,6 +10,7 @@ const path = require("path");
 const ROOT = path.join(__dirname, "..");
 const { notionToHtml } = require("./notion-to-html");
 const { redact } = require("./redact-workflow");
+const meta = require("./candidate-meta");
 const ev = require("./evidence-html");
 
 const LIVE = [
@@ -82,6 +83,55 @@ function gradeCls(letter) {
   return "abcdf".indexOf(c) > -1 ? "g-" + c : "g-x";
 }
 
+
+/* The lean is the site's own reading of published positions. It is not a
+   party card and not a self-description, so the page says which it is and
+   keeps the source's own question mark when the reading is uncertain. */
+function identityHtml(m) {
+  if (!m) return "";
+  const lean = '<span class="idc idc-lean" title="' +
+    (m.uncertain
+      ? "The framework's reading of published positions, and an uncertain one."
+      : "The framework's reading of published positions, not a party registration.") +
+    '">' + esc(m.lean) + (m.tags.length ? " · " + esc(m.tags.join(" · ")) : "") + "</span>";
+  const seat = '<span class="idc idc-' + (m.kind === "inc" ? "inc" : "new") + '" title="' +
+    (m.kind === "inc"
+      ? "Sat on this Council in the 2022-26 term, so there is a voting record to read beside the promises."
+      : "Did not sit on this Council, so the card rests on published positions rather than votes.") +
+    '">' + (m.kind === "inc" ? "Incumbent" : "New candidate") + "</span>";
+  const office = '<span class="idc idc-off">' + esc(m.office === "Mayor" ? "Mayor" : "Council") + "</span>";
+  return '<div class="idrow">' + office + seat + lean + "</div>" +
+    (m.status ? '<p class="idstatus">' + esc(m.status) + "</p>" : "");
+}
+
+const PLAT = {
+  site: "Site", facebook: "Facebook", instagram: "Instagram", x: "X",
+  linkedin: "LinkedIn", bluesky: "Bluesky", reddit: "Reddit", youtube: "YouTube",
+  tiktok: "TikTok", threads: "Threads", city: "Official", page: "Page",
+};
+
+/* Every link the framework used to read this candidate, in one row, so a
+   reader can go and check them rather than take the page's word for it. */
+function linksHtml(m) {
+  if (!m || !m.links.length) return "";
+  const items = m.links.map((l) =>
+    '<a class="clink clink-' + l.platform + '" href="' + esc(l.href) + '" target="_blank" rel="noopener">' +
+    '<span class="clink-p">' + esc(PLAT[l.platform] || "Link") + "</span>" +
+    '<span class="clink-l">' + esc(l.name) + "</span></a>"
+  ).join("");
+  return '<section class="clinks" id="links"><h2>Where to check them</h2>' +
+    '<p class="clinks-x">Every channel the framework read, in the candidate\'s own words' +
+    (m.checked ? ", checked " + esc(m.checked) : "") + ". Opening one leaves this site.</p>" +
+    '<div class="clink-row">' + items + "</div></section>";
+}
+
+/* The biography. It was folded inside Background, which is where a reader
+   looks last, and it is the part most of them want first. */
+function bioHtml(m) {
+  if (!m || !m.bio) return "";
+  return '<section class="cbio" id="who"><h2>Who they are</h2><p>' + esc(m.bio) + "</p></section>";
+}
+
 const bodies = {};
 let redacted = 0;
 for (const c of LIVE) {
@@ -139,9 +189,57 @@ const PAGE_CSS = `/* Field tints copied from the hub cards so transferred prose 
    the link goes somewhere a reader cannot follow. Set apart so it reads as a
    reference label rather than as prose that lost a word. */
 .src-int{font-family:'JetBrains Mono',monospace;font-size:.88em;color:#5a5652}
+
+/* ---- Identity: what they are running for, whether they hold the seat,
+   and where the framework reads them as sitting. Three chips rather than a
+   sentence, because a reader scans this before they read anything. ---- */
+.idrow{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px}
+.idc{display:inline-flex;align-items:center;font-family:'JetBrains Mono',monospace;font-size:10.5px;
+  letter-spacing:.07em;text-transform:uppercase;padding:5px 9px;border-radius:2px;line-height:1.25}
+.idc-off{background:rgba(26,54,104,.09);color:var(--navy)}
+.idc-inc{background:rgba(34,114,71,.12);color:#1b5c39}
+.idc-new{background:rgba(139,105,20,.13);color:#7a5c11}
+.idc-lean{background:#fff;color:#5a5652;border:1px solid rgba(26,54,104,.18);cursor:help;text-transform:none;
+  font-family:inherit;font-size:12.5px;letter-spacing:0}
+.idstatus{margin:9px 0 0;font-size:13px;color:#6b6664;line-height:1.5;max-width:62ch}
+
+/* ---- Who they are. This was folded inside Background, which is the last
+   place a reader looks, and it is the first thing most of them want. ---- */
+.cbio{margin:26px 0}
+.cbio h2{font-family:'Fraunces',serif;font-size:22px;color:var(--navy);margin:0 0 10px}
+.cbio p{margin:0;font-size:15px;line-height:1.66;color:#33312e;max-width:66ch}
+
+/* ---- Every channel the framework read, so the reader can go and check
+   rather than take the page's word for it. ---- */
+.clinks{margin:26px 0}
+.clinks h2{font-family:'Fraunces',serif;font-size:22px;color:var(--navy);margin:0 0 6px}
+.clinks-x{margin:0 0 12px;font-size:13.5px;color:#6b6664;line-height:1.55;max-width:66ch}
+.clink-row{display:grid;grid-template-columns:1fr;gap:8px}
+@media(min-width:620px){.clink-row{grid-template-columns:1fr 1fr}}
+@media(min-width:1000px){.clink-row{grid-template-columns:1fr 1fr 1fr}}
+.clink{display:flex;flex-direction:column;gap:2px;padding:9px 11px;background:#fff;border:1px solid rgba(26,54,104,.14);
+  border-left:3px solid var(--navy);border-radius:2px;text-decoration:none;min-height:44px;justify-content:center}
+.clink:hover{border-color:var(--gold);border-left-color:var(--gold);background:#fffdf7}
+.clink:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.clink-p{font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.11em;text-transform:uppercase;color:#8a8580}
+.clink-l{font-size:13.5px;color:var(--navy);line-height:1.35;word-break:break-word}
+.clink-site{border-left-color:var(--gold)}
+.clink-city{border-left-color:#3D6E4E}
+.clink-facebook,.clink-instagram,.clink-x,.clink-linkedin,.clink-bluesky,
+.clink-reddit,.clink-youtube,.clink-tiktok,.clink-threads{border-left-color:#6b7fa8}
+
+/* ---- Desktop readability. The profile column was sized for prose, but the
+   page now carries a 12-topic card, a five-door grid and a link row, and
+   those want room. Prose blocks keep their own measure via max-width. ---- */
+@media(min-width:1080px){
+  .pfpage,.parked-open{max-width:none}
+  .cn:has(.pg-door){max-width:1080px}
+}
+
 ${ev.evidenceCss()}`;
 
 function pageHtml(c) {
+  const m = meta.get(c.slug);
   const officeLabel = c.office === "Mayor" ? "Mayor" : "Council";
   /* A letter is applied by hand and needs five answered measures, so "no
      letter" and "nothing answered" are different states and the page says
@@ -229,7 +327,7 @@ function pageHtml(c) {
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Public+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/styles.css?v=20">
+<link rel="stylesheet" href="/styles.css?v=21">
 <style>
 ${PAGE_CSS}
 </style>
@@ -269,13 +367,16 @@ ${PAGE_CSS}
 <div class="hero pg-door">
 <div class="eyb">Profile</div>
 <h1 class="ph1">${c.name}</h1>
-<p class="lead" style="margin-top:18px">${officeLabel} candidate · Victoria 2026</p>
+<p class="lead" style="margin-top:14px">Victoria municipal election · 17 October 2026</p>
+${identityHtml(m)}
 <div class="graderow"><span class="gradelbl">Grade</span>${gradeBadge}</div>
 ${summaryBlock}
 </div>
 <div class="parked-open">
 <div class="prose pfpage">
-${campaign}
+${m && m.links.length ? "" : campaign}
+${bioHtml(m)}
+${linksHtml(m)}
 ${evidence}
 ${c.unscored
   /* On a graded page the marks are the content and the narrative is
