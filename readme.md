@@ -97,6 +97,18 @@ Edit the master and re-run; do not edit the profile cards in the page, because t
 node build/matrix.js; node build/profiles.js
 ```
 
+**`build/matrix.js` is a July vintage and rebuilding from it loses work.** It reads `matrix-v3.js` and `build/sc5.json`, which still list Chris Coleman and carry pre-rescore letters, and it renders `build/scorecard.tpl.html` over the whole page. The current `scorecard.html` is ahead of all three. Four things are written into the built page afterwards and must be re-run in this order if `matrix.js` ever is:
+
+```
+node build/apply-rating-cards-to-scorecard.js
+node build/matrix-identity.js   # seat, standing and lean in the 12-topic table
+node build/glance-table.js      # the field at a glance
+node build/roster-block.js      # who is on this page, and who is not
+node build/candidates-lite.js   # the home ballot panel + the campaign links
+```
+
+All five read the `#scdata` payload or `data/applied-letters.json`, never the July files, and all five are idempotent.
+
 ### The fourth exception: the 13 neighbourhood pages are generated
 
 `build/neighbourhoods.md` is the dump of the Notion master ("Victoria 2030, Neighbourhood by Neighbourhood"). `build/neighbourhoods.js` parses it and writes every `neighbourhood-<slug>.html` in full — shell included — plus the card grid inside `neighbourhoods.html` and the one in the Neighbourhood Priorities section of `index.html`, both between `<!-- NB:HUB:… -->` / `<!-- NB:HOME:… -->` markers.
