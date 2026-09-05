@@ -85,7 +85,21 @@ ok(/93 new shelter spaces/.test(hub) && /97 new living spaces/.test(hub), "Alto 
 ok(/93 new shelter spaces/.test(alto) && /97 new living spaces/.test(alto), "Alto 93 vs 97 note missing from profile");
 ok(!/4-space difference of/.test(pub) && !/shortfall of four/.test(pub), "Alto 93/97 inferred as a 4-space difference");
 
-ok(/Bowkett, Garcia, Gardiner/.test(roster) && /Hammond only/.test(roster), "accepted council list missing from roster");
+/* City-accepted council set: the four already marked on the hub, plus six
+   added as field-status only. Do not invent a count; name the ten. */
+const ACCEPTED_COUNCIL = [
+  "Bowkett", "Caradonna", "Cseszko", "Dell", "Dion",
+  "Garcia", "Gardiner", "Girard", "Hammond", "Rothe"
+];
+ok(ACCEPTED_COUNCIL.every((n) => roster.includes(n)), "accepted council name missing from roster");
+ok(/Bowkett, Caradonna, Cseszko, Dell, Dion, Garcia, Gardiner, Girard, Hammond and Rothe/.test(roster), "full accepted council list missing from roster");
+ok(!/Hammond only/.test(roster), "stale 'Hammond only' council list still on roster");
+ok(/Jeremy Caradonna/.test(hub) && /declared Dec 21 2025 · nomination accepted/.test(hub), "Caradonna hub status missing nomination accepted");
+ok(/Matt Dell/.test(hub) && /declared Dec 31 2025 · nomination accepted/.test(hub), "Dell hub status missing nomination accepted");
+ok(/Melissa Cseszko/.test(hub) && /declared May 12 2026 · nomination accepted/.test(hub), "Cseszko hub status missing nomination accepted");
+ok(/Karen Rothe/.test(hub) && /declared May 27 2026 · nomination accepted/.test(hub), "Rothe hub status missing nomination accepted");
+ok(/Martin Girard/.test(hub) && /cand-martin-girard[\s\S]*?Council candidate · nomination accepted/.test(hub), "Girard hub status missing nomination accepted");
+ok(/Shona Dion/.test(hub) && /cand-shona-dion[\s\S]*?Council candidate · nomination accepted/.test(hub), "Dion hub status missing nomination accepted");
 
 if (fail.length) {
   console.error("check-field-3sep FAILED:");
