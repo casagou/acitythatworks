@@ -76,6 +76,7 @@ return '' +
   'This list is the site\'s own copy of the ' +
   '<a href="https://app.notion.com/p/3ade245ae5f38128b340f55bc7df17f5" target="_blank" rel="noopener">applied compute table</a>, ' +
   'checked at build time — if the page and the table disagree, the build fails rather than publishing the difference.</p>' +
+  '<p class="hub-note">Field status from the <a href="https://www.victoria.ca/city-government/elections" target="_blank" rel="noopener">City elections page</a>: accepted mayor nominations are ALTO, Marianne; ATKINSON, Lyall; and JOHNSTON, David. Accepted councillor nominations are Bowkett, Caradonna, Cseszko, Dell, Dion, Garcia, Gardiner, Girard, Hammond and Rothe. That City list is the source for nomination-accepted status on this page. A newspaper-reported indication is not an official filing.</p>' +
   '<div class="rb-cols">' + onPageFor(SC) + notScored + out + "</div>" +
   '<p class="hub-note"><strong>Missing someone, or listed wrongly?</strong> Write to ' +
   '<a href="mailto:info@acitythatworks.ca">info@acitythatworks.ca</a>. Corrections are free and dated, and the ' +

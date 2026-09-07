@@ -153,7 +153,7 @@ const MAYOR = [
 const SITTING = [
   {
     slug: "caradonna", id: "cand-jeremy-caradonna", name: "Jeremy Caradonna",
-    role: "Councillor, declared Dec 21 2025",
+    role: "Councillor, declared Dec 21 2025 · nomination accepted",
     bio: [
       "Jeremy Caradonna is a first-term councillor and CRD director with a PhD in History from Johns Hopkins. He has lived in Fernwood since 2012 and previously taught environmental studies, worked in provincial climate policy, and ran a Rock Bay food-delivery business.",
       "electjeremy.ca is a 2026 re-election site. The published platform foregrounds housing, community safety and wellbeing, climate, transportation, arts and recreation, and completing the Crystal Pool replacement."
@@ -161,7 +161,7 @@ const SITTING = [
   },
   {
     slug: "dell", id: "cand-matt-dell", name: "Matt Dell",
-    role: "Councillor, declared Dec 31 2025",
+    role: "Councillor, declared Dec 31 2025 · nomination accepted",
     bio: [
       "Matt Dell is a first-term councillor, a provincial-government policy professional, and former president of the South Jubilee Neighbourhood Association. He holds a master’s in political science from the University of Victoria and lives in South Jubilee.",
       "mattdell.ca publishes an eight-theme 2026 programme: housing and affordability, climate, parks and amenities, neighbourhoods, arts and culture, downtown, governance and reconciliation. The homepage also names a downtown library and completing Crystal Pool by 2030."
@@ -212,7 +212,7 @@ const SITTING = [
 const CHALLENGERS = [
   {
     slug: "cseszko", id: "cand-melissa-cseszko", name: "Melissa Cseszko",
-    role: "Council candidate, declared May 12 2026",
+    role: "Council candidate, declared May 12 2026 · nomination accepted",
     bio: [
       "Melissa Cseszko (pronounced Chess-ko) is a lifelong Victorian who lives downtown and has operated Mel Lingerie on Fort Street for five years.",
       "melissacseszko.ca publishes three pillars: rebuild safety through predictable rules; restore accountability through oversight and performance review; and revive Victoria by protecting heritage, historic buildings and local businesses."
@@ -220,7 +220,7 @@ const CHALLENGERS = [
   },
   {
     slug: "rothe", id: "cand-karen-rothe", name: "Karen Rothe",
-    role: "Council candidate, declared May 27 2026",
+    role: "Council candidate, declared May 27 2026 · nomination accepted",
     bio: [
       "Karen Rothe is a lifelong Victorian and Vic West resident whose public-service career has included municipal affairs and emergency management. She has also served twenty-two years as a strata property-management coordinator.",
       "karenrothe.ca sets out three themes: creating trust through better leadership; restoring downtown while protecting neighbourhoods; and better planning for infrastructure, transportation, public safety, affordability and transit."
@@ -268,7 +268,7 @@ const CHALLENGERS = [
   },
   {
     slug: "girard", id: "cand-martin-girard", name: "Martin Girard",
-    role: "Council candidate",
+    role: "Council candidate · nomination accepted",
     bio: [
       "Martin Girard is a community advocate whose public work has focused on homelessness, civil liberties and drug policy. Campaign material describes five years of personal homelessness and current residence in supportive housing.",
       "martingirardforvictoriacouncil.ca publishes a platform on homelessness, drug policy, law and order, Indigenous relations and the environment, including opposition to encampment sweeps and support for harm reduction."
@@ -284,7 +284,7 @@ const CHALLENGERS = [
   },
   {
     slug: "dion", id: "cand-shona-dion", name: "Shona Dion",
-    role: "Council candidate",
+    role: "Council candidate · nomination accepted",
     bio: [
       "Shona Dion is a labour activist, a photographer and a working parent who moved to Victoria in 2013. She has served the North Jubilee Neighbourhood Association and as a Victoria Labour Council table officer.",
       "shonadion4victoria.ca commits to giving neighbourhoods more agency on housing security, climate resilience and community safety, and to uplifting residents and organizations already doing that work."
@@ -371,8 +371,8 @@ ${chips}
 
 </div>
 ${group("grp-mayor", "Mayor", "Mayor", "An accepted City nomination is not the same as a public announcement. Do not treat the Times Colonist “three candidates” frame as the City list. City elections page (opened 3 Sep 2026) lists accepted mayor nominations as ALTO, Marianne; ATKINSON, Lyall; and JOHNSTON, David. Harris and McGuigan have announced and were quoted in the 3 Sep Times Colonist field interview; neither is on that accepted-mayor list. Treat their City status as expression of intent until the City list or the 11 Sep Declaration. Johnston is City-accepted and absent from that TC report.", MAYOR)}
-${group("grp-councillors", "Sitting councillors", "Sitting councillors", "Four years of recorded votes, which is why their evidence base is the widest in the field — and why a re-score in September will narrow the gap rather than widen it. City elections page (opened 3 Sep): among sitting members, only Gardiner and Hammond appear on the accepted councillor list.", SITTING)}
-${group("grp-challengers", "Declared challengers", "Declared challengers", "Scored from published material only. Most publish platform detail in September, so these grades are the ones most likely to move. City elections page (opened 3 Sep): accepted councillor nominations are Bowkett, Garcia, Gardiner and Hammond only. A newspaper-reported indication is not an official filing.", CHALLENGERS)}
+${group("grp-councillors", "Sitting councillors", "Sitting councillors", "Four years of recorded votes, which is why their evidence base is the widest in the field — and why a re-score in September will narrow the gap rather than widen it. City elections page: among sitting members, accepted councillor nominations are Caradonna, Dell, Gardiner and Hammond.", SITTING)}
+${group("grp-challengers", "Declared challengers", "Declared challengers", "Scored from published material only. Most publish platform detail in September, so these grades are the ones most likely to move. City elections page: accepted councillor nominations are Bowkett, Caradonna, Cseszko, Dell, Dion, Garcia, Gardiner, Girard, Hammond and Rothe. A newspaper-reported indication is not an official filing.", CHALLENGERS)}
 <h3 class="cand-grp" id="context-entries" data-jump-label="Context entries">Context entries — not candidates<span class="cand-n">3</span></h3>
 <p class="grp-note">Retained because each explains something about the shape of the field. Not live 2026 candidates, and not given invented biographies.</p>
 <details class="cand-ctx" id="cand-chris-coleman" data-jump-label="Chris Coleman"><summary><span class="cs-t"><strong>Chris Coleman</strong> — not a live 2026 candidate</span></summary><div class="body"><p class="pf">Not a live 2026 candidate. His stated decision window closed with no announcement. First elected 1986.</p></div></details>
