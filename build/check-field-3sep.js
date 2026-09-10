@@ -83,6 +83,11 @@ ok(!/Full profile/.test(hubCard("cand-gregoor-miller")), "Miller hub card invent
 
 ok(/HARRIS, Mike/.test(hub) && /Mayor, announced · nomination accepted/.test(hubCard("cand-mike-harris")), "Harris hub status missing nomination accepted");
 ok(/<p class="idstatus">Mayor, announced · nomination accepted<\/p>/.test(harris), "Harris profile status line missing nomination accepted");
+ok(!/expression of intent/i.test(harris), "Harris profile still has expression-of-intent copy");
+ok(!/not on the accepted-mayor list/.test(harris), "Harris profile still says not on accepted-mayor list");
+ok(/lists HARRIS, Mike among accepted mayor nominations/.test(harris), "Harris profile missing City-accepted nomination sentence");
+ok(!/Harris and McGuigan have announced; neither is on the accepted-mayor list/.test(atk), "Atkinson page still marks Harris as not accepted");
+ok(/HARRIS, Mike/.test(atk) && /McGuigan has announced/.test(atk), "Atkinson page lost current Harris/McGuigan field-status split");
 ok(/expression of intent/.test(hub) && /not on the City/.test(hub), "McGuigan City nomination FLAG missing on hub");
 ok(/expression of intent/.test(mcg) && /not on the City/.test(mcg), "McGuigan intent FLAG missing on profile");
 ok(/expression of intent/.test(hubCard("cand-bruce-mcguigan")), "McGuigan hub status lost expression of intent");
