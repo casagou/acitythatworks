@@ -13,7 +13,7 @@
       "slug": "atkinson",
       "office": "Mayor",
       "status": "Nomination accepted by the City",
-      "why": "City elections page lists ATKINSON, Lyall among accepted mayor nominations, with ALTO, Marianne; GERVAIS-HARRISON, Darren; HARRIS, Mike; JOHNSTON, David; MCGUIGAN, Bruce; and MILLER, Gregoor. A 3 Sep Times Colonist interview is on the record. No 2026 campaign website or detailed written program has been located, so there is not yet a scored column.",
+      "why": "City elections page lists ATKINSON, Lyall among accepted mayor nominations, with ALTO, Marianne; GERVAIS-HARRISON, Darren; HANNA, Christopher; HARRIS, Mike; JOHNSTON, David; MCGUIGAN, Bruce; and MILLER, Gregoor. A 3 Sep Times Colonist interview is on the record. No 2026 campaign website or detailed written program has been located, so there is not yet a scored column.",
       "profile": true
     },
     {
@@ -41,6 +41,14 @@
       "profile": false
     },
     {
+      "name": "Christopher Hanna",
+      "slug": "hanna",
+      "office": "Mayor",
+      "status": "Nomination accepted by the City",
+      "why": "City elections page lists HANNA, Christopher among accepted mayor nominations. No sourced 2026 campaign website, platform, or interview sentences have been located. Accepted nomination; nothing scored until sourced 2026 sentences exist. This site does not invent a bio, platform, grade, or campaign site.",
+      "profile": false
+    },
+    {
       "name": "Herb Collins",
       "slug": "collins",
       "office": "Council",
@@ -63,12 +71,20 @@
       "status": "Nomination accepted by the City",
       "why": "City elections page lists HEIT, Jason among accepted councillor nominations. No sourced 2026 campaign website, platform, or interview sentences have been located. Accepted nomination; nothing scored until sourced 2026 sentences exist. This site does not invent a bio, platform, grade, or campaign site.",
       "profile": false
+    },
+    {
+      "name": "James Harasymow",
+      "slug": "harasymow",
+      "office": "Council",
+      "status": "Nomination accepted by the City",
+      "why": "City elections page lists HARASYMOW, James among accepted councillor nominations. No sourced 2026 campaign website, platform, or interview sentences have been located. Accepted nomination; nothing scored until sourced 2026 sentences exist. This site does not invent a bio, platform, grade, or campaign site.",
+      "profile": false
     }
   ],
   "out": [
     { "name": "Chris Coleman", "office": "Council", "status": "Candidacy unconfirmed", "why": "Sitting councillor. His own stated decision window closed with no announcement, and no 2026 campaign or nomination was located. The site carries no profile for him.", "profile": false },
-    { "name": "Peter Rose Gillis", "office": "Council", "status": "Times Colonist reported indication · expression of intent only", "why": "The Times Colonist (Andrew A. Duffy, 3 Sep 2026) named Peter Rose Gillis among people who had indicated they are running for council, as of 2 Sep. City elections page lists accepted councillor nominations as Bowkett, Caradonna, Collins, Cseszko, Dell, Dion, Filipovic, Garcia, Gardiner, Gibbs, Girard, Hammond, Heit, Kim, Lee, Loughton, McInnis, Rothe, Sandor and Thompson. Gillis is not on that list. This is a newspaper-reported indication, not an official filing. Expression of intent only, until the City list or the 11 Sep Declaration. This site already carries a separate profile for Peter Rose Gibbs of Victoria For All; the two names are not treated as the same person here.", "profile": false },
-    { "name": "Owen Haley", "office": "Council", "status": "Times Colonist reported indication · expression of intent only", "why": "The Times Colonist (Andrew A. Duffy, 3 Sep 2026) named Owen Haley among people who had indicated they are running for council, as of 2 Sep. City elections page lists accepted councillor nominations as Bowkett, Caradonna, Collins, Cseszko, Dell, Dion, Filipovic, Garcia, Gardiner, Gibbs, Girard, Hammond, Heit, Kim, Lee, Loughton, McInnis, Rothe, Sandor and Thompson. Haley is not on that list. This is a newspaper-reported indication, not an official filing — not merely a third-party candidate-list appearance. Expression of intent only, until the City list or the 11 Sep Declaration.", "profile": false },
+    { "name": "Peter Rose Gillis", "office": "Council", "status": "Times Colonist reported indication · expression of intent only", "why": "The Times Colonist (Andrew A. Duffy, 3 Sep 2026) named Peter Rose Gillis among people who had indicated they are running for council, as of 2 Sep. City elections page lists accepted councillor nominations as Bowkett, Caradonna, Collins, Cseszko, Dell, Dion, Filipovic, Garcia, Gardiner, Gibbs, Girard, Hammond, Harasymow, Heit, Kim, Lee, Loughton, McInnis, Rothe, Sandor and Thompson. Gillis is not on that list. This is a newspaper-reported indication, not an official filing. Expression of intent only, until the City list or the 11 Sep Declaration. This site already carries a separate profile for Peter Rose Gibbs of Victoria For All; the two names are not treated as the same person here.", "profile": false },
+    { "name": "Owen Haley", "office": "Council", "status": "Times Colonist reported indication · expression of intent only", "why": "The Times Colonist (Andrew A. Duffy, 3 Sep 2026) named Owen Haley among people who had indicated they are running for council, as of 2 Sep. City elections page lists accepted councillor nominations as Bowkett, Caradonna, Collins, Cseszko, Dell, Dion, Filipovic, Garcia, Gardiner, Gibbs, Girard, Hammond, Harasymow, Heit, Kim, Lee, Loughton, McInnis, Rothe, Sandor and Thompson. Haley is not on that list. This is a newspaper-reported indication, not an official filing — not merely a third-party candidate-list appearance. Expression of intent only, until the City list or the 11 Sep Declaration.", "profile": false },
     { "name": "Del Manak", "office": "Mayor", "status": "Confirmed not running", "why": "Confirmed not running, 15 April 2026.", "profile": false },
     { "name": "Stephen Andrew", "office": "Council", "status": "No 2026 campaign located", "why": "No 2026 campaign or signal located.", "profile": false }
   ],

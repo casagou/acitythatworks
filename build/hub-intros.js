@@ -159,6 +159,15 @@ const MAYOR = [
     ]
   },
   {
+    slug: "hanna", id: "cand-christopher-hanna", name: "Christopher Hanna",
+    role: "Mayor, nomination accepted",
+    unscored: true,
+    fieldStatusOnly: true,
+    bio: [
+      "City elections page lists HANNA, Christopher among accepted mayor nominations. No sourced 2026 campaign website, platform, or interview sentences have been located. Accepted nomination; nothing scored until sourced 2026 sentences exist. This site does not invent a bio, platform, grade, or campaign site."
+    ]
+  },
+  {
     slug: "mcguigan", id: "cand-bruce-mcguigan", name: "Bruce McGuigan",
     role: "Mayor, announced · nomination accepted",
     bio: [
@@ -334,6 +343,15 @@ const CHALLENGERS = [
     bio: [
       "City elections page lists HEIT, Jason among accepted councillor nominations. No sourced 2026 campaign website, platform, or interview sentences have been located. Accepted nomination; nothing scored until sourced 2026 sentences exist. This site does not invent a bio, platform, grade, or campaign site."
     ]
+  },
+  {
+    slug: "harasymow", id: "cand-james-harasymow", name: "James Harasymow",
+    role: "Council candidate · nomination accepted",
+    unscored: true,
+    fieldStatusOnly: true,
+    bio: [
+      "City elections page lists HARASYMOW, James among accepted councillor nominations. No sourced 2026 campaign website, platform, or interview sentences have been located. Accepted nomination; nothing scored until sourced 2026 sentences exist. This site does not invent a bio, platform, grade, or campaign site."
+    ]
   }
 ];
 
@@ -407,7 +425,7 @@ const section =
 </div>
 </details>
 </div>
-<p class="hub-note pr-who">Twenty-one people have a profile here. Johnston, Miller and Gervais-Harrison are City-accepted mayors, and Collins, Filipovic and Heit are City-accepted councillors, with no sourced 2026 sentences, so they are named on the field-status roster rather than given invented profiles. Who is on the scorecard, who has filed but published nothing to score, and who is not on the site at all — with the reason beside every name — is kept in one place: <a href="/scorecard#roster">who is on the scorecard, and who is not</a>.</p>
+<p class="hub-note pr-who">Twenty-one people have a profile here. Johnston, Miller, Gervais-Harrison and Hanna are City-accepted mayors, and Collins, Filipovic, Heit and Harasymow are City-accepted councillors, with no sourced 2026 sentences, so they are named on the field-status roster rather than given invented profiles. Who is on the scorecard, who has filed but published nothing to score, and who is not on the site at all — with the reason beside every name — is kept in one place: <a href="/scorecard#roster">who is on the scorecard, and who is not</a>.</p>
 <div class="cand-bar" id="candidate-index">
 <div class="cand-lbl" id="cand-idx-lbl">Jump to a candidate</div>
 <div class="cand-idx" role="group" aria-labelledby="cand-idx-lbl">
@@ -415,9 +433,9 @@ ${chips}
 </div>
 
 </div>
-${group("grp-mayor", "Mayor", "Mayor", "An accepted City nomination is not the same as a public announcement. Do not treat the Times Colonist “three candidates” frame as the City list. City elections page lists accepted mayor nominations as ALTO, Marianne; ATKINSON, Lyall; GERVAIS-HARRISON, Darren; HARRIS, Mike; JOHNSTON, David; MCGUIGAN, Bruce; and MILLER, Gregoor. Johnston, Miller and Gervais-Harrison are City-accepted with no sourced 2026 sentences on this site.", MAYOR)}
+${group("grp-mayor", "Mayor", "Mayor", "An accepted City nomination is not the same as a public announcement. Do not treat the Times Colonist “three candidates” frame as the City list. City elections page lists accepted mayor nominations as ALTO, Marianne; ATKINSON, Lyall; GERVAIS-HARRISON, Darren; HANNA, Christopher; HARRIS, Mike; JOHNSTON, David; MCGUIGAN, Bruce; and MILLER, Gregoor. Johnston, Miller, Gervais-Harrison and Hanna are City-accepted with no sourced 2026 sentences on this site.", MAYOR)}
 ${group("grp-councillors", "Sitting councillors", "Sitting councillors", "Four years of recorded votes, which is why their evidence base is the widest in the field — and why a re-score in September will narrow the gap rather than widen it. City elections page: among sitting members, accepted councillor nominations are Caradonna, Dell, Gardiner, Hammond, Kim, Loughton and Thompson.", SITTING)}
-${group("grp-challengers", "Declared challengers", "Declared challengers", "Scored from published material only. Most publish platform detail in September, so these grades are the ones most likely to move. City elections page: accepted councillor nominations are Bowkett, Caradonna, Collins, Cseszko, Dell, Dion, Filipovic, Garcia, Gardiner, Gibbs, Girard, Hammond, Heit, Kim, Lee, Loughton, McInnis, Rothe, Sandor and Thompson. A newspaper-reported indication is not an official filing.", CHALLENGERS)}
+${group("grp-challengers", "Declared challengers", "Declared challengers", "Scored from published material only. Most publish platform detail in September, so these grades are the ones most likely to move. City elections page: accepted councillor nominations are Bowkett, Caradonna, Collins, Cseszko, Dell, Dion, Filipovic, Garcia, Gardiner, Gibbs, Girard, Hammond, Harasymow, Heit, Kim, Lee, Loughton, McInnis, Rothe, Sandor and Thompson. A newspaper-reported indication is not an official filing.", CHALLENGERS)}
 <h3 class="cand-grp" id="context-entries" data-jump-label="Context entries">Context entries — not candidates<span class="cand-n">3</span></h3>
 <p class="grp-note">Retained because each explains something about the shape of the field. Not live 2026 candidates, and not given invented biographies.</p>
 <details class="cand-ctx" id="cand-chris-coleman" data-jump-label="Chris Coleman"><summary><span class="cs-t"><strong>Chris Coleman</strong> — not a live 2026 candidate</span></summary><div class="body"><p class="pf">Not a live 2026 candidate. His stated decision window closed with no announcement. First elected 1986.</p></div></details>
