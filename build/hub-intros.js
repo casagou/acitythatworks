@@ -150,6 +150,15 @@ const MAYOR = [
     ]
   },
   {
+    slug: "gervais-harrison", id: "cand-darren-gervais-harrison", name: "Darren Gervais-Harrison",
+    role: "Mayor, nomination accepted",
+    unscored: true,
+    fieldStatusOnly: true,
+    bio: [
+      "City elections page lists GERVAIS-HARRISON, Darren among accepted mayor nominations. No sourced 2026 campaign website, platform, or interview sentences have been located. Accepted nomination; nothing scored until sourced 2026 sentences exist. This site does not invent a bio, platform, grade, or campaign site."
+    ]
+  },
+  {
     slug: "mcguigan", id: "cand-bruce-mcguigan", name: "Bruce McGuigan",
     role: "Mayor, announced · nomination accepted",
     bio: [
@@ -371,7 +380,7 @@ const section =
 </div>
 </details>
 </div>
-<p class="hub-note pr-who">Twenty-one people have a profile here. Johnston and Miller are City-accepted mayors with no sourced 2026 sentences, so they are named on the field-status roster rather than given invented profiles. Who is on the scorecard, who has filed but published nothing to score, and who is not on the site at all — with the reason beside every name — is kept in one place: <a href="/scorecard#roster">who is on the scorecard, and who is not</a>.</p>
+<p class="hub-note pr-who">Twenty-one people have a profile here. Johnston, Miller and Gervais-Harrison are City-accepted mayors with no sourced 2026 sentences, so they are named on the field-status roster rather than given invented profiles. Who is on the scorecard, who has filed but published nothing to score, and who is not on the site at all — with the reason beside every name — is kept in one place: <a href="/scorecard#roster">who is on the scorecard, and who is not</a>.</p>
 <div class="cand-bar" id="candidate-index">
 <div class="cand-lbl" id="cand-idx-lbl">Jump to a candidate</div>
 <div class="cand-idx" role="group" aria-labelledby="cand-idx-lbl">
@@ -379,7 +388,7 @@ ${chips}
 </div>
 
 </div>
-${group("grp-mayor", "Mayor", "Mayor", "An accepted City nomination is not the same as a public announcement. Do not treat the Times Colonist “three candidates” frame as the City list. City elections page lists accepted mayor nominations as ALTO, Marianne; ATKINSON, Lyall; HARRIS, Mike; JOHNSTON, David; MCGUIGAN, Bruce; and MILLER, Gregoor. Johnston and Miller are City-accepted with no sourced 2026 sentences on this site.", MAYOR)}
+${group("grp-mayor", "Mayor", "Mayor", "An accepted City nomination is not the same as a public announcement. Do not treat the Times Colonist “three candidates” frame as the City list. City elections page lists accepted mayor nominations as ALTO, Marianne; ATKINSON, Lyall; GERVAIS-HARRISON, Darren; HARRIS, Mike; JOHNSTON, David; MCGUIGAN, Bruce; and MILLER, Gregoor. Johnston, Miller and Gervais-Harrison are City-accepted with no sourced 2026 sentences on this site.", MAYOR)}
 ${group("grp-councillors", "Sitting councillors", "Sitting councillors", "Four years of recorded votes, which is why their evidence base is the widest in the field — and why a re-score in September will narrow the gap rather than widen it. City elections page: among sitting members, accepted councillor nominations are Caradonna, Dell, Gardiner, Hammond, Kim, Loughton and Thompson.", SITTING)}
 ${group("grp-challengers", "Declared challengers", "Declared challengers", "Scored from published material only. Most publish platform detail in September, so these grades are the ones most likely to move. City elections page: accepted councillor nominations are Bowkett, Caradonna, Cseszko, Dell, Dion, Garcia, Gardiner, Gibbs, Girard, Hammond, Kim, Lee, Loughton, McInnis, Rothe, Sandor and Thompson. A newspaper-reported indication is not an official filing.", CHALLENGERS)}
 <h3 class="cand-grp" id="context-entries" data-jump-label="Context entries">Context entries — not candidates<span class="cand-n">3</span></h3>

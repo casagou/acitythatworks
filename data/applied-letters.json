@@ -13,7 +13,7 @@
       "slug": "atkinson",
       "office": "Mayor",
       "status": "Nomination accepted by the City",
-      "why": "City elections page lists ATKINSON, Lyall among accepted mayor nominations, with ALTO, Marianne; HARRIS, Mike; JOHNSTON, David; MCGUIGAN, Bruce; and MILLER, Gregoor. A 3 Sep Times Colonist interview is on the record. No 2026 campaign website or detailed written program has been located, so there is not yet a scored column.",
+      "why": "City elections page lists ATKINSON, Lyall among accepted mayor nominations, with ALTO, Marianne; GERVAIS-HARRISON, Darren; HARRIS, Mike; JOHNSTON, David; MCGUIGAN, Bruce; and MILLER, Gregoor. A 3 Sep Times Colonist interview is on the record. No 2026 campaign website or detailed written program has been located, so there is not yet a scored column.",
       "profile": true
     },
     {
@@ -30,6 +30,14 @@
       "office": "Mayor",
       "status": "Nomination accepted by the City",
       "why": "City elections page lists MILLER, Gregoor among accepted mayor nominations. No sourced 2026 campaign website, platform, or interview sentences have been located. Accepted nomination; nothing scored until sourced 2026 sentences exist. This site does not invent a bio, platform, grade, or campaign site.",
+      "profile": false
+    },
+    {
+      "name": "Darren Gervais-Harrison",
+      "slug": "gervais-harrison",
+      "office": "Mayor",
+      "status": "Nomination accepted by the City",
+      "why": "City elections page lists GERVAIS-HARRISON, Darren among accepted mayor nominations. No sourced 2026 campaign website, platform, or interview sentences have been located. Accepted nomination; nothing scored until sourced 2026 sentences exist. This site does not invent a bio, platform, grade, or campaign site.",
       "profile": false
     }
   ],

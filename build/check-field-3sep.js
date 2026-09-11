@@ -81,13 +81,23 @@ ok(/Mayor, nomination accepted/.test(hubCard("cand-gregoor-miller")), "Miller hu
 ok(/Field status on the roster/.test(hubCard("cand-gregoor-miller")), "Miller hub card is not field-status-only");
 ok(!/Full profile/.test(hubCard("cand-gregoor-miller")), "Miller hub card invented a full-profile link");
 
+ok(/GERVAIS-HARRISON, Darren/.test(hub) && /Darren Gervais-Harrison/.test(hub), "Gervais-Harrison missing from hub");
+ok(/GERVAIS-HARRISON, Darren/.test(roster) && /Darren Gervais-Harrison/.test(roster), "Gervais-Harrison missing from roster");
+ok(!fs.existsSync(path.join(ROOT, "profiles", "gervais-harrison.html")), "invented Gervais-Harrison profile page exists");
+ok(!fs.existsSync(path.join(ROOT, "profiles", "gervais.html")), "invented gervais.html profile page exists");
+ok((APPLIED.notScored || []).some((n) => n.name === "Darren Gervais-Harrison" && n.profile === false), "Gervais-Harrison not in notScored as field-status-only");
+ok(/Mayor, nomination accepted/.test(hubCard("cand-darren-gervais-harrison")), "Gervais-Harrison hub status missing nomination accepted");
+ok(/Field status on the roster/.test(hubCard("cand-darren-gervais-harrison")), "Gervais-Harrison hub card is not field-status-only");
+ok(!/Full profile/.test(hubCard("cand-darren-gervais-harrison")), "Gervais-Harrison hub card invented a full-profile link");
+ok(!/expression of intent/i.test(hubCard("cand-darren-gervais-harrison")), "Gervais-Harrison hub has expression-of-intent copy");
+
 ok(/HARRIS, Mike/.test(hub) && /Mayor, announced · nomination accepted/.test(hubCard("cand-mike-harris")), "Harris hub status missing nomination accepted");
 ok(/<p class="idstatus">Mayor, announced · nomination accepted<\/p>/.test(harris), "Harris profile status line missing nomination accepted");
 ok(!/expression of intent/i.test(harris), "Harris profile still has expression-of-intent copy");
 ok(!/not on the accepted-mayor list/.test(harris), "Harris profile still says not on accepted-mayor list");
 ok(/lists HARRIS, Mike among accepted mayor nominations/.test(harris), "Harris profile missing City-accepted nomination sentence");
 ok(!/Harris and McGuigan have announced; neither is on the accepted-mayor list/.test(atk), "Atkinson page still marks Harris as not accepted");
-ok(/HARRIS, Mike/.test(atk) && /MCGUIGAN, Bruce/.test(atk), "Atkinson page lost current accepted-mayor list");
+ok(/HARRIS, Mike/.test(atk) && /MCGUIGAN, Bruce/.test(atk) && /GERVAIS-HARRISON, Darren/.test(atk), "Atkinson page lost current accepted-mayor list");
 ok(!/McGuigan has announced/.test(atk), "Atkinson page still marks McGuigan as intent-only");
 ok(!/expression of intent/.test(atk) && !/not on the accepted-mayor list/.test(atk), "Atkinson page still has McGuigan intent FLAG");
 ok(/HARRIS, Mike/.test(hub) && /MCGUIGAN, Bruce/.test(hub) && /Mayor, announced · nomination accepted/.test(hubCard("cand-bruce-mcguigan")), "McGuigan hub status missing nomination accepted");
@@ -117,21 +127,21 @@ ok(/93 new shelter spaces/.test(hub) && /97 new living spaces/.test(hub), "Alto 
 ok(/93 new shelter spaces/.test(alto) && /97 new living spaces/.test(alto), "Alto 93 vs 97 note missing from profile");
 ok(!/4-space difference of/.test(pub) && !/shortfall of four/.test(pub), "Alto 93/97 inferred as a 4-space difference");
 
-/* City-accepted set: 6 mayor + 17 council. Name them; do not invent a count. */
+/* City-accepted set: 7 mayor + 17 council. Name them; do not invent a count. */
 const ACCEPTED_COUNCIL = [
   "Bowkett", "Caradonna", "Cseszko", "Dell", "Dion",
   "Garcia", "Gardiner", "Gibbs", "Girard", "Hammond",
   "Kim", "Lee", "Loughton", "McInnis", "Rothe", "Sandor", "Thompson"
 ];
 const ACCEPTED_MAYORS = [
-  "ALTO, Marianne", "ATKINSON, Lyall", "HARRIS, Mike",
-  "JOHNSTON, David", "MCGUIGAN, Bruce", "MILLER, Gregoor"
+  "ALTO, Marianne", "ATKINSON, Lyall", "GERVAIS-HARRISON, Darren",
+  "HARRIS, Mike", "JOHNSTON, David", "MCGUIGAN, Bruce", "MILLER, Gregoor"
 ];
 ok(ACCEPTED_COUNCIL.every((n) => roster.includes(n)), "accepted council name missing from roster");
 ok(ACCEPTED_MAYORS.every((n) => roster.includes(n) && hub.includes(n)), "accepted mayor City-list line missing");
 ok(/Bowkett, Caradonna, Cseszko, Dell, Dion, Garcia, Gardiner, Gibbs, Girard, Hammond, Kim, Lee, Loughton, McInnis, Rothe, Sandor and Thompson/.test(roster), "full accepted council list missing from roster");
-ok(/ALTO, Marianne; ATKINSON, Lyall; HARRIS, Mike; JOHNSTON, David; MCGUIGAN, Bruce; and MILLER, Gregoor/.test(roster), "full accepted mayor list missing from roster");
-ok(!/ALTO, Marianne; ATKINSON, Lyall; HARRIS, Mike; JOHNSTON, David; and MILLER, Gregoor/.test(rosterNote), "stale 5-mayor City list still on roster");
+ok(/ALTO, Marianne; ATKINSON, Lyall; GERVAIS-HARRISON, Darren; HARRIS, Mike; JOHNSTON, David; MCGUIGAN, Bruce; and MILLER, Gregoor/.test(roster), "full accepted mayor list missing from roster");
+ok(!/ALTO, Marianne; ATKINSON, Lyall; HARRIS, Mike; JOHNSTON, David; MCGUIGAN, Bruce; and MILLER, Gregoor/.test(rosterNote), "stale 6-mayor City list still on roster");
 ok(!/Rothe and Thompson/.test(rosterNote), "stale 16-council City list still on roster");
 ok(!/Hammond only/.test(roster), "stale 'Hammond only' council list still on roster");
 ok(!/accepted mayor nominations are ALTO, Marianne; ATKINSON, Lyall; and JOHNSTON, David/.test(rosterNote), "stale 3-mayor City list still on roster");
@@ -156,4 +166,4 @@ if (fail.length) {
   fail.forEach((m) => console.error("  " + m));
   process.exit(1);
 }
-console.log("check-field-3sep: ok — letters/counts locked, City list 6 mayor + 17 council, TC attribution, Johnston/Miller field-status only, /build 404 held");
+console.log("check-field-3sep: ok — letters/counts locked, City list 7 mayor + 17 council, TC attribution, Johnston/Miller/Gervais-Harrison field-status only, /build 404 held");
