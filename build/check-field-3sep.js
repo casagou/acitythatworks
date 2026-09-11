@@ -87,11 +87,19 @@ ok(!/expression of intent/i.test(harris), "Harris profile still has expression-o
 ok(!/not on the accepted-mayor list/.test(harris), "Harris profile still says not on accepted-mayor list");
 ok(/lists HARRIS, Mike among accepted mayor nominations/.test(harris), "Harris profile missing City-accepted nomination sentence");
 ok(!/Harris and McGuigan have announced; neither is on the accepted-mayor list/.test(atk), "Atkinson page still marks Harris as not accepted");
-ok(/HARRIS, Mike/.test(atk) && /McGuigan has announced/.test(atk), "Atkinson page lost current Harris/McGuigan field-status split");
-ok(/expression of intent/.test(hub) && /not on the City/.test(hub), "McGuigan City nomination FLAG missing on hub");
-ok(/expression of intent/.test(mcg) && /not on the City/.test(mcg), "McGuigan intent FLAG missing on profile");
-ok(/expression of intent/.test(hubCard("cand-bruce-mcguigan")), "McGuigan hub status lost expression of intent");
+ok(/HARRIS, Mike/.test(atk) && /MCGUIGAN, Bruce/.test(atk), "Atkinson page lost current accepted-mayor list");
+ok(!/McGuigan has announced/.test(atk), "Atkinson page still marks McGuigan as intent-only");
+ok(!/expression of intent/.test(atk) && !/not on the accepted-mayor list/.test(atk), "Atkinson page still has McGuigan intent FLAG");
+ok(/HARRIS, Mike/.test(hub) && /MCGUIGAN, Bruce/.test(hub) && /Mayor, announced · nomination accepted/.test(hubCard("cand-bruce-mcguigan")), "McGuigan hub status missing nomination accepted");
+ok(/<p class="idstatus">Mayor, announced · nomination accepted<\/p>/.test(mcg), "McGuigan profile status line missing nomination accepted");
+ok(!/expression of intent/i.test(mcg), "McGuigan profile still has expression-of-intent copy");
+ok(!/not on the accepted-mayor list/.test(mcg), "McGuigan profile still says not on accepted-mayor list");
+ok(!/until the City list/.test(mcg), "McGuigan profile still has until-the-City-list copy");
+ok(/lists MCGUIGAN, Bruce among accepted mayor nominations/.test(mcg), "McGuigan profile missing City-accepted nomination sentence");
+ok(!/expression of intent/.test(hub), "hub still has expression-of-intent copy");
+ok(!/expression of intent/.test(hubCard("cand-bruce-mcguigan")), "McGuigan hub still on expression-of-intent FLAG");
 ok(!/expression of intent/.test(hubCard("cand-mike-harris")), "Harris hub still on expression-of-intent FLAG");
+ok(!/not on the City/.test(hubCard("cand-bruce-mcguigan")), "McGuigan hub still says not on the City list");
 
 const gillis = (APPLIED.out || []).find((n) => n.name === "Peter Rose Gillis");
 const haley = (APPLIED.out || []).find((n) => n.name === "Owen Haley");
@@ -109,21 +117,22 @@ ok(/93 new shelter spaces/.test(hub) && /97 new living spaces/.test(hub), "Alto 
 ok(/93 new shelter spaces/.test(alto) && /97 new living spaces/.test(alto), "Alto 93 vs 97 note missing from profile");
 ok(!/4-space difference of/.test(pub) && !/shortfall of four/.test(pub), "Alto 93/97 inferred as a 4-space difference");
 
-/* City-accepted council set: the ten already marked, plus six more.
-   Do not invent a count; name the sixteen. */
+/* City-accepted set: 6 mayor + 17 council. Name them; do not invent a count. */
 const ACCEPTED_COUNCIL = [
   "Bowkett", "Caradonna", "Cseszko", "Dell", "Dion",
   "Garcia", "Gardiner", "Gibbs", "Girard", "Hammond",
-  "Kim", "Lee", "Loughton", "McInnis", "Rothe", "Thompson"
+  "Kim", "Lee", "Loughton", "McInnis", "Rothe", "Sandor", "Thompson"
 ];
 const ACCEPTED_MAYORS = [
   "ALTO, Marianne", "ATKINSON, Lyall", "HARRIS, Mike",
-  "JOHNSTON, David", "MILLER, Gregoor"
+  "JOHNSTON, David", "MCGUIGAN, Bruce", "MILLER, Gregoor"
 ];
 ok(ACCEPTED_COUNCIL.every((n) => roster.includes(n)), "accepted council name missing from roster");
 ok(ACCEPTED_MAYORS.every((n) => roster.includes(n) && hub.includes(n)), "accepted mayor City-list line missing");
-ok(/Bowkett, Caradonna, Cseszko, Dell, Dion, Garcia, Gardiner, Gibbs, Girard, Hammond, Kim, Lee, Loughton, McInnis, Rothe and Thompson/.test(roster), "full accepted council list missing from roster");
-ok(/ALTO, Marianne; ATKINSON, Lyall; HARRIS, Mike; JOHNSTON, David; and MILLER, Gregoor/.test(roster), "full accepted mayor list missing from roster");
+ok(/Bowkett, Caradonna, Cseszko, Dell, Dion, Garcia, Gardiner, Gibbs, Girard, Hammond, Kim, Lee, Loughton, McInnis, Rothe, Sandor and Thompson/.test(roster), "full accepted council list missing from roster");
+ok(/ALTO, Marianne; ATKINSON, Lyall; HARRIS, Mike; JOHNSTON, David; MCGUIGAN, Bruce; and MILLER, Gregoor/.test(roster), "full accepted mayor list missing from roster");
+ok(!/ALTO, Marianne; ATKINSON, Lyall; HARRIS, Mike; JOHNSTON, David; and MILLER, Gregoor/.test(rosterNote), "stale 5-mayor City list still on roster");
+ok(!/Rothe and Thompson/.test(rosterNote), "stale 16-council City list still on roster");
 ok(!/Hammond only/.test(roster), "stale 'Hammond only' council list still on roster");
 ok(!/accepted mayor nominations are ALTO, Marianne; ATKINSON, Lyall; and JOHNSTON, David/.test(rosterNote), "stale 3-mayor City list still on roster");
 ok(!/opened 3 Sep/.test(rosterNote), "stale 'opened 3 Sep' current-list copy still on roster");
@@ -139,7 +148,7 @@ ok(/Bella Lee/.test(hub) && /cand-bella-lee[\s\S]*?declared June 2026 · nominat
 ok(/Krista Loughton/.test(hub) && /declared June 3 2026 · nomination accepted/.test(hub), "Loughton hub status missing nomination accepted");
 ok(/Arthur McInnis/.test(hub) && /declared June 25 2026 · nomination accepted/.test(hub), "McInnis hub status missing nomination accepted");
 ok(/Dave Thompson/.test(hub) && /declared January 2026 · nomination accepted/.test(hub), "Thompson hub status missing nomination accepted");
-ok(/Jack Sandor/.test(hub) && /Council candidate, declared June 2026</.test(hubCard("cand-jack-sandor")), "Sandor hub gained nomination-accepted");
+ok(/Jack Sandor/.test(hub) && /Council candidate, declared June 2026 · nomination accepted/.test(hubCard("cand-jack-sandor")), "Sandor hub status missing nomination accepted");
 ok(!/Owen Haley/.test(hub), "Haley invented as a live-door on the hub");
 
 if (fail.length) {
@@ -147,4 +156,4 @@ if (fail.length) {
   fail.forEach((m) => console.error("  " + m));
   process.exit(1);
 }
-console.log("check-field-3sep: ok — letters/counts locked, City list 5 mayor + 16 council, TC attribution, Johnston/Miller field-status only, /build 404 held");
+console.log("check-field-3sep: ok — letters/counts locked, City list 6 mayor + 17 council, TC attribution, Johnston/Miller field-status only, /build 404 held");

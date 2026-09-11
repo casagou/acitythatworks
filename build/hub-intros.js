@@ -151,10 +151,10 @@ const MAYOR = [
   },
   {
     slug: "mcguigan", id: "cand-bruce-mcguigan", name: "Bruce McGuigan",
-    role: "Mayor, announced · expression of intent — not on the City’s accepted-mayor list (opened 3 Sep)",
+    role: "Mayor, announced · nomination accepted",
     bio: [
       "Bruce McGuigan is a sociologist, former Vancouver Island University professor, and former executive director of Family Services of Greater Victoria. He lives in Fernwood and is making a second run for mayor after placing fourth in 2018.",
-      "bruceformayor.ca publishes ten priority areas — among them homelessness, housing, safe streets, local business, climate preparedness, and a citizens-first City Hall — plus three governing principles: listen carefully, manage competently, and use public resources responsibly. Numerical targets and costings were not located. In the 3 Sep 2026 <a href=\"https://www.timescolonist.com/local-news/three-candidates-take-on-alto-for-victorias-mayor-chair-12735274\" target=\"_blank\" rel=\"noopener\">Times Colonist interview</a> (Andrew A. Duffy), McGuigan said his biggest concern is that City Hall is “opaque,” which he blamed in part on Alto. He said budget propositions in detail had stopped and citizen communication portals had been shut down, and that he plans to emphasize “citizen-involved, competent administration.” Duffy reports he called council’s approach to homelessness and street disorder “chaotic and unsuccessful.” He has announced. That is expression of intent until the City list or the 11 Sep Declaration."
+      "bruceformayor.ca publishes ten priority areas — among them homelessness, housing, safe streets, local business, climate preparedness, and a citizens-first City Hall — plus three governing principles: listen carefully, manage competently, and use public resources responsibly. Numerical targets and costings were not located. In the 3 Sep 2026 <a href=\"https://www.timescolonist.com/local-news/three-candidates-take-on-alto-for-victorias-mayor-chair-12735274\" target=\"_blank\" rel=\"noopener\">Times Colonist interview</a> (Andrew A. Duffy), McGuigan said his biggest concern is that City Hall is “opaque,” which he blamed in part on Alto. He said budget propositions in detail had stopped and citizen communication portals had been shut down, and that he plans to emphasize “citizen-involved, competent administration.” Duffy reports he called council’s approach to homelessness and street disorder “chaotic and unsuccessful.”"
     ]
   }
 ];
@@ -253,7 +253,7 @@ const CHALLENGERS = [
   },
   {
     slug: "sandor", id: "cand-jack-sandor", name: "Jack Sandor",
-    role: "Council candidate, declared June 2026",
+    role: "Council candidate, declared June 2026 · nomination accepted",
     bio: [
       "Jack Sandor is a 27-year-old Red Seal electrician and lifelong Victoria-area resident. He grew up in Gonzales and now rents near Stadacona Park. He has served as vice-president of Homes for Living and on the BetterTransitYYJ board.",
       "jacksandor.ca carries a complete ten-part platform covering housing, homelessness, safety, transportation, climate, business, arts, governance, reconciliation and quality of life, including city financing for co-ops and a council-voting dashboard."
@@ -379,9 +379,9 @@ ${chips}
 </div>
 
 </div>
-${group("grp-mayor", "Mayor", "Mayor", "An accepted City nomination is not the same as a public announcement. Do not treat the Times Colonist “three candidates” frame as the City list. City elections page lists accepted mayor nominations as ALTO, Marianne; ATKINSON, Lyall; HARRIS, Mike; JOHNSTON, David; and MILLER, Gregoor. McGuigan has announced and was quoted in the 3 Sep Times Colonist field interview; he is not on that accepted-mayor list. Treat his City status as expression of intent until the City list or the 11 Sep Declaration. Johnston and Miller are City-accepted with no sourced 2026 sentences on this site.", MAYOR)}
+${group("grp-mayor", "Mayor", "Mayor", "An accepted City nomination is not the same as a public announcement. Do not treat the Times Colonist “three candidates” frame as the City list. City elections page lists accepted mayor nominations as ALTO, Marianne; ATKINSON, Lyall; HARRIS, Mike; JOHNSTON, David; MCGUIGAN, Bruce; and MILLER, Gregoor. Johnston and Miller are City-accepted with no sourced 2026 sentences on this site.", MAYOR)}
 ${group("grp-councillors", "Sitting councillors", "Sitting councillors", "Four years of recorded votes, which is why their evidence base is the widest in the field — and why a re-score in September will narrow the gap rather than widen it. City elections page: among sitting members, accepted councillor nominations are Caradonna, Dell, Gardiner, Hammond, Kim, Loughton and Thompson.", SITTING)}
-${group("grp-challengers", "Declared challengers", "Declared challengers", "Scored from published material only. Most publish platform detail in September, so these grades are the ones most likely to move. City elections page: accepted councillor nominations are Bowkett, Caradonna, Cseszko, Dell, Dion, Garcia, Gardiner, Gibbs, Girard, Hammond, Kim, Lee, Loughton, McInnis, Rothe and Thompson. A newspaper-reported indication is not an official filing.", CHALLENGERS)}
+${group("grp-challengers", "Declared challengers", "Declared challengers", "Scored from published material only. Most publish platform detail in September, so these grades are the ones most likely to move. City elections page: accepted councillor nominations are Bowkett, Caradonna, Cseszko, Dell, Dion, Garcia, Gardiner, Gibbs, Girard, Hammond, Kim, Lee, Loughton, McInnis, Rothe, Sandor and Thompson. A newspaper-reported indication is not an official filing.", CHALLENGERS)}
 <h3 class="cand-grp" id="context-entries" data-jump-label="Context entries">Context entries — not candidates<span class="cand-n">3</span></h3>
 <p class="grp-note">Retained because each explains something about the shape of the field. Not live 2026 candidates, and not given invented biographies.</p>
 <details class="cand-ctx" id="cand-chris-coleman" data-jump-label="Chris Coleman"><summary><span class="cs-t"><strong>Chris Coleman</strong> — not a live 2026 candidate</span></summary><div class="body"><p class="pf">Not a live 2026 candidate. His stated decision window closed with no announcement. First elected 1986.</p></div></details>
