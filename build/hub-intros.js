@@ -129,23 +129,50 @@ const MAYOR = [
     unscored: true,
     fieldStatusOnly: true,
     bio: [
-      "City elections page (opened 3 Sep 2026) lists JOHNSTON, David among accepted mayor nominations. He is not named in the 3 Sep Times Colonist field interview. No sourced 2026 campaign website, platform, or interview sentences have been located. Accepted nomination; nothing scored until sourced 2026 sentences exist. This site does not invent a bio, platform, grade, or campaign site."
+      "City elections page lists JOHNSTON, David among accepted mayor nominations. He is not named in the 3 Sep Times Colonist field interview. No sourced 2026 campaign website, platform, or interview sentences have been located. Accepted nomination; nothing scored until sourced 2026 sentences exist. This site does not invent a bio, platform, grade, or campaign site."
     ]
   },
   {
     slug: "harris", id: "cand-mike-harris", name: "Mike Harris",
-    role: "Mayor, announced · expression of intent — not on the City’s accepted-mayor list (opened 3 Sep)",
+    role: "Mayor, announced · nomination accepted",
     bio: [
       "Mike Harris is a Vancouver Island businessman, housing and real-estate professional, and former journeyman carpenter. His mayoral campaign describes more than thirty years in real estate, housing, construction and business; Harris Auto Group lists him as an owner.",
-      "mike4victoria.ca organizes the campaign around six priorities: safe streets, respect for taxpayers, housing that works, downtown, a review at City Hall, and conversations in twelve neighbourhoods. The site does not yet publish numerical targets or costings. In the 3 Sep 2026 <a href=\"https://www.timescolonist.com/local-news/three-candidates-take-on-alto-for-victorias-mayor-chair-12735274\" target=\"_blank\" rel=\"noopener\">Times Colonist interview</a> (Andrew A. Duffy), Harris said the city is ready for a fresh start, citing fiscal responsibility, safer streets and stronger communities, along with greater transparency at City Hall. He said: “People should be able to understand where their money is going, why decisions are being made and what results City Hall is achieving,” and: “I’ve spent my career in business, where you have to listen to people, manage resources responsibly and ultimately be accountable for results. I think we need more of that approach at City Hall.” He has announced. That is expression of intent until the City list or the 11 Sep Declaration."
+      "mike4victoria.ca organizes the campaign around six priorities: safe streets, respect for taxpayers, housing that works, downtown, a review at City Hall, and conversations in twelve neighbourhoods. The site does not yet publish numerical targets or costings. In the 3 Sep 2026 <a href=\"https://www.timescolonist.com/local-news/three-candidates-take-on-alto-for-victorias-mayor-chair-12735274\" target=\"_blank\" rel=\"noopener\">Times Colonist interview</a> (Andrew A. Duffy), Harris said the city is ready for a fresh start, citing fiscal responsibility, safer streets and stronger communities, along with greater transparency at City Hall. He said: “People should be able to understand where their money is going, why decisions are being made and what results City Hall is achieving,” and: “I’ve spent my career in business, where you have to listen to people, manage resources responsibly and ultimately be accountable for results. I think we need more of that approach at City Hall.”"
+    ]
+  },
+  {
+    slug: "miller", id: "cand-gregoor-miller", name: "Gregoor Miller",
+    role: "Mayor, nomination accepted",
+    unscored: true,
+    fieldStatusOnly: true,
+    bio: [
+      "City elections page lists MILLER, Gregoor among accepted mayor nominations. No sourced 2026 campaign website, platform, or interview sentences have been located. Accepted nomination; nothing scored until sourced 2026 sentences exist. This site does not invent a bio, platform, grade, or campaign site."
+    ]
+  },
+  {
+    slug: "gervais-harrison", id: "cand-darren-gervais-harrison", name: "Darren Gervais-Harrison",
+    role: "Mayor, nomination accepted",
+    unscored: true,
+    fieldStatusOnly: true,
+    bio: [
+      "City elections page lists GERVAIS-HARRISON, Darren among accepted mayor nominations. No sourced 2026 campaign website, platform, or interview sentences have been located. Accepted nomination; nothing scored until sourced 2026 sentences exist. This site does not invent a bio, platform, grade, or campaign site."
+    ]
+  },
+  {
+    slug: "hanna", id: "cand-christopher-hanna", name: "Christopher Hanna",
+    role: "Mayor, nomination accepted",
+    unscored: true,
+    fieldStatusOnly: true,
+    bio: [
+      "City elections page lists HANNA, Christopher among accepted mayor nominations. No sourced 2026 campaign website, platform, or interview sentences have been located. Accepted nomination; nothing scored until sourced 2026 sentences exist. This site does not invent a bio, platform, grade, or campaign site."
     ]
   },
   {
     slug: "mcguigan", id: "cand-bruce-mcguigan", name: "Bruce McGuigan",
-    role: "Mayor, announced · expression of intent — not on the City’s accepted-mayor list (opened 3 Sep)",
+    role: "Mayor, announced · nomination accepted",
     bio: [
       "Bruce McGuigan is a sociologist, former Vancouver Island University professor, and former executive director of Family Services of Greater Victoria. He lives in Fernwood and is making a second run for mayor after placing fourth in 2018.",
-      "bruceformayor.ca publishes ten priority areas — among them homelessness, housing, safe streets, local business, climate preparedness, and a citizens-first City Hall — plus three governing principles: listen carefully, manage competently, and use public resources responsibly. Numerical targets and costings were not located. In the 3 Sep 2026 <a href=\"https://www.timescolonist.com/local-news/three-candidates-take-on-alto-for-victorias-mayor-chair-12735274\" target=\"_blank\" rel=\"noopener\">Times Colonist interview</a> (Andrew A. Duffy), McGuigan said his biggest concern is that City Hall is “opaque,” which he blamed in part on Alto. He said budget propositions in detail had stopped and citizen communication portals had been shut down, and that he plans to emphasize “citizen-involved, competent administration.” Duffy reports he called council’s approach to homelessness and street disorder “chaotic and unsuccessful.” He has announced. That is expression of intent until the City list or the 11 Sep Declaration."
+      "bruceformayor.ca publishes ten priority areas — among them homelessness, housing, safe streets, local business, climate preparedness, and a citizens-first City Hall — plus three governing principles: listen carefully, manage competently, and use public resources responsibly. Numerical targets and costings were not located. In the 3 Sep 2026 <a href=\"https://www.timescolonist.com/local-news/three-candidates-take-on-alto-for-victorias-mayor-chair-12735274\" target=\"_blank\" rel=\"noopener\">Times Colonist interview</a> (Andrew A. Duffy), McGuigan said his biggest concern is that City Hall is “opaque,” which he blamed in part on Alto. He said budget propositions in detail had stopped and citizen communication portals had been shut down, and that he plans to emphasize “citizen-involved, competent administration.” Duffy reports he called council’s approach to homelessness and street disorder “chaotic and unsuccessful.”"
     ]
   }
 ];
@@ -169,7 +196,7 @@ const SITTING = [
   },
   {
     slug: "thompson", id: "cand-dave-thompson", name: "Dave Thompson",
-    role: "Councillor, declared January 2026",
+    role: "Councillor, declared January 2026 · nomination accepted",
     bio: [
       "Dave Thompson is a first-term councillor and CRD director, a lawyer by training, and a former officer of the Fairfield Gonzales Community Association. He has lived in four Victoria neighbourhoods as both renter and owner.",
       "davethompsonvictoria.ca is live. A 25 August post says the 2026 programme is still preliminary and names six areas: diverse housing; homelessness, mental health and addiction; safer streets; climate, trees and the environment; a vibrant city and economy; and evidence-based governance and reconciliation."
@@ -177,7 +204,7 @@ const SITTING = [
   },
   {
     slug: "kim", id: "cand-susan-kim", name: "Susan Kim",
-    role: "Councillor",
+    role: "Councillor · nomination accepted",
     bio: [
       "Susan Kim is a first-term councillor with a background in food security, community organizing and operations, including work at Fernwood NRG. She was first elected in 2022.",
       "She is seeking re-election, and a CRD seat, with Victoria For All. The slate’s published pillars are housing, care, climate and community, including more public and co-operative housing, a 24-hour mental-health crisis response, and expanded free transit."
@@ -185,7 +212,7 @@ const SITTING = [
   },
   {
     slug: "loughton", id: "cand-krista-loughton", name: "Krista Loughton",
-    role: "Councillor, declared June 3 2026",
+    role: "Councillor, declared June 3 2026 · nomination accepted",
     bio: [
       "Krista Loughton is a first-term councillor, a documentary filmmaker and a Fernwood resident. Her film <em>Us and Them</em> has screened across North America, including on Parliament Hill.",
       "kristaloughton.ca is a 2026 site for council and a CRD seat. Published priorities include downtown conditions, affordability, finding indoor spaces for unsheltered residents, and Positive Flow — rent supplements that help people move from supportive housing into independent housing."
@@ -236,7 +263,7 @@ const CHALLENGERS = [
   },
   {
     slug: "mcinnis", id: "cand-arthur-mcinnis", name: "Arthur McInnis",
-    role: "Council candidate, declared June 25 2026",
+    role: "Council candidate, declared June 25 2026 · nomination accepted",
     bio: [
       "Arthur McInnis is a James Bay resident, a law professor and a former international construction and projects lawyer. He describes more than thirty years examining government, infrastructure and contractual decisions.",
       "arthurmcinnis.ca publishes a five-part 2026 platform: open government and fiscal discipline; neighbourhood planning and responsible growth; housing affordability and tenant protection; transportation for a functional city; and public safety with measurable accountability."
@@ -244,7 +271,7 @@ const CHALLENGERS = [
   },
   {
     slug: "sandor", id: "cand-jack-sandor", name: "Jack Sandor",
-    role: "Council candidate, declared June 2026",
+    role: "Council candidate, declared June 2026 · nomination accepted",
     bio: [
       "Jack Sandor is a 27-year-old Red Seal electrician and lifelong Victoria-area resident. He grew up in Gonzales and now rents near Stadacona Park. He has served as vice-president of Homes for Living and on the BetterTransitYYJ board.",
       "jacksandor.ca carries a complete ten-part platform covering housing, homelessness, safety, transportation, climate, business, arts, governance, reconciliation and quality of life, including city financing for co-ops and a council-voting dashboard."
@@ -252,7 +279,7 @@ const CHALLENGERS = [
   },
   {
     slug: "lee", id: "cand-bella-lee", name: "Bella Lee",
-    role: "Council candidate, declared June 2026",
+    role: "Council candidate, declared June 2026 · nomination accepted",
     bio: [
       "Bella Lee is a 27-year-old lifelong Victorian, a renter and a campaign organizer. She has worked as a senior government adviser and on regional homelessness cost-sharing, Access BC’s free-contraception initiative and the Crystal Pool referendum.",
       "bellalee.ca is live. The published programme is concise: lower the cost of living, support affordability, seek fairer CRD participation in homelessness costs, and preserve community amenities. A detailed municipal platform was not located as of 1 September."
@@ -276,7 +303,7 @@ const CHALLENGERS = [
   },
   {
     slug: "gibbs", id: "cand-peter-gibbs", name: "Peter Gibbs",
-    role: "Council candidate",
+    role: "Council candidate · nomination accepted",
     bio: [
       "Peter Gibbs is a parent, a lifelong Victorian and a community organizer. No personal campaign site was located.",
       "He is running with Victoria For All. The slate’s published pillars are housing, care, climate and community — including more public and co-operative housing, a 24-hour mental-health crisis response, expanded free transit, and more gathering places."
@@ -288,6 +315,42 @@ const CHALLENGERS = [
     bio: [
       "Shona Dion is a labour activist, a photographer and a working parent who moved to Victoria in 2013. She has served the North Jubilee Neighbourhood Association and as a Victoria Labour Council table officer.",
       "shonadion4victoria.ca commits to giving neighbourhoods more agency on housing security, climate resilience and community safety, and to uplifting residents and organizations already doing that work."
+    ]
+  },
+  {
+    slug: "collins", id: "cand-herb-collins", name: "Herb Collins",
+    role: "Council candidate · nomination accepted",
+    unscored: true,
+    fieldStatusOnly: true,
+    bio: [
+      "City elections page lists COLLINS, Herb among accepted councillor nominations. No sourced 2026 campaign website, platform, or interview sentences have been located. Accepted nomination; nothing scored until sourced 2026 sentences exist. This site does not invent a bio, platform, grade, or campaign site."
+    ]
+  },
+  {
+    slug: "filipovic", id: "cand-steve-filipovic", name: "Steve Filipovic",
+    role: "Council candidate · nomination accepted",
+    unscored: true,
+    fieldStatusOnly: true,
+    bio: [
+      "City elections page lists FILIPOVIC, Steve among accepted councillor nominations. No sourced 2026 campaign website, platform, or interview sentences have been located. Accepted nomination; nothing scored until sourced 2026 sentences exist. This site does not invent a bio, platform, grade, or campaign site."
+    ]
+  },
+  {
+    slug: "heit", id: "cand-jason-heit", name: "Jason Heit",
+    role: "Council candidate · nomination accepted",
+    unscored: true,
+    fieldStatusOnly: true,
+    bio: [
+      "City elections page lists HEIT, Jason among accepted councillor nominations. No sourced 2026 campaign website, platform, or interview sentences have been located. Accepted nomination; nothing scored until sourced 2026 sentences exist. This site does not invent a bio, platform, grade, or campaign site."
+    ]
+  },
+  {
+    slug: "harasymow", id: "cand-james-harasymow", name: "James Harasymow",
+    role: "Council candidate · nomination accepted",
+    unscored: true,
+    fieldStatusOnly: true,
+    bio: [
+      "City elections page lists HARASYMOW, James among accepted councillor nominations. No sourced 2026 campaign website, platform, or interview sentences have been located. Accepted nomination; nothing scored until sourced 2026 sentences exist. This site does not invent a bio, platform, grade, or campaign site."
     ]
   }
 ];
@@ -362,7 +425,7 @@ const section =
 </div>
 </details>
 </div>
-<p class="hub-note pr-who">Twenty-one people have a profile here. Johnston is a City-accepted mayor (elections page opened 3 Sep) with no sourced 2026 sentences, so he is named on the field-status roster rather than given an invented profile. Who is on the scorecard, who has filed but published nothing to score, and who is not on the site at all — with the reason beside every name — is kept in one place: <a href="/scorecard#roster">who is on the scorecard, and who is not</a>.</p>
+<p class="hub-note pr-who">Twenty-one people have a profile here. Johnston, Miller, Gervais-Harrison and Hanna are City-accepted mayors, and Collins, Filipovic, Heit and Harasymow are City-accepted councillors, with no sourced 2026 sentences, so they are named on the field-status roster rather than given invented profiles. Who is on the scorecard, who has filed but published nothing to score, and who is not on the site at all — with the reason beside every name — is kept in one place: <a href="/scorecard#roster">who is on the scorecard, and who is not</a>.</p>
 <div class="cand-bar" id="candidate-index">
 <div class="cand-lbl" id="cand-idx-lbl">Jump to a candidate</div>
 <div class="cand-idx" role="group" aria-labelledby="cand-idx-lbl">
@@ -370,9 +433,9 @@ ${chips}
 </div>
 
 </div>
-${group("grp-mayor", "Mayor", "Mayor", "An accepted City nomination is not the same as a public announcement. Do not treat the Times Colonist “three candidates” frame as the City list. City elections page (opened 3 Sep 2026) lists accepted mayor nominations as ALTO, Marianne; ATKINSON, Lyall; and JOHNSTON, David. Harris and McGuigan have announced and were quoted in the 3 Sep Times Colonist field interview; neither is on that accepted-mayor list. Treat their City status as expression of intent until the City list or the 11 Sep Declaration. Johnston is City-accepted and absent from that TC report.", MAYOR)}
-${group("grp-councillors", "Sitting councillors", "Sitting councillors", "Four years of recorded votes, which is why their evidence base is the widest in the field — and why a re-score in September will narrow the gap rather than widen it. City elections page: among sitting members, accepted councillor nominations are Caradonna, Dell, Gardiner and Hammond.", SITTING)}
-${group("grp-challengers", "Declared challengers", "Declared challengers", "Scored from published material only. Most publish platform detail in September, so these grades are the ones most likely to move. City elections page: accepted councillor nominations are Bowkett, Caradonna, Cseszko, Dell, Dion, Garcia, Gardiner, Girard, Hammond and Rothe. A newspaper-reported indication is not an official filing.", CHALLENGERS)}
+${group("grp-mayor", "Mayor", "Mayor", "An accepted City nomination is not the same as a public announcement. Do not treat the Times Colonist “three candidates” frame as the City list. City elections page lists accepted mayor nominations as ALTO, Marianne; ATKINSON, Lyall; GERVAIS-HARRISON, Darren; HANNA, Christopher; HARRIS, Mike; JOHNSTON, David; MCGUIGAN, Bruce; and MILLER, Gregoor. Johnston, Miller, Gervais-Harrison and Hanna are City-accepted with no sourced 2026 sentences on this site.", MAYOR)}
+${group("grp-councillors", "Sitting councillors", "Sitting councillors", "Four years of recorded votes, which is why their evidence base is the widest in the field — and why a re-score in September will narrow the gap rather than widen it. City elections page: among sitting members, accepted councillor nominations are Caradonna, Dell, Gardiner, Hammond, Kim, Loughton and Thompson.", SITTING)}
+${group("grp-challengers", "Declared challengers", "Declared challengers", "Scored from published material only. Most publish platform detail in September, so these grades are the ones most likely to move. City elections page: accepted councillor nominations are Bowkett, Caradonna, Collins, Cseszko, Dell, Dion, Filipovic, Garcia, Gardiner, Gibbs, Girard, Hammond, Harasymow, Heit, Kim, Lee, Loughton, McInnis, Rothe, Sandor and Thompson. A newspaper-reported indication is not an official filing.", CHALLENGERS)}
 <h3 class="cand-grp" id="context-entries" data-jump-label="Context entries">Context entries — not candidates<span class="cand-n">3</span></h3>
 <p class="grp-note">Retained because each explains something about the shape of the field. Not live 2026 candidates, and not given invented biographies.</p>
 <details class="cand-ctx" id="cand-chris-coleman" data-jump-label="Chris Coleman"><summary><span class="cs-t"><strong>Chris Coleman</strong> — not a live 2026 candidate</span></summary><div class="body"><p class="pf">Not a live 2026 candidate. His stated decision window closed with no announcement. First elected 1986.</p></div></details>
