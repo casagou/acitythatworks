@@ -135,12 +135,12 @@ ok(!/expression of intent/.test(hubCard("cand-bruce-mcguigan")), "McGuigan hub s
 ok(!/expression of intent/.test(hubCard("cand-mike-harris")), "Harris hub still on expression-of-intent FLAG");
 ok(!/not on the City/.test(hubCard("cand-bruce-mcguigan")), "McGuigan hub still says not on the City list");
 
-const gillis = (APPLIED.out || []).find((n) => n.name === "Peter Rose Gillis");
+ok(!(APPLIED.out || []).some((n) => /Gillis/.test(n.name)), "Gillis (TC misspelling of Peter Rose Gibbs) still in out list");
 const haley = (APPLIED.out || []).find((n) => n.name === "Owen Haley");
-ok(gillis && /indicated/.test(gillis.why) && /Expression of intent only/.test(gillis.why), "Gillis not labelled TC indication / intent");
-ok(haley && /indicated/.test(haley.why) && /Expression of intent only/.test(haley.why), "Haley not labelled TC indication / intent");
+ok(haley && /indicated/.test(haley.why) && haley.status === "Not on the City's Declaration of Election by Voting", "Haley not recorded as absent from the Declaration");
+ok(haley && !/11 Sep Declaration/.test(haley.why), "Haley still defers to the 11 Sep Declaration");
 ok(haley && !/Named only on a third-party candidate list/.test(haley.why), "Haley still described as third-party-list only");
-ok(/Peter Rose Gillis/.test(roster) && /Owen Haley/.test(roster), "Gillis/Haley missing from roster");
+ok(/Owen Haley/.test(roster) && !/Gillis/.test(roster), "Haley missing from roster, or Gillis still on it");
 
 ok(/\$17 million/.test(atk) && /Atkinson\/TC/.test(atk), "Atkinson $17M not labelled Atkinson/TC");
 ok(/\$10\.35M/.test(atk) && /\$13\.612M/.test(atk), "City CSWB figures missing from Atkinson page");

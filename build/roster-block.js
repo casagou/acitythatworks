@@ -79,8 +79,7 @@ return '' +
   '<p class="hub-note">Field status from the <a href="https://www.victoria.ca/city-government/elections" target="_blank" rel="noopener">City elections page</a>: accepted mayor nominations are ALTO, Marianne; ATKINSON, Lyall; GERVAIS-HARRISON, Darren; HANNA, Christopher; HARRIS, Mike; JOHNSTON, David; MCGUIGAN, Bruce; and MILLER, Gregoor. Accepted councillor nominations are Bowkett, Caradonna, Collins, Cseszko, Dell, Dion, Filipovic, Garcia, Gardiner, Gibbs, Girard, Hammond, Harasymow, Heit, Kim, Lee, Loughton, McInnis, Rothe, Sandor and Thompson. That City list is the source for nomination-accepted status on this page. A newspaper-reported indication is not an official filing.</p>' +
   '<div class="rb-cols">' + onPageFor(SC) + notScored + out + "</div>" +
   '<p class="hub-note"><strong>Missing someone, or listed wrongly?</strong> Write to ' +
-  '<a href="mailto:info@acitythatworks.ca">info@acitythatworks.ca</a>. Corrections are free and dated, and the ' +
-  'field is re-verified against the City\'s Declaration of Candidates after 11 September.</p>' +
+  '<a href="mailto:info@acitythatworks.ca">info@acitythatworks.ca</a>. Corrections are free and dated.</p>' +
   "</section>";
 }
 

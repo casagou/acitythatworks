@@ -497,7 +497,7 @@ Source: [acitythatworks.ca/comparison](https://acitythatworks.ca/comparison)
 ---
 ## Field completeness verification — as of July 31 2026
 <callout icon="✅" color="green_bg">
-	**Verification pass run July 31 2026.** Searched *Times Colonist*, CHEK News, Capital Daily, *Victoria News* / *Saanich News* / *Oak Bay News*, *Victoria Buzz*, CBC, *Martlet*, CivicInfo BC, [victoria.ca](http://victoria.ca), [crd.ca](http://crd.ca), candidate websites and verified social accounts. **No previously unknown candidate was found.** The field below is complete to the limit of public reporting. **Nominations run September 1–11 2026; the Elections BC / City filings after September 11 are the only authoritative list, and this table is provisional until then.**
+	**Verification pass run July 31 2026.** Searched *Times Colonist*, CHEK News, Capital Daily, *Victoria News* / *Saanich News* / *Oak Bay News*, *Victoria Buzz*, CBC, *Martlet*, CivicInfo BC, [victoria.ca](http://victoria.ca), [crd.ca](http://crd.ca), candidate websites and verified social accounts. **No previously unknown candidate was found.** The field below is complete to the limit of public reporting. **Nominations closed September 11 2026.**
 </callout>
 <table header-row="true">
 <colgroup>
