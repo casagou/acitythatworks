@@ -833,7 +833,7 @@ Victoria electors will elect **one mayor, eight councillors, three CRD directors
 7. **Oak Bay 2023 / 2024 and Colwood 2025 final tax rates** — minor source discrepancies remain, which is why the Dell fact-check is stated as "lower than most" rather than with a precise ranking.
 8. **STEP, Coordinated Access and Assessment, and the daytime sheltering ban** — recorded roll-calls are confirmed by reporting but were not each cross-checked against the eScribe minutes this pass.
 <callout icon="🔁" color="blue_bg">
-	**Next scheduled revision: after nominations closed September 11 2026.** That filing is the first authoritative candidate list, and challengers typically publish detailed platforms in the campaign period. **Every ⚪ carried by a challenger on this page means "not yet published," and most of them should convert to a real mark in September.** The Victoria Labour Council endorsement deadline of **9 a.m. August 11 2026** is the nearer trigger.
+	**Next scheduled revision: after nominations close September 11 2026.** That filing is the first authoritative candidate list, and challengers typically publish detailed platforms in the campaign period. **Every ⚪ carried by a challenger on this page means "not yet published," and most of them should convert to a real mark in September.** The Victoria Labour Council endorsement deadline of **9 a.m. August 11 2026** is the nearer trigger.
 </callout>
 </content>
 </page>

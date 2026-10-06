@@ -137,7 +137,7 @@ ok(!/not on the City/.test(hubCard("cand-bruce-mcguigan")), "McGuigan hub still 
 
 ok(!(APPLIED.out || []).some((n) => /Gillis/.test(n.name)), "Gillis (TC misspelling of Peter Rose Gibbs) still in out list");
 const haley = (APPLIED.out || []).find((n) => n.name === "Owen Haley");
-ok(haley && /indicated/.test(haley.why) && haley.status === "Not on the City's Declaration of Election by Voting.", "Haley not recorded as absent from the Declaration");
+ok(haley && /indicated/.test(haley.why) && haley.status === "Not on the City's Declaration of Election by Voting", "Haley not recorded as absent from the Declaration");
 ok(haley && !/11 Sep Declaration/.test(haley.why), "Haley still defers to the 11 Sep Declaration");
 ok(haley && !/Named only on a third-party candidate list/.test(haley.why), "Haley still described as third-party-list only");
 ok(/Owen Haley/.test(roster) && !/Gillis/.test(roster), "Haley missing from roster, or Gillis still on it");
