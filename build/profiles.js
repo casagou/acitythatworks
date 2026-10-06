@@ -185,7 +185,7 @@ function caveatBlock() {
     '<div class="lbl">◆ Read this before the profiles</div>\n' +
     "<p><strong>A profile is not a verdict.</strong> The grade measures distance from this framework, not quality, " +
     "and a narrow evidence base is a fact about a publication calendar rather than about a candidate. " +
-    "Most challengers publish detail in September; a re-score after nominations close 11 September is mandatory.</p>\n";
+    "Most challengers publish detail in September; a re-score after nominations closed 11 September is mandatory.</p>\n";
   if (X) {
     /* No count in the summary. items.length is the number of grouped findings,
        not the number of marks — the mark count lives inside X.rule as prose,

@@ -602,7 +602,7 @@ const OPEN_ITEMS = [
   "<strong>Kim's and Loughton's declared status rests on a single volunteer-maintained source</strong> that contains at least one confirmed error.",
   "<strong>Coleman's intentions are unknown</strong> past his own stated mid-July window.",
   "<strong>Garcia, Gibbs, Girard and Haley have no locatable public record of any kind.</strong> Direct outreach is the only path that resolves this before the campaign period.",
-  "<strong>A re-score after nominations close on 11 September is mandatory</strong> before this document informs anything.",
+  "<strong>A re-score after nominations closed on 11 September is mandatory</strong> before this document informs anything.",
 ];
 
 if (typeof module !== "undefined" && module.exports) {
