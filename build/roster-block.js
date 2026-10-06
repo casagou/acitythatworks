@@ -57,7 +57,7 @@ const notScored = (A.notScored || []).length
 const out = (A.out || []).length
   ? '<div class="rb-grp">' +
     '<h3 class="rb-h">Not on the site · ' + A.out.length + " names</h3>" +
-    '<p class="rb-x">No accepted nomination, or confirmed not running. A newspaper-reported indication that someone is running is labelled as such and is not treated as an official filing. The City\'s accepted list remained the source of truth until 11 September. Named here so an absence is on the record rather than silent.</p>' +
+    '<p class="rb-x">No accepted nomination, or confirmed not running. A newspaper-reported indication that someone is running is labelled as such and is not treated as an official filing. The City\'s Declaration of Election by Voting is the source of truth. Named here so an absence is on the record rather than silent.</p>' +
     '<ul class="rb-list">' + A.out.map((c) => row(c.name, c.office, c.status || "", c.why, null)).join("") +
     "</ul></div>"
   : "";
@@ -72,7 +72,7 @@ function blockFor(SC) {
 return '' +
   '<section class="roster" id="roster">' +
   '<h2 class="hub-h2">Who is on this page, and who is not</h2>' +
-  '<p class="hub-sub">The field changed until nominations closed on <strong>11 September 2026</strong>. ' +
+  '<p class="hub-sub">Nominations closed on <strong>11 September 2026</strong>, and the field is final. ' +
   'This list is the site\'s own copy of the ' +
   '<a href="https://app.notion.com/p/3ade245ae5f38128b340f55bc7df17f5" target="_blank" rel="noopener">applied compute table</a>, ' +
   'checked at build time — if the page and the table disagree, the build fails rather than publishing the difference.</p>' +
