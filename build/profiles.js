@@ -140,11 +140,11 @@ const GROUPS = [
   { id: "grp-councillors", title: "Sitting councillors",
     ids: ["cand-jeremy-caradonna", "cand-matt-dell", "cand-dave-thompson", "cand-susan-kim",
       "cand-krista-loughton", "cand-chris-coleman", "cand-stephen-hammond", "cand-marg-gardiner"],
-    note: "Four years of recorded votes, which is why their evidence base is the widest in the field — and why a re-score in September will narrow the gap rather than widen it." },
+    note: "Four years of recorded votes, which is why their evidence base is the widest in the field — and why a re-score in September would narrow the gap rather than widen it." },
   { id: "grp-challengers", title: "Declared challengers",
     ids: ["cand-melissa-cseszko", "cand-karen-rothe", "cand-wendy-bowkett", "cand-arthur-mcinnis",
       "cand-jack-sandor", "cand-bella-lee"],
-    note: "Scored from published material only. Most publish platform detail in September, so these grades are the ones most likely to move." },
+    note: "Scored from published material only. Most published platform detail in September, so these grades are the ones most likely to move." },
   { id: "grp-no-record", title: "No locatable record", ids: ["cand-four-unconfirmed"],
     note: "Declared, and nothing published to score. Named here rather than left out." },
 ];
@@ -185,7 +185,7 @@ function caveatBlock() {
     '<div class="lbl">◆ Read this before the profiles</div>\n' +
     "<p><strong>A profile is not a verdict.</strong> The grade measures distance from this framework, not quality, " +
     "and a narrow evidence base is a fact about a publication calendar rather than about a candidate. " +
-    "Most challengers publish detail in September; a re-score after nominations close 11 September is mandatory.</p>\n";
+    "Most challengers published detail in September; a re-score after nominations closed 11 September is mandatory.</p>\n";
   if (X) {
     /* No count in the summary. items.length is the number of grouped findings,
        not the number of marks — the mark count lives inside X.rule as prose,
