@@ -138,7 +138,8 @@ ok(!/not on the City/.test(hubCard("cand-bruce-mcguigan")), "McGuigan hub still 
 const gillis = (APPLIED.out || []).find((n) => n.name === "Peter Rose Gillis");
 const haley = (APPLIED.out || []).find((n) => n.name === "Owen Haley");
 ok(gillis && /indicated/.test(gillis.why) && /Expression of intent only/.test(gillis.why), "Gillis not labelled TC indication / intent");
-ok(haley && /indicated/.test(haley.why) && /Expression of intent only/.test(haley.why), "Haley not labelled TC indication / intent");
+ok(haley && /indicated/.test(haley.why) && haley.status === "Not on the City's Declaration of Election by Voting.", "Haley not recorded as absent from the Declaration");
+ok(haley && !/11 Sep Declaration/.test(haley.why), "Haley still defers to the 11 Sep Declaration");
 ok(haley && !/Named only on a third-party candidate list/.test(haley.why), "Haley still described as third-party-list only");
 ok(/Peter Rose Gillis/.test(roster) && /Owen Haley/.test(roster), "Gillis/Haley missing from roster");
 
