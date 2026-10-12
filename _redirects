@@ -1,3 +1,10 @@
+# TEMPORARY OFFLINE (Joa, 12 Oct 2026). Delete these lines to restore the site.
+/build /404.html 404!
+/build/* /404.html 404!
+/offline.html /offline.html 200!
+/* /offline.html 503!
+# END TEMPORARY OFFLINE
+
 # Pretty paths for live-door profile pages. /profiles itself stays the hub
 # (profiles.html). 200 rewrites so /profiles/harris is a real page, not a 404.
 /profiles /profiles.html 200
